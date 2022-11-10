@@ -11,11 +11,11 @@ from .forms import CustomUserChangeForm
 # Create your views here.
 
 def index(request):
-  context = {
-    'datas' : get_user_model().objects.all(),
-    'user' : request.user,
-  }
-  return render(request, 'accounts/index.html', context)
+    context = {
+        'datas' : get_user_model().objects.all(),
+        'user' : request.user,
+    }
+    return render(request, 'accounts/index.html', context)
 def signup(request):
     if request.method == "POST":
         form = CreateUser(request.POST)
