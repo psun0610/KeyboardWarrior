@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block body %}
+<h1> 리뷰 </h1>
+
+<li>{{ review.user }}</li>
+<li>{{ review.created_at }}</li>
+
+<li>평점: {{ review.grade }}</li>
+<hr>
+<h1 class='text-center'>{{ review.title }}</h1>
+<p>{{ review.content }}<p>
+{% if review.img %}
+<div class='text-center'>
+  <img src="{{ review.img.url }}" alt="{{ review.img }}">
+</div>
+{% endif %}
+{% if request.user == review.user %}
+<div class='d-grid gap-2 my-4'>
+  <a class='btn btn-outline-success btn-sm' href="{% url 'reviews:update' review.pk %}">수정하기</a>
+  <a class='btn btn-outline-danger btn-sm' href="{% url 'reviews:delete' review.pk %}">삭제하기</a>
+</div>
+{% endif %}
+
+
+{% endblock body %}
