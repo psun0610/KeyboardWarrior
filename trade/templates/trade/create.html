@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load django_bootstrap5 %}
+
+{% block body %}
+
+
+
+
+
+  <div>
+    <h1>중고거래글 작성</h1>
+  </div>
+  <div>
+    <form action="" method="POST">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      {% bootstrap_button button_type="submit" content="작성완료" button_class="btn btn-dark mt-4" %}
+    </form>
+</div>
+
+
+{% endblock body %}

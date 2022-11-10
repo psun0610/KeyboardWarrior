@@ -11,3 +11,9 @@ class Trades(models.Model):
     Trade_type = models.IntegerField(choices=tradeType)
     title = models.CharField(max_length=80)
     content = models.TextField(max_length=500)
+
+
+class Trade_Comment(models.Model):
+    user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+    trade = models.ForeignKey(Trades, on_delete=models.CASCADE)
+    content = models.CharField(max_length=100)
