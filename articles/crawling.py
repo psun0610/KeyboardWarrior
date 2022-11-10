@@ -226,5 +226,5 @@ for i in range(90):
             "kind": kind,
         }
     result_list.append(result)
-    toJson(result_list)
-print("------")
+    print("------")
+toJson(result_list)
