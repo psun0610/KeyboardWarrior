@@ -1,14 +1,73 @@
 {% extends "base.html" %}
+{% load static %}
+{% load django_bootstrap5 %}
 {% block body %}
-  {% load django_bootstrap5 %}
-  <div>
-    <h1>회원가입</h1>
-  </div>
+  
   <div>
     <form action="" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-      {% bootstrap_form form %}
-      {% bootstrap_button button_type="submit" content="회원가입" button_class="btn btn-dark mt-4" %}
+      <div>
+        {% comment %} 제목 1 {% endcomment %}
+        <div>
+          <h1>KeyBoard Warrior ID 생성</h1>
+          <hr>
+          <p>키보드 워리어 회원 등록</p>
+        </div>
+        {% comment %} 회원정보 폼 1 {% endcomment %}
+        <div class='signup-user'>
+          <input data-testid="input-box" name="username"
+                  placeholder="아이디" type="text" required="" class="signup-userinfo" value="">
+          <input data-testid="input-box" name="email"
+                  placeholder="이메일" type="email" required="" class="signup-userinfo" value="">
+          <input data-testid="input-box" name="password"
+                  placeholder="암호" type="password" required="" class="signup-userinfo" value="">
+          <input data-testid="input-box" name=""
+                  placeholder="암호 확인" type="password" required="" class="signup-userinfo" value="">
+          <div>
+            <input data-testid="input-box" name="name"
+                    placeholder="이름" type="text" required="" class="signup-userinfo-name" value="">
+            <input data-testid="input-box" name="firstname"
+                    placeholder="성" type="text" required="" class="signup-userinfo-name" value="">
+          </div>
+        </div>
+        {% comment %} 제목 2 {% endcomment %}
+        <div>
+        </div>
+        {% comment %} 키보드 취향 {% endcomment %}
+        <div>
+          <div class="select">
+            <input type="radio" id="select" name="sound"><label for="select">1</label>
+            <input type="radio" id="select2" name="sound"><label for="select2">2</label>
+            <input type="radio" id="select2" name="sound"><label for="select2">3</label>
+          </div>
+
+          <div class="select">
+            <input type="radio" id="select" name="array"><label for="select">1</label>
+            <input type="radio" id="select2" name="array"><label for="select2">2</label>
+            <input type="radio" id="select2" name="array"><label for="select2">3</label>
+          </div>
+
+          <div class="select">
+            <input type="radio" id="select" name="connect"><label for="select">1</label>
+            <input type="radio" id="select2" name="connect"><label for="select2">2</label>
+            <input type="radio" id="select2" name="connect"><label for="select2">3</label>
+          </div>
+
+          <div class="select">
+            <input type="radio" id="select" name="press"><label for="select">1</label>
+            <input type="radio" id="select2" name="press"><label for="select2">2</label>
+            <input type="radio" id="select2" name="press"><label for="select2">3</label>
+          </div>
+
+          <div class="select">
+            <input type="radio" id="select" name="weight"><label for="select">1</label>
+            <input type="radio" id="select2" name="weight"><label for="select2">2</label>
+          </div>
+        </div>
+        <div>
+          <button type="submit">KeyBoard Warrior와 함께하기</button>
+        </div>
+      </div>
     </form>
   </div>
 
