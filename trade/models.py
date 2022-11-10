@@ -17,3 +17,4 @@ class Trade_Comment(models.Model):
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
     trade = models.ForeignKey(Trades, on_delete=models.CASCADE)
     content = models.CharField(max_length=100)
+    create_at = models.DateTimeField(auto_now_add=True)

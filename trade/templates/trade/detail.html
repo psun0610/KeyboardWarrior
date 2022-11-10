@@ -6,7 +6,7 @@
 <h1>중고 디테일</h1>
 <hr>
 <p>{%if trade.Trade_type == 1%} 팝니다 {%else%} 삽니다 {%endif%}</p>
-<h3>제목:{{trade.title}}</h3>
+<h3>제목:{{trade.title}} <span><a href="{% url 'accounts:detail' trade.user.pk %}">{{trade.user}}</a></span></h3>
 <hr>
 {{trade.content}}
 
@@ -23,8 +23,11 @@
 <hr>
 <div id="comment_box">
     {% for comment in comments %}
+    <hr>
+    <p>{{comment.content}} <span> | {{comment.user}}</span><span> {% if request.user == comment.user %}
+            <a href="{% url 'trade:comment_delete'  trade.pk  comment.pk %}">삭제</a>
+            {%endif%}</span> </p>
 
-    <p>{{comment.content}} <span>|{{comment.user}}</span></p>
     {% endfor %}
 </div>
 
@@ -38,19 +41,26 @@
         event.preventDefault();
         axios({
             method: 'post',
-            url: `${event.target.dataset.tradeId}/comment/`,
+            url: `/trade/${event.target.dataset.tradeId}/comment/`,
             header: { 'X-CSRFtoken': csrftoken },
             data: new FormData(commentFrom)
         })
             .then(response => {
-                const comment = document.querySelector('#comment_box')
+                const comment_box = document.querySelector('#comment_box')
                 const p = document.createElement('p')
-                p.innerText = `${response.data.content}|${response.data.username}`
                 const hr = document.createElement('hr')
-                comment.append(p, hr)
+                comment_box.textContent = "";
+                const comment_list = response.data.comment_list
+                for (let i = 0; i < comment_list.length; i++) {
+                    console.log(comment_list[i])
+                    comment_box.insertAdjacentHTML('beforeend', `
+                    <hr>
+                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>`);
+                    console.log("댓글 전송 ")
+                }
                 commentFrom.reset()
+                console.log("코멘트 전송")
             })
-
     })
 
 </script>
