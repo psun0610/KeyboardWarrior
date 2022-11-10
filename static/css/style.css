@@ -1,54 +1,114 @@
 /* 폰트 */
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 }
+
 .kor-font {
-  font-family: 'Pretendard-Regular';
+    font-family: 'Pretendard-Regular';
 }
 
 /* base.html */
 a {
-  color: black;
-  text-decoration: none;
+    color: black;
+    text-decoration: none;
 }
+
 .my-nav {
-  background-color: #ffffffaa;
+    background-color: #ffffffaa;
 }
+
 .my-nav>div {
-  max-width: 1420px;
-  margin: 0 auto;
+    max-width: 1420px;
+    margin: 0 auto;
 }
+
 .nav-logo {
-  width: 60px;
+    width: 60px;
 }
+
 .nav-logo-text {
-  display: flex;
-  font-size: 18px;
-  margin: 0 0 0 8px;
+    display: flex;
+    font-size: 18px;
+    margin: 0 0 0 8px;
 }
+
 .my-nav-ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
 }
+
 .my-nav-div {
-  display: flex;
-  list-style: none;
+    display: flex;
+    list-style: none;
 }
+
 .my-nav-div>div {
-  display: flex;
-  margin: 0 30px;
+    display: flex;
+    margin: 0 30px;
 }
+
 .my-nav-item {
-  padding: 0 7px;
+    padding: 0 7px;
+}
 
 /* accounts:signup.html */
 .signup-user {
     display: flex;
     flex-direction: column;
+}
+
+.signup-userinfo {
+    background-color: #fff;
+    padding: 0.9rem 0.9rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.signup-userinfo-name {
+    background-color: #fff;
+    padding: 0.9rem 0.9rem;
+    margin: 0.5rem 0;
+    width: 45%;
+}
+
+.signup-userinfo-box {
+    border: 10px;
+    border-color: #000000aa;
+    width: 100%;
+
+}
+
+.signup-userinfo-name-box {
+    border: 10px;
+    border-color: #000000aa;
+    width: 100%;
+}
+
+.signupbox {
+    width: 600px;
+    display: flex;
+    margin: auto;
+
+}
+
+.signup-head {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bighr {
+    height: 10px;
+    color: black;
+    width: 330px;
+    background-color: black;
 }
