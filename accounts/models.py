@@ -8,8 +8,8 @@ from multiselectfield import MultiSelectField
 # 
 Key_Press = [
 
-    (1, "38"),
-    (2, "45"),
+    (1, "가벼움"),
+    (2, "무거움"),
     (3, "상관없음"),
 
 ]
