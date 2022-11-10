@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block body %}
+
+  <div class="container d-flex flex-column align-items-center col-auto" style="margin-bottom:50px">
+
+    <h1 style='font-size: 30px;'>{{user}}
+      프로필</h1>
+
+    <form class='form-inline' action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <a href="{% url 'accounts:change_password' user.pk %}">비밀번호 변경</a>
+
+      <div class="d-flex justify-content-center margint-top:5px; ">
+        <button class='btn btn-outline-primary' style="margin:5px;" type="submit">수정</button>
+        <a href="{% url 'accounts:detail' user.id %}">
+          <button class='btn btn-outline-danger' style="margin:5px;" type="button">취소</button>
+        </a>
+      </div>
+    </form>
+
+  </div>
+
+{% endblock body %}
