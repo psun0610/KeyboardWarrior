@@ -51,14 +51,13 @@ def update(request, pk):
 
 def detail(request, pk):
     trade = get_object_or_404(Trades, pk=pk)
-    comments = Trade_Comment.objects.all()
+    comments = Trade_Comment.objects.filter(trade=pk).order_by("-pk")
     comment_from = CreateComment()
     context = {
         "trade": trade,
         "comment_from": comment_from,
         "comments": comments,
     }
-
     return render(request, "trade/detail.html", context)
 
 
@@ -70,15 +69,53 @@ def delete(request, pk):
     return redirect("trade:index")
 
 
+@login_required
 def trade_comment(request, pk):
-    trade = get_object_or_404(Trades, pk=pk)
+    trade_ = get_object_or_404(Trades, pk=pk)
     if request.method == "POST":
         form = CreateComment(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.user = request.user
-            comment.trade = trade
+            comment.trade = trade_
             comment.save()
-        comments = Trade_Comment.objects.filter(trade=pk).order_by("-pk")
-        context = {"comments": comments}
+        comments = Trade_Comment.objects.filter(trade=trade_).order_by("-pk")
+        user = request.user
+        comment_list = []
+        for c in comments:
+            comment_list.append(
+                {
+                    "user": c.user.username,
+                    "content": c.content,
+                    "create_at": c.create_at,
+                    "pk": c.pk,
+                }
+            )
+        context = {
+            "comment_list": comment_list,
+        }
         return JsonResponse(context)
+
+
+@login_required
+def delete_comment(request, trade_pk, comment_pk):
+    comment = get_object_or_404(Trade_Comment, pk=comment_pk)
+    trade_ = get_object_or_404(Trades, pk=trade_pk)
+    if request.user == comment.user:
+        comment.delete()
+        comments = Trade_Comment.objects.filter(trade=trade_).order_by("-pk")
+        user = request.user
+        comment_list = []
+        for c in comments:
+            comment_list.append(
+                {
+                    "user": c.user.username,
+                    "content": c.content,
+                    "create_at": c.create_at,
+                    "pk": c.pk,
+                }
+            )
+        context = {
+            "comment_list": comment_list,
+        }
+    return JsonResponse(context)

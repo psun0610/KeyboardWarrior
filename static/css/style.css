@@ -4,55 +4,66 @@
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
   font-weight: 400, 700;
   font-style: normal;
+
 }
+
 .kor-font {
-  font-family: 'Pretendard-Regular';
+    font-family: 'Pretendard-Regular';
 }
 
 /* base.html */
 a {
-  color: black;
-  text-decoration: none;
+    color: black;
+    text-decoration: none;
 }
 .a-blue {
   color: #3786FB;
 }
+
 .my-nav {
   background-color: #ffffffc7;
   height: 62px;
   position: sticky;
   top: 0;
 }
+
 .my-nav>div {
-  max-width: 1420px;
-  margin: 0 auto;
+    max-width: 1420px;
+    margin: 0 auto;
 }
+
 .nav-logo {
-  width: 60px;
+    width: 60px;
 }
+
 .nav-logo-text {
-  display: flex;
-  font-size: 18px;
-  margin: 0 0 0 8px;
-  font-weight: 700;
+
+    display: flex;
+    font-size: 18px;
+    margin: 0 0 0 8px;
+    font-weight: 700;
 }
+
 .my-nav-ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
 }
+
 .my-nav-div {
-  display: flex;
-  list-style: none;
+    display: flex;
+    list-style: none;
 }
+
 .my-nav-div>div {
-  display: flex;
-  margin: 0 30px;
+    display: flex;
+    margin: 0 30px;
 }
+
 .my-nav-item {
-  padding: 0 7px;
+    padding: 0 7px;
 }
 
 /* articles/main */
@@ -138,6 +149,165 @@ a {
 
 /* accounts:signup.html */
 .signup-user {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+.signup-userinfo {
+    background-color: #fff;
+    padding: 0.9rem 0.9rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.signup-userinfo-name {
+    background-color: #fff;
+    padding: 0.9rem 0.9rem;
+    margin: 0.5rem 0;
+    width: 240px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.signup-userinfo-box {
+    border: 10px;
+    border-color: #000000aa;
+    width: 100%;
+
+}
+
+.signup-userinfo-name-box {
+    width: 500px;
+    display: flex;
+    justify-content: space-between
+}
+
+.signupbox {
+    width: 500px;
+    display: flex;
+    margin: auto;
+
+}
+
+.signup-head {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    font-weight:900
+}
+
+.signup-head-h2 {
+    font-weight:900;
+}
+
+.bighr {
+    height: 10px;
+    width: 330px;
+    background-color: rgb(0, 0, 0);
+    border: 0px;
+}
+
+.select-box {
+    width: 500px;
+}
+
+.select {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+
+.select input[type='radio'] {
+    display: none;
+}
+.select label {
+    display: block;
+    border-radius: 3px;
+    text-align: center;
+    height: -webkit-fill-available;
+    line-height: 45px;
+    width: 150px;
+    margin-bottom: 20px;
+}
+/* Checked */
+.select input[type=radio]:checked + label {
+    background: rgba(128, 128, 128, 1);
+    color: #fff;
+}
+
+/* Hover */
+.select label:hover {
+    color: #666;
+}
+
+/* Disabled */
+.select input[type=radio] + label {
+    background: #F9FAFC;
+    color: #666;
+}
+
+
+.select1 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+
+.select1 input[type='radio'] {
+    display: none;
+}
+.select1 label {
+    display: block;
+    border-radius: 3px;
+    text-align: center;
+    height: -webkit-fill-available;
+    line-height: 45px;
+    width: 240px;
+    margin-bottom: 70px;
+}
+/* Checked */
+.select1 input[type=radio]:checked + label {
+    background: rgba(128, 128, 128, 1);
+    color: #fff;
+}
+
+/* Hover */
+.select1 label:hover {
+    color: #666;
+}
+
+/* Disabled */
+.select1 input[type=radio] + label {
+    background: #F9FAFC;
+    color: #666;
+}
+
+
+.signup-btn {
+    width: 500px;
+    margin-bottom: 50px;
+    background-color: rgba(59, 146, 225, 1);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 600;
+    color:#F9FAFC;
+    border: 0px;
+    border-radius: 3px;
+}
+
+.login-user {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
 }
