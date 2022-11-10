@@ -36,7 +36,7 @@
       <ul class="nav">
         {% if request.user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link text-white" href="">
+          <a class="nav-link text-white" href="{% url 'accounts:detail' request.user.pk %}">
             {{ request.user }}님 환영합니다.</a>
         </li>
         <li class="nav-item">
