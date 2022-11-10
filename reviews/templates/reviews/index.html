@@ -1,10 +1,28 @@
 {% extends "base.html" %}
-
+{% load django_bootstrap5 %}
 
 {% block body %}
 
-
 리뷰페이지 인덱스(임시)
 
+<a class="btn btn-primary my-3 float-right" href="{% url 'reviews:create' %}">리뷰 쓰기</a>
+<div class="row">
+  {% for review in reviews %}
+  <div class="col-4 my-3">
+    <div class="card">
+      {% if review.img %}
+        <img src="{{ review.img.url }}" class="card-img-top" alt="...">
+      {% else %}
+        <img src="https://dummyimage.com/1200x960/000000/c4c4c4" class="card-img-top">
+      {% endif %}
+      <div class="card-body">
+        <h5><a href="{% url 'reviews:detail' review.pk %}">{{ review.title }}</a></h5>
+        <p class="text-muted">{{ review.user.username }}</p>
+        
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 
 {% endblock body %}

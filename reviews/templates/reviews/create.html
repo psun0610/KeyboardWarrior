@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block body %}
+<h1> 글쓰기 </h1>
+
+  <form action='' method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form review_form %}
+  <button type="submit" class="btnC btn-sb">리뷰 등록</button>
+
+
+{% endblock body %}
