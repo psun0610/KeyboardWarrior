@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>base</title>
+  <!-- JavaScript Bundle with Popper -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+
+<body>
+
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="">
+        <img src="" alt="logo" width="30" height="24">
+        <span class="nav-title text-white">키보드워리어</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <ul class="nav nav-pills">
+            <a class="dropdown-item text-white" href="{% url 'articles:main'  %}">키보드페이지</a>
+            <a class="dropdown-item text-white" href="{% url 'reviews:index'  %}">리뷰페이지</a>
+            <a class="dropdown-item text-white" href="{% url 'trade:index'  %}">중고거래페이지</a>
+          </ul>
+        </div>
+      </div>
+      <ul class="nav">
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'accounts:detail' request.user.pk %}">
+            {{ request.user }}님 환영합니다.</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'accounts:logout' %}">로그아웃</a>
+        </li>
+        {% else %}
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'accounts:login' %}">로그인</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'accounts:signup' %}">회원가입</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+  <!-- nav -->
+  <nav class="my-nav">
+    <img src="{% static 'images/logo.png' %}" class="nav-logo">
+    <ul>
+      <a href=""><li></li></a>
+    </ul>
+  </nav>
+  {% block body %}
+
+  {% endblock %}
+</body>
+
+</html>
