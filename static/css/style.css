@@ -9,7 +9,7 @@
   font-family: 'Pretendard-Regular';
 }
 
-
+/* base.html */
 a {
   color: black;
   text-decoration: none;
@@ -46,4 +46,9 @@ a {
 }
 .my-nav-item {
   padding: 0 7px;
+
+/* accounts:signup.html */
+.signup-user {
+    display: flex;
+    flex-direction: column;
 }
