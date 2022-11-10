@@ -25,6 +25,6 @@ class Reviews(models.Model):
 class Comment(models.Model):
     content = models.CharField(max_length=80)
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
-    article = models.ForeignKey(Keyboard, on_delete=models.CASCADE)
+    review = models.ForeignKey(Reviews, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
