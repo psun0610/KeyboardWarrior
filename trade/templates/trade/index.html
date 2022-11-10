@@ -3,11 +3,20 @@
 
 {% block body %}
 
+<a href="{% url 'trade:create' %}">중고거래글 작성</a>
 
 
 
 트레이드 인덱스(임시)
+<hr>
+{% for trade in trades %}
+
+<p>{%if trade.Trade_type == 1%} 팝니다 {%else%} 삽니다 {%endif%}</p>
+<a href="{% url 'trade:detail' trade.pk %}">
+  <p>{{trade.title}}
+</a> |<span style="font-size: 9px;">{{trade.user}}</span></p>
 
 
-
+<hr>
+{%endfor%}
 {% endblock body %}
