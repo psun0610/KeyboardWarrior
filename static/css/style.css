@@ -14,8 +14,11 @@ a {
   color: black;
   text-decoration: none;
 }
+.a-blue {
+  color: #3786FB;
+}
 .my-nav {
-  background-color: #ffffffaa;
+  background-color: #ffffffc7;
   height: 62px;
   position: sticky;
   top: 0;
@@ -52,8 +55,89 @@ a {
   padding: 0 7px;
 }
 
+/* articles/main */
+.articles-main1 {
+  height: 500px;
+  display: flex;
+  align-items: center;
+}
+.my-container {
+  max-width: 1420px;
+  margin: auto;
+}
+.articles-main1-div {
+  width: 45vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.articles-main1-div>h1 {
+  font-size: 30px;
+  padding-right: 50px;
+  margin-bottom: 10px;
+}
+.articles-main1-div>a {
+  padding-right: 50px;
+  font-size: 16px;
+}
+.articles-main1-img-div {
+  width: 65vw;
+  height: 100%;
+  background: no-repeat center center;
+  background-size: cover;
+}
+.articles-main2 {
+  height: 600px;
+  width: 100%;
+  background-color: rgb(19, 19, 19);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.articles-main2-div {
+  padding: 70px;
+}
+.articles-main2-div>h1 {
+  color: white;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+@keyframes keyboard-ani {
+	from {
+    opacity: 0;
+    transform: translate(0, 30%);
+  }
+	to {
+    opacity: 1;
+    transform: translate(0%);
+  }
+}
+.articles-main2-img{
+  width: 800px;
+  animation: keyboard-ani 1.3s;
+}
+.articles-main3 {
+  width: 100%;
+  text-align: center;
+}
+.articles-main3-div {
+  padding: 70px;
+}
+.articles-main3-div>h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.swiper-img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
 /* accounts:signup.html */
 .signup-user {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }

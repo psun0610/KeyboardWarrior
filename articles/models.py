@@ -10,7 +10,9 @@ array_ = [(1, "텐키리스")]
 
 sound_ = [(1, "저소음")]
 
-switch_ = [(1, "청축")]
+switch_ = [
+    (1, "청축"),
+]
 
 connect_ = [(1, "유선"), (2, "무선")]
 
@@ -28,12 +30,11 @@ class Keyboard(models.Model):
         upload_to="img/",
         blank=True,
     )
-    title = models.CharField(max_length=80)
-    content = models.TextField(max_length=500)
-    press = models.CharField(max_length=50)
-    weight = models.CharField(max_length=50)
-    array = models.CharField(max_length=50)
-    sound = models.CharField(max_length=50)
-    brand = models.CharField(max_length=50)
-    switch = models.CharField(max_length=50)
-    connect = models.IntegerField(choices=connect_)
+    name = models.CharField(max_length=80, blank=True)
+    brand = models.CharField(max_length=50, blank=True)
+    connect = models.CharField(max_length=50, blank=True)
+    array = models.CharField(max_length=50, blank=True)
+    switch = models.CharField(max_length=50, blank=True)
+    key_switch = models.CharField(max_length=50, blank=True)
+    press = models.CharField(max_length=50, blank=True)
+    weight = models.CharField(max_length=50, blank=True)
