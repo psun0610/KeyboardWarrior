@@ -1,9 +1,10 @@
 /* 폰트 */
 @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400, 700;
+  font-style: normal;
+
 }
 
 .kor-font {
@@ -17,7 +18,11 @@ a {
 }
 
 .my-nav {
-    background-color: #ffffffaa;
+
+  background-color: #ffffffaa;
+  height: 62px;
+  position: sticky;
+  top: 0;
 }
 
 .my-nav>div {
@@ -30,9 +35,11 @@ a {
 }
 
 .nav-logo-text {
-    display: flex;
-    font-size: 18px;
-    margin: 0 0 0 8px;
+
+  display: flex;
+  font-size: 18px;
+  margin: 0 0 0 8px;
+  font-weight: 700;
 }
 
 .my-nav-ul {
@@ -54,7 +61,7 @@ a {
 }
 
 .my-nav-item {
-    padding: 0 7px;
+  padding: 0 7px;
 }
 
 /* accounts:signup.html */
