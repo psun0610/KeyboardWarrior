@@ -1,7 +1,6 @@
 [
 	{
 		"model": "articles.Keyboard",
-		"pk": 1,
 		"fields": {
 			"name": "로지텍 G510s (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/492/248/img/2248492_1.jpg?shrink=500:500&_v=20210601093824",
@@ -17,7 +16,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 2,
 		"fields": {
 			"name": "로지텍 로지텍 G Pro X 교체용 스위치 (청축)",
 			"img": "https://img.danawa.com/prod_img/500000/543/542/img/15542543_1.jpg?shrink=500:500&_v=20211028112957",
@@ -25,7 +23,7 @@
 			"connect": "기타",
 			"weight": "기타",
 			"array": "기타",
-			"switch": "기타",
+			"switch": "청축",
 			"key_switch": "기타",
 			"press": "기타",
 			"kind": "풀배열"
@@ -33,7 +31,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 3,
 		"fields": {
 			"name": "로지텍 G13 (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/377/452/img/4452377_1.jpg?shrink=500:500&_v=20190812172100",
@@ -49,7 +46,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 4,
 		"fields": {
 			"name": "로지텍 G813 (정품) (클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/749/343/img/9343749_1.jpg?shrink=500:500&_v=20200219164015",
@@ -65,7 +61,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 5,
 		"fields": {
 			"name": "로지텍 오로라 컬렉션 G715 + G705 (정품) (리니어)",
 			"img": "https://img.danawa.com/prod_img/500000/042/017/img/18017042_1.jpg?shrink=500:500&_v=20221017182706",
@@ -73,7 +68,7 @@
 			"connect": "기계식",
 			"weight": "976g",
 			"array": "기타",
-			"switch": "GX기능매크로",
+			"switch": "GX",
 			"key_switch": "기타",
 			"press": "기타",
 			"kind": "풀배열"
@@ -81,12 +76,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 6,
 		"fields": {
 			"name": "로지텍 K810 (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/908/978/img/1978908_1.jpg?shrink=500:500&_v=20200227161421",
 			"brand": "로지텍",
-			"connect": "블루투스부가",
+			"connect": "블루투스",
 			"weight": "기타",
 			"array": "기타",
 			"switch": "기타",
@@ -97,7 +91,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 7,
 		"fields": {
 			"name": "로지텍 CRAFT + MX ERGO (정품)",
 			"img": "https://img.danawa.com/prod_img/500000/472/384/img/11384472_1.jpg?shrink=500:500&_v=20200526094531",
@@ -113,7 +106,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 8,
 		"fields": {
 			"name": "로지텍 G913 (정품) (넌클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/983/343/img/9343983_1.jpg?shrink=500:500&_v=20210930092422",
@@ -129,7 +121,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 9,
 		"fields": {
 			"name": "로지텍 CRAFT + MX Master 3 for Mac",
 			"img": "https://img.danawa.com/prod_img/500000/683/695/img/13695683_1.jpg?shrink=500:500&_v=20210324143648",
@@ -145,7 +136,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 10,
 		"fields": {
 			"name": "로지텍 CRAFT + MX VERTICAL (정품)",
 			"img": "https://img.danawa.com/prod_img/500000/436/384/img/11384436_1.jpg?shrink=500:500&_v=20200526094242",
@@ -161,12 +151,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 11,
 		"fields": {
 			"name": "로지텍 K800 (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/823/848/img/1848823_1.jpg?shrink=500:500&_v=20210601093824",
 			"brand": "로지텍",
-			"connect": "펜타그래프기능키멀티미디어",
+			"connect": "펜타그래프",
 			"weight": "기타",
 			"array": "기타",
 			"switch": "기타",
@@ -177,12 +166,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 12,
 		"fields": {
 			"name": "로지텍 ERGO K860 + MX ERGO",
 			"img": "https://img.danawa.com/prod_img/500000/535/717/img/13717535_1.jpg?shrink=500:500&_v=20210930092324",
 			"brand": "로지텍",
-			"connect": "펜타그래프부가",
+			"connect": "펜타그래프",
 			"weight": "1160g",
 			"array": "기타",
 			"switch": "기타",
@@ -193,7 +181,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 13,
 		"fields": {
 			"name": "로지텍 CRAFT + MX Anywhere 3 for Mac",
 			"img": "https://img.danawa.com/prod_img/500000/566/695/img/13695566_1.jpg?shrink=500:500&_v=20210324152215",
@@ -209,7 +196,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 14,
 		"fields": {
 			"name": "로지텍 G610 ORION BLUE (병행수입)",
 			"img": "https://img.danawa.com/prod_img/500000/057/610/img/6610057_1.jpg?shrink=500:500&_v=20190709104003",
@@ -218,14 +204,13 @@
 			"weight": "1230g",
 			"array": "기타",
 			"switch": "체리",
-			"key_switch": "청축기능매크로",
+			"key_switch": "청축",
 			"press": "기타",
 			"kind": "풀배열"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 15,
 		"fields": {
 			"name": "로지텍 ERGO K860 + MX Master 3 for Mac",
 			"img": "https://img.danawa.com/prod_img/500000/652/717/img/13717652_1.jpg?shrink=500:500&_v=20210930092309",
@@ -241,12 +226,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 16,
 		"fields": {
 			"name": "로지텍 ERGO K860 + MX VERTICAL",
 			"img": "https://img.danawa.com/prod_img/500000/385/717/img/13717385_1.jpg?shrink=500:500&_v=20210930092136",
 			"brand": "로지텍",
-			"connect": "펜타그래프부가",
+			"connect": "펜타그래프",
 			"weight": "1160g",
 			"array": "기타",
 			"switch": "기타",
@@ -257,12 +241,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 17,
 		"fields": {
 			"name": "로지텍 MX KEYS for Mac + MX ERGO",
 			"img": "https://img.danawa.com/prod_img/500000/429/694/img/13694429_1.jpg?shrink=500:500&_v=20210324141749",
 			"brand": "로지텍",
-			"connect": "펜타그래프외형금속하우징",
+			"connect": "펜타그래프",
 			"weight": "810g",
 			"array": "기타",
 			"switch": "기타",
@@ -273,7 +256,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 18,
 		"fields": {
 			"name": "로지텍 G913 TKL (비공식유통)",
 			"img": "https://img.danawa.com/prod_img/500000/126/005/img/15005126_1.jpg?shrink=500:500&_v=20210930092443",
@@ -289,7 +271,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 19,
 		"fields": {
 			"name": "로지텍 ILLUMINATED LIVING ROOM K830 (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/182/071/img/13071182_1.jpg?shrink=500:500&_v=20210106105619",
@@ -305,12 +286,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 20,
 		"fields": {
 			"name": "로지텍 MX KEYS for Mac + MX VERTICAL",
 			"img": "https://img.danawa.com/prod_img/500000/600/694/img/13694600_1.jpg?shrink=500:500&_v=20210324141955",
 			"brand": "로지텍",
-			"connect": "펜타그래프외형금속하우징",
+			"connect": "펜타그래프",
 			"weight": "810g",
 			"array": "기타",
 			"switch": "기타",
@@ -321,7 +301,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 21,
 		"fields": {
 			"name": "로지텍 ERGO K860 + MX Anywhere 3 for Mac",
 			"img": "https://img.danawa.com/prod_img/500000/748/717/img/13717748_1.jpg?shrink=500:500&_v=20210930092339",
@@ -337,12 +316,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 22,
 		"fields": {
 			"name": "로지텍 CRAFT + ERGO M575 (화이트)",
 			"img": "https://img.danawa.com/prod_img/500000/350/443/img/13443350_1.jpg?shrink=500:500&_v=20210224102542",
 			"brand": "로지텍",
-			"connect": "펜타그래프기능매크로",
+			"connect": "펜타그래프",
 			"weight": "960g",
 			"array": "108",
 			"switch": "기타",
@@ -353,7 +331,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 23,
 		"fields": {
 			"name": "로지텍 MX KEYS for Mac + MX Master3 for Mac",
 			"img": "https://img.danawa.com/prod_img/500000/507/694/img/13694507_1.jpg?shrink=500:500&_v=20210329103231",
@@ -369,7 +346,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 24,
 		"fields": {
 			"name": "로지텍 G512 GX 기계식 게이밍 키보드 (비공식유통)",
 			"img": "https://img.danawa.com/prod_img/500000/703/007/img/18007703_1.jpg?shrink=500:500&_v=20221017093830",
@@ -385,7 +361,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 25,
 		"fields": {
 			"name": "로지텍 G715 TKL 무선 오로라 컬렉션 (정품) (택타일)",
 			"img": "https://img.danawa.com/prod_img/500000/476/640/img/17640476_1.jpg?shrink=500:500&_v=20220906141027",
@@ -401,7 +376,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 26,
 		"fields": {
 			"name": "로지텍 MX Mechanical (정품) (갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/387/171/img/17171387_1.jpg?shrink=500:500&_v=20220609172017",
@@ -410,19 +384,18 @@
 			"weight": "828g",
 			"array": "110",
 			"switch": "카일",
-			"key_switch": "갈축기능멀티미디어",
+			"key_switch": "갈축",
 			"press": "기타",
 			"kind": "풀배열"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 27,
 		"fields": {
 			"name": "로지텍 MX KEYS (비공식유통)",
 			"img": "https://img.danawa.com/prod_img/500000/705/828/img/14828705_1.jpg?shrink=500:500&_v=20210723170821",
 			"brand": "로지텍",
-			"connect": "펜타그래프기능키멀티미디어",
+			"connect": "펜타그래프",
 			"weight": "810g",
 			"array": "108",
 			"switch": "기타",
@@ -433,7 +406,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 28,
 		"fields": {
 			"name": "로지텍 MX KEYS + MX MASTER 3 (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/045/574/img/13574045_1.jpg?shrink=500:500&_v=20210311152519",
@@ -449,7 +421,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 29,
 		"fields": {
 			"name": "로지텍 G310 ATLAS DAWN (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/603/615/img/7615603_1.jpg?shrink=500:500&_v=20190812172354",
@@ -465,7 +436,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 30,
 		"fields": {
 			"name": "로지텍 K780 + MX Master (정품) (블랙)",
 			"img": "https://img.danawa.com/prod_img/500000/491/850/img/4850491_1.jpg?shrink=500:500&_v=20200211172537",
@@ -481,7 +451,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 31,
 		"fields": {
 			"name": "로지텍 MX Mechanical Mini for Mac (정품) (갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/696/951/img/17951696_1.jpg?shrink=500:500&_v=20221006183754",
@@ -497,7 +466,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 32,
 		"fields": {
 			"name": "로지텍 MX Mechanical Mini (정품) (갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/784/170/img/17170784_1.jpg?shrink=500:500&_v=20220609172114",
@@ -513,7 +481,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 33,
 		"fields": {
 			"name": "로지텍 MX KEYS for Mac + MX Anywhere 3 for Mac",
 			"img": "https://img.danawa.com/prod_img/500000/459/694/img/13694459_1.jpg?shrink=500:500&_v=20210324141808",
@@ -529,7 +496,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 34,
 		"fields": {
 			"name": "로지텍 G913 TKL (정품) (블랙, 택타일)",
 			"img": "https://img.danawa.com/prod_img/500000/541/662/img/11662541_1.jpg?shrink=500:500&_v=20221024181155",
@@ -545,12 +511,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 35,
 		"fields": {
 			"name": "로지텍 CRAFT (정품)",
 			"img": "https://img.danawa.com/prod_img/500000/028/558/img/5558028_1.jpg?shrink=500:500&_v=20201023101348",
 			"brand": "로지텍",
-			"connect": "펜타그래프기능키멀티미디어",
+			"connect": "펜타그래프",
 			"weight": "960g",
 			"array": "108",
 			"switch": "기타",
@@ -561,7 +526,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 36,
 		"fields": {
 			"name": "로지텍 ERGO K860 + M575 ERGO (그래파이트)",
 			"img": "https://img.danawa.com/prod_img/500000/952/717/img/13717952_1.jpg?shrink=500:500&_v=20210930092111",
@@ -577,12 +541,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 37,
 		"fields": {
 			"name": "로지텍 ERGO K860 + M310T (실버)",
 			"img": "https://img.danawa.com/prod_img/500000/975/715/img/13715975_1.jpg?shrink=500:500&_v=20210930092225",
 			"brand": "로지텍",
-			"connect": "펜타그래프부가",
+			"connect": "펜타그래프",
 			"weight": "1160g",
 			"array": "기타",
 			"switch": "기타",
@@ -593,7 +556,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 38,
 		"fields": {
 			"name": "로지텍 G913 (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/634/590/img/17590634_1.jpg?shrink=500:500&_v=20220803131706",
@@ -609,7 +571,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 39,
 		"fields": {
 			"name": "로지텍 G713 TKL 오로라 컬렉션 (정품) (택타일)",
 			"img": "https://img.danawa.com/prod_img/500000/461/640/img/17640461_1.jpg?shrink=500:500&_v=20220816135343",
@@ -625,12 +586,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 40,
 		"fields": {
 			"name": "로지텍 ERGO K860 + M337 (레드)",
 			"img": "https://img.danawa.com/prod_img/500000/863/716/img/13716863_1.jpg?shrink=500:500&_v=20210930092254",
 			"brand": "로지텍",
-			"connect": "펜타그래프부가",
+			"connect": "펜타그래프",
 			"weight": "1160g",
 			"array": "기타",
 			"switch": "기타",
@@ -641,7 +601,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 41,
 		"fields": {
 			"name": "로지텍 ERGO K860 (정품)",
 			"img": "https://img.danawa.com/prod_img/500000/911/479/img/13479911_1.jpg?shrink=500:500&_v=20211228101146",
@@ -657,12 +616,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 42,
 		"fields": {
 			"name": "로지텍 ERGO K860 + M187 (블랙)",
 			"img": "https://img.danawa.com/prod_img/500000/774/715/img/13715774_1.jpg?shrink=500:500&_v=20210930092208",
 			"brand": "로지텍",
-			"connect": "펜타그래프부가",
+			"connect": "펜타그래프",
 			"weight": "1160g",
 			"array": "기타",
 			"switch": "기타",
@@ -673,7 +631,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 43,
 		"fields": {
 			"name": "로지텍 MX KEYS for Mac (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/369/667/img/13667369_1.jpg?shrink=500:500&_v=20210331131257",
@@ -689,12 +646,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 44,
 		"fields": {
 			"name": "로지텍 MX KEYS for Mac + M337 (레드)",
 			"img": "https://img.danawa.com/prod_img/500000/395/692/img/13692395_1.jpg?shrink=500:500&_v=20210324131110",
 			"brand": "로지텍",
-			"connect": "펜타그래프외형금속하우징",
+			"connect": "펜타그래프",
 			"weight": "810g",
 			"array": "기타",
 			"switch": "기타",
@@ -705,7 +661,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 45,
 		"fields": {
 			"name": "로지텍 G813 (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/926/238/img/17238926_1.jpg?shrink=500:500&_v=20220613150754",
@@ -721,7 +676,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 46,
 		"fields": {
 			"name": "로지텍 G512 CARBON RGB (정품) (청축)",
 			"img": "https://img.danawa.com/prod_img/500000/649/014/img/7014649_1.jpg?shrink=500:500&_v=20200203143319",
@@ -730,14 +684,13 @@
 			"weight": "962g",
 			"array": "104",
 			"switch": "GX",
-			"key_switch": "청축기능매크로",
+			"key_switch": "청축",
 			"press": "기타",
 			"kind": "풀배열"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 47,
 		"fields": {
 			"name": "로지텍 G PRO K/DA Mechanical Gaming Keyboard (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/729/201/img/14201729_1.jpg?shrink=500:500&_v=20210517125949",
@@ -753,12 +706,11 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 48,
 		"fields": {
 			"name": "로지텍 CRAFT (병행수입)",
 			"img": "https://img.danawa.com/prod_img/500000/343/494/img/7494343_1.jpg?shrink=500:500&_v=20190812161917",
 			"brand": "로지텍",
-			"connect": "펜타그래프기능키멀티미디어",
+			"connect": "펜타그래프",
 			"weight": "960g",
 			"array": "108",
 			"switch": "기타",
@@ -769,7 +721,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 49,
 		"fields": {
 			"name": "로지텍 G910 ORION SPECTRUM RGB (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/801/708/img/7708801_1.jpg?shrink=500:500&_v=20190709104003",
@@ -785,7 +736,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 50,
 		"fields": {
 			"name": "로지텍 G910 ORION SPARK RGB (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/236/706/img/7706236_1.jpg?shrink=500:500&_v=20210601093824",
@@ -801,7 +751,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 51,
 		"fields": {
 			"name": "로지텍 G PRO X Mechanical Gaming Keyboard (비공식유통)",
 			"img": "https://img.danawa.com/prod_img/500000/644/452/img/16452644_1.jpg?shrink=500:500&_v=20220222124642",
@@ -817,7 +766,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 52,
 		"fields": {
 			"name": "로지텍 G PRO K/DA Mechanical Gaming Keyboard (정품)",
 			"img": "https://img.danawa.com/prod_img/500000/880/792/img/13792880_1.jpg?shrink=500:500&_v=20220114164525",
@@ -833,7 +781,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 53,
 		"fields": {
 			"name": "로지텍 MX Mechanical (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/112/164/img/17164112_1.jpg?shrink=500:500&_v=20220531165045",
@@ -841,7 +788,7 @@
 			"connect": "기계식",
 			"weight": "828g",
 			"array": "110",
-			"switch": "카일기능멀티미디어",
+			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
 			"kind": "풀배열"
