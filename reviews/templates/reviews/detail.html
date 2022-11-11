@@ -2,178 +2,198 @@
 {% load django_bootstrap5 %}
 
 {% block body %}
-<h1> 리뷰 </h1>
+  <h5 class="hits">조회수 :
+    {{ review.hits }}
+  </h5>
+  <h1>
+    리뷰
+  </h1>
 
-<li>{{ review.user }}</li>
-<li>{{ review.created_at }}</li>
+  <li>{{ review.user }}</li>
+  <li>{{ review.created_at }}</li>
 
-<li>평점: {{ review.grade }}</li>
-<hr>
-<h1 class='text-center'>{{ review.title }}</h1>
-<p>{{ review.content }}<p>
-{% if review.img %}
-<div class='text-center'>
-  <img src="{{ review.img.url }}" alt="{{ review.img }}">
-</div>
-{% endif %}
-<div class="heart d-flex align-items-end">
-  {% if request.user.is_authenticated %}
-    {% if request.user not in review.like_users.all %}
-      <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart"></i>
-    {% else %}
-      <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart-fill"></i>
-    {% endif %}
-  {% endif %}
-  <h6 class="likes text-muted">|
-    {{ review.like_users.count }}명이 이 글을 좋아해요</h6>
-</div>
-{% if request.user == review.user %}
-<div class='d-grid gap-2 my-4'>
-  <a class='btn btn-outline-success btn-sm' href="{% url 'reviews:update' review.pk %}">수정하기</a>
-  <a class='btn btn-outline-danger btn-sm' href="{% url 'reviews:delete' review.pk %}">삭제하기</a>
-</div>
-{% endif %}
-
-<div>
-  <h3 class='text-center'>댓글 목록</h3>
-</div>
-<div>
-  {% if request.user.is_authenticated %}
-      <form id="comment-form" data-review-id="{{ review.pk }}" action="{%url 'reviews:comment_create' review.pk %}" method="POST">
-        {% csrf_token %}
-        {% bootstrap_form comment_form %}
-        <input class="btn btn-success" type="submit" value="제출">
-      </form>
-  {% endif %}
-</div>
-<hr>
-<div id="comments">
-  {% for comment in comments %}
+  <li>평점:
+    {{ review.grade }}</li>
   <hr>
-  <p>{{comment.user}} | {{comment.content}} | {{ comment.created_at }}</p>
-  <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-{{ comment.pk }}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="{{ comment.pk }}">삭제</button>
-  {% endfor %}
-</div>
+  <h1 class='text-center'>{{ review.title }}</h1>
+  <p>{{ review.content }}
+    <p>
+      {% if review.img %}
+        <div class='text-center'>
+          <img src="{{ review.img.url }}" alt="{{ review.img }}">
+        </div>
+      {% endif %}
+      <div class="heart d-flex align-items-end">
+        {% if request.user.is_authenticated %}
+          {% if request.user not in review.like_users.all %}
+            <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart"></i>
+          {% else %}
+            <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart-fill"></i>
+          {% endif %}
+        {% endif %}
+        <h6 class="likes text-muted">|
+          {{ review.like_users.count }}명이 이 글을 좋아해요</h6>
+      </div>
+      {% if request.user == review.user %}
+        <div class='d-grid gap-2 my-4'>
+          <a class='btn btn-outline-success btn-sm' href="{% url 'reviews:update' review.pk %}">수정하기</a>
+          <a class='btn btn-outline-danger btn-sm' href="{% url 'reviews:delete' review.pk %}">삭제하기</a>
+        </div>
+      {% endif %}
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script>
-    //좋아요 비동기
-    const likeBtn = document.querySelector('#like-btn')
-    likeBtn.addEventListener('click', function (event) {
-      console.log(event.target.dataset)
-      axios({method: 'get', url: `/reviews/${event.target.dataset.likeId}/like/`}).then(response => {
-        console.log(response.data)
-        if (response.data.isLike === true) {
-          event.target.classList.add('bi-heart-fill')
-          event.target.classList.remove('bi-heart')
-        } else {
-          event.target.classList.add('bi-heart')
-          event.target.classList.remove('bi-heart-fill')
-        }
-        const likeCount = document.querySelector('.likes')
-        likeCount.innerHTML = `<h6 class="likes m-0 text-muted ">| ${response.data.likeCount}명이 이 글을 좋아해요</h6>`
-      })
-    })
-  </script>
-<script>
-  //댓글 생성 비동기
-  const commentForm = document.querySelector('#comment-form')
-  const csrftoken = document
-    .querySelector('[name=csrfmiddlewaretoken]')
-    .value
+      <div>
+        <h3 class='text-center'>댓글 목록</h3>
+      </div>
+      <div>
+        {% if request.user.is_authenticated %}
+          <form id="comment-form" data-review-id="{{ review.pk }}" action="{%url 'reviews:comment_create' review.pk %}" method="POST">
+            {% csrf_token %}
+            {% bootstrap_form comment_form %}
+            <input class="btn btn-success" type="submit" value="제출">
+          </form>
+        {% endif %}
+      </div>
+      <hr>
+      <div id="comments">
+        {% for comment in comments %}
+          <hr>
+          <p>{{comment.user}}
+            |
+            {{comment.content}}
+            |
+            {{ comment.created_at }}</p>
+          <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-{{ comment.pk }}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="{{ comment.pk }}">삭제</button>
+        {% endfor %}
+      </div>
 
-    commentForm
-    .addEventListener('submit', function (event) {
-      event.preventDefault();
-      axios({
-        method: 'post',
-        url: `/reviews/${event.target.dataset.reviewId}/comment_create/`,
-        headers: {
-          'X-CSRFToken': csrftoken
-        },
-        data: new FormData(commentForm)
-      })
-        .then(response => {
-          console.log(response)
-          const comments = document.querySelector('#comments')
-          comments.textContent = "";
-          const hr = document.createElement('hr')
-          const comment_data = response.data.comment_data
-          const user = response
-            .data
-            .user
-            for (let i = 0; i < comment_data.length; i++) {
-              const review_pk = response
-                .data
-                .review_pk
-                console
-                .log(comment_data[i].id, user)
-              if (user === comment_data[i].id) {
-                comments.insertAdjacentHTML('beforeend', `
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script>
+        //좋아요 비동기
+        const likeBtn = document.querySelector('#like-btn')
+        likeBtn.addEventListener('click', function (event) {
+          console.log(event.target.dataset)
+          axios({method: 'get', url: `/reviews/${event.target.dataset.likeId}/like/`}).then(response => {
+            console.log(response.data)
+            if (response.data.isLike === true) {
+              event
+                .target
+                .classList
+                .add('bi-heart-fill')
+              event
+                .target
+                .classList
+                .remove('bi-heart')
+            } else {
+              event
+                .target
+                .classList
+                .add('bi-heart')
+              event
+                .target
+                .classList
+                .remove('bi-heart-fill')
+            }
+            const likeCount = document.querySelector('.likes')
+            likeCount.innerHTML = `<h6 class="likes m-0 text-muted ">| ${response.data.likeCount}명이 이 글을 좋아해요</h6>`
+          })
+        })
+      </script>
+      <script>
+        //댓글 생성 비동기
+        const commentForm = document.querySelector('#comment-form')
+        const csrftoken = document
+          .querySelector('[name=csrfmiddlewaretoken]')
+          .value
+
+          commentForm
+          .addEventListener('submit', function (event) {
+            event.preventDefault();
+            axios({
+              method: 'post',
+              url: `/reviews/${event.target.dataset.reviewId}/comment_create/`,
+              headers: {
+                'X-CSRFToken': csrftoken
+              },
+              data: new FormData(commentForm)
+            })
+              .then(response => {
+                console.log(response)
+                const comments = document.querySelector('#comments')
+                comments.textContent = "";
+                const hr = document.createElement('hr')
+                const comment_data = response.data.comment_data
+                const user = response
+                  .data
+                  .user
+                  for (let i = 0; i < comment_data.length; i++) {
+                    const review_pk = response
+                      .data
+                      .review_pk
+                      console
+                      .log(comment_data[i].id, user)
+                    if (user === comment_data[i].id) {
+                      comments.insertAdjacentHTML('beforeend', `
                   <div id="comments">
                     <hr>
-                    <p>${comment_data[i].userName} | ${comment_data[i].content} | ${ comment_data[i].created_at }</p>
+                    <p>${comment_data[i].userName} | ${comment_data[i].content} | ${comment_data[i].created_at}</p>
                     <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button>
                   </div>
                 `);
-              } else {
-                comments.insertAdjacentHTML('beforeend', `
+                    } else {
+                      comments.insertAdjacentHTML('beforeend', `
                   <div id="comments">
                     <hr>
-                    <p>${comment_data[i].userName} | ${comment_data[i].content} | ${ comment_data[i].created_at }</p>
+                    <p>${comment_data[i].userName} | ${comment_data[i].content} | ${comment_data[i].created_at}</p>
                   </div>
                 `);
-              }
+                    }
+                  }
+                  commentForm
+                  .reset()
+              })
+              .catch(console.log(1))
+            })
+      </script>
+      <script>
+        // 댓글 삭제 비동기
+        const delete_comment = (e) => {
+          const comment_id = document
+            .querySelector(`#${e.id}`)
+            .id;
+          axios({
+            method: 'post',
+            url: `/reviews/${event.target.dataset.reviewdelId}/comment_delete/${event.target.dataset.commentdelId}/delete/`,
+            headers: {
+              'X-CSRFToken': csrftoken
             }
-            commentForm
-            .reset()
-        })
-        .catch(console.log(1))
-      })
-</script>
-<script>
-  // 댓글 삭제 비동기
-  const delete_comment = (e) => {
-    const comment_id = document
-      .querySelector(`#${e.id}`)
-      .id;
-    axios({
-      method: 'post',
-      url: `/reviews/${event.target.dataset.reviewdelId}/comment_delete/${event.target.dataset.commentdelId}/delete/`,
-      headers: {
-        'X-CSRFToken': csrftoken
-      }
-    }).then(response => {
-      console.log(response)
-      const comments = document.querySelector('#comments')
-      comments.textContent = "";
-      const hr = document.createElement('hr')
-      const comment_data = response.data.comment_data
-      const user = response.data.user
-      for (let i = 0; i < comment_data.length; i++) {
-        const review_pk = response.data.review_pk
-        if (user === comment_data[i].id) {
-          comments.insertAdjacentHTML('beforeend', `
+          }).then(response => {
+            console.log(response)
+            const comments = document.querySelector('#comments')
+            comments.textContent = "";
+            const hr = document.createElement('hr')
+            const comment_data = response.data.comment_data
+            const user = response.data.user
+            for (let i = 0; i < comment_data.length; i++) {
+              const review_pk = response.data.review_pk
+              if (user === comment_data[i].id) {
+                comments.insertAdjacentHTML('beforeend', `
           <div id="comments">
             <hr>
-            <p>${comment_data[i].userName} | ${comment_data[i].content} | ${ comment_data[i].created_at }</p>
+            <p>${comment_data[i].userName} | ${comment_data[i].content} | ${comment_data[i].created_at}</p>
             <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button>
           </div>
               `);
-        } else {
-          comments.insertAdjacentHTML('beforeend', `
+              } else {
+                comments.insertAdjacentHTML('beforeend', `
           <div id="comments">
             <hr>
-            <p>${comment_data[i].userName} | ${comment_data[i].content} | ${ comment_data[i].created_at }</p>
+            <p>${comment_data[i].userName} | ${comment_data[i].content} | ${comment_data[i].created_at}</p>
           </div>
               `);
+              }
+            }
+          })
         }
-      }
-    })
-  }
-</script>
+      </script>
 
-
-{% endblock body %}
-
-
+    {% endblock body %}
