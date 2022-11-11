@@ -6,7 +6,7 @@ from KW.settings import AUTH_USER_MODEL
 grade_ = [(1, "★"), (2, "★★"), (3, "★★★"), (4, "★★★★"), (5, "★★★★★")]
 
 
-class Reviews(models.Model):
+class Review(models.Model):
     
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=80)
@@ -25,6 +25,6 @@ class Reviews(models.Model):
 class Comment(models.Model):
     content = models.CharField(max_length=80)
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
-    review = models.ForeignKey(Reviews, on_delete=models.CASCADE)
+    review = models.ForeignKey(Review, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
