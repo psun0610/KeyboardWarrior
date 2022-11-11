@@ -8,16 +8,88 @@
 
 
 
-  <div>
-    <h1>중고거래글 작성</h1>
-  </div>
-  <div>
-    <form action="" method="POST">
-      {% csrf_token %}
-      {% bootstrap_form form %}
-      {% bootstrap_button button_type="submit" content="작성완료" button_class="btn btn-dark mt-4" %}
-    </form>
+<div>
+  <h1>중고거래글 작성</h1>
+</div>
+<div>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% bootstrap_button button_type="submit" content="작성완료" button_class="btn btn-dark mt-4" %}
+  </form>
+
 </div>
 
+<form id="search_from" action="{% url 'trade:keyboard_search' %}" class="d-flex" role="search">
+  <input id="search_input" class="form-control me-2" name="search" type="search" placeholder="Search"
+    aria-label="Search">
+</form>
+<div class="search-off search-div " id="search_box">
+  <p>데이터 들어갈 공간 </p>
+  {% if keyboard_list %}
+  {% for i in keyboard_list%}
+  {{i.title}}
+  {%endfor%}
+  {%endif%}
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  const search_input = document.querySelector('#search_input');
+  const search_box = document.querySelector('#search_box');
+  const input = document.createElement('input');
+
+  search_input.addEventListener('click', function (event) {
+    console.log("검색창클릭");
+    search_box.classList.remove('search-off');
+    search_box.classList.add('search-on');
+  })
+  window.onload = function () {
+    search_input.onkeyup = function () {
+      console.log("1")
+      axios({
+        method: 'get',
+        url: `/trade/keyboard_search/?search=${search_input.value}`,
+        data: new FormData(search_from)
+      })
+        .then(response => {
+          const search_box = document.querySelector('#search_box');
+          const keyboard_list = response.data.keyboard_list;
+          search_box.textContent = "";
+          for (let i = 0; i < keyboard_list.length; i++) {
+            search_box.insertAdjacentHTML('beforeend', `
+          <hr>
+          <p>${keyboard_list[i].title}</p>`);
+          }
+        })
+    }
+  }
+
+
+
+
+
+
+</script>
+
+<style>
+  .search-off {
+    display: none;
+
+  }
+
+  .search-on {
+    display: block;
+
+  }
+
+  .search-div {
+    width: 600px;
+    height: 1500px;
+    background-color: bisque;
+  }
+</style>
 
 {% endblock body %}
