@@ -23,12 +23,12 @@
             <input class='star' type="radio" name="grade" value="2" id="rate4"><label  class='starlabel' for="rate4">⭐</label>
             <input class='star' type="radio" name="grade" value="1" id="rate5"><label  class='starlabel' for="rate5">⭐</label>
           </div>
-          <input data-testid="input-box" name="content"
-                  placeholder="내용" type="text" required="" class="review-userinfo" value="">
-          <label for="reviewimg">
-            <button  class="imgbtn">이미지 업로드</button>
-          </label>
+          <textarea name="content"
+                  placeholder="내용" type="text" required="" class="review-userinfo" value=""></textarea>
           <input type="file" name='img' id='reviewimg' title="Button fade blue/green"style='display: none;'></input>
+          <label for="reviewimg">
+            <div  class="imgbtn">이미지 업로드</div>
+          </label>
         </div>
         <div>
           <button class='review-btn' type="submit">KeyBoard Warrior에 경험 공유하기</button>
