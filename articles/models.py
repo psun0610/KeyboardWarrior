@@ -4,12 +4,9 @@ from django.contrib.auth import get_user_model
 
 # Create your models here.
 
-press_ = [(1, "가벼움"),
-    (2, "무거움"),
-    (3, "상관없음"),
-]
+press_ = [(1, "가벼움")]
 
-array_ = [(1, "87")]
+array_ = [(1, "텐키리스")]
 
 sound_ = [(1, "저소음")]
 
