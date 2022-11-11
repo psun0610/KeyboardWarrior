@@ -61,12 +61,18 @@ WebDriverWait(driver, 30).until(
 
 
 # LG전자
+# driver.find_element(
+#     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(182)"
+# ).click()
+
+# time.sleep(1)
+
+#콕스
 driver.find_element(
-    By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(182)"
+    By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(151)"
 ).click()
 
 time.sleep(1)
-
 
 # 체리
 # driver.find_element(
@@ -113,7 +119,7 @@ a = []
 for _ in range(len(product_li_tags)):
     a.append([])
 
-for sub_url in range(4):
+for sub_url in range(83):
     driver.get(url_list[sub_url])
 
     time.sleep(1)
@@ -147,7 +153,7 @@ for sub_url in range(4):
 print(a)
 print("------------------------------------------")
 result_list = []
-for i in range(4):
+for i in range(83):
     img, brand, connect, weight, array, switch, press, kind, key_switch = (
         "기타",
         "기타",
