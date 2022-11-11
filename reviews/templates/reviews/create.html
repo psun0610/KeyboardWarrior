@@ -2,12 +2,36 @@
 {% load django_bootstrap5 %}
 
 {% block body %}
-<h1> 글쓰기 </h1>
-
-  <form action='' method='POST' enctype="multipart/form-data">
-    {% csrf_token %}
-    {% bootstrap_form review_form %}
-  <button type="submit" class="btnC btn-sb">리뷰 등록</button>
-
-
+{% comment %} 제목 1 {% endcomment %}
+  <div class='reviewcreate-head'>
+    <h2 class='signup-head-h2'>KeyBoard Warrior에 당신의 경험을 공유해주세요</h2>
+    <hr class='bighr'>
+    <p>이 키보드의 후기를 들려주세요</p>
+  </div>
+  <div class='reviewcreatebox'>
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% comment %} 리뷰작성 폼 1 {% endcomment %}
+      <div class='reviewcreate-user'>
+        <div class='reviewcreate-userinfo-box'>
+          <input data-testid="input-box" name="title"
+                  placeholder="제목" type="text" required="" class="reviewcreate-userinfo" value="">
+          <div class='fieldset'>
+            <input class='star' type="radio" name="grade" value="5" id="rate1"><label  class='starlabel' for="rate1">⭐</label>
+            <input class='star' type="radio" name="grade" value="4" id="rate2"><label  class='starlabel' for="rate2">⭐</label>
+            <input class='star' type="radio" name="grade" value="3" id="rate3"><label  class='starlabel' for="rate3">⭐</label>
+            <input class='star' type="radio" name="grade" value="2" id="rate4"><label  class='starlabel' for="rate4">⭐</label>
+            <input class='star' type="radio" name="grade" value="1" id="rate5"><label  class='starlabel' for="rate5">⭐</label>
+          </div>
+          <input data-testid="input-box" name="content"
+                  placeholder="내용" type="text" required="" class="review-userinfo" value="">
+          <label for="reviewimg">
+            <button  class="imgbtn">이미지 업로드</button>
+          </label>
+          <input type="file" name='img' id='reviewimg' title="Button fade blue/green"style='display: none;'></input>
+        </div>
+        <div>
+          <button class='review-btn' type="submit">KeyBoard Warrior에 경험 공유하기</button>
+        </div>
+      </div>
 {% endblock body %}
