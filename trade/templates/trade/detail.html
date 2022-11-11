@@ -23,12 +23,17 @@
 <hr>
 <div id="comment_box">
     {% for comment in comments %}
-    <hr>
-    <p>{{comment.content}} <span> | {{comment.user}}</span><span> {% if request.user == comment.user %}
-            <a href="{% url 'trade:comment_delete'  trade.pk  comment.pk %}">삭제</a>
-            {%endif%}</span> </p>
-
+    <div>
+        <hr>
+        <p>{{comment.content}} <span> | {{comment.user}}</span></p>
+        {% if request.user == comment.user %}
+        <button id="delete_btn_{{comment.pk}}" onclick="delete_btn()" data-trade-id="{{trade.pk}}"
+            data-comment-id="{{comment.pk}}"> 삭제하기
+        </button>
+    </div>
+    {% endif %}
     {% endfor %}
+
 </div>
 
 
@@ -47,16 +52,25 @@
         })
             .then(response => {
                 const comment_box = document.querySelector('#comment_box')
-                const p = document.createElement('p')
-                const hr = document.createElement('hr')
+                const user = response.data.user
                 comment_box.textContent = "";
                 const comment_list = response.data.comment_list
                 for (let i = 0; i < comment_list.length; i++) {
-                    console.log(comment_list[i])
-                    comment_box.insertAdjacentHTML('beforeend', `
+                    if (user === comment_list[i].pk) {
+                        console.log(comment_list[i])
+                        comment_box.insertAdjacentHTML('beforeend', `
+                    <hr>
+                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>
+                    <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"> 삭제하기 </button>
+                    </div>`);
+                        console.log("댓글 전송 ")
+                    } else {
+                        console.log(comment_list[i])
+                        comment_box.insertAdjacentHTML('beforeend', `
                     <hr>
                     <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>`);
-                    console.log("댓글 전송 ")
+                    }
+
                 }
                 commentFrom.reset()
                 console.log("코멘트 전송")
@@ -64,4 +78,51 @@
     })
 
 </script>
+
+<!-- 비동기 댓글 삭제  -->
+<script>
+    const delete_btn = (e) => {
+        const delete_data = document.querySelector(`#delete_btn_${event.target.dataset.commentId}`)
+        console.log("댓글삭제시행")
+        event.preventDefault();
+        axios({
+            method: 'get',
+            url: `/trade/${event.target.dataset.tradeId}/${event.target.dataset.commentId}/comment_delete/`,
+        })
+            .then(response => {
+
+                const comment_box = document.querySelector('#comment_box')
+                const user = response.data.user
+                const p = document.createElement('p')
+                const hr = document.createElement('hr')
+                comment_box.textContent = "";
+                const comment_list = response.data.comment_list
+                for (let i = 0; i < comment_list.length; i++) {
+                    if (user === comment_list[i].pk) {
+                        console.log(comment_list[i])
+                        comment_box.insertAdjacentHTML('beforeend', `
+                    <hr>
+                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>
+                    <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"> 삭제하기 </button>
+                    </div>`);
+                        console.log(" ")
+                    } else {
+                        console.log(comment_list[i])
+                        comment_box.insertAdjacentHTML('beforeend', `
+                    <hr>
+                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>`);
+                    }
+
+                }
+
+                console.log("")
+            })
+    }
+
+
+</script>
+
+
+
+
 {% endblock body %}
