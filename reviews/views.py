@@ -54,14 +54,13 @@ def detail(request, pk):
 
     cookievalue = request.COOKIES.get("hitreview", "")
 
-    if f"{id}" not in cookievalue:
-        cookievalue += f"{id}"
+    if f"{pk}" not in cookievalue:
+        cookievalue += f"{pk}"
         response.set_cookie(
             "hitreview", value=cookievalue, max_age=max_age, httponly=True
         )
         reviews.hits += 1
         reviews.save()
-
     return response
 
 # 리뷰 수정

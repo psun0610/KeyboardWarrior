@@ -1,147 +1,151 @@
 {% extends "base.html" %}
 {% load static %}
 {% block body %}
-<article class="articles-main1">
-  <div class="articles-main1-div">
-    <h1>나에게 맞는 키보드를 찾아보세요</h1>
-    <a href="#recommend" class="a-blue">바로 알아보기></a>
+  <article class="articles-main1">
+    <div class="articles-main1-div">
+      <h1>나에게 맞는 키보드를 찾아보세요</h1>
+      <a href="#recommend" class="a-blue">바로 알아보기></a>
+    </div>
+    <div class="articles-main1-img-div" style="background-image: url('{% static 'images/main.jpg' %}');"></div>
+  </article>
+
+  <article class="articles-main2">
+    <div class="articles-main2-div text-center">
+      <h1>키보드의 새 주인이 되어주세요!</h1>
+      <a href="{% url 'trade:index'  %}" class="a-blue">바로 알아보기></a>
+    </div>
+    <img src="{% static 'images/main_keyboard.png' %}" class="articles-main2-img">
+  </article>
+
+  <!-- <article class="articles-main3"> <div class="articles-main3-div"> <h1>키보드에 대해 궁금한 것이 많은가요?</h1> <a href="#recommend" class="a-blue">바로 알아보기></a> </div> </article> -->
+
+  <!-- 캐러셀 -->
+  <div class="index-tag-img-div swiper" id="slide">
+    <div class="swiper-wrapper">
+      <img src="{% static 'images/main_keyboard1.jpg' %}" class="swiper-img swiper-slide">
+      <img src="{% static 'images/main_keyboard2.jpg' %}" class="swiper-img swiper-slide">
+      <img src="{% static 'images/main_keyboard3.jpg' %}" class="swiper-img swiper-slide">
+    </div>
+    <div class="swiper-pagination"></div>
   </div>
-  <div class="articles-main1-img-div" style="background-image: url('{% static 'images/main.jpg' %}');"></div>
-</article>
 
-<article class="articles-main2">
-  <div class="articles-main2-div text-center">
-    <h1>키보드의 새 주인이 되어주세요!</h1>
-    <a href="{% url 'trade:index'  %}" class="a-blue">바로 알아보기></a>
-  </div>
-  <img src="{% static 'images/main_keyboard.png' %}" class="articles-main2-img">
-</article>
+  <article id="recommend">
+    <h1>키보드 워리어가 키보드를 추천해드려요</h1>
+    <h2>▼</h2>
+    <!-- here -->
+    <div>
+      <section class="recommend-box">
+        <div class="recommend-box-img">
+          <img src="{% static 'images/7670167_1.webp' %}" class="sa sa-right">
+        </div>
+        <div class="recommend-box-comment sa sa-left" data-sa-delay="350">
+          <h2>레오폴드 FC980C 영문 화이트 (30g, 균등)</h2>
+          <div>레오폴드/ 무접점(정전용량)/ Topre/ 1100g/ 98키</div>
+          <a href="" class="a-blue">바로 알아보기></a>
+        </div>
+      </section>
+    </div>
 
-<!-- <article class="articles-main3">
-  <div class="articles-main3-div">
-    <h1>키보드에 대해 궁금한 것이 많은가요?</h1>
-    <a href="#recommend" class="a-blue">바로 알아보기></a>
-  </div>
-</article> -->
+    <!-- here -->
+    <div>
+      <section class="recommend-box">
+        <div class="recommend-box-comment sa sa-right" data-sa-delay="350">
+          <h2>레오폴드 FC980C 영문 화이트 (30g, 균등)</h2>
+          <div>레오폴드/ 무접점(정전용량)/ Topre/ 1100g/ 98키</div>
+          <a href="" class="a-blue">바로 알아보기></a>
+        </div>
+        <div class="recommend-box-img">
+          <img src="https://img.danawa.com/prod_img/500000/190/542/img/17542190_1.jpg?shrink=500:500&_v=20220727090932" class="sa sa-left">
+        </div>
+      </section>
+    </div>
+    <!-- here -->
+    <div>
+      <section class="recommend-box">
+        <div class="recommend-box-img">
+          <img src="https://img.danawa.com/prod_img/500000/245/006/img/10006245_1.jpg?shrink=500:500&_v=20191126170249" class="sa sa-right">
+        </div>
+        <div class="recommend-box-comment sa sa-left" data-sa-delay="350">
+          <h2>레오폴드 FC980C 영문 화이트 (30g, 균등)</h2>
+          <div>레오폴드/ 무접점(정전용량)/ Topre/ 1100g/ 98키</div>
+          <a href="" class="a-blue">바로 알아보기></a>
+        </div>
+      </section>
+    </div>
+  </article>
 
-<!-- 캐러셀 -->
-<div class="index-tag-img-div swiper" id="slide">
-  <div class="swiper-wrapper">
-    <img src="{% static 'images/main_keyboard1.jpg' %}" class="swiper-img swiper-slide">
-    <img src="{% static 'images/main_keyboard2.jpg' %}" class="swiper-img swiper-slide">
-    <img src="{% static 'images/main_keyboard3.jpg' %}" class="swiper-img swiper-slide">
-  </div>
-  <div class="swiper-pagination"></div>
-</div>
+  <!-- 푸터 -->
+  <footer>
+    <div>Copyright © 2022 하승찬, 문재윤, 박선영, 유순일, 지현식 All rights reserved.</div>
+  </footer>
 
-<article id="recommend">
-  <h1>키보드 워리어가 키보드를 추천해드려요</h1>
-  <h2>▼</h2>
-  <!-- here -->
-  <div>
-    <section class="recommend-box">
-      <div class="recommend-box-img">
-        <img src="{% static 'images/7670167_1.webp' %}" class="sa sa-right">
-      </div>
-      <div class="recommend-box-comment sa sa-left" data-sa-delay="350">
-        <h2>레오폴드 FC980C 영문 화이트 (30g, 균등)</h2>
-        <div>레오폴드/ 무접점(정전용량)/ Topre/ 1100g/ 98키</div>
-        <a href="" class="a-blue">바로 알아보기></a>
-      </div>
-    </section>
-  </div>
-  
-  <!-- here -->
-  <div>
-    <section class="recommend-box">
-      <div class="recommend-box-comment sa sa-right"  data-sa-delay="350">
-        <h2>레오폴드 FC980C 영문 화이트 (30g, 균등)</h2>
-        <div>레오폴드/ 무접점(정전용량)/ Topre/ 1100g/ 98키</div>
-        <a href="" class="a-blue">바로 알아보기></a>
-      </div>
-      <div class="recommend-box-img">
-        <img src="https://img.danawa.com/prod_img/500000/190/542/img/17542190_1.jpg?shrink=500:500&_v=20220727090932" class="sa sa-left">
-      </div>
-    </section>
-  </div>
-      <!-- here -->
-  <div>
-    <section class="recommend-box">
-      <div class="recommend-box-img">
-        <img src="https://img.danawa.com/prod_img/500000/245/006/img/10006245_1.jpg?shrink=500:500&_v=20191126170249" class="sa sa-right">
-      </div>
-      <div class="recommend-box-comment sa sa-left"  data-sa-delay="350">
-        <h2>레오폴드 FC980C 영문 화이트 (30g, 균등)</h2>
-        <div>레오폴드/ 무접점(정전용량)/ Topre/ 1100g/ 98키</div>
-        <a href="" class="a-blue">바로 알아보기></a>
-      </div>
-    </section>
-  </div>
-</article>
+  <!-- 스와이퍼 캐러셀 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('#slide', {
+      auto_play: true,
+      slidesPerView: 1, // 동시에 보여줄 슬라이드 갯수
+      spaceBetween: 0, // 슬라이드간 간격
+      slidesPerGroup: 1, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
 
-<!-- 푸터 -->
-<footer>
-  <div>Copyright © 2022 하승찬, 문재윤, 박선영, 유순일, 지현식 All rights reserved.</div>
-</footer>
+      // 그룹수가 맞지 않을 경우 빈칸으로 메우기
+      // 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
+      loopFillGroupWithBlank: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      loop: true, // 무한 반복
+      observer: true,
+      observeParents: true,
+      pagination: { // 페이징
+        el: '.swiper-pagination',
+        clickable: true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+      }
+    });
+  </script>
+  <!-- 스크롤하면 나타나는 애니메이션 -->
+  <script>
+    const saDefaultMargin = 300;
+    let saTriggerMargin = 0;
+    let saTriggerHeight = 0;
+    const saElementList = document.querySelectorAll('.sa');
 
-<!-- 스와이퍼 캐러셀 -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script>
-  new Swiper('#slide', {
-  auto_play : true,
-  slidesPerView : 1, // 동시에 보여줄 슬라이드 갯수
-  spaceBetween : 0, // 슬라이드간 간격
-  slidesPerGroup : 1, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
+    const saFunc = function () {
+      for (const element of saElementList) {
+        if (!element.classList.contains('show')) {
+          if (element.dataset.saMargin) {
+            saTriggerMargin = parseInt(element.dataset.saMargin);
+          } else {
+            saTriggerMargin = saDefaultMargin;
+          }
 
-  // 그룹수가 맞지 않을 경우 빈칸으로 메우기
-  // 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
-  loopFillGroupWithBlank : true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  loop : true, // 무한 반복
-  observer : true,
-  observeParents : true,
-  pagination : { // 페이징
-    el : '.swiper-pagination',
-    clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
-  },
-});
-</script>
-<!-- 스크롤하면 나타나는 애니메이션 -->
-<script>
-  const saDefaultMargin = 300;
-  let saTriggerMargin = 0;
-  let saTriggerHeight = 0;
-  const saElementList = document.querySelectorAll('.sa');
+          if (element.dataset.saTrigger) {
+            saTriggerHeight = document
+              .querySelector(element.dataset.saTrigger)
+              .getBoundingClientRect()
+              .top + saTriggerMargin;
+          } else {
+            saTriggerHeight = element
+              .getBoundingClientRect()
+              .top + saTriggerMargin;
+          }
 
-  const saFunc = function() {
-    for (const element of saElementList) {
-      if (!element.classList.contains('show')) {
-        if (element.dataset.saMargin) {
-          saTriggerMargin = parseInt(element.dataset.saMargin);
-        } else {
-          saTriggerMargin = saDefaultMargin;
-        }
-
-        if (element.dataset.saTrigger) {
-          saTriggerHeight = document.querySelector(element.dataset.saTrigger).getBoundingClientRect().top + saTriggerMargin;
-        } else {
-          saTriggerHeight = element.getBoundingClientRect().top + saTriggerMargin;
-        }
-
-        if (window.innerHeight > saTriggerHeight) {
-          let delay = (element.dataset.saDelay) ? element.dataset.saDelay : 0;
-          setTimeout(function() {
-            element.classList.add('show');
-          }, delay);
+          if (window.innerHeight > saTriggerHeight) {
+            let delay = (element.dataset.saDelay)
+              ? element.dataset.saDelay
+              : 0;
+            setTimeout(function () {
+              element
+                .classList
+                .add('show');
+            }, delay);
+          }
         }
       }
     }
-  }
 
-  window.addEventListener('load', saFunc);
-  window.addEventListener('scroll', saFunc);
-</script>
+    window.addEventListener('load', saFunc);
+    window.addEventListener('scroll', saFunc);
+  </script>
 {% endblock body %}
