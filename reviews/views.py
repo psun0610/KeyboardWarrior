@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST, require_safe
 from django.http import JsonResponse
 from accounts.models import User
-
+from datetime import date, datetime, timedelta
 # Create your views here.
 
 
@@ -44,7 +44,25 @@ def detail(request, pk):
         'comments': comments,
         'comment_form': comment_form,
     }
-    return render(request, "reviews/detail.html", context)
+    response = render(request, "reviews/detail.html", context)
+
+    expire_date, now = datetime.now(), datetime.now()
+    expire_date += timedelta(days=1)
+    expire_date = expire_date.replace(hour=0, minute=0, second=0, microsecond=0)
+    expire_date -= now
+    max_age = expire_date.total_seconds()
+
+    cookievalue = request.COOKIES.get("hitreview", "")
+
+    if f"{id}" not in cookievalue:
+        cookievalue += f"{id}"
+        response.set_cookie(
+            "hitreview", value=cookievalue, max_age=max_age, httponly=True
+        )
+        reviews.hits += 1
+        reviews.save()
+
+    return response
 
 # 리뷰 수정
 @login_required
@@ -132,3 +150,20 @@ def comment_delete(request, review_pk, comment_pk):
         "user": user.pk,
     }
     return JsonResponse(context)
+
+#좋아요
+def like(request, pk):
+    review = Review.objects.get(pk=pk)
+    if request.user not in review.like_users.all():
+        review.like_users.add(request.user)
+        is_like = True
+    else:
+        review.like_users.remove(request.user)
+        is_like = False
+
+    data = {
+        "isLike": is_like,
+        "likeCount": review.like_users.count(),
+    }
+
+    return JsonResponse(data)

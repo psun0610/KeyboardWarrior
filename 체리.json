@@ -227,7 +227,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "CHERRY Stream 무선 키보드 (해외구매)",
+			"name": "CHERRY Stream 무선 키보드 ",
 			"img": "https://img.danawa.com/prod_img/500000/802/647/img/17647802_1.jpg?shrink=500:500&_v=20220811160711",
 			"brand": "CHERRY",
 			"connect": "펜타그래프",
@@ -272,7 +272,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "CHERRY Stream TKL 키보드 (해외구매)",
+			"name": "CHERRY Stream TKL 키보드 ",
 			"img": "https://img.danawa.com/prod_img/500000/823/647/img/17647823_1.jpg?shrink=500:500&_v=20220811160326",
 			"brand": "CHERRY",
 			"connect": "펜타그래프",
@@ -302,7 +302,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "CHERRY Stream 키보드 (해외구매)",
+			"name": "CHERRY Stream 키보드 ",
 			"img": "https://img.danawa.com/prod_img/500000/772/647/img/17647772_1.jpg?shrink=500:500&_v=20220811160155",
 			"brand": "CHERRY",
 			"connect": "펜타그래프",

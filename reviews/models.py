@@ -15,15 +15,15 @@ class Review(models.Model):
         upload_to="img/",
         blank=True,
     )
-    review_like = models.ManyToManyField(
-        AUTH_USER_MODEL, symmetrical=False, related_name="like_review"
-    )
+    like_users = models.ManyToManyField(AUTH_USER_MODEL, related_name='like_review')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    hits = models.PositiveIntegerField(default=0, verbose_name="조회수")
+    
 class Comment(models.Model):
     content = models.CharField(max_length=80)
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
     review = models.ForeignKey(Review, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
