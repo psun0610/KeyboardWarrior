@@ -5,3 +5,7 @@ from django.shortcuts import render, redirect
 
 def main(request):
     return render(request, "articles/main.html")
+
+
+def all(request):
+    return render(request, "articles/all.html")

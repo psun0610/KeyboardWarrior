@@ -111,15 +111,15 @@ def comment_create(request, pk):
 def comment_delete(request, review_pk, comment_pk):
     comment = Comment.objects.get(pk=comment_pk)
     review_pk = Review.objects.get(pk=review_pk)
-    user = request.user.pk
     comment.delete()
     temp = Comment.objects.filter(review_id=review_pk).order_by("-pk")
+    user = request.user
     comment_data = []
     for t in temp:
         t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
         comment_data.append(
             {
-                "id": t.user_id,
+                "id": t.user.pk,
                 "userName": t.user.username,
                 "content": t.content,
                 "commentPk": t.pk,
@@ -128,7 +128,7 @@ def comment_delete(request, review_pk, comment_pk):
         )
     context = {
         "comment_data": comment_data,
-        "review_pk": review_pk,
-        "user": user,
+        "review_pk": review_pk.pk,
+        "user": user.pk,
     }
     return JsonResponse(context)
