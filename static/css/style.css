@@ -13,68 +13,73 @@
 
 /* base.html */
 a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 .a-blue {
-  color: #3786FB;
+color: #3786FB;
+}
+.blue-tag {
+  font-size: 1.28vh;
 }
 
 .my-nav {
-
-  background-color: #ffffffc7;
-  height: 62px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+background-color: #ffffffc7;
+height: 4.2vh;
+position: sticky;
+top: 0;
+z-index: 10;
 }
 
 .my-nav>div {
-    max-width: 1420px;
-    margin: 0 auto;
+  max-width: 1420px;
+  margin: 0 auto;
+  height: 100%;
 }
 
 .nav-logo {
-    width: 60px;
+  width: 3.9vh;
 }
 
 .nav-logo-text {
-    display: flex;
-    font-size: 18px;
-    margin: 0 0 0 8px;
-    font-weight: 700;
+  display: flex;
+  font-size: 1.24vh;
+  margin: 0 0 0 0.9vh;
+  font-weight: 700;
 }
 
 .my-nav-ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  height: 100%;
 }
 
 .my-nav-div {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 .my-nav-div>div {
-    display: flex;
-    margin: 0 30px;
+  display: flex;
+  margin: 0 1.1719vw;
 }
 
 .my-nav-item {
-    padding: 0 7px;
+  padding: 0 0.5vh;
+  font-size: 1.2vh;
 }
 
 /* articles/main */
 .articles-main1 {
-  height: 500px;
+  height: calc(50vh - 1.25vw);
   display: flex;
   align-items: center;
 }
 .my-container {
-  max-width: 1420px;
+  max-width: 55.4688vw;
   margin: auto;
 }
 .articles-main1-div {
@@ -86,13 +91,12 @@ a {
   justify-content: center;
 }
 .articles-main1-div>h1 {
-  font-size: 30px;
-  padding-right: 50px;
-  margin-bottom: 10px;
+  font-size: 2.3vh;
+  padding-right: 1.9531vh;
+  margin-bottom: 0.3906vh;
 }
 .articles-main1-div>a {
-  padding-right: 50px;
-  font-size: 16px;
+  padding-right: 1.9531vw;
 }
 .articles-main1-img-div {
   width: 65vw;
@@ -101,34 +105,35 @@ a {
   background-size: cover;
 }
 .articles-main2 {
-  height: 600px;
+  height: calc(50vh - 1.25vw);
   width: 100%;
   background-color: rgb(19, 19, 19);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 .articles-main2-div {
-  padding: 70px;
+  padding: 2.7344vw;
 }
 .articles-main2-div>h1 {
   color: white;
-  font-size: 30px;
-  margin-bottom: 10px;
+  font-size: 2.3vh;
+  margin-bottom: 0.3906vh;
 }
 @keyframes keyboard-ani {
-	from {
+  from {
     opacity: 0;
     transform: translate(0, 30%);
   }
-	to {
+  to {
     opacity: 1;
     transform: translate(0%);
   }
 }
 .articles-main2-img{
-  width: 800px;
+  width: 50vh;
   animation: keyboard-ani 1.3s;
 }
 .articles-main3 {
@@ -136,61 +141,65 @@ a {
   text-align: center;
 }
 .articles-main3-div {
-  padding: 70px;
+  padding: 2.7344vw;
 }
 .articles-main3-div>h1 {
-  font-size: 30px;
-  margin-bottom: 10px;
+  font-size: 2.3vh;
+  margin-bottom: 0.3906vh;
 }
 .swiper-img {
   width: 100%;
-  height: 500px;
+  height: 38.5vh;
   object-fit: cover;
 }
 
 #recommend {
   width: 100%;
-  background-color: rgb(19, 19, 19);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 #recommend>h1 {
-  font-size: 30px;
+  font-size: 2.1vh;
   text-align: center;
-  padding-top: 170px;
-  padding-bottom: 40px;
+  padding-top: 8vh;
+  padding-bottom: 2vh;
+  margin-bottom: 0.3906vh;
 }
 #recommend>h2 {
-  font-size: 30px;
+  font-size: 1.5vh;
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 1.5625vw;
 }
 .recommend-box {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
+  width: 46.8750vw;
   margin: auto;
+  display: flex;
 }
 #recommend>div {
-  padding: 120px 0;
+  padding: 1.5vw 0;
+}
+.recommend-box-img {
+  width: 50%
 }
 .recommend-box-img>img {
-  width: 550px;
-  height: 400px;
+  width: 100%;
+  height: 20vw;
   object-fit: cover;
 }
 .recommend-box-comment {
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 2vw;
 }
 .recommend-box-comment>h2 {
-  font-size: 30px;
+  font-size: 1.1719vw;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 0.3906vw;
 }
 .recommend-box-comment>div {
-  font-size: 17px;
-  margin-bottom: 10px;
+  font-size: 0.6641vw;
+  margin-bottom: 0.3906vw;
 }
 .sa {
   opacity: 0;
@@ -198,11 +207,11 @@ a {
 }
 /* 왼쪽에서 오른쪽으로 페이드 인 */
 .sa-right {
-  transform: translate(-100px, 0);
+  transform: translate(-3.9063vw, 0);
 }
 /* 오른쪽에서 왼쪽으로 페이드 인 */
 .sa-left {
-  transform: translate(100px, 0);
+  transform: translate(3.9063vw, 0);
 }
 .sa.show {
   opacity: 1;
@@ -211,12 +220,76 @@ a {
 
 footer {
   background-color: #e8e8e8;
-  padding: 10px;
+  padding: 0.3906vw;
 }
 footer>div {
-  font-size: 16px;
+  font-size: 0.5469vw;
   text-align: center;
 }
+
+@keyframes nav-start {
+0% {
+  margin: 0.9766vw 0 0.5078vw 0;
+}
+50% {
+  margin: 1.0938vw 0 0.5078vw 0;
+}
+100% {
+  margin: 0.9766vw 0 0.5078vw 0;
+}
+}
+
+/* nav close */
+.all-nav-container {
+  position: relative;
+  width: 100%;
+  height: 2.9297vw;
+}
+.all-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(19, 19, 19);
+  width: 100%;
+  color: white;
+}
+.all-nav-close {
+  display: flex;
+  justify-content: center;
+}
+.all-nav-close>svg {
+  color: white;
+  width: 0.9766vw;
+  height: 0.9766vw;
+  margin: 0.9766vw 0 0.5078vw 0;
+  animation: nav-start 0.35s 2 alternate;
+}
+
+/* nav open */
+.all-nav-open {
+  padding: 1.9531vw 0;
+}
+.all-nav-open>svg {
+  display: none;
+}
+.all-nav-open>table {
+  width: 55.4688vw;
+  margin: auto;
+}
+.all-nav-open>table tr {
+
+}
+.all-nav-open>table th {
+  font-size: 0.6641vw;
+  padding: 0.4688vw 1.5625vw;
+  width: 20%;
+}
+
+/* 컨테이너 사이즈 */
+@media all and (min-width:820px) and (max-width:1480px) {
+}
+
+/* ========================================================================================== */
 /* accounts:signup.html */
 .signup-user {
     display: flex;
@@ -244,7 +317,7 @@ footer>div {
 
 .signup-userinfo-box {
     border: 10px;
-    border-color: #000000aa;
+    border-color: rgb(19, 19, 19);
     width: 100%;
 
 }
@@ -481,7 +554,7 @@ footer>div {
 
 .reviewcreate-userinfo-box {
     border: 10px;
-    border-color: #000000aa;
+    border-color: rgb(19, 19, 19);
     width: 100%;
 }
 
