@@ -1,7 +1,7 @@
 from django.db import models
 from KW.settings import AUTH_USER_MODEL
 from django.contrib.auth import get_user_model
-
+from django.utils import timezone
 # Create your models here.
 
 
@@ -16,3 +16,7 @@ class Keyboard(models.Model):
     press = models.CharField(max_length=50, blank=True)
     weight = models.CharField(max_length=50, blank=True)
     kind = models.CharField(max_length=50, blank=True)
+
+class Visit(models.Model):
+    visit_date = models.CharField(max_length=30)
+    visit_count = models.IntegerField(default=0)

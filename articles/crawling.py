@@ -20,14 +20,14 @@ options = ChromeOptions()
 options.add_argument("headless")
 
 driver = Chrome()
-# driver.get("https://prod.danawa.com/list/?cate=112782&15main_11_02")
+driver.get("https://prod.danawa.com/list/?cate=112782&15main_11_02")
 
-driver.get("https://prod.danawa.com/list/?cate=112758&15main_11_02")
 # 없는것을 만들어야할때.
 # 제조사별 검색 (XPATH 경로 찾는 방법은 이미지 참조)
 # 옵션 더보기
 
 WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, '//*[@id="dlMaker_simple"]/dd/div[2]/button[1]'))).click()
+
 # 로지텍
 # driver.find_element(
 #     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(28)"
@@ -36,10 +36,10 @@ WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, '//*[@
 
 
 # 앱코
-# driver.find_element(
-#     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(68)"
-# ).click()
-# time.sleep(2)
+driver.find_element(
+    By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(68)"
+).click()
+time.sleep(2)
 
 # 엠스톤
 # driver.find_element(
@@ -104,7 +104,7 @@ a = []
 for _ in range(len(product_li_tags)):
     a.append([])
 
-for sub_url in range(83):
+for sub_url in range(90):
     driver.get(url_list[sub_url])
 
     time.sleep(1)
@@ -240,4 +240,4 @@ for i in range(83):
         }
     result_list.append(result)
     print("------")
-toJson(result_list)
+# toJson(result_list)
