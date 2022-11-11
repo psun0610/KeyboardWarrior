@@ -7,11 +7,7 @@ from django.contrib.auth import get_user_model
 
 class Keyboard(models.Model):
     name = models.CharField(max_length=80, blank=True)
-    img = models.ImageField(
-        default="img/default_image.jpeg",
-        upload_to="img/",
-        blank=True,
-    )
+    img = models.CharField(max_length=300, blank=True)
     brand = models.CharField(max_length=50, blank=True)
     connect = models.CharField(max_length=50, blank=True)
     array = models.CharField(max_length=50, blank=True)

@@ -2,7 +2,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G510s (해외구매)",
+			"name": "로지텍 G510s",
 			"img": "https://img.danawa.com/prod_img/500000/492/248/img/2248492_1.jpg?shrink=500:500&_v=20210601093824",
 			"brand": "로지텍",
 			"connect": "기타",
@@ -17,7 +17,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 로지텍 G Pro X 교체용 스위치 (청축)",
+			"name": "로지텍 G Pro X 교체용 스위치 (청축)",
 			"img": "https://img.danawa.com/prod_img/500000/543/542/img/15542543_1.jpg?shrink=500:500&_v=20211028112957",
 			"brand": "로지텍",
 			"connect": "기타",
@@ -32,7 +32,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G13 (해외구매)",
+			"name": "로지텍 G13",
 			"img": "https://img.danawa.com/prod_img/500000/377/452/img/4452377_1.jpg?shrink=500:500&_v=20190812172100",
 			"brand": "로지텍",
 			"connect": "유선",
@@ -47,7 +47,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G813 (정품) (클릭)",
+			"name": "로지텍 G813 (클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/749/343/img/9343749_1.jpg?shrink=500:500&_v=20200219164015",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -62,7 +62,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 오로라 컬렉션 G715 + G705 (정품) (리니어)",
+			"name": "로지텍 오로라 컬렉션 G715 + G705 (리니어)",
 			"img": "https://img.danawa.com/prod_img/500000/042/017/img/18017042_1.jpg?shrink=500:500&_v=20221017182706",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -77,7 +77,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 K810 (해외구매)",
+			"name": "로지텍 K810",
 			"img": "https://img.danawa.com/prod_img/500000/908/978/img/1978908_1.jpg?shrink=500:500&_v=20200227161421",
 			"brand": "로지텍",
 			"connect": "블루투스",
@@ -92,7 +92,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 CRAFT + MX ERGO (정품)",
+			"name": "로지텍 CRAFT + MX ERGO",
 			"img": "https://img.danawa.com/prod_img/500000/472/384/img/11384472_1.jpg?shrink=500:500&_v=20200526094531",
 			"brand": "로지텍",
 			"connect": "펜타그래프",
@@ -107,7 +107,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G913 (정품) (넌클릭)",
+			"name": "로지텍 G913 (넌클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/983/343/img/9343983_1.jpg?shrink=500:500&_v=20210930092422",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -137,7 +137,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 CRAFT + MX VERTICAL (정품)",
+			"name": "로지텍 CRAFT + MX VERTICAL",
 			"img": "https://img.danawa.com/prod_img/500000/436/384/img/11384436_1.jpg?shrink=500:500&_v=20200526094242",
 			"brand": "로지텍",
 			"connect": "펜타그래프",
@@ -152,7 +152,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 K800 (해외구매)",
+			"name": "로지텍 K800",
 			"img": "https://img.danawa.com/prod_img/500000/823/848/img/1848823_1.jpg?shrink=500:500&_v=20210601093824",
 			"brand": "로지텍",
 			"connect": "펜타그래프",
@@ -197,7 +197,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G610 ORION BLUE (병행수입)",
+			"name": "로지텍 G610 ORION BLUE",
 			"img": "https://img.danawa.com/prod_img/500000/057/610/img/6610057_1.jpg?shrink=500:500&_v=20190709104003",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -257,7 +257,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G913 TKL (비공식유통)",
+			"name": "로지텍 G913 TKL ",
 			"img": "https://img.danawa.com/prod_img/500000/126/005/img/15005126_1.jpg?shrink=500:500&_v=20210930092443",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -272,7 +272,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 ILLUMINATED LIVING ROOM K830 (해외구매)",
+			"name": "로지텍 ILLUMINATED LIVING ROOM K830",
 			"img": "https://img.danawa.com/prod_img/500000/182/071/img/13071182_1.jpg?shrink=500:500&_v=20210106105619",
 			"brand": "로지텍",
 			"connect": "무선+블루투스",
@@ -347,7 +347,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G512 GX 기계식 게이밍 키보드 (비공식유통)",
+			"name": "로지텍 G512 GX 기계식 게이밍 키보드 ",
 			"img": "https://img.danawa.com/prod_img/500000/703/007/img/18007703_1.jpg?shrink=500:500&_v=20221017093830",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -362,7 +362,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G715 TKL 무선 오로라 컬렉션 (정품) (택타일)",
+			"name": "로지텍 G715 TKL 무선 오로라 컬렉션 (택타일)",
 			"img": "https://img.danawa.com/prod_img/500000/476/640/img/17640476_1.jpg?shrink=500:500&_v=20220906141027",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -377,7 +377,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 MX Mechanical (정품) (갈축)",
+			"name": "로지텍 MX Mechanical (갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/387/171/img/17171387_1.jpg?shrink=500:500&_v=20220609172017",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -392,7 +392,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 MX KEYS (비공식유통)",
+			"name": "로지텍 MX KEYS ",
 			"img": "https://img.danawa.com/prod_img/500000/705/828/img/14828705_1.jpg?shrink=500:500&_v=20210723170821",
 			"brand": "로지텍",
 			"connect": "펜타그래프",
@@ -407,7 +407,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 MX KEYS + MX MASTER 3 (해외구매)",
+			"name": "로지텍 MX KEYS + MX MASTER 3",
 			"img": "https://img.danawa.com/prod_img/500000/045/574/img/13574045_1.jpg?shrink=500:500&_v=20210311152519",
 			"brand": "로지텍",
 			"connect": "레이저",
@@ -422,7 +422,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G310 ATLAS DAWN (해외구매)",
+			"name": "로지텍 G310 ATLAS DAWN",
 			"img": "https://img.danawa.com/prod_img/500000/603/615/img/7615603_1.jpg?shrink=500:500&_v=20190812172354",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -437,7 +437,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 K780 + MX Master (정품) (블랙)",
+			"name": "로지텍 K780 + MX Master (블랙)",
 			"img": "https://img.danawa.com/prod_img/500000/491/850/img/4850491_1.jpg?shrink=500:500&_v=20200211172537",
 			"brand": "로지텍",
 			"connect": "레이저",
@@ -452,7 +452,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 MX Mechanical Mini for Mac (정품) (갈축)",
+			"name": "로지텍 MX Mechanical Mini for Mac (갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/696/951/img/17951696_1.jpg?shrink=500:500&_v=20221006183754",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -467,7 +467,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 MX Mechanical Mini (정품) (갈축)",
+			"name": "로지텍 MX Mechanical Mini (갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/784/170/img/17170784_1.jpg?shrink=500:500&_v=20220609172114",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -497,7 +497,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G913 TKL (정품) (블랙, 택타일)",
+			"name": "로지텍 G913 TKL (블랙, 택타일)",
 			"img": "https://img.danawa.com/prod_img/500000/541/662/img/11662541_1.jpg?shrink=500:500&_v=20221024181155",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -512,7 +512,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 CRAFT (정품)",
+			"name": "로지텍 CRAFT",
 			"img": "https://img.danawa.com/prod_img/500000/028/558/img/5558028_1.jpg?shrink=500:500&_v=20201023101348",
 			"brand": "로지텍",
 			"connect": "펜타그래프",
@@ -557,7 +557,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G913 (해외구매)",
+			"name": "로지텍 G913",
 			"img": "https://img.danawa.com/prod_img/500000/634/590/img/17590634_1.jpg?shrink=500:500&_v=20220803131706",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -572,7 +572,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G713 TKL 오로라 컬렉션 (정품) (택타일)",
+			"name": "로지텍 G713 TKL 오로라 컬렉션 (택타일)",
 			"img": "https://img.danawa.com/prod_img/500000/461/640/img/17640461_1.jpg?shrink=500:500&_v=20220816135343",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -602,7 +602,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 ERGO K860 (정품)",
+			"name": "로지텍 ERGO K860",
 			"img": "https://img.danawa.com/prod_img/500000/911/479/img/13479911_1.jpg?shrink=500:500&_v=20211228101146",
 			"brand": "로지텍",
 			"connect": "펜타그래프",
@@ -632,7 +632,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 MX KEYS for Mac (해외구매)",
+			"name": "로지텍 MX KEYS for Mac",
 			"img": "https://img.danawa.com/prod_img/500000/369/667/img/13667369_1.jpg?shrink=500:500&_v=20210331131257",
 			"brand": "로지텍",
 			"connect": "펜타그래프",
@@ -662,7 +662,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G813 (해외구매)",
+			"name": "로지텍 G813",
 			"img": "https://img.danawa.com/prod_img/500000/926/238/img/17238926_1.jpg?shrink=500:500&_v=20220613150754",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -677,7 +677,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G512 CARBON RGB (정품) (청축)",
+			"name": "로지텍 G512 CARBON RGB (청축)",
 			"img": "https://img.danawa.com/prod_img/500000/649/014/img/7014649_1.jpg?shrink=500:500&_v=20200203143319",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -692,7 +692,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G PRO K/DA Mechanical Gaming Keyboard (해외구매)",
+			"name": "로지텍 G PRO K/DA Mechanical Gaming Keyboard",
 			"img": "https://img.danawa.com/prod_img/500000/729/201/img/14201729_1.jpg?shrink=500:500&_v=20210517125949",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -707,7 +707,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 CRAFT (병행수입)",
+			"name": "로지텍 CRAFT ",
 			"img": "https://img.danawa.com/prod_img/500000/343/494/img/7494343_1.jpg?shrink=500:500&_v=20190812161917",
 			"brand": "로지텍",
 			"connect": "펜타그래프",
@@ -722,7 +722,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G910 ORION SPECTRUM RGB (해외구매)",
+			"name": "로지텍 G910 ORION SPECTRUM RGB",
 			"img": "https://img.danawa.com/prod_img/500000/801/708/img/7708801_1.jpg?shrink=500:500&_v=20190709104003",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -737,7 +737,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G910 ORION SPARK RGB (해외구매)",
+			"name": "로지텍 G910 ORION SPARK RGB",
 			"img": "https://img.danawa.com/prod_img/500000/236/706/img/7706236_1.jpg?shrink=500:500&_v=20210601093824",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -752,7 +752,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G PRO X Mechanical Gaming Keyboard (비공식유통)",
+			"name": "로지텍 G PRO X Mechanical Gaming Keyboard ",
 			"img": "https://img.danawa.com/prod_img/500000/644/452/img/16452644_1.jpg?shrink=500:500&_v=20220222124642",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -767,7 +767,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G PRO K/DA Mechanical Gaming Keyboard (정품)",
+			"name": "로지텍 G PRO K/DA Mechanical Gaming Keyboard",
 			"img": "https://img.danawa.com/prod_img/500000/880/792/img/13792880_1.jpg?shrink=500:500&_v=20220114164525",
 			"brand": "로지텍",
 			"connect": "기계식",
@@ -782,7 +782,7 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 MX Mechanical (해외구매)",
+			"name": "로지텍 MX Mechanical",
 			"img": "https://img.danawa.com/prod_img/500000/112/164/img/17164112_1.jpg?shrink=500:500&_v=20220531165045",
 			"brand": "로지텍",
 			"connect": "기계식",

@@ -6,6 +6,9 @@ from KW.settings import AUTH_USER_MODEL
 tradeType = [(1, "팝니다"), (2, "삽니다")]
 
 
+# 가격추가 # 키보드 FK넣기
+
+
 class Trades(models.Model):
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
     Trade_type = models.IntegerField(choices=tradeType)

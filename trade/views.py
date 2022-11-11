@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import CreateTrade, CreateComment
 from .models import Trades, Trade_Comment
 from django.http import JsonResponse
+from articles.models import Keyboard
 
 # Create your views here.
 
@@ -129,14 +130,17 @@ def delete_comment(request, trade_pk, comment_pk):
 def keyboard_search(request):
     form = CreateTrade()
     search_data = request.GET.get("search", "")
-    keyboard = Trades.objects.filter(title__icontains=search_data)
-    print(1)
+    keyboard = Keyboard.objects.filter(name__icontains=search_data).all()
+
     keyboard_list = []
     print(keyboard)
     for k in keyboard:
         keyboard_list.append(
             {
-                "title": k.title,
+                "name": k.name,
+                "img": k.img,
+                "brand": k.brand,
+                "id": k.pk,
             }
         )
     context = {
