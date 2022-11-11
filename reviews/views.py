@@ -105,3 +105,30 @@ def comment_create(request, pk):
         "user": user,
     }
     return JsonResponse(context)
+
+# 댓글 삭제
+@login_required
+def comment_delete(request, review_pk, comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+    review_pk = Review.objects.get(pk=review_pk)
+    user = request.user.pk
+    comment.delete()
+    temp = Comment.objects.filter(review_id=review_pk).order_by("-pk")
+    comment_data = []
+    for t in temp:
+        t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
+        comment_data.append(
+            {
+                "id": t.user_id,
+                "userName": t.user.username,
+                "content": t.content,
+                "commentPk": t.pk,
+                "created_at": t.created_at,
+            }
+        )
+    context = {
+        "comment_data": comment_data,
+        "review_pk": review_pk,
+        "user": user,
+    }
+    return JsonResponse(context)
