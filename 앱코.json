@@ -1,7 +1,6 @@
 [
 	{
 		"model": "articles.Keyboard",
-		"pk": 1,
 		"fields": {
 			"name": "앱코 AR96 축교환 CNC 풀 알루미늄 키보드 (다크그레이, 갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/943/452/img/6452943_1.jpg?shrink=500:500&_v=20211217132740",
@@ -17,7 +16,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 2,
 		"fields": {
 			"name": "앱코 AR87 CNC 풀 알루미늄 체리키보드 (다크그레이, 청축)",
 			"img": "https://img.danawa.com/prod_img/500000/510/583/img/6583510_1.jpg?shrink=500:500&_v=20191202144037",
@@ -33,7 +31,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 3,
 		"fields": {
 			"name": "앱코 HACKER ADK01 BT 블루투스 5.0 카일박스축 게이밍 기계식 키보드 (레드그레이, 갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/025/130/img/12130025_1.jpg?shrink=500:500&_v=20201119090813",
@@ -49,7 +46,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 4,
 		"fields": {
 			"name": "앱코 KN10C PBT 무접점 키보드 (그레이, 30g)",
 			"img": "https://img.danawa.com/prod_img/500000/799/229/img/15229799_1.jpg?shrink=500:500&_v=20210913112802",
@@ -65,7 +61,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 5,
 		"fields": {
 			"name": "앱코 KM140 유선 키보드 마우스 오피스 세트 (화이트)",
 			"img": "https://img.danawa.com/prod_img/500000/295/859/img/11859295_1.jpg?shrink=500:500&_v=20200721180148",
@@ -81,7 +76,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 6,
 		"fields": {
 			"name": "앱코 KN10 BT 블루투스 무접점 게이밍 키보드 화이트 (55g)",
 			"img": "https://img.danawa.com/prod_img/500000/577/376/img/12376577_1.jpg?shrink=500:500&_v=20210930110319",
@@ -97,7 +91,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 7,
 		"fields": {
 			"name": "앱코 HACKER K990 V3 스카이문 LED 완전방수 무접점 (45g)",
 			"img": "https://img.danawa.com/prod_img/500000/871/242/img/9242871_1.jpg?shrink=500:500&_v=20200107105606",
@@ -113,7 +106,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 8,
 		"fields": {
 			"name": "앱코 HACKER K997P PBT 투톤 RGB 완전방수 무접점 키보드 (화이트, 45g)",
 			"img": "https://img.danawa.com/prod_img/500000/004/067/img/12067004_1.jpg?shrink=500:500&_v=20201210140117",
@@ -129,7 +121,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 9,
 		"fields": {
 			"name": "앱코 HACKER K995P V3 RGB PBT 무접점 (블랙, 45g)",
 			"img": "https://img.danawa.com/prod_img/500000/846/413/img/6413846_1.jpg?shrink=500:500&_v=20210112171819",
@@ -145,7 +136,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 10,
 		"fields": {
 			"name": "앱코 K660M-L68 무선 블루투스 기계식 미니 키보드 (블랙)",
 			"img": "https://img.danawa.com/prod_img/500000/816/345/img/17345816_1.jpg?shrink=500:500&_v=20220708091931",
@@ -161,7 +151,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 11,
 		"fields": {
 			"name": "앱코 ADK05 아크릴 듀얼 RGB 게이밍 키보드 (백축)",
 			"img": "https://img.danawa.com/prod_img/500000/268/132/img/13132268_1.jpg?shrink=500:500&_v=20210113143641",
@@ -177,7 +166,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 12,
 		"fields": {
 			"name": "앱코 KN01C 텐키리스 PBT 무접점 키보드 블루 (30g)",
 			"img": "https://img.danawa.com/prod_img/500000/645/230/img/15230645_1.jpg?shrink=500:500&_v=20220623123534",
@@ -193,7 +181,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 13,
 		"fields": {
 			"name": "앱코 KN01C 텐키리스 PBT 무접점 키보드 핑크 (45g)",
 			"img": "https://img.danawa.com/prod_img/500000/654/230/img/15230654_1.jpg?shrink=500:500&_v=20220321144413",
@@ -209,7 +196,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 14,
 		"fields": {
 			"name": "앱코 HACKER K664 ARC 프리미엄 카일 광축 완전방수 LED 데빌 (V1, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/461/742/img/7742461_1.jpg?shrink=500:500&_v=20190805152816",
@@ -225,7 +211,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 15,
 		"fields": {
 			"name": "앱코 KN10 BT 블루투스 무접점 게이밍 키보드 블랙 (45g)",
 			"img": "https://img.danawa.com/prod_img/500000/532/376/img/12376532_1.jpg?shrink=500:500&_v=20210930110240",
@@ -241,7 +226,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 16,
 		"fields": {
 			"name": "앱코 HACKER K660 ARC 프리미엄 카일 광축 완전방수 RGB LED (옐로우, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/214/812/img/7812214_1.jpg?shrink=500:500&_v=20221017135522",
@@ -257,7 +241,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 17,
 		"fields": {
 			"name": "앱코 KN01 BT 블루투스 TKL 무접점 게이밍 키보드 화이트 (55g)",
 			"img": "https://img.danawa.com/prod_img/500000/394/376/img/12376394_1.jpg?shrink=500:500&_v=20210930124638",
@@ -273,7 +256,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 18,
 		"fields": {
 			"name": "앱코 KN01 BT 블루투스 TKL 무접점 게이밍 키보드 블랙 (45g)",
 			"img": "https://img.danawa.com/prod_img/500000/373/376/img/12376373_1.jpg?shrink=500:500&_v=20210930125008",
@@ -289,7 +271,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 19,
 		"fields": {
 			"name": "앱코 AR21 CNC 풀 알루미늄 DIY KIT 넘버패드 (네이비)",
 			"img": "https://img.danawa.com/prod_img/500000/689/468/img/10468689_1.jpg?shrink=500:500&_v=20200511170702",
@@ -305,7 +286,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 20,
 		"fields": {
 			"name": "앱코 HACKER K660M TKL 이색사출 PBT 체리 키보드 딥샌드 (저소음 적축)",
 			"img": "https://img.danawa.com/prod_img/500000/945/446/img/15446945_1.jpg?shrink=500:500&_v=20211019124257",
@@ -321,7 +301,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 21,
 		"fields": {
 			"name": "앱코 HACKER K660M TKL 이색사출 PBT 체리 키보드 딥로얄 (저소음적축)",
 			"img": "https://img.danawa.com/prod_img/500000/894/446/img/15446894_1.jpg?shrink=500:500&_v=20211019124308",
@@ -337,7 +316,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 22,
 		"fields": {
 			"name": "앱코 HACKER K511 카일 광축 완전방수 축교환 게이밍 키보드 어반그레이 (V2, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/574/385/img/6385574_1.jpg?shrink=500:500&_v=20200210090848",
@@ -353,7 +331,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 23,
 		"fields": {
 			"name": "앱코 HACKER KN10 PBT RGB 무접점 키보드 (화이트, 55g)",
 			"img": "https://img.danawa.com/prod_img/500000/540/170/img/12170540_1.jpg?shrink=500:500&_v=20200901155653",
@@ -369,7 +346,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 24,
 		"fields": {
 			"name": "앱코 HACKER K512 체리쉬 염료승화 PBT 텐키리스 체리 게이밍 키보드 (갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/265/516/img/8516265_1.jpg?shrink=500:500&_v=20190805173518",
@@ -385,7 +361,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 25,
 		"fields": {
 			"name": "앱코 HACKER K820T 축교환 조약돌 레트로 87키 (블랙, 적축)",
 			"img": "https://img.danawa.com/prod_img/500000/943/326/img/5326943_1.jpg?shrink=500:500&_v=20190805151628",
@@ -401,7 +376,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 26,
 		"fields": {
 			"name": "앱코 HACKER KN01 텐키리스 PBT RGB 무접점 키보드 (블랙, 55g)",
 			"img": "https://img.danawa.com/prod_img/500000/485/834/img/11834485_1.jpg?shrink=500:500&_v=20210930124546",
@@ -417,7 +391,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 27,
 		"fields": {
 			"name": "앱코 TW1867 레트로 블루투스 기계식 키보드 (적축)",
 			"img": "https://img.danawa.com/prod_img/500000/566/423/img/12423566_1.jpg?shrink=500:500&_v=20201019125831",
@@ -433,7 +406,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 28,
 		"fields": {
 			"name": "앱코 HACKER K945P V2 RGB PBT 무접점 (45g)",
 			"img": "https://img.danawa.com/prod_img/500000/124/864/img/4864124_1.jpg?shrink=500:500&_v=20200107110251",
@@ -449,7 +421,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 29,
 		"fields": {
 			"name": "앱코 AN50 아이스큐브 무빙 LED 광축 게이밍 키보드",
 			"img": "https://img.danawa.com/prod_img/500000/017/848/img/16848017_1.jpg?shrink=500:500&_v=20220419094104",
@@ -465,7 +436,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 30,
 		"fields": {
 			"name": "앱코 HACKER K8700 RED LED 에디션 카일 광축 축교환 완전방수 게이밍 (블랙, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/466/771/img/6771466_1.jpg?shrink=500:500&_v=20190805150045",
@@ -481,7 +451,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 31,
 		"fields": {
 			"name": "앱코 HACKER K660M 이색사출 PBT 체리 키보드 미드나잇그린 (저소음 적축)",
 			"img": "https://img.danawa.com/prod_img/500000/797/137/img/11137797_1.jpg?shrink=500:500&_v=20210930105727",
@@ -497,7 +466,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 32,
 		"fields": {
 			"name": "앱코 HACKER K660M 이색사출 PBT 체리 키보드 블랙 (저소음 적축)",
 			"img": "https://img.danawa.com/prod_img/500000/779/137/img/11137779_1.jpg?shrink=500:500&_v=20210930105419",
@@ -513,7 +481,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 33,
 		"fields": {
 			"name": "앱코 HACKER K711 ARC 카일광축 완전방수 사이드 RGB 화이트 LED (V2, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/819/157/img/11157819_1.jpg?shrink=500:500&_v=20220331161100",
@@ -529,7 +496,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 34,
 		"fields": {
 			"name": "앱코 HACKER K8700 카일 광축 완전방수 크리스탈 키캡 (블랙, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/620/438/img/5438620_1.jpg?shrink=500:500&_v=20190805145927",
@@ -545,7 +511,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 35,
 		"fields": {
 			"name": "앱코 AN04F PBT 특주축 게이밍 기계식 키보드 (넌클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/124/091/img/18091124_1.jpg?shrink=500:500&_v=20221025155017",
@@ -561,7 +526,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 36,
 		"fields": {
 			"name": "앱코 HACKER K660 ARC SA 초콜릿 믹스 카일광축 완전방수 오렌지 LED 키보드 (클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/827/883/img/9883827_1.jpg?shrink=500:500&_v=20211013090045",
@@ -577,7 +541,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 37,
 		"fields": {
 			"name": "앱코 HACKER K9300 ARC 핑크펄 카일 광축 완전방수 크리스탈 키캡 (클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/786/297/img/9297786_1.jpg?shrink=500:500&_v=20190820091825",
@@ -593,7 +556,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 38,
 		"fields": {
 			"name": "앱코 HACKER K9700 카일광축 크리스탈 메탈릭 무빙 LED 게이밍 기계식 키보드 (클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/029/195/img/12195029_1.jpg?shrink=500:500&_v=20200904124811",
@@ -609,7 +571,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 39,
 		"fields": {
 			"name": "앱코 AN10 아이스큐브 무빙 LED 광축 게이밍 키보드",
 			"img": "https://img.danawa.com/prod_img/500000/930/847/img/16847930_1.jpg?shrink=500:500&_v=20220629140620",
@@ -625,7 +586,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 40,
 		"fields": {
 			"name": "앱코 HACKER K9100 ARC 프리미엄 카일 광축 크리스탈 키캡 완전방수 LED (블랙, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/131/515/img/8515131_1.jpg?shrink=500:500&_v=20200107091843",
@@ -641,7 +601,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 41,
 		"fields": {
 			"name": "앱코 HACKER ADK01 카일박스축 게이밍 기계식 키보드 (레드그레이, 적축)",
 			"img": "https://img.danawa.com/prod_img/500000/666/119/img/12119666_1.jpg?shrink=500:500&_v=20200825173445",
@@ -657,7 +616,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 42,
 		"fields": {
 			"name": "앱코 HACKER K8900 카일 광축 완전방수 어반그레이 (V2, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/798/450/img/6450798_1.jpg?shrink=500:500&_v=20190805145607",
@@ -673,7 +631,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 43,
 		"fields": {
 			"name": "앱코 HACKER K8200 카일광축 완전방수 크리스탈 투톤 레인보우 Moving LED (V2, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/360/409/img/11409360_1.jpg?shrink=500:500&_v=20220216131248",
@@ -689,7 +646,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 44,
 		"fields": {
 			"name": "앱코 K660P 프리미엄 카일광축 무빙 LED 게이밍 기계식 키보드 (다크 그레이, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/633/208/img/13208633_1.jpg?shrink=500:500&_v=20220216130439",
@@ -705,7 +661,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 45,
 		"fields": {
 			"name": "앱코 HACKER K8300 카일광축 완전방수 사이드 RGB 크리스탈 투톤 게이밍 키보드 (V2 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/342/519/img/11519342_1.jpg?shrink=500:500&_v=20220421091151",
@@ -721,7 +676,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 46,
 		"fields": {
 			"name": "앱코 HACKER ADK87 PBT 이색사출 텐키리스 체리 기계식 키보드 (화이트, 저소음 적축)",
 			"img": "https://img.danawa.com/prod_img/500000/620/909/img/11909620_1.jpg?shrink=500:500&_v=20200728130810",
@@ -737,7 +691,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 47,
 		"fields": {
 			"name": "앱코 HACKER K661 카일 광축 완전방수 축교환 어썸블루 (블랙 V2, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/658/818/img/7818658_1.jpg?shrink=500:500&_v=20190813150017",
@@ -753,7 +706,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 48,
 		"fields": {
 			"name": "앱코 HACKER K660 ARC 프리미엄 카일 광축 완전방수 레인보우 LED (블랙, 리니어)",
 			"img": "https://img.danawa.com/prod_img/500000/752/637/img/7637752_1.jpg?shrink=500:500&_v=20220216130225",
@@ -769,7 +721,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 49,
 		"fields": {
 			"name": "앱코 HACKER K8800 카일 광축 완전방수 축교환 크리스탈 키캡 (레드, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/211/085/img/6085211_1.jpg?shrink=500:500&_v=20190805145700",
@@ -785,7 +736,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 50,
 		"fields": {
 			"name": "앱코 HACKER K662 카일 광축 완전방수 축교환 어반그레이 (V2, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/153/044/img/6044153_1.jpg?shrink=500:500&_v=20200903085007",
@@ -801,7 +751,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 51,
 		"fields": {
 			"name": "앱코 HACKER K640T 축교환 게이밍 기계식 텐키리스 (블랙, 갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/154/139/img/5139154_1.jpg?shrink=500:500&_v=20200310120142",
@@ -817,7 +766,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 52,
 		"fields": {
 			"name": "앱코 HACKER K6500 PBT 스페셜 블루 에디션 (청축)",
 			"img": "https://img.danawa.com/prod_img/500000/118/359/img/5359118_1.jpg?shrink=500:500&_v=20190805160924",
@@ -833,7 +781,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 53,
 		"fields": {
 			"name": "앱코 K641 SLIM PLUS RGB 게이밍 기계식 키보드 (적축)",
 			"img": "https://img.danawa.com/prod_img/500000/819/057/img/17057819_1.jpg?shrink=500:500&_v=20220720080221",
@@ -849,7 +796,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 54,
 		"fields": {
 			"name": "앱코 HACKER K5500 A광축 축교환 측면 RGB 라이팅 완전방수 크리스탈 게이밍 키보드 (블랙, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/501/272/img/10272501_1.jpg?shrink=500:500&_v=20200102175628",
@@ -865,7 +811,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 55,
 		"fields": {
 			"name": "앱코 HACKER K7900 카일광축 완전방수 레인보우 PBT Moving LED (클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/703/874/img/11874703_1.jpg?shrink=500:500&_v=20200723111516",
@@ -881,7 +826,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 56,
 		"fields": {
 			"name": "앱코 HACKER K660 축교환 완전방수 게이밍 카일 광축 블랙 (클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/479/221/img/5221479_1.jpg?shrink=500:500&_v=20220714150155",
@@ -897,7 +841,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 57,
 		"fields": {
 			"name": "앱코 HACKER K660 축교환 완전방수 게이밍 카일 광축 화이트 (클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/059/762/img/5762059_1.jpg?shrink=500:500&_v=20220714150314",
@@ -913,7 +856,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 58,
 		"fields": {
 			"name": "앱코 HACKER K660 축교환 완전방수 게이밍 카일 광축 레드 (클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/475/221/img/5221475_1.jpg?shrink=500:500&_v=20220714150400",
@@ -929,7 +871,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 59,
 		"fields": {
 			"name": "앱코 HACKER K660 축교환 완전방수 게이밍 카일 광축 옐로우 (리니어)",
 			"img": "https://img.danawa.com/prod_img/500000/048/633/img/5633048_1.jpg?shrink=500:500&_v=20220712163718",
@@ -945,7 +886,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 60,
 		"fields": {
 			"name": "앱코 HACKER K660 단일 LED 에디션 카일 광축 축교환 완전방수 게이밍 (블랙, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/880/571/img/6571880_1.jpg?shrink=500:500&_v=20201202150034",
@@ -961,7 +901,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 61,
 		"fields": {
 			"name": "앱코 PUBG 배틀그라운드 하자드 에디션 카일 광축",
 			"img": "https://img.danawa.com/prod_img/500000/075/216/img/14216075_1.jpg?shrink=500:500&_v=20210518131631",
@@ -977,7 +916,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 62,
 		"fields": {
 			"name": "앱코 K641 TKL SLIM PLUS 게이밍 텐키리스 기계식 키보드 (적축)",
 			"img": "https://img.danawa.com/prod_img/500000/275/106/img/17106275_1.jpg?shrink=500:500&_v=20220526093859",
@@ -993,7 +931,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 63,
 		"fields": {
 			"name": "앱코 HACKER K525 GTMX 축교환 게이밍 기계식 키보드 (적축)",
 			"img": "https://img.danawa.com/prod_img/500000/390/224/img/12224390_1.jpg?shrink=500:500&_v=20200911151533",
@@ -1009,7 +946,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 64,
 		"fields": {
 			"name": "앱코 TOS100 무선 키보드",
 			"img": "https://img.danawa.com/prod_img/500000/915/321/img/14321915_1.jpg?shrink=500:500&_v=20210528170644",
@@ -1025,7 +961,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 65,
 		"fields": {
 			"name": "앱코 K840 사각 레트로 축교환 기계식 블랙 (적축)",
 			"img": "https://img.danawa.com/prod_img/500000/857/825/img/15825857_1.jpg?shrink=500:500&_v=20211201130003",
@@ -1041,7 +976,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 66,
 		"fields": {
 			"name": "앱코 K840 사각 레트로 축교환 기계식 화이트 (청축)",
 			"img": "https://img.danawa.com/prod_img/500000/881/825/img/15825881_1.jpg?shrink=500:500&_v=20220304085406",
@@ -1057,7 +991,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 67,
 		"fields": {
 			"name": "앱코 ABKONCORE K660 ARC 오테뮤 기계식 게이밍 키보드 (청축)",
 			"img": "https://img.danawa.com/prod_img/500000/181/337/img/15337181_1.jpg?shrink=500:500&_v=20211013123903",
@@ -1073,7 +1006,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 68,
 		"fields": {
 			"name": "앱코 레트로 써클 키캡 (87키)",
 			"img": "https://img.danawa.com/prod_img/500000/186/291/img/4291186_1.jpg?shrink=500:500&_v=20190809143515",
@@ -1089,7 +1021,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 69,
 		"fields": {
 			"name": "앱코 HACKER K640 플러스 축교환 측면 LED 게이밍 키보드 (블랙, 적축)",
 			"img": "https://img.danawa.com/prod_img/500000/210/392/img/6392210_1.jpg?shrink=500:500&_v=20190805161333",
@@ -1105,7 +1036,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 70,
 		"fields": {
 			"name": "앱코 HACKER K701 카일 광축 완전방수 4면 RGB LED (블랙, 클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/095/605/img/6605095_1.jpg?shrink=500:500&_v=20211124090416",
@@ -1121,7 +1051,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 71,
 		"fields": {
 			"name": "앱코 K551 A광축 사이드 Edge RGB LED 게이밍 키보드 (클릭)",
 			"img": "https://img.danawa.com/prod_img/500000/276/278/img/12278276_1.jpg?shrink=500:500&_v=20200916140402",
@@ -1137,7 +1066,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 72,
 		"fields": {
 			"name": "앱코 HACKER K180 레인보우 LED 멤브레인 (블랙)",
 			"img": "https://img.danawa.com/prod_img/500000/641/618/img/5618641_1.jpg?shrink=500:500&_v=20190806163235",
@@ -1153,7 +1081,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 73,
 		"fields": {
 			"name": "앱코 WKM810 키보드 마우스 무선콤보 (블랙)",
 			"img": "https://img.danawa.com/prod_img/500000/344/682/img/11682344_1.jpg?shrink=500:500&_v=20200701160824",
@@ -1169,7 +1096,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 74,
 		"fields": {
 			"name": "앱코 AN02 핑크 RGB BAR 축교환 기계식 키보드 (갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/808/650/img/14650808_1.jpg?shrink=500:500&_v=20210705164353",
@@ -1185,7 +1111,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 75,
 		"fields": {
 			"name": "앱코 HACKER K611 텐키리스 카일광축 완전방수 축교환 게이밍 키보드 네이비 V2 (리니어)",
 			"img": "https://img.danawa.com/prod_img/500000/797/844/img/9844797_1.jpg?shrink=500:500&_v=20220216130801",
@@ -1201,7 +1126,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 76,
 		"fields": {
 			"name": "앱코 HACKER K611 텐키리스 카일광축 완전방수 축교환 게이밍 키보드 핑크 V2 (리니어)",
 			"img": "https://img.danawa.com/prod_img/500000/815/844/img/9844815_1.jpg?shrink=500:500&_v=20220216130939",
@@ -1217,7 +1141,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 77,
 		"fields": {
 			"name": "앱코 K640T SLIM 축교환 무빙LED 텐키리스 기계식 블랙 (적축)",
 			"img": "https://img.danawa.com/prod_img/500000/517/363/img/13363517_1.jpg?shrink=500:500&_v=20210930104156",
@@ -1233,7 +1156,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 78,
 		"fields": {
 			"name": "앱코 AN02 다크그레이 RGB BAR 축교환 기계식 키보드 (적축)",
 			"img": "https://img.danawa.com/prod_img/500000/787/650/img/14650787_1.jpg?shrink=500:500&_v=20210705164540",
@@ -1249,7 +1171,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 79,
 		"fields": {
 			"name": "앱코 HACKER K611 텐키리스 카일광축 완전방수 축교환 게이밍 키보드 네이비 V1 (리니어)",
 			"img": "https://img.danawa.com/prod_img/500000/782/844/img/9844782_1.jpg?shrink=500:500&_v=20220216130953",
@@ -1265,7 +1186,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 80,
 		"fields": {
 			"name": "앱코 K640T SLIM 축교환 무빙LED 텐키리스 기계식 화이트 (적축)",
 			"img": "https://img.danawa.com/prod_img/500000/614/282/img/15282614_1.jpg?shrink=500:500&_v=20210930104211",
@@ -1281,7 +1201,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 81,
 		"fields": {
 			"name": "앱코 AN02 블랙 RGB BAR 축교환 기계식 키보드 (갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/688/650/img/14650688_1.jpg?shrink=500:500&_v=20210705164650",
@@ -1297,7 +1216,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 82,
 		"fields": {
 			"name": "앱코 K841 조약돌 레트로 축교환 기계식 민트 (갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/857/150/img/15150857_1.jpg?shrink=500:500&_v=20210902094923",
@@ -1313,7 +1231,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 83,
 		"fields": {
 			"name": "앱코 K841 조약돌 레트로 축교환 기계식 핑크 (적축)",
 			"img": "https://img.danawa.com/prod_img/500000/836/150/img/15150836_1.jpg?shrink=500:500&_v=20210902094850",
@@ -1329,7 +1246,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 84,
 		"fields": {
 			"name": "앱코 HACKER K611 텐키리스 카일광축 완전방수 축교환 게이밍 키보드 핑크 V1 (리니어)",
 			"img": "https://img.danawa.com/prod_img/500000/809/844/img/9844809_1.jpg?shrink=500:500&_v=20220216130914",
@@ -1345,7 +1261,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 85,
 		"fields": {
 			"name": "앱코 HACKER K1000 LED 에디션 축교환 게이밍 (옐로우, 청축)",
 			"img": "https://img.danawa.com/prod_img/500000/853/044/img/6044853_1.jpg?shrink=500:500&_v=20190806163637",
@@ -1361,7 +1276,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 86,
 		"fields": {
 			"name": "앱코 HACKER K640 축교환 게이밍 기계식 블랙 (청축)",
 			"img": "https://img.danawa.com/prod_img/500000/084/709/img/4709084_1.jpg?shrink=500:500&_v=20211228101305",
@@ -1377,7 +1291,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 87,
 		"fields": {
 			"name": "앱코 HACKER K640 축교환 게이밍 기계식 화이트 (청축)",
 			"img": "https://img.danawa.com/prod_img/500000/947/128/img/5128947_1.jpg?shrink=500:500&_v=20210930103632",
@@ -1393,7 +1306,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 88,
 		"fields": {
 			"name": "앱코 HACKER K516 축교환 측면 RGB 라이팅 이중사출 게이밍 기계식 키보드 (레드, 적축)",
 			"img": "https://img.danawa.com/prod_img/500000/595/326/img/9326595_1.jpg?shrink=500:500&_v=20190822135656",
@@ -1409,7 +1321,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 89,
 		"fields": {
 			"name": "앱코 TOS180 블루투스 펜타그래프 키보드",
 			"img": "https://img.danawa.com/prod_img/500000/100/792/img/16792100_1.jpg?shrink=500:500&_v=20220411133401",
@@ -1425,7 +1336,6 @@
 	},
 	{
 		"model": "articles.Keyboard",
-		"pk": 90,
 		"fields": {
 			"name": "앱코 HACKER K515 축교환 측면 RGB 라이팅 이중사출 게이밍 기계식 키보드 (화이트, 청축)",
 			"img": "https://img.danawa.com/prod_img/500000/180/321/img/9321180_1.jpg?shrink=500:500&_v=20210406154102",
