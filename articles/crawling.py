@@ -20,17 +20,14 @@ options = ChromeOptions()
 options.add_argument("headless")
 
 driver = Chrome()
-driver.get("https://prod.danawa.com/list/?cate=112782&15main_11_02")
+# driver.get("https://prod.danawa.com/list/?cate=112782&15main_11_02")
 
+driver.get("https://prod.danawa.com/list/?cate=112758&15main_11_02")
 # 없는것을 만들어야할때.
 # 제조사별 검색 (XPATH 경로 찾는 방법은 이미지 참조)
 # 옵션 더보기
 
-WebDriverWait(driver, 30).until(
-    EC.presence_of_element_located(
-        (By.XPATH, '//*[@id="dlMaker_simple"]/dd/div[2]/button[1]')
-    )
-).click()
+WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, '//*[@id="dlMaker_simple"]/dd/div[2]/button[1]'))).click()
 # 로지텍
 # driver.find_element(
 #     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(28)"
@@ -68,11 +65,11 @@ WebDriverWait(driver, 30).until(
 # time.sleep(1)
 
 #콕스
-driver.find_element(
-    By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(151)"
-).click()
+# driver.find_element(
+#     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(151)"
+# ).click()
 
-time.sleep(1)
+# time.sleep(1)
 
 # 체리
 # driver.find_element(
@@ -81,26 +78,14 @@ time.sleep(1)
 
 # time.sleep(1)
 
-
-
-WebDriverWait(driver, 30).until(
-    EC.presence_of_element_located(
-        (By.XPATH, '//*[@id="productListArea"]/div[2]/div[2]/div[2]/select')
-    )
-).click()
+WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, '//*[@id="productListArea"]/div[2]/div[2]/div[2]/select'))).click()
 time.sleep(1)
 
-WebDriverWait(driver, 30).until(
-    EC.presence_of_element_located(
-        (By.XPATH, '//*[@id="productListArea"]/div[2]/div[2]/div[2]/select/option[3]')
-    )
-).click()
+WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, '//*[@id="productListArea"]/div[2]/div[2]/div[2]/select/option[3]'))).click()
 time.sleep(1)
 
 
-driver.find_element(
-    By.XPATH, '//*[@id="productListArea"]/div[2]/div[1]/ul/li[4]/a'
-).click()
+driver.find_element(By.XPATH, '//*[@id="productListArea"]/div[2]/div[1]/ul/li[4]/a').click()
 
 time.sleep(1)
 
