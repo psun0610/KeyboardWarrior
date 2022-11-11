@@ -38,3 +38,4 @@ class Keyboard(models.Model):
     key_switch = models.CharField(max_length=50, blank=True)
     press = models.CharField(max_length=50, blank=True)
     weight = models.CharField(max_length=50, blank=True)
+    kind = models.CharField(max_length=50, blank=True)

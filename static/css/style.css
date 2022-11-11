@@ -25,6 +25,7 @@ a {
   height: 62px;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .my-nav>div {
