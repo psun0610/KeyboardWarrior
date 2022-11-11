@@ -186,9 +186,11 @@ a {
 .recommend-box-comment>h2 {
   font-size: 30px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .recommend-box-comment>div {
   font-size: 17px;
+  margin-bottom: 10px;
 }
 .sa {
   opacity: 0;
@@ -205,6 +207,15 @@ a {
 .sa.show {
   opacity: 1;
   transform: none;
+}
+
+footer {
+  background-color: #e8e8e8;
+  padding: 10px;
+}
+footer>div {
+  font-size: 16px;
+  text-align: center;
 }
 /* accounts:signup.html */
 .signup-user {
