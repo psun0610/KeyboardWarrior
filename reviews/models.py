@@ -7,7 +7,6 @@ grade_ = [(1, "★"), (2, "★★"), (3, "★★★"), (4, "★★★★"), (5, 
 
 
 class Review(models.Model):
-    
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=80)
     content = models.TextField(max_length=500)
