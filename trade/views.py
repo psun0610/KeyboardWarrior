@@ -124,3 +124,22 @@ def delete_comment(request, trade_pk, comment_pk):
             "user": user.pk,
         }
     return JsonResponse(context)
+
+
+def keyboard_search(request):
+    form = CreateTrade()
+    search_data = request.GET.get("search", "")
+    keyboard = Trades.objects.filter(title__icontains=search_data)
+    print(1)
+    keyboard_list = []
+    print(keyboard)
+    for k in keyboard:
+        keyboard_list.append(
+            {
+                "title": k.title,
+            }
+        )
+    context = {
+        "keyboard_list": keyboard_list,
+    }
+    return JsonResponse(context)

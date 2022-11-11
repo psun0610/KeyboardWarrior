@@ -24,12 +24,16 @@ a {
 }
 
 .my-nav {
-
-    background-color: #ffffffc7;
-    height: 62px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+  background-color: #ffffffc7;
+  height: 62px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #ffffffc7;
+  height: 62px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .my-nav>div {
@@ -42,7 +46,6 @@ a {
 }
 
 .nav-logo-text {
-
     display: flex;
     font-size: 18px;
     margin: 0 0 0 8px;
@@ -166,9 +169,80 @@ a {
     height: 600px;
     object-fit: cover;
 }
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
 
+#recommend {
+  width: 100%;
+  background-color: rgb(19, 19, 19);
+  color: white;
+}
+#recommend>h1 {
+  font-size: 30px;
+  text-align: center;
+  padding-top: 170px;
+  padding-bottom: 40px;
+}
+#recommend>h2 {
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 40px;
+}
+.recommend-box {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+#recommend>div {
+  padding: 120px 0;
+}
+.recommend-box-img>img {
+  width: 550px;
+  height: 400px;
+  object-fit: cover;
+}
+.recommend-box-comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.recommend-box-comment>h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.recommend-box-comment>div {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.sa {
+  opacity: 0;
+  transition: all 1.2s ease;
+}
+/* 왼쪽에서 오른쪽으로 페이드 인 */
+.sa-right {
+  transform: translate(-100px, 0);
+}
+/* 오른쪽에서 왼쪽으로 페이드 인 */
+.sa-left {
+  transform: translate(100px, 0);
+}
+.sa.show {
+  opacity: 1;
+  transform: none;
+}
 
-
+footer {
+  background-color: #e8e8e8;
+  padding: 10px;
+}
+footer>div {
+  font-size: 16px;
+  text-align: center;
+}
 /* accounts:signup.html */
 .signup-user {
     display: flex;
