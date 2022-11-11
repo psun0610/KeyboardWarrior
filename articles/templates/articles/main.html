@@ -24,25 +24,27 @@
   </div>
 </article>
   <!-- 캐러셀 -->
-<div class="arti">
-  <div class="index-tag-img-div swiper-container" id="swiper0">
-    <div class="swiper-wrapper">
-      <img src="{% static 'images/main_keyboard1.jpg' %}" class="swiper-img">
-      <img src="{% static 'images/main_keyboard2.png' %}" class="swiper-img">
-      <img src="{% static 'images/main_keyboard3.png' %}" class="swiper-img">
-    </div>
-      <!-- 페이징 -->
-    <div class="swiper-pagination"></div>
+
+<div class="index-tag-img-div swiper">
+  <div class="swiper-wrapper">
+    <div class=" swiper-slide"><img src="{% static 'images/main_keyboard1.jpg' %}" class="swiper-img"></div>
+    <div class=" swiper-slide"><img src="{% static 'images/main_keyboard2.png' %}" class="swiper-img"></div>
+    <div class=" swiper-slide"><img src="{% static 'images/main_keyboard3.png' %}" class="swiper-img"></div>
   </div>
+    <!-- 페이징 -->
+  <div class="swiper-pagination"></div>
+  <div class="swiper-scrollbar"></div>
 </div>
+
+
 <div id="recommend">히히</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 <script>
   new Swiper('.swiper-container', {
 
-  slidesPerView : 3, // 동시에 보여줄 슬라이드 갯수
+  slidesPerView : 1, // 동시에 보여줄 슬라이드 갯수
   spaceBetween : 1, // 슬라이드간 간격
-  slidesPerGroup : 3, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
+  slidesPerGroup : 1, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
 
   // 그룹수가 맞지 않을 경우 빈칸으로 메우기
   // 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
@@ -58,6 +60,9 @@
   navigation : { // 네비게이션
     nextEl : '.swiper-button-next', // 다음 버튼 클래스명
     prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
   },
 });
 </script>
