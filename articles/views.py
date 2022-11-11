@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
+
 from datetime import date, datetime, timedelta
 from .models import Visit
+from .models import Keyboard
+
 def main(request):
     visit_sum = 0
     today_visit = Visit.objects.order_by("-pk")[0].visit_count
