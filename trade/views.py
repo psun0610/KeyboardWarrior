@@ -88,11 +88,14 @@ def trade_comment(request, pk):
                     "user": c.user.username,
                     "content": c.content,
                     "create_at": c.create_at,
-                    "pk": c.pk,
+                    "pk": c.user.pk,
+                    "comment_pk": c.pk,
                 }
             )
         context = {
             "comment_list": comment_list,
+            "user": user.pk,
+            "trade": trade_.pk,
         }
         return JsonResponse(context)
 
@@ -112,10 +115,12 @@ def delete_comment(request, trade_pk, comment_pk):
                     "user": c.user.username,
                     "content": c.content,
                     "create_at": c.create_at,
-                    "pk": c.pk,
+                    "pk": c.user.pk,
+                    "comment_pk": c.pk,
                 }
             )
         context = {
             "comment_list": comment_list,
+            "user": user.pk,
         }
     return JsonResponse(context)
