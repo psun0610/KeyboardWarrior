@@ -16,6 +16,17 @@
   <img src="{{ review.img.url }}" alt="{{ review.img }}">
 </div>
 {% endif %}
+<div class="heart d-flex align-items-end">
+  {% if request.user.is_authenticated %}
+    {% if request.user not in review.like_users.all %}
+      <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart"></i>
+    {% else %}
+      <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart-fill"></i>
+    {% endif %}
+  {% endif %}
+  <h6 class="likes text-muted">|
+    {{ review.like_users.count }}명이 이 글을 좋아해요</h6>
+</div>
 {% if request.user == review.user %}
 <div class='d-grid gap-2 my-4'>
   <a class='btn btn-outline-success btn-sm' href="{% url 'reviews:update' review.pk %}">수정하기</a>
@@ -44,8 +55,26 @@
   {% endfor %}
 </div>
 
-
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    //좋아요 비동기
+    const likeBtn = document.querySelector('#like-btn')
+    likeBtn.addEventListener('click', function (event) {
+      console.log(event.target.dataset)
+      axios({method: 'get', url: `/reviews/${event.target.dataset.likeId}/like/`}).then(response => {
+        console.log(response.data)
+        if (response.data.isLike === true) {
+          event.target.classList.add('bi-heart-fill')
+          event.target.classList.remove('bi-heart')
+        } else {
+          event.target.classList.add('bi-heart')
+          event.target.classList.remove('bi-heart-fill')
+        }
+        const likeCount = document.querySelector('.likes')
+        likeCount.innerHTML = `<h6 class="likes m-0 text-muted ">| ${response.data.likeCount}명이 이 글을 좋아해요</h6>`
+      })
+    })
+  </script>
 <script>
   //댓글 생성 비동기
   const commentForm = document.querySelector('#comment-form')

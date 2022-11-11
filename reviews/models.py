@@ -15,9 +15,7 @@ class Review(models.Model):
         upload_to="img/",
         blank=True,
     )
-    review_like = models.ManyToManyField(
-        AUTH_USER_MODEL, symmetrical=False, related_name="like_review"
-    )
+    like_users = models.ManyToManyField(AUTH_USER_MODEL, related_name='like_review')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -27,3 +25,4 @@ class Comment(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    

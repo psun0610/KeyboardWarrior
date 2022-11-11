@@ -132,3 +132,20 @@ def comment_delete(request, review_pk, comment_pk):
         "user": user.pk,
     }
     return JsonResponse(context)
+
+#좋아요
+def like(request, pk):
+    review = Review.objects.get(pk=pk)
+    if request.user not in review.like_users.all():
+        review.like_users.add(request.user)
+        is_like = True
+    else:
+        review.like_users.remove(request.user)
+        is_like = False
+
+    data = {
+        "isLike": is_like,
+        "likeCount": review.like_users.count(),
+    }
+
+    return JsonResponse(data)
