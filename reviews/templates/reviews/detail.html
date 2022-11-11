@@ -110,7 +110,7 @@
       .id;
     axios({
       method: 'post',
-      url: `/reviews/${event.target.dataset.reviewdelId}/comment_delete/${event.target.dataset.commentdelId}/delete`,
+      url: `/reviews/${event.target.dataset.reviewdelId}/comment_delete/${event.target.dataset.commentdelId}/delete/`,
       headers: {
         'X-CSRFToken': csrftoken
       }
