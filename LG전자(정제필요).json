@@ -1,0 +1,66 @@
+[
+	{
+		"model": "articles.Keyboard",
+		"pk": 1,
+		"fields": {
+			"name": "LG전자 롤리키보드 2",
+			"img": "https://img.danawa.com/prod_img/500000/606/973/img/3973606_1.jpg?shrink=500:500&_v=20160804162858",
+			"brand": "LG전자",
+			"connect": "펜타그래프",
+			"weight": "기타",
+			"array": "기타",
+			"switch": "기타",
+			"key_switch": "기타",
+			"press": "기타",
+			"kind": "접이식키보드"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"pk": 2,
+		"fields": {
+			"name": "LG전자 MKS-1000Plus 세트 USB",
+			"img": "https://img.danawa.com/prod_img/500000/095/755/img/3755095_1.jpg?shrink=500:500&_v=20220627094116",
+			"brand": "LG전자",
+			"connect": "멤브레인",
+			"weight": "기타",
+			"array": "기타",
+			"switch": "기타",
+			"key_switch": "기타",
+			"press": "기타",
+			"kind": "풀배열"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"pk": 3,
+		"fields": {
+			"name": "LG전자 MKS-1000 세트",
+			"img": "https://img.danawa.com/prod_img/500000/981/773/img/1773981_1.jpg?shrink=500:500&_v=20161012110841",
+			"brand": "LG전자",
+			"connect": "멤브레인",
+			"weight": "기타",
+			"array": "기타",
+			"switch": "기타",
+			"key_switch": "기타",
+			"press": "기타",
+			"kind": "풀배열"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"pk": 4,
+		"fields": {
+			"name": "LG전자 MKS-1000Plus 세트 PS2",
+			"img": "https://img.danawa.com/prod_img/500000/084/755/img/3755084_1.jpg?shrink=500:500&_v=20171122155325",
+			"brand": "LG전자",
+			"connect": "멤브레인",
+			"weight": "기타",
+			"array": "기타",
+			"switch": "기타",
+			"key_switch": "기타",
+			"press": "기타",
+			"kind": "풀배열"
+		}
+	}
+]
