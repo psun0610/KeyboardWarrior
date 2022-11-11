@@ -36,7 +36,9 @@ WebDriverWait(driver, 30).until(
 driver.find_element(
     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(44)"
 ).click()
-time.sleep(2)
+
+time.sleep(0.5)
+
 
 # 앱코
 # driver.find_element(
@@ -48,25 +50,33 @@ time.sleep(2)
 driver.find_element(
     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(77)"
 ).click()
-time.sleep(2)
+
+time.sleep(0.5)
+
 
 # 레오
 driver.find_element(
     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(26)"
 ).click()
-time.sleep(2)
+
+time.sleep(0.5)
+
 
 # 로지텍
 driver.find_element(
     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(182)"
 ).click()
-time.sleep(2)
+
+time.sleep(0.5)
+
 
 # 체리
 driver.find_element(
     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(145)"
 ).click()
-time.sleep(2)
+
+time.sleep(0.5)
+
 
 
 WebDriverWait(driver, 30).until(
@@ -76,15 +86,21 @@ WebDriverWait(driver, 30).until(
 ).click()
 WebDriverWait(driver, 30).until(
     EC.presence_of_element_located(
+
+time.sleep(0.5)
+
         (By.XPATH, '//*[@id="productListArea"]/div[2]/div[2]/div[2]/select/option[3]')
     )
 ).click()
 time.sleep(1)
 
+
 driver.find_element(
     By.XPATH, '//*[@id="productListArea"]/div[2]/div[1]/ul/li[4]/a'
 ).click()
-time.sleep(1)
+
+time.sleep(0.5)
+
 
 soup = BeautifulSoup(driver.page_source)
 product_li_tags = soup.select("li.prod_item.prod_layer")
@@ -102,10 +118,13 @@ for _ in range(len(product_li_tags)):
 
 for sub_url in range(90):
     driver.get(url_list[sub_url])
-    time.sleep(0.5)
+
+    time.sleep(1)
     name = driver.find_element(By.CSS_SELECTOR, ".prod_tit>.title").text.strip()
     driver.find_element(By.CSS_SELECTOR, ".photo_w").click()
-    time.sleep(2)
+    time.sleep(1)
+
+    
 
     driver.find_element(By.CSS_SELECTOR, ".va_top").click()
     time.sleep(1)
@@ -115,6 +134,7 @@ for sub_url in range(90):
         EC.presence_of_element_located((By.XPATH, '//*[@id="closeImgExpandLayer"]'))
     ).click()
     driver.find_element(By.CSS_SELECTOR, "#bookmark_product_information_item").click()
+
     time.sleep(0.5)
     # 키압, 무게, 배열, 소리, 브랜드, 축
     spec_table = driver.find_element(By.CSS_SELECTOR, ".spec_tbl tbody").text
