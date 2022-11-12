@@ -11,7 +11,7 @@
   </nav>
 </div>
 
-<div class="p-3">=================</div>
+<div>=================</div>
 
 <div class="all-nav-container">
   <nav class="all-nav">
@@ -23,35 +23,107 @@
         <tbody>
           <tr>
             <th>브랜드</th>
-            <td>
-              <form 
-              <label for="leo"><div>레오폴드</div></label>
-              <input type="radio" id="leo" style="display: none;">
-              <label for="abko"><div>앱코</div></label>
-              <input type="radio" id="abko" style="display: none;">
-              <label for="mstone"><div>엠스톤글로벌</div></label>
-              <input type="radio" id="mstone" style="display: none;">
-              <label for="cherry"><div>체리</div></label>
-              <input type="radio" id="cherry" style="display: none;">
-              <label for="logi"><div>로지텍</div></label>
-              <input type="radio" id="logi" style="display: none;">
+            <td class="all-nav-radio">
+              <input type="radio" id="leo" name="brand" style="display: none;">
+              <label for="leo"><div class="all-nav-radio">레오폴드</div></label>
+
+              <input type="radio" id="abko" name="brand" style="display: none;">
+              <label for="abko"><div class="all-nav-radio">앱코</div></label>
+
+              <input type="radio" id="mstone" name="brand" style="display: none;">
+              <label for="mstone"><div class="all-nav-radio">엠스톤글로벌</div></label>
+
+              <input type="radio" id="cherry" name="brand" style="display: none;">
+              <label for="cherry"><div class="all-nav-radio">체리</div></label>
+
+              <input type="radio" id="logi" name="brand" style="display: none;">
+              <label for="logi"><div class="all-nav-radio">로지텍</div></label>
             </td>
           </tr>
           <tr>
-            <th>축</th>
-            <td></td>
+            <th>키 스위치</th>
+            <td class="all-nav-radio">
+              <input type="radio" id="blue-switch" name="key-switch" style="display: none;">
+              <label for="blue-switch"><div class="all-nav-radio">청축</div></label>
+
+              <input type="radio" id="brown-switch" name="key-switch" style="display: none;">
+              <label for="brown-switch"><div class="all-nav-radio">갈축</div></label>
+
+              <input type="radio" id="red-switch" name="key-switch" style="display: none;">
+              <label for="red-switch"><div class="all-nav-radio">적축</div></label>
+
+              <input type="radio" id="black-switch" name="key-switch" style="display: none;">
+              <label for="black-switch"><div class="all-nav-radio">흑축</div></label>
+
+              <input type="radio" id="white-switch" name="key-switch" style="display: none;">
+              <label for="white-switch"><div class="all-nav-radio">백축</div></label>
+
+              <input type="radio" id="yellow-switch" name="key-switch" style="display: none;">
+              <label for="yellow-switch"><div class="all-nav-radio">황축</div></label>
+
+              <input type="radio" id="milky-switch" name="key-switch" style="display: none;">
+              <label for="milky-switch"><div class="all-nav-radio">밀키축</div></label>
+
+              <input type="radio" id="cream-switch" name="key-switch" style="display: none;">
+              <label for="cream-switch"><div class="all-nav-radio">크림축</div></label>
+
+              <input type="radio" id="coral-switch" name="key-switch" style="display: none;">
+              <label for="coral-switch"><div class="all-nav-radio">코랄축</div></label>
+
+              <input type="radio" id="silver-switch" name="key-switch" style="display: none;">
+              <label for="silver-switch"><div class="all-nav-radio">은축</div></label>
+
+              <input type="radio" id="silent-red-switch" name="key-switch" style="display: none;">
+              <label for="silent-red-switch"><div class="all-nav-radio">저소음적축</div></label>
+            </td>
           </tr>
-          <tr>
-            <th>키압</th>
-            <td></td>
+            <th class="all-nav-blank">-</th>
+            <td class="all-nav-radio">
+              <input type="radio" id="topre" name="key-switch" style="display: none;">
+              <label for="topre"><div class="all-nav-radio">무접점 토프레</div></label>
+              
+              <input type="radio" id="noppoo" name="key-switch" style="display: none;">
+              <label for="noppoo"><div class="all-nav-radio">무접점 노뿌</div></label>
+              
+              <input type="radio" id="light-switch" name="key-switch" style="display: none;">
+              <label for="light-switch"><div class="all-nav-radio">무접점 광축</div></label>
+            </td>
           </tr>
           <tr>
             <th>블루투스</th>
-            <td></td>
+            <td class="all-nav-radio">
+              <input type="radio" id="wire" name="bluetooth" style="display: none;">
+              <label for="wire"><div class="all-nav-radio">유선</div></label>
+              
+              <input type="radio" id="wireless" name="bluetooth" style="display: none;">
+              <label for="wireless"><div class="all-nav-radio">무선</div></label>
+              
+              <input type="radio" id="wire-wireless" name="bluetooth" style="display: none;">
+              <label for="wire-wireless"><div class="all-nav-radio">유선 + 무선</div></label>
+            </td>
+          </tr>
+          <tr>
+            <th>키압</th>
+            <td class="all-nav-radio">
+              <input type="radio" id="press-30" name="press" style="display: none;">
+              <label for="press-30"><div class="all-nav-radio">39g 이하</div></label>
+
+              <input type="radio" id="press-40" name="press" style="display: none;">
+              <label for="press-40"><div class="all-nav-radio">40g ~ 49g</div></label>
+
+              <input type="radio" id="press-50" name="press" style="display: none;">
+              <label for="press-50"><div class="all-nav-radio">50g 이상</div></label>
+            </td>
           </tr>
           <tr>
             <th>키 배열</th>
-            <td></td>
+            <td class="all-nav-radio">
+              <input type="radio" id="full-array" name="array" style="display: none;">
+              <label for="full-array"><div class="all-nav-radio">풀배열</div></label>
+              
+              <input type="radio" id="tenkeyless" name="array" style="display: none;">
+              <label for="tenkeyless"><div class="all-nav-radio">텐키리스</div></label>
+            </td>
           </tr>
         </tbody>
       </table>
