@@ -166,3 +166,17 @@ def like(request, pk):
     }
 
     return JsonResponse(data)
+
+# 즐겨찾기(bookmark)
+def bookmark(request, pk):
+    review = Review.objects.get(pk=pk)
+    if request.user not in review.bookmark_users.all():
+        review.bookmark_users.add(request.user)
+        is_bookmark = True
+    else:
+        review.bookmark_users.remove(request.user)
+        is_bookmark = False
+    context = {
+        "isBookmark": is_bookmark,
+    }
+    return JsonResponse(context)
