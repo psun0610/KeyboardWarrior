@@ -7,7 +7,30 @@ from django.http import JsonResponse
 from accounts.models import User
 from datetime import date, datetime, timedelta
 from articles.models import Keyboard
-
+def maketable(p):
+	table = [0] * len(p)
+	i = 0
+	for j in range(1, len(p)):
+		while i > 0 and p[i] != p[j]:
+			i = table[i - 1]
+		if p[i] == p[j]:
+			i += 1
+			table[j] = i
+	return table
+def KMP(p, t):
+	ans = []
+	table = maketable(p)
+	i = 0
+	for j in range(len(t)):
+		while i > 0 and p[i] != t[j]:
+			i = table[i - 1]
+		if p[i] == t[j]:
+			if i == len(p) - 1:
+				ans.append(j - len(p) + 2)
+				i = table[i]
+			else:
+				i += 1
+	return ans
 # Create your views here.
 
 
@@ -43,12 +66,19 @@ def create(request):
     }
     return render(request, "reviews/create.html", context)
 
-
 # 리뷰 읽기
 def detail(request, pk):
     reviews = get_object_or_404(Review, pk=pk)
     comments = Comment.objects.filter(review_id=pk)
     comment_form = CommentForm()
+    for t in comments:
+        with open('filtering.txt') as txtfile:
+            for word in txtfile.readlines():
+                word = word.strip()
+                ans = KMP(word, t.content)
+                if ans:
+                    k = int(ans[0])
+                    t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
     comment_form.fields["content"].widget.attrs["placeholder"] = "댓글 작성"
     context = {
         "review": reviews,
@@ -121,15 +151,23 @@ def comment_create(request, pk):
     comment_data = []
     for t in temp:
         t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
-        comment_data.append(
-            {
-                "id": t.user_id,
-                "userName": t.user.username,
-                "content": t.content,
-                "commentPk": t.pk,
-                "created_at": t.created_at,
-            }
-        )
+        with open('filtering.txt') as txtfile:
+            for word in txtfile.readlines():
+                word = word.strip()
+                ans = KMP(word, t.content)
+                if ans:
+                    k = int(ans[0])
+                    t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
+                    break
+            comment_data.append(
+                {
+                    "id": t.user_id,
+                    "userName": t.user.username,
+                    "content": t.content,
+                    "commentPk": t.pk,
+                    "created_at": t.created_at,
+                }
+            )
     context = {
         "comment_data": comment_data,
         "review_pk": pk,
