@@ -16,6 +16,12 @@
         <div class='reviewcreate-userinfo-box'>
           <input data-testid="input-box" name="title"
                   placeholder="제목" type="text" required="" class="reviewcreate-userinfo" value="">
+          <div class="search-wrap">
+            <input id="search_input" class="form-control me-2" name="keyboard" type="search" placeholder="Search"
+              aria-label="Search">
+              <div class="search-off search-div " id="search_box">
+              </div>
+          </div>        
           <div class='fieldset'>
             <input class='star' type="radio" name="grade" value="5" id="rate1"><label  class='starlabel' for="rate1">⭐</label>
             <input class='star' type="radio" name="grade" value="4" id="rate2"><label  class='starlabel' for="rate2">⭐</label>
@@ -25,7 +31,7 @@
           </div>
           <textarea name="content"
                   placeholder="내용" type="text" required="" class="review-userinfo" value=""></textarea>
-          <input type="file" name='img' id='reviewimg' title="Button fade blue/green"style='display: none;'></input>
+          <input type="file" name='img' id='reviewimg' title="Button fade blue/green"style='display: none;'>
           <label for="reviewimg">
             <div  class="imgbtn">이미지 업로드</div>
           </label>
@@ -34,4 +40,108 @@
           <button class='review-btn' type="submit">KeyBoard Warrior에 경험 공유하기</button>
         </div>
       </div>
+      <form id="search_form" action="{% url 'trade:keyboard_search' %}" class="d-flex hidden" role="search">
+      </form>
+
+
+      
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+  const search_input = document.querySelector('#search_input');
+  const search_box = document.querySelector('#search_box');
+  const input = document.createElement('input');
+  const side = document.querySelector('#side');
+  const box_open = false;
+
+
+  search_input.addEventListener('click', function (event) {
+    console.log("검색클릭");
+    search_box.classList.remove('search-off');
+    search_box.classList.add('search-on');
+    const box_open = true;
+    console.log("검색 열림");
+
+  });
+
+  document.addEventListener('click', function (e) {
+    console.log(e.target)
+    console.log(search_box.id)
+    if (box_open === true); {
+      if (e.target !== search_input) {
+        search_box.classList.remove('search-on');
+        search_box.classList.add('search-off');
+        console.log("검색디브 닫힘")
+      }
+    }
+  });
+
+
+
+  // 키보드검색
+  window.onload = function () {
+    search_input.onkeyup = function () {
+      console.log("검색중")
+      axios({
+        method: 'get',
+        url: `/trade/keyboard_search/?search=${search_input.value}`,
+      })
+        .then(response => {
+          const search_box = document.querySelector('#search_box');
+          const keyboard_list = response.data.keyboard_list;
+          search_box.textContent = "";
+          for (let i = 0; i < keyboard_list.length; i++) {
+            search_box.insertAdjacentHTML('beforeend', `
+          <div onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}"  data-keyboard_name-id="${keyboard_list[i].id}"  id="keyboard_${keyboard_list[i].id}">
+          <hr>
+          <p>${keyboard_list[i].name}</p> <img class="keyboard-img" src="${keyboard_list[i].img}">
+          <p>브랜드:${keyboard_list[i].brand} </p> 
+          </div>
+          `);
+          }
+        })
+    }
+  }
+
+
+  const add_keyboard = (e) => {
+    const add_id = document.querySelector(`#keyboard_${event.target.dataset.keyboardId}`)
+    search_input.value = `${event.target.dataset.nameId}`
+    console.log(`${event.target.dataset.nameId}`)
+  }
+
+</script>
+
+<style>
+  .search-off {
+    display: none;
+
+  }
+
+  .search-on {
+    display: block;
+
+  }
+
+  .search-wrap {
+    position: relative;
+  }
+
+  .search-div {
+    position: absolute;
+    bottom: 1;
+    width: 600px;
+    height: 300px;
+    background-color: bisque;
+    overflow: scroll;
+    z-index: 100;
+  }
+
+  .keyboard-img {
+    width: 70px;
+    height: 70px;
+  }
+</style>
+
 {% endblock body %}
