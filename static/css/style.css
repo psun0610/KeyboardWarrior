@@ -25,13 +25,14 @@ a {
   color: var(--a-blue);
 }
 .blue-tag {
-  font-size: 1.28vh;
+  font-size: 13px;
 }
 
 .my-nav {
   background-color: var(--white-transparent);
-  height: 4.2vh;
-  position: sticky;
+  height: 50px;
+  width: 100%;
+  position: fixed;
   top: 0;
   z-index: 10;
 }
@@ -48,7 +49,7 @@ a {
 
 .nav-logo-text {
   display: flex;
-  font-size: 1.24vh;
+  font-size: 18px;
   margin: 0 0 0 0.9vh;
   font-weight: 700;
 }
@@ -73,13 +74,13 @@ a {
 }
 
 .my-nav-item {
-  padding: 0 0.5vh;
-  font-size: 1.2vh;
+  padding: 0 10px;
+  font-size: 14px;
 }
 
 /* articles/main */
 .articles-main1 {
-  height: calc(50vh - 2.1vh);
+  height: 50vh;
   display: flex;
   align-items: center;
 }
@@ -90,33 +91,33 @@ a {
 }
 
 .articles-main1-div {
-    width: 45vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
+  width: 45vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .articles-main1-div>h1 {
-  font-size: 2.3vh;
-  padding-right: 1.9531vh;
-  margin-bottom: 0.3906vh;
+  font-size: 25px;
+  padding-right: 50px;
+  margin-bottom: 10px;
 }
 
 .articles-main1-div>a {
-  padding-right: 1.9531vw;
+  padding-right: 50px;
 }
 
 .articles-main1-img-div {
-    width: 65vw;
-    height: 100%;
-    background: no-repeat center center;
-    background-size: cover;
+  width: 65vw;
+  height: 100%;
+  background: no-repeat center center;
+  background-size: cover;
 }
 
 .articles-main2 {
-  height: calc(50vh - 2.1vh);
+  height: 50vh;
   width: 100%;
   background-color: var(--my-black);
   display: flex;
@@ -132,8 +133,8 @@ a {
 
 .articles-main2-div>h1 {
   color: white;
-  font-size: 2.3vh;
-  margin-bottom: 0.3906vh;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 
 @keyframes keyboard-ani {
@@ -161,12 +162,12 @@ a {
 }
 
 .articles-main3-div>h1 {
-  font-size: 2.3vh;
-  margin-bottom: 0.3906vh;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 
 .swiper-img {
-  height: 600px;
+  height: 23.4375vw;
   width: 100%;
   object-fit: cover;
 }
@@ -177,14 +178,14 @@ a {
 }
 
 #recommend>h1 {
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
-    padding-top: 170px;
-    padding-bottom: 40px;
+    padding-top: 18vh;
+    padding-bottom: 7vh;
 }
 
 #recommend>h2 {
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     padding-bottom: 40px;
 }
@@ -196,16 +197,26 @@ a {
 }
 
 #recommend>div {
-    padding: 120px 0;
+    padding: 50px 0;
 }
 .recommend-finish-margin {
   padding-bottom: 3vw;
 }
 .recommend-box-img {
-  width: 50%
+  width: 50%;
+  padding-right: 35px;
+}
+.recommend-box-img-2 {
+  width: 50%;
+  padding-left: 35px;
 }
 
 .recommend-box-img>img {
+  width: 100%;
+  height: 20vw;
+  object-fit: cover;
+}
+.recommend-box-img-2>img {
   width: 100%;
   height: 20vw;
   object-fit: cover;
@@ -216,18 +227,35 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 2vw;
+  padding-left: 35px;
+}
+.recommend-box-comment-2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 35px;
 }
 
 .recommend-box-comment>h2 {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     margin-bottom: 10px;
+}
+.recommend-box-comment-2>h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .recommend-box-comment>div {
     font-size: 17px;
     margin-bottom: 10px;
+}
+.recommend-box-comment-2>h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .sa {
