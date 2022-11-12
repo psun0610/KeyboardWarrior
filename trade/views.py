@@ -6,13 +6,35 @@ from django.http import JsonResponse
 from articles.models import Keyboard
 
 # Create your views here.
-
+def maketable(p):
+	table = [0] * len(p)
+	i = 0
+	for j in range(1, len(p)):
+		while i > 0 and p[i] != p[j]:
+			i = table[i - 1]
+		if p[i] == p[j]:
+			i += 1
+			table[j] = i
+	return table
+def KMP(p, t):
+	ans = []
+	table = maketable(p)
+	i = 0
+	for j in range(len(t)):
+		while i > 0 and p[i] != t[j]:
+			i = table[i - 1]
+		if p[i] == t[j]:
+			if i == len(p) - 1:
+				ans.append(j - len(p) + 2)
+				i = table[i]
+			else:
+				i += 1
+	return ans
 
 def index(request):
     trades = Trades.objects.all()
     context = {"trades": trades}
     return render(request, "trade/index.html", context)
-
 
 @login_required
 def create(request):
@@ -51,11 +73,18 @@ def update(request, pk):
         }
     return render(request, "trade/update.html", context)
 
-
 def detail(request, pk):
     trade = get_object_or_404(Trades, pk=pk)
     comments = Trade_Comment.objects.filter(trade=pk).order_by("-pk")
     comment_from = CreateComment()
+    for t in comments:
+        with open('filtering.txt') as txtfile:
+            for word in txtfile.readlines():
+                word = word.strip()
+                ans = KMP(word, t.content)
+                if ans:
+                    k = int(ans[0])
+                    t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
     context = {
         "trade": trade,
         "comment_from": comment_from,
@@ -86,6 +115,14 @@ def trade_comment(request, pk):
         user = request.user
         comment_list = []
         for c in comments:
+            with open('filtering.txt') as txtfile:
+                for word in txtfile.readlines():
+                    word = word.strip()
+                    ans = KMP(word, c.content)
+                    if ans:
+                        k = int(ans[0])
+                        c.content = len(c.content[k - 1 : len(word)]) * "*" + c.content[len(word):]
+                        break
             comment_list.append(
                 {
                     "user": c.user.username,
