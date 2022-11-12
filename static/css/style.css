@@ -4,14 +4,11 @@
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: 400, 700;
     font-style: normal;
-
 }
 
 .kor-font {
     font-family: 'Pretendard-Regular';
 }
-
-
 
 /* base.html */
 a {
@@ -19,15 +16,20 @@ a {
   text-decoration: none;
 }
 
+:root {
+  --white-transparent: #ffffffc7;
+  --a-blue: #3786FB;
+  --my-black: #191919;
+}
 .a-blue {
-color: #3786FB;
+  color: var(--a-blue);
 }
 .blue-tag {
   font-size: 1.28vh;
 }
 
 .my-nav {
-background-color: #ffffffc7;
+background-color: var(--white-transparent);
 height: 4.2vh;
 position: sticky;
 top: 0;
@@ -77,7 +79,7 @@ z-index: 10;
 
 /* articles/main */
 .articles-main1 {
-  height: calc(50vh - 1.25vw);
+  height: calc(50vh - 2.1vh);
   display: flex;
   align-items: center;
 }
@@ -114,9 +116,9 @@ z-index: 10;
 }
 
 .articles-main2 {
-  height: calc(50vh - 1.25vw);
+  height: calc(50vh - 2.1vh);
   width: 100%;
-  background-color: rgb(19, 19, 19);
+  background-color: var(--my-black);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -164,10 +166,6 @@ z-index: 10;
 }
 
 .swiper-img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-}
   width: 100%;
   height: 38.5vh;
   object-fit: cover;
@@ -187,7 +185,7 @@ z-index: 10;
 #recommend>h2 {
   font-size: 1.5vh;
   text-align: center;
-  padding-bottom: 1.5625vw;
+  padding-bottom: 4vw;
 }
 .recommend-box {
   width: 46.8750vw;
@@ -196,6 +194,9 @@ z-index: 10;
 }
 #recommend>div {
   padding: 1.5vw 0;
+}
+.recommend-finish-margin {
+  padding-bottom: 3vw;
 }
 .recommend-box-img {
   width: 50%
@@ -252,7 +253,7 @@ footer>div {
   margin: 0.9766vw 0 0.5078vw 0;
 }
 50% {
-  margin: 1.0938vw 0 0.5078vw 0;
+  margin: 1.3vw 0 0.5078vw 0;
 }
 100% {
   margin: 0.9766vw 0 0.5078vw 0;
@@ -269,7 +270,7 @@ footer>div {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgb(19, 19, 19);
+  background-color: var(--my-black);
   width: 100%;
   color: white;
 }
@@ -282,12 +283,12 @@ footer>div {
   width: 0.9766vw;
   height: 0.9766vw;
   margin: 0.9766vw 0 0.5078vw 0;
-  animation: nav-start 0.35s 2 alternate;
+  animation: nav-start 0.54s 3 alternate;
 }
 
 /* nav open */
 .all-nav-open {
-  padding: 1.9531vw 0;
+  padding: 3.5vh 0;
 }
 .all-nav-open>svg {
   display: none;
@@ -296,15 +297,26 @@ footer>div {
   width: 55.4688vw;
   margin: auto;
 }
-.all-nav-open>table tr {
-
-}
 .all-nav-open>table th {
-  font-size: 0.6641vw;
-  padding: 0.4688vw 1.5625vw;
+  font-size: 1.3vh;
+  padding: 1.2vh 3vh;
   width: 20%;
 }
-
+.all-nav-radio>label {
+  font-size: 16px;
+  padding: 5px 18px;
+  border-radius: 2px;
+}
+.all-nav-radio label:hover{
+  background-color: #ffffff67;
+}
+.all-nav-radio input[type=radio]:checked+label {
+  background-color: var(--white-transparent);
+  color:black;
+}
+.all-nav-blank {
+  color: var(--my-black);
+}
 /* 컨테이너 사이즈 */
 @media all and (min-width:820px) and (max-width:1480px) {
 }
@@ -555,13 +567,13 @@ footer>div {
 .detail-menu:hover {
     margin-bottom: 10px;
     font-weight: bold;
-    color:#3786FB;
+    color: var(--a-blue);
 }
 
 .detail-menu-btn:checked {
     margin-bottom: 10px;
     font-weight:bolder;
-    color:#3786FB;
+    color: var(--a-blue);
 }
 
 
@@ -580,14 +592,14 @@ footer>div {
 .form_radio_btn input[type=radio]:checked + label {
     margin-bottom: 10px;
     font-weight: bolder;
-    color:#3786FB;
+    color: var(--a-blue);
 }
 
 /* Hover */
 .form_radio_btn label:hover {
     margin-bottom: 10px;
     font-weight: normal;
-    color:#3786FB;
+    color:  var(--a-blue);
 }
 
 /* Disabled */
@@ -699,7 +711,7 @@ footer>div {
 
 .reviewcreate-userinfo-box {
     border: 10px;
-    border-color: rgb(19, 19, 19);
+    border-color: var(--my-black);
     width: 100%;
 }
 
