@@ -6,6 +6,31 @@ from django.views.decorators.http import require_POST, require_safe
 from django.http import JsonResponse
 from accounts.models import User
 from datetime import date, datetime, timedelta
+from articles.models import Keyboard
+def maketable(p):
+	table = [0] * len(p)
+	i = 0
+	for j in range(1, len(p)):
+		while i > 0 and p[i] != p[j]:
+			i = table[i - 1]
+		if p[i] == p[j]:
+			i += 1
+			table[j] = i
+	return table
+def KMP(p, t):
+	ans = []
+	table = maketable(p)
+	i = 0
+	for j in range(len(t)):
+		while i > 0 and p[i] != t[j]:
+			i = table[i - 1]
+		if p[i] == t[j]:
+			if i == len(p) - 1:
+				ans.append(j - len(p) + 2)
+				i = table[i]
+			else:
+				i += 1
+	return ans
 # Create your views here.
 
 
@@ -16,18 +41,26 @@ def index(request):
     }
     return render(request, "reviews/index.html", context)
 
-#리뷰작성
+
+# 리뷰작성
 @login_required
 def create(request):
     if request.method == "POST":
         review_form = ReviewForm(request.POST, request.FILES)
+        kb = Keyboard.objects.get(name=request.POST["keyboard"])
+        print(kb, 1)
         if review_form.is_valid():
+            print("유효성검사")
             review = review_form.save(commit=False)
             review.user = request.user
+            print("키보드 저장전")
+            review.keyboard = kb
             review.save()
+            print("저장")
             return redirect("reviews:index")
     else:
         review_form = ReviewForm()
+    print(review_form.errors)
     context = {
         "review_form": review_form,
     }
@@ -38,11 +71,19 @@ def detail(request, pk):
     reviews = get_object_or_404(Review, pk=pk)
     comments = Comment.objects.filter(review_id=pk)
     comment_form = CommentForm()
+    for t in comments:
+        with open('filtering.txt') as txtfile:
+            for word in txtfile.readlines():
+                word = word.strip()
+                ans = KMP(word, t.content)
+                if ans:
+                    k = int(ans[0])
+                    t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
     comment_form.fields["content"].widget.attrs["placeholder"] = "댓글 작성"
     context = {
-        'review': reviews,
-        'comments': comments,
-        'comment_form': comment_form,
+        "review": reviews,
+        "comments": comments,
+        "comment_form": comment_form,
     }
     response = render(request, "reviews/detail.html", context)
 
@@ -54,15 +95,15 @@ def detail(request, pk):
 
     cookievalue = request.COOKIES.get("hitreview", "")
 
-    if f"{id}" not in cookievalue:
-        cookievalue += f"{id}"
+    if f"{pk}" not in cookievalue:
+        cookievalue += f"{pk}"
         response.set_cookie(
             "hitreview", value=cookievalue, max_age=max_age, httponly=True
         )
         reviews.hits += 1
         reviews.save()
-
     return response
+
 
 # 리뷰 수정
 @login_required
@@ -81,12 +122,14 @@ def update(request, pk):
     }
     return render(request, "reviews/update.html", context)
 
+
 # 리뷰 삭제
 @login_required
 def delete(request, pk):
     review = Review.objects.get(pk=pk)  # 어떤 글인지
     review.delete()
     return redirect("reviews:index")
+
 
 # 댓글 생성
 @login_required
@@ -108,21 +151,30 @@ def comment_create(request, pk):
     comment_data = []
     for t in temp:
         t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
-        comment_data.append(
-            {
-                "id": t.user_id,
-                "userName": t.user.username,
-                "content": t.content,
-                "commentPk": t.pk,
-                "created_at": t.created_at,
-            }
-        )
+        with open('filtering.txt') as txtfile:
+            for word in txtfile.readlines():
+                word = word.strip()
+                ans = KMP(word, t.content)
+                if ans:
+                    k = int(ans[0])
+                    t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
+                    break
+            comment_data.append(
+                {
+                    "id": t.user_id,
+                    "userName": t.user.username,
+                    "content": t.content,
+                    "commentPk": t.pk,
+                    "created_at": t.created_at,
+                }
+            )
     context = {
         "comment_data": comment_data,
         "review_pk": pk,
         "user": user,
     }
     return JsonResponse(context)
+
 
 # 댓글 삭제
 @login_required
@@ -151,7 +203,8 @@ def comment_delete(request, review_pk, comment_pk):
     }
     return JsonResponse(context)
 
-#좋아요
+
+# 좋아요
 def like(request, pk):
     review = Review.objects.get(pk=pk)
     if request.user not in review.like_users.all():
@@ -167,3 +220,35 @@ def like(request, pk):
     }
 
     return JsonResponse(data)
+
+# 즐겨찾기(bookmark)
+def bookmark(request, pk):
+    review = Review.objects.get(pk=pk)
+    if request.user not in review.bookmark_users.all():
+        review.bookmark_users.add(request.user)
+        is_bookmark = True
+    else:
+        review.bookmark_users.remove(request.user)
+        is_bookmark = False
+    context = {
+        "isBookmark": is_bookmark,
+    }
+    return JsonResponse(context)
+
+def keyboard_search(request):
+    search_data = request.GET.get("search", "")
+    keyboard = Keyboard.objects.filter(name__icontains=search_data).all()
+    keyboard_list = []
+    for k in keyboard:
+        keyboard_list.append(
+            {
+                "name": k.name,
+                "img": k.img,
+                "brand": k.brand,
+                "id": k.pk,
+            }
+        )
+    context = {
+        "keyboard_list": keyboard_list,
+    }
+    return JsonResponse(context)

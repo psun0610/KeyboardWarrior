@@ -1,5 +1,6 @@
 from django.db import models
 from KW.settings import AUTH_USER_MODEL
+from articles.models import Keyboard
 
 # Create your models here.
 
@@ -14,6 +15,8 @@ class Trades(models.Model):
     Trade_type = models.IntegerField(choices=tradeType)
     title = models.CharField(max_length=80)
     content = models.TextField(max_length=500)
+    keyboard = models.ForeignKey(Keyboard, on_delete=models.CASCADE)
+    price = models.IntegerField(default=0)
 
 
 class Trade_Comment(models.Model):
