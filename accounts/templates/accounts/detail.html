@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class='container'>
-    <h1>KeyBoard Warrior ID</h1>
+    <h1 class='mt-5'>KeyBoard Warrior ID</h1>
     <hr>
     <div class='userdetailall'>
         {% comment %} 프로필, 메뉴 {% endcomment %}
@@ -41,7 +41,7 @@
                 <h3 class='userdetail-head2'>개인 정보</h3>
                 <div>
                     <p>연락 가능한 이메일 주소를 포함하여 개인 정보를 확인하십시오.</p>
-                    <a class='a-blue' href="#">개인정보수정 > </a>
+                    <a class='a-blue' href="{% url 'accounts:edit_profile' user.pk %}">개인정보수정 > </a>
                 </div>
                 
             </div>
@@ -142,7 +142,7 @@
                 </div>
                 <div class='usercard-big-box'>
                     <div class='usercard-box'>
-                        <div class='usercard'>
+                        <a href="{% url 'accounts:change_password' user.pk %}" class='usercard'>
                             <div>
                                 <p class='usercard-title'>암호 관리</p>
                                 <div class='usercard-content'>암호 변경하기</div>
@@ -152,8 +152,8 @@
                                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
                                 </svg>
                             </div>
-                        </div>
-                        <div class='usercard'>
+                        </a>
+                        <a href="#" class='usercard'>
                             <div>
                                 <p class='usercard-title'>암호 찾기</p>
                                 <div class='usercard-content'>암호를 잊으셨나요?</div>
@@ -164,7 +164,7 @@
                                     <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
                                 </svg>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -175,7 +175,7 @@
                 <h3 class='userdetail-head2'>선호 키보드 정보</h3>
                 <div>
                     <p>선호하는 키보드 정보를 관리합니다.</p>
-                    
+                    <a class='a-blue' href="{% url 'accounts:edit_profile' user.pk %}">개인정보수정 > </a>
                 </div>
                 <div class='usercard-big-box'>
                     <div class='usercard-box'>

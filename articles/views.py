@@ -70,3 +70,11 @@ def main(request):
         return response
 def all(request):
     return render(request, "articles/all.html")
+
+def detail(request):
+    
+    li = [1,2,3]
+    context = {
+        'li' : li,
+    }
+    return render(request, "articles/detail.html", context)
