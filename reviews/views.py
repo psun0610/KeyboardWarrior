@@ -77,8 +77,12 @@ def detail(request, pk):
                 word = word.strip()
                 ans = KMP(word, t.content)
                 if ans:
-                    k = int(ans[0])
-                    t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
+                    for k in ans:
+                        k = int(k)
+                        if k < len(t.content) // 2:
+                            t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
+                        else:
+                            t.content = t.content[0 : k - 1] + len(t.content[k - 1:]) * "*"
     comment_form.fields["content"].widget.attrs["placeholder"] = "댓글 작성"
     context = {
         "review": reviews,
@@ -156,9 +160,12 @@ def comment_create(request, pk):
                 word = word.strip()
                 ans = KMP(word, t.content)
                 if ans:
-                    k = int(ans[0])
-                    t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
-                    break
+                    for k in ans:
+                        k = int(k)
+                        if k < len(t.content) // 2:
+                            t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
+                        else:
+                            t.content = t.content[0 : k - 1] + len(t.content[k - 1:]) * "*"
             comment_data.append(
                 {
                     "id": t.user_id,
@@ -187,6 +194,17 @@ def comment_delete(request, review_pk, comment_pk):
     comment_data = []
     for t in temp:
         t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
+        with open('filtering.txt') as txtfile:
+            for word in txtfile.readlines():
+                word = word.strip()
+                ans = KMP(word, t.content)
+                if ans:
+                    for k in ans:
+                        k = int(k)
+                        if k < len(t.content) // 2:
+                            t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
+                        else:
+                            t.content = t.content[0 : k - 1] + len(t.content[k - 1:]) * "*"
         comment_data.append(
             {
                 "id": t.user.pk,
