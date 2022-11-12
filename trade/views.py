@@ -18,9 +18,11 @@ def index(request):
 def create(request):
     if request.method == "POST":
         form = CreateTrade(request.POST)
+        kb = Keyboard.objects.get(name=request.POST["keyboard"])
         if form.is_valid():
             trade = form.save(commit=False)
             trade.user = request.user
+            trade.keyboard = kb
             trade.save()
             return redirect("trade:index")
     else:
@@ -128,12 +130,9 @@ def delete_comment(request, trade_pk, comment_pk):
 
 
 def keyboard_search(request):
-    form = CreateTrade()
     search_data = request.GET.get("search", "")
     keyboard = Keyboard.objects.filter(name__icontains=search_data).all()
-
     keyboard_list = []
-    print(keyboard)
     for k in keyboard:
         keyboard_list.append(
             {
