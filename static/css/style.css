@@ -24,16 +24,16 @@ a {
 }
 
 .my-nav {
-  background-color: #ffffffc7;
-  height: 62px;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  background-color: #ffffffc7;
-  height: 62px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+    background-color: #ffffffc7;
+    height: 62px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #ffffffc7;
+    height: 62px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .my-nav>div {
@@ -169,80 +169,91 @@ a {
     height: 600px;
     object-fit: cover;
 }
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-}
+
 
 #recommend {
-  width: 100%;
-  background-color: rgb(19, 19, 19);
-  color: white;
+    width: 100%;
+    background-color: rgb(19, 19, 19);
+    color: white;
 }
+
 #recommend>h1 {
-  font-size: 30px;
-  text-align: center;
-  padding-top: 170px;
-  padding-bottom: 40px;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 170px;
+    padding-bottom: 40px;
 }
+
 #recommend>h2 {
-  font-size: 30px;
-  text-align: center;
-  padding-bottom: 40px;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 40px;
 }
+
 .recommend-box {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: auto;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
 }
+
 #recommend>div {
-  padding: 120px 0;
+    padding: 120px 0;
 }
+
 .recommend-box-img>img {
-  width: 550px;
-  height: 400px;
-  object-fit: cover;
+    width: 550px;
+    height: 400px;
+    object-fit: cover;
 }
+
 .recommend-box-comment {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 .recommend-box-comment>h2 {
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
+
 .recommend-box-comment>div {
-  font-size: 17px;
-  margin-bottom: 10px;
+    font-size: 17px;
+    margin-bottom: 10px;
 }
+
 .sa {
-  opacity: 0;
-  transition: all 1.2s ease;
+    opacity: 0;
+    transition: all 1.2s ease;
 }
+
 /* 왼쪽에서 오른쪽으로 페이드 인 */
 .sa-right {
-  transform: translate(-100px, 0);
+    transform: translate(-100px, 0);
 }
+
 /* 오른쪽에서 왼쪽으로 페이드 인 */
 .sa-left {
-  transform: translate(100px, 0);
+    transform: translate(100px, 0);
 }
+
 .sa.show {
-  opacity: 1;
-  transform: none;
+    opacity: 1;
+    transform: none;
 }
 
 footer {
-  background-color: #e8e8e8;
-  padding: 10px;
+    background-color: #e8e8e8;
+    padding: 10px;
 }
+
 footer>div {
-  font-size: 16px;
-  text-align: center;
+    font-size: 16px;
+    text-align: center;
 }
+
 /* accounts:signup.html */
 .signup-user {
     display: flex;
@@ -429,10 +440,6 @@ footer>div {
     font-size: larger;
     font-weight: bold;
 }
-.usercard-content {
-
-}
-
 
 .usercard:hover {
     border: 4px solid rgb(81, 150, 247);
@@ -466,6 +473,7 @@ footer>div {
     margin-right: 150px;
 
 }
+
 .detail-email {
     margin-bottom: 50px;
 }
@@ -488,19 +496,20 @@ footer>div {
 .detail-menu:hover {
     margin-bottom: 10px;
     font-weight: bold;
-    color:#3786FB;
+    color: #3786FB;
 }
 
 .detail-menu-btn:checked {
     margin-bottom: 10px;
-    font-weight:bolder;
-    color:#3786FB;
+    font-weight: bolder;
+    color: #3786FB;
 }
 
 
 .form_radio_btn input[type=radio] {
     display: none;
 }
+
 .form_radio_btn label {
     display: block;
     border-radius: 10px;
@@ -510,21 +519,21 @@ footer>div {
 }
 
 /* Checked */
-.form_radio_btn input[type=radio]:checked + label {
+.form_radio_btn input[type=radio]:checked+label {
     margin-bottom: 10px;
     font-weight: bolder;
-    color:#3786FB;
+    color: #3786FB;
 }
 
 /* Hover */
 .form_radio_btn label:hover {
     margin-bottom: 10px;
     font-weight: normal;
-    color:#3786FB;
+    color: #3786FB;
 }
 
 /* Disabled */
-.form_radio_btn input[type=radio] + label {
+.form_radio_btn input[type=radio]+label {
     margin-bottom: 10px;
     font-weight: normal;
     font-size: large;
@@ -668,4 +677,52 @@ footer>div {
     color: #F9FAFC;
     border: 0px;
     border-radius: 3px;
+}
+
+
+/* 상품디테일 */
+.keyboard-detail-all {
+    margin-top: 150px;
+
+}
+
+.keyboard-detail-img {
+    width: 100%;
+    
+    padding: 0 30px 0px 30px;
+}
+
+.keyboard-info {
+    display: flex;
+}
+
+.keyboard-info-all {
+    margin-bottom: 30px;
+}
+
+.keyboard-info-name {
+    margin-right: 100px;
+    color: #9c9c9c;
+    margin-left: 10px;
+}
+
+.keyboard-name {
+    margin-bottom: 50px;
+    font-weight: bolder;
+}
+
+.comment-profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.keyboard-comment {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.keyboard-detail-mini-title {
+    font-weight: bold;
 }

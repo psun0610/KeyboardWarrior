@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block body %}
+<div class='container'>
+    <div class='row keyboard-detail-all'>
+        {% comment %} 사진 {% endcomment %}
+        <div class='col-6'>
+            <div>
+                <img class='keyboard-detail-img' src="{% static 'images/qwefq.png' %}">
+            </div>
+        </div>
+        <div class='col-6'>
+            {% comment %} 제품정보 {% endcomment %}
+            <div class='keyboard-info-all'>
+                <h2 class='keyboard-name'>바밀로 꿈나비 V3 저소음 적축</h2>
+                <div class='keyboard-info'>
+                    <div class='keyboard-info-name'>
+                        <p>제조사</p>
+                        <p>축</p>
+                        <p>키압</p>
+                        <p>무게</p>
+                        <p>소리</p>
+                        <p>연결</p>
+                        <p>고객 평점</p>
+                    </div>
+                    <div>
+                        <p>제조사 예시</p>
+                        <p>축 예시</p>
+                        <p>키압 예시</p>
+                        <p>무게 예시</p>
+                        <p>소리 예시</p>
+                        <p>연결 예시</p>
+                        <p>고객 평점 예시</p>
+                    </div>
+                </div>
+            
+            </div>
+            {% comment %} 후기 {% endcomment %}
+            <div>
+                <h3 class='keyboard-detail-mini-title'>베스트 후기</h3>
+                <a class='a-blue'>더 알아보기 ></a>
+                    {% for i in li|slice:':2' %}
+                    <div class='keyboard-comment'>
+                        <img class='comment-profile-img' src="{% static 'images/qwefq.png' %}">
+                        <div>
+                            <div>재윤</div>
+                            <div>내가 직접 작성한 후기입니다.</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+            {% comment %} 판매/구매 {% endcomment %}
+            <div>
+                <h3 class='keyboard-detail-mini-title'>마음에 드셨나요?</h3>
+                <a class='a-blue'>판매/구매 하러가기 ></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
+                    
+                    
