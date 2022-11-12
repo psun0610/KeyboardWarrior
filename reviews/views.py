@@ -6,6 +6,8 @@ from django.views.decorators.http import require_POST, require_safe
 from django.http import JsonResponse
 from accounts.models import User
 from datetime import date, datetime, timedelta
+from articles.models import Keyboard
+
 # Create your views here.
 
 
@@ -16,22 +18,31 @@ def index(request):
     }
     return render(request, "reviews/index.html", context)
 
-#리뷰작성
+
+# 리뷰작성
 @login_required
 def create(request):
     if request.method == "POST":
         review_form = ReviewForm(request.POST, request.FILES)
+        kb = Keyboard.objects.get(name=request.POST["keyboard"])
+        print(kb, 1)
         if review_form.is_valid():
+            print("유효성검사")
             review = review_form.save(commit=False)
             review.user = request.user
+            print("키보드 저장전")
+            review.keyboard = kb
             review.save()
+            print("저장")
             return redirect("reviews:index")
     else:
         review_form = ReviewForm()
+    print(review_form.errors)
     context = {
         "review_form": review_form,
     }
     return render(request, "reviews/create.html", context)
+
 
 # 리뷰 읽기
 def detail(request, pk):
@@ -40,9 +51,9 @@ def detail(request, pk):
     comment_form = CommentForm()
     comment_form.fields["content"].widget.attrs["placeholder"] = "댓글 작성"
     context = {
-        'review': reviews,
-        'comments': comments,
-        'comment_form': comment_form,
+        "review": reviews,
+        "comments": comments,
+        "comment_form": comment_form,
     }
     response = render(request, "reviews/detail.html", context)
 
@@ -63,6 +74,7 @@ def detail(request, pk):
         reviews.save()
     return response
 
+
 # 리뷰 수정
 @login_required
 def update(request, pk):
@@ -80,12 +92,14 @@ def update(request, pk):
     }
     return render(request, "reviews/update.html", context)
 
+
 # 리뷰 삭제
 @login_required
 def delete(request, pk):
     review = Review.objects.get(pk=pk)  # 어떤 글인지
     review.delete()
     return redirect("reviews:index")
+
 
 # 댓글 생성
 @login_required
@@ -123,6 +137,7 @@ def comment_create(request, pk):
     }
     return JsonResponse(context)
 
+
 # 댓글 삭제
 @login_required
 def comment_delete(request, review_pk, comment_pk):
@@ -150,7 +165,8 @@ def comment_delete(request, review_pk, comment_pk):
     }
     return JsonResponse(context)
 
-#좋아요
+
+# 좋아요
 def like(request, pk):
     review = Review.objects.get(pk=pk)
     if request.user not in review.like_users.all():
@@ -178,5 +194,23 @@ def bookmark(request, pk):
         is_bookmark = False
     context = {
         "isBookmark": is_bookmark,
+    }
+    return JsonResponse(context)
+
+def keyboard_search(request):
+    search_data = request.GET.get("search", "")
+    keyboard = Keyboard.objects.filter(name__icontains=search_data).all()
+    keyboard_list = []
+    for k in keyboard:
+        keyboard_list.append(
+            {
+                "name": k.name,
+                "img": k.img,
+                "brand": k.brand,
+                "id": k.pk,
+            }
+        )
+    context = {
+        "keyboard_list": keyboard_list,
     }
     return JsonResponse(context)
