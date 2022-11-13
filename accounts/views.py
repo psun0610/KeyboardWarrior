@@ -1,3 +1,4 @@
+import requests
 from django.shortcuts import render, redirect
 from .forms import CreateUser
 from django.http import JsonResponse
@@ -136,3 +137,100 @@ def follow(request, pk):
         "followings": user.followings.all().count(),
     }
     return JsonResponse(data)
+
+
+import secrets
+
+state_token = secrets.token_urlsafe(16)
+
+
+def naver_request(request):
+    naver_api = "https://nid.naver.com/oauth2.0/authorize?response_type=code"
+    client_id = "sr5Wb8p3_r8B_3nV9wKv"  # 배포시 보안적용 해야함
+    redirect_uri = "http://localhost:8000/accounts/naver/login/callback/"
+    state_token = secrets.token_urlsafe(16)
+    return redirect(
+        f"{naver_api}&client_id={client_id}&redirect_uri={redirect_uri}&state={state_token}"
+    )
+
+
+def naver_callback(request):
+    data = {
+        "grant_type": "authorization_code",
+        "client_id": "sr5Wb8p3_r8B_3nV9wKv",  # 배포시 보안적용 해야함
+        "client_secret": "FtyMQDzlAQ",
+        "code": request.GET.get("code"),
+        "state": request.GET.get("state"),
+        "redirect_uri": "http://localhost:8000/accounts/naver/login/callback/",
+    }
+    naver_token_request_url = "https://nid.naver.com/oauth2.0/token"
+    access_token = requests.post(naver_token_request_url, data=data).json()[
+        "access_token"
+    ]
+
+    headers = {"Authorization": f"bearer {access_token}"}
+    naver_call_user_api = "https://openapi.naver.com/v1/nid/me"
+    naver_user_information = requests.get(naver_call_user_api, headers=headers).json()
+
+    naver_id = naver_user_information["response"]["id"]
+    naver_nickname = naver_user_information["response"]["nickname"]
+
+    if get_user_model().objects.filter(naver_id=naver_id).exists():
+        naver_user = get_user_model().objects.get(naver_id=naver_id)
+    else:
+        naver_login_user = get_user_model()()
+        naver_login_user.username = naver_nickname
+        naver_login_user.naver_id = naver_id
+        naver_login_user.set_password(str(state_token))
+        naver_login_user.save()
+        naver_user = get_user_model().objects.get(naver_id=naver_id)
+    my_login(request, naver_user)
+    return redirect(request.GET.get("next") or "articles:main")
+
+
+def google_request(request):
+    google_api = "https://accounts.google.com/o/oauth2/v2/auth"
+    client_id = "598608554936-4rm80s1c7krbac2hs9f9f08vamnitvb7.apps.googleusercontent.com"  # 배포시 보안적용 해야함
+    redirect_uri = "http://localhost:8000/accounts/login/google/callback/"
+    google_base_url = "https://www.googleapis.com/auth"
+    google_email = "/userinfo.email"
+    google_myinfo = "/userinfo.profile"
+    scope = f"{google_base_url}{google_email}+{google_base_url}{google_myinfo}"
+    return redirect(
+        f"{google_api}?client_id={client_id}&response_type=code&redirect_uri={redirect_uri}&scope={scope}"
+    )
+
+
+def google_callback(request):
+    data = {
+        "code": request.GET.get("code"),
+        "state": request.GET.get("state"),
+        "grant_type": "authorization_code",
+        "client_id": "598608554936-4rm80s1c7krbac2hs9f9f08vamnitvb7.apps.googleusercontent.com",  # 배포시 보안적용 해야함
+        "client_secret": "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",
+        "redirect_uri": "http://localhost:8000/accounts/login/google/callback/",
+    }
+    google_token_request_url = "https://oauth2.googleapis.com/token"
+    access_token = requests.post(google_token_request_url, data=data).json()[
+        "access_token"
+    ]
+    params = {
+        "access_token": f"{access_token}",
+    }
+    google_call_user_api = "https://www.googleapis.com/oauth2/v3/userinfo"
+    google_user_information = requests.get(google_call_user_api, params=params).json()
+
+    google_id = google_user_information["sub"]
+    google_name = google_user_information["name"]
+    print(google_id)
+    if get_user_model().objects.filter(goo_id=google_id).exists():
+        google_user = get_user_model().objects.get(goo_id=google_id)
+    else:
+        google_login_user = get_user_model()()
+        google_login_user.username = google_name
+        google_login_user.goo_id = google_id
+        google_login_user.set_password(str(state_token))
+        google_login_user.save()
+        google_user = get_user_model().objects.get(goo_id=google_id)
+    my_login(request, google_user)
+    return redirect(request.GET.get("next") or "articles:main")

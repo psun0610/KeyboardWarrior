@@ -1,5 +1,6 @@
 from django.urls import path, include
 from . import views
+
 app_name = "accounts"
 
 urlpatterns = [
@@ -11,4 +12,8 @@ urlpatterns = [
     path("<int:pk>/edit_profile/", views.edit_profile, name="edit_profile"),
     path("<int:pk>/change_password/", views.change_password, name="change_password"),
     path("<int:pk>/follow/", views.follow, name="follow"),
+    path("login/naver/", views.naver_request, name="naver"),
+    path("login/naver/callback/", views.naver_callback),
+    path("login/google/", views.google_request, name="google"),
+    path("login/google/callback/", views.google_callback),
 ]

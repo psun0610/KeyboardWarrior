@@ -32,12 +32,14 @@ connect = [
 
 
 class User(AbstractUser):
+    naver_id = models.CharField(null=True, unique=True, max_length=100)
+    goo_id = models.CharField(null=True, unique=True, max_length=50)
     followings = models.ManyToManyField(
         "self", symmetrical=False, related_name="followers"
     )
-    press = MultiSelectField(choices=Key_Press)
-    weight = MultiSelectField(choices=Weight)
-    array = MultiSelectField(choices=Array)
-    sound = MultiSelectField(choices=Sound)
+    press = MultiSelectField(choices=Key_Press, null=True)
+    weight = MultiSelectField(choices=Weight, null=True)
+    array = MultiSelectField(choices=Array, null=True)
+    sound = MultiSelectField(choices=Sound, null=True)
     rank = models.IntegerField(default=0)
-    connect = MultiSelectField(choices=connect)
+    connect = MultiSelectField(choices=connect, null=True)
