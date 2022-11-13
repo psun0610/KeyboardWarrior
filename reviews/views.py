@@ -240,20 +240,20 @@ def like(request, pk):
     return JsonResponse(data)
 
 # 댓글 좋아요
-def comment_like(request, pk, comment_pk):
-    review = Review.objects.get(pk=pk)
+def comment_like(request, review_pk, comment_pk):
+    review_pk = Review.objects.get(pk=review_pk)
     comment = Comment.objects.get(pk=comment_pk)
     if request.user not in comment.like_users.all():
         comment.like_users.add(request.user)
-        is_like = True
+        is_commentlike = True
     else:
         comment.like_users.remove(request.user)
-        is_like = False
-    context  = {
-        "isLike": is_like,
-        "review": review,
+        is_commentlike = False
+    data  = {
+        "iscommentLike": is_commentlike,        
+        "review_pk": review_pk.pk,
     }
-    return JsonResponse(context)
+    return JsonResponse(data)
     
     
     
