@@ -2,77 +2,78 @@
 {% load static %}
 {% load django_bootstrap5 %}
 {% block body %}
-  
-  {% comment %} 제목 1 {% endcomment %}
-  <div class='signup-head'>
-    <h2 class='signup-head-h2'>KeyBoard Warrior 나의 정보 수정</h2>
-    <hr class='bighr'>
-    <p>키보드 워리어 회원 수정</p>
-  </div>
-  <div class='signupbox'>
-    <form action="" method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      <div>
-        {% comment %} 회원정보 폼 1 {% endcomment %}
-        <div class='signup-user'>
-          <div class='signup-userinfo-box'>
-            <input data-testid="input-box" name="username"
-                    placeholder="아이디" type="text" required="" class="signup-userinfo" value="">
-            <input data-testid="input-box" name="email"
-                    placeholder="이메일" type="email" required="" class="signup-userinfo" value="">
-            <input data-testid="input-box" name="password"
-                    placeholder="암호" type="password" required="" class="signup-userinfo" value="">
-            <input data-testid="input-box" name=""
-                    placeholder="암호 확인" type="password" required="" class="signup-userinfo" value="">
-          </div>
-          <div class='signup-userinfo-name-box'>
-            <input data-testid="input-box" name="name"
-                    placeholder="이름" type="text" required="" class="signup-userinfo-name" value="">
-            <input data-testid="input-box" name="firstname"
-                    placeholder="성" type="text" required="" class="signup-userinfo-name" value="">
-          </div>
+
+{% comment %} 제목 1 {% endcomment %}
+<div class='signup-head'>
+  <h2 class='signup-head-h2'>KeyBoard Warrior 나의 정보 수정</h2>
+  <a href="{% url 'accounts:delete' user.id  %}">탈퇴</a>
+  <hr class='bighr'>
+  <p>키보드 워리어 회원 수정</p>
+</div>
+<div class='signupbox'>
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+      {% comment %} 회원정보 폼 1 {% endcomment %}
+      <div class='signup-user'>
+        <div class='signup-userinfo-box'>
+          <input data-testid="input-box" name="username" placeholder="아이디" type="text" required=""
+            class="signup-userinfo" value="">
+          <input data-testid="input-box" name="email" placeholder="이메일" type="email" required="" class="signup-userinfo"
+            value="">
+          <input data-testid="input-box" name="password" placeholder="암호" type="password" required=""
+            class="signup-userinfo" value="">
+          <input data-testid="input-box" name="" placeholder="암호 확인" type="password" required="" class="signup-userinfo"
+            value="">
         </div>
-        {% comment %} 제목 2 {% endcomment %}
-        <div class='signup-head'>
-          <h3 class='signup-head-h2'>선호하는 키보드가 있으신가요?</h3>
-        </div>
-        {% comment %} 키보드 취향 {% endcomment %}
-          <div class='select-box'>
-            <div class="select">
-              <input type="radio" id="sound" name="sound"><label for="sound">시원한 소리</label>
-              <input type="radio" id="sound2" name="sound"><label for="sound2">조용한 소리</label>
-              <input type="radio" id="sound3" name="sound"><label for="sound3">상관없음</label>
-            </div>
-            <div class="select">
-              <input type="radio" id="array" name="array"><label for="array">텐키리스</label>
-              <input type="radio" id="array2" name="array"><label for="array2">풀배열</label>
-              <input type="radio" id="array3" name="array"><label for="array3">상관없음</label>
-            </div>
-
-            <div class="select">
-              <input type="radio" id="connect" name="connect"><label for="connect">유선</label>
-              <input type="radio" id="connect2" name="connect"><label for="connect2">무선</label>
-              <input type="radio" id="connect3" name="connect"><label for="connect3">상관없음</label>
-            </div>
-
-            <div class="select">
-              <input type="radio" id="press" name="press"><label for="press">가벼운 타건감</label>
-              <input type="radio" id="press2" name="press"><label for="press2">묵직한 타건감</label>
-              <input type="radio" id="press3" name="press"><label for="press3">상관없음</label>
-            </div>
-
-            <div class="select1">
-              <input type="radio" id="weight" name="weight"><label for="weight">가벼운</label>
-              <input type="radio" id="weight2" name="weight"><label for="weight2">상관없음</label>
-            </div>
-          </div>
-        <div>
-          <button class='signup-btn' type="submit">KeyBoard Warrior에 내 정보 다시 알려주기</button>
-          <a href="{% url 'accounts:detail' user.id %}">
-            <button class='btn btn-outline-danger' style="margin:5px;" type="button">취소</button>
-          </a>
+        <div class='signup-userinfo-name-box'>
+          <input data-testid="input-box" name="name" placeholder="이름" type="text" required=""
+            class="signup-userinfo-name" value="">
+          <input data-testid="input-box" name="firstname" placeholder="성" type="text" required=""
+            class="signup-userinfo-name" value="">
         </div>
       </div>
-    </form>
-  </div>
+      {% comment %} 제목 2 {% endcomment %}
+      <div class='signup-head'>
+        <h3 class='signup-head-h2'>선호하는 키보드가 있으신가요?</h3>
+      </div>
+      {% comment %} 키보드 취향 {% endcomment %}
+      <div class='select-box'>
+        <div class="select">
+          <input type="radio" id="sound" name="sound"><label for="sound">시원한 소리</label>
+          <input type="radio" id="sound2" name="sound"><label for="sound2">조용한 소리</label>
+          <input type="radio" id="sound3" name="sound"><label for="sound3">상관없음</label>
+        </div>
+        <div class="select">
+          <input type="radio" id="array" name="array"><label for="array">텐키리스</label>
+          <input type="radio" id="array2" name="array"><label for="array2">풀배열</label>
+          <input type="radio" id="array3" name="array"><label for="array3">상관없음</label>
+        </div>
+
+        <div class="select">
+          <input type="radio" id="connect" name="connect"><label for="connect">유선</label>
+          <input type="radio" id="connect2" name="connect"><label for="connect2">무선</label>
+          <input type="radio" id="connect3" name="connect"><label for="connect3">상관없음</label>
+        </div>
+
+        <div class="select">
+          <input type="radio" id="press" name="press"><label for="press">가벼운 타건감</label>
+          <input type="radio" id="press2" name="press"><label for="press2">묵직한 타건감</label>
+          <input type="radio" id="press3" name="press"><label for="press3">상관없음</label>
+        </div>
+
+        <div class="select1">
+          <input type="radio" id="weight" name="weight"><label for="weight">가벼운</label>
+          <input type="radio" id="weight2" name="weight"><label for="weight2">상관없음</label>
+        </div>
+      </div>
+      <div>
+        <button class='signup-btn' type="submit">KeyBoard Warrior에 내 정보 다시 알려주기</button>
+        <a href="{% url 'accounts:detail' user.id %}">
+          <button class='btn btn-outline-danger' style="margin:5px;" type="button">취소</button>
+        </a>
+      </div>
+    </div>
+  </form>
+</div>
 {% endblock body %}

@@ -8,7 +8,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model, login as my_login, logout as my_logout
 from django.contrib import messages
-from .forms import CustomUserChangeForm
+from .forms import CustomUserChangeForm, SocialUserForm
 
 # Create your views here.
 
@@ -38,6 +38,13 @@ def signup(request):
     }
     print(form.errors)
     return render(request, "accounts/signup.html", context)
+
+
+def delete(request, pk):
+    user = get_user_model().objects.get(pk=pk)
+    if request.user == user:
+        user.delete()
+    return redirect("articles:main")
 
 
 def login(request):
@@ -177,6 +184,8 @@ def naver_callback(request):
 
     if get_user_model().objects.filter(naver_id=naver_id).exists():
         naver_user = get_user_model().objects.get(naver_id=naver_id)
+        my_login(request, naver_user)
+        return redirect(request.GET.get("next") or "articles:main")
     else:
         naver_login_user = get_user_model()()
         naver_login_user.username = naver_nickname
@@ -184,8 +193,9 @@ def naver_callback(request):
         naver_login_user.set_password(str(state_token))
         naver_login_user.save()
         naver_user = get_user_model().objects.get(naver_id=naver_id)
-    my_login(request, naver_user)
-    return redirect(request.GET.get("next") or "articles:main")
+        my_login(request, naver_user)
+        pk = naver_user.pk
+        return redirect(request.GET.get("next") or "accounts:social_form", pk)
 
 
 def google_request(request):
@@ -220,17 +230,47 @@ def google_callback(request):
     google_call_user_api = "https://www.googleapis.com/oauth2/v3/userinfo"
     google_user_information = requests.get(google_call_user_api, params=params).json()
 
-    google_id = google_user_information["sub"]
-    google_name = google_user_information["name"]
-    print(google_id)
-    if get_user_model().objects.filter(goo_id=google_id).exists():
-        google_user = get_user_model().objects.get(goo_id=google_id)
+    g_id = google_user_information["sub"]
+    g_name = google_user_information["name"]
+    g_email = google_user_information["email"]
+
+    if get_user_model().objects.filter(goo_id=g_id).exists():
+        google_user = get_user_model().objects.get(goo_id=g_id)
+        my_login(request, google_user)
+        return redirect(request.GET.get("next") or "articles:main")
     else:
         google_login_user = get_user_model()()
-        google_login_user.username = google_name
-        google_login_user.goo_id = google_id
+        google_login_user.username = g_name
+        google_login_user.email = g_email
+        google_login_user.goo_id = g_id
         google_login_user.set_password(str(state_token))
         google_login_user.save()
-        google_user = get_user_model().objects.get(goo_id=google_id)
-    my_login(request, google_user)
-    return redirect(request.GET.get("next") or "articles:main")
+        google_user = get_user_model().objects.get(goo_id=g_id)
+        pk = google_user.pk
+        my_login(request, google_user)
+        return redirect("accounts:social_form", pk)
+
+
+# 소셜유저 로그인 후 개인정보 입력창 이동
+@login_required
+def social_form(request, pk):
+    user = get_user_model().objects.get(pk=pk)
+    if request.user == user:
+        if request.method == "POST":
+            form = SocialUserForm(request.POST, instance=request.user)
+            if form.is_valid():
+                user = form.save()
+                try:
+                    user.profile_image = request.FILES["image"]
+                    user.save()
+                except:
+                    print("error")
+                return redirect("accounts:detail", user.pk)
+        else:
+            form = SocialUserForm(instance=request.user)
+        context = {
+            "form": form,
+        }
+        return render(request, "accounts/social_form.html", context)
+    else:
+        return render(request, "articles/index.html")
