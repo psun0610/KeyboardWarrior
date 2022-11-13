@@ -47,14 +47,14 @@ def index(request):
 def create(request):
     if request.method == "POST":
         review_form = ReviewForm(request.POST, request.FILES)
-        kb = Keyboard.objects.get(name=request.POST["keyboard"])
-        print(kb, 1)
+        # kb = Keyboard.objects.get(name=request.POST["keyboard"])
+        # print(kb, 1)
         if review_form.is_valid():
             print("유효성검사")
             review = review_form.save(commit=False)
             review.user = request.user
             print("키보드 저장전")
-            review.keyboard = kb
+            # review.keyboard = kb
             review.save()
             print("저장")
             return redirect("reviews:index")
@@ -239,6 +239,24 @@ def like(request, pk):
 
     return JsonResponse(data)
 
+# 댓글 좋아요
+def comment_like(request, pk, comment_pk):
+    review = Review.objects.get(pk=pk)
+    comment = Comment.objects.get(pk=comment_pk)
+    if request.user not in comment.like_users.all():
+        comment.like_users.add(request.user)
+        is_like = True
+    else:
+        comment.like_users.remove(request.user)
+        is_like = False
+    context  = {
+        "isLike": is_like,
+        "review": review,
+    }
+    return JsonResponse(context)
+    
+    
+    
 # 즐겨찾기(bookmark)
 def bookmark(request, pk):
     review = Review.objects.get(pk=pk)
@@ -253,20 +271,21 @@ def bookmark(request, pk):
     }
     return JsonResponse(context)
 
-def keyboard_search(request):
-    search_data = request.GET.get("search", "")
-    keyboard = Keyboard.objects.filter(name__icontains=search_data).all()
-    keyboard_list = []
-    for k in keyboard:
-        keyboard_list.append(
-            {
-                "name": k.name,
-                "img": k.img,
-                "brand": k.brand,
-                "id": k.pk,
-            }
-        )
-    context = {
-        "keyboard_list": keyboard_list,
-    }
-    return JsonResponse(context)
+# # 키보드검색
+# def keyboard_search(request):
+#     search_data = request.GET.get("search", "")
+#     keyboard = Keyboard.objects.filter(name__icontains=search_data).all()
+#     keyboard_list = []
+#     for k in keyboard:
+#         keyboard_list.append(
+#             {
+#                 "name": k.name,
+#                 "img": k.img,
+#                 "brand": k.brand,
+#                 "id": k.pk,
+#             }
+#         )
+#     context = {
+#         "keyboard_list": keyboard_list,
+#     }
+#     return JsonResponse(context)

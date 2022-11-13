@@ -72,11 +72,7 @@
       <div id="comments">
         {% for comment in comments %}
           <hr>
-          <p>{{comment.user}}
-            |
-            {{comment.content}}
-            |
-            {{ comment.created_at }}</p>
+          <p>{{comment.user}} | {{comment.content}} | {{ comment.created_at }}</p>
           <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-{{ comment.pk }}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="{{ comment.pk }}">삭제</button>
         {% endfor %}
       </div>
