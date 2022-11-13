@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block body %}
-<div class="my-container keyboard-detail-all">
+<div class="keyboard-detail-all">
   <div class="keyboard-detail-img-wrap">
     <img src="{{ keyboard.img }}">
   </div>
@@ -11,6 +11,10 @@
   <div class="keyboard-detail-content">
     <h2 class='keyboard-name'>{{ keyboard.name }}</h2>
     <table>
+      <tr>
+        <th>별점</th>
+        <td style="color:rgb(210, 33, 9);">☆☆☆☆</td>
+      </tr>
       <tr>
         <th>제조사</th>
         <td>{{ keyboard.brand }}</td>
@@ -72,7 +76,7 @@
 
     </div>
     <!-- 판매/구매 -->
-    <div class="keyboard-detail-mini-title" style="margin: 0">
+    <div class="keyboard-detail-mini-title" style="margin-top: 15px;">
       <h2>마음에 드셨나요?</h2>
       <a class="a-blue">판매/구매 하러가기 ></a>
     </div>

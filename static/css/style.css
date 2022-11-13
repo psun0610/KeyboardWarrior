@@ -66,7 +66,7 @@ a {
 }
 
 .my-nav {
-  background-color: var(--white-transparent);
+  background-color: #191919a7;
   height: 50px;
   width: 100%;
   position: sticky;
@@ -77,6 +77,7 @@ a {
 .my-nav:hover {
   transition: all .3s ease-in-out;
   background-color: white;
+  background-color: var(--my-black);
 }
 .my-nav>div {
   max-width: 1420px;
@@ -93,6 +94,7 @@ a {
   font-size: 18px;
   margin: 0 0 0 0.9vh;
   font-weight: 700;
+  color: white
 }
 
 .my-nav-ul {
@@ -117,6 +119,7 @@ a {
 .my-nav-item {
   padding: 0 10px;
   font-size: 14px;
+  color: white;
 }
 
 /* articles/main */
@@ -879,60 +882,71 @@ footer>div {
 
 /* 상품디테일 */
 .keyboard-detail-all {
-  margin: 200px auto;
+  max-width: 1160px;
+  margin: 150px auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .keyboard-detail-img-wrap {
-  width: 45%;
+  width: 47%;
   display: flex;
   justify-content: center;
-  padding-right: 40px;
+  padding-right: 15px;
 }
 
 .keyboard-detail-img-wrap>img {
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .keyboard-detail-content {
-  width: 45%;
-  padding-left: 40px;
+  width: 500px;
+  height: 600px;
   display: flex;
   flex-direction: column;
 }
+.keyboard-detail-content>table tr {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
 .keyboard-detail-content>table th {
-  width: 35%;
+  color: #333;
+  width: 28%;
   font-weight: normal;
-  font-size: 16px;
-  padding: 3px 0;
+  font-size: 14px;
+  padding: 3px 25px;
 }
 .keyboard-detail-content>table td {
-  font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
+  color: #333;
 }
 
 .keyboard-name {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-left: 25px;
   font-weight: bolder;
   font-size: 30px;
 }
 
 .keyboard-detail-mini {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .keyboard-detail-mini-title {
   margin-bottom: 25px;
 }
 .keyboard-detail-mini-title>h2 {
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 700;
   margin-bottom: 5px;
+  margin-left: 25px;
 }
-
+.keyboard-detail-mini-title>a {
+  margin-left: 25px;
+}
 .keyboard-comment {
   display: flex;
   margin-bottom: 25px;
+  margin-left: 25px;
 }
 .keyboard-comment-box {
   width: 80%;
