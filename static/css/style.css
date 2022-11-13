@@ -127,7 +127,7 @@ a {
 }
 
 .my-container {
-  max-width: 55.4688vw;
+  max-width: 1420px;
   margin: auto;
 }
 
@@ -879,40 +879,81 @@ footer>div {
 
 /* 상품디테일 */
 .keyboard-detail-all {
-  margin-top: 150px;
-}
-
-.keyboard-detail-img {
-  width: 100%;
-  padding: 0 30px 0px 30px;
-}
-
-.keyboard-info {
+  margin: 200px auto;
   display: flex;
+  justify-content: center;
 }
 
-.keyboard-info-all {
-  margin-bottom: 30px;
+.keyboard-detail-img-wrap {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  padding-right: 40px;
 }
 
+.keyboard-detail-img-wrap>img {
+  width: 100%;
+  object-fit: cover;
+}
+.keyboard-detail-content {
+  width: 45%;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.keyboard-detail-content>table th {
+  width: 35%;
+  font-weight: normal;
+  font-size: 16px;
+  padding: 3px 0;
+}
+.keyboard-detail-content>table td {
+  font-weight: 700;
+  font-size: 16px;
+}
 
 .keyboard-name {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   font-weight: bolder;
+  font-size: 30px;
 }
 
-.comment-profile-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 20px;
+.keyboard-detail-mini {
+  margin-top: 20px;
+}
+.keyboard-detail-mini-title {
+  margin-bottom: 25px;
+}
+.keyboard-detail-mini-title>h2 {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
 .keyboard-comment {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
-
-.keyboard-detail-mini-title {
-  font-weight: bold;
+.keyboard-comment-box {
+  width: 80%;
+}
+.keyboard-comment-box>div {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-wrap:break-word; 
+  line-height: 1.3rem;
+  overflow: hidden;
+}
+.keyboard-comment-box>p {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.comment-profile-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 25px;
 }
