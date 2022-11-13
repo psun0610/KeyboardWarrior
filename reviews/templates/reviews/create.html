@@ -16,12 +16,12 @@
         <div class='reviewcreate-userinfo-box'>
           <input data-testid="input-box" name="title"
                   placeholder="제목" type="text" required="" class="reviewcreate-userinfo" value="">
-          {% comment %} <div class="search-wrap">
+          <div class="search-wrap">
             <input id="search_input" class="form-control me-2" name="keyboard" type="search" placeholder="Search"
               aria-label="Search">
               <div class="search-off search-div " id="search_box">
               </div>
-          </div>         {% endcomment %}
+          </div>        
           <div class='fieldset'>
             <input class='star' type="radio" name="grade" value="5" id="rate1"><label  class='starlabel' for="rate1">⭐</label>
             <input class='star' type="radio" name="grade" value="4" id="rate2"><label  class='starlabel' for="rate2">⭐</label>
@@ -46,7 +46,7 @@
 
       
 
-{% comment %} <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
 
   const search_input = document.querySelector('#search_input');
@@ -142,6 +142,6 @@
     width: 70px;
     height: 70px;
   }
-</style> {% endcomment %}
+</style>
 
 {% endblock body %}
