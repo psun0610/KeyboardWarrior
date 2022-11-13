@@ -54,3 +54,28 @@ class CustomUserChangeForm(UserChangeForm):
             "sound": "소리",
             "connect": "연결",
         }
+
+
+class SocialUserForm(UserChangeForm):
+    password = None
+
+    class Meta:
+        model = get_user_model()
+        fields = [
+            "email",
+            "press",
+            "weight",
+            "array",
+            "sound",
+            "connect",
+        ]
+        labels = {
+            "email": "이메일 ",
+            "press": "키압",
+            "first_name": "이름",
+            "last_name": "성",
+            "weight": "무게",
+            "array": "배열",
+            "sound": "소리",
+            "connect": "연결",
+        }
