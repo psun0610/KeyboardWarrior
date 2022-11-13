@@ -72,8 +72,12 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
+  transition: all .3s ease-in-out;
 }
-
+.my-nav:hover {
+  transition: all .3s ease-in-out;
+  background-color: white;
+}
 .my-nav>div {
   max-width: 1420px;
   margin: 0 auto;
@@ -431,6 +435,51 @@ footer>div {
   color: white;
   font-size: 14px;
 }
+
+.ad-container {
+  max-width: 1420px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ad-card {
+  width: 50%;
+  position: relative;
+}
+.ad-card>img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+.ad-card-context {
+  position: absolute;
+  background-color: var(--white-transparent);
+  bottom: 0;
+  transform: translate(0, 20px);
+  width: 100%;
+  padding: 20px 30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .35s ease-in-out;
+}
+.ad-card-context-hover {
+  position: absolute;
+  background-color: var(--white-transparent);
+  bottom: 0;
+  width: 100%;
+  padding: 20px 30px;
+  visibility: visible;
+  opacity: 1;
+  transition: all .35s ease-in-out;
+}
+.ad-card-context-h1 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+
 /* ========================================================================================== */
 /* accounts:signup.html */
 .signup-user {
@@ -846,11 +895,6 @@ footer>div {
   margin-bottom: 30px;
 }
 
-.keyboard-info-name {
-  margin-right: 100px;
-  color: #9c9c9c;
-  margin-left: 10px;
-}
 
 .keyboard-name {
   margin-bottom: 50px;

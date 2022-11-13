@@ -124,40 +124,58 @@
     <p>모든 키보드를 보여드릴게요</p>
   </div>
 
+  <!-- 검색된 키보드 개수가 8개 이하면 광고 안 띄움 -->
+  {% if all_keyboard|length < 8 %}
   <div class="all-card-container">
     <!-- 나중에 all_keyboard에서 context가 넘겨주는 다른 값으로 바꾸기 -->
-    <!-- 검색된 키보드 개수가 8개 이하면 광고 안 띄움 -->
-    {% if all_keyboard|length < 8 %}
-      {% for keyboard in all_keyboard %}
-      <a href="{% url 'articles:detail' keyboard.pk %}">
-        <div class="all-card">
-          <img src="{{ keyboard.img }}">
-          <div class="all-card-h1-wrap">
-            <h1>{{ keyboard.name }}</h1>
-          </div>
-          <div class="all-card-button">자세히 알아보기</div>
+    {% for keyboard in all_keyboard %}
+    <a href="{% url 'articles:detail' keyboard.pk %}">
+      <div class="all-card">
+        <img src="{{ keyboard.img }}">
+        <div class="all-card-h1-wrap">
+          <h1>{{ keyboard.name }}</h1>
         </div>
-      </a>
-      {% endfor %}
-
-    <!-- 8개 이상이면 광고 띄움 -->
-    {% else %}
-      {% for keyboard in all_keyboard|slice:":8" %}
-      <a href="{% url 'articles:detail' keyboard.pk %}">
-        <div class="all-card">
-          <img src="{{ keyboard.img }}">
-          <div class="all-card-h1-wrap">
-            <h1>{{ keyboard.name }}</h1>
-          </div>
-          <div class="all-card-button">자세히 알아보기</div>
-        </div>
-      </a>
-      {% endfor %}
-
-      <!-- 광고 -->
-      <div class="ad">
-        
+        <div class="all-card-button">자세히 알아보기</div>
       </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <!-- 8개 이상이면 광고 띄움 -->
+  {% else %}
+  <div class="all-card-container">
+    {% for keyboard in all_keyboard|slice:":8" %}
+    <a href="{% url 'articles:detail' keyboard.pk %}">
+      <div class="all-card">
+        <img src="{{ keyboard.img }}">
+        <div class="all-card-h1-wrap">
+          <h1>{{ keyboard.name }}</h1>
+        </div>
+        <div class="all-card-button">자세히 알아보기</div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <!-- 광고 -->
+  <div class="ad-container">
+    <div class="ad-card">
+      <img src="https://funkeys.co.kr/data/apms/background/var_new_02.jpg">
+      <div class="ad-card-context">
+        <h1 class="ad-card-context-h1">VARMILO VA108M V2 Dreams on Board PBT 염료승화 한글 저소음적축</h1>
+        <a href="https://funkeys.co.kr/shop/item.php?it_id=1659323274&ca_id=10" class="a-blue">바로 알아보기 ></a>
+      </div>
+    </div>
+    <div class="ad-card">
+      <img src="https://funkeys.co.kr/data/apms/background/var_new_04.jpg">
+      <div class="ad-card-context">
+        <h1 class="ad-card-context-h1">VARMILO VA87M V2 매화 컬렉션 PBT 염료승화 한글 갈축</h1>
+        <a href="https://funkeys.co.kr/shop/item.php?it_id=1650009036&ca_id=10" class="a-blue">바로 알아보기 ></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="all-card-container">
       {% for keyboard in all_keyboard|slice:"8:" %}
       <a href="{% url 'articles:detail' keyboard.pk %}">
         <div class="all-card">
@@ -171,7 +189,6 @@
       {% endfor %}
     {% endif %}
   </div>
-  
 </div>
 
 <script type="text/javascript" src="/static/js/articles.js"></script>
