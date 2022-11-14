@@ -21,6 +21,7 @@ class Trades(models.Model):
     img = models.ImageField(
         upload_to="img/",
         blank=True,
+    )
     marker = models.ManyToManyField(
         AUTH_USER_MODEL, symmetrical=False, related_name="jjim"
     )
