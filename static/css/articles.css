@@ -824,16 +824,6 @@ footer>div {
 
 }
 
-.reviewcreate-head {
-  width: 800px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 30px;
-  margin-top: 50px;
-  font-weight: 900
-}
 
 .reviewcreate-userinfo-box {
   border: 10px;
