@@ -56,6 +56,7 @@ a {
   --a-blue: #3786FB;
   --my-black: #191919;
   --my-red: #EE315E;
+  --my-hover-gray: rgb(220, 220, 220);
   
   --head-size: 25px;
 }
@@ -871,6 +872,9 @@ footer>div {
 
 
 /* 상품디테일 */
+#keyboard-star {
+  color: var(--my-red);
+}
 .keyboard-detail-all {
   max-width: 1160px;
   margin: 150px auto;
