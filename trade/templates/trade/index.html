@@ -205,27 +205,28 @@
     </form>
     <!-- 게시글 카드 -->
     <div class="card-container">
-      {% for trade in trades %}
+      {% for photo in photo_list %}
 
-      <a href="{% url 'trade:detail' trade.pk %}">
+      <a href="{% url 'trade:detail' photo.trade.pk %}">
         <div class="my-card">
           <div class="card-content">
-            {% if trade.img %}
-              <img src="{{ trade.img.url }}">
+            {% if photo.image %}
+              <img src="{{ photo.image.url }}">
             {% else %}
-              <img src="{% static 'main.jpg' %}">
+              <img src="{% static 'images/logo_png.png' %}">
             {% endif %}
             <div class="card-title">
-              <h3>{{ trade.keyboard.name }}</h3>
-              <h1>{{ trade.title }}</h1>
-              <h2>₩ {{ trade.price|intcomma }}</h2>
+              <h3>{{ photo.trade.keyboard.name }}</h3>
+              <h1>{{ photo.trade.title }}</h1>
+              <h2>₩ {{ photo.trade.price|intcomma }}</h2>
             </div>
           </div>
-        </a>
+        </div>
+      </a>
       {% endfor %}
     </div>
-
-    {% for trade in trades %}
+  </div>
+    <!-- {% for trade in trades %}
       <p>
         {%if trade.Trade_type == 1%}
           팝니다
@@ -239,6 +240,6 @@
         <hr>
         {%endfor%}
       </div>
-    </div>
+    </div> -->
     <script src="{% static 'js/articles.js' %}"></script>
   {% endblock body %}

@@ -34,9 +34,19 @@ def KMP(p, t):
             else:
                 i += 1
     return ans
+
+
 def index(request):
     trades = Trades.objects.all()
-    context = {"trades": trades}
+    photo_list = []
+    for trade in trades:
+        if trade.photo_set.all():
+            thumbnail = trade.photo_set.all()[0]
+            photo_list.append(thumbnail)
+
+    context = {
+        "photo_list": photo_list,
+    }
     return render(request, "trade/index.html", context)
 
 
@@ -67,6 +77,8 @@ def create(request):
         "photo_form": photo_form,
     }
     return render(request, "trade/create.html", context)
+
+
 @login_required
 def update(request, pk):
     trade = get_object_or_404(Trades, pk=pk)

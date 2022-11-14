@@ -17,7 +17,7 @@
         {% csrf_token %}
 
         <div class="select-trade">
-          <input type="radio" id="weight" name="Trade_type" value='1'>
+          <input type="radio" id="weight" name="Trade_type" value='1' checked>
           <label for="weight">팝니다</label>
           <input type="radio" id="weight2" name="Trade_type" value='2'>
           <label for="weight2">삽니다</label>
@@ -25,7 +25,7 @@
         <input data-testid="input-box" name="title" placeholder="제목" type="text" required="" class="reviewcreate-userinfo" value="">
 
         <div class="search-wrap">
-          <input id="search_input" class="reviewcreate-userinfo" name="keyboard" type="search" placeholder="Search" aria-label="Search">
+          <input id="search_input" class="reviewcreate-userinfo" name="keyboard" type="search" placeholder="Search" aria-label="Search" autocomplete="off">
           <div class="search-off search-div " id="search_box"></div>
         </div>
         <input data-testid="input-box" name="price" placeholder="희망가격" type="integer" required="" class="reviewcreate-userinfo" value="">

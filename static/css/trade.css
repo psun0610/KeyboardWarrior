@@ -177,41 +177,33 @@
   background-color: var(--my-red);
 }
 
-.jjim {
-  width: 100px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: var(--my-red);
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-weight: 600;
-  color: var(--my-black);
-  border: 0px;
-  border-radius: 3px;
-  text-align: center;
-  margin-right: 20px;
-}
-
-.jjok {
-  width: 100px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: var(--my-black);
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-weight: 600;
-  color: #ffffff;
-  border: 0px;
-  border-radius: 3px;
-  text-align: center;
-}
-
-
 .jjimjjok {
   width: 400px;
   display: flex;
   margin-left: 25px;
 }
+.trade-detail-btn {
+  width: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  padding: 6px 14px;
+  font-weight: 500;
+  border: 0px;
+  border-radius: 3px;
+  text-align: center;
+  margin-right: 20px;
+}
+.jjim {
+  background-color: var(--my-red);
+}
+.jjok {
+  background-color: var(--my-black);
+}
+.trade-content {
+  margin-left: 25px;
+}
+
 
 .keyboard-detail-mini-1 {
   margin-top: 30px;
@@ -232,11 +224,6 @@
   margin-left: 25px;
 }
 
-.trade-content {
-  margin-left: 25px;
-  text-align: center;
-}
-
 
 
 .comment-hr {
@@ -245,4 +232,5 @@
 
 .trade-all {
   max-width: 1160px;
+  margin: 0 auto;
 }
