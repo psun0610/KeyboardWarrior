@@ -1,0 +1,1442 @@
+[
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC980C 영문 화이트 (30g, 균등)",
+			"img": "https://img.danawa.com/prod_img/500000/167/670/img/7670167_1.jpg?shrink=500:500&_v=20200107112457",
+			"brand": "레오폴드",
+			"connect": "무접점(정전용량)",
+			"weight": "1100g",
+			"array": "98",
+			"switch": "Topre",
+			"key_switch": "기타",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC980C 영문 블랙 (45g, 균등)",
+			"img": "https://img.danawa.com/prod_img/500000/741/875/img/4875741_1.jpg?shrink=500:500&_v=20200107111839",
+			"brand": "레오폴드",
+			"connect": "무접점(정전용량)",
+			"weight": "1100g",
+			"array": "98",
+			"switch": "Topre",
+			"key_switch": "기타",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750R OE 블랙 퍼플 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/245/006/img/10006245_1.jpg?shrink=500:500&_v=20191126170249",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1300g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 코랄블루 한글 (백축)",
+			"img": "https://img.danawa.com/prod_img/500000/270/570/img/17570270_1.jpg?shrink=500:500&_v=20220801083518",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "백축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 코랄블루 영문 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/632/565/img/17565632_1.jpg?shrink=500:500&_v=20220729135020",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750R PD 다크블루 한글 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/709/954/img/6954709_1.jpg?shrink=500:500&_v=20190902144522",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 NP900RBT PD 화이트투톤 영문 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/548/430/img/17430548_1.jpg?shrink=500:500&_v=20220711095456",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "900g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 스웨디시 화이트 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/724/573/img/16573724_1.jpg?shrink=500:500&_v=20220311152737",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 애쉬 옐로우 한글 (흑축)",
+			"img": "https://img.danawa.com/prod_img/500000/001/633/img/16633001_1.jpg?shrink=500:500&_v=20220321090944",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "흑축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 애쉬 옐로우 영문 (은축)",
+			"img": "https://img.danawa.com/prod_img/500000/983/632/img/16632983_1.jpg?shrink=500:500&_v=20220321090726",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "은축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC980MBT PD 화이트 투톤 영문 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/612/727/img/16727612_1.jpg?shrink=500:500&_v=20220401085400",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "98",
+			"switch": "기타",
+			"key_switch": "갈축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 화이트 블루스타 한글 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/636/574/img/16574636_1.jpg?shrink=500:500&_v=20220311160857",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC980MBT PD 화이트 투톤 한글 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/675/727/img/16727675_1.jpg?shrink=500:500&_v=20220401085242",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "98",
+			"switch": "기타",
+			"key_switch": "갈축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 스웨디시 화이트 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/670/573/img/16573670_1.jpg?shrink=500:500&_v=20220311152546",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 라이트 핑크 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/701/350/img/16350701_1.jpg?shrink=500:500&_v=20220209091825",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 화이트 투톤 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/947/167/img/16167947_1.jpg?shrink=500:500&_v=20220112141023",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 애쉬 옐로우 영문 (흑축)",
+			"img": "https://img.danawa.com/prod_img/500000/923/632/img/16632923_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "기타",
+			"key_switch": "흑축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC980MBT PD 화이트 블루스타 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/861/574/img/16574861_1.jpg?shrink=500:500&_v=20220401085202",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "98",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC980MBT PD 화이트 블루스타 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/897/574/img/16574897_1.jpg?shrink=500:500&_v=20220401085049",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "98",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 화이트 그레이 영문 (백축)",
+			"img": "https://img.danawa.com/prod_img/500000/915/223/img/16223915_1.jpg?shrink=500:500&_v=20220119110346",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "백축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 블랙 영문 (백축)",
+			"img": "https://img.danawa.com/prod_img/500000/565/222/img/16222565_1.jpg?shrink=500:500&_v=20220119095828",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "백축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 에버 그린 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/190/079/img/18079190_1.jpg?shrink=500:500&_v=20221024182028",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 화이트민트 영문 (저소음적축)",
+			"img": "https://img.danawa.com/prod_img/500000/755/079/img/17079755_1.jpg?shrink=500:500&_v=20220519094414",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 화이트 블루스타 영문 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/576/574/img/16574576_1.jpg?shrink=500:500&_v=20220311160848",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 다크블루 한글 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/635/466/img/17466635_1.jpg?shrink=500:500&_v=20220715082715",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 다크블루 영문 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/698/466/img/17466698_1.jpg?shrink=500:500&_v=20220715083624",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 차콜 블루 한글 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/031/351/img/16351031_1.jpg?shrink=500:500&_v=20220209094329",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 화이트 블루스타 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/453/574/img/16574453_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 코랄블루 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/857/565/img/17565857_1.jpg?shrink=500:500&_v=20220729135928",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 밀크터쿼이즈 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/307/977/img/17977307_1.jpg?shrink=500:500&_v=20221012144036",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 블랙 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/775/898/img/15898775_1.jpg?shrink=500:500&_v=20220323142357",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 화이트 그레이 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/547/093/img/16093547_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 화이트 투톤 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/697/093/img/16093697_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 애쉬 옐로우 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/938/632/img/16632938_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 그레이 블루 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/399/111/img/17111399_1.jpg?shrink=500:500&_v=20220524094931",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 화이트민트 영문 (저소음적축)",
+			"img": "https://img.danawa.com/prod_img/500000/923/079/img/17079923_1.jpg?shrink=500:500&_v=20220519094431",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 라이트 핑크 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/436/537/img/16537436_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 다크블루 영문 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/794/466/img/17466794_1.jpg?shrink=500:500&_v=20220715091052",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 그레이퍼플 영문 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/419/679/img/17679419_1.jpg?shrink=500:500&_v=20220818130014",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "기타",
+			"key_switch": "갈축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 코랄블루 한글 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/806/565/img/17565806_1.jpg?shrink=500:500&_v=20220729135605",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "기타",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900R PD 이색사출 그레이 블루 한글 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/441/497/img/5497441_1.jpg?shrink=500:500&_v=20190823155651",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1200g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "청축기능멀티미디어",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC660MBT PD 그레이 블루 한글 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/884/643/img/14643884_1.jpg?shrink=500:500&_v=20210702131954",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "700g",
+			"array": "66",
+			"switch": "기타",
+			"key_switch": "갈축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 밀크터쿼이즈 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/061/977/img/17977061_1.jpg?shrink=500:500&_v=20221012143405",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 그레이퍼플 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/545/679/img/17679545_1.jpg?shrink=500:500&_v=20220818125931",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900R OE 블랙 퍼플 영문 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/702/594/img/17594702_1.jpg?shrink=500:500&_v=20220803163241",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1500g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "갈축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900R PD 그레이 퍼플 영문 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/324/224/img/8224324_1.jpg?shrink=500:500&_v=20190823160613",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1200g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900R PD 다크블루 영문 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/847/954/img/6954847_1.jpg?shrink=500:500&_v=20190823160525",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1200g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "갈축기능멀티미디어",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 그레이퍼플 한글 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/455/679/img/17679455_1.jpg?shrink=500:500&_v=20220818125634",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 NP900RBT PD 화이트투톤 한글 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/482/430/img/17430482_1.jpg?shrink=500:500&_v=20220711095058",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "900g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 화이트 투톤 한글 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/848/167/img/16167848_1.jpg?shrink=500:500&_v=20220112140718",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 밀크터쿼이즈 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/893/976/img/17976893_1.jpg?shrink=500:500&_v=20221017191307",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 그라파이트 화이트 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/637/448/img/15448637_1.jpg?shrink=500:500&_v=20211015164726",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 NP900RBT PD 차콜블루 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/701/430/img/17430701_1.jpg?shrink=500:500&_v=20220819152859",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "900g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 화이트 그레이 한글 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/506/167/img/16167506_1.jpg?shrink=500:500&_v=20220112135400",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 라이트 핑크 한글 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/623/350/img/16350623_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 다크블루 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/854/466/img/17466854_1.jpg?shrink=500:500&_v=20220715091621",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 밀크터쿼이즈 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/178/977/img/17977178_1.jpg?shrink=500:500&_v=20221012143735",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 화이트 투톤 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/649/093/img/16093649_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 그레이퍼플 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/371/679/img/17679371_1.jpg?shrink=500:500&_v=20220818125353",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 차콜 블루 한글 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/758/350/img/16350758_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 블랙 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/743/167/img/16167743_1.jpg?shrink=500:500&_v=20220112140231",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 화이트민트 한글 (저소음적축)",
+			"img": "https://img.danawa.com/prod_img/500000/701/079/img/17079701_1.jpg?shrink=500:500&_v=20220519094414",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 그라파이트 블루 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/131/200/img/16200131_1.jpg?shrink=500:500&_v=20220329225242",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 스웨디시 화이트 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/487/573/img/16573487_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 그레이 블루 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/501/353/img/15353501_1.jpg?shrink=500:500&_v=20220323142357",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 그레이 블루 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/833/414/img/15414833_1.jpg?shrink=500:500&_v=20211013110445",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC980M PD 화이트 블루 스타 영문 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/599/762/img/12762599_1.jpg?shrink=500:500&_v=20201125132730",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "98",
+			"switch": "체리",
+			"key_switch": "갈축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC650MDS PD 화이트 블루 스타 영문 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/320/762/img/12762320_1.jpg?shrink=500:500&_v=20201125131222",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "800g",
+			"array": "65",
+			"switch": "체리",
+			"key_switch": "갈축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 블랙 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/985/889/img/15889985_1.jpg?shrink=500:500&_v=20220323142357",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 화이트 그레이 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/469/093/img/16093469_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 화이트민트 한글 (저소음적축)",
+			"img": "https://img.danawa.com/prod_img/500000/842/079/img/17079842_1.jpg?shrink=500:500&_v=20220519094431",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 화이트 블루스타 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/498/574/img/16574498_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900RBT PD 그라파이트 화이트 영문 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/646/448/img/15448646_1.jpg?shrink=500:500&_v=20211015164500",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1100g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "갈축",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750RBT PD 그라파이트 화이트 한글 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/699/920/img/15920699_1.jpg?shrink=500:500&_v=20220323142356",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "기타",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC660MBT PD 스웨디시 화이트 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/226/573/img/16573226_1.jpg?shrink=500:500&_v=20220311151201",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "700g",
+			"array": "66",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC660MBT PD 화이트 그레이 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/886/644/img/14644886_1.jpg?shrink=500:500&_v=20210702133137",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "700g",
+			"array": "66",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC660MBT PD 스웨디시 화이트 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/070/573/img/16573070_1.jpg?shrink=500:500&_v=20220311151201",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "700g",
+			"array": "66",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC660MBT PD 라이트 핑크 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/578/350/img/16350578_1.jpg?shrink=500:500&_v=20220209090426",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "700g",
+			"array": "66",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC660MBT PD 그레이 블루 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/013/644/img/14644013_1.jpg?shrink=500:500&_v=20210702132008",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "700g",
+			"array": "66",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750R PD 그레이 퍼플 영문 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/393/850/img/16850393_1.jpg?shrink=500:500&_v=20220418150738",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750R PD 화이트 블루 스타 영문 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/057/761/img/12761057_1.jpg?shrink=500:500&_v=20201125111920",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC660MBT PD 화이트 그레이 영문 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/940/644/img/14644940_1.jpg?shrink=500:500&_v=20210702133454",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "700g",
+			"array": "66",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC660MBT 애쉬 옐로우 한글 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/020/813/img/15813020_1.jpg?shrink=500:500&_v=20211130123807",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "700g",
+			"array": "66",
+			"switch": "기타",
+			"key_switch": "갈축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC660MBT PD 라이트 핑크 한글 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/581/350/img/16350581_1.jpg?shrink=500:500&_v=20220209090509",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "700g",
+			"array": "66",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900R PD 화이트 그레이 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/661/550/img/10550661_1.jpg?shrink=500:500&_v=20200219123013",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1200g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC650MDS PD 화이트 블루 스타 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/821/711/img/12711821_1.jpg?shrink=500:500&_v=20201118133137",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "800g",
+			"array": "65",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750R PD 이색사출 그레이 블루 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/280/497/img/5497280_1.jpg?shrink=500:500&_v=20190902141952",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC900R PD 화이트 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/072/617/img/5617072_1.jpg?shrink=500:500&_v=20190823153122",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1200g",
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "저소음적축기능키멀티미디어",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC660MBT PD 코랄블루 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/280/602/img/17602280_1.jpg?shrink=500:500&_v=20220804152723",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "700g",
+			"array": "66",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "레오폴드 FC750R PD 화이트 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/963/616/img/5616963_1.jpg?shrink=500:500&_v=20190902140957",
+			"brand": "레오폴드",
+			"connect": "기계식",
+			"weight": "1000g",
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	}
+]
