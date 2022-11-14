@@ -7,46 +7,27 @@
 
 
 
-<div class='my-head'>
-        <h2>KeyBoard Warrior에서 안전한 중고거래</h2>
-        <hr>
-        <p>
-          KeyBoard Warrior 전자기기판매중개자이며 거래당사자는 판매자와 구매자 본인입니다.
-          따라서 상품·거래정보 및 거래에 대하여 책임을 지지 않습니다.
-          미성년자가 체결한 계약은 법정대리인이 동의하지 않는 경우 본인 또는 법정대리인이 취소할 수 있습니다
-        </p>
-    </div>
-<div class='reviewcreatebox'>
-  <div class="trade-form">
-    <form action="" method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      <div class="select-trade">
-        <input type="radio" id="weight" name="Trade_type" value='1'><label for="weight">팝니다</label>
-        <input type="radio" id="weight2" name="Trade_type" value='2'><label for="weight2">삽니다</label>
+<div>
+  <h1>중고거래글 작성</h1>
+</div>
+<div class="side">
+  <form action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    <div class="search-wrap">
+      <input id="search_input" class="form-control me-2" name="keyboard" type="search" placeholder="Search"
+        aria-label="Search">
+      <div class="search-off search-div " id="search_box">
       </div>
-      <input data-testid="input-box" name="title"
-                    placeholder="제목" type="text" required="" class="reviewcreate-userinfo" value="">
-      
-      <div class="search-wrap">
-        <input id="search_input" class="reviewcreate-userinfo" name="keyboard" type="search" placeholder="Search"
-          aria-label="Search">
-          <div class="search-off search-div " id="search_box">
-          </div>
-      </div>   
-      <input data-testid="input-box" name="price"
-                  placeholder="희망가격" type="integer" required="" class="reviewcreate-userinfo" value=""> 
-      <textarea name="content"
-                  placeholder="내용" type="text" required="" class="reviewcreate-userinfo-context" value=""></textarea> 
-      <input type="file" name='img' id='reviewimg' title="Button fade blue/green"style='display: none;'>
-        <label for="reviewimg">
-          <div  class="imgbtn">이미지 업로드</div>
-        </label>   
-      <button class='review-btn' type="submit">KeyBoard Warrior에서 안전한 거래하기</button>
-    </form>
-  </div>
+    </div>
+    {% bootstrap_button button_type="submit" content="작성완료" button_class="btn btn-dark mt-4" %}
+  </form>
+
 </div>
 <form id="search_form" action="{% url 'trade:keyboard_search' %}" class="d-flex hidden" role="search">
 </form>
+
 
 
 
@@ -92,6 +73,7 @@
       axios({
         method: 'get',
         url: `/trade/keyboard_search/?search=${search_input.value}`,
+        data: new FormData(search_form)
       })
         .then(response => {
           const search_box = document.querySelector('#search_box');
@@ -101,8 +83,8 @@
             search_box.insertAdjacentHTML('beforeend', `
           <div onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}"  data-keyboard_name-id="${keyboard_list[i].id}"  id="keyboard_${keyboard_list[i].id}">
           <hr>
-          <p onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" >${keyboard_list[i].name}</p> <img  onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}"  class="keyboard-img" src="${keyboard_list[i].img}">
-          <p onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" >브랜드:${keyboard_list[i].brand} </p> 
+          <p>${keyboard_list[i].name}</p> <img class="keyboard-img" src="${keyboard_list[i].img}">
+          <p>브랜드:${keyboard_list[i].brand} </p> 
           </div>
           `);
           }

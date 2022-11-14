@@ -629,6 +629,10 @@ footer>div {
 
 /* 유저 디테일 */
 
+.detail-my-head {
+  height: 1000px;
+}
+
 .usercard {
   width: 315px;
   height: 144px;

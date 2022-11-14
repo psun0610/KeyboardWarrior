@@ -45,7 +45,7 @@ def index(request):
 @login_required
 def create(request):
     if request.method == "POST":
-        form = CreateTrade(request.POST)
+        form = CreateTrade(request.POST, request.FILES)
         kb = Keyboard.objects.get(name=request.POST["keyboard"])
         if form.is_valid():
             trade = form.save(commit=False)
