@@ -21,7 +21,7 @@
       </tr>
       {% if keyboard.connect != '기타' %}
       <tr>
-        <th>연결 방식</th>
+        <th>접점 방식</th>
         <td>{{ keyboard.connect }}</td>
       </tr>
       {% endif %}
@@ -47,6 +47,12 @@
         <th>키 배열</th>
         <td>{{ keyboard.kind }} / {{ keyboard.array }}키 </td>
       </tr>
+      {% if keyboard.bluetooth != '기타' %}
+      <tr>
+        <th>키압</th>
+        <td>{{ keyboard.bluetooth }}</td>
+      </tr>
+      {% endif %}
       <tr>
         <th>무게</th>
         <td>{{ keyboard.weight }}</td>
