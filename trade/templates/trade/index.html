@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 {% block body %}
 
   <!-- nav바 -->
@@ -205,68 +206,23 @@
     <!-- 게시글 카드 -->
     <div class="card-container">
       {% for trade in trades %}
-        <a href="">
-          <div class="my-card">
-            <div class="card-content">
-              {% if trade.img %}
-                <img src="{{ trade.img.url }}">
-              {% endif %}
-              <h3>{{ trade.keyboard }}</h3>
-              <h1>{{ trade.title }}</h1>
-              <h2>{{ trade.price }}</h2>
-            </div>
-            {% if trade.Trade_type == 1 %}
-              <div class="card-badge blue-badge">판매</div>
+
+      <a href="{% url 'trade:detail' trade.pk %}">
+        <div class="my-card">
+          <div class="card-content">
+            {% if trade.img %}
+              <img src="{{ trade.img.url }}">
             {% else %}
-              <div class="card-badge red-badge">구매</div>
+              <img src="{% static 'main.jpg' %}">
             {% endif %}
+            <div class="card-title">
+              <h3>{{ trade.keyboard.name }}</h3>
+              <h1>{{ trade.title }}</h1>
+              <h2>₩ {{ trade.price|intcomma }}</h2>
+            </div>
           </div>
         </a>
       {% endfor %}
-
-      <a href="">
-        <div class="my-card">
-          <div class="card-content">
-            <img src="">
-            <div class="card-title">
-              <h3>엠스톤 그루브 클라리온M 저소음 갈축 38G</h3>
-              <h1>엠스톤 팔아요</h1>
-              <h2>₩ 9,999,999</h2>
-            </div>
-          </div>
-          <div class="card-badge blue-badge">판매</div>
-          <!-- <div class="card-badge red-badge">구매</div> -->
-        </div>
-      </a>
-
-      <a href="">
-        <div class="my-card">
-          <div class="card-content">
-            <img src="">
-            <div class="card-title">
-              <h3>엠스톤 그루브 클라리온M 저소음 갈축 38G</h3>
-              <h1>엠스톤 사요</h1>
-              <h2>₩ 9,999,999</h2>
-            </div>
-          </div>
-          <div class="card-badge red-badge">구매</div>
-        </div>
-      </a>
-
-      <a href="">
-        <div class="my-card">
-          <div class="card-content">
-            <img src="">
-            <div class="card-title">
-              <h3>엠스톤 그루브 클라리온M 저소음 갈축 38G</h3>
-              <h1>엠스톤 팔아요</h1>
-              <h2>₩ 9,999,999</h2>
-            </div>
-          </div>
-          <div class="card-badge blue-badge">판매</div>
-        </div>
-      </a>
-
     </div>
 
     {% for trade in trades %}
