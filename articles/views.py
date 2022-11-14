@@ -3,6 +3,8 @@ from django.http import JsonResponse
 from datetime import date, datetime, timedelta
 from .models import Visit
 from .models import Keyboard
+from django.core.paginator import Paginator, EmptyPage
+from django.db.models import Q
 
 
 def main(request):
@@ -24,7 +26,7 @@ def main(request):
         if request.user == "AnonymousUser":
             cookievalue = request.COOKIES.get("sessionid", "")
         if f"{request.user}" not in cookievalue:
-            cookievalue += f"{request.user}"
+            cookievalue += f"{request.user.username.encode('utf8')}"
             response.set_cookie(
                 "request.user", value=cookievalue, max_age=max_age, httponly=True
             )
@@ -53,7 +55,7 @@ def main(request):
         if request.user == "AnonymousUser":
             cookievalue = request.COOKIES.get("sessionid", "")
         if f"{request.user}" not in cookievalue:
-            cookievalue += f"{request.user}"
+            cookievalue += f"{request.user.username.encode('utf8')}"
             response.set_cookie(
                 "request.user", value=cookievalue, max_age=max_age, httponly=True
             )
@@ -81,20 +83,67 @@ def all(request):
 
 
 def scroll_data(request):
-    # all_keyboard = Keyboard.objects.all()
-    # all_date = [[] for _ in range(len(all_keyboard))]
+    all_keyboard = Keyboard.objects.all()
+
+    brand = request.GET.get("brand")
+    key = request.GET.get("key")
+    bluetooth = request.GET.get("bluetooth")
+    press = request.GET.get("press")
+    array = request.GET.get("array")
+    page = request.GET.get("page")
+    print(brand)
+    print(key)
+    print(bluetooth)
+    all_date = [[] for _ in range(len(all_keyboard))]
     # for i in range(len(all_keyboard)):
-    #     all_date[i].append(all_keyboard[i].brand)
-    #     all_date[i].append(all_keyboard[i].key_switch)
-    #     all_date[i].append(all_keyboard[i].connect)
-    #     all_date[i].append(all_keyboard[i].press)
-    #     all_date[i].append(all_keyboard[i].array)
-    radio_list = ["brand", "key-switch", "bluetooth", "press", "array"]
-    k = request.GET.get("brand")
-    print(k)
+    # all_date[i].append(all_keyboard[i].brand)
+    # all_date[i].append(all_keyboard[i].key_switch)
+    # all_date[i].append(all_keyboard[i].connect)
+    # all_date[i].append(all_keyboard[i].press)
+    # all_date[i].append(all_keyboard[i].array)
+    radio_list = ["brand", "key_switch", "bluetooth", "press", "array"]
+    q = Q()
+
+    if brand != "0":
+        q &= Q(brand__contains=brand)
+
+    if key != "0":
+        q &= Q(key_switch__contains=key)
+
+    if bluetooth != "0":
+        q &= Q(connect__contains=bluetooth)
+
+    if press != "0":
+        q &= Q(press__contains=press)
+
+    if array != "0":
+        q &= Q(array__icontains=array)
+    print(q)
+    keyboard_list = Keyboard.objects.filter(q)
+    paginator = Paginator(keyboard_list, 16)
+    page_obj = paginator.page(page)
+    keyboards = []
+    for k in keyboard_list:
+        keyboards.append(
+            {
+                "name": k.name,
+                "img": k.img,
+                "brand": k.brand,
+                "content": k.connect,
+                "array": k.array,
+                "switch": k.switch,
+                "key_switch": k.key_switch,
+                "press": k.press,
+                "weight": k.weight,
+                "kind": k.kind,
+                "pk": k.pk,
+            }
+        )
+    print(keyboards)
     context = {
-        "k": k,
+        "keyboards": keyboards,
     }
+
     return JsonResponse(context)
 
 
