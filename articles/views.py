@@ -80,7 +80,7 @@ def all(request):
     return render(request, "articles/all.html", context)
 
 
-def alll(request):
+def scroll_data(request):
     # all_keyboard = Keyboard.objects.all()
     # all_date = [[] for _ in range(len(all_keyboard))]
     # for i in range(len(all_keyboard)):
