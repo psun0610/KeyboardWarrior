@@ -3,7 +3,7 @@
 {% block title %}{{ user.username }}님의 페이지{% endblock title %}
 
 {% block body %}
-<div class='my-container'>
+<div class='my-container detail-my-head'>
     <div class='my-head'>
         <h2>KeyBoard Warrior ID</h2>
         <hr>
@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 <div>
-                    <div class='usercard'>
+                    <div class='usercard email'>
                         <div>
                             <p class='usercard-title'>이메일</p>
                             <div class='usercard-content'>{{ user.email }}</div>
@@ -264,6 +264,7 @@
         </div>
     </div>
 </div>
+  
 
 
 
@@ -290,5 +291,22 @@
         }
     }
     })
+
+    const openButton = document.querySelector(".email");
+    const modal = document.querySelector(".memail");
+    const closeButton = modal.querySelector("button");
+    const modalBackground = modal.querySelector(".modal__background");
+
+    function displayModal(){
+        modal.classList.toggle("hidden");
+    }
+
+    openButton.addEventListener("click", displayModal);
+    closeButton.addEventListener("click", displayModal)
+    modalBackground.addEventListener("click", displayModal);
+
+
+    
+    
 </script>
 {% endblock %}

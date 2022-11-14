@@ -8,13 +8,13 @@
         <tbody>
           <tr>
             <th>브랜드</th>
+
             <td class="all-nav-radio">
-              <input type="radio" id="leo" name="brand" style="display: none;" value="COX"
+              <input type="radio" id="leo" name="brand" style="display: none;" value="1"
                 onclick="pick_brand(); send();">
               <label for="leo">
                 <div class="all-nav-radio">레오폴드</div>
               </label>
-
               <input type="radio" id="abko" name="brand" style="display: none;" value="2"
                 onclick="pick_brand(); send();">
               <label for="abko">
@@ -43,6 +43,7 @@
           <tr>
             <th>키 스위치</th>
             <td class="all-nav-radio">
+
               <input type="radio" id="blue-switch" name="key-switch" style="display: none;" value="1"
                 onclick="pick_key(); send();">
               <label for="blue-switch">
@@ -151,11 +152,13 @@
               <label for="wire-wireless">
                 <div class="all-nav-radio">유선 + 무선</div>
               </label>
+
             </td>
           </tr>
           <tr>
             <th>키압</th>
             <td class="all-nav-radio">
+
               <input type="radio" id="press-30" name="press" style="display: none;" value="1"
                 onclick="pick_press(); send();">
               <label for="press-30">
@@ -173,6 +176,7 @@
               <label for="press-50">
                 <div class="all-nav-radio">50g 이상</div>
               </label>
+
             </td>
           </tr>
           <tr>
@@ -296,22 +300,16 @@
 
   const pick_key = (e) => {
     key = document.querySelector('input[name="key-switch"]:checked').value;
-
   }
-
   const pick_bluetooth = (e) => {
     bluetooth = document.querySelector('input[name="bluetooth"]:checked').value;
-
   }
-
   const pick_press = (e) => {
     press = document.querySelector('input[name="press"]:checked').value;
   }
-
   const pick_array = (e) => {
     array = document.querySelector('input[name="array"]:checked').value;
   }
-
   const send = (e) => {
     axios({
       method: 'get',

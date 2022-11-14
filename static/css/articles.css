@@ -56,6 +56,7 @@ a {
   --a-blue: #3786FB;
   --my-black: #191919;
   --my-red: #EE315E;
+  --my-hover-gray: rgb(220, 220, 220);
   
   --head-size: 25px;
 }
@@ -629,6 +630,10 @@ footer>div {
 
 /* 유저 디테일 */
 
+.detail-my-head {
+  height: 1000px;
+}
+
 .usercard {
   width: 315px;
   height: 144px;
@@ -824,16 +829,6 @@ footer>div {
 
 }
 
-.reviewcreate-head {
-  width: 800px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 30px;
-  margin-top: 50px;
-  font-weight: 900
-}
 
 .reviewcreate-userinfo-box {
   border: 10px;
@@ -877,6 +872,9 @@ footer>div {
 
 
 /* 상품디테일 */
+#keyboard-star {
+  color: var(--my-red);
+}
 .keyboard-detail-all {
   max-width: 1160px;
   margin: 150px auto;

@@ -3,11 +3,12 @@
 
 {% block body %}
 {% comment %} 제목 1 {% endcomment %}
-  <div class='reviewcreate-head'>
-    <h2 class='signup-head-h2'>KeyBoard Warrior에 당신의 경험을 공유해주세요</h2>
-    <hr class='bighr'>
+  <div class='my-head'>
+    <h2>KeyBoard Warrior에 당신의 경험을 공유해주세요</h2>
+    <hr>
     <p>이 키보드의 후기를 들려주세요</p>
   </div>
+
   <div class='reviewcreatebox'>
     <form action="" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
@@ -33,7 +34,7 @@
                   placeholder="내용" type="text" required="" class="review-userinfo" value=""></textarea>
           <input type="file" name='img' id='reviewimg' title="Button fade blue/green"style='display: none;'>
           <label for="reviewimg">
-            <div  class="imgbtn">이미지 업로드</div>
+            {% bootstrap_form photo_form%}
           </label>
         </div>
         <div>

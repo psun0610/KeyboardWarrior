@@ -3,8 +3,10 @@ from django.http import JsonResponse
 from datetime import date, datetime, timedelta
 from .models import Visit
 from .models import Keyboard
+
 from django.core.paginator import Paginator, EmptyPage
 from django.db.models import Q
+
 
 
 def main(request):
@@ -81,6 +83,29 @@ def all(request):
     }
     return render(request, "articles/all.html", context)
 
+def alll(request):
+    # all_keyboard = Keyboard.objects.all()
+    # all_date = [[] for _ in range(len(all_keyboard))]
+    # for i in range(len(all_keyboard)):
+    #     all_date[i].append(all_keyboard[i].brand)
+    #     all_date[i].append(all_keyboard[i].key_switch)
+    #     all_date[i].append(all_keyboard[i].connect)
+    #     all_date[i].append(all_keyboard[i].press)
+    #     all_date[i].append(all_keyboard[i].array)
+    radio_list = ['brand', 'key-switch', 'bluetooth', 'press', 'array']
+    brand = request.GET.get('brand')
+    key_switch = request.GET.get('key')
+    bluetooth = request.GET.get('bluetooth')
+    press = request.GET.get('press')
+    array = request.GET.get('array')
+    context = {
+        "brand": brand,
+        "key_switch" : key_switch,
+        "bluetooth" : bluetooth,
+        "press" : press,
+        "array" : array,
+    }
+    return JsonResponse(context)
 
 def scroll_data(request):
     all_keyboard = Keyboard.objects.all()

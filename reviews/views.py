@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import ReviewForm, CommentForm
-from .models import Review, Comment
+from .forms import ReviewForm, CommentForm, PhotoForm
+from .models import Review, Comment, Photo
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST, require_safe
 from django.http import JsonResponse
@@ -47,25 +47,27 @@ def index(request):
 def create(request):
     if request.method == "POST":
         review_form = ReviewForm(request.POST, request.FILES)
-        # kb = Keyboard.objects.get(name=request.POST["keyboard"])
-        # print(kb, 1)
-        if review_form.is_valid():
-            print("유효성검사")
+        photo_form = PhotoForm(request.POST, request.FILES)
+        images = request.FILES.getlist("image")
+        if review_form.is_valid() and photo_form.is_valid():
             review = review_form.save(commit=False)
             review.user = request.user
-            print("키보드 저장전")
-            # review.keyboard = kb
-            review.save()
-            print("저장")
+            if len(images):
+                for image in images:
+                    image_instance = Photo(review=review, image=image)
+                    review.save()
+                    image_instance.save()
+            else:
+                review.save()
             return redirect("reviews:index")
     else:
         review_form = ReviewForm()
-    print(review_form.errors)
+        photo_form = PhotoForm()
     context = {
         "review_form": review_form,
-    }
+        "photo_form": photo_form,
+        }
     return render(request, "reviews/create.html", context)
-
 # 리뷰 읽기
 def detail(request, pk):
     reviews = get_object_or_404(Review, pk=pk)
