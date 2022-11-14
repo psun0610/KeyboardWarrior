@@ -1,4 +1,3 @@
-
 .trade-card-container {
   max-width: 1420px;
   margin: 40px auto 70px;
@@ -112,11 +111,12 @@
   justify-content: center;
   align-items: center;
 }
+
 .trade-header>p {
   font-size: 15px;
   margin: 0 10px 0 0;
   font-weight: 200;
-  color:#666
+  color: #666
 }
 
 .card-container {
@@ -128,26 +128,32 @@
   /* grid-template-columns: 300px 300px 300px 300px; */
   justify-content: center;
 }
+
 .my-card {
   position: relative;
 }
+
 .card-content>img {
   width: 400px;
   height: 500px;
   object-fit: contain;
 }
+
 .card-title {
   margin: 8px 0;
 }
+
 .card-title>h3 {
-  color:#666;
+  color: #666;
   font-size: 15px;
   margin-bottom: 3px;
 }
+
 .card-title>h2 {
   font-size: 21px;
   font-weight: 700;
 }
+
 .card-title>h1 {
   font-size: 18px;
   margin-bottom: 3px;
@@ -162,9 +168,81 @@
   border-radius: 4px;
   color: white;
 }
+
 .blue-badge {
   background-color: var(--a-blue);
 }
+
 .red-badge {
   background-color: var(--my-red);
+}
+
+.jjim {
+  width: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: var(--my-red);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 600;
+  color: var(--my-black);
+  border: 0px;
+  border-radius: 3px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.jjok {
+  width: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: var(--my-black);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  border: 0px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+
+.jjimjjok {
+  width: 400px;
+  display: flex;
+  margin-left: 25px;
+}
+
+.keyboard-detail-mini-1 {
+  margin-top: 30px;
+}
+
+.keyboard-detail-mini-1title {
+  margin-bottom: 25px;
+}
+
+.keyboard-detail-mini-1-title>h2 {
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  margin-left: 25px;
+}
+
+.keyboard-detail-mini-1-title>a {
+  margin-left: 25px;
+}
+
+.trade-content {
+  margin-left: 25px;
+  text-align: center;
+}
+
+
+
+.comment-hr {
+  margin: auto;
+}
+
+.trade-all {
+  max-width: 1160px;
 }

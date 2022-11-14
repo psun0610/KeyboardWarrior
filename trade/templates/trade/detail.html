@@ -3,100 +3,100 @@
 {% load django_bootstrap5 %}
 
 {% block body %}
-<div class="keyboard-detail-all">
-  <div class="keyboard-detail-img-wrap">
-    <img src="{{ trade.img }}">
-  </div>
-  <!-- 제품정보 -->
-  <div class="keyboard-detail-content">
-    <h2 class='keyboard-name'>{{ trade.title }}</h2>
-    <table>
-      <tr>
-        <th>모델명</th>
-        <td>{{ trade.keyboard.name }}</td>
-      </tr>
-      <tr>
-        <th>별점</th>
-        <td id="keyboard-star">☆☆☆☆</td>
-      </tr>
-      <tr>
-        <th>제조사</th>
-        <td>{{ trade.keyboard.brand }}</td>
-      </tr>
-      {% if trade.keyboard.connect != '기타' %}
-      <tr>
-        <th>연결 방식</th>
-        <td>{{ trade.keyboard.connect }}</td>
-      </tr>
-      {% endif %}
-      {% if trade.keyboard.switch != '기타' %}
-      <tr>
-        <th>스위치</th>
-        <td>{{ trade.keyboard.switch }}</td>
-      </tr>
-      {% endif %}
-      {% if trade.keyboard.key_switch != '기타' %}
-      <tr>
-        <th>키 스위치</th>
-        <td>{{ trade.keyboard.key_switch }}</td>
-      </tr>
-      {% endif %}
-      {% if trade.keyboard.press != '기타' %}
-      <tr>
-        <th>키압</th>
-        <td>{{ trade.keyboard.press }}</td>
-      </tr>
-      {% endif %}
-      <tr>
-        <th>키 배열</th>
-        <td>{{ trade.keyboard.kind }} / {{ trade.keyboard.array }}키 </td>
-      </tr>
-      <tr>
-        <th>무게</th>
-        <td>{{ trade.keyboard.weight }}</td>
-      </tr>
-    </table>
-
-
-    <div class="select-trade">
-      <div class="">찜하기</div>
-      <div>쪽지보내기</div>
+<div class='trade-all'>
+  <div class="keyboard-detail-all">
+    <div class="keyboard-detail-img-wrap">
+      <img src="{{ trade.img }}">
     </div>
+    <!-- 제품정보 -->
+    <div class="keyboard-detail-content">
+      <h2 class='keyboard-name'>{{ trade.title }}</h2>
+      <table>
+        <tr>
+          <th>매도/매수</th>
+          <td>{%if trade.Trade_type == 1%} 팝니다 {%else%} 삽니다 {%endif%}</td>
+        </tr>
+        <tr>
+          <th>모델명</th>
+          <td>{{ trade.keyboard.name }}</td>
+        </tr>
+        <tr>
+          <th>별점</th>
+          <td id="keyboard-star">☆☆☆☆</td>
+        </tr>
+        <tr>
+          <th>제조사</th>
+          <td>{{ trade.keyboard.brand }}</td>
+        </tr>
+        {% if trade.keyboard.connect != '기타' %}
+        <tr>
+          <th>연결 방식</th>
+          <td>{{ trade.keyboard.connect }}</td>
+        </tr>
+        {% endif %}
+        {% if trade.keyboard.switch != '기타' %}
+        <tr>
+          <th>스위치</th>
+          <td>{{ trade.keyboard.switch }}</td>
+        </tr>
+        {% endif %}
+        {% if trade.keyboard.key_switch != '기타' %}
+        <tr>
+          <th>키 스위치</th>
+          <td>{{ trade.keyboard.key_switch }}</td>
+        </tr>
+        {% endif %}
+        {% if trade.keyboard.press != '기타' %}
+        <tr>
+          <th>키압</th>
+          <td>{{ trade.keyboard.press }}</td>
+        </tr>
+        {% endif %}
+        <tr>
+          <th>키 배열</th>
+          <td>{{ trade.keyboard.kind }} / {{ trade.keyboard.array }}키 </td>
+        </tr>
+        <tr>
+          <th>무게</th>
+          <td>{{ trade.keyboard.weight }}</td>
+        </tr>
+      </table>
 
 
-    <div class="keyboard-detail-mini">
-      <div class="keyboard-detail-mini-title">
-        <h2>베스트 후기</h2>
-        <a class="a-blue" href='#'>알아보기 ></a>
+      <div class="jjimjjok">
+        <div class="jjim">찜하기</div>
+        <div class="jjok">쪽지보내기</div>
+      </div>
+      
+      <div class='trade-content'>
+        {{trade.content}}
       </div>
 
-{{trade.price}}
-{{trade.keyboard.name}}
-<h1>중고 디테일</h1>
+      <div class="keyboard-detail-mini-1">
+        <div class="keyboard-detail-mini-1-title">
+          <h2>이 키보드의 사용자의 경험 알아보기</h2>
+          <a class="a-blue" href='#'>알아보기 ></a>
+        </div>
+      </div>
+        {% comment %} {% if request.user in trade.marker.all %}
+        <i onclick="marker()" class="bi bi-star-fill" data-trade-id="{{trade.pk}}" id="marker-icon"></i>
+        {% else %}
+        <i onclick="marker()" class="bi bi-star" data-trade-id="{{trade.pk}}" id="marker-icon"></i>
+        {% endif %}
+        <p>찜한사람 수 <span id="marker_count">{{trade.marker.all.count}}</span></p>
+        <hr> {% endcomment %}
+      
+    </div>
+  </div>
 
-{% if request.user in trade.marker.all %}
-<i onclick="marker()" class="bi bi-star-fill" data-trade-id="{{trade.pk}}" id="marker-icon"></i>
-{% else %}
-<i onclick="marker()" class="bi bi-star" data-trade-id="{{trade.pk}}" id="marker-icon"></i>
-{% endif %}
-<p>찜한사람 수 <span id="marker_count">{{trade.marker.all.count}}</span></p>
-<hr>
-<p>{%if trade.Trade_type == 1%} 팝니다 {%else%} 삽니다 {%endif%}</p>
-<h3>제목:{{trade.title}} <span><a href="{% url 'accounts:detail' trade.user.pk %}">{{trade.user}}</a></span></h3>
-<hr>
-{{trade.content}}
+  
+</div>
+
+
 
 
       
 
-    </div>
-    <!-- 판매/구매 -->
-    <div class="keyboard-detail-mini-title" style="margin-top: 15px;">
-      <h2>마음에 드셨나요?</h2>
-      <a class="a-blue">판매/구매 하러가기 ></a>
-    </div>
-  </div>
-</div>
 
 
 
