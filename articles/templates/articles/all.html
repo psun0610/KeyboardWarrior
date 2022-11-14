@@ -15,7 +15,6 @@
               <label for="leo">
                 <div class="all-nav-radio">레오폴드</div>
               </label>
-
               <input type="radio" id="abko" name="brand" style="display: none;" value="2"
                 onclick="pick_brand(); send();">
               <label for="abko">
@@ -219,7 +218,7 @@
   </form>
 
   <!-- 검색된 키보드 개수가 8개 이하면 광고 안 띄움 -->
-  {% if all_keyboard|length < 8 %} <div class="all-card-container">
+  {% if all_keyboard|length < 8 %} <div class="all-card-container" id="card_div">
     <!-- 나중에 all_keyboard에서 context가 넘겨주는 다른 값으로 바꾸기 -->
     {% for keyboard in all_keyboard %}
     <a href="{% url 'articles:detail' keyboard.pk %}">
@@ -236,7 +235,7 @@
 
 <!-- 8개 이상이면 광고 띄움 -->
 {% else %}
-<div class="all-card-container">
+<div class="all-card-container" id="card_div">
   {% for keyboard in all_keyboard|slice:":8" %}
   <a href="{% url 'articles:detail' keyboard.pk %}">
     <div class="all-card">
@@ -292,6 +291,8 @@
   let bluetooth = 0
   let press = 0
   let array = 0
+  // 스크롤 스크립트 바닥 찍을 때 page 0에서 1페이지씩 추가 
+  let page = 0
 
   const pick_brand = (e) => {
     brand = document.querySelector('input[name="brand"]:checked').value;
@@ -316,9 +317,24 @@
       params: { 'brand': brand, 'key': key, 'bluetooth': bluetooth, 'press': press, 'array': array },
     })
       .then(response => {
-        console.log(response);
-      }
-      )
+        const card_div = document.querySelector('#card_div')
+        card_div.textContent = "";
+        const keyboards = response.data.keyboards
+        for (let i = 0; i < keyboards.length; i++) {
+          console.log(keyboards[i])
+          //이거 젠되는 페이지를 스크립트 스크롤 찍힐때로 들어가도록  
+          //html어디에 붙일지 아이디지정 327줄 아래에 어떤형식으로 문자열데이터넣을지 
+          card_div.insertAdjacentHTML('beforeend', `
+              <div class="all-card">
+                <img src="${keyboards[i].img}">
+                <div class="all-card-h1-wrap">
+                  <h1>${keyboards[i].name}</h1>
+                </div>
+                <div class="all-card-button">자세히 알아보기</div>
+              </div>
+            </a>`);
+        }
+      })
   };
 </script>
 {% endblock %}
