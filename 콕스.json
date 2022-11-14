@@ -11,7 +11,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "50g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -26,7 +27,8 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": "55g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -41,7 +43,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -56,7 +59,8 @@
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -71,7 +75,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -86,14 +91,15 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": "55g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "COX 엠프리스 RGB PBT 완전방수 무접점 (화이트, 50g)",
-			"img": "https://img.danawa.com/prod_img/500000/530/127/img/7127530_1.jpg?shrink=500:500&_v=20190916164440",
+			"name": "COX 엠프리스 RGB PBT 완전방수 무접점 (블랙, 50g)",
+			"img": "https://img.danawa.com/prod_img/500000/485/127/img/7127485_1.jpg?shrink=500:500&_v=20190916164454",
 			"brand": "COX",
 			"connect": "무접점(정전용량)",
 			"weight": "1300g",
@@ -101,7 +107,8 @@
 			"switch": "Noppoo",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -116,14 +123,15 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "35g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
 			"name": "COX 엠프리스 오리지널 레트로 PBT 무접점 (35g)",
-			"img": "https://img.danawa.com/prod_img/500000/531/191/img/18191531_1.jpg?shrink=500:500&_v=20221104170640",
+			"img": "https://img.danawa.com/prod_img/500000/531/191/img/18191531_1.jpg?shrink=500:500&_v=20221114181245",
 			"brand": "COX",
 			"connect": "무접점(정전용량)",
 			"weight": "1300g",
@@ -131,7 +139,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "35g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -146,7 +155,8 @@
 			"switch": "Noppoo",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -161,7 +171,8 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": "55g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -176,7 +187,8 @@
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -191,7 +203,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "35g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -206,7 +219,8 @@
 			"switch": "게이트론",
 			"key_switch": "저소음갈축",
 			"press": "55g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -221,7 +235,8 @@
 			"switch": "Noppoo",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -236,7 +251,8 @@
 			"switch": "게이트론",
 			"key_switch": "저소음갈축",
 			"press": "55g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -251,7 +267,8 @@
 			"switch": "게이트론",
 			"key_switch": "녹축",
 			"press": "60g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -266,7 +283,8 @@
 			"switch": "TTC",
 			"key_switch": "갈축",
 			"press": "40g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -281,7 +299,8 @@
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -296,7 +315,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "50g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -311,7 +331,8 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": "55g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -326,7 +347,8 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": "55g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
 		}
 	},
 	{
@@ -341,52 +363,8 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": "55g",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX CK87 화이트 게이트론 LED 게이밍 기계식 (갈축)",
-			"img": "https://img.danawa.com/prod_img/500000/050/339/img/10339050_1.jpg?shrink=500:500&_v=20210615094716",
-			"brand": "COX",
-			"connect": "기계식",
-			"weight": "935g",
-			"array": "87",
-			"switch": "게이트론",
-			"key_switch": "갈축",
-			"press": "55g",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX CK87 레드/그레이 게이트론 LED 게이밍 기계식 (S1, 황축)",
-			"img": "https://img.danawa.com/prod_img/500000/003/939/img/7939003_1.jpg?shrink=500:500&_v=20190916165422",
-			"brand": "COX",
-			"connect": "기계식",
-			"weight": "935g",
-			"array": "87",
-			"switch": "게이트론",
-			"key_switch": "황축",
-			"press": "50g",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX CK87 네이비 게이트론 LED 게이밍 기계식 (녹축)",
-			"img": "https://img.danawa.com/prod_img/500000/706/938/img/7938706_1.jpg?shrink=500:500&_v=20210615094705",
-			"brand": "COX",
-			"connect": "기계식",
-			"weight": "935g",
-			"array": "87",
-			"switch": "게이트론",
-			"key_switch": "녹축",
-			"press": "60g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -401,7 +379,56 @@
 			"switch": "게이트론",
 			"key_switch": "황축",
 			"press": "50g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "COX CK87 화이트 게이트론 LED 게이밍 기계식 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/050/339/img/10339050_1.jpg?shrink=500:500&_v=20210615094716",
+			"brand": "COX",
+			"connect": "기계식",
+			"weight": "935g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "COX CK87 네이비 게이트론 LED 게이밍 기계식 (황축)",
+			"img": "https://img.danawa.com/prod_img/500000/721/938/img/7938721_1.jpg?shrink=500:500&_v=20210615094705",
+			"brand": "COX",
+			"connect": "기계식",
+			"weight": "935g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "황축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "COX CK87 레드/그레이 게이트론 LED 게이밍 기계식 (S1, 황축)",
+			"img": "https://img.danawa.com/prod_img/500000/003/939/img/7939003_1.jpg?shrink=500:500&_v=20190916165422",
+			"brand": "COX",
+			"connect": "기계식",
+			"weight": "935g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "황축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -416,7 +443,8 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
 		}
 	},
 	{
@@ -431,7 +459,8 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": "55g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -446,7 +475,8 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": "55g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -461,67 +491,8 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": "55g",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX 145Key 염료승화 PBT 한글 포인트 컬러 키캡 (블루)",
-			"img": "https://img.danawa.com/prod_img/500000/547/454/img/6454547_1.jpg?shrink=500:500&_v=20190917105617",
-			"brand": "COX",
-			"connect": "기타",
-			"weight": "기타",
-			"array": "기타",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX CK777 WOOD V광축 완전방수 교체축 사이드 RGB 게이밍",
-			"img": "https://img.danawa.com/prod_img/500000/848/868/img/8868848_1.jpg?shrink=500:500&_v=20190916170017",
-			"brand": "COX",
-			"connect": "무접점(광축)",
-			"weight": "1070g",
-			"array": "104",
-			"switch": "V옵티컬",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX CK104 RGB BAR 투톤 이중사출 게이트론 기계식 (레드그레이, 갈축)",
-			"img": "https://img.danawa.com/prod_img/500000/840/433/img/11433840_1.jpg?shrink=500:500&_v=20200529182934",
-			"brand": "COX",
-			"connect": "기계식",
-			"weight": "1270g",
-			"array": "104",
-			"switch": "게이트론",
-			"key_switch": "갈축",
-			"press": "55g",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX CARAVEL 게이트론 교체축 RGB 염료승화 PBT 리빙코랄 (녹축)",
-			"img": "https://img.danawa.com/prod_img/500000/508/004/img/8004508_1.jpg?shrink=500:500&_v=20190917105420",
-			"brand": "COX",
-			"connect": "기계식",
-			"weight": "935g",
-			"array": "87",
-			"switch": "게이트론",
-			"key_switch": "녹축",
-			"press": "60g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -536,7 +507,56 @@
 			"switch": "GTMX",
 			"key_switch": "저소음백축",
 			"press": "60g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "COX CK777 WOOD V광축 완전방수 교체축 사이드 RGB 게이밍",
+			"img": "https://img.danawa.com/prod_img/500000/848/868/img/8868848_1.jpg?shrink=500:500&_v=20190916170017",
+			"brand": "COX",
+			"connect": "무접점(광축)",
+			"weight": "1070g",
+			"array": "104",
+			"switch": "V옵티컬",
+			"key_switch": "기타",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "COX CK104 RGB BAR 투톤 이중사출 게이트론 기계식 (레드그레이, 갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/840/433/img/11433840_1.jpg?shrink=500:500&_v=20200529182934",
+			"brand": "COX",
+			"connect": "기계식",
+			"weight": "1270g",
+			"array": "104",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "COX CARAVEL 게이트론 교체축 RGB 염료승화 PBT 리빙코랄 (녹축)",
+			"img": "https://img.danawa.com/prod_img/500000/508/004/img/8004508_1.jpg?shrink=500:500&_v=20190917105420",
+			"brand": "COX",
+			"connect": "기계식",
+			"weight": "935g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "녹축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -551,7 +571,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "70g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -566,7 +587,8 @@
 			"switch": "기타",
 			"key_switch": "청축",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -580,8 +602,9 @@
 			"array": "87",
 			"switch": "기타",
 			"key_switch": "저소음백축",
-			"press": "60g",
-			"kind": "텐키리스"
+			"press": "60",
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -596,22 +619,8 @@
 			"switch": "V옵티컬",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX CX158 PBT 이색사출 키캡 트레이 세트 (Ocellaris)",
-			"img": "https://img.danawa.com/prod_img/500000/379/530/img/14530379_1.jpg?shrink=500:500&_v=20210621135803",
-			"brand": "COX",
-			"connect": "기타",
-			"weight": "기타",
-			"array": "기타",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -626,7 +635,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -641,7 +651,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "50g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -656,7 +667,8 @@
 			"switch": "게이트론",
 			"key_switch": "황축",
 			"press": "50g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -671,22 +683,24 @@
 			"switch": "기타",
 			"key_switch": "청축",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "COX CK01 PBT 이색사출 사이드 RGB 기계식 키보드 (청축)",
-			"img": "https://img.danawa.com/prod_img/500000/705/696/img/11696705_1.jpg?shrink=500:500&_v=20210618175201",
+			"name": "COX CK01 PBT 이색사출 사이드 RGB 기계식 키보드 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/723/696/img/11696723_1.jpg?shrink=500:500&_v=20201006130801",
 			"brand": "COX",
 			"connect": "기계식",
 			"weight": "784g",
 			"array": "104",
 			"switch": "GTMX",
-			"key_switch": "청축",
-			"press": "50g",
-			"kind": "풀배열"
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -701,22 +715,24 @@
 			"switch": "기타",
 			"key_switch": "갈축",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "COX CK01 Navy 교체축 사이드 RGB 게이밍 기계식 키보드 (적축)",
-			"img": "https://img.danawa.com/prod_img/500000/059/224/img/13224059_1.jpg?shrink=500:500&_v=20210125170133",
+			"name": "COX CK01 Navy 교체축 사이드 RGB 게이밍 기계식 키보드 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/044/224/img/13224044_1.jpg?shrink=500:500&_v=20210125170106",
 			"brand": "COX",
 			"connect": "기계식",
 			"weight": "828g",
 			"array": "104",
 			"switch": "GTMX",
-			"key_switch": "적축",
+			"key_switch": "갈축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -729,9 +745,10 @@
 			"weight": "993g",
 			"array": "104",
 			"switch": "GTMX",
-			"key_switch": "갈축기능멀티미디어",
+			"key_switch": "갈축",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -746,37 +763,24 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "무선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "COX CK2000 V광축 SA 투톤키캡 완전방수 교체축 사이드 RGB 게이밍",
-			"img": "https://img.danawa.com/prod_img/500000/895/070/img/8070895_1.jpg?shrink=500:500&_v=20190916171211",
-			"brand": "COX",
-			"connect": "무접점(광축)",
-			"weight": "1070g",
-			"array": "104",
-			"switch": "기타",
-			"key_switch": "청축",
-			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX CK01 TKL (갈축)",
-			"img": "https://img.danawa.com/prod_img/500000/436/440/img/14440436_1.jpg?shrink=500:500&_v=20210610172320",
+			"name": "COX CK01 TKL (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/445/440/img/14440445_1.jpg?shrink=500:500&_v=20210610172313",
 			"brand": "COX",
 			"connect": "기계식",
 			"weight": "700g",
 			"array": "87",
 			"switch": "GTMX",
-			"key_switch": "갈축",
+			"key_switch": "적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -791,7 +795,8 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -806,7 +811,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "무선+블루투스"
 		}
 	},
 	{
@@ -821,7 +827,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "블루투스"
 		}
 	},
 	{
@@ -836,7 +843,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "블루투스"
 		}
 	},
 	{
@@ -851,7 +859,8 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -866,7 +875,8 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -881,7 +891,24 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "COX CKM500 게이밍 키보드 마우스 콤보",
+			"img": "https://img.danawa.com/prod_img/500000/168/355/img/5355168_1.jpg?shrink=500:500&_v=20200131140134",
+			"brand": "COX",
+			"connect": "멤브레인",
+			"weight": "798g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "기타",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -896,7 +923,24 @@
 			"switch": "GTMX",
 			"key_switch": "갈축",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "COX CKM510 게이밍 키보드 마우스 세트",
+			"img": "https://img.danawa.com/prod_img/500000/167/589/img/11589167_1.jpg?shrink=500:500&_v=20210608095822",
+			"brand": "COX",
+			"connect": "멤브레인",
+			"weight": "695g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "기타",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -911,7 +955,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "무선"
 		}
 	},
 	{
@@ -926,7 +971,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -937,11 +983,12 @@
 			"brand": "COX",
 			"connect": "멤브레인",
 			"weight": "495g",
-			"array": "104+8",
+			"array": "112",
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "무선"
 		}
 	},
 	{
@@ -950,13 +997,30 @@
 			"name": "COX COS100 무선 멤브레인 키보드 마우스 세트 (블랙)",
 			"img": "https://img.danawa.com/prod_img/500000/927/359/img/12359927_1.jpg?shrink=500:500&_v=20200925132554",
 			"brand": "COX",
-			"connect": "멤브레인",
+			"connect": "멤브레인부가",
 			"weight": "403g",
 			"array": "106",
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "무선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "COX COS300 무선 키보드 마우스 세트",
+			"img": "https://img.danawa.com/prod_img/500000/651/385/img/13385651_1.jpg?shrink=500:500&_v=20210218124352",
+			"brand": "COX",
+			"connect": "멤브레인부가",
+			"weight": "480g",
+			"array": "104",
+			"switch": "기타",
+			"key_switch": "기타",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "무선"
 		}
 	},
 	{
@@ -971,7 +1035,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -986,22 +1051,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX COS300 무선 키보드 마우스 세트",
-			"img": "https://img.danawa.com/prod_img/500000/651/385/img/13385651_1.jpg?shrink=500:500&_v=20210218124352",
-			"brand": "COX",
-			"connect": "멤브레인",
-			"weight": "480g",
-			"array": "104",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "무선"
 		}
 	},
 	{
@@ -1016,7 +1067,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1031,7 +1083,8 @@
 			"switch": "게이트론",
 			"key_switch": "황축",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1046,7 +1099,8 @@
 			"switch": "체리",
 			"key_switch": "갈축",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	}
 ]

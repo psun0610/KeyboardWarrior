@@ -26,7 +26,11 @@ driver.get("https://prod.danawa.com/list/?cate=112782&15main_11_02")
 # 제조사별 검색 (XPATH 경로 찾는 방법은 이미지 참조)
 # 옵션 더보기
 
-WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, '//*[@id="dlMaker_simple"]/dd/div[2]/button[1]'))).click()
+WebDriverWait(driver, 30).until(
+    EC.presence_of_element_located(
+        (By.XPATH, '//*[@id="dlMaker_simple"]/dd/div[2]/button[1]')
+    )
+).click()
 
 # 로지텍
 # driver.find_element(
@@ -36,10 +40,10 @@ WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, '//*[@
 
 
 # 앱코
-driver.find_element(
-    By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(68)"
-).click()
-time.sleep(2)
+# driver.find_element(
+#     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(68)"
+# ).click()
+# time.sleep(2)
 
 # 엠스톤
 # driver.find_element(
@@ -64,12 +68,12 @@ time.sleep(2)
 
 # time.sleep(1)
 
-#콕스
-# driver.find_element(
-#     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(151)"
-# ).click()
+# 콕스
+driver.find_element(
+    By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(151)"
+).click()
 
-# time.sleep(1)
+time.sleep(1)
 
 # 체리
 # driver.find_element(
@@ -78,14 +82,24 @@ time.sleep(2)
 
 # time.sleep(1)
 
-WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, '//*[@id="productListArea"]/div[2]/div[2]/div[2]/select'))).click()
+WebDriverWait(driver, 30).until(
+    EC.presence_of_element_located(
+        (By.XPATH, '//*[@id="productListArea"]/div[2]/div[2]/div[2]/select')
+    )
+).click()
 time.sleep(1)
 
-WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, '//*[@id="productListArea"]/div[2]/div[2]/div[2]/select/option[3]'))).click()
+WebDriverWait(driver, 30).until(
+    EC.presence_of_element_located(
+        (By.XPATH, '//*[@id="productListArea"]/div[2]/div[2]/div[2]/select/option[3]')
+    )
+).click()
 time.sleep(1)
 
 
-driver.find_element(By.XPATH, '//*[@id="productListArea"]/div[2]/div[1]/ul/li[4]/a').click()
+driver.find_element(
+    By.XPATH, '//*[@id="productListArea"]/div[2]/div[1]/ul/li[4]/a'
+).click()
 
 time.sleep(1)
 
@@ -104,7 +118,7 @@ a = []
 for _ in range(len(product_li_tags)):
     a.append([])
 
-for sub_url in range(90):
+for sub_url in range(83):
     driver.get(url_list[sub_url])
 
     time.sleep(1)
@@ -112,7 +126,6 @@ for sub_url in range(90):
     driver.find_element(By.CSS_SELECTOR, ".photo_w").click()
     time.sleep(1)
 
-    
     driver.find_element(By.CSS_SELECTOR, ".va_top").click()
     time.sleep(1)
     imgs = driver.find_element(By.CSS_SELECTOR, ".big_img > img").get_attribute("src")
@@ -139,7 +152,7 @@ print(a)
 print("------------------------------------------")
 result_list = []
 for i in range(83):
-    img, brand, connect, weight, array, switch, press, kind, key_switch = (
+    img, brand, connect, weight, array, switch, press, kind, key_switch, bluetooth = (
         "기타",
         "기타",
         "기타",
@@ -148,6 +161,7 @@ for i in range(83):
         "기타",
         "기타",
         "풀배열",
+        "기타",
         "기타",
     )
     img = a[i][0]
@@ -160,14 +174,17 @@ for i in range(83):
             print(brand)
         elif a[i][j] == "방식":
             if a[i][j + 1] != "광":
-                connect = (
-                    a[i][j + 1]
-                    .replace("크기(가로x세로x높이)가로", "")
-                    .replace("기능응답속도", "")
-                    .replace("외형비키스타일", "")
-                    .replace("스위치", "")
-                )
-            print(connect)
+                if "접점" in a[i][j - 1]:
+                    connect = (
+                        a[i][j + 1]
+                        .replace("크기(가로x세로x높이)가로", "")
+                        .replace("기능응답속도", "")
+                        .replace("외형비키스타일", "")
+                        .replace("스위치", "")
+                    )
+                elif "연결" in a[i][j - 1]:
+                    bluetooth = a[i][j + 1]
+            print(connect, bluetooth)
         elif a[i][j] == "무게":
             weight = (
                 a[i][j + 1]
@@ -223,9 +240,9 @@ for i in range(83):
             print(kind)
         # img, brand, connect, weight, array, switch, press, kind, key_switch
         result = {
-            "model":"articles.Keyboard",
-            "pk": i + 1,
-            "fields":{
+            "model": "articles.Keyboard",
+            # "pk": i + 1,
+            "fields": {
                 "name": name,
                 "img": img,
                 "brand": brand,
@@ -236,8 +253,9 @@ for i in range(83):
                 "key_switch": key_switch,
                 "press": press,
                 "kind": kind,
-            }
+                "bluetooth": bluetooth,
+            },
         }
     result_list.append(result)
     print("------")
-# toJson(result_list)
+toJson(result_list)
