@@ -911,9 +911,10 @@ footer>div {
 
 .keyboard-detail-all {
   max-width: 1160px;
-  margin: 150px auto 10px auto;
+  margin: 150px auto;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .keyboard-detail-img-wrap {
@@ -930,7 +931,6 @@ footer>div {
 
 .keyboard-detail-content {
   width: 500px;
-  height: 600px;
   display: flex;
   flex-direction: column;
 }
