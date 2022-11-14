@@ -277,23 +277,8 @@
 			"brand": "CHERRY",
 			"connect": "펜타그래프",
 			"weight": "기타",
-			"array": "기타",
+			"array": "93",
 			"switch": "체리",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "CHERRY ALUMINUM PALMREST (블랙)",
-			"img": "https://img.danawa.com/prod_img/500000/611/783/img/12783611_1.jpg?shrink=500:500&_v=20201127134826",
-			"brand": "CHERRY",
-			"connect": "기타",
-			"weight": "기타",
-			"array": "기타",
-			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
 			"kind": "풀배열"
@@ -307,83 +292,8 @@
 			"brand": "CHERRY",
 			"connect": "펜타그래프",
 			"weight": "기타",
-			"array": "기타",
+			"array": "93",
 			"switch": "체리",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "CHERRY MX Switch Tester Sampler 12종",
-			"img": "https://img.danawa.com/prod_img/500000/216/955/img/13955216_1.jpg?shrink=500:500&_v=20210420173350",
-			"brand": "CHERRY",
-			"connect": "기타",
-			"weight": "기타",
-			"array": "기타",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "CHERRY MX Switch Tester Sampler 9종",
-			"img": "https://img.danawa.com/prod_img/500000/952/954/img/13954952_1.jpg?shrink=500:500&_v=20210420172659",
-			"brand": "CHERRY",
-			"connect": "기타",
-			"weight": "기타",
-			"array": "기타",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "CHERRY G80-3800 기계식 키보드 전용 컬러 16종 키캡 (옐로우)",
-			"img": "https://img.danawa.com/prod_img/500000/324/120/img/2120324_1.jpg?shrink=500:500&_v=20130704113801",
-			"brand": "CHERRY",
-			"connect": "기타",
-			"weight": "기타",
-			"array": "기타",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "CHERRY MX RGB Switch (1개, 저소음 적축)",
-			"img": "https://img.danawa.com/prod_img/500000/699/955/img/13955699_1.jpg?shrink=500:500&_v=20210420174934",
-			"brand": "CHERRY",
-			"connect": "기타",
-			"weight": "기타",
-			"array": "기타",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "CHERRY MX Switch (1개, 저소음 적축)",
-			"img": "https://img.danawa.com/prod_img/500000/534/955/img/13955534_1.jpg?shrink=500:500&_v=20210420174926",
-			"brand": "CHERRY",
-			"connect": "기타",
-			"weight": "기타",
-			"array": "기타",
-			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
 			"kind": "풀배열"
