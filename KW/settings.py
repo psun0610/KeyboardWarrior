@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "articles",
     "reviews",
     "trade",
+    "django.contrib.humanize",
     "django_bootstrap5",
     "django.contrib.admin",
     "django.contrib.auth",
