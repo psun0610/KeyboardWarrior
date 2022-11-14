@@ -1,11 +1,33 @@
 {% extends "base.html" %}
-{% load django_bootstrap5 %}
-
+{% load static %}
 {% block body %}
 
-  리뷰페이지 인덱스(임시)
 
-  <a class="btn btn-primary my-3 float-right" href="{% url 'reviews:create' %}">리뷰 쓰기</a>
+<!-- 제목 -->
+<div class="my-container">
+  <div class="my-head">
+    <h2>사용자들과 경험을 공유하세요</h2>
+    <hr>
+    <div class="trade-header">
+      <p>당신의 경험을 공유해보세요</p>
+      <a href="{% url 'reviews:create' %}" class="a-blue">후기 쓰러가기 ></a>
+    </div>
+  </div>
+
+  <div>
+
+
+  {% for trade in trades %}
+  <p>{%if trade.Trade_type == 1%} 팝니다 {%else%} 삽니다 {%endif%}</p>
+  <a href="{% url 'trade:detail' trade.pk %}">
+    <p>{{trade.title}}
+    </a> |<span style="font-size: 9px;">{{trade.user}}</span></p>
+    <hr>
+    {%endfor%}
+  </div>
+</div>
+<script src="{% static 'js/articles.js' %}"></script>
+
   <div class="row">
     {% for review in reviews %}
       <div class="col-4 my-3">
