@@ -2,14 +2,135 @@
 {% load static %}
 {% block body %}
 
-<!-- nav바 넣을 것 -->
+<!-- nav바 -->
+<div class="all-nav-container">
+  <nav class="all-nav">
+    <div class="all-nav-close">
+      <table id="nav-table" style="display: none;">
+        <tbody>
+          <tr>
+            <th>브랜드</th>
+            <td class="all-nav-radio">
+              <input type="radio" id="leo" name="brand" style="display: none;">
+              <label for="leo"><div class="all-nav-radio">레오폴드</div></label>
+  
+              <input type="radio" id="abko" name="brand" style="display: none;">
+              <label for="abko"><div class="all-nav-radio">앱코</div></label>
+  
+              <input type="radio" id="mstone" name="brand" style="display: none;">
+              <label for="mstone"><div class="all-nav-radio">엠스톤글로벌</div></label>
+  
+              <input type="radio" id="cherry" name="brand" style="display: none;">
+              <label for="cherry"><div class="all-nav-radio">체리</div></label>
+  
+              <input type="radio" id="logi" name="brand" style="display: none;">
+              <label for="logi"><div class="all-nav-radio">로지텍</div></label>
+            </td>
+          </tr>
+          <tr>
+            <th>키 스위치</th>
+            <td class="all-nav-radio">
+              <input type="radio" id="blue-switch" name="key-switch" style="display: none;">
+              <label for="blue-switch"><div class="all-nav-radio">청축</div></label>
+  
+              <input type="radio" id="brown-switch" name="key-switch" style="display: none;">
+              <label for="brown-switch"><div class="all-nav-radio">갈축</div></label>
+  
+              <input type="radio" id="red-switch" name="key-switch" style="display: none;">
+              <label for="red-switch"><div class="all-nav-radio">적축</div></label>
+  
+              <input type="radio" id="black-switch" name="key-switch" style="display: none;">
+              <label for="black-switch"><div class="all-nav-radio">흑축</div></label>
+  
+              <input type="radio" id="white-switch" name="key-switch" style="display: none;">
+              <label for="white-switch"><div class="all-nav-radio">백축</div></label>
+  
+              <input type="radio" id="yellow-switch" name="key-switch" style="display: none;">
+              <label for="yellow-switch"><div class="all-nav-radio">황축</div></label>
+  
+              <input type="radio" id="milky-switch" name="key-switch" style="display: none;">
+              <label for="milky-switch"><div class="all-nav-radio">밀키축</div></label>
+  
+              <input type="radio" id="cream-switch" name="key-switch" style="display: none;">
+              <label for="cream-switch"><div class="all-nav-radio">크림축</div></label>
+  
+              <input type="radio" id="coral-switch" name="key-switch" style="display: none;">
+              <label for="coral-switch"><div class="all-nav-radio">코랄축</div></label>
+  
+              <input type="radio" id="silver-switch" name="key-switch" style="display: none;">
+              <label for="silver-switch"><div class="all-nav-radio">은축</div></label>
+  
+              <input type="radio" id="silent-red-switch" name="key-switch" style="display: none;">
+              <label for="silent-red-switch"><div class="all-nav-radio">저소음적축</div></label>
+            </td>
+          </tr>
+            <th class="all-nav-blank">-</th>
+            <td class="all-nav-radio">
+              <input type="radio" id="topre" name="key-switch" style="display: none;">
+              <label for="topre"><div class="all-nav-radio">무접점 토프레</div></label>
+              
+              <input type="radio" id="noppoo" name="key-switch" style="display: none;">
+              <label for="noppoo"><div class="all-nav-radio">무접점 노뿌</div></label>
+              
+              <input type="radio" id="light-switch" name="key-switch" style="display: none;">
+              <label for="light-switch"><div class="all-nav-radio">무접점 광축</div></label>
+            </td>
+          </tr>
+          <tr>
+            <th>블루투스</th>
+            <td class="all-nav-radio">
+              <input type="radio" id="wire" name="bluetooth" style="display: none;">
+              <label for="wire"><div class="all-nav-radio">유선</div></label>
+              
+              <input type="radio" id="wireless" name="bluetooth" style="display: none;">
+              <label for="wireless"><div class="all-nav-radio">무선</div></label>
+              
+              <input type="radio" id="wire-wireless" name="bluetooth" style="display: none;">
+              <label for="wire-wireless"><div class="all-nav-radio">유선 + 무선</div></label>
+            </td>
+          </tr>
+          <tr>
+            <th>키압</th>
+            <td class="all-nav-radio">
+              <input type="radio" id="press-30" name="press" style="display: none;">
+              <label for="press-30"><div class="all-nav-radio">39g 이하</div></label>
+  
+              <input type="radio" id="press-40" name="press" style="display: none;">
+              <label for="press-40"><div class="all-nav-radio">40g ~ 49g</div></label>
+  
+              <input type="radio" id="press-50" name="press" style="display: none;">
+              <label for="press-50"><div class="all-nav-radio">50g 이상</div></label>
+            </td>
+          </tr>
+          <tr>
+            <th>키 배열</th>
+            <td class="all-nav-radio">
+              <input type="radio" id="full-array" name="array" style="display: none;">
+              <label for="full-array"><div class="all-nav-radio">풀배열</div></label>
+              
+              <input type="radio" id="tenkeyless" name="array" style="display: none;">
+              <label for="tenkeyless"><div class="all-nav-radio">텐키리스</div></label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="all-nav-button">
+        <img src="{% static 'images/all_nav_arrow.png' %}">
+      </div>
+    </div>
+  </nav>
+</div>
+
 
 <!-- 제목 -->
 <div class="my-container">
   <div class="my-head">
     <h2>키보드의 새 주인이 되어보세요</h2>
     <hr>
-    <p>키보드를 직접 사고 팔아보세요</p>
+    <div class="trade-header">
+      <p>키보드를 직접 사고 팔아보세요</p>
+      <a href="{% url 'trade:create' %}" class="a-blue">판매/ 구매하기 ></a>
+    </div>
   </div>
 
   <div>
@@ -29,14 +150,71 @@
       <label for="buy">구매글만</label>
     </form>
     <!-- 게시글 카드 -->
-    <div class="trade-card-container">
+    <div class="card-container">
       {% for trade in trades %}
+      <a href="">
+        <div class="my-card">
+          <div class="card-content">
+            <img src="{{ trade.img.url }}">
+            <h3>{{ trade.keyboard }}</h3>
+            <h1>{{ trade.title }}</h1>
+            <h2>{{ trade.price }}</h2>
+          </div>
+          {% if trade.Trade_type == 1 %}
+            <div class="card-badge blue-badge">판매</div>
+          {% else %}
+            <div class="card-badge red-badge">구매</div>
+          {% endif %}
+        </div>
+      </a>
       {% endfor %}
+
+      <a href="">
+        <div class="my-card">
+          <div class="card-content">
+            <img src="">
+            <div class="card-title">
+              <h3>엠스톤 그루브 클라리온M 저소음 갈축 38G</h3>
+              <h1>엠스톤 팔아요</h1>
+              <h2>₩ 9,999,999</h2>
+            </div>
+          </div>
+            <div class="card-badge blue-badge">판매</div>
+            <!-- <div class="card-badge red-badge">구매</div> -->
+        </div>
+      </a>
+
+      <a href="">
+        <div class="my-card">
+          <div class="card-content">
+            <img src="">
+            <div class="card-title">
+              <h3>엠스톤 그루브 클라리온M 저소음 갈축 38G</h3>
+              <h1>엠스톤 사요</h1>
+              <h2>₩ 9,999,999</h2>
+            </div>
+          </div>
+            <div class="card-badge red-badge">구매</div>
+        </div>
+      </a>
+
+      <a href="">
+        <div class="my-card">
+          <div class="card-content">
+            <img src="">
+            <div class="card-title">
+              <h3>엠스톤 그루브 클라리온M 저소음 갈축 38G</h3>
+              <h1>엠스톤 팔아요</h1>
+              <h2>₩ 9,999,999</h2>
+            </div>
+          </div>
+            <div class="card-badge blue-badge">판매</div>
+        </div>
+      </a>
+
     </div>
 
 
-    <a href="{% url 'trade:create' %}">중고거래글 작성</a>
-    <hr>
   {% for trade in trades %}
   <p>{%if trade.Trade_type == 1%} 팝니다 {%else%} 삽니다 {%endif%}</p>
   <a href="{% url 'trade:detail' trade.pk %}">
@@ -46,4 +224,5 @@
     {%endfor%}
   </div>
 </div>
+<script src="{% static 'js/articles.js' %}"></script>
 {% endblock body %}

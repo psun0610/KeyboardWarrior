@@ -5,31 +5,35 @@ from .models import Trades, Trade_Comment
 from django.http import JsonResponse
 from articles.models import Keyboard
 from datetime import date, datetime, timedelta
+
 # Create your views here.
 def maketable(p):
-	table = [0] * len(p)
-	i = 0
-	for j in range(1, len(p)):
-		while i > 0 and p[i] != p[j]:
-			i = table[i - 1]
-		if p[i] == p[j]:
-			i += 1
-			table[j] = i
-	return table
+    table = [0] * len(p)
+    i = 0
+    for j in range(1, len(p)):
+        while i > 0 and p[i] != p[j]:
+            i = table[i - 1]
+        if p[i] == p[j]:
+            i += 1
+            table[j] = i
+    return table
+
+
 def KMP(p, t):
-	ans = []
-	table = maketable(p)
-	i = 0
-	for j in range(len(t)):
-		while i > 0 and p[i] != t[j]:
-			i = table[i - 1]
-		if p[i] == t[j]:
-			if i == len(p) - 1:
-				ans.append(j - len(p) + 2)
-				i = table[i]
-			else:
-				i += 1
-	return ans
+    ans = []
+    table = maketable(p)
+    i = 0
+    for j in range(len(t)):
+        while i > 0 and p[i] != t[j]:
+            i = table[i - 1]
+        if p[i] == t[j]:
+            if i == len(p) - 1:
+                ans.append(j - len(p) + 2)
+                i = table[i]
+            else:
+                i += 1
+    return ans
+
 
 def index(request):
     trades = Trades.objects.all()
@@ -80,7 +84,7 @@ def detail(request, pk):
     comments = Trade_Comment.objects.filter(trade=pk).order_by("-pk")
     comment_from = CreateComment()
     for c in comments:
-        with open('filtering.txt') as txtfile:
+        with open("filtering.txt") as txtfile:
             for word in txtfile.readlines():
                 word = word.strip()
                 ans = KMP(word, c.content)
@@ -88,9 +92,14 @@ def detail(request, pk):
                     for k in ans:
                         k = int(k)
                         if k < len(c.content) // 2:
-                            c.content = len(c.content[k - 1 : len(word)]) * "*" + c.content[len(word):]
+                            c.content = (
+                                len(c.content[k - 1 : len(word)]) * "*"
+                                + c.content[len(word) :]
+                            )
                         else:
-                            c.content = c.content[0 : k - 1] + len(c.content[k - 1:]) * "*"
+                            c.content = (
+                                c.content[0 : k - 1] + len(c.content[k - 1 :]) * "*"
+                            )
     context = {
         "trade": trade,
         "comment_from": comment_from,
@@ -121,7 +130,7 @@ def trade_comment(request, pk):
         user = request.user
         comment_list = []
         for c in comments:
-            with open('filtering.txt') as txtfile:
+            with open("filtering.txt") as txtfile:
                 for word in txtfile.readlines():
                     word = word.strip()
                     ans = KMP(word, c.content)
@@ -129,9 +138,14 @@ def trade_comment(request, pk):
                         for k in ans:
                             k = int(k)
                             if k < len(c.content) // 2:
-                                c.content = len(c.content[k - 1 : len(word)]) * "*" + c.content[len(word):]
+                                c.content = (
+                                    len(c.content[k - 1 : len(word)]) * "*"
+                                    + c.content[len(word) :]
+                                )
                             else:
-                                c.content = c.content[0 : k - 1] + len(c.content[k - 1:]) * "*"
+                                c.content = (
+                                    c.content[0 : k - 1] + len(c.content[k - 1 :]) * "*"
+                                )
             comment_list.append(
                 {
                     "user": c.user.username,
@@ -159,7 +173,7 @@ def delete_comment(request, trade_pk, comment_pk):
         user = request.user
         comment_list = []
         for c in comments:
-            with open('filtering.txt') as txtfile:
+            with open("filtering.txt") as txtfile:
                 for word in txtfile.readlines():
                     word = word.strip()
                     ans = KMP(word, c.content)
@@ -167,10 +181,15 @@ def delete_comment(request, trade_pk, comment_pk):
                         for k in ans:
                             k = int(k)
                             if k < len(c.content) // 2:
-                                c.content = len(c.content[k - 1 : len(word)]) * "*" + c.content[len(word):]
+                                c.content = (
+                                    len(c.content[k - 1 : len(word)]) * "*"
+                                    + c.content[len(word) :]
+                                )
                             else:
-                                c.content = c.content[0 : k - 1] + len(c.content[k - 1:]) * "*"
-            
+                                c.content = (
+                                    c.content[0 : k - 1] + len(c.content[k - 1 :]) * "*"
+                                )
+
             comment_list.append(
                 {
                     "user": c.user.username,

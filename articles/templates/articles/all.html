@@ -126,6 +126,12 @@
     <p>모든 키보드를 보여드릴게요</p>
   </div>
 
+  <!-- 검색창 -->
+  <form class="trade-index-search-form">
+    <input type="text" placeholder="키보드를 검색해보세요">
+    <input type="submit" value="검색">
+  </form>
+
   <!-- 검색된 키보드 개수가 8개 이하면 광고 안 띄움 -->
   {% if all_keyboard|length < 8 %}
   <div class="all-card-container">
