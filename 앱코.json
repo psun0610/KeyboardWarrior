@@ -11,7 +11,8 @@
 			"switch": "체리",
 			"key_switch": "갈축",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -26,7 +27,8 @@
 			"switch": "체리",
 			"key_switch": "청축",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -35,13 +37,14 @@
 			"name": "앱코 HACKER ADK01 BT 블루투스 5.0 카일박스축 게이밍 기계식 키보드 (레드그레이, 갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/025/130/img/12130025_1.jpg?shrink=500:500&_v=20201119090813",
 			"brand": "앱코",
-			"connect": "유선+블루투스",
+			"connect": "기타",
 			"weight": "1105g",
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "갈축",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
 		}
 	},
 	{
@@ -56,7 +59,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "30g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -71,7 +75,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -86,7 +91,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "55g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
 		}
 	},
 	{
@@ -101,7 +107,24 @@
 			"switch": "Noppoo",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "앱코 HACKER K995P V3 RGB PBT 무접점 (화이트, 45g)",
+			"img": "https://img.danawa.com/prod_img/500000/854/413/img/6413854_1.jpg?shrink=500:500&_v=20210112171830",
+			"brand": "앱코",
+			"connect": "무접점(정전용량)",
+			"weight": "1150g",
+			"array": "104",
+			"switch": "Noppoo",
+			"key_switch": "기타",
+			"press": "기타",
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -116,22 +139,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "45g",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "앱코 HACKER K995P V3 RGB PBT 무접점 (블랙, 45g)",
-			"img": "https://img.danawa.com/prod_img/500000/846/413/img/6413846_1.jpg?shrink=500:500&_v=20210112171819",
-			"brand": "앱코",
-			"connect": "무접점(정전용량)",
-			"weight": "1150g",
-			"array": "104",
-			"switch": "Noppoo",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -146,22 +155,24 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선+무선+블루투스"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "앱코 ADK05 아크릴 듀얼 RGB 게이밍 키보드 (백축)",
-			"img": "https://img.danawa.com/prod_img/500000/268/132/img/13132268_1.jpg?shrink=500:500&_v=20210113143641",
+			"name": "앱코 ADK05 아크릴 듀얼 RGB 게이밍 키보드 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/175/132/img/13132175_1.jpg?shrink=500:500&_v=20210113143634",
 			"brand": "앱코",
 			"connect": "기계식",
 			"weight": "969g",
 			"array": "87",
 			"switch": "카일",
-			"key_switch": "백축",
+			"key_switch": "적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -176,7 +187,8 @@
 			"switch": "Noppoo",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -191,7 +203,8 @@
 			"switch": "Noppoo",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -206,7 +219,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -221,7 +235,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
 		}
 	},
 	{
@@ -236,7 +251,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -251,7 +267,8 @@
 			"switch": "Noppoo",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
 		}
 	},
 	{
@@ -266,7 +283,8 @@
 			"switch": "Noppoo",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
 		}
 	},
 	{
@@ -281,7 +299,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -296,7 +315,8 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -311,7 +331,8 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -326,22 +347,24 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "앱코 HACKER KN10 PBT RGB 무접점 키보드 (화이트, 55g)",
-			"img": "https://img.danawa.com/prod_img/500000/540/170/img/12170540_1.jpg?shrink=500:500&_v=20200901155653",
+			"name": "앱코 HACKER KN10 PBT RGB 무접점 키보드 (블랙, 45g)",
+			"img": "https://img.danawa.com/prod_img/500000/507/170/img/12170507_1.jpg?shrink=500:500&_v=20200901155519",
 			"brand": "앱코",
 			"connect": "무접점(정전용량)",
 			"weight": "983g",
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": "55g",
-			"kind": "풀배열"
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -356,7 +379,8 @@
 			"switch": "체리",
 			"key_switch": "갈축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -371,14 +395,15 @@
 			"switch": "오테뮤",
 			"key_switch": "적축",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "앱코 HACKER KN01 텐키리스 PBT RGB 무접점 키보드 (블랙, 55g)",
-			"img": "https://img.danawa.com/prod_img/500000/485/834/img/11834485_1.jpg?shrink=500:500&_v=20210930124546",
+			"name": "앱코 HACKER KN01 텐키리스 PBT RGB 무접점 키보드 (블랙, 45g)",
+			"img": "https://img.danawa.com/prod_img/500000/771/833/img/11833771_1.jpg?shrink=500:500&_v=20210930124533",
 			"brand": "앱코",
 			"connect": "무접점(정전용량)",
 			"weight": "790g",
@@ -386,7 +411,8 @@
 			"switch": "Noppoo",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -401,7 +427,8 @@
 			"switch": "오테뮤",
 			"key_switch": "적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "블루투스"
 		}
 	},
 	{
@@ -416,7 +443,8 @@
 			"switch": "Noppoo",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -431,7 +459,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -446,7 +475,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -461,7 +491,8 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -476,7 +507,8 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -491,7 +523,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -506,7 +539,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -521,7 +555,8 @@
 			"switch": "Finekey",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -536,7 +571,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -551,7 +587,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -566,7 +603,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -581,14 +619,15 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "앱코 HACKER K9100 ARC 프리미엄 카일 광축 크리스탈 키캡 완전방수 LED (블랙, 클릭)",
-			"img": "https://img.danawa.com/prod_img/500000/131/515/img/8515131_1.jpg?shrink=500:500&_v=20200107091843",
+			"name": "앱코 HACKER K9100 ARC 프리미엄 카일 광축 크리스탈 키캡 완전방수 LED (옐로우, 클릭)",
+			"img": "https://img.danawa.com/prod_img/500000/005/970/img/7970005_1.jpg?shrink=500:500&_v=20191230151435",
 			"brand": "앱코",
 			"connect": "무접점(광축)",
 			"weight": "1240g",
@@ -596,7 +635,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -605,13 +645,14 @@
 			"name": "앱코 HACKER ADK01 카일박스축 게이밍 기계식 키보드 (레드그레이, 적축)",
 			"img": "https://img.danawa.com/prod_img/500000/666/119/img/12119666_1.jpg?shrink=500:500&_v=20200825173445",
 			"brand": "앱코",
-			"connect": "유선",
+			"connect": "기타",
 			"weight": "1105g",
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "적축",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -626,14 +667,15 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "앱코 HACKER K8200 카일광축 완전방수 크리스탈 투톤 레인보우 Moving LED (V2, 클릭)",
-			"img": "https://img.danawa.com/prod_img/500000/360/409/img/11409360_1.jpg?shrink=500:500&_v=20220216131248",
+			"name": "앱코 HACKER K8200 카일광축 완전방수 크리스탈 투톤 레인보우 Moving LED (V1, 클릭)",
+			"img": "https://img.danawa.com/prod_img/500000/333/409/img/11409333_1.jpg?shrink=500:500&_v=20220414145422",
 			"brand": "앱코",
 			"connect": "무접점(광축)",
 			"weight": "1240g",
@@ -641,14 +683,15 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "앱코 K660P 프리미엄 카일광축 무빙 LED 게이밍 기계식 키보드 (다크 그레이, 클릭)",
-			"img": "https://img.danawa.com/prod_img/500000/633/208/img/13208633_1.jpg?shrink=500:500&_v=20220216130439",
+			"name": "앱코 K660P 프리미엄 카일광축 무빙 LED 게이밍 기계식 키보드 (마젠타, 클릭)",
+			"img": "https://img.danawa.com/prod_img/500000/612/208/img/13208612_1.jpg?shrink=500:500&_v=20220216130431",
 			"brand": "앱코",
 			"connect": "무접점(광축)",
 			"weight": "1267g",
@@ -656,7 +699,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -671,7 +715,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -686,7 +731,8 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -701,7 +747,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -716,7 +763,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -731,7 +779,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -746,7 +795,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -761,7 +811,8 @@
 			"switch": "오테뮤",
 			"key_switch": "갈축",
 			"press": "기타",
-			"kind": "텐키리스"
+			"kind": "텐키리스",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -776,7 +827,8 @@
 			"switch": "카일",
 			"key_switch": "청축",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -791,7 +843,8 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -806,7 +859,24 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "앱코 HACKER K525 GTMX 축교환 게이밍 기계식 키보드 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/174/224/img/12224174_1.jpg?shrink=500:500&_v=20200911151613",
+			"brand": "앱코",
+			"connect": "기계식",
+			"weight": "1180g",
+			"array": "104",
+			"switch": "GTMX",
+			"key_switch": "청축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -821,7 +891,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -836,7 +907,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -851,14 +923,15 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "앱코 HACKER K660 축교환 완전방수 게이밍 카일 광축 레드 (클릭)",
-			"img": "https://img.danawa.com/prod_img/500000/475/221/img/5221475_1.jpg?shrink=500:500&_v=20220714150400",
+			"name": "앱코 HACKER K660 축교환 완전방수 게이밍 카일 광축 레드 (리니어)",
+			"img": "https://img.danawa.com/prod_img/500000/045/633/img/5633045_1.jpg?shrink=500:500&_v=20211224134739",
 			"brand": "앱코",
 			"connect": "무접점(광축)",
 			"weight": "1240g",
@@ -866,14 +939,15 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "앱코 HACKER K660 축교환 완전방수 게이밍 카일 광축 옐로우 (리니어)",
-			"img": "https://img.danawa.com/prod_img/500000/048/633/img/5633048_1.jpg?shrink=500:500&_v=20220712163718",
+			"name": "앱코 HACKER K660 축교환 완전방수 게이밍 카일 광축 옐로우 (클릭)",
+			"img": "https://img.danawa.com/prod_img/500000/438/221/img/5221438_1.jpg?shrink=500:500&_v=20220714150244",
 			"brand": "앱코",
 			"connect": "무접점(광축)",
 			"weight": "1240g",
@@ -881,7 +955,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -896,7 +971,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -911,7 +987,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -926,22 +1003,24 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "앱코 HACKER K525 GTMX 축교환 게이밍 기계식 키보드 (적축)",
-			"img": "https://img.danawa.com/prod_img/500000/390/224/img/12224390_1.jpg?shrink=500:500&_v=20200911151533",
+			"name": "앱코 K840 사각 레트로 축교환 기계식 블랙 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/632/825/img/15825632_1.jpg?shrink=500:500&_v=20220304085237",
 			"brand": "앱코",
 			"connect": "기계식",
-			"weight": "1180g",
+			"weight": "870g",
 			"array": "104",
 			"switch": "GTMX",
-			"key_switch": "적축",
-			"press": "45g",
-			"kind": "풀배열"
+			"key_switch": "청축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -956,22 +1035,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "앱코 K840 사각 레트로 축교환 기계식 블랙 (적축)",
-			"img": "https://img.danawa.com/prod_img/500000/857/825/img/15825857_1.jpg?shrink=500:500&_v=20211201130003",
-			"brand": "앱코",
-			"connect": "기계식",
-			"weight": "870g",
-			"array": "104",
-			"switch": "GTMX",
-			"key_switch": "적축",
-			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "무선+블루투스"
 		}
 	},
 	{
@@ -986,7 +1051,8 @@
 			"switch": "GTMX",
 			"key_switch": "청축",
 			"press": "50g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1001,22 +1067,8 @@
 			"switch": "오테뮤",
 			"key_switch": "청축",
 			"press": "50g",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "앱코 레트로 써클 키캡 (87키)",
-			"img": "https://img.danawa.com/prod_img/500000/186/291/img/4291186_1.jpg?shrink=500:500&_v=20190809143515",
-			"brand": "앱코",
-			"connect": "기타",
-			"weight": "기타",
-			"array": "기타",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1031,7 +1083,8 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1046,7 +1099,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1058,10 +1112,11 @@
 			"connect": "기계식",
 			"weight": "1220g",
 			"array": "104",
-			"switch": "A",
+			"switch": "A 광축",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1076,14 +1131,15 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "앱코 WKM810 키보드 마우스 무선콤보 (블랙)",
-			"img": "https://img.danawa.com/prod_img/500000/344/682/img/11682344_1.jpg?shrink=500:500&_v=20200701160824",
+			"name": "앱코 WKM810 키보드 마우스 무선콤보 (브라운)",
+			"img": "https://img.danawa.com/prod_img/500000/093/267/img/9267093_1.jpg?shrink=500:500&_v=20200701160815",
 			"brand": "앱코",
 			"connect": "멤브레인",
 			"weight": "475g",
@@ -1091,22 +1147,8 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "앱코 AN02 핑크 RGB BAR 축교환 기계식 키보드 (갈축)",
-			"img": "https://img.danawa.com/prod_img/500000/808/650/img/14650808_1.jpg?shrink=500:500&_v=20210705164353",
-			"brand": "앱코",
-			"connect": "기계식",
-			"weight": "830g",
-			"array": "104",
-			"switch": "GTMX",
-			"key_switch": "갈축",
-			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "무선"
 		}
 	},
 	{
@@ -1121,7 +1163,24 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "앱코 AN02 핑크 RGB BAR 축교환 기계식 키보드 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/808/650/img/14650808_1.jpg?shrink=500:500&_v=20210705164353",
+			"brand": "앱코",
+			"connect": "기계식",
+			"weight": "830g",
+			"array": "104",
+			"switch": "GTMX",
+			"key_switch": "갈축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1136,7 +1195,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1151,22 +1211,8 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": "45g",
-			"kind": "풀배열"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "앱코 AN02 다크그레이 RGB BAR 축교환 기계식 키보드 (적축)",
-			"img": "https://img.danawa.com/prod_img/500000/787/650/img/14650787_1.jpg?shrink=500:500&_v=20210705164540",
-			"brand": "앱코",
-			"connect": "기계식",
-			"weight": "830g",
-			"array": "104",
-			"switch": "GTMX",
-			"key_switch": "적축",
-			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1181,7 +1227,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1196,7 +1243,24 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "앱코 AN02 다크그레이 RGB BAR 축교환 기계식 키보드 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/787/650/img/14650787_1.jpg?shrink=500:500&_v=20210705164540",
+			"brand": "앱코",
+			"connect": "기계식",
+			"weight": "830g",
+			"array": "104",
+			"switch": "GTMX",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1211,7 +1275,8 @@
 			"switch": "GTMX",
 			"key_switch": "갈축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1226,7 +1291,8 @@
 			"switch": "GTMX",
 			"key_switch": "갈축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1241,7 +1307,8 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1256,7 +1323,8 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1271,7 +1339,8 @@
 			"switch": "오테뮤",
 			"key_switch": "청축",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1286,7 +1355,8 @@
 			"switch": "GTMX",
 			"key_switch": "청축",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1301,7 +1371,8 @@
 			"switch": "GTMX",
 			"key_switch": "청축",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1316,7 +1387,8 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": "45g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	},
 	{
@@ -1331,14 +1403,15 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": "기타",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "블루투스"
 		}
 	},
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "앱코 HACKER K515 축교환 측면 RGB 라이팅 이중사출 게이밍 기계식 키보드 (화이트, 청축)",
-			"img": "https://img.danawa.com/prod_img/500000/180/321/img/9321180_1.jpg?shrink=500:500&_v=20210406154102",
+			"name": "앱코 HACKER K515 축교환 측면 RGB 라이팅 이중사출 게이밍 기계식 키보드 (블랙, 청축)",
+			"img": "https://img.danawa.com/prod_img/500000/162/321/img/9321162_1.jpg?shrink=500:500&_v=20220627161548",
 			"brand": "앱코",
 			"connect": "기계식",
 			"weight": "840g",
@@ -1346,7 +1419,8 @@
 			"switch": "GTMX",
 			"key_switch": "청축",
 			"press": "50g",
-			"kind": "풀배열"
+			"kind": "풀배열",
+			"bluetooth": "유선"
 		}
 	}
 ]
