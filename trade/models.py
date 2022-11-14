@@ -17,14 +17,12 @@ class Trades(models.Model):
     content = models.TextField(max_length=500)
     keyboard = models.ForeignKey(Keyboard, on_delete=models.CASCADE)
     price = models.IntegerField(default=0)
-
-    img = models.ImageField(
-        upload_to="img/",
-        blank=True,
     marker = models.ManyToManyField(
         AUTH_USER_MODEL, symmetrical=False, related_name="jjim"
     )
-
+class Photo(models.Model):
+    trade = models.ForeignKey(Trades, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='media/', blank=True)
 
 class Trade_Comment(models.Model):
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)

@@ -10,7 +10,7 @@
             <th>브랜드</th>
 
             <td class="all-nav-radio">
-              <input type="checkbox" id="leo" name="brand" style="display: none;" value="1"
+              <input type="radio" id="leo" name="brand" style="display: none;" value="1"
                 onclick="pick_brand(); send();">
               <label for="leo">
                 <div class="all-nav-radio">레오폴드</div>
@@ -299,22 +299,16 @@
 
   const pick_key = (e) => {
     key = document.querySelector('input[name="key-switch"]:checked').value;
-
   }
-
   const pick_bluetooth = (e) => {
     bluetooth = document.querySelector('input[name="bluetooth"]:checked').value;
-
   }
-
   const pick_press = (e) => {
     press = document.querySelector('input[name="press"]:checked').value;
   }
-
   const pick_array = (e) => {
     array = document.querySelector('input[name="array"]:checked').value;
   }
-
   const send = (e) => {
     axios({
       method: 'get',
