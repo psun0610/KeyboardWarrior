@@ -223,6 +223,7 @@
                   <div id="comments">
                     <hr>
                     <p>${comment_data[i].userName} | ${comment_data[i].content} | ${comment_data[i].created_at}</p>
+                    <i data-review-id="${ review_pk }" data-comment-id="${ comment_data[i].pk }" id="commentlike-btn" class="bi bi-heart"></i>
                     <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button>
                   </div>
                 `);

@@ -18,4 +18,5 @@ urlpatterns = [
         name="comment_delete",
     ),
     path("keyboard_search/", views.keyboard_search, name="keyboard_search"),
+    path("<int:pk>/marker/", views.marker, name="marker"),
 ]

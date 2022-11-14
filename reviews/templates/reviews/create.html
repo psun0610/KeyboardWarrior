@@ -3,11 +3,12 @@
 
 {% block body %}
 {% comment %} 제목 1 {% endcomment %}
-  <div class='reviewcreate-head'>
-    <h2 class='signup-head-h2'>KeyBoard Warrior에 당신의 경험을 공유해주세요</h2>
-    <hr class='bighr'>
+  <div class='my-head'>
+    <h2>KeyBoard Warrior에 당신의 경험을 공유해주세요</h2>
+    <hr>
     <p>이 키보드의 후기를 들려주세요</p>
   </div>
+
   <div class='reviewcreatebox'>
     <form action="" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
@@ -95,8 +96,8 @@
             search_box.insertAdjacentHTML('beforeend', `
           <div onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}"  data-keyboard_name-id="${keyboard_list[i].id}"  id="keyboard_${keyboard_list[i].id}">
           <hr>
-          <p>${keyboard_list[i].name}</p> <img class="keyboard-img" src="${keyboard_list[i].img}">
-          <p>브랜드:${keyboard_list[i].brand} </p> 
+          <p onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" >${keyboard_list[i].name}</p> <img  onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" class="keyboard-img" src="${keyboard_list[i].img}">
+          <p onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" >브랜드:${keyboard_list[i].brand} </p> 
           </div>
           `);
           }

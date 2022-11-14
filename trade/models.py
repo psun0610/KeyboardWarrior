@@ -17,9 +17,12 @@ class Trades(models.Model):
     content = models.TextField(max_length=500)
     keyboard = models.ForeignKey(Keyboard, on_delete=models.CASCADE)
     price = models.IntegerField(default=0)
+
     img = models.ImageField(
         upload_to="img/",
         blank=True,
+    marker = models.ManyToManyField(
+        AUTH_USER_MODEL, symmetrical=False, related_name="jjim"
     )
 
 

@@ -63,11 +63,29 @@
         <input title="Button fade blue/green" id='btn2' class="button1 btnFade btnBlueGreen"><label for="btn2">쪽지 보내기</label>
     </div>
 
+
     <div class="keyboard-detail-mini">
       <div class="keyboard-detail-mini-title">
         <h2>베스트 후기</h2>
         <a class="a-blue" href='#'>알아보기 ></a>
       </div>
+
+{{trade.price}}
+{{trade.keyboard.name}}
+<h1>중고 디테일</h1>
+
+{% if request.user in trade.marker.all %}
+<i onclick="marker()" class="bi bi-star-fill" data-trade-id="{{trade.pk}}" id="marker-icon"></i>
+{% else %}
+<i onclick="marker()" class="bi bi-star" data-trade-id="{{trade.pk}}" id="marker-icon"></i>
+{% endif %}
+<p>찜한사람 수 <span id="marker_count">{{trade.marker.all.count}}</span></p>
+<hr>
+<p>{%if trade.Trade_type == 1%} 팝니다 {%else%} 삽니다 {%endif%}</p>
+<h3>제목:{{trade.title}} <span><a href="{% url 'accounts:detail' trade.user.pk %}">{{trade.user}}</a></span></h3>
+<hr>
+{{trade.content}}
+
 
       
 
@@ -79,5 +97,120 @@
     </div>
   </div>
 </div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const commentFrom = document.querySelector('#commentForm')
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+    commentFrom.addEventListener('submit', function (event) {
+        event.preventDefault();
+        axios({
+            method: 'post',
+            url: `/trade/${event.target.dataset.tradeId}/comment/`,
+            header: { 'X-CSRFtoken': csrftoken },
+            data: new FormData(commentFrom)
+        })
+            .then(response => {
+                const comment_box = document.querySelector('#comment_box')
+                const user = response.data.user
+                comment_box.textContent = "";
+                const comment_list = response.data.comment_list
+                for (let i = 0; i < comment_list.length; i++) {
+                    if (user === comment_list[i].pk) {
+                        console.log(comment_list[i])
+                        comment_box.insertAdjacentHTML('beforeend', `
+                    <hr>
+                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>
+                    <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"> 삭제하기 </button>
+                    </div>`);
+                        console.log("댓글 전송 ")
+                    } else {
+                        console.log(comment_list[i])
+                        comment_box.insertAdjacentHTML('beforeend', `
+                    <hr>
+                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>`);
+                    }
+
+                }
+                commentFrom.reset()
+                console.log("코멘트 전송")
+            })
+    })
+
+</script>
+
+<!-- 비동기 댓글 삭제  -->
+<script>
+    const delete_btn = (e) => {
+        const delete_data = document.querySelector(`#delete_btn_${event.target.dataset.commentId}`)
+        console.log("댓글삭제시행")
+        event.preventDefault();
+        axios({
+            method: 'get',
+            url: `/trade/${event.target.dataset.tradeId}/${event.target.dataset.commentId}/comment_delete/`,
+        })
+            .then(response => {
+
+                const comment_box = document.querySelector('#comment_box')
+                const user = response.data.user
+                const p = document.createElement('p')
+                const hr = document.createElement('hr')
+                comment_box.textContent = "";
+                const comment_list = response.data.comment_list
+                for (let i = 0; i < comment_list.length; i++) {
+                    if (user === comment_list[i].pk) {
+                        console.log(comment_list[i])
+                        comment_box.insertAdjacentHTML('beforeend', `
+                    <hr>
+                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>
+                    <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"> 삭제하기 </button>
+                    </div>`);
+                        console.log(" ")
+                    } else {
+                        console.log(comment_list[i])
+                        comment_box.insertAdjacentHTML('beforeend', `
+                    <hr>
+                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>`);
+                    }
+
+                }
+
+                console.log("")
+            })
+    }
+
+</script>
+
+<!-- 찜하기 스크립트!! -->
+
+<script>
+    const marker = document.querySelector('#marker-icon')
+    marker.addEventListener('click', function (event) {
+        axios({
+            method: 'get',
+            url: `/trade/${event.target.dataset.tradeId}/marker/`
+        })
+            .then(response => {
+
+                console.log(response)
+                console.log(response.data)
+                if (response.data.is_marker === true) {
+                    marker.classList.add('bi-star-fill')
+                    marker.classList.remove('bi-star')
+                } else {
+                    marker.classList.add('bi-star')
+                    event.target.classList.remove('bi-star-fill')
+                }
+                const marker_count = document.querySelector('#marker_count')
+                marker_count.innerText = response.data.markers
+
+            })
+    })
+</script>
+
+
 
 {% endblock body %}

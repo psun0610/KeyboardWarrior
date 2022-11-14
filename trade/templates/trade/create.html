@@ -101,8 +101,8 @@
             search_box.insertAdjacentHTML('beforeend', `
           <div onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}"  data-keyboard_name-id="${keyboard_list[i].id}"  id="keyboard_${keyboard_list[i].id}">
           <hr>
-          <p>${keyboard_list[i].name}</p> <img class="keyboard-img" src="${keyboard_list[i].img}">
-          <p>브랜드:${keyboard_list[i].brand} </p> 
+          <p onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" >${keyboard_list[i].name}</p> <img  onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}"  class="keyboard-img" src="${keyboard_list[i].img}">
+          <p onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" >브랜드:${keyboard_list[i].brand} </p> 
           </div>
           `);
           }
