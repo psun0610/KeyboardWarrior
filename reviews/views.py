@@ -49,9 +49,11 @@ def create(request):
         review_form = ReviewForm(request.POST, request.FILES)
         photo_form = PhotoForm(request.POST, request.FILES)
         images = request.FILES.getlist("image")
+        kb = Keyboard.objects.get(name=request.POST["keyboard"])
         if review_form.is_valid() and photo_form.is_valid():
             review = review_form.save(commit=False)
             review.user = request.user
+            review.keyboard = kb
             if len(images):
                 for image in images:
                     image_instance = Photo(review=review, image=image)
