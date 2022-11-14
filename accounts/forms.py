@@ -62,7 +62,6 @@ class SocialUserForm(UserChangeForm):
     class Meta:
         model = get_user_model()
         fields = [
-            "email",
             "press",
             "weight",
             "array",
@@ -70,10 +69,7 @@ class SocialUserForm(UserChangeForm):
             "connect",
         ]
         labels = {
-            "email": "이메일 ",
             "press": "키압",
-            "first_name": "이름",
-            "last_name": "성",
             "weight": "무게",
             "array": "배열",
             "sound": "소리",

@@ -1,291 +1,56 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
-{% block title %}{{ user.username }}님의 페이지{% endblock title %}
-
+{% load django_bootstrap5 %}
 {% block body %}
-<div class='container'>
-    <div class='my-head'>
-        <h2>KeyBoard Warrior ID</h2>
-        <hr>
-        <p>키보드 워리어 들어가기</p>
-    </div>
-    <div class='userdetailall'>
-        {% comment %} 프로필, 메뉴 {% endcomment %}
-        <div class='detail-profile-menu'>
-            <div>
-                <img class='detail-profile-img' src="{% static 'images/qwefq.png' %}">
-                <h3>{{ user.last_name }}{{ user.first_name }}</h3>
-                <h4 class='detail-email'>{{ user.email }}</h4>
-            </div>  
-            <form class="form_radio_btn radio_male" id='radioform'>
-                <div>                       
-                    <input id="radio1" type="radio" name="menu" value="" checked='checked'>
-                    <label for="radio1">개인 정보</label>
-                </div> 
-                <div class="form_radio_btn">
-                    <input id="radio2" type="radio" name="menu" value="">
-                    <label for="radio2">로그인 및 보안</label>
-                </div>
 
-                <div class="form_radio_btn">
-                    <input id="radio3" type="radio" name="menu" value="">
-                    <label for="radio3">선호 키보드 정보</label>
-                </div>
-            </form>        
-            
-        
-        </div>
-        {% comment %} 개인정보수정, 개인정보디테일 {% endcomment %}
-        <div class='card-big-box' id='cab1'>
-            <div>
-                <h3 class='userdetail-head2'>개인 정보</h3>
-                <div>
-                    <p>연락 가능한 이메일 주소를 포함하여 개인 정보를 확인하십시오.</p>
-                    <a class='a-blue' href="{% url 'accounts:edit_profile' user.pk %}">개인정보수정 > </a>
-                </div>
-                
-            </div>
-
-            <div class='usercard-big-box'>
-                <div class='usercard-box'>
-                    <div class='usercard'>
-                        <div>
-                            <p class='usercard-title'>이름</p>
-                            <div class='usercard-content'>{{ user.last_name }}{{ user.first_name }}</div>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person text-primary" viewBox="0 0 16 16">
-                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class='usercard'>
-                        <div>
-                            <p class='usercard-title'>ID</p>
-                            <div class='usercard-content'>{{ user.username }}</div>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-check text-primary" viewBox="0 0 16 16">
-                                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                        </div>
-                    </div>
-                        
-                    <div class='usercard'>
-                        <div>
-                            <p class='usercard-title'>메너점수</p>
-                            <div class='usercard-content'>
-                                {% if user.rank >= 5000 %} Lv.6
-                                {% elif user.rank >= 4000 %} Lv.5 
-                                {% elif user.rank >= 3000 %} Lv.4
-                                {% elif user.rank >= 2000 %} Lv.3
-                                {% elif user.rank >= 1000 %} Lv.2
-                                {% elif user.rank >= 0 %} Lv.1
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-pulse text-primary" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01L8 2.748ZM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5Zm8.252-6.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162l-1.874-4.686Z"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class='usercard'>
-                        <div>
-                            <p class='usercard-title'>이메일</p>
-                            <div class='usercard-content'>{{ user.email }}</div>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope text-primary" viewBox="0 0 16 16">
-                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class='usercard'>
-                        <div>
-                            <p class='usercard-title'>팔로워</p>
-                            <div class='usercard-content'>{{ user.followers.count }}</div>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-plus text-primary" viewBox="0 0 16 16">
-                                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class='usercard'>
-                        <div>
-                            <p class='usercard-title'>팔로잉</p>
-                            <div class='usercard-content'>{{ user.followings.count }}</div>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-plus-fill text-primary" viewBox="0 0 16 16">
-                                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                                <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class='card-big-box' id='cab2' style='display: none;'>
-            <div>
-                <h3 class='userdetail-head2'>로그인 및 보안</h3>
-                <div>
-                    <p>계정 로그인, 계정 보안에 문제가 있을 경우 관련된 설정을 관리합니다.</p>
-                    
-                </div>
-                <div class='usercard-big-box'>
-                    <div class='usercard-box'>
-                        <a href="{% url 'accounts:change_password' user.pk %}" class='usercard'>
-                            <div>
-                                <p class='usercard-title'>암호 관리</p>
-                                <div class='usercard-content'>암호 변경하기</div>
-                            </div>
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person text-primary" viewBox="0 0 16 16">
-                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                </svg>
-                            </div>
-                        </a>
-                        <a href="#" class='usercard'>
-                            <div>
-                                <p class='usercard-title'>암호 찾기</p>
-                                <div class='usercard-content'>암호를 잊으셨나요?</div>
-                            </div>
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-check text-primary" viewBox="0 0 16 16">
-                                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                    <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                                </svg>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class='card-big-box' id='cab3' style='display: none;'>
-            <div>
-                <h3 class='userdetail-head2'>선호 키보드 정보</h3>
-                <div>
-                    <p>선호하는 키보드 정보를 관리합니다.</p>
-                    <a class='a-blue' href="{% url 'accounts:edit_profile' user.pk %}">개인정보수정 > </a>
-                </div>
-                <div class='usercard-big-box'>
-                    <div class='usercard-box'>
-                        
-                        <div class='usercard'>
-                            <div>
-                                <p class='usercard-title'>키보드 소리</p>
-                                <div class='usercard-content'> 
-                                {{ user.sound }}
-                                </div>
-                            </div>
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person text-primary" viewBox="0 0 16 16">
-                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class='usercard'>
-                            <div>
-                                <p class='usercard-title'>키보드 무게</p>
-                                <div class='usercard-content'>
-                                {{ user.weight }}
-                                </div>
-                            </div>
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-check text-primary" viewBox="0 0 16 16">
-                                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                    <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class='usercard'>
-                            <div>
-                                <p class='usercard-title'>키보드 배열</p>
-                                <div class='usercard-content'>
-                                    {{ user.array }}
-                                </div>
-                            </div>
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-check text-primary" viewBox="0 0 16 16">
-                                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                    <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class='usercard'>
-                            <div>
-                                <p class='usercard-title'>키보드 압력</p>
-                                <div class='usercard-content'>
-                                {{ user.press }}
-                                </div>
-                            </div>
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-check text-primary" viewBox="0 0 16 16">
-                                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                    <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class='usercard'>
-                            <div>
-                                <p class='usercard-title'>유선/무선</p>
-                                <div class='usercard-content'>
-                                {% if '1' in user.connect %} 유선
-                                {% elif '2' in user.connect %} 무선
-                                {% else %} 상관없음
-                                {% endif %}
-                                </div>
-                            </div>
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-check text-primary" viewBox="0 0 16 16">
-                                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                    <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{% comment %} 제목 1 {% endcomment %}
+<div class='signup-head'>
+  <h2 class='signup-head-h2'>KeyBoard Warrior 소셜로그인 회원가입</h2>
+  <hr class='bighr'>
 </div>
+<div class='signupbox'>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div>
+      {% comment %} 회원정보 폼 1 {% endcomment %}
+      {% comment %} 제목 2 {% endcomment %}
+      <div class='signup-head'>
+        <h3 class='signup-head-h2'>선호하는 키보드가 있으신가요?</h3>
+      </div>
+      {% comment %} 키보드 취향 {% endcomment %}
+      <div class='select-box'>
+        <div class="select">
+          <input type="radio" id="sound" name="sound"><label for="sound">시원한 소리</label>
+          <input type="radio" id="sound2" name="sound"><label for="sound2">조용한 소리</label>
+          <input type="radio" id="sound3" name="sound"><label for="sound3">상관없음</label>
+        </div>
+        <div class="select">
+          <input type="radio" id="array" name="array"><label for="array">텐키리스</label>
+          <input type="radio" id="array2" name="array"><label for="array2">풀배열</label>
+          <input type="radio" id="array3" name="array"><label for="array3">상관없음</label>
+        </div>
 
+        <div class="select">
+          <input type="radio" id="connect" name="connect"><label for="connect">유선</label>
+          <input type="radio" id="connect2" name="connect"><label for="connect2">무선</label>
+          <input type="radio" id="connect3" name="connect"><label for="connect3">상관없음</label>
+        </div>
 
+        <div class="select">
+          <input type="radio" id="press" name="press"><label for="press">가벼운 타건감</label>
+          <input type="radio" id="press2" name="press"><label for="press2">묵직한 타건감</label>
+          <input type="radio" id="press3" name="press"><label for="press3">상관없음</label>
+        </div>
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script>
-
-    document.getElementById('radioform').addEventListener("click",  function() {
-    var check_id = Array.from(radioform).find(radio => radio.checked).getAttribute('id').replace('radio', '');
-    console.log(check_id)
-    var radios = document.getElementsByName('menu');
-    for (var i=1; i<=radios.length; i++)
-    {
-        // 체크된 라디오가 현재 인덱스의 id와 같다면
-        // -> show
-        if (check_id === String(i)) {
-        document.querySelector('#cab'+String(i)).setAttribute('style', 'display: block')
-        }
-        // 다르다면
-        // -> hide
-        else {
-        document.querySelector('#cab'+String(i)).setAttribute('style', 'display: none')
-        }
-    }
-    })
-</script>
-{% endblock %}
+        <div class="select1">
+          <input type="radio" id="weight" name="weight"><label for="weight">가벼운</label>
+          <input type="radio" id="weight2" name="weight"><label for="weight2">상관없음</label>
+        </div>
+      </div>
+      <div>
+        <button class='signup-btn' type="submit">회원가입완료</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock body %}

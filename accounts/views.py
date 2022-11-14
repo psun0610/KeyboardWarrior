@@ -181,6 +181,7 @@ def naver_callback(request):
 
     naver_id = naver_user_information["response"]["id"]
     naver_nickname = naver_user_information["response"]["nickname"]
+    naver_email = naver_user_information["response"]["email"]
 
     if get_user_model().objects.filter(naver_id=naver_id).exists():
         naver_user = get_user_model().objects.get(naver_id=naver_id)
@@ -191,11 +192,12 @@ def naver_callback(request):
         naver_login_user.username = naver_nickname
         naver_login_user.naver_id = naver_id
         naver_login_user.set_password(str(state_token))
+        naver_login_user.email = naver_email
         naver_login_user.save()
         naver_user = get_user_model().objects.get(naver_id=naver_id)
         my_login(request, naver_user)
         pk = naver_user.pk
-        return redirect(request.GET.get("next") or "accounts:social_form", pk)
+        return redirect("accounts:social_form", pk)
 
 
 def google_request(request):
@@ -255,22 +257,22 @@ def google_callback(request):
 @login_required
 def social_form(request, pk):
     user = get_user_model().objects.get(pk=pk)
+    print("유저정보확인")
     if request.user == user:
+        print("로긴 확인")
         if request.method == "POST":
+            print("포스트확인")
             form = SocialUserForm(request.POST, instance=request.user)
+            print("폼에 데이터넣기")
             if form.is_valid():
-                user = form.save()
-                try:
-                    user.profile_image = request.FILES["image"]
-                    user.save()
-                except:
-                    print("error")
-                return redirect("accounts:detail", user.pk)
+                print("여기안되는중")
+                form.save()
+                return render(request, "accounts/social_form.html", context)
         else:
-            form = SocialUserForm(instance=request.user)
+            form = SocialUserForm()
         context = {
             "form": form,
         }
         return render(request, "accounts/social_form.html", context)
     else:
-        return render(request, "articles/index.html")
+        return render(request, "articles/main.html")
