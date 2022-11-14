@@ -7,17 +7,20 @@
   /* grid-template-columns: 300px 300px 300px 300px; */
   justify-content: center;
 }
+
 .trade-index-search-form {
   display: flex;
   justify-content: center;
   margin: 60px 0 30px;
 }
+
 .trade-index-search-form>input[type=text] {
   width: 350px;
   padding: 5px 15px;
   border-radius: 3px;
   border: 1px solid black;
 }
+
 .trade-index-search-form>input[type=submit] {
   padding: 5px 20px;
   margin-left: 16px;
@@ -31,9 +34,11 @@
   justify-content: center;
   margin: 16px;
 }
+
 .trade-index-radio-form>input {
   display: none;
 }
+
 .trade-index-radio-form>input[type=radio]+label {
   margin: 0 8px;
   padding: 5px 15px;
@@ -41,8 +46,99 @@
   border-radius: 3px;
   transition: all .2s ease-in;
 }
+
 .trade-index-radio-form>input[type=radio]:checked+label {
   background-color: rgba(0, 0, 0, 0.698);
   color: white;
   transition: all .2s ease-in;
+}
+
+.trade-form {
+  width: 500px;
+}
+
+.big-trade-form {
+  width: 500px;
+}
+
+
+.select-trade {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+
+.select-trade input[type='radio'] {
+  display: none;
+}
+
+.select-trade label {
+  display: block;
+  border-radius: 3px;
+  text-align: center;
+  height: -webkit-fill-available;
+  line-height: 45px;
+  width: 240px;
+}
+
+/* Checked */
+.select-trade input[type=radio]:checked+label {
+  background: rgba(128, 128, 128, 1);
+  color: #fff;
+}
+
+/* Hover */
+.select-trade label:hover {
+  color: #666;
+}
+
+/* Disabled */
+.select-trade input[type=radio]+label {
+  background: #F9FAFC;
+  color: #666;
+}
+
+.reviewcreate-userinfo-context {
+  background-color: #fff;
+  padding: 0.9rem 0.9rem;
+  margin: 0.5rem 0;
+  width: 700px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  height: 150px;
+}
+
+
+.button1 {
+  display: block;
+  position: relative;
+  float: left;
+  width: 120px;
+  padding: 0;
+  margin: 10px 20px 10px 0;
+  font-weight: 600;
+  text-align: center;
+  line-height: 40px;
+  color: #FFF;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.btnBlueGreen {
+  background: #5b5b5b;
+}
+
+.btnFade.btnBlueGreen:hover {
+  background: #2a2a2a;
+}
+
+.btnred {
+  background: #c00000;
+}
+
+.btnFade.btnred:hover {
+  background: #710000;
 }

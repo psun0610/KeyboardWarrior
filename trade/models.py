@@ -17,6 +17,10 @@ class Trades(models.Model):
     content = models.TextField(max_length=500)
     keyboard = models.ForeignKey(Keyboard, on_delete=models.CASCADE)
     price = models.IntegerField(default=0)
+    img = models.ImageField(
+        upload_to="img/",
+        blank=True,
+    )
 
 
 class Trade_Comment(models.Model):

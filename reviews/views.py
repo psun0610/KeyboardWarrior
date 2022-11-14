@@ -50,13 +50,10 @@ def create(request):
         # kb = Keyboard.objects.get(name=request.POST["keyboard"])
         # print(kb, 1)
         if review_form.is_valid():
-            print("유효성검사")
             review = review_form.save(commit=False)
             review.user = request.user
-            print("키보드 저장전")
             # review.keyboard = kb
             review.save()
-            print("저장")
             return redirect("reviews:index")
     else:
         review_form = ReviewForm()
