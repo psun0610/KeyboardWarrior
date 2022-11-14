@@ -1,0 +1,48 @@
+.trade-card-container {
+  max-width: 1420px;
+  margin: 40px auto 70px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+  /* grid-template-columns: 300px 300px 300px 300px; */
+  justify-content: center;
+}
+.trade-index-search-form {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 30px;
+}
+.trade-index-search-form>input[type=text] {
+  width: 350px;
+  padding: 5px 15px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+.trade-index-search-form>input[type=submit] {
+  padding: 5px 20px;
+  margin-left: 16px;
+  border-radius: 3px;
+  background-color: var(--my-black);
+  color: white;
+}
+
+.trade-index-radio-form {
+  display: flex;
+  justify-content: center;
+  margin: 16px;
+}
+.trade-index-radio-form>input {
+  display: none;
+}
+.trade-index-radio-form>input[type=radio]+label {
+  margin: 0 8px;
+  padding: 5px 15px;
+  background-color: rgb(227, 227, 227);
+  border-radius: 3px;
+  transition: all .2s ease-in;
+}
+.trade-index-radio-form>input[type=radio]:checked+label {
+  background-color: rgba(0, 0, 0, 0.698);
+  color: white;
+  transition: all .2s ease-in;
+}
