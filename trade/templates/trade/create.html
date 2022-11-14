@@ -4,96 +4,84 @@
 
 {% block body %}
 
-
-
-
-<div class='my-head'>
-        <h2>KeyBoard Warrior에서 안전한 중고거래</h2>
-        <hr>
-        <p>
-          KeyBoard Warrior 전자기기판매중개자이며 거래당사자는 판매자와 구매자 본인입니다.
-          따라서 상품·거래정보 및 거래에 대하여 책임을 지지 않습니다.
-          미성년자가 체결한 계약은 법정대리인이 동의하지 않는 경우 본인 또는 법정대리인이 취소할 수 있습니다
-        </p>
-    </div>
-<div class='reviewcreatebox'>
-  <div>
-    <form action="" method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      <div class="select-trade">
-        <input type="radio" id="weight" name="Trade_type" value='1'><label for="weight">팝니다</label>
-        <input type="radio" id="weight2" name="Trade_type" value='2'><label for="weight2">삽니다</label>
-      </div>
-      <input data-testid="input-box" name="title"
-                    placeholder="제목" type="text" required="" class="reviewcreate-userinfo" value="">
-      
-      <div class="search-wrap">
-        <input id="search_input" class="reviewcreate-userinfo" name="keyboard" type="search" placeholder="Search"
-          aria-label="Search">
-          <div class="search-off search-div " id="search_box">
-          </div>
-      </div>   
-      <input data-testid="input-box" name="price"
-                  placeholder="희망가격" type="integer" required="" class="reviewcreate-userinfo" value=""> 
-      <textarea name="content"
-                  placeholder="내용" type="text" required="" class="reviewcreate-userinfo-context" value=""></textarea> 
-      <input type="file" name='img' id='reviewimg' title="Button fade blue/green"style='display: none;'>
-        <label for="reviewimg">
-          <div  class="imgbtn">이미지 업로드</div>
-        </label>   
-      <button class='review-btn' type="submit">KeyBoard Warrior에서 안전한 거래하기</button>
-    </form>
+  <div class='my-head'>
+    <h2>KeyBoard Warrior에서 안전한 중고거래</h2>
+    <hr>
+    <p>
+      KeyBoard Warrior 전자기기판매중개자이며 거래당사자는 판매자와 구매자 본인입니다. 따라서 상품·거래정보 및 거래에 대하여 책임을 지지 않습니다. 미성년자가 체결한 계약은 법정대리인이 동의하지 않는 경우 본인 또는 법정대리인이 취소할 수 있습니다
+    </p>
   </div>
-</div>
-<form id="search_form" action="{% url 'trade:keyboard_search' %}" class="d-flex hidden" role="search">
-</form>
+  <div class='reviewcreatebox'>
+    <div class="trade-form">
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
 
+        <div class="select-trade">
+          <input type="radio" id="weight" name="Trade_type" value='1'>
+          <label for="weight">팝니다</label>
+          <input type="radio" id="weight2" name="Trade_type" value='2'>
+          <label for="weight2">삽니다</label>
+        </div>
+        <input data-testid="input-box" name="title" placeholder="제목" type="text" required="" class="reviewcreate-userinfo" value="">
 
+        <div class="search-wrap">
+          <input id="search_input" class="reviewcreate-userinfo" name="keyboard" type="search" placeholder="Search" aria-label="Search">
+          <div class="search-off search-div " id="search_box"></div>
+        </div>
+        <input data-testid="input-box" name="price" placeholder="희망가격" type="integer" required="" class="reviewcreate-userinfo" value="">
+        <textarea name="content" placeholder="내용" type="text" required="" class="reviewcreate-userinfo-context" value=""></textarea>
+        <input type="file" name='img' id='reviewimg' title="Button fade blue/green" style='display: none;'>
+        {% bootstrap_form photo_form%}
+        <button class='review-btn' type="submit">KeyBoard Warrior에서 안전한 거래하기</button>
+      </form>
+    </div>
+  </div>
+  <form id="search_form" action="{% url 'trade:keyboard_search' %}" class="d-flex hidden" role="search"></form>
 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const search_input = document.querySelector('#search_input');
+    const search_box = document.querySelector('#search_box');
+    const input = document.createElement('input');
+    const side = document.querySelector('#side');
+    const box_open = false;
 
+    search_input.addEventListener('click', function (event) {
+      console.log("검색클릭");
+      search_box
+        .classList
+        .remove('search-off');
+      search_box
+        .classList
+        .add('search-on');
+      const box_open = true;
+      console.log("검색 열림");
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script>
+    });
 
-  const search_input = document.querySelector('#search_input');
-  const search_box = document.querySelector('#search_box');
-  const input = document.createElement('input');
-  const side = document.querySelector('#side');
-  const box_open = false;
-
-
-  search_input.addEventListener('click', function (event) {
-    console.log("검색클릭");
-    search_box.classList.remove('search-off');
-    search_box.classList.add('search-on');
-    const box_open = true;
-    console.log("검색 열림");
-
-  });
-
-  document.addEventListener('click', function (e) {
-    console.log(e.target)
-    console.log(search_box.id)
-    if (box_open === true); {
-      if (e.target !== search_input) {
-        search_box.classList.remove('search-on');
-        search_box.classList.add('search-off');
-        console.log("검색디브 닫힘")
+    document.addEventListener('click', function (e) {
+      console.log(e.target)
+      console.log(search_box.id)
+      if (box_open === true) 
+      ;
+      {
+        if (e.target !== search_input) {
+          search_box
+            .classList
+            .remove('search-on');
+          search_box
+            .classList
+            .add('search-off');
+          console.log("검색디브 닫힘")
+        }
       }
-    }
-  });
+    });
 
-
-
-  // 키보드검색
-  window.onload = function () {
-    search_input.onkeyup = function () {
-      console.log("검색중")
-      axios({
-        method: 'get',
-        url: `/trade/keyboard_search/?search=${search_input.value}`,
-      })
-        .then(response => {
+    // 키보드검색
+    window.onload = function () {
+      search_input.onkeyup = function () {
+        console.log("검색중")
+        axios({method: 'get', url: `/trade/keyboard_search/?search=${search_input.value}`}).then(response => {
           const search_box = document.querySelector('#search_box');
           const keyboard_list = response.data.keyboard_list;
           search_box.textContent = "";
@@ -107,47 +95,49 @@
           `);
           }
         })
+      }
     }
-  }
 
+    const add_keyboard = (e) => {
+      const add_id = document.querySelector(`#keyboard_${event.target.dataset.keyboardId}`)
+      search_input.value = `${event
+        .target
+        .dataset
+        .nameId}`
+        console
+        .log(`${event.target.dataset.nameId}`)
+    }
+  </script>
 
-  const add_keyboard = (e) => {
-    const add_id = document.querySelector(`#keyboard_${event.target.dataset.keyboardId}`)
-    search_input.value = `${event.target.dataset.nameId}`
-    console.log(`${event.target.dataset.nameId}`)
-  }
+  <style>
+    .search-off {
+      display: none;
 
-</script>
+    }
 
-<style>
-  .search-off {
-    display: none;
+    .search-on {
+      display: block;
 
-  }
+    }
 
-  .search-on {
-    display: block;
+    .search-wrap {
+      position: relative;
+    }
 
-  }
+    .search-div {
+      position: absolute;
+      bottom: 1;
+      width: 600px;
+      height: 300px;
+      background-color: bisque;
+      overflow: scroll;
+      z-index: 100;
+    }
 
-  .search-wrap {
-    position: relative;
-  }
-
-  .search-div {
-    position: absolute;
-    bottom: 1;
-    width: 600px;
-    height: 300px;
-    background-color: bisque;
-    overflow: scroll;
-    z-index: 100;
-  }
-
-  .keyboard-img {
-    width: 70px;
-    height: 70px;
-  }
-</style>
+    .keyboard-img {
+      width: 70px;
+      height: 70px;
+    }
+  </style>
 
 {% endblock body %}

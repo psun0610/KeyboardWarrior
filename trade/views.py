@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
-from .forms import CreateTrade, CreateComment
-from .models import Trades, Trade_Comment
+from .forms import CreateTrade, CreateComment, PhotoForm
+from .models import Trades, Trade_Comment, Photo
 from django.http import JsonResponse
 from articles.models import Keyboard
 from datetime import date, datetime, timedelta
@@ -34,8 +34,6 @@ def KMP(p, t):
             else:
                 i += 1
     return ans
-
-
 def index(request):
     trades = Trades.objects.all()
     context = {"trades": trades}
@@ -46,21 +44,29 @@ def index(request):
 def create(request):
     if request.method == "POST":
         form = CreateTrade(request.POST, request.FILES)
+        photo_form = PhotoForm(request.POST, request.FILES)
+        images = request.FILES.getlist("image")
         kb = Keyboard.objects.get(name=request.POST["keyboard"])
-        if form.is_valid():
+        if form.is_valid() and photo_form.is_valid():
             trade = form.save(commit=False)
             trade.user = request.user
             trade.keyboard = kb
-            trade.save()
+            if len(images):
+                for image in images:
+                    image_instance = Photo(trade=trade, image=image)
+                    trade.save()
+                    image_instance.save()
+            else:
+                trade.save()
             return redirect("trade:index")
     else:
         form = CreateTrade()
+        photo_form = PhotoForm()
     context = {
         "form": form,
+        "photo_form": photo_form,
     }
     return render(request, "trade/create.html", context)
-
-
 @login_required
 def update(request, pk):
     trade = get_object_or_404(Trades, pk=pk)
