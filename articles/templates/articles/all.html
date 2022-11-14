@@ -8,106 +8,192 @@
         <tbody>
           <tr>
             <th>브랜드</th>
-            <td class="all-nav-radio" id= "all-brand">
-              <input type="radio" id="leo" name="brand" style="display: none;" value="1" onchange="getValue(this)">
-              <label for="leo"><div class="all-nav-radio">레오폴드</div></label>
-  
-              <input type="radio" id="abko" name="brand" style="display: none;" value="2" onchange="getValue(this)">
-              <label for="abko"><div class="all-nav-radio">앱코</div></label>
-  
-              <input type="radio" id="mstone" name="brand"  style="display: none;" value="3" onchange="getValue(this)">
-              <label for="mstone"><div class="all-nav-radio">엠스톤글로벌</div></label>
-  
-              <input type="radio" id="cherry" name="brand" style="display: none;" value="4" onchange="getValue(this)">
-              <label for="cherry"><div class="all-nav-radio">체리</div></label>
-  
-              <input type="radio" id="logi" name="brand"  style="display: none;" value="5" onchange="getValue(this)">
-              <label for="logi"><div class="all-nav-radio">로지텍</div></label>
+
+            <td class="all-nav-radio">
+              <input type="checkbox" id="leo" name="brand" style="display: none;" value="1"
+                onclick="pick_brand(); send();">
+              <label for="leo">
+                <div class="all-nav-radio">레오폴드</div>
+              </label>
+
+              <input type="radio" id="abko" name="brand" style="display: none;" value="2"
+                onclick="pick_brand(); send();">
+              <label for="abko">
+                <div class="all-nav-radio">앱코</div>
+              </label>
+
+              <input type="radio" id="mstone" name="brand" style="display: none;" value="3"
+                onclick="pick_brand(); send();">
+              <label for="mstone">
+                <div class="all-nav-radio">엠스톤글로벌</div>
+              </label>
+
+              <input type="radio" id="cherry" name="brand" style="display: none;" value="4"
+                onclick="pick_brand(); send();">
+              <label for="cherry">
+                <div class="all-nav-radio">체리</div>
+              </label>
+
+              <input type="radio" id="logi" name="brand" style="display: none;" value="5"
+                onclick="pick_brand(); send();">
+              <label for="logi">
+                <div class="all-nav-radio">로지텍</div>
+              </label>
             </td>
           </tr>
           <tr>
             <th>키 스위치</th>
             <td class="all-nav-radio">
-              <input type="radio" id="blue-switch" name="key-switch" style="display: none;" value="1">
-              <label for="blue-switch"><div class="all-nav-radio">청축</div></label>
-  
-              <input type="radio" id="brown-switch" name="key-switch" style="display: none;" value="2">
-              <label for="brown-switch"><div class="all-nav-radio">갈축</div></label>
-  
-              <input type="radio" id="red-switch" name="key-switch" style="display: none;" value="3">
-              <label for="red-switch"><div class="all-nav-radio">적축</div></label>
-  
-              <input type="radio" id="black-switch" name="key-switch" style="display: none;" value="4">
-              <label for="black-switch"><div class="all-nav-radio">흑축</div></label>
-  
-              <input type="radio" id="white-switch" name="key-switch" style="display: none;" value="5">
-              <label for="white-switch"><div class="all-nav-radio">백축</div></label>
-  
-              <input type="radio" id="yellow-switch" name="key-switch" style="display: none;" value="6">
-              <label for="yellow-switch"><div class="all-nav-radio">황축</div></label>
-  
-              <input type="radio" id="milky-switch" name="key-switch" style="display: none;" value="7">
-              <label for="milky-switch"><div class="all-nav-radio">밀키축</div></label>
-  
-              <input type="radio" id="cream-switch" name="key-switch" style="display: none;" value="8">
-              <label for="cream-switch"><div class="all-nav-radio">크림축</div></label>
-  
-              <input type="radio" id="coral-switch" name="key-switch" style="display: none;" value="9">
-              <label for="coral-switch"><div class="all-nav-radio">코랄축</div></label>
-  
-              <input type="radio" id="silver-switch" name="key-switch" style="display: none;" value="10">
-              <label for="silver-switch"><div class="all-nav-radio">은축</div></label>
-  
-              <input type="radio" id="silent-red-switch" name="key-switch" style="display: none;" value="11">
-              <label for="silent-red-switch"><div class="all-nav-radio">저소음적축</div></label>
+
+              <input type="radio" id="blue-switch" name="key-switch" style="display: none;" value="1"
+                onclick="pick_key(); send();">
+              <label for="blue-switch">
+                <div class="all-nav-radio">청축</div>
+              </label>
+
+              <input type="radio" id="brown-switch" name="key-switch" style="display: none;" value="2"
+                onclick="pick_key(); send();">
+              <label for="brown-switch">
+                <div class="all-nav-radio">갈축</div>
+              </label>
+
+              <input type="radio" id="red-switch" name="key-switch" style="display: none;" value="3"
+                onclick="pick_key(); send();">
+              <label for="red-switch">
+                <div class="all-nav-radio">적축</div>
+              </label>
+
+              <input type="radio" id="black-switch" name="key-switch" style="display: none;" value="4"
+                onclick="pick_key(); send();">
+              <label for="black-switch">
+                <div class="all-nav-radio">흑축</div>
+              </label>
+
+              <input type="radio" id="white-switch" name="key-switch" style="display: none;" value="5"
+                onclick="pick_key(); send();">
+              <label for="white-switch">
+                <div class="all-nav-radio">백축</div>
+              </label>
+
+              <input type="radio" id="yellow-switch" name="key-switch" style="display: none;" value="6"
+                onclick="pick_key(); send();">
+              <label for="yellow-switch">
+                <div class="all-nav-radio">황축</div>
+              </label>
+
+              <input type="radio" id="milky-switch" name="key-switch" style="display: none;" value="7"
+                onclick="pick_key(); send();">
+              <label for="milky-switch">
+                <div class="all-nav-radio">밀키축</div>
+              </label>
+
+              <input type="radio" id="cream-switch" name="key-switch" style="display: none;" value="8"
+                onclick="pick_key(); send();">
+              <label for="cream-switch">
+                <div class="all-nav-radio">크림축</div>
+              </label>
+
+              <input type="radio" id="coral-switch" name="key-switch" style="display: none;" value="9"
+                onclick="pick_key(); send();">
+              <label for="coral-switch">
+                <div class="all-nav-radio">코랄축</div>
+              </label>
+
+              <input type="radio" id="silver-switch" name="key-switch" style="display: none;" value="10"
+                onclick="pick_key(); send();">
+              <label for="silver-switch">
+                <div class="all-nav-radio">은축</div>
+              </label>
+
+              <input type="radio" id="silent-red-switch" name="key-switch" style="display: none;" value="11"
+                onclick="pick_key(); send();">
+              <label for="silent-red-switch">
+                <div class="all-nav-radio">저소음적축</div>
+              </label>
             </td>
           </tr>
-            <th class="all-nav-blank">-</th>
-            <td class="all-nav-radio">
-              <input type="radio" id="topre" name="key-switch" style="display: none;" value="12">
-              <label for="topre"><div class="all-nav-radio">무접점 토프레</div></label>
-              
-              <input type="radio" id="noppoo" name="key-switch" style="display: none;" value="13">
-              <label for="noppoo"><div class="all-nav-radio">무접점 노뿌</div></label>
-              
-              <input type="radio" id="light-switch" name="key-switch" style="display: none;" value="14">
-              <label for="light-switch"><div class="all-nav-radio">무접점 광축</div></label>
-            </td>
+          <th class="all-nav-blank">-</th>
+          <td class="all-nav-radio">
+            <input type="radio" id="topre" name="key-switch" style="display: none;" value="12"
+              onclick="pick_key(); send();">
+            <label for="topre">
+              <div class="all-nav-radio">무접점 토프레</div>
+            </label>
+
+            <input type="radio" id="noppoo" name="key-switch" style="display: none;" value="13"
+              onclick="pick_key(); send();">
+            <label for="noppoo">
+              <div class="all-nav-radio">무접점 노뿌</div>
+            </label>
+
+            <input type="radio" id="light-switch" name="key-switch" style="display: none;" value="14"
+              onclick="pick_key(); send();">
+            <label for="light-switch">
+              <div class="all-nav-radio">무접점 광축</div>
+            </label>
+          </td>
           </tr>
           <tr>
             <th>블루투스</th>
             <td class="all-nav-radio">
-              <input type="radio" id="wire" name="bluetooth" style="display: none;" value="1">
-              <label for="wire"><div class="all-nav-radio">유선</div></label>
-              
-              <input type="radio" id="wireless" name="bluetooth" style="display: none;" value="2">
-              <label for="wireless"><div class="all-nav-radio">무선</div></label>
-              
-              <input type="radio" id="wire-wireless" name="bluetooth" style="display: none;" value="3">
-              <label for="wire-wireless"><div class="all-nav-radio">유선 + 무선</div></label>
+              <input type="radio" id="wire" name="bluetooth" style="display: none;" value="1"
+                onclick="pick_bluetooth(); send();">
+              <label for="wire">
+                <div class="all-nav-radio">유선</div>
+              </label>
+
+              <input type="radio" id="wireless" name="bluetooth" style="display: none;" value="2"
+                onclick="pick_bluetooth(); send();">
+              <label for="wireless">
+                <div class="all-nav-radio">무선</div>
+              </label>
+
+              <input type="radio" id="wire-wireless" name="bluetooth" style="display: none;" value="3"
+                onclick="pick_bluetooth(); send();">
+              <label for="wire-wireless">
+                <div class="all-nav-radio">유선 + 무선</div>
+              </label>
+
             </td>
           </tr>
           <tr>
             <th>키압</th>
             <td class="all-nav-radio">
-              <input type="radio" id="press-30" name="press" style="display: none;" value="1">
-              <label for="press-30"><div class="all-nav-radio">39g 이하</div></label>
-  
-              <input type="radio" id="press-40" name="press" style="display: none;" value="2">
-              <label for="press-40"><div class="all-nav-radio">40g ~ 49g</div></label>
-  
-              <input type="radio" id="press-50" name="press" style="display: none;" value="3">
-              <label for="press-50"><div class="all-nav-radio">50g 이상</div></label>
+
+              <input type="radio" id="press-30" name="press" style="display: none;" value="1"
+                onclick="pick_press(); send();">
+              <label for="press-30">
+                <div class="all-nav-radio">39g 이하</div>
+              </label>
+
+              <input type="radio" id="press-40" name="press" style="display: none;" value="2"
+                onclick="pick_press(); send();">
+              <label for="press-40">
+                <div class="all-nav-radio">40g ~ 49g</div>
+              </label>
+
+              <input type="radio" id="press-50" name="press" style="display: none;" value="3"
+                onclick="pick_press(); send();">
+              <label for="press-50">
+                <div class="all-nav-radio">50g 이상</div>
+              </label>
+
             </td>
           </tr>
           <tr>
             <th>키 배열</th>
             <td class="all-nav-radio">
-              <input type="radio" id="full-array" name="array" style="display: none;" value="1">
-              <label for="full-array"><div class="all-nav-radio">풀배열</div></label>
-              
-              <input type="radio" id="tenkeyless" name="array" style="display: none;" value="2">
-              <label for="tenkeyless"><div class="all-nav-radio">텐키리스</div></label>
+              <input type="radio" id="full-array" name="array" style="display: none;" value="1"
+                onclick="pick_array(); send();">
+              <label for="full-array">
+                <div class="all-nav-radio">풀배열</div>
+              </label>
+
+              <input type="radio" id="tenkeyless" name="array" style="display: none;" value="2"
+                onclick="pick_array(); send();">
+              <label for="tenkeyless">
+                <div class="all-nav-radio">텐키리스</div>
+              </label>
             </td>
           </tr>
         </tbody>
@@ -126,9 +212,14 @@
     <p>모든 키보드를 보여드릴게요</p>
   </div>
 
+  <!-- 검색창 -->
+  <form class="trade-index-search-form">
+    <input type="text" placeholder="키보드를 검색해보세요">
+    <input type="submit" value="검색">
+  </form>
+
   <!-- 검색된 키보드 개수가 8개 이하면 광고 안 띄움 -->
-  {% if all_keyboard|length < 8 %}
-  <div class="all-card-container">
+  {% if all_keyboard|length < 8 %} <div class="all-card-container">
     <!-- 나중에 all_keyboard에서 context가 넘겨주는 다른 값으로 바꾸기 -->
     {% for keyboard in all_keyboard %}
     <a href="{% url 'articles:detail' keyboard.pk %}">
@@ -141,74 +232,99 @@
       </div>
     </a>
     {% endfor %}
-  </div>
+</div>
 
-  <!-- 8개 이상이면 광고 띄움 -->
-  {% else %}
-  <div class="all-card-container">
-    {% for keyboard in all_keyboard|slice:":8" %}
-    <a href="{% url 'articles:detail' keyboard.pk %}">
-      <div class="all-card">
-        <img src="{{ keyboard.img }}">
-        <div class="all-card-h1-wrap">
-          <h1>{{ keyboard.name }}</h1>
-        </div>
-        <div class="all-card-button">자세히 알아보기</div>
+<!-- 8개 이상이면 광고 띄움 -->
+{% else %}
+<div class="all-card-container">
+  {% for keyboard in all_keyboard|slice:":8" %}
+  <a href="{% url 'articles:detail' keyboard.pk %}">
+    <div class="all-card">
+      <img src="{{ keyboard.img }}">
+      <div class="all-card-h1-wrap">
+        <h1>{{ keyboard.name }}</h1>
       </div>
-    </a>
-    {% endfor %}
-  </div>
-
-  <!-- 광고 -->
-  <div class="ad-container">
-    <div class="ad-card">
-      <img src="https://funkeys.co.kr/data/apms/background/var_new_02.jpg">
-      <div class="ad-card-context">
-        <h1 class="ad-card-context-h1">VARMILO MIYA PRO SEA MELODY PBT 염료승화 영문 저소음적축</h1>
-        <a href="https://funkeys.co.kr/shop/item.php?it_id=1651475779&ca_id=10" class="a-blue">바로 알아보기 ></a>
-      </div>
+      <div class="all-card-button">자세히 알아보기</div>
     </div>
-    <div class="ad-card">
-      <img src="https://funkeys.co.kr/data/apms/background/var_new_04.jpg">
-      <div class="ad-card-context">
-        <h1 class="ad-card-context-h1">VARMILO X ZOMO 고양이 발바닥 ABS 키캡 샴냥</h1>
-        <a href="https://funkeys.co.kr/shop/item.php?it_id=1619427450&ca_id=20" class="a-blue">바로 알아보기 ></a>
-      </div>
+  </a>
+  {% endfor %}
+</div>
+
+<!-- 광고 -->
+<div class="ad-container">
+  <div class="ad-card">
+    <img src="https://funkeys.co.kr/data/apms/background/var_new_02.jpg">
+    <div class="ad-card-context">
+      <h1 class="ad-card-context-h1">VARMILO MIYA PRO SEA MELODY PBT 염료승화 영문 저소음적축</h1>
+      <a href="https://funkeys.co.kr/shop/item.php?it_id=1651475779&ca_id=10" class="a-blue">바로 알아보기 ></a>
     </div>
   </div>
-
-  <div class="all-card-container">
-      {% for keyboard in all_keyboard|slice:"8:" %}
-      <a href="{% url 'articles:detail' keyboard.pk %}">
-        <div class="all-card">
-          <img src="{{ keyboard.img }}">
-          <div class="all-card-h1-wrap">
-            <h1>{{ keyboard.name }}</h1>
-          </div>
-          <div class="all-card-button">자세히 알아보기</div>
-        </div>
-      </a>
-      {% endfor %}
-    {% endif %}
+  <div class="ad-card">
+    <img src="https://funkeys.co.kr/data/apms/background/var_new_04.jpg">
+    <div class="ad-card-context">
+      <h1 class="ad-card-context-h1">VARMILO X ZOMO 고양이 발바닥 ABS 키캡 샴냥</h1>
+      <a href="https://funkeys.co.kr/shop/item.php?it_id=1619427450&ca_id=20" class="a-blue">바로 알아보기 ></a>
+    </div>
   </div>
+</div>
+
+<div class="all-card-container">
+  {% for keyboard in all_keyboard|slice:"8:" %}
+  <a href="{% url 'articles:detail' keyboard.pk %}">
+    <div class="all-card">
+      <img src="{{ keyboard.img }}">
+      <div class="all-card-h1-wrap">
+        <h1>{{ keyboard.name }}</h1>
+      </div>
+      <div class="all-card-button">자세히 알아보기</div>
+    </div>
+  </a>
+  {% endfor %}
+  {% endif %}
+</div>
 </div>
 
 <script type="text/javascript" src="/static/js/articles.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-  const search_input = document.querySelector('#all-btn')
-  var brand = document.querySelectorAll('input[type=radio][name="brand"]');
-  radios.forEach(brand => brand.addEventListener('change', () => console.log(brand.value)));
-  search_input.addEventListener('click', function (event) {
+  let brand = 0
+  let key = 0
+  let bluetooth = 0
+  let press = 0
+  let array = 0
+
+  const pick_brand = (e) => {
+    brand = document.querySelector('input[name="brand"]:checked').value;
+  }
+
+  const pick_key = (e) => {
+    key = document.querySelector('input[name="key-switch"]:checked').value;
+
+  }
+
+  const pick_bluetooth = (e) => {
+    bluetooth = document.querySelector('input[name="bluetooth"]:checked').value;
+
+  }
+
+  const pick_press = (e) => {
+    press = document.querySelector('input[name="press"]:checked').value;
+  }
+
+  const pick_array = (e) => {
+    array = document.querySelector('input[name="array"]:checked').value;
+  }
+
+  const send = (e) => {
     axios({
       method: 'get',
-      url: `/alll/`,
-      params: { 'brand':brand, 'key':key, 'bluetooth': bluetooth, 'press': press, 'array': array},
+      url: `/scroll_data/`,
+      params: { 'brand': brand, 'key': key, 'bluetooth': bluetooth, 'press': press, 'array': array },
     })
-    .then(response => {
-      console.log(response);
-    }
-    )
-  });
+      .then(response => {
+        console.log(response);
+      }
+      )
+  };
 </script>
 {% endblock %}

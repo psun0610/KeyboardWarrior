@@ -103,6 +103,24 @@ def alll(request):
     }
     return JsonResponse(context)
 
+def scroll_data(request):
+    # all_keyboard = Keyboard.objects.all()
+    # all_date = [[] for _ in range(len(all_keyboard))]
+    # for i in range(len(all_keyboard)):
+    #     all_date[i].append(all_keyboard[i].brand)
+    #     all_date[i].append(all_keyboard[i].key_switch)
+    #     all_date[i].append(all_keyboard[i].connect)
+    #     all_date[i].append(all_keyboard[i].press)
+    #     all_date[i].append(all_keyboard[i].array)
+    radio_list = ["brand", "key-switch", "bluetooth", "press", "array"]
+    k = request.GET.get("brand")
+    print(k)
+    context = {
+        "k": k,
+    }
+    return JsonResponse(context)
+
+
 def detail(request, pk):
     keyboard = Keyboard.objects.get(pk=pk)
     context = {

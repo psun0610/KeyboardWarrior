@@ -5,7 +5,12 @@ from django import forms
 class CreateTrade(forms.ModelForm):
     class Meta:
         model = Trades
-        fields = ["title", "content", "Trade_type", "price"]
+        fields = [
+            "title",
+            "content",
+            "Trade_type",
+            "price",
+        ]
 
 
 class CreateComment(forms.ModelForm):

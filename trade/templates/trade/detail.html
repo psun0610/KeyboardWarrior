@@ -6,6 +6,13 @@
 {{trade.price}}
 {{trade.keyboard.name}}
 <h1>중고 디테일</h1>
+
+{% if request.user in trade.marker.all %}
+<i onclick="marker()" class="bi bi-star-fill" data-trade-id="{{trade.pk}}" id="marker-icon"></i>
+{% else %}
+<i onclick="marker()" class="bi bi-star" data-trade-id="{{trade.pk}}" id="marker-icon"></i>
+{% endif %}
+<p>찜한사람 수 <span id="marker_count">{{trade.marker.all.count}}</span></p>
 <hr>
 <p>{%if trade.Trade_type == 1%} 팝니다 {%else%} 삽니다 {%endif%}</p>
 <h3>제목:{{trade.title}} <span><a href="{% url 'accounts:detail' trade.user.pk %}">{{trade.user}}</a></span></h3>
@@ -121,8 +128,35 @@
             })
     }
 
-
 </script>
+
+<!-- 찜하기 스크립트!! -->
+
+<script>
+    const marker = document.querySelector('#marker-icon')
+    marker.addEventListener('click', function (event) {
+        axios({
+            method: 'get',
+            url: `/trade/${event.target.dataset.tradeId}/marker/`
+        })
+            .then(response => {
+
+                console.log(response)
+                console.log(response.data)
+                if (response.data.is_marker === true) {
+                    marker.classList.add('bi-star-fill')
+                    marker.classList.remove('bi-star')
+                } else {
+                    marker.classList.add('bi-star')
+                    event.target.classList.remove('bi-star-fill')
+                }
+                const marker_count = document.querySelector('#marker_count')
+                marker_count.innerText = response.data.markers
+
+            })
+    })
+</script>
+
 
 
 
