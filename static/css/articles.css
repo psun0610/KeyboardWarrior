@@ -55,6 +55,7 @@ a {
   --white-transparent: #ffffffc7;
   --a-blue: #3786FB;
   --my-black: #191919;
+  --my-red: #EE315E;
   
   --head-size: 25px;
 }
@@ -372,21 +373,23 @@ footer>div {
   margin: auto;
 }
 .all-nav-open>table th {
-  font-size: 18px;
+  font-size: 16px;
   padding: 16px 30px;
   width: 20%;
 }
 .all-nav-radio>label {
-  font-size: 16px;
+  font-size: 15px;
   padding: 5px 18px;
   border-radius: 2px;
 }
 .all-nav-radio label:hover{
   background-color: #ffffff67;
+  transition: all .2s ease-in;
 }
 .all-nav-radio input[type=radio]:checked+label {
   background-color: var(--white-transparent);
   color:black;
+  transition: all .2s ease-in;
 }
 .all-nav-blank {
   color: var(--my-black);
@@ -484,12 +487,13 @@ footer>div {
 }
 
 .signup-userinfo {
-    background-color: #fff;
+  background-color: #fff;
   padding: 0.9rem 0.9rem;
   margin: 0.5rem 0;
   width: 100%;
   border-radius: 5px;
   margin-bottom: 20px;
+  border: 1px solid rgb(136, 136, 136);
 }
 
 .signup-userinfo-name {
@@ -499,11 +503,11 @@ footer>div {
   width: 240px;
   margin-bottom: 20px;
   border-radius: 5px;
+  border: 1px solid rgb(136, 136, 136);
 }
 
 .signup-userinfo-box {
-  border: 10px;
-  border-color: rgb(19, 19, 19);
+  border-color: var(--my-black);
   width: 100%;
 }
 
@@ -549,17 +553,20 @@ footer>div {
 .select input[type=radio]:checked+label {
   background: rgba(128, 128, 128, 1);
   color: #fff;
+  transition: all .2s ease-in;
 }
 
 /* Hover */
 .select label:hover {
   color: #666;
+  transition: all .2s ease-in;
 }
 
 /* Disabled */
 .select input[type=radio]+label {
   background: #F9FAFC;
   color: #666;
+  transition: all .2s ease-in;
 }
 
 
