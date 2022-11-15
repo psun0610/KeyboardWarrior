@@ -125,7 +125,7 @@
                         comment_box.insertAdjacentHTML('beforeend', `
                     <hr>
                     <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>
-                    <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"> 삭제하기 </button>
+                    <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="${trade.pk}" data-comment-id= "${comment_list[i].comment_pk}"> 삭제하기 </button>
                     </div>`);
                         console.log("댓글 전송 ")
                     } else {
@@ -167,7 +167,7 @@
                         comment_box.insertAdjacentHTML('beforeend', `
                     <hr>
                     <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>
-                    <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"> 삭제하기 </button>
+                    <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="${trade.pk}" data-comment-id= "${comment_list[i].comment_pk}"> 삭제하기 </button>
                     </div>`);
                         console.log(" ")
                     } else {
