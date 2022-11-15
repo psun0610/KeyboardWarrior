@@ -1,0 +1,1394 @@
+[
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q3 노브 블랙 알루미늄 커스텀 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/488/253/img/17253488_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "2000g",
+			"array": "88",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q5 노브 블루 핫스왑 알루미늄 커스텀 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/532/112/img/18112532_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "기타",
+			"array": "기타",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q8 노브 블루 핫스왑 알루미늄 앨리스 배열 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/000/185/img/18185000_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "기타",
+			"array": "68",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q8 노브 블랙 핫스왑 알루미늄 앨리스 배열 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/826/184/img/18184826_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "기타",
+			"array": "68",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q3 노브 그레이 알루미늄 커스텀 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/494/253/img/17253494_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "2000g",
+			"array": "88",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q3 노브 블루 알루미늄 커스텀 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/473/253/img/17253473_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "2000g",
+			"array": "88",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q5 노브 블랙 핫스왑 알루미늄 커스텀 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/409/112/img/18112409_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "2310g",
+			"array": "96",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q5 노브 그레이 핫스왑 알루미늄 커스텀 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/511/112/img/18112511_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "2310g",
+			"array": "96",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K2 RGB (다크그레이, 갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/181/956/img/9956181_1.jpg?shrink=500:500&_v=20191120135220",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "875g",
+			"array": "84",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q2 노브 블랙 알루미늄 커스텀 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/625/089/img/17089625_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1589g",
+			"array": "67",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q2 노브 그레이 알루미늄 커스텀 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/556/089/img/17089556_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1589g",
+			"array": "67",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q1 노브 그레이 알루미늄 커스텀 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/070/645/img/16645070_1.jpg?shrink=500:500&_v=20221108094235",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1600g",
+			"array": "83",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q1 노브 블루 알루미늄 커스텀 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/352/645/img/16645352_1.jpg?shrink=500:500&_v=20221108094235",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1600g",
+			"array": "83",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q1 노브 블랙 알루미늄 커스텀 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/178/645/img/16645178_1.jpg?shrink=500:500&_v=20221108094235",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1600g",
+			"array": "83",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q1 프리미엄 QMK 알루미늄 커스텀 키보드 네이비블루 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/295/432/img/16432295_1.jpg?shrink=500:500&_v=20220218131621",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1600g",
+			"array": "83",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q1 프리미엄 QMK 알루미늄 커스텀 키보드 카본블랙 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/695/431/img/16431695_1.jpg?shrink=500:500&_v=20220218125117",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1600g",
+			"array": "83",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K8 PRO RGB 핫스왑 무선 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/244/308/img/17308244_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "990g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q4 블루 알루미늄 커스텀 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/480/420/img/17420480_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1500g",
+			"array": "기타",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q4 블랙 알루미늄 커스텀 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/474/420/img/17420474_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1500g",
+			"array": "기타",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K8 PRO 알루미늄 RGB 핫스왑 무선 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/430/308/img/17308430_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1146g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron Q1 프리미엄 QMK 알루미늄 커스텀 키보드 스페이스그레이 (베어본)",
+			"img": "https://img.danawa.com/prod_img/500000/815/431/img/16431815_1.jpg?shrink=500:500&_v=20220218125519",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1600g",
+			"array": "83",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K6 알루미늄 RGB 옵티컬 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/681/516/img/11516681_1.jpg?shrink=500:500&_v=20200623104303",
+			"brand": "Keychron",
+			"connect": "무접점(광축)",
+			"weight": "664g",
+			"array": "68",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "40g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K6 LED 옵티컬 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/791/511/img/11511791_1.jpg?shrink=500:500&_v=20210618170745",
+			"brand": "Keychron",
+			"connect": "무접점(광축)",
+			"weight": "664g",
+			"array": "68",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "40g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K12 알루미늄 RGB 핫스왑 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/690/344/img/15344690_1.jpg?shrink=500:500&_v=20210930131740",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "664.8g",
+			"array": "61",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K6 Retro 알루미늄 기계식 핫스왑 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/250/089/img/17089250_1.jpg?shrink=500:500&_v=20220520095550",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "664g",
+			"array": "68",
+			"switch": "기타",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K4 RGB (황축)",
+			"img": "https://img.danawa.com/prod_img/500000/802/892/img/10892802_1.jpg?shrink=500:500&_v=20200324104051",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "770g",
+			"array": "100접점",
+			"switch": "게이트론",
+			"key_switch": "황축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K10 알루미늄 RGB 기계식 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/073/633/img/16633073_1.jpg?shrink=500:500&_v=20220321092220",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1082g",
+			"array": "104",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron V1 노브 프로스트 블랙 반투명 RGB (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/514/196/img/18196514_1.jpg?shrink=500:500&_v=20221108094004",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "970g",
+			"array": "81",
+			"switch": "기타",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K8 PRO LED 핫스왑 무선 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/196/308/img/17308196_1.jpg?shrink=500:500&_v=20221108094234",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "990g",
+			"array": "87",
+			"switch": "기타",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K6 알루미늄 RGB (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/582/516/img/11516582_1.jpg?shrink=500:500&_v=20200609152627",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "664g",
+			"array": "68",
+			"switch": "기타",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K10 알루미늄 RGB 핫스왑 기계식 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/178/686/img/17686178_1.jpg?shrink=500:500&_v=20220819092623",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "1110g",
+			"array": "104",
+			"switch": "크론",
+			"key_switch": "저소음적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K2 V2 RGB 화이트블랙 알루미늄 핫스왑 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/469/524/img/14524469_1.jpg?shrink=500:500&_v=20210618163842",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "794g",
+			"array": "84",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K6 알루미늄 RGB 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/717/516/img/11516717_1.jpg?shrink=500:500&_v=20200609153038",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "664g",
+			"array": "68",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K8 알루미늄 RGB 핫스왑 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/671/183/img/12183671_1.jpg?shrink=500:500&_v=20220322090840",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "887g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K4 V2 RGB 다크그레이 알루미늄 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/971/526/img/14526971_1.jpg?shrink=500:500&_v=20210618180204",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "933g",
+			"array": "100",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K8 알루미늄 RGB 옵티컬 핫스왑 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/620/183/img/12183620_1.jpg?shrink=500:500&_v=20200903160627",
+			"brand": "Keychron",
+			"connect": "무접점(광축)",
+			"weight": "887g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "40g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K5 RGB 옵티컬 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/974/589/img/17589974_1.jpg?shrink=500:500&_v=20221108093342",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "770g",
+			"array": "기타",
+			"switch": "독자",
+			"key_switch": "청축",
+			"press": "48g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K2 V2 RGB 다크그레이 알루미늄 핫스왑 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/327/376/img/13376327_1.jpg?shrink=500:500&_v=20210218163424",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "663g",
+			"array": "84",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K7 RGB 핫스왑 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/533/644/img/16644533_1.jpg?shrink=500:500&_v=20220405124009",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "402g",
+			"array": "기타",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K2 RGB 알루미늄 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/277/956/img/9956277_1.jpg?shrink=500:500&_v=20191120150027",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "985g",
+			"array": "84",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K10 RGB 기계식 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/047/107/img/16107047_1.jpg?shrink=500:500&_v=20220321143040",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "895g",
+			"array": "104",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K5 LED 옵티컬 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/025/590/img/17590025_1.jpg?shrink=500:500&_v=20221108093342",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "770g",
+			"array": "108",
+			"switch": "독자",
+			"key_switch": "청축",
+			"press": "48g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K8 RGB 옵티컬 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/061/193/img/12193061_1.jpg?shrink=500:500&_v=20220322111150",
+			"brand": "Keychron",
+			"connect": "무접점(광축)",
+			"weight": "887g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K8 RGB 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/118/193/img/12193118_1.jpg?shrink=500:500&_v=20200903163136",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "887g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K6 RGB 옵티컬 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/076/515/img/11515076_1.jpg?shrink=500:500&_v=20200623104332",
+			"brand": "Keychron",
+			"connect": "무접점(광축)",
+			"weight": "664g",
+			"array": "68",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K6 RGB 핫스왑 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/223/515/img/11515223_1.jpg?shrink=500:500&_v=20200609143942",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "664g",
+			"array": "68",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K2 V2 RGB 다크그레이 알루미늄 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/273/376/img/13376273_1.jpg?shrink=500:500&_v=20210218163232",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "663g",
+			"array": "84",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K4 V2 RGB 다크그레이 알루미늄 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/905/526/img/14526905_1.jpg?shrink=500:500&_v=20210618180158",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "933g",
+			"array": "100",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K1 RGB (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/044/088/img/17088044_1.jpg?shrink=500:500&_v=20220520095551",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "650g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K4 RGB 알루미늄 옵티컬 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/585/893/img/10893585_1.jpg?shrink=500:500&_v=20200730131307",
+			"brand": "Keychron",
+			"connect": "무접점",
+			"weight": "933g",
+			"array": "100",
+			"switch": "기타",
+			"key_switch": "광축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K5 LED (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/200/088/img/17088200_1.jpg?shrink=500:500&_v=20220616111121",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "770g",
+			"array": "104",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "52g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K8 알루미늄 RGB (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/446/183/img/12183446_1.jpg?shrink=500:500&_v=20200903160731",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "887g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K4 V2 RGB 라이트그레이 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/689/526/img/14526689_1.jpg?shrink=500:500&_v=20210618175115",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "770g",
+			"array": "100",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K4 RGB 알루미늄 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/558/893/img/10893558_1.jpg?shrink=500:500&_v=20200324110713",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "933g",
+			"array": "100접점",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K4 RGB 옵티컬 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/832/892/img/10892832_1.jpg?shrink=500:500&_v=20200730131421",
+			"brand": "Keychron",
+			"connect": "무접점",
+			"weight": "770g",
+			"array": "100접점",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K7 RGB 옵티컬 핫스왑 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/731/644/img/16644731_1.jpg?shrink=500:500&_v=20220405112109",
+			"brand": "Keychron",
+			"connect": "무접점(광축)",
+			"weight": "402g",
+			"array": "65",
+			"switch": "독자",
+			"key_switch": "적축",
+			"press": "40g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K7 LED 핫스왑 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/612/643/img/16643612_1.jpg?shrink=500:500&_v=20220405124451",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "402g",
+			"array": "기타",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K7 RGB (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/867/643/img/16643867_1.jpg?shrink=500:500&_v=20220322094249",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "402g",
+			"array": "기타",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K3 V2 RGB 다크그레이 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/283/596/img/14596283_1.jpg?shrink=500:500&_v=20210628143618",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "396g",
+			"array": "84",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K12 RGB 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/985/343/img/15343985_1.jpg?shrink=500:500&_v=20210930133405",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "536g",
+			"array": "61",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K3 V2 RGB 다크그레이 옵티컬 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/541/596/img/14596541_1.jpg?shrink=500:500&_v=20220902083406",
+			"brand": "Keychron",
+			"connect": "무접점(광축)",
+			"weight": "396g",
+			"array": "84",
+			"switch": "독자",
+			"key_switch": "청축",
+			"press": "48g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K3 RGB (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/934/744/img/13744934_1.jpg?shrink=500:500&_v=20210330125910",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "395g",
+			"array": "84",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K3 RGB 옵티컬 핫스왑 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/039/745/img/13745039_1.jpg?shrink=500:500&_v=20210330125852",
+			"brand": "Keychron",
+			"connect": "무접점(광축)",
+			"weight": "395g",
+			"array": "84",
+			"switch": "기타",
+			"key_switch": "갈축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K5 RGB (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/281/088/img/17088281_1.jpg?shrink=500:500&_v=20220520095551",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "770g",
+			"array": "104",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K6 LED (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/092/511/img/11511092_1.jpg?shrink=500:500&_v=20210618170736",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "664g",
+			"array": "68",
+			"switch": "기타",
+			"key_switch": "적축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K6 LED 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/457/512/img/11512457_1.jpg?shrink=500:500&_v=20210618170729",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "664g",
+			"array": "68",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K8 LED 옵티컬 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/553/193/img/12193553_1.jpg?shrink=500:500&_v=20220322110608",
+			"brand": "Keychron",
+			"connect": "무접점(광축)",
+			"weight": "887g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K6 RGB (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/854/514/img/11514854_1.jpg?shrink=500:500&_v=20200609152440",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "664g",
+			"array": "68",
+			"switch": "기타",
+			"key_switch": "청축",
+			"press": "기타",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K8 LED 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/622/193/img/12193622_1.jpg?shrink=500:500&_v=20220322090609",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "887g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K2 V2 LED 화이트블랙 핫스왑 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/340/524/img/14524340_1.jpg?shrink=500:500&_v=20210618163412",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "663g",
+			"array": "84",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K8 RGB (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/028/193/img/12193028_1.jpg?shrink=500:500&_v=20220322090055",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "887g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K2 V2 RGB 라이트그레이 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/724/375/img/13375724_1.jpg?shrink=500:500&_v=20220831131504",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "794g",
+			"array": "84",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K2 V2 LED 라이트그레이 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/037/375/img/13375037_1.jpg?shrink=500:500&_v=20220831142509",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "794g",
+			"array": "84용도게이밍",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K1 LED (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/909/087/img/17087909_1.jpg?shrink=500:500&_v=20220520095551",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "650g",
+			"array": "87",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K4 V2 RGB 라이트그레이 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/680/526/img/14526680_1.jpg?shrink=500:500&_v=20210618175121",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "770g",
+			"array": "100",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K4 V2 LED 라이트그레이 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/993/525/img/14525993_1.jpg?shrink=500:500&_v=20210618173115",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "770g",
+			"array": "100",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "60g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K10 RGB 기계식 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/441/103/img/16103441_1.jpg?shrink=500:500&_v=20220105090128",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "895g",
+			"array": "104",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K10 White LED 기계식 핫스왑 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/911/034/img/17034911_1.jpg?shrink=500:500&_v=20220512141916",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "895g",
+			"array": "104",
+			"switch": "게이트론",
+			"key_switch": "갈축",
+			"press": "55g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K1 RGB 옵티컬 핫스왑 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/070/590/img/17590070_1.jpg?shrink=500:500&_v=20221108093341",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "650g",
+			"array": "기타",
+			"switch": "독자",
+			"key_switch": "청축",
+			"press": "48g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K7 LED (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/456/643/img/16643456_1.jpg?shrink=500:500&_v=20220322092125",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "402g",
+			"array": "기타",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K7 LED 옵티컬 핫스왑 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/663/643/img/16643663_1.jpg?shrink=500:500&_v=20220405125846",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "402g",
+			"array": "기타",
+			"switch": "독자",
+			"key_switch": "적축",
+			"press": "40g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K3 V2 LED 라이트그레이 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/801/594/img/14594801_1.jpg?shrink=500:500&_v=20220902083158",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "396g",
+			"array": "84",
+			"switch": "게이트론",
+			"key_switch": "청축",
+			"press": "52g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K8 Retro 알루미늄 기계식 핫스왑 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/839/317/img/16317839_1.jpg?shrink=500:500&_v=20220516151004",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "887g",
+			"array": "87",
+			"switch": "기타",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K12 LED 핫스왑 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/133/343/img/15343133_1.jpg?shrink=500:500&_v=20211104170315",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "536g",
+			"array": "61",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "45g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K14 Retro 알루미늄 기계식 핫스왑 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/785/088/img/17088785_1.jpg?shrink=500:500&_v=20220520095551",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "735g",
+			"array": "72",
+			"switch": "기타",
+			"key_switch": "적축",
+			"press": "50g",
+			"kind": "텐키리스",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K3 V2 LED 라이트그레이 옵티컬 핫스왑 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/963/594/img/14594963_1.jpg?shrink=500:500&_v=20210628143251",
+			"brand": "Keychron",
+			"connect": "무접점(광축)",
+			"weight": "396g",
+			"array": "84",
+			"switch": "독자",
+			"key_switch": "적축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Keychron K3 LED (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/138/742/img/13742138_1.jpg?shrink=500:500&_v=20210330124821",
+			"brand": "Keychron",
+			"connect": "기계식",
+			"weight": "395g",
+			"array": "84",
+			"switch": "게이트론",
+			"key_switch": "적축",
+			"press": "50g",
+			"kind": "풀배열",
+			"bluetooth": "유선+블루투스"
+		}
+	}
+]
