@@ -186,7 +186,6 @@
   width: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: white;
   padding: 6px 14px;
   font-weight: 500;
   border: 0px;
@@ -194,16 +193,21 @@
   text-align: center;
   margin-right: 20px;
 }
+.no-jjim {
+  background-color: var(--my-hover-gray);
+  color: black;
+}
 .jjim {
   background-color: var(--my-red);
+  color: white;
 }
 .jjok {
   background-color: var(--my-black);
+  color: white;
 }
 .trade-content {
   margin-left: 25px;
 }
-
 
 .keyboard-detail-mini-1 {
   margin-top: 30px;
@@ -224,8 +228,23 @@
   margin-left: 25px;
 }
 
-
-
+.trade-keyboard-name {
+  margin-bottom: 30px;
+  margin-left: 25px;
+  display: flex;
+  align-items: center;
+}
+.trade-keyboard-name>h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+.trade-keyboard-name>div {
+  color: rgb(177, 177, 177);
+  font-size: 13px;
+  font-weight: 400;
+  margin-left: 16px;
+}
 .comment-hr {
   margin: auto;
 }

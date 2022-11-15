@@ -56,7 +56,7 @@ a {
   --a-blue: #3786FB;
   --my-black: #191919;
   --my-red: #EE315E;
-  --my-hover-gray: rgb(220, 220, 220);
+  --my-hover-gray: #e8e8e8;
 
   --head-size: 25px;
 }
@@ -338,7 +338,7 @@ a {
 }
 
 footer {
-  background-color: #e8e8e8;
+  background-color: var(--my-hover-gray);
   padding: 10px;
 }
 
