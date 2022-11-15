@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from multiselectfield import MultiSelectField
+from imagekit.models import ProcessedImageField
+from imagekit.processors import Thumbnail
 
 # Create your models here.
 
@@ -43,3 +45,9 @@ class User(AbstractUser):
     sound = MultiSelectField(choices=Sound, null=True)
     rank = models.IntegerField(default=0)
     connect = MultiSelectField(choices=connect, null=True)
+    image = ProcessedImageField(
+        blank = True,
+        processors=[Thumbnail(300,300)],
+        format='jpeg',
+        options={'quality':90},
+    )
