@@ -102,7 +102,7 @@ def detail(request, pk):
     trade = get_object_or_404(Trades, pk=pk)
     photos = trade.photo_set.all()
     comments = Trade_Comment.objects.filter(trade=pk).order_by("-pk")
-    comment_from = CreateComment()
+    comment_form = CreateComment()
     for c in comments:
         with open("filtering.txt") as txtfile:
             for word in txtfile.readlines():

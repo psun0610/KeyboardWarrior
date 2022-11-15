@@ -182,6 +182,7 @@
   display: flex;
   margin-left: 25px;
 }
+
 .trade-detail-btn {
   width: 100px;
   margin-top: 20px;
@@ -193,6 +194,7 @@
   text-align: center;
   margin-right: 20px;
 }
+
 .no-jjim {
   background-color: var(--my-hover-gray);
   color: black;
@@ -201,10 +203,12 @@
   background-color: var(--my-red);
   color: white;
 }
+
 .jjok {
   background-color: var(--my-black);
   color: white;
 }
+
 .trade-content {
   margin-left: 25px;
 }
@@ -252,4 +256,45 @@
 .trade-all {
   max-width: 1160px;
   margin: 0 auto;
+}
+
+
+.tradecomment-create {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px rgb(0, 0, 0) solid;
+  background-color: transparent;
+  width: 600px;
+  color: aliceblue;
+}
+
+.tradecomment-create:focus {
+  outline: none;
+  color: rgb(0, 0, 0);
+}
+
+input::placeholder {
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+
+}
+
+input::-webkit-input-placeholder {
+  color: rgb(0, 0, 0);
+}
+
+.trade-comment {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.comment-delete-btn {
+  background: var(--white-transparent);
+  border: 0px;
+}
+
+.comment-delete-btn:hover {
+  background-color: var(--my-hover-gray);
 }
