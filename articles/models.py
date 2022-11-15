@@ -14,7 +14,7 @@ class Keyboard(models.Model):
     array = models.CharField(max_length=50, blank=True)
     switch = models.CharField(max_length=50, blank=True)
     key_switch = models.CharField(max_length=50, blank=True)
-    press = models.CharField(max_length=50, blank=True)
+    press = models.IntegerField(blank=True)
     weight = models.CharField(max_length=50, blank=True)
     kind = models.CharField(max_length=50, blank=True)
     bluetooth = models.CharField(max_length=50, blank=True)
