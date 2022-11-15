@@ -76,7 +76,7 @@ def main(request):
 
 
 def all(request):
-    all_keyboard = Keyboard.objects.all()
+    all_keyboard = Keyboard.objects.all()[:16]
     context = {
         "all_keyboard": all_keyboard,
     }
@@ -91,16 +91,8 @@ def scroll_data(request):
     bluetooth = request.GET.get("bluetooth")
     data_press = request.GET.get("press")
     kind = request.GET.get("kind")
-    # page = request.GET.get("page")
+    page = request.GET.get("page")
 
-    all_date = [[] for _ in range(len(all_keyboard))]
-    # for i in range(len(all_keyboard)):
-    # all_date[i].append(all_keyboard[i].brand)
-    # all_date[i].append(all_keyboard[i].key_switch)
-    # all_date[i].append(all_keyboard[i].connect)
-    # all_date[i].append(all_keyboard[i].press)
-    # all_date[i].append(all_keyboard[i].array)
-    radio_list = ["brand", "key_switch", "bluetooth", "press", "array"]
     q = Q()
 
     if brand != "0":
@@ -133,34 +125,38 @@ def scroll_data(request):
 
     if kind != "0":
         q &= Q(kind__icontains=kind)
-    print(q)
     keyboard_list = Keyboard.objects.filter(q)
-    print(keyboard_list)
-    # paginator = Paginator(keyboard_list, 16)
-    # page_obj = paginator.page(page)
-    keyboards = []
-    for k in keyboard_list:
-        keyboards.append(
-            {
-                "name": k.name,
-                "img": k.img,
-                "brand": k.brand,
-                "content": k.connect,
-                "array": k.array,
-                "switch": k.switch,
-                "key_switch": k.key_switch,
-                "press": k.press,
-                "weight": k.weight,
-                "kind": k.kind,
-                "pk": k.pk,
-            }
-        )
-    print(keyboards)
-    context = {
-        "keyboards": keyboards,
-    }
 
-    return JsonResponse(context)
+    paginator = Paginator(keyboard_list, 8)
+    try:
+        page_obj = paginator.page(page)
+        keyboards = []
+        for k in page_obj:
+            keyboards.append(
+                {
+                    "name": k.name,
+                    "img": k.img,
+                    "brand": k.brand,
+                    "content": k.connect,
+                    "array": k.array,
+                    "switch": k.switch,
+                    "key_switch": k.key_switch,
+                    "press": k.press,
+                    "weight": k.weight,
+                    "kind": k.kind,
+                    "pk": k.pk,
+                }
+            )
+
+        context = {
+            "keyboards": keyboards,
+        }
+
+        return JsonResponse(context)
+
+    except EmptyPage:
+        context = {}
+        return JsonResponse(context)
 
 
 def detail(request, pk):
