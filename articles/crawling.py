@@ -31,6 +31,11 @@ WebDriverWait(driver, 30).until(
         (By.XPATH, '//*[@id="dlMaker_simple"]/dd/div[2]/button[1]')
     )
 ).click()
+WebDriverWait(driver, 30).until(
+    EC.presence_of_element_located(
+        (By.XPATH, '//*[@id="dlMaker_simple"]/dd/div[2]/button[1]')
+    )
+).click()
 
 # 로지텍
 # driver.find_element(
@@ -69,9 +74,9 @@ WebDriverWait(driver, 30).until(
 # time.sleep(1)
 
 # 콕스
-# driver.find_element(
-#     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(151)"
-# ).click()
+driver.find_element(
+    By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(151)"
+).click()
 
 # time.sleep(1)
 
@@ -158,8 +163,8 @@ for sub_url in range(90):
 print(a)
 print("------------------------------------------")
 result_list = []
-for i in range(90):
-    img, brand, connect, weight, array, switch, press, kind, key_switch, bluetooth = (
+for i in range(83):
+    img, brand, connect, weight, array, switch, press, kind, key_switch = (
         "기타",
         "기타",
         "기타",
