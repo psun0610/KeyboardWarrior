@@ -5,7 +5,7 @@ from articles.models import Keyboard
 # Create your models here.
 
 tradeType = [(1, "팝니다"), (2, "삽니다")]
-
+statusType = [(1, "거래중"), (2, "거래완료")]
 
 # 가격추가 # 키보드 FK넣기
 
@@ -20,9 +20,13 @@ class Trades(models.Model):
     marker = models.ManyToManyField(
         AUTH_USER_MODEL, symmetrical=False, related_name="jjim"
     )
+    status_type = models.IntegerField(choices=statusType, default=1)
+
+
 class Photo(models.Model):
     trade = models.ForeignKey(Trades, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='media/', blank=True)
+    image = models.ImageField(upload_to="media/", blank=True)
+
 
 class Trade_Comment(models.Model):
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)

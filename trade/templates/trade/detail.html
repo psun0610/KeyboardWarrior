@@ -6,8 +6,31 @@
 <div class='trade-all'>
   <div class="keyboard-detail-all">
     <div class="keyboard-detail-img-wrap">
-      <img src="{{ photos.0.image.url }}">
+      <!-- 캐러셀 -->
+      <div class="swiper" id="trade-slide">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          {% for photo in photos %}
+            <div class="swiper-slide"><img src="{{ photo.image.url }}" class="trade-swiper-img"></div>
+          {% endfor %}
+          ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <div class="keyboard-detail-thumbnail-wrap">
+        {% for photo in photos %}
+        <img src="{{ photo.image.url }}">
+        {% endfor %}
+      </div>
     </div>
+
+
     <!-- 제품정보 -->
     <div class="keyboard-detail-content">
       <div class="trade-keyboard-name">
@@ -19,8 +42,12 @@
       </div>
       <table>
         <tr>
-          <th>매도/매수</th>
+          <th>판매/구매</th>
           <td>{%if trade.Trade_type == 1%}판매{%else%}구매{%endif%}</td>
+        </tr>
+        <tr>
+          <th>거래상태</th>
+          <td>{%if trade.status_type == 1%}거래중{%else%}거래완료{%endif%}</td>
         </tr>
         <tr>
           <th>모델명</th>
@@ -124,7 +151,8 @@
                 <button id="delete_btn_{{comment.pk}}" onclick="delete_btn()" data-trade-id="{{trade.pk}}"
                     data-comment-id="{{comment.pk}}" class="comment-delete-btn"> 삭제
                 </button>
-          {% endif %}</p>
+                {% endif %}
+                </p>
                 <div>{{comment.content}}</div>
               </div>
             </div>
@@ -136,14 +164,8 @@
   </div>
 </div>
 
-
-
-      
-
-
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="{% static 'js/trade.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     const commentFrom = document.querySelector('#commentForm')
