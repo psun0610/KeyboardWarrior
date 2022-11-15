@@ -100,6 +100,7 @@ def update(request, pk):
 
 def detail(request, pk):
     trade = get_object_or_404(Trades, pk=pk)
+    photos = trade.photo_set.all()
     comments = Trade_Comment.objects.filter(trade=pk).order_by("-pk")
     comment_form = CreateComment()
     for c in comments:
@@ -121,7 +122,8 @@ def detail(request, pk):
                             )
     context = {
         "trade": trade,
-        "comment_form": comment_form,
+        "photos": photos,
+        "comment_from": comment_from,
         "comments": comments,
     }
     return render(request, "trade/detail.html", context)
@@ -138,13 +140,13 @@ def delete(request, pk):
 @login_required
 def marker(request, pk):
     trade = Trades.objects.get(pk=pk)
-    if request.user != trade.user:
-        if request.user not in trade.marker.all():
-            trade.marker.add(request.user)
-            is_marker = True
-        else:
-            trade.marker.remove(request.user)
-            is_marker = False
+    is_marker = True
+    if request.user not in trade.marker.all():
+        trade.marker.add(request.user)
+        is_marker = True
+    else:
+        trade.marker.remove(request.user)
+        is_marker = False
     data = {
         "markers": trade.marker.all().count(),
         "is_marker": is_marker,
