@@ -649,7 +649,7 @@
 			"weight": "1200g",
 			"array": "104",
 			"switch": "체리",
-			"key_switch": "청축기능멀티미디어",
+			"key_switch": "청축",
 			"press": 100,
 			"kind": "풀배열",
 			"bluetooth": "유선"
@@ -745,7 +745,7 @@
 			"weight": "1200g",
 			"array": "104",
 			"switch": "체리",
-			"key_switch": "갈축기능멀티미디어",
+			"key_switch": "갈축",
 			"press": 100,
 			"kind": "풀배열",
 			"bluetooth": "유선"
@@ -1401,7 +1401,7 @@
 			"weight": "1200g",
 			"array": "104",
 			"switch": "체리",
-			"key_switch": "저소음적축기능키멀티미디어",
+			"key_switch": "저소음적축",
 			"press": 100,
 			"kind": "풀배열",
 			"bluetooth": "유선"
