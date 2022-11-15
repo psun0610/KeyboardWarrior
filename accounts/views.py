@@ -23,7 +23,7 @@ def index(request):
 
 def signup(request):
     if request.method == "POST":
-        form = CreateUser(request.POST)
+        form = CreateUser(request.POST,  request.FILES)
         print(1)
         if form.is_valid():
             user = form.save()
