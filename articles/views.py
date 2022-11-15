@@ -174,11 +174,12 @@ def scroll_data(request):
 def detail(request, pk):
     keyboard = Keyboard.objects.get(pk=pk)
     reviews = Review.objects.filter(keyboard_id = pk)
-    aval = 0
+    aval = 0.0
     for review in reviews:
         aval += review.grade
-    aval /= len(reviews)
-    aval = round(aval,1)
+    if aval > 0:
+        aval /= len(reviews)
+        aval = round(aval, 1)
     context = {
         "keyboard": keyboard,
         "aval": aval
