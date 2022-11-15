@@ -10,7 +10,7 @@
 			"array": "109",
 			"switch": "체리",
 			"key_switch": "적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -25,7 +25,7 @@
 			"array": "109",
 			"switch": "체리",
 			"key_switch": "적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -40,7 +40,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -55,7 +55,7 @@
 			"array": "109",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -70,7 +70,7 @@
 			"array": "109",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -85,7 +85,7 @@
 			"array": "88",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -100,7 +100,7 @@
 			"array": "109",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -115,7 +115,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -130,7 +130,7 @@
 			"array": "88",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -145,7 +145,7 @@
 			"array": "104",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -160,7 +160,7 @@
 			"array": "104",
 			"switch": "기타",
 			"key_switch": "청축",
-			"press": "기타",
+			"press": 50,
 			"kind": "풀배열"
 		}
 	},
@@ -175,7 +175,7 @@
 			"array": "109",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -190,7 +190,7 @@
 			"array": "109",
 			"switch": "체리",
 			"key_switch": "비올라축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -205,7 +205,7 @@
 			"array": "109",
 			"switch": "체리",
 			"key_switch": "비올라축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -220,7 +220,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -250,7 +250,7 @@
 			"array": "109",
 			"switch": "체리",
 			"key_switch": "적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -265,7 +265,7 @@
 			"array": "109",
 			"switch": "기타",
 			"key_switch": "청축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -310,7 +310,7 @@
 			"array": "기타",
 			"switch": "체리",
 			"key_switch": "적축",
-			"press": "45g",
+			"press": 45,
 			"kind": "풀배열"
 		}
 	}
