@@ -2,7 +2,6 @@
 {% load static %}
 {% load humanize %}
 {% block body %}
-
   <!-- nav바 -->
   <div class="all-nav-container">
     <nav class="all-nav">
@@ -196,17 +195,17 @@
 
     <!-- 모든 글/ 판매/ 구매 라디오 -->
     <form class="trade-index-radio-form">
-      <input type="radio" id="all" name="trade" checked="checked">
-      <label for="all">모두</label>
-      <input type="radio" id="sale" name="trade">
-      <label for="sale">판매글만</label>
-      <input type="radio" id="buy" name="trade">
-      <label for="buy">구매글만</label>
+      <input type="radio" id="0" name="trade" checked="checked">
+      <label for="0">모두</label>
+      <input type="radio" id="1" name="trade">
+      <label for="1">판매글만</label>
+      <input type="radio" id="2" name="trade">
+      <label for="2">구매글만</label>
     </form>
-    <!-- 게시글 카드 -->
-    <div class="card-container">
-      {% for photo in photo_list %}
 
+    <!-- 게시글 카드 -->
+    <div class="card-container" id="trade-card-0">
+      {% for photo in photo_list %}
       <a href="{% url 'trade:detail' photo.trade.pk %}">
         <div class="my-card">
           <div class="card-content">
@@ -230,21 +229,57 @@
       </a>
       {% endfor %}
     </div>
-  </div>
-    <!-- {% for trade in trades %}
-      <p>
-        {%if trade.Trade_type == 1%}
-          팝니다
-          {%else%}
-          삽니다
-          {%endif%}</p>
-        <a href="{% url 'trade:detail' trade.pk %}">
-          <p>{{trade.title}}
+
+    <!-- 게시글 카드 판매글만 -->
+    <div class="card-container" id="trade-card-1" style="display: none;">
+      {% for photo in photo_list %}
+        {% if photo.trade.Trade_type == 1 %}
+          <a href="{% url 'trade:detail' photo.trade.pk %}">
+            <div class="my-card">
+              <div class="card-content">
+                {% if photo.image %}
+                  <img src="{{ photo.image.url }}">
+                {% else %}
+                  <img src="{% static 'images/logo_png.png' %}">
+                {% endif %}
+                <div class="card-title">
+                  <h3>{{ photo.trade.keyboard.name }}</h3>
+                  <h1>{{ photo.trade.title }}</h1>
+                  <h2>₩ {{ photo.trade.price|intcomma }}</h2>
+                </div>
+                <div class="card-badge blue-badge">판매</div>
+              </div>
+            </div>
           </a>
-          |<span style="font-size: 9px;">{{trade.user}}</span></p>
-        <hr>
-        {%endfor%}
-      </div>
-    </div> -->
-    <script src="{% static 'js/articles.js' %}"></script>
-  {% endblock body %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- 게시글 카드 구매글만 -->
+    <div class="card-container" id="trade-card-2" style="display: none;">
+      {% for photo in photo_list %}
+        {% if photo.trade.Trade_type == 2 %}
+          <a href="{% url 'trade:detail' photo.trade.pk %}">
+            <div class="my-card">
+              <div class="card-content">
+                {% if photo.image %}
+                  <img src="{{ photo.image.url }}">
+                {% else %}
+                  <img src="{% static 'images/logo_png.png' %}">
+                {% endif %}
+                <div class="card-title">
+                  <h3>{{ photo.trade.keyboard.name }}</h3>
+                  <h1>{{ photo.trade.title }}</h1>
+                  <h2>₩ {{ photo.trade.price|intcomma }}</h2>
+                </div>
+                <div class="card-badge red-badge">구매</div>
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+  <script src="{% static 'js/trade/index.js' %}"></script>
+{% endblock body %}

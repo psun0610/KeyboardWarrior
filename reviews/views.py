@@ -8,15 +8,15 @@ from accounts.models import User
 from datetime import date, datetime, timedelta
 from articles.models import Keyboard
 def maketable(p):
-	table = [0] * len(p)
-	i = 0
-	for j in range(1, len(p)):
-		while i > 0 and p[i] != p[j]:
-			i = table[i - 1]
-		if p[i] == p[j]:
-			i += 1
-			table[j] = i
-	return table
+    table = [0] * len(p)
+    i = 0
+    for j in range(1, len(p)):
+        while i > 0 and p[i] != p[j]:
+            i = table[i - 1]
+        if p[i] == p[j]:
+            i += 1
+            table[j] = i
+    return table
 def KMP(p, t):
 	ans = []
 	table = maketable(p)
@@ -285,21 +285,21 @@ def bookmark(request, pk):
     }
     return JsonResponse(context)
 
-# # 키보드검색
-# def keyboard_search(request):
-#     search_data = request.GET.get("search", "")
-#     keyboard = Keyboard.objects.filter(name__icontains=search_data).all()
-#     keyboard_list = []
-#     for k in keyboard:
-#         keyboard_list.append(
-#             {
-#                 "name": k.name,
-#                 "img": k.img,
-#                 "brand": k.brand,
-#                 "id": k.pk,
-#             }
-#         )
-#     context = {
-#         "keyboard_list": keyboard_list,
-#     }
-#     return JsonResponse(context)
+# 키보드검색
+def keyboard_search(request):
+    search_data = request.GET.get("search", "")
+    keyboard = Keyboard.objects.filter(name__icontains=search_data).all()
+    keyboard_list = []
+    for k in keyboard:
+        keyboard_list.append(
+            {
+                "name": k.name,
+                "img": k.img,
+                "brand": k.brand,
+                "id": k.pk,
+            }
+        )
+    context = {
+        "keyboard_list": keyboard_list,
+    }
+    return JsonResponse(context)

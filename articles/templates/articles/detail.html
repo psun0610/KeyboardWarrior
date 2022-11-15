@@ -3,91 +3,92 @@
 {% load static %}
 
 {% block body %}
-<div class="keyboard-detail-all">
-  <div class="keyboard-detail-img-wrap">
-    <img src="{{ keyboard.img }}">
-  </div>
-  <!-- 제품정보 -->
-  <div class="keyboard-detail-content">
-    <h2 class='keyboard-name'>{{ keyboard.name }}</h2>
-    <table>
-      <tr>
-        <th>별점</th>
-        <td id="keyboard-star">☆☆☆☆</td>
-      </tr>
-      <tr>
-        <th>제조사</th>
-        <td>{{ keyboard.brand }}</td>
-      </tr>
-      {% if keyboard.connect != '기타' %}
-      <tr>
-        <th>접점 방식</th>
-        <td>{{ keyboard.connect }}</td>
-      </tr>
-      {% endif %}
-      {% if keyboard.switch != '기타' %}
-      <tr>
-        <th>스위치</th>
-        <td>{{ keyboard.switch }}</td>
-      </tr>
-      {% endif %}
-      {% if keyboard.key_switch != '기타' %}
-      <tr>
-        <th>키 스위치</th>
-        <td>{{ keyboard.key_switch }}</td>
-      </tr>
-      {% endif %}
-      {% if keyboard.press != '기타' %}
-      <tr>
-        <th>키압</th>
-        <td>{{ keyboard.press }}</td>
-      </tr>
-      {% endif %}
-      <tr>
-        <th>키 배열</th>
-        <td>{{ keyboard.kind }} / {{ keyboard.array }}키 </td>
-      </tr>
-      {% if keyboard.bluetooth != '기타' %}
-      <tr>
-        <th>키압</th>
-        <td>{{ keyboard.bluetooth }}</td>
-      </tr>
-      {% endif %}
-      <tr>
-        <th>무게</th>
-        <td>{{ keyboard.weight }}</td>
-      </tr>
-    </table>
-    <div class="keyboard-detail-mini">
-      <div class="keyboard-detail-mini-title">
-        <h2>베스트 후기</h2>
-        <a class="a-blue">더 알아보기 ></a>
-      </div>
-
-      <div class="keyboard-comment">
-        <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
-        <div class="keyboard-comment-box">
-          <p>재윤</p>
-          <div>내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.</div>
-        </div>
-      </div>
-
-      <div class="keyboard-comment">
-        <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
-        <div class="keyboard-comment-box">
-          <p>재윤</p>
-          <div>내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.</div>
-        </div>
-      </div>
-
+  <div class="keyboard-detail-all">
+    <div class="keyboard-detail-img-wrap">
+      <img src="{{ keyboard.img }}">
     </div>
-    <!-- 판매/구매 -->
-    <div class="keyboard-detail-mini-title" style="margin-top: 15px;">
-      <h2>마음에 드셨나요?</h2>
-      <a class="a-blue">판매/구매 하러가기 ></a>
+    <!-- 제품정보 -->
+    <div class="keyboard-detail-content">
+      <h2 class='keyboard-name'>{{ keyboard.name }}</h2>
+      <table>
+        <tr>
+          <th>별점</th>
+          <td id="keyboard-star">★{{aval}}</td>
+        </tr>
+        <tr>
+          <th>제조사</th>
+          <td>{{ keyboard.brand }}</td>
+        </tr>
+        {% if keyboard.connect != '기타' %}
+          <tr>
+            <th>접점 방식</th>
+            <td>{{ keyboard.connect }}</td>
+          </tr>
+        {% endif %}
+        {% if keyboard.switch != '기타' %}
+          <tr>
+            <th>스위치</th>
+            <td>{{ keyboard.switch }}</td>
+          </tr>
+        {% endif %}
+        {% if keyboard.key_switch != '기타' %}
+          <tr>
+            <th>키 스위치</th>
+            <td>{{ keyboard.key_switch }}</td>
+          </tr>
+        {% endif %}
+        {% if keyboard.press != '기타' %}
+          <tr>
+            <th>키압</th>
+            <td>{{ keyboard.press }}</td>
+          </tr>
+        {% endif %}
+        <tr>
+          <th>키 배열</th>
+          <td>{{ keyboard.kind }}
+            /
+            {{ keyboard.array }}키
+          </td>
+        </tr>
+        {% if keyboard.bluetooth != '기타' %}
+          <tr>
+            <th>키압</th>
+            <td>{{ keyboard.bluetooth }}</td>
+          </tr>
+        {% endif %}
+        <tr>
+          <th>무게</th>
+          <td>{{ keyboard.weight }}</td>
+        </tr>
+      </table>
+      <div class="keyboard-detail-mini">
+        <div class="keyboard-detail-mini-title">
+          <h2>베스트 후기</h2>
+          <a href="{% url 'reviews:index' %}" class="a-blue">더 알아보기 ></a>
+        </div>
+
+        <div class="keyboard-comment">
+          <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+          <div class="keyboard-comment-box">
+            <p>재윤</p>
+            <div>내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.</div>
+          </div>
+        </div>
+
+        <div class="keyboard-comment">
+          <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+          <div class="keyboard-comment-box">
+            <p>재윤</p>
+            <div>내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.</div>
+          </div>
+        </div>
+
+      </div>
+      <!-- 판매/구매 -->
+      <div class="keyboard-detail-mini-title" style="margin-top: 15px;">
+        <h2>마음에 드셨나요?</h2>
+        <a href="{% url 'trade:index' %}" class="a-blue">판매/구매 하러가기 ></a>
+      </div>
     </div>
   </div>
-</div>
 {% endblock body %}
-                    
-                    
