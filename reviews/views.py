@@ -8,15 +8,15 @@ from accounts.models import User
 from datetime import date, datetime, timedelta
 from articles.models import Keyboard
 def maketable(p):
-	table = [0] * len(p)
-	i = 0
-	for j in range(1, len(p)):
-		while i > 0 and p[i] != p[j]:
-			i = table[i - 1]
-		if p[i] == p[j]:
-			i += 1
-			table[j] = i
-	return table
+    table = [0] * len(p)
+    i = 0
+    for j in range(1, len(p)):
+        while i > 0 and p[i] != p[j]:
+            i = table[i - 1]
+        if p[i] == p[j]:
+            i += 1
+            table[j] = i
+    return table
 def KMP(p, t):
 	ans = []
 	table = maketable(p)
@@ -158,6 +158,10 @@ def comment_create(request, pk):
     temp = Comment.objects.filter(review_id=pk).order_by("-pk")
     comment_data = []
     for t in temp:
+        if request.user not in t.like_users.all():
+            is_like = True
+        else:
+            is_like = False
         t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
         with open('filtering.txt') as txtfile:
             for word in txtfile.readlines():
@@ -177,6 +181,7 @@ def comment_create(request, pk):
                     "content": t.content,
                     "commentPk": t.pk,
                     "created_at": t.created_at,
+                    'islike':is_like,
                 }
             )
     context = {
@@ -197,6 +202,10 @@ def comment_delete(request, review_pk, comment_pk):
     user = request.user
     comment_data = []
     for t in temp:
+        if request.user not in t.like_users.all():
+            is_like = True
+        else:
+            is_like = False
         t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
         with open('filtering.txt') as txtfile:
             for word in txtfile.readlines():
@@ -216,6 +225,7 @@ def comment_delete(request, review_pk, comment_pk):
                 "content": t.content,
                 "commentPk": t.pk,
                 "created_at": t.created_at,
+                'islike':is_like,
             }
         )
     context = {
@@ -242,25 +252,25 @@ def like(request, pk):
     }
 
     return JsonResponse(data)
-
 # 댓글 좋아요
 def comment_like(request, review_pk, comment_pk):
-    review_pk = Review.objects.get(pk=review_pk)
-    comment = Comment.objects.get(pk=comment_pk)
-    if request.user not in comment.like_users.all():
-        comment.like_users.add(request.user)
-        is_commentlike = True
-    else:
-        comment.like_users.remove(request.user)
-        is_commentlike = False
-    data  = {
-        "iscommentLike": is_commentlike,        
-        "review_pk": review_pk.pk,
-    }
-    return JsonResponse(data)
-    
-    
-    
+    is_like = False
+    temp = Comment.objects.filter(review_id=review_pk)
+    for i in temp:
+        if i.pk == comment_pk:
+            if request.user not in i.like_users.all():
+                i.like_users.add(request.user)
+                is_like = True
+            else:
+                i.like_users.remove(request.user)
+                is_like = False
+            data = {
+                "review.pk":review_pk,
+                "comment_pk":comment_pk,
+                "isLike": is_like,
+                }
+            return JsonResponse(data)
+
 # 즐겨찾기(bookmark)
 def bookmark(request, pk):
     review = Review.objects.get(pk=pk)

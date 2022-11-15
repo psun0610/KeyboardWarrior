@@ -10,7 +10,7 @@
 			"array": "103",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": "50g",
+			"press": "50",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -26,7 +26,7 @@
 			"array": "107",
 			"switch": "게이트론",
 			"key_switch": "갈축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -90,7 +90,7 @@
 			"array": "108",
 			"switch": "게이트론",
 			"key_switch": "갈축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선+블루투스"
 		}
@@ -122,7 +122,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": "35g",
+			"press": "35",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -170,7 +170,7 @@
 			"array": "108",
 			"switch": "게이트론",
 			"key_switch": "갈축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -186,7 +186,7 @@
 			"array": "108",
 			"switch": "체리",
 			"key_switch": "적축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -202,7 +202,7 @@
 			"array": "87",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": "35g",
+			"press": "35",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -218,7 +218,7 @@
 			"array": "108",
 			"switch": "게이트론",
 			"key_switch": "저소음갈축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -250,7 +250,7 @@
 			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "저소음갈축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -266,7 +266,7 @@
 			"array": "108",
 			"switch": "게이트론",
 			"key_switch": "녹축",
-			"press": "60g",
+			"press": "60",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -282,7 +282,7 @@
 			"array": "87",
 			"switch": "TTC",
 			"key_switch": "갈축",
-			"press": "40g",
+			"press": "40",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -314,7 +314,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": "50g",
+			"press": "50",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -330,7 +330,7 @@
 			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "갈축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -346,7 +346,7 @@
 			"array": "108",
 			"switch": "게이트론",
 			"key_switch": "청축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선+블루투스"
 		}
@@ -362,7 +362,7 @@
 			"array": "66",
 			"switch": "게이트론",
 			"key_switch": "갈축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -378,7 +378,7 @@
 			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "황축",
-			"press": "50g",
+			"press": "50",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -394,7 +394,7 @@
 			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "갈축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -410,7 +410,7 @@
 			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "황축",
-			"press": "50g",
+			"press": "50",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -426,7 +426,7 @@
 			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "황축",
-			"press": "50g",
+			"press": "50",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -442,7 +442,7 @@
 			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "갈축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선+블루투스"
 		}
@@ -458,7 +458,7 @@
 			"array": "104",
 			"switch": "게이트론",
 			"key_switch": "갈축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -474,7 +474,7 @@
 			"array": "104",
 			"switch": "게이트론",
 			"key_switch": "갈축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -490,7 +490,7 @@
 			"array": "104",
 			"switch": "게이트론",
 			"key_switch": "갈축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -506,7 +506,7 @@
 			"array": "104",
 			"switch": "GTMX",
 			"key_switch": "저소음백축",
-			"press": "60g",
+			"press": "60",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -538,7 +538,7 @@
 			"array": "104",
 			"switch": "게이트론",
 			"key_switch": "갈축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -554,7 +554,7 @@
 			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "녹축",
-			"press": "60g",
+			"press": "60",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -570,7 +570,7 @@
 			"array": "87",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": "70g",
+			"press": "70",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -650,7 +650,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": "50g",
+			"press": "50",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -666,7 +666,7 @@
 			"array": "108",
 			"switch": "게이트론",
 			"key_switch": "황축",
-			"press": "50g",
+			"press": "50",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -698,7 +698,7 @@
 			"array": "104",
 			"switch": "GTMX",
 			"key_switch": "적축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -730,7 +730,7 @@
 			"array": "104",
 			"switch": "GTMX",
 			"key_switch": "갈축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -778,7 +778,7 @@
 			"array": "87",
 			"switch": "GTMX",
 			"key_switch": "적축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -858,7 +858,7 @@
 			"array": "104",
 			"switch": "GTMX",
 			"key_switch": "적축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -874,7 +874,7 @@
 			"array": "104",
 			"switch": "GTMX",
 			"key_switch": "적축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}

@@ -10,7 +10,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "35g",
+			"press": "35",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -26,7 +26,7 @@
 			"array": "104",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -42,7 +42,7 @@
 			"array": "87",
 			"switch": "독자",
 			"key_switch": "코랄축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -58,7 +58,7 @@
 			"array": "87",
 			"switch": "NOVELKEYS",
 			"key_switch": "크림축",
-			"press": "55g",
+			"press": "55",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -74,7 +74,7 @@
 			"array": "104",
 			"switch": "체리",
 			"key_switch": "은축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -90,7 +90,7 @@
 			"array": "104",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -106,7 +106,7 @@
 			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "저소음갈축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -122,7 +122,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "적축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -138,7 +138,7 @@
 			"array": "104",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -154,7 +154,7 @@
 			"array": "87",
 			"switch": "독자",
 			"key_switch": "코랄축",
-			"press": "38g",
+			"press": "38",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -170,7 +170,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "갈축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -186,7 +186,7 @@
 			"array": "104",
 			"switch": "체리",
 			"key_switch": "갈축",
-			"press": "35g",
+			"press": "35",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -202,7 +202,7 @@
 			"array": "87",
 			"switch": "기타",
 			"key_switch": "저소음적축",
-			"press": "35g",
+			"press": "35",
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -218,7 +218,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "갈축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -250,7 +250,7 @@
 			"array": "104",
 			"switch": "독자",
 			"key_switch": "저소음코랄축",
-			"press": "38g",
+			"press": "38",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -266,7 +266,7 @@
 			"array": "87",
 			"switch": "엠스톤",
 			"key_switch": "밀키축",
-			"press": "38g",
+			"press": "38",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -282,7 +282,7 @@
 			"array": "104",
 			"switch": "엠스톤",
 			"key_switch": "밀키축",
-			"press": "38g",
+			"press": "38",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -298,7 +298,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "45g",
+			"press": "45",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
