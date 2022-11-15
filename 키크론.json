@@ -314,7 +314,7 @@
 			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "적축",
-			"press": "기타",
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
@@ -330,7 +330,7 @@
 			"array": "83",
 			"switch": "게이트론",
 			"key_switch": "적축",
-			"press": "기타",
+			"press": 100,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -394,7 +394,7 @@
 			"array": "68",
 			"switch": "기타",
 			"key_switch": "적축",
-			"press": "기타",
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
@@ -442,7 +442,7 @@
 			"array": "81",
 			"switch": "기타",
 			"key_switch": "적축",
-			"press": "기타",
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -458,7 +458,7 @@
 			"array": "87",
 			"switch": "기타",
 			"key_switch": "적축",
-			"press": "기타",
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
@@ -474,7 +474,7 @@
 			"array": "68",
 			"switch": "기타",
 			"key_switch": "적축",
-			"press": "기타",
+			"press": 40,
 			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
@@ -1002,7 +1002,7 @@
 			"array": "84",
 			"switch": "기타",
 			"key_switch": "갈축",
-			"press": "기타",
+			"press": 50,
 			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
@@ -1034,7 +1034,7 @@
 			"array": "68",
 			"switch": "기타",
 			"key_switch": "적축",
-			"press": "기타",
+			"press": 40,
 			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
@@ -1082,7 +1082,7 @@
 			"array": "68",
 			"switch": "기타",
 			"key_switch": "청축",
-			"press": "기타",
+			"press": 60,
 			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
