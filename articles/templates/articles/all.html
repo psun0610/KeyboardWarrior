@@ -259,8 +259,7 @@
   let bluetooth = 0
   let press = 0
   let kind = 0
-  // 스크롤 스크립트 바닥 찍을 때 page 0에서 1페이지씩 추가 
-  let page = 0
+  let page = 1
 
   const pick_brand = (e) => {
     brand = document.querySelector('input[name="brand"]:checked').value;
@@ -282,9 +281,11 @@
     axios({
       method: 'get',
       url: `/scroll_data/`,
-      params: { 'brand': brand, 'key': key, 'bluetooth': bluetooth, 'press': press, 'kind': kind },
+      params: { 'brand': brand, 'key': key, 'bluetooth': bluetooth, 'press': press, 'kind': kind, 'page': page },
     })
+
       .then(response => {
+        page = 1
         const card_div = document.querySelector('#card_div')
         card_div.textContent = "";
         const keyboards = response.data.keyboards
@@ -302,8 +303,43 @@
               </div>
             </a>`);
         }
+
       })
   };
+  //스크롤 비동기
+  window.onscroll = function () { // 스크롤비율이 80~90퍼 내려왔을 때 실행된다.
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight * 0.90) {
+      console.log('시작?')
+      axios({
+        method: 'get',
+        url: `/scroll_data/`,
+        params: { 'brand': brand, 'key': key, 'bluetooth': bluetooth, 'press': press, 'kind': kind, 'page': page },
+      })
+        .then(response => {
+          const keyboards = response.data.keyboards
+          for (let i = 0; i < keyboards.length; i++) {
+            const card_div = document.querySelector('#card_div')
+            //이거 젠되는 페이지를 스크립트 스크롤 찍힐때로 들어가도록  
+            //html어디에 붙일지 아이디지정 327줄 아래에 어떤형식으로 문자열데이터넣을지 
+            card_div.insertAdjacentHTML('beforeend', `
+              <div class="all-card">
+                <img src="${keyboards[i].img}">
+                <div class="all-card-h1-wrap">
+                  <h1>${keyboards[i].name}</h1>
+                </div>
+                <div class="all-card-button">자세히 알아보기</div>
+              </div>
+            </a>`);
+
+
+          }
+        }); page = page + 1
+    }
+  }
+
+
+
 </script>
 
 
