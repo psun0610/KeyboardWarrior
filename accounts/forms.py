@@ -31,13 +31,15 @@ class CreateUser(UserCreationForm):
 
 
 class CustomUserChangeForm(UserChangeForm):
+
     password = None
 
     class Meta:
         model = get_user_model()
         fields = [
-            "username",
             "email",
+            "first_name",
+            "last_name",
             "press",
             "weight",
             "array",
@@ -46,15 +48,15 @@ class CustomUserChangeForm(UserChangeForm):
             "image",
         ]
         labels = {
-            "username": "아이디",
-            "email": "이메일 ",
-            "press": "키압",
+            "email": "이메일",
             "first_name": "이름",
             "last_name": "성",
+            "press": "키압",
             "weight": "무게",
             "array": "배열",
             "sound": "소리",
             "connect": "연결",
+            "image": "프로필사진",
         }
 
 
