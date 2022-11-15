@@ -6,7 +6,7 @@
 {% comment %} 제목 1 {% endcomment %}
 
 <div class='my-head'>
-    <h2>>KeyBoard Warrior 나의 정보 수정</h2>
+    <h2>KeyBoard Warrior 나의 정보 수정</h2>
     <hr>
     <p>키보드 워리어 회원 수정</p>
   </div>
@@ -14,69 +14,64 @@
   <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div>
-      {% comment %} 회원정보 폼 1 {% endcomment %}
-      <div class='signup-user'>
-        <div class='signup-userinfo-box'>
-          <input data-testid="input-box" name="username" placeholder="아이디" type="text" required=""
-            class="signup-userinfo" value="">
-          <input data-testid="input-box" name="email" placeholder="이메일" type="email" required="" class="signup-userinfo"
-            value="">
-          <input data-testid="input-box" name="password" placeholder="암호" type="password" required=""
-            class="signup-userinfo" value="">
-          <input data-testid="input-box" name="" placeholder="암호 확인" type="password" required="" class="signup-userinfo"
-            value="">
+        {% comment %} 회원정보 폼 1 {% endcomment %}
+        <div class='signup-user'>
+          <div class='signup-userinfo-box'>
+            <input data-testid="input-box" name="email"
+                    placeholder="이메일" type="email" required="" class="signup-userinfo" value="">
+          <div class='signup-userinfo-name-box'>
+            <input data-testid="input-box" name="first_name"
+                    placeholder="이름" type="text" required="" class="signup-userinfo-name" value="">
+            <input data-testid="input-box" name="last_name"
+                    placeholder="성" type="text" required="" class="signup-userinfo-name" value="">
+          </div>
+          <div>
+            <input id='profileimg' type="file" name="image" class="signup-profile-img-input"><label for="profileimg"><div class="signup-profile-img-label"><p class="m-0">프로필 사진추가</p><p class="mini-w">*선택사항</p></div></label>
+          </div>
         </div>
-        <div class='signup-userinfo-name-box'>
-          <input data-testid="input-box" name="name" placeholder="이름" type="text" required=""
-            class="signup-userinfo-name" value="">
-          <input data-testid="input-box" name="firstname" placeholder="성" type="text" required=""
-            class="signup-userinfo-name" value="">
+        {% comment %} 제목 2 {% endcomment %}
+        <div class='my-head'>
+          <h2>선호하는 키보드가 있으신가요?</h2>
         </div>
+        {% comment %} 키보드 취향 {% endcomment %}
+          <div class='select-box'>
+            <div class="select">
+              <input type="radio" id="sound" name="sound" value='1'><label for="sound">시원한 소리</label>
+              <input type="radio" id="sound2" name="sound" value='2'><label for="sound2">조용한 소리</label>
+              <input type="radio" id="sound3" name="sound" value='3'><label for="sound3">상관없음</label>
+            </div>
+            <div class="select">
+              <input type="radio" id="array" name="array" value='1'><label for="array">텐키리스</label>
+              <input type="radio" id="array2" name="array" value='2'><label for="array2">풀배열</label>
+              <input type="radio" id="array3" name="array" value='3'><label for="array3">상관없음</label>
+            </div>
+
+            <div class="select">
+              <input type="radio" id="connect" name="connect" value='1'><label for="connect">유선</label>
+              <input type="radio" id="connect2" name="connect" value='2'><label for="connect2">무선</label>
+              <input type="radio" id="connect3" name="connect" value='3'><label for="connect3">상관없음</label>
+            </div>
+
+            <div class="select">
+              <input type="radio" id="press" name="press" value='1'><label for="press">가벼운 타건감</label>
+              <input type="radio" id="press2" name="press" value='2'><label for="press2">묵직한 타건감</label>
+              <input type="radio" id="press3" name="press" value='3'><label for="press3">상관없음</label>
+            </div>
+
+            <div class="select1">
+              <input type="radio" id="weight" name="weight" value='1'><label for="weight">가벼운</label>
+              <input type="radio" id="weight2" name="weight" value='2'><label for="weight2">상관없음</label>
+            </div>
+          </div>
         <div>
-          <input id='profileimg' type="file" name="image" class="signup-profile-img-input"><label for="profileimg"><div class="signup-profile-img-label"><p class="m-0">프로필 사진추가</p><p class="mini-w">*선택사항</p></div></label>
-        </div>
-      </div>
-      {% comment %} 제목 2 {% endcomment %}
-      <div class='signup-head'>
-        <h3 class='signup-head-h2'>선호하는 키보드가 있으신가요?</h3>
-      </div>
-      {% comment %} 키보드 취향 {% endcomment %}
-      <div class='select-box'>
-        <div class="select">
-          <input type="radio" id="sound" name="sound"><label for="sound">시원한 소리</label>
-          <input type="radio" id="sound2" name="sound"><label for="sound2">조용한 소리</label>
-          <input type="radio" id="sound3" name="sound"><label for="sound3">상관없음</label>
-        </div>
-        <div class="select">
-          <input type="radio" id="array" name="array"><label for="array">텐키리스</label>
-          <input type="radio" id="array2" name="array"><label for="array2">풀배열</label>
-          <input type="radio" id="array3" name="array"><label for="array3">상관없음</label>
-        </div>
-
-        <div class="select">
-          <input type="radio" id="connect" name="connect"><label for="connect">유선</label>
-          <input type="radio" id="connect2" name="connect"><label for="connect2">무선</label>
-          <input type="radio" id="connect3" name="connect"><label for="connect3">상관없음</label>
-        </div>
-
-        <div class="select">
-          <input type="radio" id="press" name="press"><label for="press">가벼운 타건감</label>
-          <input type="radio" id="press2" name="press"><label for="press2">묵직한 타건감</label>
-          <input type="radio" id="press3" name="press"><label for="press3">상관없음</label>
-        </div>
-
-        <div class="select1">
-          <input type="radio" id="weight" name="weight"><label for="weight">가벼운</label>
-          <input type="radio" id="weight2" name="weight"><label for="weight2">상관없음</label>
-        </div>
-      </div>
-      <div>
-        <button class='signup-btn' type="submit">KeyBoard Warrior에 내 정보 다시 알려주기</button>
+      <button class='signup-btn' type="submit">KeyBoard Warrior에 내 정보 다시 알려주기</button>
         <div class="update-bt">
           <a href="{% url 'accounts:detail' user.id %}">
-            <button class='update-can' style="margin:5px;" type="button">취소</button>
+            <button class='update-can'type="button">취소</button>
           </a>
-          <a href="{% url 'accounts:delete' user.id  %}"><button class='update-del' style="margin:5px;" type="button">탈퇴</button></a>
+          <a href="{% url 'accounts:delete' user.id  %}">
+          <button class='update-del' type="button">탈퇴</button>
+          </a>
         </div>
       </div>
     </div>

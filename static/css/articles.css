@@ -576,9 +576,10 @@ footer>div {
   background: rgba(128, 128, 128, 1);
   color: var(--white-transparent);
 }
+
 .mini-w {
   font-size: small;
-  color:#666;
+  color: #666;
 }
 
 .select-box {
@@ -671,6 +672,30 @@ footer>div {
   width: 500px;
   margin-bottom: 50px;
   background-color: rgba(59, 146, 225, 1);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 600;
+  color: #F9FAFC;
+  border: 0px;
+  border-radius: 3px;
+}
+
+.changepass-btn {
+  width: 500px;
+  margin-bottom: 15px;
+  background-color: rgba(59, 146, 225, 1);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 600;
+  color: #F9FAFC;
+  border: 0px;
+  border-radius: 3px;
+}
+
+.cancel-btn {
+  width: 500px;
+  margin-bottom: 50px;
+  background-color: rgb(202, 45, 45);
   padding-top: 15px;
   padding-bottom: 15px;
   font-weight: 600;
@@ -804,26 +829,31 @@ footer>div {
 
 .update-bt {
   display: flex;
+  justify-content: space-between;
 }
+
 .update-can {
   width: 240px;
   height: 45px;
-  background: #F9FAFC;
+  background-color: rgb(210, 210, 210);
   border: 0px;
   border-radius: 3px;
 }
+
 .update-can:hover {
-  background: var(--my-hover-gray);
+  background: #3e3e3e
 }
+
 .update-del {
   width: 240px;
   height: 45px;
   border: 0px;
   border-radius: 3px;
-  background: red;
+  background-color: rgb(220, 55, 55);
 }
+
 .update-del:hover {
-  background: var(--my-red);
+  background: #9b1111
 }
 
 
