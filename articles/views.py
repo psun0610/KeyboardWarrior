@@ -8,6 +8,7 @@ from django.db.models import Q
 
 
 def main(request):
+    all_keyboard = Keyboard.objects.all()
     if Visit.objects.order_by("-pk"):
         visit_sum = 0
         today_visit = Visit.objects.order_by("-pk")[0].visit_count
