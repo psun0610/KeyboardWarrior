@@ -60,31 +60,21 @@
         <div>
         <h3 class='text-center'>댓글 목록</h3>
         </div>
+
+        {% if request.user.is_authenticated %}
+        <div class="commentform-wrap">
           <div class="commentform-trade">
-          {% if request.user.is_authenticated %}
-              <form id="comment-form" data-review-id="{{ review.pk }}" action="{%url 'reviews:comment_create' review.pk %}" method="POST">
+            <form id="comment-form" data-review-id="{{ review.pk }}" action="{% url 'reviews:comment_create' review.pk %}" method="POST">
               {% csrf_token %}
               <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required="" class="tradecomment-create" value="">
               <input class="btn btn-dark tradecomment-input" type="submit" value="제출">
-              </form>
-          {% endif %}
+            </form>
           </div>
-        <hr>
-        {% comment %} <div id="comments">
-        {% for comment in comments %}
-            <hr>
-        <p>{{comment.user}} | {{comment.content}} | {{ comment.created_at }}</p>
-            {% if request.user not in comment.like_users.all %}
-              <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="{{ comment.pk }}" id="commentlike"></i>
-            {% else %}
-              <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="{{ comment.pk }}" id="commentlike"></i>
-            {% endif %}
-            {% if request.user == comment.user %}
-            <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-{{ comment.pk }}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="{{ comment.pk }}">삭제</button>
-            {% endif %}
-        {% endfor %}
-        </div> {% endcomment %}
+          <hr class="comment-hr">
+        </div>
+        {% endif %}
 
+        
         <div id="comments">
           <div class='comment-1'>
               {% for comment in comments %}
