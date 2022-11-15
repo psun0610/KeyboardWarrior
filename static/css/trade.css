@@ -127,6 +127,7 @@
   grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
   /* grid-template-columns: 300px 300px 300px 300px; */
   justify-content: center;
+  transition: all .3s ease-in-out;
 }
 
 .my-card {
@@ -222,7 +223,7 @@
 }
 
 .keyboard-detail-mini-1-title>h2 {
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 5px;
   margin-left: 25px;
@@ -230,6 +231,7 @@
 
 .keyboard-detail-mini-1-title>a {
   margin-left: 25px;
+  font-size: 15px;
 }
 
 .trade-keyboard-name {
@@ -258,21 +260,16 @@
   margin: 0 auto;
 }
 
-
-.tradecomment-create {
-  border: 0px;
-  background-color: transparent;
-  width: 1080px;
-  color: aliceblue;
-  margin-left: 5px;
+.commentform-wrap {
+  margin-bottom: 50px;
 }
-
-.tradecomment-input {
-  margin-right: 0px;
-  padding: 3px 20px;
-  border-radius: 3px;
+.comment-hr {
+  margin: 4px;
+  opacity: 1;
+  height: 1px;
+  border: 0;
   background-color: var(--my-hover-gray);
-  border: 0px;
+  margin-bottom: 20px;
 }
 
 .tradecomment-create:focus {
@@ -282,17 +279,27 @@
 .commentform-trade {
   display: flex;
   justify-content: space-evenly;
+  margin: 8px;
 }
-
-
+.tradecomment-create {
+  border: 0px;
+  background-color: transparent;
+  width: 1030px;
+  color: aliceblue;
+}
+.tradecomment-input {
+  margin-right: 0px;
+  padding: 3px 20px;
+  border-radius: 3px;
+  background-color: var(--my-black);
+  border: 0px;
+}
 input::placeholder {
-  color: rgb(0, 0, 0);
+  color: rgba(128, 128, 128, 1);
   font-size: 15px;
-
 }
-
 input::-webkit-input-placeholder {
-  color: rgb(0, 0, 0);
+  color: rgba(128, 128, 128, 1);
 }
 
 .trade-comment {
@@ -310,12 +317,6 @@ input::-webkit-input-placeholder {
 .comment-delete-btn:hover {
   background-color: var(--my-hover-gray);
 }
-
-.comment-hr {
-  margin: 4px;
-  opacity: 1;
-  height: 1px;
-  border: 0;
-  background-color: var(--my-hover-gray);
-  margin-bottom: 20px;
+#comment_box {
+  margin-bottom: 65px;
 }

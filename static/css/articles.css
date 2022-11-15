@@ -911,7 +911,7 @@ footer>div {
 
 .keyboard-detail-all {
   max-width: 1160px;
-  margin: 150px auto;
+  margin: 150px auto 80px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -937,6 +937,7 @@ footer>div {
 
 .keyboard-detail-thumbnail-wrap>img {
   width: 100%;
+  height: 80px;
   object-fit: cover;
 }
 
@@ -984,7 +985,7 @@ footer>div {
 }
 
 .keyboard-detail-mini-title>h2 {
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 5px;
   margin-left: 25px;
@@ -992,6 +993,7 @@ footer>div {
 
 .keyboard-detail-mini-title>a {
   margin-left: 25px;
+  font-size: 15px;
 }
 
 .keyboard-comment {

@@ -14,7 +14,6 @@
           {% for photo in photos %}
             <div class="swiper-slide"><img src="{{ photo.image.url }}" class="trade-swiper-img"></div>
           {% endfor %}
-          ...
         </div>
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
@@ -128,17 +127,18 @@
   
 </div>
 <div class="trade-all">
-  
-  <div class="commentform-trade">
-    {% if request.user.is_authenticated %}
-      <form id="commentForm" data-trade-id="{{ trade.pk }}" action="{%url 'trade:comment' trade.pk %}" method="POST">
-        {% csrf_token %}
-        <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required="" class="tradecomment-create" value="">
-        <input class="btn btn-dark tradecomment-input" type="submit" value="제출">
-      </form>
-    {% endif %}
-  </div>
-  <hr class="comment-hr">
+  {% if request.user.is_authenticated %}
+  <div class="commentform-wrap">
+    <div class="commentform-trade">
+        <form id="commentForm" data-trade-id="{{ trade.pk }}" action="{%url 'trade:comment' trade.pk %}" method="POST">
+          {% csrf_token %}
+          <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required="" class="tradecomment-create" value="">
+          <input class="btn btn-dark tradecomment-input" type="submit" value="제출">
+        </form>
+      </div>
+      {% endif %}
+      <hr class="comment-hr">
+    </div>
   <div id="comment_box">
     <div class='comment-1'>
         {% for comment in comments %}
@@ -166,7 +166,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script src="{% static 'js/trade.js' %}"></script>
+<script src="{% static 'js/trade/detail.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     const commentFrom = document.querySelector('#commentForm')
