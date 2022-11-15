@@ -70,7 +70,7 @@
           {% endif %}
           </div>
         <hr>
-        {% comment %} <div id="comments">
+        <div id="comments">
         {% for comment in comments %}
             <hr>
         <p>{{comment.user}} | {{comment.content}} | {{ comment.created_at }}</p>
@@ -83,7 +83,7 @@
             <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-{{ comment.pk }}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="{{ comment.pk }}">삭제</button>
             {% endif %}
         {% endfor %}
-        </div> {% endcomment %}
+        </div>
 
         <div id="comments">
           <div class='comment-1'>
@@ -99,7 +99,9 @@
                           <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="{{ comment.pk }}" id="commentlike"></i>
                         {% endif %} |
                       {% if request.user == comment.user %}
-                      <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-{{ comment.pk }}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="{{ comment.pk }}">삭제</button></p>
+                      <button id="delete_btn_{{comment.pk}}" onclick="delete_btn()" data-trade-id="{{reviews.pk}}"
+                          data-comment-id="{{comment.pk}}" class="comment-delete-btn"> 삭제
+                      </button>
                       {% endif %}
                       </p>
                       <div>{{comment.content}}</div>
@@ -244,49 +246,43 @@
                             <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
                             <div class="keyboard-comment-box">
                           <p>{{comment.user}}
-                          <p>${comment_data[i].userName} |<i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i> | <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button></p>
+                          <p>${comment_data[i].userName} |<i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i> | <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}" class="comment-delete-btn>삭제</button></p>
                           <div> ${comment_data[i].content} </div>
-                        </div>
                         `);
                       } else {
                         comments.insertAdjacentHTML('beforeend', `
                         <div id="comments">
+                          <hr>
+                          <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
+                          <p>${comment_data[i].userName} | ${comment_data[i].content} | ${comment_data[i].created_at}</p>
+                          <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button>
+                        </div>
+                         <div id="comments">
                           <div class='comment'>
                   
                           <div class="keyboard-comment">
                             <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
                             <div class="keyboard-comment-box">
                           <p>{{comment.user}}
-                          <p>${comment_data[i].userName} | <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i> | <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button></p>
+                          <p>${comment_data[i].userName} |<i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i> | <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}" class="comment-delete-btn>삭제</button></p>
                           <div> ${comment_data[i].content} </div>
-                        </div>
                         `);
                       }
                     } else {
                       if (comment_data[i].islike) {
                         comments.insertAdjacentHTML('beforeend', `
-                         <div id="comments">
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                            <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
-                            <div class="keyboard-comment-box">
-                          <p>{{comment.user}}
-                          <p>${comment_data[i].userName} |<i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i> </p>
-                          <div> ${comment_data[i].content} </div>
+                        <div id="comments">
+                          <hr>
+                          <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
+                          <p>${comment_data[i].userName} | ${comment_data[i].content} | ${comment_data[i].created_at}</p>
                         </div>
                         `);
                       } else {
                         comments.insertAdjacentHTML('beforeend', `
-                         <div id="comments">
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                            <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
-                            <div class="keyboard-comment-box">
-                          <p>{{comment.user}}
-                          <p>${comment_data[i].userName} | <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i> </p>
-                          <div> ${comment_data[i].content} </div>
+                        <div id="comments">
+                          <hr>
+                          <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
+                          <p>${comment_data[i].userName} | ${comment_data[i].content} | ${comment_data[i].created_at}</p>
                         </div>
                         `);
                       }
@@ -319,32 +315,24 @@
             const user = response.data.user
             for (let i = 0; i < comment_data.length; i++) {
               const review_pk = response.data.review_pk
-                console.log(comment_data[i].id, user)
+                console.log(comment_data[i].id, user) 
               if (user === comment_data[i].id) {
                 if (comment_data[i].islike) {
                   comments.insertAdjacentHTML('beforeend', `
                         <div id="comments">
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                            <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
-                            <div class="keyboard-comment-box">
-                          <p>{{comment.user}}
-                          <p>${comment_data[i].userName} | <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i> | <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button></p>
-                          <div> ${comment_data[i].content} </div>
+                          <hr>
+                          <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
+                          <p>${comment_data[i].userName} | ${comment_data[i].content} | ${comment_data[i].created_at}</p>
+                          <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button>
                         </div>
                         `);
                 } else {
                   comments.insertAdjacentHTML('beforeend', `
                         <div id="comments">
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                            <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
-                            <div class="keyboard-comment-box">
-                          <p>{{comment.user}}
-                          <p>${comment_data[i].userName} | <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i> | <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button></p>
-                          <div> ${comment_data[i].content} </div>
+                          <hr>
+                          <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
+                          <p>${comment_data[i].userName} | ${comment_data[i].content} | ${comment_data[i].created_at}</p>
+                          <button class="btn btn-outline-danger comment" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button>
                         </div>
                         `);
                 }
@@ -352,27 +340,17 @@
                 if (comment_data[i].islike) {
                   comments.insertAdjacentHTML('beforeend', `
                         <div id="comments">
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                            <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
-                            <div class="keyboard-comment-box">
-                          <p>{{comment.user}}
-                          <p>${comment_data[i].userName} | <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i> </p>
-                          <div> ${comment_data[i].content} </div>
+                        <hr>
+                        <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
+                        <p>${comment_data[i].userName} | ${comment_data[i].content} | ${comment_data[i].created_at}</p>
                         </div>
                         `);
                 } else {
                   comments.insertAdjacentHTML('beforeend', `
                         <div id="comments">
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                            <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
-                            <div class="keyboard-comment-box">
-                          <p>{{comment.user}}
-                          <p>${comment_data[i].userName} | <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i> </p>
-                          <div> ${comment_data[i].content} </div>
+                          <hr>
+                          <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
+                          <p>${comment_data[i].userName} | ${comment_data[i].content} | ${comment_data[i].created_at}</p>
                         </div>
                         `);
                 }
