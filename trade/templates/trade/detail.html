@@ -6,15 +6,48 @@
 <div class='trade-all'>
   <div class="keyboard-detail-all">
     <div class="keyboard-detail-img-wrap">
-      <img src="{{ trade.img }}">
+      <!-- 캐러셀 -->
+      <div class="swiper" id="trade-slide">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          {% for photo in photos %}
+            <div class="swiper-slide"><img src="{{ photo.image.url }}" class="trade-swiper-img"></div>
+          {% endfor %}
+          ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <div class="keyboard-detail-thumbnail-wrap">
+        {% for photo in photos %}
+        <img src="{{ photo.image.url }}">
+        {% endfor %}
+      </div>
     </div>
+
+
     <!-- 제품정보 -->
     <div class="keyboard-detail-content">
-      <h2 class='keyboard-name'>{{ trade.title }}</h2>
+      <div class="trade-keyboard-name">
+        <h2>{{ trade.title }}</h2>
+        <div>
+          <i class="bi bi-bookmark-fill"></i>
+          <span id="marker_count">{{trade.marker.all.count}}</span>
+        </div>
+      </div>
       <table>
         <tr>
-          <th>매도/매수</th>
-          <td>{%if trade.Trade_type == 1%} 팝니다 {%else%} 삽니다 {%endif%}</td>
+          <th>판매/구매</th>
+          <td>{%if trade.Trade_type == 1%}판매{%else%}구매{%endif%}</td>
+        </tr>
+        <tr>
+          <th>거래상태</th>
+          <td>{%if trade.status_type == 1%}거래중{%else%}거래완료{%endif%}</td>
         </tr>
         <tr>
           <th>모델명</th>
@@ -62,15 +95,25 @@
         </tr>
       </table>
 
+      {% if request.user != trade.user %}
+        <div class="jjimjjok">
+          {% if request.user in trade.marker.all %}
+          <div class="trade-detail-btn jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
+            <i class="bi bi-bookmark-fill" data-trade-id="{{ trade.pk }}"></i>
+            <span data-trade-id="{{ trade.pk }}">찜완료</span>
+          </div>
+          {% else %}
+          <div class="trade-detail-btn no-jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
+            <i class="bi bi-bookmark" id="bookmark" data-trade-id="{{ trade.pk }}"></i>
+            <span data-trade-id="{{ trade.pk }}">찜하기</span>
+          </div>
+          {% endif %}
+          <div class="trade-detail-btn jjok">쪽지보내기</div>
+        </div>
+      {% endif %}
 
-      <div class="jjimjjok">
-        <!-- 찜하기 토글 만들 것 회색<->분홍색  -->
-        <div class="trade-detail-btn jjim">찜하기</div>
-        <div class="trade-detail-btn jjok">쪽지보내기</div>
-      </div>
-      
       <div class='trade-content'>
-        {{trade.content}}
+        {{ trade.content }}
       </div>
 
       <div class="keyboard-detail-mini-1">
@@ -79,29 +122,51 @@
           <a class="a-blue" href='#'>알아보기 ></a>
         </div>
       </div>
-        {% comment %} {% if request.user in trade.marker.all %}
-        <i onclick="marker()" class="bi bi-star-fill" data-trade-id="{{trade.pk}}" id="marker-icon"></i>
-        {% else %}
-        <i onclick="marker()" class="bi bi-star" data-trade-id="{{trade.pk}}" id="marker-icon"></i>
-        {% endif %}
-        <p>찜한사람 수 <span id="marker_count">{{trade.marker.all.count}}</span></p>
-        <hr> {% endcomment %}
-      
     </div>
   </div>
 
   
 </div>
+<div class="trade-all">
+  
+  <div class="commentform-trade">
+    {% if request.user.is_authenticated %}
+      <form id="commentForm" data-trade-id="{{ trade.pk }}" action="{%url 'trade:comment' trade.pk %}" method="POST">
+        {% csrf_token %}
+        <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required="" class="tradecomment-create" value="">
+        <input class="btn btn-dark tradecomment-input" type="submit" value="제출">
+      </form>
+    {% endif %}
+  </div>
+  <hr class="comment-hr">
+  <div id="comment_box">
+    <div class='comment-1'>
+        {% for comment in comments %}
+        <div class='comment'>
+            
+            <div class="keyboard-comment">
+              <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+              <div class="keyboard-comment-box">
+                <p>{{comment.user}} |
+                {% if request.user == comment.user %}
+                <button id="delete_btn_{{comment.pk}}" onclick="delete_btn()" data-trade-id="{{trade.pk}}"
+                    data-comment-id="{{comment.pk}}" class="comment-delete-btn"> 삭제
+                </button>
+                {% endif %}
+                </p>
+                <div>{{comment.content}}</div>
+              </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
 
-
-
-
-      
-
-
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="{% static 'js/trade.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     const commentFrom = document.querySelector('#commentForm')
@@ -123,26 +188,34 @@
                     if (user === comment_list[i].pk) {
                         console.log(comment_list[i])
                         comment_box.insertAdjacentHTML('beforeend', `
-                    <hr>
-                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>
-                    <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"> 삭제하기 </button>
+                      
+                      <div class="keyboard-comment">
+                        <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                        <div class="keyboard-comment-box">
+                          <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"  class="comment-delete-btn"> 삭제 </button></p>
+                          <div>${comment_list[i].content}</div>
+                        </div>
+                      </div>
+                    
                     </div>`);
                         console.log("댓글 전송 ")
                     } else {
                         console.log(comment_list[i])
                         comment_box.insertAdjacentHTML('beforeend', `
-                    <hr>
-                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>`);
+                    
+                      <div class="keyboard-comment">
+                      <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                      <div class="keyboard-comment-box">
+                        <p>${comment_list[i].user}</p>
+                        <div>${comment_list[i].content}</div>
+                      </div>`);
                     }
-
                 }
                 commentFrom.reset()
                 console.log("코멘트 전송")
             })
     })
-
 </script>
-
 <!-- 비동기 댓글 삭제  -->
 <script>
     const delete_btn = (e) => {
@@ -154,7 +227,6 @@
             url: `/trade/${event.target.dataset.tradeId}/${event.target.dataset.commentId}/comment_delete/`,
         })
             .then(response => {
-
                 const comment_box = document.querySelector('#comment_box')
                 const user = response.data.user
                 const p = document.createElement('p')
@@ -165,31 +237,40 @@
                     if (user === comment_list[i].pk) {
                         console.log(comment_list[i])
                         comment_box.insertAdjacentHTML('beforeend', `
-                    <hr>
-                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>
-                    <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"> 삭제하기 </button>
+                    
+                      <div class="keyboard-comment">
+                        <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                        <div class="keyboard-comment-box">
+                          <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"  class="comment-delete-btn"> 삭제 </button></p>
+                          <div>${comment_list[i].content}</div>
+                        </div>
+                      </div>
+                    
                     </div>`);
                         console.log(" ")
                     } else {
                         console.log(comment_list[i])
                         comment_box.insertAdjacentHTML('beforeend', `
-                    <hr>
-                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>`);
+                    
+                      <div class="keyboard-comment">
+                      <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                      <div class="keyboard-comment-box">
+                        <p>${comment_list[i].user}</p>
+                        <div>${comment_list[i].content}</div>
+                      </div>`);
                     }
-
                 }
-
                 console.log("")
             })
     }
-
 </script>
-
 <!-- 찜하기 스크립트!! -->
 
 <script>
     const marker = document.querySelector('#marker-icon')
+    const marker_text_wrap = marker.querySelector('div')
     marker.addEventListener('click', function (event) {
+        capture:true
         axios({
             method: 'get',
             url: `/trade/${event.target.dataset.tradeId}/marker/`
@@ -199,11 +280,17 @@
                 console.log(response)
                 console.log(response.data)
                 if (response.data.is_marker === true) {
-                    marker.classList.add('bi-star-fill')
-                    marker.classList.remove('bi-star')
+                  marker.classList.add('jjim')
+                  marker.classList.remove('no-jjim')
+                  marker.querySelector('span').innerText = '찜완료'
+                  marker.querySelector('#bookmark').classList.add('bi-bookmark-fill')
+                  marker.querySelector('#bookmark').classList.remove('bi-bookmark')
                 } else {
-                    marker.classList.add('bi-star')
-                    event.target.classList.remove('bi-star-fill')
+                  marker.classList.add('no-jjim')
+                  marker.classList.remove('jjim')
+                  marker.querySelector('span').innerText = '찜하기'
+                  marker.querySelector('#bookmark').classList.add('bi-bookmark')
+                  marker.querySelector('#bookmark').classList.remove('bi-bookmark-fill')
                 }
                 const marker_count = document.querySelector('#marker_count')
                 marker_count.innerText = response.data.markers

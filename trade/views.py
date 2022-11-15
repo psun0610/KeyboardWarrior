@@ -100,8 +100,9 @@ def update(request, pk):
 
 def detail(request, pk):
     trade = get_object_or_404(Trades, pk=pk)
+    photos = trade.photo_set.all()
     comments = Trade_Comment.objects.filter(trade=pk).order_by("-pk")
-    comment_from = CreateComment()
+    comment_form = CreateComment()
     for c in comments:
         with open("filtering.txt") as txtfile:
             for word in txtfile.readlines():
@@ -121,7 +122,8 @@ def detail(request, pk):
                             )
     context = {
         "trade": trade,
-        "comment_from": comment_from,
+        "photos": photos,
+        "comment_form": comment_form,
         "comments": comments,
     }
     return render(request, "trade/detail.html", context)
@@ -138,6 +140,7 @@ def delete(request, pk):
 @login_required
 def marker(request, pk):
     trade = Trades.objects.get(pk=pk)
+    is_marker = True
     if request.user != trade.user:
         if request.user not in trade.marker.all():
             trade.marker.add(request.user)

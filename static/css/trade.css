@@ -136,7 +136,7 @@
 .card-content>img {
   width: 400px;
   height: 500px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .card-title {
@@ -182,11 +182,11 @@
   display: flex;
   margin-left: 25px;
 }
+
 .trade-detail-btn {
   width: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: white;
   padding: 6px 14px;
   font-weight: 500;
   border: 0px;
@@ -194,16 +194,24 @@
   text-align: center;
   margin-right: 20px;
 }
+
+.no-jjim {
+  background-color: var(--my-hover-gray);
+  color: black;
+}
 .jjim {
   background-color: var(--my-red);
+  color: white;
 }
+
 .jjok {
   background-color: var(--my-black);
+  color: white;
 }
+
 .trade-content {
   margin-left: 25px;
 }
-
 
 .keyboard-detail-mini-1 {
   margin-top: 30px;
@@ -224,8 +232,23 @@
   margin-left: 25px;
 }
 
-
-
+.trade-keyboard-name {
+  margin-bottom: 30px;
+  margin-left: 25px;
+  display: flex;
+  align-items: center;
+}
+.trade-keyboard-name>h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+.trade-keyboard-name>div {
+  color: rgb(177, 177, 177);
+  font-size: 13px;
+  font-weight: 400;
+  margin-left: 16px;
+}
 .comment-hr {
   margin: auto;
 }
@@ -233,4 +256,66 @@
 .trade-all {
   max-width: 1160px;
   margin: 0 auto;
+}
+
+
+.tradecomment-create {
+  border: 0px;
+  background-color: transparent;
+  width: 1080px;
+  color: aliceblue;
+  margin-left: 5px;
+}
+
+.tradecomment-input {
+  margin-right: 0px;
+  padding: 3px 20px;
+  border-radius: 3px;
+  background-color: var(--my-hover-gray);
+  border: 0px;
+}
+
+.tradecomment-create:focus {
+  outline: none;
+  color: rgb(0, 0, 0);
+}
+.commentform-trade {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+input::placeholder {
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+
+}
+
+input::-webkit-input-placeholder {
+  color: rgb(0, 0, 0);
+}
+
+.trade-comment {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.comment-delete-btn {
+  background: var(--white-transparent);
+  border: 0px;
+  border-radius: 3px;
+}
+
+.comment-delete-btn:hover {
+  background-color: var(--my-hover-gray);
+}
+
+.comment-hr {
+  margin: 4px;
+  opacity: 1;
+  height: 1px;
+  border: 0;
+  background-color: var(--my-hover-gray);
+  margin-bottom: 20px;
 }

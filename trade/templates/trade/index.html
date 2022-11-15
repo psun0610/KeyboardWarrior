@@ -220,6 +220,11 @@
               <h1>{{ photo.trade.title }}</h1>
               <h2>₩ {{ photo.trade.price|intcomma }}</h2>
             </div>
+            {% if photo.trade.Trade_type == 1 %}
+              <div class="card-badge blue-badge">판매</div>
+            {% else %}
+              <div class="card-badge red-badge">구매</div>
+            {% endif %}
           </div>
         </div>
       </a>
