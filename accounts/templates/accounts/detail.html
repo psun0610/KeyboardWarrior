@@ -13,7 +13,11 @@
         {% comment %} 프로필, 메뉴 {% endcomment %}
         <div class='detail-profile-menu'>
             <div>
+                {% if user.image %}
+                <img class='detail-profile-img' src="{{ user.image.url }}">
+                {% else %}
                 <img class='detail-profile-img' src="{% static 'images/qwefq.png' %}">
+                {% endif %}
                 <h3>{{ user.last_name }}{{ user.first_name }}</h3>
                 <h4 class='detail-email'>{{ user.email }}</h4>
             </div>

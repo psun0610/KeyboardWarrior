@@ -186,7 +186,7 @@
 			"array": "87",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": "50g",
+			"press": "50",
 			"kind": "텐키리스",
 			"bluetooth": "무선+블루투스"
 		}
@@ -234,7 +234,7 @@
 			"array": "87",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": "50g",
+			"press": "50",
 			"kind": "텐키리스",
 			"bluetooth": "무선+블루투스"
 		}
@@ -314,7 +314,7 @@
 			"array": "기타",
 			"switch": "GX",
 			"key_switch": "적축",
-			"press": "50g",
+			"press": "50",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -874,7 +874,7 @@
 			"array": "기타",
 			"switch": "GX",
 			"key_switch": "적축",
-			"press": "50g",
+			"press": "50",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -890,7 +890,7 @@
 			"array": "기타",
 			"switch": "GX",
 			"key_switch": "갈축",
-			"press": "50g",
+			"press": "50",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1194,7 +1194,7 @@
 			"array": "104",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": "50g",
+			"press": "50",
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}

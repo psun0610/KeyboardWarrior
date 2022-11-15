@@ -557,6 +557,30 @@ footer>div {
   margin: 50px auto;
 }
 
+.signup-profile-img-input {
+  display: none;
+}
+
+.signup-profile-img-label {
+  background: #F9FAFC;
+  border-radius: 3px;
+  width: 150px;
+  height: 45px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.signup-profile-img-label:hover {
+  background: rgba(128, 128, 128, 1);
+  color: var(--white-transparent);
+}
+.mini-w {
+  font-size: small;
+  color:#666;
+}
+
 .select-box {
   width: 500px;
 }
@@ -778,6 +802,31 @@ footer>div {
   font-size: large;
 }
 
+.update-bt {
+  display: flex;
+}
+.update-can {
+  width: 240px;
+  height: 45px;
+  background: #F9FAFC;
+  border: 0px;
+  border-radius: 3px;
+}
+.update-can:hover {
+  background: var(--my-hover-gray);
+}
+.update-del {
+  width: 240px;
+  height: 45px;
+  border: 0px;
+  border-radius: 3px;
+  background: red;
+}
+.update-del:hover {
+  background: var(--my-red);
+}
+
+
 
 /* 리뷰 작성 css */
 .review-userinfo {
@@ -917,14 +966,16 @@ footer>div {
   align-items: flex-start;
 }
 
-.keyboard-detail-img-wrap{
+.keyboard-detail-img-wrap {
   width: 47%;
   display: flex;
   flex-direction: column;
 }
+
 .keyboard-detail-img-wrap>.swiper {
   width: 100%;
 }
+
 .keyboard-detail-thumbnail-wrap {
   margin-top: 20px;
   display: grid;

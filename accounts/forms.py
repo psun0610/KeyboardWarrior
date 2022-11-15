@@ -17,6 +17,7 @@ class CreateUser(UserCreationForm):
             "array",
             "sound",
             "connect",
+            "image",
         ]
         labels = {
             "username": "아이디",
@@ -42,6 +43,7 @@ class CustomUserChangeForm(UserChangeForm):
             "array",
             "sound",
             "connect",
+            "image",
         ]
         labels = {
             "username": "아이디",

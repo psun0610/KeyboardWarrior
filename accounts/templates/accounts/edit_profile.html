@@ -4,12 +4,12 @@
 {% block body %}
 
 {% comment %} 제목 1 {% endcomment %}
-<div class='signup-head'>
-  <h2 class='signup-head-h2'>KeyBoard Warrior 나의 정보 수정</h2>
-  <a href="{% url 'accounts:delete' user.id  %}">탈퇴</a>
-  <hr class='bighr'>
-  <p>키보드 워리어 회원 수정</p>
-</div>
+
+<div class='my-head'>
+    <h2>>KeyBoard Warrior 나의 정보 수정</h2>
+    <hr>
+    <p>키보드 워리어 회원 수정</p>
+  </div>
 <div class='signupbox'>
   <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
@@ -31,6 +31,9 @@
             class="signup-userinfo-name" value="">
           <input data-testid="input-box" name="firstname" placeholder="성" type="text" required=""
             class="signup-userinfo-name" value="">
+        </div>
+        <div>
+          <input id='profileimg' type="file" name="image" class="signup-profile-img-input"><label for="profileimg"><div class="signup-profile-img-label"><p class="m-0">프로필 사진추가</p><p class="mini-w">*선택사항</p></div></label>
         </div>
       </div>
       {% comment %} 제목 2 {% endcomment %}
@@ -69,9 +72,12 @@
       </div>
       <div>
         <button class='signup-btn' type="submit">KeyBoard Warrior에 내 정보 다시 알려주기</button>
-        <a href="{% url 'accounts:detail' user.id %}">
-          <button class='btn btn-outline-danger' style="margin:5px;" type="button">취소</button>
-        </a>
+        <div class="update-bt">
+          <a href="{% url 'accounts:detail' user.id %}">
+            <button class='update-can' style="margin:5px;" type="button">취소</button>
+          </a>
+          <a href="{% url 'accounts:delete' user.id  %}"><button class='update-del' style="margin:5px;" type="button">탈퇴</button></a>
+        </div>
       </div>
     </div>
   </form>
