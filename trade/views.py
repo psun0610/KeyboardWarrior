@@ -6,7 +6,7 @@ from .models import Trades, Trade_Comment, Photo
 from django.http import JsonResponse
 from articles.models import Keyboard
 from datetime import date, datetime, timedelta
-
+from reviews.models import Review
 # Create your views here.
 def maketable(p):
     table = [0] * len(p)
@@ -18,7 +18,6 @@ def maketable(p):
             i += 1
             table[j] = i
     return table
-
 
 def KMP(p, t):
     ans = []
@@ -100,6 +99,7 @@ def update(request, pk):
 
 def detail(request, pk):
     trade = get_object_or_404(Trades, pk=pk)
+    reviews = Review.objects.all()
     photos = trade.photo_set.all()
     comments = Trade_Comment.objects.filter(trade=pk).order_by("-pk")
     comment_form = CreateComment()
@@ -120,11 +120,21 @@ def detail(request, pk):
                             c.content = (
                                 c.content[0 : k - 1] + len(c.content[k - 1 :]) * "*"
                             )
+    total = 0
+    cnt = 0
+    aval = 0.0
+    for review in reviews:
+        if trade.keyboard_id == review.keyboard_id:
+            total += review.grade
+            cnt += 1
+    if cnt:
+        aval = round(total / cnt, 1)
     context = {
         "trade": trade,
         "photos": photos,
         "comment_form": comment_form,
         "comments": comments,
+        "aval":aval,
     }
     return render(request, "trade/detail.html", context)
 
