@@ -123,7 +123,7 @@ def detail(request, pk):
     context = {
         "trade": trade,
         "photos": photos,
-        "comment_from": comment_from,
+        "comment_form": comment_form,
         "comments": comments,
     }
     return render(request, "trade/detail.html", context)
@@ -141,12 +141,13 @@ def delete(request, pk):
 def marker(request, pk):
     trade = Trades.objects.get(pk=pk)
     is_marker = True
-    if request.user not in trade.marker.all():
-        trade.marker.add(request.user)
-        is_marker = True
-    else:
-        trade.marker.remove(request.user)
-        is_marker = False
+    if request.user != trade.user:
+        if request.user not in trade.marker.all():
+            trade.marker.add(request.user)
+            is_marker = True
+        else:
+            trade.marker.remove(request.user)
+            is_marker = False
     data = {
         "markers": trade.marker.all().count(),
         "is_marker": is_marker,
