@@ -1,3 +1,74 @@
 #comments {
   margin-bottom: 65px;
 }
+
+.reviews-container {
+  max-width: 1280px;
+  margin: auto;
+}
+.reviews-index-container {
+  display: flex;
+  flex-direction: column;
+}
+.reviews-card {
+  display: flex;
+  margin: 30px 0;
+}
+.reviews-card-a {
+  width: 30%;
+}
+.reviews-card-img-wrap {
+  position: relative;
+}
+.reviews-card-img-wrap>img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+.reviews-card-img-wrap>div {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  margin: 0;
+  padding: 1px 8px;
+  border-radius: 3px;
+  font-size: 14px;
+  background-color: var(--white-transparent);
+  color: black;
+}
+.reviews-card-content-a {
+  width: 70%;
+}
+
+.reviews-card-content {
+  height: 100%;
+  padding: 40px 0 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.reviews-card-content .card-content>p {
+  color: var(--my-gray);
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+.reviews-card-content .card-content>h1 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+.reviews-card-content .card-content>div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 라인수 */
+  -webkit-box-orient: vertical;
+  word-wrap:break-word; 
+}
+.reviews-card-content .card-footer>p {
+  color: var(--my-gray);
+  font-size: 15px;
+  margin: 0;
+  text-align: end;
+  line-height: 18px;
+}

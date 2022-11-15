@@ -7,6 +7,8 @@ from django.http import JsonResponse
 from accounts.models import User
 from datetime import date, datetime, timedelta
 from articles.models import Keyboard
+
+
 def maketable(p):
     table = [0] * len(p)
     i = 0
@@ -17,27 +19,36 @@ def maketable(p):
             i += 1
             table[j] = i
     return table
+
+
 def KMP(p, t):
-	ans = []
-	table = maketable(p)
-	i = 0
-	for j in range(len(t)):
-		while i > 0 and p[i] != t[j]:
-			i = table[i - 1]
-		if p[i] == t[j]:
-			if i == len(p) - 1:
-				ans.append(j - len(p) + 2)
-				i = table[i]
-			else:
-				i += 1
-	return ans
+    ans = []
+    table = maketable(p)
+    i = 0
+    for j in range(len(t)):
+        while i > 0 and p[i] != t[j]:
+            i = table[i - 1]
+        if p[i] == t[j]:
+            if i == len(p) - 1:
+                ans.append(j - len(p) + 2)
+                i = table[i]
+            else:
+                i += 1
+    return ans
+
+
 # Create your views here.
 
 
 def index(request):
     reviews = Review.objects.order_by("-pk")
+    photo_list = []
+    for review in reviews:
+        if review.photo_set.all():
+            thumbnail = review.photo_set.all()[0]
+            photo_list.append((thumbnail, review.photo_set.all().count()))
     context = {
-        "reviews": reviews,
+        "photo_list": photo_list,
     }
     return render(request, "reviews/index.html", context)
 
@@ -68,15 +79,17 @@ def create(request):
     context = {
         "review_form": review_form,
         "photo_form": photo_form,
-        }
+    }
     return render(request, "reviews/create.html", context)
+
+
 # 리뷰 읽기
 def detail(request, pk):
     reviews = get_object_or_404(Review, pk=pk)
     comments = Comment.objects.filter(review_id=pk)
     comment_form = CommentForm()
     for t in comments:
-        with open('filtering.txt') as txtfile:
+        with open("filtering.txt") as txtfile:
             for word in txtfile.readlines():
                 word = word.strip()
                 ans = KMP(word, t.content)
@@ -84,9 +97,14 @@ def detail(request, pk):
                     for k in ans:
                         k = int(k)
                         if k < len(t.content) // 2:
-                            t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
+                            t.content = (
+                                len(t.content[k - 1 : len(word)]) * "*"
+                                + t.content[len(word) :]
+                            )
                         else:
-                            t.content = t.content[0 : k - 1] + len(t.content[k - 1:]) * "*"
+                            t.content = (
+                                t.content[0 : k - 1] + len(t.content[k - 1 :]) * "*"
+                            )
     comment_form.fields["content"].widget.attrs["placeholder"] = "댓글 작성"
     context = {
         "review": reviews,
@@ -163,7 +181,7 @@ def comment_create(request, pk):
         else:
             is_like = False
         t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
-        with open('filtering.txt') as txtfile:
+        with open("filtering.txt") as txtfile:
             for word in txtfile.readlines():
                 word = word.strip()
                 ans = KMP(word, t.content)
@@ -171,9 +189,14 @@ def comment_create(request, pk):
                     for k in ans:
                         k = int(k)
                         if k < len(t.content) // 2:
-                            t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
+                            t.content = (
+                                len(t.content[k - 1 : len(word)]) * "*"
+                                + t.content[len(word) :]
+                            )
                         else:
-                            t.content = t.content[0 : k - 1] + len(t.content[k - 1:]) * "*"
+                            t.content = (
+                                t.content[0 : k - 1] + len(t.content[k - 1 :]) * "*"
+                            )
             comment_data.append(
                 {
                     "id": t.user_id,
@@ -181,7 +204,7 @@ def comment_create(request, pk):
                     "content": t.content,
                     "commentPk": t.pk,
                     "created_at": t.created_at,
-                    'islike':is_like,
+                    "islike": is_like,
                 }
             )
     context = {
@@ -207,7 +230,7 @@ def comment_delete(request, review_pk, comment_pk):
         else:
             is_like = False
         t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
-        with open('filtering.txt') as txtfile:
+        with open("filtering.txt") as txtfile:
             for word in txtfile.readlines():
                 word = word.strip()
                 ans = KMP(word, t.content)
@@ -215,9 +238,14 @@ def comment_delete(request, review_pk, comment_pk):
                     for k in ans:
                         k = int(k)
                         if k < len(t.content) // 2:
-                            t.content = len(t.content[k - 1 : len(word)]) * "*" + t.content[len(word):]
+                            t.content = (
+                                len(t.content[k - 1 : len(word)]) * "*"
+                                + t.content[len(word) :]
+                            )
                         else:
-                            t.content = t.content[0 : k - 1] + len(t.content[k - 1:]) * "*"
+                            t.content = (
+                                t.content[0 : k - 1] + len(t.content[k - 1 :]) * "*"
+                            )
         comment_data.append(
             {
                 "id": t.user.pk,
@@ -225,7 +253,7 @@ def comment_delete(request, review_pk, comment_pk):
                 "content": t.content,
                 "commentPk": t.pk,
                 "created_at": t.created_at,
-                'islike':is_like,
+                "islike": is_like,
             }
         )
     context = {
@@ -252,6 +280,8 @@ def like(request, pk):
     }
 
     return JsonResponse(data)
+
+
 # 댓글 좋아요
 def comment_like(request, review_pk, comment_pk):
     is_like = False
@@ -265,11 +295,12 @@ def comment_like(request, review_pk, comment_pk):
                 i.like_users.remove(request.user)
                 is_like = False
             data = {
-                "review.pk":review_pk,
-                "comment_pk":comment_pk,
+                "review.pk": review_pk,
+                "comment_pk": comment_pk,
                 "isLike": is_like,
-                }
+            }
             return JsonResponse(data)
+
 
 # 즐겨찾기(bookmark)
 def bookmark(request, pk):
@@ -284,6 +315,7 @@ def bookmark(request, pk):
         "isBookmark": is_bookmark,
     }
     return JsonResponse(context)
+
 
 # 키보드검색
 def keyboard_search(request):
