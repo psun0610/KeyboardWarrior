@@ -82,30 +82,6 @@ def all(request):
     return render(request, "articles/all.html", context)
 
 
-def alll(request):
-    # all_keyboard = Keyboard.objects.all()
-    # all_date = [[] for _ in range(len(all_keyboard))]
-    # for i in range(len(all_keyboard)):
-    #     all_date[i].append(all_keyboard[i].brand)
-    #     all_date[i].append(all_keyboard[i].key_switch)
-    #     all_date[i].append(all_keyboard[i].connect)
-    #     all_date[i].append(all_keyboard[i].press)
-    #     all_date[i].append(all_keyboard[i].array)
-    radio_list = ["brand", "key-switch", "bluetooth", "press", "array"]
-    brand = request.GET.get("brand")
-    key_switch = request.GET.get("key")
-    bluetooth = request.GET.get("bluetooth")
-    press = request.GET.get("press")
-    array = request.GET.get("array")
-    context = {
-        "brand": brand,
-        "key_switch": key_switch,
-        "bluetooth": bluetooth,
-        "press": press,
-        "array": array,
-    }
-    return JsonResponse(context)
-
 
 def scroll_data(request):
     all_keyboard = Keyboard.objects.all()
@@ -113,12 +89,10 @@ def scroll_data(request):
     brand = request.GET.get("brand")
     key = request.GET.get("key")
     bluetooth = request.GET.get("bluetooth")
-    press = request.GET.get("press")
-    array = request.GET.get("array")
-    page = request.GET.get("page")
-    print(brand)
-    print(key)
-    print(bluetooth)
+    data_press = request.GET.get("press")
+    kind = request.GET.get("kind")
+    # page = request.GET.get("page")
+
     all_date = [[] for _ in range(len(all_keyboard))]
     # for i in range(len(all_keyboard)):
     # all_date[i].append(all_keyboard[i].brand)
@@ -130,23 +104,40 @@ def scroll_data(request):
     q = Q()
 
     if brand != "0":
-        q &= Q(brand__contains=brand)
+        q &= Q(brand__icontains=brand)
 
     if key != "0":
-        q &= Q(key_switch__contains=key)
+        q &= Q(key_switch__icontains=key)
 
     if bluetooth != "0":
-        q &= Q(connect__contains=bluetooth)
+        q &= Q(bluetooth__icontains=bluetooth)
 
-    if press != "0":
-        q &= Q(press__contains=press)
+    if data_press != "0":
+        if data_press == "1":
+            press = []
+            for num in range(1, 40):
+                press.append(num)
+            q &= Q(press__in=press)
 
-    if array != "0":
-        q &= Q(array__icontains=array)
+        elif data_press == "2":
+            press = []
+            for num in range(40, 50):
+                press.append(num)
+            q &= Q(press__in=press)
+
+        elif data_press == "3":
+            press = []
+            for num in range(50, 101):
+                press.append(num)
+            q &= Q(press__in=press)
+
+    if kind != "0":
+        q &= Q(kind__icontains=kind)
     print(q)
     keyboard_list = Keyboard.objects.filter(q)
-    paginator = Paginator(keyboard_list, 16)
-    page_obj = paginator.page(page)
+    print(keyboard_list)
+    # paginator = Paginator(keyboard_list, 16)
+    # page_obj = paginator.page(page)
     keyboards = []
     for k in keyboard_list:
         keyboards.append(
