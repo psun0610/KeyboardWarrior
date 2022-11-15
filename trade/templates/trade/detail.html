@@ -92,7 +92,41 @@
 
   
 </div>
-
+<div class="trade-all">
+  <hr>
+  <div>
+        {% if request.user.is_authenticated %}
+          <form id="commentForm" data-trade-id="{{ trade.pk }}" action="{%url 'trade:comment' trade.pk %}" method="POST">
+            {% csrf_token %}
+            <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required="" class="tradecomment-create" value="">
+            <input class="btn btn-success" type="submit" value="제출">
+          </form>
+        {% endif %}
+      </div>
+  <div id="comment_box">
+    <div class='comment-1'>
+        {% for comment in comments %}
+        <div class='comment'>
+            <hr>
+            <div class="keyboard-comment">
+              <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+              <div class="keyboard-comment-box">
+                <p>{{comment.user}} |
+                {% if request.user == comment.user %}
+                <button id="delete_btn_{{comment.pk}}" onclick="delete_btn()" data-trade-id="{{trade.pk}}"
+                    data-comment-id="{{comment.pk}}" class="comment-delete-btn"> 삭제
+                </button>
+          {% endif %}</p>
+                <div>{{comment.content}}</div>
+              </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -123,26 +157,35 @@
                     if (user === comment_list[i].pk) {
                         console.log(comment_list[i])
                         comment_box.insertAdjacentHTML('beforeend', `
-                    <hr>
-                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>
-                    <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="${trade.pk}" data-comment-id= "${comment_list[i].comment_pk}"> 삭제하기 </button>
+
+                      <hr>
+                      <div class="keyboard-comment">
+                        <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                        <div class="keyboard-comment-box">
+                          <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}  class="comment-delete-btn""> 삭제 </button></p>
+                          <div>${comment_list[i].content}</div>
+                        </div>
+                      </div>
+                    
                     </div>`);
                         console.log("댓글 전송 ")
                     } else {
                         console.log(comment_list[i])
                         comment_box.insertAdjacentHTML('beforeend', `
                     <hr>
-                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>`);
+                      <div class="keyboard-comment">
+                      <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                      <div class="keyboard-comment-box">
+                        <p>${comment_list[i].user}</p>
+                        <div>${comment_list[i].content}</div>
+                      </div>`);
                     }
-
                 }
                 commentFrom.reset()
                 console.log("코멘트 전송")
             })
     })
-
 </script>
-
 <!-- 비동기 댓글 삭제  -->
 <script>
     const delete_btn = (e) => {
@@ -154,7 +197,6 @@
             url: `/trade/${event.target.dataset.tradeId}/${event.target.dataset.commentId}/comment_delete/`,
         })
             .then(response => {
-
                 const comment_box = document.querySelector('#comment_box')
                 const user = response.data.user
                 const p = document.createElement('p')
@@ -166,25 +208,32 @@
                         console.log(comment_list[i])
                         comment_box.insertAdjacentHTML('beforeend', `
                     <hr>
-                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>
-                    <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="${trade.pk}" data-comment-id= "${comment_list[i].comment_pk}"> 삭제하기 </button>
+                      <div class="keyboard-comment">
+                        <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                        <div class="keyboard-comment-box">
+                          <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"  class="comment-delete-btn"> 삭제 </button></p>
+                          <div>${comment_list[i].content}</div>
+                        </div>
+                      </div>
+                    
                     </div>`);
                         console.log(" ")
                     } else {
                         console.log(comment_list[i])
                         comment_box.insertAdjacentHTML('beforeend', `
                     <hr>
-                    <p>${comment_list[i].content}<span> | ${comment_list[i].user}</span></p>`);
+                      <div class="keyboard-comment">
+                      <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                      <div class="keyboard-comment-box">
+                        <p>${comment_list[i].user}</p>
+                        <div>${comment_list[i].content}</div>
+                      </div>`);
                     }
-
                 }
-
                 console.log("")
             })
     }
-
 </script>
-
 <!-- 찜하기 스크립트!! -->
 
 <script>
