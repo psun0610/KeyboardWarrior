@@ -129,38 +129,20 @@
           </div>
         </div>
 
-      </div>
-      <div class="trade-all">
-
-        <div class="commentform-trade">
-          {% if request.user.is_authenticated %}
-            <form id="commentForm" data-trade-id="{{ trade.pk }}" action="{%url 'trade:comment' trade.pk %}" method="POST">
-              {% csrf_token %}
-              <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required="" class="tradecomment-create" value="">
-              <input class="btn btn-dark tradecomment-input" type="submit" value="제출">
-            </form>
-          {% endif %}
-        </div>
-        <hr class="comment-hr">
-        <div id="comment_box">
-          <div class='comment-1'>
-            {% for comment in comments %}
-              <div class='comment'>
-
 </div>
 <div class="trade-all">
   {% if request.user.is_authenticated %}
   <div class="commentform-wrap">
     <div class="commentform-trade">
-        <form id="commentForm" data-trade-id="{{ trade.pk }}" action="{%url 'trade:comment' trade.pk %}" method="POST">
-          {% csrf_token %}
-          <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required="" class="tradecomment-create" value="">
-          <input class="btn btn-dark tradecomment-input" type="submit" value="제출">
-        </form>
-      </div>
-      {% endif %}
-      <hr class="comment-hr">
+      <form id="commentForm" data-trade-id="{{ trade.pk }}" action="{%url 'trade:comment' trade.pk %}" method="POST">
+        {% csrf_token %}
+        <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required="" class="tradecomment-create" value="">
+        <input class="btn btn-dark tradecomment-input" type="submit" value="제출">
+      </form>
     </div>
+    <hr class="comment-hr">
+  </div>
+  {% endif %}
   <div id="comment_box">
     <div class='comment-1'>
         {% for comment in comments %}
@@ -169,21 +151,22 @@
             <div class="keyboard-comment">
               <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
               <div class="keyboard-comment-box">
-                <p>{{comment.user}} |
+                <p>{{comment.user}} 
                 {% if request.user == comment.user %}
                 <button id="delete_btn_{{comment.pk}}" onclick="delete_btn()" data-trade-id="{{trade.pk}}"
-                    data-comment-id="{{comment.pk}}" class="comment-delete-btn"> 삭제
+                    data-comment-id="{{comment.pk}}" class="comment-delete-btn"> <span style="color: rgb(177, 177, 177);">삭제</span>
                 </button>
                 {% endif %}
                 </p>
                 <div>{{comment.content}}</div>
               </div>
-
-            {% endfor %}
+            </div>
           </div>
+          {% endfor %}
         </div>
       </div>
     </div>
+  </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="{% static 'js/trade/detail.js' %}"></script>
