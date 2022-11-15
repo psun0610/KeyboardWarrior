@@ -101,21 +101,22 @@
   
 </div>
 <div class="trade-all">
-  <hr>
-  <div>
-        {% if request.user.is_authenticated %}
-          <form id="commentForm" data-trade-id="{{ trade.pk }}" action="{%url 'trade:comment' trade.pk %}" method="POST">
-            {% csrf_token %}
-            <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required="" class="tradecomment-create" value="">
-            <input class="btn btn-success" type="submit" value="제출">
-          </form>
-        {% endif %}
-      </div>
+  
+  <div class="commentform-trade">
+    {% if request.user.is_authenticated %}
+      <form id="commentForm" data-trade-id="{{ trade.pk }}" action="{%url 'trade:comment' trade.pk %}" method="POST">
+        {% csrf_token %}
+        <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required="" class="tradecomment-create" value="">
+        <input class="btn btn-dark tradecomment-input" type="submit" value="제출">
+      </form>
+    {% endif %}
+  </div>
+  <hr class="comment-hr">
   <div id="comment_box">
     <div class='comment-1'>
         {% for comment in comments %}
         <div class='comment'>
-            <hr>
+            
             <div class="keyboard-comment">
               <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
               <div class="keyboard-comment-box">
@@ -165,12 +166,11 @@
                     if (user === comment_list[i].pk) {
                         console.log(comment_list[i])
                         comment_box.insertAdjacentHTML('beforeend', `
-
-                      <hr>
+                      
                       <div class="keyboard-comment">
                         <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
                         <div class="keyboard-comment-box">
-                          <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}  class="comment-delete-btn""> 삭제 </button></p>
+                          <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"  class="comment-delete-btn"> 삭제 </button></p>
                           <div>${comment_list[i].content}</div>
                         </div>
                       </div>
@@ -180,7 +180,7 @@
                     } else {
                         console.log(comment_list[i])
                         comment_box.insertAdjacentHTML('beforeend', `
-                    <hr>
+                    
                       <div class="keyboard-comment">
                       <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
                       <div class="keyboard-comment-box">
@@ -215,7 +215,7 @@
                     if (user === comment_list[i].pk) {
                         console.log(comment_list[i])
                         comment_box.insertAdjacentHTML('beforeend', `
-                    <hr>
+                    
                       <div class="keyboard-comment">
                         <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
                         <div class="keyboard-comment-box">
@@ -229,7 +229,7 @@
                     } else {
                         console.log(comment_list[i])
                         comment_box.insertAdjacentHTML('beforeend', `
-                    <hr>
+                    
                       <div class="keyboard-comment">
                       <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
                       <div class="keyboard-comment-box">

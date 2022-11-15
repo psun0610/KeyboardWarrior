@@ -260,19 +260,30 @@
 
 
 .tradecomment-create {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 3px rgb(0, 0, 0) solid;
+  border: 0px;
   background-color: transparent;
-  width: 600px;
+  width: 1080px;
   color: aliceblue;
+  margin-left: 5px;
+}
+
+.tradecomment-input {
+  margin-right: 0px;
+  padding: 3px 20px;
+  border-radius: 3px;
+  background-color: var(--my-hover-gray);
+  border: 0px;
 }
 
 .tradecomment-create:focus {
   outline: none;
   color: rgb(0, 0, 0);
 }
+.commentform-trade {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 
 input::placeholder {
   color: rgb(0, 0, 0);
@@ -293,8 +304,18 @@ input::-webkit-input-placeholder {
 .comment-delete-btn {
   background: var(--white-transparent);
   border: 0px;
+  border-radius: 3px;
 }
 
 .comment-delete-btn:hover {
   background-color: var(--my-hover-gray);
+}
+
+.comment-hr {
+  margin: 4px;
+  opacity: 1;
+  height: 1px;
+  border: 0;
+  background-color: var(--my-hover-gray);
+  margin-bottom: 20px;
 }
