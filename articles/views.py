@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from datetime import date, datetime, timedelta
-from .models import Visit
-from .models import Keyboard
-
+from .models import Visit, Keyboard
+from reviews.models import Review
 from django.core.paginator import Paginator, EmptyPage
 from django.db.models import Q
 
@@ -174,7 +173,14 @@ def scroll_data(request):
 
 def detail(request, pk):
     keyboard = Keyboard.objects.get(pk=pk)
+    reviews = Review.objects.filter(keyboard_id = pk)
+    aval = 0
+    for review in reviews:
+        aval += review.grade
+    aval /= len(reviews)
+    aval = round(aval,1)
     context = {
         "keyboard": keyboard,
+        "aval": aval
     }
     return render(request, "articles/detail.html", context)
