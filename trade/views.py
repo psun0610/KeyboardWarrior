@@ -7,6 +7,7 @@ from django.http import JsonResponse
 from articles.models import Keyboard
 from datetime import date, datetime, timedelta
 from reviews.models import Review
+
 # Create your views here.
 def maketable(p):
     table = [0] * len(p)
@@ -18,6 +19,7 @@ def maketable(p):
             i += 1
             table[j] = i
     return table
+
 
 def KMP(p, t):
     ans = []
@@ -36,7 +38,7 @@ def KMP(p, t):
 
 
 def index(request):
-    trades = Trades.objects.all()
+    trades = Trades.objects.order_by("-pk")
     photo_list = []
     for trade in trades:
         if trade.photo_set.all():
@@ -134,7 +136,7 @@ def detail(request, pk):
         "photos": photos,
         "comment_form": comment_form,
         "comments": comments,
-        "aval":aval,
+        "aval": aval,
     }
     return render(request, "trade/detail.html", context)
 

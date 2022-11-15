@@ -57,6 +57,7 @@ a {
   --my-black: #191919;
   --my-red: #EE315E;
   --my-hover-gray: #e8e8e8;
+  --my-gray: rgb(172, 172, 172);
 
   --head-size: 25px;
 }
