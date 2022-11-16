@@ -7,6 +7,7 @@ from django.http import JsonResponse
 from articles.models import Keyboard
 from datetime import date, datetime, timedelta
 from reviews.models import Review
+from django.db.models import Q
 
 # Create your views here.
 
@@ -277,6 +278,26 @@ def keyboard_search(request):
     }
     return JsonResponse(context)
 
+# 마켓 검색기능
+def trade_search(request):
+    if 'kw' in request.GET:
+        # kw = index.html의 검색창 input의 name이다.
+        search_word = request.GET.get("kw")
+        trades = Trades.objects.filter(
+            Q(title__icontains=search_word)
+        )
+        photo_list = []
+        for trade in trades:
+            if trade.photo_set.all():
+                thumbnail = trade.photo_set.all()[0]
+                photo_list.append(thumbnail)
+        print(trades)
+        context = {
+            "trades": trades,
+            "search_word": search_word,
+             "photo_list": photo_list,
+            }
+        return render(request, 'trade/index.html', context)
 
 def send_market(request, pk):
     pick_data = Trades.objects.filter(keyboard=pk)
