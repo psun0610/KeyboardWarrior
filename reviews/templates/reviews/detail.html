@@ -3,51 +3,57 @@
 {% load django_bootstrap5 %}
 
 {% block body %}
-<div class="container">
-    {{review.keyboard.name}}
-    <h5 class="hits">조회수 :
-    {{ review.hits }}
-    </h5>
-    <h1>
-    리뷰
-    </h1>
-
-    <li>{{ review.user }}</li>
-    <li>{{ review.created_at }}</li>
-
-    <li>평점:
-    {{ review.grade }}</li>
-    <hr>
-    <h1 class='text-center'>{{ review.title }}</h1>
-    <p>{{ review.content }}
-    <p>
-        {% if review.img %}
+  <div class="review-all">
+      <div class="review-detail-head">
+        <p class="review-detail-key">{{ review.user }} | {{ review.created_at }}</p>
+          <div class="review-detail-title"><h1>{{ review.title }}</h1><div class="review-detail-hits"><i class="bi bi-eye-fill"></i>{{ review.hits }}</div>
+          <i class="bi bi-heart-fill"></i>
+          <div class="likes text-muted">
+                {{ review.like_users.count }}</div></div>
+        <p class="review-detail-key">{{review.keyboard.name}}</p>
+      </div>
+    <div>
+      {% if photo %}
+        {% for i in photo %}
         <div class='text-center'>
-            <img src="{{ review.img.url }}" alt="{{ review.img }}">
+            <img class="review-image" src="{{ i.image.url }}">
         </div>
-        {% endif %}
-        <!--좋아요-->
-        <div class="heart d-flex align-items-end">
-        {% if request.user.is_authenticated %}
-            {% if request.user not in review.like_users.all %}
-            <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart"></i>
-            {% else %}
-            <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart-fill"></i>
-            {% endif %}
-        {% endif %}
-        <h6 class="likes text-muted">|
-            {{ review.like_users.count }}명이 이 글을 좋아해요</h6>
-        </div>
-        <!--즐겨찾기(bookmark)-->
-        <div class="d-flex align-items-center">
-        {% if request.user.is_authenticated %}
-            {% if request.user not in review.bookmark_users.all %}
-            <i data-bookmark-id="{{ review.pk }}" id="bookmark-btn" class="bi bi-bookmark-check"></i>
-            {% else %}
-            <i data-bookmark-id="{{ review.pk }}" id="bookmark-btn" class="bi bi-bookmark-check-fill"></i>
-            {% endif %}
-        {% endif %}
-        </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="review-content">
+      {{ review.content }}
+    </div>
+    <div class="likebook">
+      <!--좋아요-->
+      <div class="heart d-flex align-items-end">
+      {% if request.user.is_authenticated %}
+          {% if request.user not in review.like_users.all %}
+          <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart"></i>
+          {% else %}
+          <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart-fill"></i>
+          {% endif %}
+      {% endif %}
+      </div>
+      <!--즐겨찾기(bookmark)-->
+      <div class="d-flex align-items-center">
+      {% if request.user.is_authenticated %}
+          {% if request.user not in review.bookmark_users.all %}
+          
+            <div class="trade-detail-btn no-jjim" id="bookmark-btn"  data-bookmark-id="{{ review.pk }}">
+              <i class="bi bi-check-bookmark" id="bookmark" data-trade-id="{{ review.pk }}"></i>
+              <span data-trade-id="{{ review.pk }}">저장</span>
+            </div>
+        {% else %}
+          
+          <div class="trade-detail-btn jjim" id="marker-icon" data-trade-id="{{ review.pk }}">
+            <i class="bi bi-check-bookmark-fill" data-trade-id="{{ review.pk }}"></i>
+            <span data-trade-id="{{ review.pk }}">저장됨</span>
+          </div>
+          {% endif %}
+      {% endif %}
+      </div>
+    </div>
         <!--리뷰 수정,삭제 버튼-->
         <div>
         {% if request.user == review.user %}
@@ -100,10 +106,11 @@
         </div>
       </div>
     </div>
+  </div>
         
         
 
-    </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
@@ -135,7 +142,7 @@
             // console.log('좋아요아님')
             }
             const likeCount = document.querySelector('.likes')
-            likeCount.innerHTML = `<h6 class="likes m-0 text-muted ">| ${response.data.likeCount}명이 이 글을 좋아해요</h6>`
+            likeCount.innerHTML = `<h6 class="likes m-0 text-muted "> ${response.data.likeCount}</h6>`
         })
         })
     </script>
@@ -176,20 +183,25 @@
                 .target
                 .classList
                 .add('bi-bookmark-check-fill')
+                .add('jjim')
             event
                 .target
                 .classList
                 .remove('bi-bookmark-check')
+                .remove('no-jjim')
             console.log('관심찜')
             } else {
             event
                 .target
                 .classList
                 .remove('bi-bookmark-check-fill')
+                .remove('jjim')
             event
                 .target
                 .classList
                 .add('bi-bookmark-check')
+                .add('no-jjim')
+
             console.log('관심없음')
             }
         })
