@@ -46,8 +46,10 @@ class User(AbstractUser):
     rank = models.IntegerField(default=0)
     connect = MultiSelectField(choices=connect, null=True)
     image = ProcessedImageField(
-        blank = True,
-        processors=[Thumbnail(300,300)],
-        format='jpeg',
-        options={'quality':90},
+        blank=True,
+        processors=[Thumbnail(300, 300)],
+        format="jpeg",
+        options={"quality": 90},
     )
+    # 기본 0 구글 1 네이버 2
+    is_social = models.IntegerField(default=0)

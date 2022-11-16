@@ -18,39 +18,43 @@
         <h3 class='signup-head-h2'>선호하는 키보드가 있으신가요?</h3>
       </div>
       {% comment %} 키보드 취향 {% endcomment %}
-      <div class='select-box'>
-        <div class="select">
-          <input type="radio" id="sound" name="sound"><label for="sound">시원한 소리</label>
-          <input type="radio" id="sound2" name="sound"><label for="sound2">조용한 소리</label>
-          <input type="radio" id="sound3" name="sound"><label for="sound3">상관없음</label>
+            <div class='my-head'>
+          <h2>선호하는 키보드가 있으신가요?</h2>
         </div>
-        <div class="select">
-          <input type="radio" id="array" name="array"><label for="array">텐키리스</label>
-          <input type="radio" id="array2" name="array"><label for="array2">풀배열</label>
-          <input type="radio" id="array3" name="array"><label for="array3">상관없음</label>
-        </div>
+        {% comment %} 키보드 취향 {% endcomment %}
+          <div class='select-box'>
+            <div class="select">
+              <input type="radio" id="sound" name="sound" value='1'><label for="sound">시원한 소리</label>
+              <input type="radio" id="sound2" name="sound" value='2'><label for="sound2">조용한 소리</label>
+              <input type="radio" id="sound3" name="sound" value='3'><label for="sound3">상관없음</label>
+            </div>
+            <div class="select">
+              <input type="radio" id="array" name="array" value='1'><label for="array">텐키리스</label>
+              <input type="radio" id="array2" name="array" value='2'><label for="array2">풀배열</label>
+              <input type="radio" id="array3" name="array" value='3'><label for="array3">상관없음</label>
+            </div>
 
-        <div class="select">
-          <input type="radio" id="connect" name="connect"><label for="connect">유선</label>
-          <input type="radio" id="connect2" name="connect"><label for="connect2">무선</label>
-          <input type="radio" id="connect3" name="connect"><label for="connect3">상관없음</label>
-        </div>
+            <div class="select">
+              <input type="radio" id="connect" name="connect" value='1'><label for="connect">유선</label>
+              <input type="radio" id="connect2" name="connect" value='2'><label for="connect2">무선</label>
+              <input type="radio" id="connect3" name="connect" value='3'><label for="connect3">상관없음</label>
+            </div>
 
-        <div class="select">
-          <input type="radio" id="press" name="press"><label for="press">가벼운 타건감</label>
-          <input type="radio" id="press2" name="press"><label for="press2">묵직한 타건감</label>
-          <input type="radio" id="press3" name="press"><label for="press3">상관없음</label>
-        </div>
+            <div class="select">
+              <input type="radio" id="press" name="press" value='1'><label for="press">가벼운 타건감</label>
+              <input type="radio" id="press2" name="press" value='2'><label for="press2">묵직한 타건감</label>
+              <input type="radio" id="press3" name="press" value='3'><label for="press3">상관없음</label>
+            </div>
 
-        <div class="select1">
-          <input type="radio" id="weight" name="weight"><label for="weight">가벼운</label>
-          <input type="radio" id="weight2" name="weight"><label for="weight2">상관없음</label>
+            <div class="select1">
+              <input type="radio" id="weight" name="weight" value='1'><label for="weight">가벼운</label>
+              <input type="radio" id="weight2" name="weight" value='2'><label for="weight2">상관없음</label>
+            </div>
+          </div>
+        <div>
+          <button class='signup-btn' type="submit">KeyBoard Warrior와 함께하기</button>
         </div>
       </div>
-      <div>
-        <button class='signup-btn' type="submit">회원가입완료</button>
-      </div>
-    </div>
   </form>
 </div>
 {% endblock body %}
