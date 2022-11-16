@@ -9,6 +9,7 @@ from datetime import date, datetime, timedelta
 from reviews.models import Review
 
 # Create your views here.
+
 def maketable(p):
     table = [0] * len(p)
     i = 0
