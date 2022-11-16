@@ -85,9 +85,10 @@ def create(request):
 
 # 리뷰 읽기
 def detail(request, pk):
-    reviews = get_object_or_404(Review, pk=pk)
+    review = get_object_or_404(Review, pk=pk)
     comments = Comment.objects.filter(review_id=pk)
     comment_form = CommentForm()
+    photo = review.photo_set.all()
     for t in comments:
         with open("filtering.txt") as txtfile:
             for word in txtfile.readlines():
@@ -107,9 +108,10 @@ def detail(request, pk):
                             )
     comment_form.fields["content"].widget.attrs["placeholder"] = "댓글 작성"
     context = {
-        "review": reviews,
+        "review": review,
         "comments": comments,
         "comment_form": comment_form,
+        "photo" : photo,
     }
     response = render(request, "reviews/detail.html", context)
 
@@ -126,8 +128,8 @@ def detail(request, pk):
         response.set_cookie(
             "hitreview", value=cookievalue, max_age=max_age, httponly=True
         )
-        reviews.hits += 1
-        reviews.save()
+        review.hits += 1
+        review.save()
     return response
 
 
