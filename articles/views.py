@@ -3,12 +3,12 @@ from django.http import JsonResponse
 from datetime import date, datetime, timedelta
 from .models import Visit, Keyboard
 from reviews.models import Review
+from accounts.models import User
 from django.core.paginator import Paginator, EmptyPage
 from django.db.models import Q
 
 
 def main(request):
-    all_keyboard = Keyboard.objects.all()
     if Visit.objects.order_by("-pk"):
         visit_sum = 0
         today_visit = Visit.objects.order_by("-pk")[0].visit_count
@@ -95,7 +95,6 @@ def scroll_data(request):
     page = request.GET.get("page")
 
     q = Q()
-
     if brand != "0":
         q &= Q(brand__icontains=brand)
 
