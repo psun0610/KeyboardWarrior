@@ -54,6 +54,16 @@
   transition: all .2s ease-in;
 }
 
+.trade-index-search-result {
+  display: flex;
+  justify-content: center;
+}
+
+.trade-index-search-result>h2 {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
 .select-trade {
   display: flex;
   width: 100%;
@@ -309,13 +319,15 @@ input::-webkit-input-placeholder {
 
 
 .comment-delete-btn {
-  background: var(--white-transparent);
+  color: var(--my-gray);
+  background-color: white;
   border: 0px;
   border-radius: 3px;
 }
 
 .comment-delete-btn:hover {
   background-color: var(--my-hover-gray);
+  color:rgb(0, 0, 0);
 }
 #comment_box {
   margin-bottom: 65px;

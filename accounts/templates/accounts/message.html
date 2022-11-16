@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block body %}
+
+{% comment %} 제목 1 {% endcomment %}
+<div class='my-head'>
+    <h2>KeyBoard Warrior 쪽지보내기</h2>
+    <hr>
+
+</div>
+<p>받는사람 : {{reception_user}}</p>
+<form action="{% url 'accounts:massage' trade.pk reception_user.pk %}" method="POST">
+    {% bootstrap_form form %}
+    {% csrf_token %}
+    <button type="submit">쪽지보내기</button>
+</form>
+
+{% endblock body %}

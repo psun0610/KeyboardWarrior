@@ -19,4 +19,6 @@ urlpatterns = [
     ),
     path("keyboard_search/", views.keyboard_search, name="keyboard_search"),
     path("<int:pk>/marker/", views.marker, name="marker"),
+    path("trade_search/", views.trade_search, name="trade_search"),
+    path("<int:pk>/send_market", views.send_market, name="send_market"),
 ]

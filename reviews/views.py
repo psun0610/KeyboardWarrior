@@ -7,8 +7,8 @@ from django.http import JsonResponse
 from accounts.models import User
 from datetime import date, datetime, timedelta
 from articles.models import Keyboard
-
-
+from django.db.models import Count
+from django.db.models import Q
 def maketable(p):
     table = [0] * len(p)
     i = 0
@@ -86,9 +86,9 @@ def create(request):
 # 리뷰 읽기
 def detail(request, pk):
     review = get_object_or_404(Review, pk=pk)
-    comments = Comment.objects.filter(review_id=pk)
+    comments = Comment.objects.filter(review_id=pk).order_by("-pk")
     comment_form = CommentForm()
-    photo = review.photo_set.all()
+    photos = review.photo_set.all()
     for t in comments:
         with open("filtering.txt") as txtfile:
             for word in txtfile.readlines():
@@ -111,7 +111,7 @@ def detail(request, pk):
         "review": review,
         "comments": comments,
         "comment_form": comment_form,
-        "photo" : photo,
+        "photos": photos,
     }
     response = render(request, "reviews/detail.html", context)
 
@@ -318,22 +318,45 @@ def bookmark(request, pk):
     }
     return JsonResponse(context)
 
-
-# 키보드검색
-def keyboard_search(request):
-    search_data = request.GET.get("search", "")
-    keyboard = Keyboard.objects.filter(name__icontains=search_data).all()
-    keyboard_list = []
-    for k in keyboard:
-        keyboard_list.append(
-            {
-                "name": k.name,
-                "img": k.img,
-                "brand": k.brand,
-                "id": k.pk,
-            }
+# 후기 검색
+def review_search(request):
+    if 'kw' in request.GET:
+        # kw = index.html의 검색창 input의 name이다.
+        search_word = request.GET.get("kw")
+        reviews = Review.objects.filter(
+            Q(title__icontains=search_word)
+        ).order_by("-pk")
+        keyboard = Keyboard.objects.filter(
+            Q(name__icontains=search_word)
         )
+        
+        photo_list = []
+        for review in reviews:
+            if review.photo_set.all():
+                thumbnail = review.photo_set.all()[0]
+                photo_list.append((thumbnail, review.photo_set.all().count()))
+        context = {
+            "reviews": reviews,
+            "search_word": search_word,
+            "photo_list": photo_list,
+            "keyboard": keyboard,
+        }
+        return render(request, 'reviews/index.html', context)
+    else:
+        return render(request, 'reviews/index.html')
+
+
+
+
+def best(request, pk):
+    reviews = Review.objects.filter(keyboard_id=pk).annotate(num_=Count("like_users")).order_by("-num_")
+    photo_list = []
+    for review in reviews:
+        if review.photo_set.all():
+            thumbnail = review.photo_set.all()[0]
+            photo_list.append((thumbnail, review.photo_set.all().count()))
     context = {
-        "keyboard_list": keyboard_list,
+        "photo_list": photo_list,
     }
-    return JsonResponse(context)
+    return render(request, "reviews/index.html", context)
+
