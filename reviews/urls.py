@@ -16,4 +16,5 @@ urlpatterns = [
   path("<int:pk>/like/", views.like, name='like'),
   path("<int:pk>/bookmark/", views.bookmark, name='bookmark'),
   path("<int:pk>/best/", views.best, name="best"),
+  path("review_search/", views.review_search, name="review_search"),
 ]

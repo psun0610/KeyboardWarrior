@@ -1,11 +1,43 @@
 #comments {
   margin-bottom: 65px;
 }
+.review-index-search-form {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 30px;
+}
+
+.review-index-search-form>input[type=text] {
+  width: 350px;
+  padding: 5px 15px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+.review-index-search-form>input[type=submit] {
+  padding: 5px 20px;
+  margin-left: 16px;
+  border-radius: 3px;
+  background-color: var(--my-black);
+  color: white;
+}
+
+.review-index-search-result {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.review-index-search-result>h2 {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
 
 .reviews-container {
   max-width: 1280px;
   margin: auto;
 }
+
 .reviews-index-container {
   display: flex;
   flex-direction: column;

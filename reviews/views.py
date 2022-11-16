@@ -8,7 +8,7 @@ from accounts.models import User
 from datetime import date, datetime, timedelta
 from articles.models import Keyboard
 from django.db.models import Count
-
+from django.db.models import Q
 def maketable(p):
     table = [0] * len(p)
     i = 0
@@ -318,6 +318,32 @@ def bookmark(request, pk):
     }
     return JsonResponse(context)
 
+# 후기 검색
+def review_search(request):
+    if 'kw' in request.GET:
+        # kw = index.html의 검색창 input의 name이다.
+        search_word = request.GET.get("kw")
+        reviews = Review.objects.filter(
+            Q(title__icontains=search_word)
+        ).order_by("-pk")
+        keyboard = Keyboard.objects.filter(
+            Q(name__icontains=search_word)
+        )
+        
+        photo_list = []
+        for review in reviews:
+            if review.photo_set.all():
+                thumbnail = review.photo_set.all()[0]
+                photo_list.append((thumbnail, review.photo_set.all().count()))
+        context = {
+            "reviews": reviews,
+            "search_word": search_word,
+            "photo_list": photo_list,
+            "keyboard": keyboard,
+        }
+        return render(request, 'reviews/index.html', context)
+    else:
+        return render(request, 'reviews/index.html')
 
 
 
