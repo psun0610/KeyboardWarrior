@@ -335,3 +335,15 @@ def keyboard_search(request):
         "keyboard_list": keyboard_list,
     }
     return JsonResponse(context)
+
+def best(request, pk):
+    reviews = Review.objects.filter(keyboard_id=pk)
+    photo_list = []
+    for review in reviews:
+        if review.photo_set.all():
+            thumbnail = review.photo_set.all()[0]
+            photo_list.append((thumbnail, review.photo_set.all().count()))
+    context = {
+        "photo_list": photo_list,
+    }
+    return render(request, "reviews/index.html", context)

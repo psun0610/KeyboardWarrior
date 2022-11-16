@@ -9,6 +9,20 @@ from django.db.models import Q
 
 
 def main(request):
+    all_keyboard = Keyboard.objects.all()
+    if request.user.is_authenticated:
+        user = User.objects.get(pk=request.user.pk)
+        press = user.press # 가벼움(45이하), 무거움(45초과), 상관없음
+        weight = user.weight # 가벼움(900g이하), 상관없음(900초과)
+        sound = user.sound #소음, 저소음(저소음단어,무접점 토프레), 상관없음
+        connect = user.connect # 유 무 상관없음
+        array = user.array # ten = 풀배열 텐키리스=텐키리스 상관없음
+    # for i in all_keyboard:
+    #     print(i.key_switch)
+    #     print(i.kind)
+    #     print(i.bluetooth)
+    #     print(i.press)
+    #     print(i.weight)
     if Visit.objects.order_by("-pk"):
         visit_sum = 0
         today_visit = Visit.objects.order_by("-pk")[0].visit_count
@@ -170,6 +184,7 @@ def detail(request, pk):
         aval = round(aval, 1)
     context = {
         "keyboard": keyboard,
-        "aval": aval
+        "aval": aval,
+        "review":pk,
     }
     return render(request, "articles/detail.html", context)
