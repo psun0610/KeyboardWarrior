@@ -24,7 +24,7 @@ def index(request):
 
 def signup(request):
     if request.method == "POST":
-        form = CreateUser(request.POST,  request.FILES)
+        form = CreateUser(request.POST, request.FILES)
         print(1)
         if form.is_valid():
             user = form.save()
@@ -94,7 +94,7 @@ def edit_profile(request, pk):
             #     print("error")
             return redirect("accounts:detail", user.pk)
     else:
-        form = CustomUserChangeForm(instance=request.user)
+        form = CustomUserChangeForm()
     context = {
         "form": form,
     }
@@ -182,7 +182,7 @@ def naver_callback(request):
     naver_id = naver_user_information["response"]["id"]
     naver_nickname = naver_user_information["response"]["nickname"]
     naver_email = naver_user_information["response"]["email"]
-
+    naver_img = naver_user_information["response"]["profile_image"]
     if get_user_model().objects.filter(naver_id=naver_id).exists():
         naver_user = get_user_model().objects.get(naver_id=naver_id)
         my_login(request, naver_user)
@@ -193,6 +193,8 @@ def naver_callback(request):
         naver_login_user.naver_id = naver_id
         naver_login_user.set_password(str(state_token))
         naver_login_user.email = naver_email
+        naver_login_user.image = naver_img
+        naver_login_user.is_social = 2
         naver_login_user.save()
         naver_user = get_user_model().objects.get(naver_id=naver_id)
         my_login(request, naver_user)
@@ -235,6 +237,7 @@ def google_callback(request):
     g_id = google_user_information["sub"]
     g_name = google_user_information["name"]
     g_email = google_user_information["email"]
+    g_img = google_user_information["picture"]
 
     if get_user_model().objects.filter(goo_id=g_id).exists():
         google_user = get_user_model().objects.get(goo_id=g_id)
@@ -245,6 +248,8 @@ def google_callback(request):
         google_login_user.username = g_name
         google_login_user.email = g_email
         google_login_user.goo_id = g_id
+        google_login_user.image = g_img
+        google_login_user.is_social = 1
         google_login_user.set_password(str(state_token))
         google_login_user.save()
         google_user = get_user_model().objects.get(goo_id=g_id)
@@ -264,12 +269,12 @@ def social_form(request, pk):
             print("포스트확인")
             form = SocialUserForm(request.POST, instance=request.user)
             print("폼에 데이터넣기")
+            print(form)
             if form.is_valid():
-                print("여기안되는중")
                 form.save()
-                return render(request, "accounts/social_form.html", context)
+                return render(request, "articles/main.html")
         else:
-            form = SocialUserForm()
+            form = SocialUserForm(instance=request.user)
         context = {
             "form": form,
         }
