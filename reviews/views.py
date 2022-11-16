@@ -319,24 +319,8 @@ def bookmark(request, pk):
     return JsonResponse(context)
 
 
-# 키보드검색
-def keyboard_search(request):
-    search_data = request.GET.get("search", "")
-    keyboard = Keyboard.objects.filter(name__icontains=search_data).all()
-    keyboard_list = []
-    for k in keyboard:
-        keyboard_list.append(
-            {
-                "name": k.name,
-                "img": k.img,
-                "brand": k.brand,
-                "id": k.pk,
-            }
-        )
-    context = {
-        "keyboard_list": keyboard_list,
-    }
-    return JsonResponse(context)
+
+
 
 def best(request, pk):
     reviews = Review.objects.filter(keyboard_id=pk).annotate(num_=Count("like_users")).order_by("-num_")
@@ -349,3 +333,4 @@ def best(request, pk):
         "photo_list": photo_list,
     }
     return render(request, "reviews/index.html", context)
+
