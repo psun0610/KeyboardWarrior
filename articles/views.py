@@ -14,7 +14,7 @@ def main(request):
         user = User.objects.get(pk=request.user.pk)
         press = user.press # 가벼움(45이하), 무거움(45초과), 상관없음
         weight = user.weight # 가벼움(900g이하), 상관없음(900초과)
-        sound = user.sound #소음, 저소음(저소음단어,무접점 토프레), 상관없음
+        sound = user.sound #경쾌한소리, 조용한소리(저소음단어,무접점 토프레), 상관없음
         connect = user.connect # 유 무 상관없음
         array = user.array # ten = 풀배열 텐키리스=텐키리스 상관없음
     # for i in all_keyboard:
