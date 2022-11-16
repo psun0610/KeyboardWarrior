@@ -72,3 +72,43 @@
   text-align: end;
   line-height: 18px;
 }
+
+/* 리뷰디테일 */
+.review-detail-title {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;;
+}
+
+.review-detail-head {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.review-detail-hits {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.review-detail-key {
+  color: var(--my-gray);
+  margin-bottom: 0px;;
+}
+
+.review-all {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.review-image {
+  width: 1160px;
+}
+.review-content {
+  font-size:large;
+}
+
+.likebook {
+  display: flex;
+}
