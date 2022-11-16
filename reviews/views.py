@@ -7,7 +7,7 @@ from django.http import JsonResponse
 from accounts.models import User
 from datetime import date, datetime, timedelta
 from articles.models import Keyboard
-
+from django.db.models import Count
 
 def maketable(p):
     table = [0] * len(p)
@@ -339,7 +339,7 @@ def keyboard_search(request):
     return JsonResponse(context)
 
 def best(request, pk):
-    reviews = Review.objects.filter(keyboard_id=pk)
+    reviews = Review.objects.filter(keyboard_id=pk).annotate(num_=Count("like_users")).order_by("-num_")
     photo_list = []
     for review in reviews:
         if review.photo_set.all():
