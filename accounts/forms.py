@@ -1,5 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth import get_user_model
+from .models import Message
+from django import forms
 
 
 class CreateUser(UserCreationForm):
@@ -78,4 +80,17 @@ class SocialUserForm(UserChangeForm):
             "array": "배열",
             "sound": "소리",
             "connect": "연결",
+        }
+
+
+class MessageForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = [
+            "title",
+            "content",
+        ]
+        labels = {
+            "title": "제목",
+            "content": "내용",
         }
