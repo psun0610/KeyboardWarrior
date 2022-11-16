@@ -291,7 +291,6 @@ def trade_search(request):
             if trade.photo_set.all():
                 thumbnail = trade.photo_set.all()[0]
                 photo_list.append(thumbnail)
-        print(trades)
         context = {
             "trades": trades,
             "search_word": search_word,

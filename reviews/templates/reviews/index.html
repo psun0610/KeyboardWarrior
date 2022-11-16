@@ -14,6 +14,20 @@
     </div>
   </div>
 
+  <!-- 후기 검색창 -->
+  <form action="{% url 'reviews:review_search' %}" method="GET" class="review-index-search-form">
+    <input type="search" placeholder="후기를 검색해보세요" name="kw">
+    <input type="submit" value="검색">
+  </form>
+
+  <!-- 검색결과 문구 -->
+  <div class="trade-index-search-result">
+    {% if search_word %}
+    <h2>검색결과 "{{ search_word }}"를 찾았습니다.</h2>
+    {% endif %}
+
+  </div>
+
   <div class="reviews-index-container">
     {% for photo in photo_list %}
     <div class="reviews-card">
@@ -42,7 +56,7 @@
     {% endfor %}
   </div>
 
-<div class="row">
+{% comment %} <div class="row">
     {% for review in reviews %}
       <div class="col-4 my-3">
         <div class="card">
@@ -62,7 +76,7 @@
       </div>
       {% endfor %}
     </div>
-  </div>
+  </div> {% endcomment %}
 
 <script src="{% static 'js/articles.js' %}"></script>
 {% endblock body %}
