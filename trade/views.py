@@ -10,6 +10,7 @@ from reviews.models import Review
 
 # Create your views here.
 
+
 def maketable(p):
     table = [0] * len(p)
     i = 0
@@ -275,3 +276,16 @@ def keyboard_search(request):
         "keyboard_list": keyboard_list,
     }
     return JsonResponse(context)
+
+
+def send_market(request, pk):
+    pick_data = Trades.objects.filter(keyboard=pk)
+    photo_list = []
+    for trade in pick_data:
+        if trade.photo_set.all():
+            thumbnail = trade.photo_set.all()[0]
+            photo_list.append(thumbnail)
+
+    context = {"photo_list": photo_list}
+
+    return render(request, "trade/index.html", context)

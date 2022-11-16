@@ -315,23 +315,3 @@ def bookmark(request, pk):
         "isBookmark": is_bookmark,
     }
     return JsonResponse(context)
-
-
-# 키보드검색
-def keyboard_search(request):
-    search_data = request.GET.get("search", "")
-    keyboard = Keyboard.objects.filter(name__icontains=search_data).all()
-    keyboard_list = []
-    for k in keyboard:
-        keyboard_list.append(
-            {
-                "name": k.name,
-                "img": k.img,
-                "brand": k.brand,
-                "id": k.pk,
-            }
-        )
-    context = {
-        "keyboard_list": keyboard_list,
-    }
-    return JsonResponse(context)

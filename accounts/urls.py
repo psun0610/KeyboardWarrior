@@ -18,4 +18,6 @@ urlpatterns = [
     path("login/google/", views.google_request, name="google"),
     path("login/google/callback/", views.google_callback),
     path("<int:pk>/social_form/", views.social_form, name="social_form"),
+    path("<int:trade_pk>/<int:user_pk>/massage/", views.massage, name="massage"),
+    path("messageCheck/", views.messageCheck, name="messageCheck"),
 ]

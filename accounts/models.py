@@ -3,6 +3,8 @@ from django.contrib.auth.models import AbstractUser
 from multiselectfield import MultiSelectField
 from imagekit.models import ProcessedImageField
 from imagekit.processors import Thumbnail
+from KW.settings import AUTH_USER_MODEL
+from trade.models import Trades
 
 # Create your models here.
 
@@ -53,3 +55,20 @@ class User(AbstractUser):
     )
     # 기본 0 구글 1 네이버 2
     is_social = models.IntegerField(default=0)
+    # 알림쌓기
+    notice = models.IntegerField(default=0)
+
+
+class Message(models.Model):
+    send_user = models.ForeignKey(
+        AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="send"
+    )
+    reception_user = models.ForeignKey(
+        AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="reception"
+    )
+    trade = models.ForeignKey(
+        Trades, on_delete=models.CASCADE, related_name="reception"
+    )
+    title = models.CharField(max_length=50)
+    content = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
