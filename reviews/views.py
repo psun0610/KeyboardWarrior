@@ -86,9 +86,9 @@ def create(request):
 # 리뷰 읽기
 def detail(request, pk):
     review = get_object_or_404(Review, pk=pk)
-    comments = Comment.objects.filter(review_id=pk)
+    comments = Comment.objects.filter(review_id=pk).order_by("-pk")
     comment_form = CommentForm()
-    photo = review.photo_set.all()
+    photos = review.photo_set.all()
     for t in comments:
         with open("filtering.txt") as txtfile:
             for word in txtfile.readlines():
@@ -111,7 +111,7 @@ def detail(request, pk):
         "review": review,
         "comments": comments,
         "comment_form": comment_form,
-        "photo" : photo,
+        "photos": photos,
     }
     response = render(request, "reviews/detail.html", context)
 

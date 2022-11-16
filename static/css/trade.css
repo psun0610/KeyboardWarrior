@@ -309,13 +309,15 @@ input::-webkit-input-placeholder {
 
 
 .comment-delete-btn {
-  background: var(--white-transparent);
+  color: var(--my-gray);
+  background-color: white;
   border: 0px;
   border-radius: 3px;
 }
 
 .comment-delete-btn:hover {
   background-color: var(--my-hover-gray);
+  color:rgb(0, 0, 0);
 }
 #comment_box {
   margin-bottom: 65px;
