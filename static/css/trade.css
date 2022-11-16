@@ -54,6 +54,16 @@
   transition: all .2s ease-in;
 }
 
+.trade-index-search-result {
+  display: flex;
+  justify-content: center;
+}
+
+.trade-index-search-result>h2 {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
 .select-trade {
   display: flex;
   width: 100%;

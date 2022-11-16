@@ -188,8 +188,8 @@
 
   <div>
     <!-- 검색창 -->
-    <form class="trade-index-search-form">
-      <input type="text" placeholder="키보드를 검색해보세요">
+    <form action="{% url 'trade:trade_search' %}" method="GET" class="trade-index-search-form">
+      <input type="search" placeholder="거래글를 검색해보세요" name="kw">
       <input type="submit" value="검색">
     </form>
 
@@ -203,6 +203,12 @@
       <label for="2">구매글만</label>
     </form>
 
+    <!-- 검색결과 문구 -->
+    <div class="trade-index-search-result">
+      {% if search_word %}
+      <h2>검색결과 "{{ search_word }}"를 찾았습니다.</h2>
+      {% endif %}
+    </div>
     <!-- 게시글 카드 -->
     <div class="card-container" id="trade-card-0">
       {% for photo in photo_list %}
