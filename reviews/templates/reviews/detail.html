@@ -27,10 +27,18 @@
           <!-- 작성자 프로필 -->
           <a href="{% url 'accounts:detail' review.user.id %}">
             <div class="review-detail-user">
-              {% if review.user.image %}
-              <img src="{{ review.user.image.url }}">
+              {% if review.user.is_social == 0 %}
+                {% if review.user.image %}
+                <img src="{{ review.user.image.url }}">
+                {% else %}
+                <img src="{% static 'images/logo_png.png' %}">
+                {% endif %}
               {% else %}
-              <img src="{% static 'images/logo_png.png' %}">
+                {% if review.user.image %}
+                <img src="{{ review.user.image }}">
+                {% else %}
+                <img src="{% static 'images/logo_png.png' %}">
+                {% endif %}
               {% endif %}
               <p>{{ review.user }}</p>
             </div>
@@ -90,17 +98,28 @@
 
         
         <div id="comments">
-          <div class='comment-1'>
               {% for comment in comments %}
               <div class='comment'>
                   <div class="keyboard-comment">
-                    <a href="{% url 'accounts:detail' comment.user.pk %}">
-                      {% if comment.user.image %}
-                      <img class="comment-profile-img" src="{{ comment.user.image.url }}">
-                      {% else %}
-                      <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
-                      {% endif %}
-                    </a>
+                    <!-- 소셜 계정일 때와 이미지가 있을 때 if문 분기 -->
+                    {% if comment.user.is_social == 0 %}
+                      <a href="{% url 'accounts:detail' comment.user.pk %}">
+                        {% if comment.user.image %}
+                        <img class="comment-profile-img" src="{{ comment.user.image.url }}">
+                        {% else %}
+                        <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
+                      </a>
+                    {% endif %}
+                    {% else %}
+                      <a href="{% url 'accounts:detail' comment.user.pk %}">
+                        {% if comment.user.image %}
+                        <img class="comment-profile-img" src="{{ comment.user.image }}">
+                        {% else %}
+                        <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
+                        {% endif %}
+                      </a>
+                    {% endif %}
+
                     <div class="keyboard-comment-box">
                       <a href="{% url 'accounts:detail' comment.user.pk %}">
                         <p class="keyboard-comment-user">{{comment.user}}</p>
@@ -188,81 +207,60 @@
                 comments.textContent = "";
                 const hr = document.createElement('hr')
                 const comment_data = response.data.comment_data
-
                 const user = response.data.user
                 for (let i = 0; i < comment_data.length; i++) {
                   const review_pk = response.data.review_pk
-                    console.log(comment_data[i].id, user)
-                    if (user === comment_data[i].id) {
-                      if (comment_data[i].islike) {
-                        comments.insertAdjacentHTML('beforeend', `
-                          <div class='comment'>
-                          <div class="keyboard-comment">
-                      {% if request.user.image %}
-                      <img class="comment-profile-img" src="{{ request.user.image.url }}">
-                      {% else %}
-                      <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
-                      {% endif %}
-                            <div class="keyboard-comment-box">
-                              <p class="keyboard-comment-user">${comment_data[i].userName}</p>
-                              <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i> <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button>
-                          <div> ${comment_data[i].content} </div>
-                        `);
-                      } else {
-                        comments.insertAdjacentHTML('beforeend', `
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                      {% if request.user.image %}
-                      <img class="comment-profile-img" src="{{ request.user.image.url }}">
-                      {% else %}
-                      <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
-                      {% endif %}
-                            <div class="keyboard-comment-box">
-                              <p class="keyboard-comment-user">${comment_data[i].userName}</p>
-                              <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i> <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button>
-                          <div> ${comment_data[i].content} </div>
-                        `);
-                      }
-                    } else {
-                      if (comment_data[i].islike) {
-                        comments.insertAdjacentHTML('beforeend', `
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                      {% if comment.user.image %}
-                      <img class="comment-profile-img" src="{{ comment.user.image.url }}">
-                      {% else %}
-                      <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
-                      {% endif %}
-                            <div class="keyboard-comment-box">
-                              <p class="keyboard-comment-user">${comment_data[i].userName}</p>
-                              <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
-                          <div> ${comment_data[i].content} </div>
-                        `);
-                      } else {
-                        comments.insertAdjacentHTML('beforeend', `
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                      {% if comment.user.image %}
-                      <img class="comment-profile-img" src="{{ comment.user.image.url }}">
-                      {% else %}
-                      <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
-                      {% endif %}
-                            <div class="keyboard-comment-box">
-                              <p class="keyboard-comment-user">${comment_data[i].userName}</p>
-                              <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
-                          <div> ${comment_data[i].content} </div>
-                        `);
-                      }
+                  console.log(comment_data[i].id, user)
+                  // 프로필 이미지
+                  let profile_src = "";
+                  if (comment_data[i].image) {
+                    if (comment_data[i].is_social === 0) {
+                      profile_src = `/media/${comment_data[i].image}`;
                     }
-                }
-                commentForm
-                .reset()
-            })
-            .catch(console.log(1))
-            })
+                    else {
+                      profile_src = `${comment_data[i].image}`;
+                    }
+                  }
+                  else {
+                    profile_src = `{% static 'images/logo_png.png' %}`;
+                  }
+
+                  // 내가 좋아요를 누른 댓글이면
+                  let like = "";
+                  if (comment_data[i].islike) {
+                    like = "bi-heart-fill";
+                  }
+                  else {
+                    like = "bi-heart";
+                  }
+
+                  // 내가 댓글 작성자면
+                  let writer = "";
+                  if(user === comment_data[i].id) {
+                    writer = `<button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button>`
+                  }
+
+                  let html = `
+                    <div class="comment">
+                      <div class="keyboard-comment">
+                    
+                        <a href="/accounts/${comment_data[i].id}/detail">
+                        <img class="comment-profile-img" src="${profile_src}">
+                      </a>
+                      <div class="keyboard-comment-box">
+                        <a href="/accounts/${comment_data[i].id}/detail">
+                          <p class="keyboard-comment-user">${comment_data[i].userName}</p>
+                        </a>
+                        <i class="bi ${like}" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
+                        ${writer}
+                        <div>${comment_data[i].content}</div>
+                      </div>
+                    </div>
+                  </div>`
+                  document.querySelector('#comments').insertAdjacentHTML('beforeend', `${html}`)
+                } commentForm.reset()
+            }).catch(console.log(1))
+        })
 
         // 댓글 삭제 비동기
         const delete_comment = (e) => {
@@ -284,71 +282,54 @@
             const user = response.data.user
             for (let i = 0; i < comment_data.length; i++) {
               const review_pk = response.data.review_pk
-                console.log(comment_data[i].id, user)
-              if (user === comment_data[i].id) {
-                if (comment_data[i].islike) {
-                  comments.insertAdjacentHTML('beforeend', `
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                      {% if request.user.image %}
-                      <img class="comment-profile-img" src="{{ request.user.image.url }}">
-                      {% else %}
-                      <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
-                      {% endif %}
-                            <div class="keyboard-comment-box">
-                              <p class="keyboard-comment-user">${comment_data[i].userName}</p><i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>  <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button>
-                          <div> ${comment_data[i].content} </div>
-                        `);
-                } else {
-                  comments.insertAdjacentHTML('beforeend', `
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                      {% if request.user.image %}
-                      <img class="comment-profile-img" src="{{ request.user.image.url }}">
-                      {% else %}
-                      <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
-                      {% endif %}
-                            <div class="keyboard-comment-box">
-                              <p class="keyboard-comment-user">${comment_data[i].userName}</p>
-                              <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>  <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="${review_pk}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button>
-                          <div> ${comment_data[i].content} </div>
-                        `);
-                }
-              } else {
-                if (comment_data[i].islike) {
-                  comments.insertAdjacentHTML('beforeend', `
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                      {% if comment.user.image %}
-                      <img class="comment-profile-img" src="{{ comment.user.image.url }}">
-                      {% else %}
-                      <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
-                      {% endif %}
-                            <div class="keyboard-comment-box">
-                              <p class="keyboard-comment-user">${comment_data[i].userName}</p>
-                              <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
-                          <div> ${comment_data[i].content} </div>
-                        `);
-                } else {
-                  comments.insertAdjacentHTML('beforeend', `
-                          <div class='comment'>
-                  
-                          <div class="keyboard-comment">
-                      {% if comment.user.image %}
-                      <img class="comment-profile-img" src="{{ comment.user.image.url }}">
-                      {% else %}
-                      <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
-                      {% endif %}
-                            <div class="keyboard-comment-box">
-                              <p class="keyboard-comment-user">${comment_data[i].userName}</p>
-                              <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="${review_pk}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
-                          <div> ${comment_data[i].content} </div>
-                        `);
-                }
-              }
+                  console.log(comment_data[i].id, user)
+                  // 프로필 이미지
+                  let profile_src = "";
+                  if (comment_data[i].image) {
+                    if (comment_data[i].is_social === 0) {
+                      profile_src = `/media/${comment_data[i].image}`;
+                    }
+                    else {
+                      profile_src = `${comment_data[i].image}`;
+                    }
+                  }
+                  else {
+                    profile_src = `{% static 'images/logo_png.png' %}`;
+                  }
+
+                  // 내가 좋아요를 누른 댓글이면
+                  let like = "";
+                  if (comment_data[i].islike) {
+                    like = "bi-heart-fill";
+                  }
+                  else {
+                    like = "bi-heart";
+                  }
+
+                  // 내가 댓글 작성자면
+                  let writer = "";
+                  if(user === comment_data[i].id) {
+                    writer = `<button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].commentPk}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="${comment_data[i].commentPk}">삭제</button>`
+                  }
+
+                  let html = `
+                    <div class="comment">
+                      <div class="keyboard-comment">
+                    
+                        <a href="/accounts/${comment_data[i].id}/detail">
+                        <img class="comment-profile-img" src="${profile_src}">
+                      </a>
+                      <div class="keyboard-comment-box">
+                        <a href="/accounts/${comment_data[i].id}/detail">
+                          <p class="keyboard-comment-user">${comment_data[i].userName}</p>
+                        </a>
+                        <i class="bi ${like}" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
+                        ${writer}
+                        <div>${comment_data[i].content}</div>
+                      </div>
+                    </div>
+                  </div>`
+                  document.querySelector('#comments').insertAdjacentHTML('beforeend', `${html}`)
             }
             }
         )

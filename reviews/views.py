@@ -9,6 +9,8 @@ from datetime import date, datetime, timedelta
 from articles.models import Keyboard
 from django.db.models import Count
 from django.db.models import Q
+
+
 def maketable(p):
     table = [0] * len(p)
     i = 0
@@ -178,7 +180,7 @@ def comment_create(request, pk):
     temp = Comment.objects.filter(review_id=pk).order_by("-pk")
     comment_data = []
     for t in temp:
-        if request.user not in t.like_users.all():
+        if request.user in t.like_users.all():
             is_like = True
         else:
             is_like = False
@@ -199,6 +201,8 @@ def comment_create(request, pk):
                             t.content = (
                                 t.content[0 : k - 1] + len(t.content[k - 1 :]) * "*"
                             )
+            print(t.user.image)
+            print(t.user.is_social, type(t.user.is_social))
             comment_data.append(
                 {
                     "id": t.user_id,
@@ -207,6 +211,8 @@ def comment_create(request, pk):
                     "commentPk": t.pk,
                     "created_at": t.created_at,
                     "islike": is_like,
+                    "image": str(t.user.image),
+                    "is_social": t.user.is_social,
                 }
             )
     context = {
@@ -227,7 +233,7 @@ def comment_delete(request, review_pk, comment_pk):
     user = request.user
     comment_data = []
     for t in temp:
-        if request.user not in t.like_users.all():
+        if request.user in t.like_users.all():
             is_like = True
         else:
             is_like = False
@@ -256,6 +262,8 @@ def comment_delete(request, review_pk, comment_pk):
                 "commentPk": t.pk,
                 "created_at": t.created_at,
                 "islike": is_like,
+                "image": str(t.user.image),
+                "is_social": t.user.is_social,
             }
         )
     context = {
@@ -318,18 +326,15 @@ def bookmark(request, pk):
     }
     return JsonResponse(context)
 
+
 # 후기 검색
 def review_search(request):
-    if 'kw' in request.GET:
+    if "kw" in request.GET:
         # kw = index.html의 검색창 input의 name이다.
         search_word = request.GET.get("kw")
-        reviews = Review.objects.filter(
-            Q(title__icontains=search_word)
-        ).order_by("-pk")
-        keyboard = Keyboard.objects.filter(
-            Q(name__icontains=search_word)
-        )
-        
+        reviews = Review.objects.filter(Q(title__icontains=search_word)).order_by("-pk")
+        keyboard = Keyboard.objects.filter(Q(name__icontains=search_word))
+
         photo_list = []
         for review in reviews:
             if review.photo_set.all():
@@ -341,15 +346,17 @@ def review_search(request):
             "photo_list": photo_list,
             "keyboard": keyboard,
         }
-        return render(request, 'reviews/index.html', context)
+        return render(request, "reviews/index.html", context)
     else:
-        return render(request, 'reviews/index.html')
-
-
+        return render(request, "reviews/index.html")
 
 
 def best(request, pk):
-    reviews = Review.objects.filter(keyboard_id=pk).annotate(num_=Count("like_users")).order_by("-num_")
+    reviews = (
+        Review.objects.filter(keyboard_id=pk)
+        .annotate(num_=Count("like_users"))
+        .order_by("-num_")
+    )
     photo_list = []
     for review in reviews:
         if review.photo_set.all():
@@ -359,4 +366,3 @@ def best(request, pk):
         "photo_list": photo_list,
     }
     return render(request, "reviews/index.html", context)
-
