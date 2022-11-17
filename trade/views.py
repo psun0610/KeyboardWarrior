@@ -278,17 +278,22 @@ def keyboard_search(request):
     }
     return JsonResponse(context)
 
+
 # 마켓 검색기능
 def trade_search(request):
-    if 'kw' in request.GET:
+    if "kw" in request.GET:
         # kw = index.html의 검색창 input의 name이다.
         search_word = request.GET.get("kw")
+<<<<<<< HEAD
+        trades = Trades.objects.filter(Q(title__icontains=search_word))
+=======
         trades = Trades.objects.filter(
             Q(title__icontains=search_word) |
             Q(content__icontains=search_word) |
             Q(keyboard__name__icontains=search_word) |
             Q(user__username__icontains=search_word)
         )
+>>>>>>> 67d022c6e29727ae83829fb73427fd5e3f8878ab
         photo_list = []
         for trade in trades:
             if trade.photo_set.all():
@@ -297,9 +302,10 @@ def trade_search(request):
         context = {
             "trades": trades,
             "search_word": search_word,
-             "photo_list": photo_list,
-            }
-        return render(request, 'trade/index.html', context)
+            "photo_list": photo_list,
+        }
+        return render(request, "trade/index.html", context)
+
 
 def send_market(request, pk):
     pick_data = Trades.objects.filter(keyboard=pk)
@@ -312,3 +318,20 @@ def send_market(request, pk):
     context = {"photo_list": photo_list}
 
     return render(request, "trade/index.html", context)
+
+
+@login_required
+def status(request, pk):
+    trade = Trades.objects.get(pk=pk)
+    is_done = True
+    if request.user != trade.user:
+        if trade.status_type == 1:
+            trade.status_type = 2
+            is_done = True
+        else:
+            trade.status_type = 1
+            is_done = False
+        trade.save()
+    data = {
+        "status": trade.status_type,
+    }
