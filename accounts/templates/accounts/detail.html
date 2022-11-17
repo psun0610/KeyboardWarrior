@@ -62,7 +62,9 @@
                 <h3 class='userdetail-head2'>개인 정보</h3>
                 <div>
                     <p>연락 가능한 이메일 주소를 포함하여 개인 정보를 확인하십시오.</p>
-                    <a class='a-blue' href="{% url 'accounts:edit_profile' user.pk %}">개인정보수정 > </a>
+                    {% if request.user == user %}
+                        <a class='a-blue' href="{% url 'accounts:edit_profile' user.pk %}">개인정보수정 > </a>
+                    {% endif %}
                 </div>
                 
             </div>
@@ -97,11 +99,11 @@
                         <div>
                             <p class='usercard-title'>메너점수</p>
                             <div class='usercard-content'>
-                                {% if user.rank >= 5000 %} Lv.6
-                                {% elif user.rank >= 4000 %} Lv.5 
-                                {% elif user.rank >= 3000 %} Lv.4
-                                {% elif user.rank >= 2000 %} Lv.3
-                                {% elif user.rank >= 1000 %} Lv.2
+                                {% if user.rank >= 50 %} Lv.6
+                                {% elif user.rank >= 40 %} Lv.5 
+                                {% elif user.rank >= 30 %} Lv.4
+                                {% elif user.rank >= 20 %} Lv.3
+                                {% elif user.rank >= 10 %} Lv.2
                                 {% elif user.rank >= 0 %} Lv.1
                                 {% endif %}
                             </div>
@@ -196,7 +198,9 @@
                 <h3 class='userdetail-head2'>선호 키보드 정보</h3>
                 <div>
                     <p>선호하는 키보드 정보를 관리합니다.</p>
-                    <a class='a-blue' href="{% url 'accounts:edit_profile' user.pk %}">개인정보수정 > </a>
+                    {% if request.user == user %}
+                        <a class='a-blue' href="{% url 'accounts:edit_profile' user.pk %}">개인정보수정 > </a>
+                    {% endif %}
                 </div>
                 <div class='usercard-big-box'>
                     <div class='usercard-box'>

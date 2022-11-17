@@ -116,6 +116,22 @@
           <div class="trade-detail-btn jjok">쪽지보내기</div>
         </a>
       </div>
+      <!-- 내가 작성자면 -->
+      {% else %}
+      <div class="jjimjjok">
+        {% if trade.status_type == 1 %}
+        <div class="trade-detail-btn jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
+          <span data-trade-id="{{ trade.pk }}">거래중</span>
+        </div>
+        {% else %}
+        <div class="trade-detail-btn no-jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
+          <span data-trade-id="{{ trade.pk }}">거래완료</span>
+        </div>
+        {% endif %}
+        <a href="{% url 'trade:update' trade.pk %}">
+          <div class="trade-detail-btn jjok">글 수정</div>
+        </a>
+      </div>
       {% endif %}
 
       <div class='trade-content'>
@@ -152,7 +168,11 @@
       <div class='comment'>
 
         <div class="keyboard-comment">
-          <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+          <a href="{% url 'accounts:detail' comment.user.pk %}">
+          {% if comment.user.is_social == 1 %}<img class="comment-profile-img" src="{{ comment.user.image }}">
+          {% else %}<img class="comment-profile-img" src="{{ comment.user.image.url }}">
+          {% endif %}
+          </a>
           <div class="keyboard-comment-box">
             <p>{{comment.user}}
               {% if request.user == comment.user %}
@@ -196,27 +216,60 @@
         .comment_list
       for (let i = 0; i < comment_list.length; i++) {
         if (user === comment_list[i].pk) {
+          if (user === comment_list[i].pk.is_social) {
           console.log(comment_list[i])
           comment_box.insertAdjacentHTML('beforeend', `
                       
                       <div class="keyboard-comment">
-                        <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                      <a href="/accounts/${comment_list[i].pk}/detail ">
+                        <img class="comment-profile-img"  src="{ request.user.image.url }">${comment_list[i].pk}
+                      </a>
                         <div class="keyboard-comment-box">
                           <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"  class="comment-delete-btn"> 삭제 </button></p>
                           <div>${comment_list[i].content}</div>
                         </div>
                       </div>
                     </div>`);
-          console.log("댓글 전송 ")
+          console.log("댓글 전송 ") }
+          else {
+          console.log(comment_list[i])
+          comment_box.insertAdjacentHTML('beforeend', `
+                      
+                      <div class="keyboard-comment">
+                      <a href="/accounts/${comment_list[i].pk}/detail ">
+                        <img class="comment-profile-img"  src="{ request.user.image }">${comment_list[i].pk}
+                      </a>
+                        <div class="keyboard-comment-box">
+                          <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"  class="comment-delete-btn"> 삭제 </button></p>
+                          <div>${comment_list[i].content}</div>
+                        </div>
+                      </div>
+                    </div>`);
+          console.log("댓글 전송 ") }
+
         } else {
+          if (user === comment_list[i].pk.is_social) {
           console.log(comment_list[i])
           comment_box.insertAdjacentHTML('beforeend', `
                       <div class="keyboard-comment">
-                      <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
-                      <div class="keyboard-comment-box">
-                        <p>${comment_list[i].user}</p>
-                        <div>${comment_list[i].content}</div>
-                      </div>`);
+                      <a href="/accounts/${comment_list[i].pk}/detail ">
+                        <img class="comment-profile-img" src="{ ${comment_list[i].user}.image.url }">${comment_list[i].pk}
+                      </a>
+                        <div class="keyboard-comment-box">
+                          <p>${comment_list[i].user}</p>
+                          <div>${comment_list[i].content}</div>
+                        </div>`);}
+          else {
+            console.log(comment_list[i])
+            comment_box.insertAdjacentHTML('beforeend', `
+                      <div class="keyboard-comment">
+                      <a href="/accounts/${comment_list[i].pk}/detail ">
+                        <img class="comment-profile-img" src="{ ${comment_list[i].user}.image.url }">${comment_list[i].pk}
+                      </a>
+                        <div class="keyboard-comment-box">
+                          <p>${comment_list[i].user}</p>
+                          <div>${comment_list[i].content}</div>
+                        </div>`);}
         }
       }
       commentFrom
@@ -246,7 +299,9 @@
           comment_box.insertAdjacentHTML('beforeend', `
                     
                       <div class="keyboard-comment">
-                        <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                        <a href="/accounts/${comment_list[i].pk}/detail ">
+                          <img class="comment-profile-img" src="{{ comment.user.image.url }}">${comment_list[i].pk}
+                        </a>
                         <div class="keyboard-comment-box">
                           <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"  class="comment-delete-btn"> 삭제 </button></p>
                           <div>${comment_list[i].content}</div>
@@ -260,10 +315,13 @@
           comment_box.insertAdjacentHTML('beforeend', `
                     
                       <div class="keyboard-comment">
-                      <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
-                      <div class="keyboard-comment-box">
-                        <p>${comment_list[i].user}</p>
-                        <div>${comment_list[i].content}</div>
+                        <a href="/accounts/${comment_list[i].pk}/detail ">
+                          <img class="comment-profile-img" src="{{ comment.user.image.url }}">${comment_list[i].pk}
+                        </a>
+                        <div class="keyboard-comment-box">
+                          <p>${comment_list[i].user}</p>
+                          <div>${comment_list[i].content}</div>
+                        </div>
                       </div>`);
         }
       }
@@ -273,58 +331,45 @@
   }
 </script>
 <!-- 찜하기 스크립트!! -->
+<script>
+    const marker = document.querySelector('#marker-icon')
+    const marker_text_wrap = marker?.querySelector('div')
+    marker?.addEventListener('click', function (event) {
+      capture: true
+      axios({ method: 'get', url: `/trade/${event.target.dataset.tradeId}/marker/` }).then(response => {
+
+        console.log(response)
+        console.log(response.data)
+        marker.classList.toggle('jjim')
+        marker.classList.toggle('no-jjim')
+        marker.querySelector('#bookmark').classList.toggle('bi-bookmark-fill')
+        marker.querySelector('#bookmark').classList.toggle('bi-bookmark')
+        marker.querySelector('span').innerText = response.data.is_marker? '찜완료' : '찜하기'
+
+        const marker_count = document.querySelector('#marker_count')
+        marker_count.innerText = response.data.markers
+
+      })
+    })
+</script>
 
 <script>
-  const marker = document.querySelector('#marker-icon')
-  const marker_text_wrap = marker.querySelector('div')
-  marker.addEventListener('click', function (event) {
+  const status = document.querySelector('#status-btn')
+  const status_btn = status.querySelector('div')
+  status.addEventListener('click', function (event) {
     capture: true
-    axios({ method: 'get', url: `/trade/${event.target.dataset.tradeId}/marker/` }).then(response => {
-
-      console.log(response)
-      console.log(response.data)
-      if (response.data.is_marker === true) {
-        marker
-          .classList
-          .add('jjim')
-        marker
-          .classList
-          .remove('no-jjim')
-        marker
-          .querySelector('span')
-          .innerText = '찜완료'
-        marker
-          .querySelector('#bookmark')
-          .classList
-          .add('bi-bookmark-fill')
-        marker
-          .querySelector('#bookmark')
-          .classList
-          .remove('bi-bookmark')
-      } else {
-        marker
-          .classList
-          .add('no-jjim')
-        marker
-          .classList
-          .remove('jjim')
-        marker
-          .querySelector('span')
-          .innerText = '찜하기'
-        marker
-          .querySelector('#bookmark')
-          .classList
-          .add('bi-bookmark')
-        marker
-          .querySelector('#bookmark')
-          .classList
-          .remove('bi-bookmark-fill')
+    axios({ method: 'get', url: `/trade/${event.target.dataset.tradeId}/status/` }).then(response => {
+      if (response.data.status == 1) {
+        status_btn.classList.add('jjim')
+        status_btn.classList.remove('no-jjim')
+        status_btn.querySelector('span').innerText("거래중")
       }
-      const marker_count = document.querySelector('#marker_count')
-      marker_count.innerText = response.data.markers
-
+      else {
+        status_btn.classList.add('no-jjim')
+        status_btn.classList.remove('jjim')
+        status_btn.querySelector('span').innerText("거래완료")
+      }
     })
   })
 </script>
-
 {% endblock body %}
