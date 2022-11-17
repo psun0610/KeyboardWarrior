@@ -72,11 +72,11 @@ def main(request):
             ans5.add(value)
         k = ans1 & ans2 & ans3 & ans4 & ans5
         items = list(set(k))[:3]
-        print(len(sound[0]),len(sound[1]), len(sound[2]))
-        print(len(array[0]),len(array[1]), len(array[2]))
-        print(len(weight[0]),len(weight[1]))
-        print(len(press[0]),len(press[1]), len(press[2]))
-        print(len(connect[0]),len(connect[1]), len(connect[2]))
+        # print(len(sound[0]),len(sound[1]), len(sound[2]))
+        # print(len(array[0]),len(array[1]), len(array[2]))
+        # print(len(weight[0]),len(weight[1]))
+        # print(len(press[0]),len(press[1]), len(press[2]))
+        # print(len(connect[0]),len(connect[1]), len(connect[2]))
     else:
         items = []
     if Visit.objects.order_by("-pk"):
@@ -232,6 +232,10 @@ def detail(request, pk):
     keyboard = Keyboard.objects.get(pk=pk)
     reviews = Review.objects.filter(keyboard_id = pk)
     bests = Review.objects.filter(keyboard_id = pk).annotate(num_=Count("like_users")).order_by("-num_")
+    if bests:
+        print(1)
+    else:
+        print(0,0,0)
     aval = 0.0
     for review in reviews:
         aval += review.grade

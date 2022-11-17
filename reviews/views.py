@@ -350,11 +350,7 @@ def review_search(request):
 
 
 def best(request, pk):
-    reviews = (
-        Review.objects.filter(keyboard_id=pk)
-        .annotate(num_=Count("like_users"))
-        .order_by("-num_")
-    )
+    reviews = Review.objects.filter(keyboard_id=pk).annotate(num_=Count("like_users")).order_by("-num_")
     photo_list = []
     for review in reviews:
         if review.photo_set.all():

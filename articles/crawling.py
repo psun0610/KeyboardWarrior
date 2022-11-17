@@ -83,11 +83,11 @@ time.sleep(1)
 # time.sleep(1)
 
 # 한성컴퓨터
-driver.find_element(
-    By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(125)"
-).click()
+# driver.find_element(
+#     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(125)"
+# ).click()
 
-time.sleep(1)
+# time.sleep(1)
 
 
 # 키크론
@@ -96,6 +96,20 @@ time.sleep(1)
 # ).click()
 
 # time.sleep(1)
+
+# 바밀로
+# driver.find_element(
+#     By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(226)"
+# ).click()
+
+# time.sleep(1)
+
+# 덕키
+driver.find_element(
+    By.CSS_SELECTOR, "dl#dlMaker_simple > dd > ul:nth-of-type(2) > li:nth-child(161)"
+).click()
+
+time.sleep(1)
 
 WebDriverWait(driver, 30).until(
     EC.presence_of_element_located(
@@ -133,7 +147,7 @@ a = []
 for _ in range(len(product_li_tags)):
     a.append([])
 
-for sub_url in range(48):
+for sub_url in range(30):
     driver.get(url_list[sub_url])
 
     time.sleep(1)
@@ -166,7 +180,7 @@ for sub_url in range(48):
 print(a)
 print("------------------------------------------")
 result_list = []
-for i in range(48):
+for i in range(30):
     img, brand, connect, weight, array, switch, press, kind, key_switch, bluetooth = (
         "기타",
         "기타",
