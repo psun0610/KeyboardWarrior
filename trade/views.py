@@ -99,7 +99,6 @@ def update(request, pk):
         }
     return render(request, "trade/update.html", context)
 
-
 def detail(request, pk):
     trade = get_object_or_404(Trades, pk=pk)
     reviews = Review.objects.all()
