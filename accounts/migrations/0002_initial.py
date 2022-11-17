@@ -11,8 +11,8 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('trade', '0001_initial'),
-        ('accounts', '0001_initial'),
         ('auth', '0012_alter_user_first_name_max_length'),
+        ('accounts', '0001_initial'),
     ]
 
     operations = [

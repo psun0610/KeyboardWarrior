@@ -324,12 +324,11 @@ def review_search(request):
         # kw = index.html의 검색창 input의 name이다.
         search_word = request.GET.get("kw")
         reviews = Review.objects.filter(
-            Q(title__icontains=search_word)
+            Q(title__icontains=search_word) |
+            Q(content__icontains=search_word) |
+            Q(keyboard__name__icontains=search_word) |
+            Q(user__username__icontains=search_word)
         ).order_by("-pk")
-        keyboard = Keyboard.objects.filter(
-            Q(name__icontains=search_word)
-        )
-        
         photo_list = []
         for review in reviews:
             if review.photo_set.all():
@@ -339,7 +338,6 @@ def review_search(request):
             "reviews": reviews,
             "search_word": search_word,
             "photo_list": photo_list,
-            "keyboard": keyboard,
         }
         return render(request, 'reviews/index.html', context)
     else:
