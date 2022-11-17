@@ -152,7 +152,7 @@
       <div class='comment'>
 
         <div class="keyboard-comment">
-          <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+          <a href="{% url 'accounts:detail' comment.user.pk %}"><img class="comment-profile-img" src="{% static 'images/qwefq.png' %}"></a>
           <div class="keyboard-comment-box">
             <p>{{comment.user}}
               {% if request.user == comment.user %}
@@ -212,11 +212,11 @@
           console.log(comment_list[i])
           comment_box.insertAdjacentHTML('beforeend', `
                       <div class="keyboard-comment">
-                      <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
-                      <div class="keyboard-comment-box">
-                        <p>${comment_list[i].user}</p>
-                        <div>${comment_list[i].content}</div>
-                      </div>`);
+                        <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                        <div class="keyboard-comment-box">
+                          <p>${comment_list[i].user}</p>
+                          <div>${comment_list[i].content}</div>
+                        </div>`);
         }
       }
       commentFrom
@@ -246,7 +246,7 @@
           comment_box.insertAdjacentHTML('beforeend', `
                     
                       <div class="keyboard-comment">
-                        <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                          <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
                         <div class="keyboard-comment-box">
                           <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"  class="comment-delete-btn"> 삭제 </button></p>
                           <div>${comment_list[i].content}</div>
@@ -260,7 +260,7 @@
           comment_box.insertAdjacentHTML('beforeend', `
                     
                       <div class="keyboard-comment">
-                      <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+                        <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
                       <div class="keyboard-comment-box">
                         <p>${comment_list[i].user}</p>
                         <div>${comment_list[i].content}</div>
