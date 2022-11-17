@@ -34,17 +34,17 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "엠스톤글로벌 Groove T 풀윤활 클라리온S (코랄축, 45g)",
+			"name": "엠스톤글로벌 Groove T 풀윤활 클라리온S (저소음 코랄축, 50g)",
 			"img": "https://img.danawa.com/prod_img/500000/202/648/img/16648202_1.jpg?shrink=500:500&_v=20220322160812",
 			"brand": "엠스톤글로벌",
 			"connect": "기계식",
 			"weight": 900,
 			"array": "87",
 			"switch": "독자",
-			"key_switch": "코랄축",
-			"press": 45,
+			"key_switch": "저소음 코랄축",
+			"press": 50,
 			"kind": "텐키리스",
-			"bluetooth": "유선"
+			"bluetooth": "유선+무선"
 		}
 	},
 	{
