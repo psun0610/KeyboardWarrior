@@ -29,26 +29,30 @@
   </div>
 
   <div class="reviews-index-container">
-    {% for photo in photo_list %}
+    {% for review in reviews %}
     <div class="reviews-card">
       <!-- 사진 -->
-      <a href="{% url 'reviews:detail' photo.0.review_id %}" class="reviews-card-a">
+      <a href="{% url 'reviews:detail' review.pk %}" class="reviews-card-a">
         <div class="reviews-card-img-wrap">
-          <img src="{{ photo.0.image.url }}">
-          <div>+{{ photo.1 }}</div>
+            {% if review.photo_set.all %}
+              <img src="{{ review.photo_set.all.0.image.url }}">
+            {% else %}
+              <img src="{% static 'images/logo_png.png' %}">
+            {% endif %}
+          <div>+{{ review.photo_set.all.count }}</div>
         </div>
       </a>
         <!-- 콘텐츠 -->
-      <a href="{% url 'reviews:detail' photo.0.review_id %}" class="reviews-card-content-a">
+      <a href="{% url 'reviews:detail' review.pk %}" class="reviews-card-content-a">
         <div class="reviews-card-content">
           <div class="card-content">
-            <p>{{ photo.0.review.keyboard.name }}</p>
-            <h1>{{ photo.0.review.title }}</h1>
-            <div>{{ photo.0.review.content }}</div>
+            <p>{{ review.keyboard.name }}</p>
+            <h1>{{ review.title }}</h1>
+            <div>{{ review.content }}</div>
           </div>
           <div class="card-footer">
-            <p>{{ photo.0.review.user }}</p>
-            <p>댓글{{ photo.0.review.comment_set.all.count }} 좋아요{{ photo.0.review.like_users.all.count }}</p>
+            <p>{{ review.user }}</p>
+            <p>댓글{{ review.comment_set.all.count }} 좋아요{{ review.like_users.all.count }}</p>
           </div>
         </div>
       </a>

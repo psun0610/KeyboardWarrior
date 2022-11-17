@@ -17,12 +17,13 @@
         <div class='reviewcreate-userinfo-box'>
           <input data-testid="input-box" name="title"
                   placeholder="제목" type="text" required="" class="reviewcreate-userinfo" value="">
-          <div class="search-wrap">
-            <input id="search_input" class="reviewcreate-userinfo" name="keyboard" type="search" placeholder="Search"
-              aria-label="Search" autocomplete="off">
-              <div class="search-off search-div " id="search_box">
-              </div>
-          </div>        
+          
+          
+          <input id="search_input" class="reviewcreate-userinfo" name="keyboard" type="search" placeholder="Search"
+          aria-label="Search" autocomplete="off">
+          <div class="search-off search-div " id="search_box">
+          </div>
+          
           <div class='fieldset'>
             <input class='star' type="radio" name="grade" value="5" id="rate1"><label  class='starlabel' for="rate1">⭐</label>
             <input class='star' type="radio" name="grade" value="4" id="rate2"><label  class='starlabel' for="rate2">⭐</label>
@@ -95,9 +96,14 @@
           for (let i = 0; i < keyboard_list.length; i++) {
             search_box.insertAdjacentHTML('beforeend', `
           <div onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}"  data-keyboard_name-id="${keyboard_list[i].id}"  id="keyboard_${keyboard_list[i].id}">
-          <hr>
-          <p onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" >${keyboard_list[i].name}</p> <img  onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" class="keyboard-img" src="${keyboard_list[i].img}">
-          <p onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" >브랜드:${keyboard_list[i].brand} </p> 
+          <hr class='m-0'>
+            <div class='search-box'  data-name-id="${keyboard_list[i].name}">
+              <img  onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" class="search-keyboard-img" src="${keyboard_list[i].img}">
+              <div class="search-box-mini">  
+                <p onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" >${keyboard_list[i].name}</p> 
+                <p onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" >브랜드:${keyboard_list[i].brand} </p> 
+              </div>
+            </div>
           </div>
           `);
           }
@@ -114,35 +120,5 @@
 
 </script>
 
-<style>
-  .search-off {
-    display: none;
-
-  }
-
-  .search-on {
-    display: block;
-
-  }
-
-  .search-wrap {
-    position: relative;
-  }
-
-  .search-div {
-    position: absolute;
-    bottom: 1;
-    width: 600px;
-    height: 300px;
-    background-color: bisque;
-    overflow: scroll;
-    z-index: 100;
-  }
-
-  .keyboard-img {
-    width: 70px;
-    height: 70px;
-  }
-</style>
 
 {% endblock body %}

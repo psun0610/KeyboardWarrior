@@ -40,7 +40,7 @@
         {% if keyboard.press != '기타' %}
           <tr>
             <th>키압</th>
-            <td>{{ keyboard.press }}</td>
+            <td>{{ keyboard.press }}g</td>
           </tr>
         {% endif %}
         <tr>
@@ -52,13 +52,13 @@
         </tr>
         {% if keyboard.bluetooth != '기타' %}
           <tr>
-            <th>키압</th>
+            <th>연결</th>
             <td>{{ keyboard.bluetooth }}</td>
           </tr>
         {% endif %}
         <tr>
           <th>무게</th>
-          <td>{{ keyboard.weight }}</td>
+          <td>{{ keyboard.weight }}g</td>
         </tr>
       </table>
       <div class="keyboard-detail-mini">
@@ -66,20 +66,57 @@
           <h2>베스트 후기</h2>
           <a href="{% url 'reviews:best' keyboard.id %}" class="a-blue">더 알아보기 ></a>
         </div>
-
         <div class="keyboard-comment">
-          <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+          {% if bests.0 %}
+            <a href="{% url 'accounts:detail' bests.0.user.pk %}">
+              {% if bests.0.user.image %}
+                {% if not bests.0.user.is_social %}
+                <img class="comment-profile-img" src="{{bests.0.user.image.url}}">
+                {% else %}
+                <img class="comment-profile-img" src="{{bests.0.user.image}}">
+                {% endif %}
+              {% else %}
+              <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
+              {% endif %}
+            </a>
+          {% else %}
+            <a href=""></a>
+          {% endif %}
           <div class="keyboard-comment-box">
-            <p>재윤</p>
-            <div>내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.</div>
+            {% if bests.0 %}
+            <a href="{% url 'accounts:detail' bests.0.user.pk %}"><p>{{bests.0.user}}</p></a>
+              <div>{{bests.0.content}}</div>
+            {% else %}
+              <p>재윤</p>
+              <div>내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.</div>
+            {% endif %}
           </div>
         </div>
 
         <div class="keyboard-comment">
-          <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+          {% if bests.1 %}
+          <a href="{% url 'accounts:detail' bests.1.user.pk %}">
+            {% if bests.1.user.image %}
+              {% if not bests.1.user.is_social %}
+              <img class="comment-profile-img" src="{{bests.1.user.image.url}}">
+              {% else %}
+              <img class="comment-profile-img" src="{{bests.1.user.image}}">
+              {% endif %}
+            {% else %}
+            <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
+            {% endif %}
+          </a>
+          {% else %}
+          <a href=""></a>
+          {% endif %}
           <div class="keyboard-comment-box">
-            <p>재윤</p>
-            <div>내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.</div>
+            {% if bests.1 %}
+            <a href="{% url 'accounts:detail' bests.1.user.pk %}"><p>{{bests.1.user}}</p></a>
+              <div>{{bests.1.content}}</div>
+            {% else %}
+              <p>재윤</p>
+              <div>내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.</div>
+            {% endif %}
           </div>
         </div>
 

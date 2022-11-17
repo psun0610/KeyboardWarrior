@@ -155,7 +155,7 @@
       <form id="commentForm" data-trade-id="{{ trade.pk }}" action="{%url 'trade:comment' trade.pk %}" method="POST">
         {% csrf_token %}
         <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required=""
-          class="tradecomment-create" value="">
+          class="tradecomment-create" value="" autocomplete="off">
         <input class="btn btn-dark tradecomment-input" type="submit" value="제출">
       </form>
     </div>
@@ -163,7 +163,6 @@
   </div>
   {% endif %}
   <div id="comment_box">
-    <div class='comment-1'>
       {% for comment in comments %}
       <div class='comment'>
 
@@ -176,15 +175,14 @@
           <div class="keyboard-comment-box">
             <p>{{comment.user}}
               {% if request.user == comment.user %}
-              <button id="delete_btn_{{comment.pk}}" onclick="delete_btn()" data-trade-id="{{trade.pk}}"
-                data-comment-id="{{comment.pk}}" class="comment-delete-btn"> <span
-                  style="color: rgb(177, 177, 177);">삭제</span>
+              <button id="delete_btn_{{comment.pk}}" onclick="delete_btn(this)" data-trade-id="{{trade.pk}}"
+                data-comment-id="{{comment.pk}}" class="comment-delete-btn" style="color: rgb(177, 177, 177);">삭제
               </button>
               {% endif %}
             </p>
             <div>{{comment.content}}</div>
           </div>
-        </div>
+          </div>
       </div>
       {% endfor %}
     </div>
@@ -211,122 +209,113 @@
       const comment_box = document.querySelector('#comment_box')
       const user = response.data.user
       comment_box.textContent = "";
-      const comment_list = response
-        .data
-        .comment_list
-      for (let i = 0; i < comment_list.length; i++) {
-        if (user === comment_list[i].pk) {
-          if (user === comment_list[i].pk.is_social) {
-          console.log(comment_list[i])
-          comment_box.insertAdjacentHTML('beforeend', `
-                      
-                      <div class="keyboard-comment">
-                      <a href="/accounts/${comment_list[i].pk}/detail ">
-                        <img class="comment-profile-img"  src="{ request.user.image.url }">${comment_list[i].pk}
-                      </a>
-                        <div class="keyboard-comment-box">
-                          <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"  class="comment-delete-btn"> 삭제 </button></p>
-                          <div>${comment_list[i].content}</div>
-                        </div>
-                      </div>
-                    </div>`);
-          console.log("댓글 전송 ") }
+      const comment_data = response.data.comment_list
+      for (let i = 0; i < comment_data.length; i++) {
+        const review_pk = response.data.review_pk
+        console.log(comment_data[i].id, user)
+        // 프로필 이미지
+        let profile_src = "";
+        if (comment_data[i].image) {
+          if (comment_data[i].is_social === 0) {
+            profile_src = `/media/${comment_data[i].image}`;
+          }
           else {
-          console.log(comment_list[i])
-          comment_box.insertAdjacentHTML('beforeend', `
-                      
-                      <div class="keyboard-comment">
-                      <a href="/accounts/${comment_list[i].pk}/detail ">
-                        <img class="comment-profile-img"  src="{ request.user.image }">${comment_list[i].pk}
-                      </a>
-                        <div class="keyboard-comment-box">
-                          <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"  class="comment-delete-btn"> 삭제 </button></p>
-                          <div>${comment_list[i].content}</div>
-                        </div>
-                      </div>
-                    </div>`);
-          console.log("댓글 전송 ") }
-
-        } else {
-          if (user === comment_list[i].pk.is_social) {
-          console.log(comment_list[i])
-          comment_box.insertAdjacentHTML('beforeend', `
-                      <div class="keyboard-comment">
-                      <a href="/accounts/${comment_list[i].pk}/detail ">
-                        <img class="comment-profile-img" src="{ ${comment_list[i].user}.image.url }">${comment_list[i].pk}
-                      </a>
-                        <div class="keyboard-comment-box">
-                          <p>${comment_list[i].user}</p>
-                          <div>${comment_list[i].content}</div>
-                        </div>`);}
-          else {
-            console.log(comment_list[i])
-            comment_box.insertAdjacentHTML('beforeend', `
-                      <div class="keyboard-comment">
-                      <a href="/accounts/${comment_list[i].pk}/detail ">
-                        <img class="comment-profile-img" src="{ ${comment_list[i].user}.image.url }">${comment_list[i].pk}
-                      </a>
-                        <div class="keyboard-comment-box">
-                          <p>${comment_list[i].user}</p>
-                          <div>${comment_list[i].content}</div>
-                        </div>`);}
+            profile_src = `${comment_data[i].image}`;
+          }
         }
-      }
-      commentFrom
-        .reset()
-      console.log("코멘트 전송")
-    })
-  })
+        else {
+          profile_src = `{% static 'images/logo_png.png' %}`;
+        }
+
+        // 내가 댓글 작성자면
+        let writer = "";
+        if(user === comment_data[i].user_pk) {
+          writer = `
+          <button id="delete_btn_${comment_data[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{ trade.pk }}"
+                data-comment-id="${comment_data[i].comment_pk}" class="comment-delete-btn" style="color: rgb(177, 177, 177);">삭제
+          </button>`
+        }
+
+        let html = `
+          <div class="comment">
+            <div class="keyboard-comment">
+              <a href="/accounts/${comment_data[i].user_pk}/detail">
+                <img class="comment-profile-img" src="${profile_src}">
+              </a>
+            <div class="keyboard-comment-box">
+              <a href="/accounts/${comment_data[i].user_pk}/detail">
+                <p class="keyboard-comment-user">${comment_data[i].username}</p>
+              </a>
+              ${writer}
+              <div>${comment_data[i].content}</div>
+            </div>
+          </div>
+        </div>`
+        comment_box.insertAdjacentHTML('beforeend', `${html}`)
+      } commentForm.reset()
+  }).catch(console.log("코멘트 전송"))
+})
 </script>
 <!-- 비동기 댓글 삭제 -->
 <script>
   const delete_btn = (e) => {
     const delete_data = document.querySelector(`#delete_btn_${event.target.dataset.commentId}`)
-    console.log("댓글삭제시행")
     event.preventDefault();
-    axios({ method: 'get', url: `/trade/${event.target.dataset.tradeId}/${event.target.dataset.commentId}/comment_delete/` }).then(response => {
-      const comment_box = document.querySelector('#comment_box')
-      const user = response.data.user
-      const p = document.createElement('p')
-      const hr = document.createElement('hr')
-      comment_box.textContent = "";
-      const comment_list = response
-        .data
-        .comment_list
-      for (let i = 0; i < comment_list.length; i++) {
-        if (user === comment_list[i].pk) {
-          console.log(comment_list[i])
-          comment_box.insertAdjacentHTML('beforeend', `
-                    
-                      <div class="keyboard-comment">
-                        <a href="/accounts/${comment_list[i].pk}/detail ">
-                          <img class="comment-profile-img" src="{{ comment.user.image.url }}">${comment_list[i].pk}
-                        </a>
-                        <div class="keyboard-comment-box">
-                          <p>${comment_list[i].user} | <button id="delete_btn_${comment_list[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}" data-comment-id= "${comment_list[i].comment_pk}"  class="comment-delete-btn"> 삭제 </button></p>
-                          <div>${comment_list[i].content}</div>
-                        </div>
-                      </div>
-                    
-                    </div>`);
-          console.log(" ")
-        } else {
-          console.log(comment_list[i])
-          comment_box.insertAdjacentHTML('beforeend', `
-                    
-                      <div class="keyboard-comment">
-                        <a href="/accounts/${comment_list[i].pk}/detail ">
-                          <img class="comment-profile-img" src="{{ comment.user.image.url }}">${comment_list[i].pk}
-                        </a>
-                        <div class="keyboard-comment-box">
-                          <p>${comment_list[i].user}</p>
-                          <div>${comment_list[i].content}</div>
-                        </div>
-                      </div>`);
+    console.log(event.target)
+    axios({method: 'post',
+          url: `/trade/${event.target.dataset.tradeId}/${event.target.dataset.commentId}/comment_delete/`,
+          headers: {
+            'X-CSRFToken': csrftoken
+          }
+        }).then(response => {
+        const comment_box = document.querySelector('#comment_box')
+        const user = response.data.user
+        comment_box.textContent = "";
+        const comment_data = response.data.comment_list
+          for (let i = 0; i < comment_data.length; i++) {
+          const review_pk = response.data.review_pk
+          console.log(comment_data[i].image)
+          console.log(comment_data[i].comment_pk, comment_data[i].user_pk)
+          // 프로필 이미지
+          let profile_src = "";
+          if (comment_data[i].image) {
+            if (comment_data[i].is_social === 0) {
+              profile_src = `/media/${comment_data[i].image}`;
+            }
+            else {
+              profile_src = `${comment_data[i].image}`;
+            }
+          }
+          else {
+            profile_src = `{% static 'images/logo_png.png' %}`;
+          }
+
+          // 내가 댓글 작성자면
+          let writer = "";
+          if(user === comment_data[i].user_pk) {
+            writer = `
+            <button id="delete_btn_${comment_data[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}"
+                  data-comment-id="${comment_data[i].comment_pk}" class="comment-delete-btn" style="color: rgb(177, 177, 177);">삭제
+            </button>`
+          }
+
+          let html = `
+            <div class="comment">
+              <div class="keyboard-comment">
+                <a href="/accounts/${comment_data[i].userpk}/detail">
+                <img class="comment-profile-img" src="${profile_src}">
+              </a>
+              <div class="keyboard-comment-box">
+                <a href="/accounts/${comment_data[i].userpk}/detail">
+                  <p class="keyboard-comment-user">${comment_data[i].username}</p>
+                </a>
+                ${writer}
+                <div>${comment_data[i].content}</div>
+              </div>
+            </div>
+          </div>`
+          comment_box.insertAdjacentHTML('beforeend', `${html}`)
         }
-      }
-      console
-        .log("")
     })
   }
 </script>
@@ -355,21 +344,14 @@
 
 <script>
   const status = document.querySelector('#status-btn')
-  const status_btn = status.querySelector('div')
-  status.addEventListener('click', function (event) {
+  status?.addEventListener('click', function (event) {
     capture: true
     axios({ method: 'get', url: `/trade/${event.target.dataset.tradeId}/status/` }).then(response => {
-      if (response.data.status == 1) {
-        status_btn.classList.add('jjim')
-        status_btn.classList.remove('no-jjim')
-        status_btn.querySelector('span').innerText("거래중")
-      }
-      else {
-        status_btn.classList.add('no-jjim')
-        status_btn.classList.remove('jjim')
-        status_btn.querySelector('span').innerText("거래완료")
-      }
+        console.log(response.data.is_done)
+        status.classList.toggle('jjim')
+        status.classList.toggle('no-jjim')
+        status.querySelector('span').innerText = response.data.is_done? '거래중' : '거래완료'
     })
-  })
+})
 </script>
 {% endblock body %}

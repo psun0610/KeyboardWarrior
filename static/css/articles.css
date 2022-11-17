@@ -1172,3 +1172,76 @@ footer>div {
   display: flex;
   justify-content: space-between;
 }
+
+
+
+/* 서치 */
+
+.search-off {
+  display: none;
+
+}
+
+.search-on {
+  display: block;
+
+}
+
+.search-wrap {
+  position: relative;
+}
+
+.search-div {
+  position: absolute;
+  bottom: 1;
+  width: 700px;
+  height: 300px;
+  background-color: rgb(249, 249, 249);
+  overflow: scroll;
+  z-index: 100;
+  overflow-x: hidden;
+  border-radius: 10px;
+  border: var(--my-gray) solid 1px;
+  opacity: 1;
+}
+
+.search-keyboard-img {
+  width: 70px;
+  height: 70px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.search-box:hover {
+  background-color: #32a0ff;
+  color: #e8e8e8;
+}
+
+.search-box-mini {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.follow-user {
+  display: flex;
+  align-items: center;
+}
+
+.follow-name {
+  font-size: larger;
+}
+
+.follow-profile-img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}

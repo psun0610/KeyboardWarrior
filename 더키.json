@@ -1,0 +1,450 @@
+[
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 3 TKL RGB Yellow PBT 이중사출 한글 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/034/987/img/16987034_1.jpg?shrink=500:500&_v=20220509150954",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 950,
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "갈축",
+			"press": 55,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 3 TKL Night Pink PBT 이중사출 한글 (갈축)",
+			"img": "https://img.danawa.com/prod_img/500000/443/019/img/17019443_1.jpg?shrink=500:500&_v=20220510174807",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 950,
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "갈축",
+			"press": 55,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 TKL SEAMLESS BON VOYAGE PBT 이중사출 영문 (청축)",
+			"img": "https://img.danawa.com/prod_img/500000/250/595/img/12595250_1.jpg?shrink=500:500&_v=20211019085541",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 800,
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "청축",
+			"press": 50,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 3 RGB DayBreak PBT 이중사출 한글 (스피드 은축)",
+			"img": "https://img.danawa.com/prod_img/500000/329/986/img/16986329_1.jpg?shrink=500:500&_v=20220504161456",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 1250,
+			"array": "108",
+			"switch": "체리",
+			"key_switch": "은축",
+			"press": 45,
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 3 RGB Yellow PBT 이중사출 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/010/987/img/16987010_1.jpg?shrink=500:500&_v=20220504161455",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 1250,
+			"array": "108",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": 45,
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 3 TKL RGB DayBreak PBT 이중사출 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/548/986/img/16986548_1.jpg?shrink=500:500&_v=20220504161453",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 950,
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 3 Matcha PBT 이중사출 한글 (스피드 은축)",
+			"img": "https://img.danawa.com/prod_img/500000/758/019/img/17019758_1.jpg?shrink=500:500&_v=20220510180534",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 1250,
+			"array": "108",
+			"switch": "은축",
+			"key_switch": "기타",
+			"press": 45,
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 3 Night Pink PBT 이중사출 한글 (스피드 은축)",
+			"img": "https://img.danawa.com/prod_img/500000/236/019/img/17019236_1.jpg?shrink=500:500&_v=20220510173834",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 1250,
+			"array": "108",
+			"switch": "은축",
+			"key_switch": "기타",
+			"press": 45,
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 3 SF RGB DayBreak PBT 이중사출 한글 (스피드 은축)",
+			"img": "https://img.danawa.com/prod_img/500000/707/986/img/16986707_1.jpg?shrink=500:500&_v=20220504161454",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 700,
+			"array": "67",
+			"switch": "체리",
+			"key_switch": "은축",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 3 SF RGB Yellow PBT 이중사출 한글 (스피드 은축)",
+			"img": "https://img.danawa.com/prod_img/500000/187/987/img/16987187_1.jpg?shrink=500:500&_v=20220504161454",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 700,
+			"array": "67",
+			"switch": "체리",
+			"key_switch": "은축",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 RGB SEAMLESS PBT 이중사출 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/115/053/img/7053115_1.jpg?shrink=500:500&_v=20190222111826",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 1100,
+			"array": "108",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": 45,
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 TKL RGB SEAMLESS PBT 이중사출 한글 (은축)",
+			"img": "https://img.danawa.com/prod_img/500000/253/053/img/7053253_1.jpg?shrink=500:500&_v=20190222112051",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 950,
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "은축",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 3 TKL Matcha PBT 이중사출 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/665/019/img/17019665_1.jpg?shrink=500:500&_v=20220510175850",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 950,
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": 45,
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 3 MINI RGB Yellow PBT 이중사출 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/259/987/img/16987259_1.jpg?shrink=500:500&_v=20220504161502",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 650,
+			"array": "61",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 3 MINI RGB DayBreak PBT 이중사출 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/809/986/img/16986809_1.jpg?shrink=500:500&_v=20220504161503",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 650,
+			"array": "61",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky MECHA MINI RGB PBT 이중사출 한글 (스피드 은축)",
+			"img": "https://img.danawa.com/prod_img/500000/016/739/img/15739016_1.jpg?shrink=500:500&_v=20220714162507",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 827,
+			"array": "61",
+			"switch": "체리",
+			"key_switch": "기타",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 WHITE LED SEAMLESS PBT 이중사출 한글 (은축)",
+			"img": "https://img.danawa.com/prod_img/500000/231/291/img/7291231_1.jpg?shrink=500:500&_v=20190227152437",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 1100,
+			"array": "108",
+			"switch": "체리",
+			"key_switch": "은축",
+			"press": 45,
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky DUCKY ONE 2 SF RGB PBT 이중사출 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/906/563/img/12563906_1.jpg?shrink=500:500&_v=20201103152631",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 635,
+			"array": "67",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 TKL SEAMLESS TUXEDO PBT 이중사출 한글 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/568/586/img/12586568_1.jpg?shrink=500:500&_v=20201123143336",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 800,
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 SEAMLESS TUXEDO PBT 이중사출 한글 (은축)",
+			"img": "https://img.danawa.com/prod_img/500000/253/586/img/12586253_1.jpg?shrink=500:500&_v=20201123143403",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 1100,
+			"array": "104",
+			"switch": "체리",
+			"key_switch": "은축",
+			"press": 45,
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 TKL SEAMLESS BON VOYAGE PBT 이중사출 한글 (저소음적축)",
+			"img": "https://img.danawa.com/prod_img/500000/163/998/img/14998163_1.jpg?shrink=500:500&_v=20211019085328",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 800,
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky One 2 SEAMLESS ROSA PBT 이중사출 한글 (은축)",
+			"img": "https://img.danawa.com/prod_img/500000/101/979/img/14979101_1.jpg?shrink=500:500&_v=20220427105224",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 1100,
+			"array": "108",
+			"switch": "체리",
+			"key_switch": "은축",
+			"press": 45,
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 SEAMLESS BON VOYAGE PBT 이중사출 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/786/723/img/9723786_1.jpg?shrink=500:500&_v=20211019085505",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 1100,
+			"array": "108",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": 45,
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 SF RGB PURE WHITE PBT 이중사출 영문 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/566/549/img/12549566_1.jpg?shrink=500:500&_v=20201103153057",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 635,
+			"array": "68",
+			"switch": "체리",
+			"key_switch": "적축",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 TKL SEAMLESS MIDNIGHT PBT 이중사출 영문 (저소음 적축)",
+			"img": "https://img.danawa.com/prod_img/500000/733/109/img/8109733_1.jpg?shrink=500:500&_v=20190719162246",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 800,
+			"array": "87",
+			"switch": "체리",
+			"key_switch": "저소음적축",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 SEAMLESS BON VOYAGE PBT 이중사출 한글 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/202/998/img/14998202_1.jpg?shrink=500:500&_v=20210813091048",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 1100,
+			"array": "108",
+			"switch": "체리",
+			"key_switch": "적축",
+			"press": 45,
+			"kind": "풀배열",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 MINI RGB PURE WHITE PBT 이중사출 영문 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/041/724/img/9724041_1.jpg?shrink=500:500&_v=20201102152241",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 590,
+			"array": "61",
+			"switch": "체리",
+			"key_switch": "적축",
+			"press": 45,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	},
+	{
+		"model": "articles.Keyboard",
+		"fields": {
+			"name": "Ducky ONE 2 MINI RGB PBT 이중사출 한글 (적축)",
+			"img": "https://img.danawa.com/prod_img/500000/692/052/img/7052692_1.jpg?shrink=500:500&_v=20201102151948",
+			"brand": "Ducky",
+			"connect": "기계식",
+			"weight": 590,
+			"array": "61",
+			"switch": "체리",
+			"key_switch": "적축",
+			"press": 52,
+			"kind": "텐키리스",
+			"bluetooth": "유선"
+		}
+	}
+]

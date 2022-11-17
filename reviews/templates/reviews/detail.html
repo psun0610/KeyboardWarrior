@@ -94,7 +94,9 @@
           </div>
           <hr class="comment-hr">
         </div>
-        {% endif %}
+        <hr class="comment-hr">
+      </div>
+      {% endif %}
 
         
         <div id="comments">
@@ -135,7 +137,7 @@
                       <div>{{comment.content}}</div>
                     </div>
                   </div>
-              </div>
+              </div>  
           {% endfor %}
         </div>
       </div>
@@ -264,8 +266,7 @@
 
         // 댓글 삭제 비동기
         const delete_comment = (e) => {
-        const comment_id = document
-            .querySelector(`#${e.id}`)
+        const comment_id = document.querySelector(`#${e.id}`)
             .id;
         axios({
             method: 'post',
