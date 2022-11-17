@@ -43,13 +43,10 @@ def KMP(p, t):
 def index(request):
     trades = Trades.objects.order_by("-pk")
     photo_list = []
-    for trade in trades:
-        if trade.photo_set.all():
-            thumbnail = trade.photo_set.all()[0]
-            photo_list.append(thumbnail)
 
     context = {
         "photo_list": photo_list,
+        "trades" : trades,
     }
     return render(request, "trade/index.html", context)
 

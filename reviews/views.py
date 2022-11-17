@@ -44,13 +44,9 @@ def KMP(p, t):
 
 def index(request):
     reviews = Review.objects.order_by("-pk")
-    photo_list = []
-    for review in reviews:
-        if review.photo_set.all():
-            thumbnail = review.photo_set.all()[0]
-            photo_list.append((thumbnail, review.photo_set.all().count()))
+
     context = {
-        "photo_list": photo_list,
+        "reviews" : reviews,
     }
     return render(request, "reviews/index.html", context)
 
