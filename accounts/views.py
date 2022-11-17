@@ -129,23 +129,44 @@ def change_password(request, pk):
 
 
 # follow
+# @login_required
+# def follow(request, pk):
+#     user = get_user_model().objects.get(pk=pk)
+
+#     if request.user != user:
+#         if request.user not in user.followers.all():
+#             user.followers.add(request.user)
+#             is_following = True
+#         else:
+#             user.followers.remove(request.user)
+#             is_following = False
+#     data = {
+#         "isFollowing": is_following,
+#         "followers": user.followers.all().count(),
+#         "followings": user.followings.all().count(),
+#     }
+#     return JsonResponse(data)
+
+
 @login_required
 def follow(request, pk):
-    user = get_user_model().objects.get(pk=pk)
-
-    if request.user != user:
-        if request.user not in user.followers.all():
-            user.followers.add(request.user)
-            is_following = True
-        else:
-            user.followers.remove(request.user)
-            is_following = False
-    data = {
-        "isFollowing": is_following,
-        "followers": user.followers.all().count(),
-        "followings": user.followings.all().count(),
-    }
-    return JsonResponse(data)
+    if request.user.is_authenticated:
+        user = get_user_model().objects.get(pk=pk)
+        if request.user != user:
+            if user.followers.filter(pk=request.user.pk).exists():
+                user.followers.remove(request.user)
+                is_followed = False
+            else:
+                user.followers.add(request.user)
+                is_followed = True
+            data = {
+                "is_followed": is_followed,
+                "followers_count": user.followers.count(),
+                "followings_count": user.followings.count(),
+            }
+            return JsonResponse(data)
+        return redirect("accounts:detail", user.username)
+    return redirect("accounts:login")
 
 
 import secrets

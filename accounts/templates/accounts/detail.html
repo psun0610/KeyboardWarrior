@@ -19,6 +19,16 @@
                     {% else %}
                     <img class='detail-profile-img' src="{% static 'images/qwefq.png' %}">
                     {% endif %}
+                    {% if request.user != user %}
+                    <form id="follow-form" data-user-id="{{ user.pk }}">
+                        {% csrf_token %}
+                        {% if request.user in user.followers.all %}
+                        <input type="submit" value="언팔로우">
+                        {% else %}
+                        <input type="submit" value="팔로우">
+                        {% endif %}
+                    </form>
+                    {% endif %}
                     <h3>{{ user.last_name }}{{ user.first_name }}</h3>
                     <h4 class='detail-email'>{{ user.email }}</h4>
             </div>
@@ -29,10 +39,20 @@
                     {% else %}
                     <img class='detail-profile-img' src="{% static 'images/qwefq.png' %}">
                     {% endif %}
+                    {% if request.user != user %}
+                    <form id="follow-form" data-user-id="{{ user.pk }}">
+                        {% csrf_token %}
+                        {% if request.user in user.followers.all %}
+                        <input type="submit" value="언팔로우">
+                        {% else %}
+                        <input type="submit" value="팔로우">
+                        {% endif %}
+                    </form>
+                    {% endif %}
                     <h3>{{ user.last_name }}{{ user.first_name }}</h3>
                     <h4 class='detail-email'>{{ user.email }}</h4>
             </div>
-        {%endif%}
+        {% endif %}
     
 
 
@@ -45,13 +65,14 @@
                 </div> 
                 <div class="form_radio_btn">
                     <input id="radio2" type="radio" name="menu" value="">
-                    <label for="radio2">로그인 및 보안</label>
+                    <label for="radio2">선호 키보드 정보</label>
                 </div>
-
+                {% if request.user == review.user %}
                 <div class="form_radio_btn">
                     <input id="radio3" type="radio" name="menu" value="">
-                    <label for="radio3">선호 키보드 정보</label>
+                    <label for="radio3">로그인 및 보안</label>
                 </div>
+                {% endif %}
             </form>        
             
         
@@ -127,11 +148,28 @@
                             </svg>
                         </div>
                     </div>
-                    <div class='usercard'>
+                    <div class='usercard'  data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <div>
                             <p class='usercard-title'>팔로워</p>
-                            <div class='usercard-content'>{{ user.followers.count }}</div>
+                            <div class='usercard-content'><span id="followers-count">{{ user.followers.all|length }}</span></div>
                         </div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">나를 팔로우하는 사람</h1>
+                            </div>
+                                <div class="modal-body">
+                                    {% for user in user.followers.all %}
+                                        <div class="follow-user">
+                                            <img class='follow-profile-img' src="{{ user.image.url }}">
+                                            <div class="follow-name">{{ user }}</div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-plus text-primary" viewBox="0 0 16 16">
                                 <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
@@ -139,11 +177,28 @@
                             </svg>
                         </div>
                     </div>
-                    <div class='usercard'>
+                    <div class='usercard'  data-bs-toggle="modal" data-bs-target="#exampleModal1">
                         <div>
                             <p class='usercard-title'>팔로잉</p>
-                            <div class='usercard-content'>{{ user.followings.count }}</div>
+                            <div class='usercard-content'><span id="followings-count">{{ user.followings.all|length }}</span></div>
                         </div>
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">내가 팔로우하는 사람</h1>
+                            </div>
+                                <div class="modal-body">
+                                    {% for user in user.followings.all %}
+                                        <div class="follow-user">
+                                            <img class='follow-profile-img' src="{{ user.image.url }}">
+                                            <div class="follow-name">{{ user }}</div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-plus-fill text-primary" viewBox="0 0 16 16">
                                 <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -156,7 +211,7 @@
         </div>
 
 
-        <div class='card-big-box' id='cab2' style='display: none;'>
+        <div class='card-big-box' id='cab3' style='display: none;'>
             <div>
                 <h3 class='userdetail-head2'>로그인 및 보안</h3>
                 <div>
@@ -193,7 +248,7 @@
             </div>
         </div>
 
-        <div class='card-big-box' id='cab3' style='display: none;'>
+        <div class='card-big-box' id='cab2' style='display: none;'>
             <div>
                 <h3 class='userdetail-head2'>선호 키보드 정보</h3>
                 <div>
@@ -286,7 +341,7 @@
         </div>
     </div>
 </div>
-  
+
 
 
 
@@ -314,21 +369,36 @@
     }
     })
 
-    const openButton = document.querySelector(".email");
-    const modal = document.querySelector(".memail");
-    const closeButton = modal.querySelector("button");
-    const modalBackground = modal.querySelector(".modal__background");
 
-    function displayModal(){
-        modal.classList.toggle("hidden");
-    }
+    const form = document.querySelector('#follow-form')
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+    form.addEventListener('submit', function (event) {
+        event.preventDefault()
+        const userId = event.target.dataset.userId
+        axios({
+            method: 'post',
+            url: `/accounts/${userId}/follow/`,
+            headers: {'X-CSRFToken': csrftoken,}
+            })
+        .then((response) => {
+            const isFollowed = response.data.is_followed
+            const followBtn = document.querySelector('#follow-form > input[type=submit]')
+            if (isFollowed === true) {
+            followBtn.value = '언팔로우'
+            } else {
+            followBtn.value = '팔로우'
+            }
+            const followersCountTag = document.querySelector('#followers-count')
+            const followingsCountTag = document.querySelector('#followings-count')
+            const followersCount = response.data.followers_count
+            const followingsCount = response.data.followings_count
+            followersCountTag.innerText = followersCount
+            followingsCountTag.innerText = followingsCount
+            })
+            .catch((error) => {
+            console.log(error.response)
+            })
+            })
 
-    openButton.addEventListener("click", displayModal);
-    closeButton.addEventListener("click", displayModal)
-    modalBackground.addEventListener("click", displayModal);
-
-
-    
-    
 </script>
 {% endblock %}
