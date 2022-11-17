@@ -57,8 +57,7 @@ class Migration(migrations.Migration):
             name='Message',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=50)),
-                ('content', models.CharField(max_length=200)),
+                ('content', models.CharField(max_length=1000)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('reception_user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reception', to=settings.AUTH_USER_MODEL)),
                 ('send_user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='send', to=settings.AUTH_USER_MODEL)),
