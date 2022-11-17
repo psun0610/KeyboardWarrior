@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block body %}
+
+{% comment %} 제목 1 {% endcomment %}
+<div class='my-head'>
+    <h2>KeyBoard Warrior 쪽지함</h2>
+    <hr>
+</div>
+
+
+
+
+<div class='my-head'>
+    <h2>KeyBoard Warrior 받은메세지</h2>
+    <hr>
+    {% for re in reception_message%}
+    {{re.trade.title}}
+    제목:{{re.title}} | 보낸사람:{{re.send_user}}
+    {%endfor%}
+</div>
+
+<div class='my-head'>
+    <h2>KeyBoard Warrior 보낸메세지</h2>
+    <hr>
+    {% for send in send_message%}
+    {{send.trade.title}}
+    {{send.title}}
+    {%endfor%}
+</div>
+
+
+
+
+
+
+
+{% endblock body %}
+
+

@@ -4,19 +4,15 @@
 {% block body %}
 
 {% comment %} 제목 1 {% endcomment %}
-<div class='signup-head'>
-  <h2 class='signup-head-h2'>KeyBoard Warrior 소셜로그인 회원가입</h2>
-  <hr class='bighr'>
-</div>
+<div class='my-head'>
+    <h2>KeyBoard Warrior ID 생성</h2>
+    <hr>
+    <p>키보드 워리어 회원 등록</p>
+  </div>
 <div class='signupbox'>
   <form action="" method="POST">
     {% csrf_token %}
     <div>
-      {% comment %} 회원정보 폼 1 {% endcomment %}
-      {% comment %} 제목 2 {% endcomment %}
-      <div class='signup-head'>
-        <h3 class='signup-head-h2'>선호하는 키보드가 있으신가요?</h3>
-      </div>
       {% comment %} 키보드 취향 {% endcomment %}
             <div class='my-head'>
           <h2>선호하는 키보드가 있으신가요?</h2>

@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-
+{% load static %}
+{% load django_bootstrap5 %}
 {% block body %}
 
-{% load django_bootstrap5 %}
 
 {% comment %} 제목 1 {% endcomment %}
 <div class='my-head'>
@@ -23,13 +23,27 @@
             class="signup-userinfo" value="">
         </div>
       </div>
+      <div class="text-center">
+        <button class='login-btn' type="submit">KeyBoard Warrior에 로그인</button>
+        <a href="{% url 'accounts:signup' %}">KeyBoard Warrior ID가 없으신가요?</a>
+      </div>
+      
+      <div class='social-login'>
+        <hr class='social-login-hr'> 
+        <p>간편로그인</p>
+        <hr class='social-login-hr'>
+      </div>
       <div>
-        <button class='signup-btn' type="submit">KeyBoard Warrior에 로그인</button>
+        <a  href="{% url 'accounts:login' %}naver">
+        <div class='signup-n-btn'><img class="icon-size" src="{% static 'images/naver.png' %}">NAVER로 시작하기</div></a>
+      </div>
+      <div>
+        <a href="{% url 'accounts:login' %}google">
+        <div class='signup-g-btn'><img class="icon-size" src="{% static 'images/google.png' %}">Google로 시작하기</div></a>
       </div>
     </div>
+
   </form>
 </div>
-<a href="{% url 'accounts:login' %}naver">네이버로그인</a>
-<a href="{% url 'accounts:login' %}google">구글로그인</a>
 
 {% endblock body %}

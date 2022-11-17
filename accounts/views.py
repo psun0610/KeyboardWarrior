@@ -8,8 +8,10 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model, login as my_login, logout as my_logout
 from django.contrib import messages
-from .forms import CustomUserChangeForm, SocialUserForm
+from .forms import CustomUserChangeForm, SocialUserForm, MessageForm
 from .models import User
+from trade.models import Trades
+from .models import Message
 
 # Create your views here.
 
@@ -281,3 +283,42 @@ def social_form(request, pk):
         return render(request, "accounts/social_form.html", context)
     else:
         return render(request, "articles/main.html")
+
+
+@login_required
+def massage(request, user_pk, trade_pk):
+    send_user = request.user
+    reception_user = User.objects.get(pk=user_pk)
+    trade = Trades.objects.get(pk=trade_pk)
+    if request.method == "POST":
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            message = form.save(commit=False)
+            message.send_user = send_user
+            message.reception_user = reception_user
+            message.trade = trade
+            message.save()
+            return redirect("accounts:messageCheck")
+    else:
+        form = MessageForm()
+    context = {
+        "form": form,
+        "reception_user": reception_user,
+        "trade": trade,
+    }
+    return render(request, "accounts/message.html", context)
+
+
+def messageCheck(request):
+    user = request.user
+
+    all_message = Message.objects.all()
+    send_message = Message.objects.filter(send_user=user)
+    reception_message = Message.objects.filter(reception_user=user)
+    context = {
+        "all_message": all_message,
+        "send_message": send_message,
+        "reception_message": reception_message,
+    }
+
+    return render(request, "accounts/messageCheck.html", context)

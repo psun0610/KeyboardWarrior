@@ -8,8 +8,10 @@ from django.http import JsonResponse
 from articles.models import Keyboard
 from datetime import date, datetime, timedelta
 from reviews.models import Review
+from django.db.models import Q
 
 # Create your views here.
+
 
 def maketable(p):
     table = [0] * len(p)
@@ -42,13 +44,10 @@ def KMP(p, t):
 def index(request):
     trades = Trades.objects.order_by("-pk")
     photo_list = []
-    for trade in trades:
-        if trade.photo_set.all():
-            thumbnail = trade.photo_set.all()[0]
-            photo_list.append(thumbnail)
 
     context = {
         "photo_list": photo_list,
+        "trades" : trades,
     }
     return render(request, "trade/index.html", context)
 
@@ -204,11 +203,13 @@ def trade_comment(request, pk):
                                 )
             comment_list.append(
                 {
-                    "user": c.user.username,
+                    "username": c.user.username,
                     "content": c.content,
                     "create_at": c.create_at,
-                    "pk": c.user.pk,
+                    "user_pk": c.user.pk,
                     "comment_pk": c.pk,
+                    "image": str(c.user.image),
+                    "is_social": c.user.is_social,
                 }
             )
         context = {
@@ -248,11 +249,13 @@ def delete_comment(request, trade_pk, comment_pk):
 
             comment_list.append(
                 {
-                    "user": c.user.username,
+                    "username": c.user.username,
                     "content": c.content,
                     "create_at": c.create_at,
-                    "pk": c.user.pk,
+                    "user_pk": c.user.pk,
                     "comment_pk": c.pk,
+                    "image": str(c.user.image),
+                    "is_social": c.user.is_social,
                 }
             )
         context = {
@@ -279,3 +282,57 @@ def keyboard_search(request):
         "keyboard_list": keyboard_list,
     }
     return JsonResponse(context)
+
+
+# 마켓 검색기능
+def trade_search(request):
+    if "kw" in request.GET:
+        # kw = index.html의 검색창 input의 name이다.
+        search_word = request.GET.get("kw")
+        trades = Trades.objects.filter(
+            Q(title__icontains=search_word)
+            | Q(content__icontains=search_word)
+            | Q(keyboard__name__icontains=search_word)
+            | Q(user__username__icontains=search_word)
+        )
+        photo_list = []
+        for trade in trades:
+            if trade.photo_set.all():
+                thumbnail = trade.photo_set.all()[0]
+                photo_list.append(thumbnail)
+        context = {
+            "trades": trades,
+            "search_word": search_word,
+            "photo_list": photo_list,
+        }
+        return render(request, "trade/index.html", context)
+
+
+def send_market(request, pk):
+    pick_data = Trades.objects.filter(keyboard=pk)
+    photo_list = []
+    for trade in pick_data:
+        if trade.photo_set.all():
+            thumbnail = trade.photo_set.all()[0]
+            photo_list.append(thumbnail)
+
+    context = {"photo_list": photo_list}
+
+    return render(request, "trade/index.html", context)
+
+
+@login_required
+def status(request, pk):
+    trade = Trades.objects.get(pk=pk)
+    is_done = True
+    if request.user != trade.user:
+        if trade.status_type == 1:
+            trade.status_type = 2
+            is_done = True
+        else:
+            trade.status_type = 1
+            is_done = False
+        trade.save()
+    data = {
+        "status": trade.status_type,
+    }

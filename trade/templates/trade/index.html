@@ -188,8 +188,8 @@
 
   <div>
     <!-- 검색창 -->
-    <form class="trade-index-search-form">
-      <input type="text" placeholder="키보드를 검색해보세요">
+    <form action="{% url 'trade:trade_search' %}" method="GET" class="trade-index-search-form">
+      <input type="search" placeholder="거래글를 검색해보세요" name="kw">
       <input type="submit" value="검색">
     </form>
 
@@ -203,23 +203,30 @@
       <label for="2">구매글만</label>
     </form>
 
+    <!-- 검색결과 문구 -->
+    <div class="trade-index-search-result">
+      {% if search_word %}
+      <h2>검색결과 "{{ search_word }}"를 찾았습니다.</h2>
+      {% endif %}
+    </div>
+    
     <!-- 게시글 카드 -->
     <div class="card-container" id="trade-card-0">
-      {% for photo in photo_list %}
-      <a href="{% url 'trade:detail' photo.trade.pk %}">
+      {% for trade in trades %}
+      <a href="{% url 'trade:detail' trade.pk %}">
         <div class="my-card">
           <div class="card-content">
-            {% if photo.image %}
-              <img src="{{ photo.image.url }}">
+            {% if trade.photo_set.all %}
+              <img src="{{ trade.photo_set.all.0.image.url }}">
             {% else %}
               <img src="{% static 'images/logo_png.png' %}">
             {% endif %}
             <div class="card-title">
-              <h3>{{ photo.trade.keyboard.name }}</h3>
-              <h1>{{ photo.trade.title }}</h1>
-              <h2>₩ {{ photo.trade.price|intcomma }}</h2>
+              <h3>{{ trade.keyboard.name }}</h3>
+              <h1>{{ trade.title }}</h1>
+              <h2>₩ {{ trade.price|intcomma }}</h2>
             </div>
-            {% if photo.trade.Trade_type == 1 %}
+            {% if trade.Trade_type == 1 %}
               <div class="card-badge blue-badge">판매</div>
             {% else %}
               <div class="card-badge red-badge">구매</div>

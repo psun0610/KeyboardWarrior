@@ -850,11 +850,11 @@ footer>div {
   height: 45px;
   border: 0px;
   border-radius: 3px;
-  background-color: rgb(220, 55, 55);
+  background-color: rgb(210, 210, 210);
 }
 
 .update-del:hover {
-  background: #9b1111
+  color: #EE315E;
 }
 
 
@@ -907,13 +907,13 @@ footer>div {
 }
 
 .starlabel:hover {
-  text-shadow: 0 0 0 #ffe999;
+  text-shadow: 0 0 0 #ffc802;
   border: white;
   /* 마우스 호버 */
 }
 
 .starlabel:hover~label {
-  text-shadow: 0 0 0 #ffe999;
+  text-shadow: 0 0 0 #ffc802;
   border: white;
   /* 마우스 호버 뒤에오는 이모지들 */
 }
@@ -1109,4 +1109,122 @@ footer>div {
   object-fit: cover;
   border-radius: 50%;
   margin-right: 25px;
+}
+
+.login-btn {
+  width: 500px;
+  margin-bottom: 7px;
+  background-color: rgba(59, 146, 225, 1);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 600;
+  color: #F9FAFC;
+  border: 0px;
+  border-radius: 3px;
+}
+
+.signup-n-btn {
+  width: 500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #57B04B;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 600;
+  color: #F9FAFC;
+  border: 0px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.signup-g-btn {
+  width: 500px;
+  margin-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 600;
+  color: #000000;
+  border: 1px;
+  border-radius: 3px;
+  border: var(--my-gray) solid 1px;
+  text-align: center;
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.social-login-hr {
+  width: 200px;
+}
+
+
+.icon-size {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+}
+
+.login-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+/* 서치 */
+
+.search-off {
+  display: none;
+
+}
+
+.search-on {
+  display: block;
+
+}
+
+.search-wrap {
+  position: relative;
+}
+
+.search-div {
+  position: absolute;
+  bottom: 1;
+  width: 700px;
+  height: 300px;
+  background-color: rgb(249, 249, 249);
+  overflow: scroll;
+  z-index: 100;
+  overflow-x: hidden;
+  border-radius: 10px;
+  border: var(--my-gray) solid 1px;
+  opacity: 1;
+}
+
+.search-keyboard-img {
+  width: 70px;
+  height: 70px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.search-box:hover {
+  background-color: #32a0ff;
+  color: #e8e8e8;
+}
+
+.search-box-mini {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
 }
