@@ -11,7 +11,8 @@ from django.contrib import messages
 from .forms import CustomUserChangeForm, SocialUserForm, MessageForm
 from .models import User
 from trade.models import Trades
-from .models import Message
+from .models import Message, Room
+from django.db.models import Q
 
 # Create your views here.
 
@@ -285,13 +286,80 @@ def social_form(request, pk):
         return render(request, "articles/main.html")
 
 
+def first_message(request, user_pk, trade_pk):
+    send_user = request.user
+    print(request.user)
+    reception_user = User.objects.get(pk=user_pk)
+    trade = Trades.objects.get(pk=trade_pk)
+
+    room = Room.objects.filter(
+        trade=trade, send_user=send_user, reception_user=reception_user
+    )
+
+    if Room.objects.filter(
+        trade=trade, send_user=send_user, reception_user=reception_user
+    ).exists():
+
+        # 첫 메세지가 아니라면
+        if request.method == "POST":
+            form = MessageForm(request.POST)
+            if form.is_valid():
+                message = form.save(commit=False)
+                message.send_user = send_user
+                message.reception_user = reception_user
+                message.trade = trade.pk
+                message.room = room[0]
+                message.save()
+                return redirect("accounts:messageCheck")
+        else:
+            form = MessageForm()
+        context = {
+            "form": form,
+            "reception_user": reception_user,
+            "trade": trade,
+        }
+        return render(request, "accounts/message.html", context)
+    else:  # 첫 메세지 전송이라면
+        new_room = Room.objects.create(
+            trade=trade, reception_user=reception_user, send_user=send_user
+        )
+        print(new_room)
+        if request.method == "POST":
+            form = MessageForm(request.POST)
+            if form.is_valid():
+                message = form.save(commit=False)
+                message.send_user = send_user
+                message.reception_user = reception_user
+                message.trade = trade
+                message.room = new_room
+                message.save()
+                return redirect("accounts:messageCheck")
+        else:
+            form = MessageForm()
+        context = {
+            "form": form,
+            "reception_user": reception_user,
+            "trade": trade,
+        }
+        return redirect("")
+
+
 @login_required
-def massage(request, user_pk, trade_pk):
+def message(request, user_pk, trade_pk):
     send_user = request.user
     reception_user = User.objects.get(pk=user_pk)
     trade = Trades.objects.get(pk=trade_pk)
-    if request.method == "POST":
-        form = MessageForm(request.POST)
+    room = Room.objects.filter(
+        trade=trade, send_user=send_user, reception_user=reception_user
+    )
+    if Room.objects.filter(
+        trade=trade, send_user=send_user, reception_user=reception_user
+    ).exists():
+        send_user = request.user
+        reception_user = User.objects.get(pk=user_pk)
+        trade = Trades.objects.get(pk=trade_pk)
+        if request.method == "POST":
+            form = MessageForm(request.POST)
         if form.is_valid():
             message = form.save(commit=False)
             message.send_user = send_user
@@ -311,7 +379,6 @@ def massage(request, user_pk, trade_pk):
 
 def messageCheck(request):
     user = request.user
-
     all_message = Message.objects.all()
     send_message = Message.objects.filter(send_user=user)
     reception_message = Message.objects.filter(reception_user=user)

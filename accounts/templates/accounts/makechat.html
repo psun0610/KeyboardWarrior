@@ -1,0 +1,36 @@
+
+
+
+{%if user == '1' %}
+<div class="chat ch1">
+    <div class="icon"><i class="fa-solid fa-user"></i></div>
+    <div class="textbox">{{content}}</div>
+</div>
+{%else%}
+<div class="chat ch2">
+    <div class="icon"><i class="fa-solid fa-user"></i></div>
+    <div class="textbox">{{content}}</div>
+</div>
+{%endif%}
+
+
+
+
+{% comment %} <div class="mwrap" id="chat_list">
+    <div class="chat ch1">
+        <div class="icon"><i class="fa-solid fa-user"></i></div>
+        <div class="textbox">안녕하세요.</div>
+    </div>
+    <div class="chat ch2">
+        <div class="icon"><i class="fa-solid fa-user"></i></div>
+        <div class="textbox">안녕하세요</div>
+    </div>
+    <div class="chat ch1">
+        <div class="icon"><i class="fa-solid fa-user"></i></div>
+        <div class="textbox">키보드 얼마에요?</div>
+    </div>
+    <div class="chat ch2">
+        <div class="icon"><i class="fa-solid fa-user"></i></div>
+        <div class="textbox"> 안팝니다 </div>
+    </div>
+</div> {% endcomment %}

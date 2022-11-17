@@ -87,10 +87,8 @@ class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
         fields = [
-            "title",
             "content",
         ]
         labels = {
-            "title": "제목",
             "content": "내용",
         }
