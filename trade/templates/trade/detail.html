@@ -155,7 +155,7 @@
       <form id="commentForm" data-trade-id="{{ trade.pk }}" action="{%url 'trade:comment' trade.pk %}" method="POST">
         {% csrf_token %}
         <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required=""
-          class="tradecomment-create" value="">
+          class="tradecomment-create" value="" autocomplete="off">
         <input class="btn btn-dark tradecomment-input" type="submit" value="제출">
       </form>
     </div>
@@ -347,17 +347,11 @@
   status?.addEventListener('click', function (event) {
     capture: true
     axios({ method: 'get', url: `/trade/${event.target.dataset.tradeId}/status/` }).then(response => {
-      if (response.data.status === 1) {
-        status.classList.add('jjim')
-        status.classList.remove('no-jjim')
-        status.querySelector('span').innerText("거래중")
-      }
-      else {
-        status.classList.add('no-jjim')
-        status.classList.remove('jjim')
-        status.querySelector('span').innerText("거래완료")
-      }
+        console.log(response.data.is_done)
+        status.classList.toggle('jjim')
+        status.classList.toggle('no-jjim')
+        status.querySelector('span').innerText = response.data.is_done? '거래중' : '거래완료'
     })
-  })
+})
 </script>
 {% endblock body %}

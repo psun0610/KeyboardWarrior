@@ -328,10 +328,12 @@ def status(request, pk):
         if trade.status_type == 1:
             trade.status_type = 2
             is_done = True
+            trade.save()
         else:
             trade.status_type = 1
             is_done = False
-        trade.save()
-    data = {
-        "status": trade.status_type,
+            trade.save()
+    context = {
+        "is_done": is_done,
     }
+    return JsonResponse(context)
