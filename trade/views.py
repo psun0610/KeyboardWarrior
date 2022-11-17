@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from .forms import CreateTrade, CreateComment, PhotoForm
 from .models import Trades, Trade_Comment, Photo
+from accounts.models import User
 from django.http import JsonResponse
 from articles.models import Keyboard
 from datetime import date, datetime, timedelta
@@ -169,6 +170,9 @@ def marker(request, pk):
 
 @login_required
 def trade_comment(request, pk):
+    users = User.objects.get(pk=request.user.pk)
+    users.rank += 2
+    users.save()
     trade_ = get_object_or_404(Trades, pk=pk)
     if request.method == "POST":
         form = CreateComment(request.POST)

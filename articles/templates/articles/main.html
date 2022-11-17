@@ -30,53 +30,124 @@
     </div>
     <div class="swiper-pagination"></div>
   </div>
-
-<article id="recommend">
-  <h1>키보드 워리어가 키보드를 추천해드려요</h1>
-  <h2>▼</h2>
-  <!-- here -->
-  <div>
-    <section class="recommend-box">
-      <div class="recommend-box-img">
-        <img src="{% static 'images/7670167_1.webp' %}" class="sa sa-right">
-      </div>
-      <div class="recommend-box-comment sa sa-left" data-sa-delay="350">
-        <h2>레오폴드 FC980C 영문 화이트 (30g, 균등)</h2>
-        <div>레오폴드/ 무접점(정전용량)/ Topre/ 1100g/ 98키</div>
-        <a href="" class="a-blue blue-tag">바로 알아보기></a>
-      </div>
-    </section>
-  </div>
-  
-  <!-- here -->
-  <div>
-    <section class="recommend-box">
-      <div class="recommend-box-comment-2 sa sa-right"  data-sa-delay="350">
-        <h2>레오폴드 FC980C 영문 화이트 (30g, 균등)</h2>
-        <div>레오폴드/ 무접점(정전용량)/ Topre/ 1100g/ 98키</div>
-        <a href="" class="a-blue blue-tag">바로 알아보기></a>
-      </div>
-      <div class="recommend-box-img-2">
-        <img src="https://img.danawa.com/prod_img/500000/190/542/img/17542190_1.jpg?shrink=500:500&_v=20220727090932" class="sa sa-left">
-      </div>
-    </section>
-  </div>
+  {% if user.is_authenticated %}
+    <article id="recommend">
+      <h1>키보드 워리어가 키보드를 추천해드려요</h1>
+      <h2>▼</h2>
       <!-- here -->
-  <div>
-    <section class="recommend-box">
-      <div class="recommend-box-img">
-        <img src="https://img.danawa.com/prod_img/500000/245/006/img/10006245_1.jpg?shrink=500:500&_v=20191126170249" class="sa sa-right">
+      <div>
+        <section class="recommend-box">
+          <div class="recommend-box-img">
+            <img src="{{items.0.img}}" class="sa sa-right">
+          </div>
+          <div class="recommend-box-comment sa sa-left" data-sa-delay="350">
+            <h2>{{items.0.name}}</h2>
+            <div>{{items.0.brand}}/
+              {{items.0.connect}}/
+              {{items.0.key_switch}}/
+              {{items.0.weight}}g/
+              {{items.0.array}}키</div>
+              {% if items.0.id %}
+              <a href="{% url 'articles:detail' items.0.id %}" class="a-blue">바로 알아보기></a>
+              {% else %}
+              <a href="{% url 'articles:all' %}" class="a-blue">바로 알아보기></a>
+              {% endif %}
+          </div>
+        </section>
       </div>
-      <div class="recommend-box-comment sa sa-left"  data-sa-delay="350">
-        <h2>레오폴드 FC980C 영문 화이트 (30g, 균등)</h2>
-        <div>레오폴드/ 무접점(정전용량)/ Topre/ 1100g/ 98키</div>
-        <a href="" class="a-blue">바로 알아보기></a>
+
+      <!-- here -->
+      <div>
+        <section class="recommend-box">
+          <div class="recommend-box-comment-2 sa sa-right" data-sa-delay="350">
+            <h2>{{items.1.name}}</h2>
+            <div>{{items.1.brand}}/
+              {{items.1.connect}}/
+              {{items.1.key_switch}}/
+              {{items.1.weight}}g/
+              {{items.1.array}}키</div>
+              {% if items.1.id %}
+              <a href="{% url 'articles:detail' items.1.id %}" class="a-blue">바로 알아보기></a>
+              {% else %}
+              <a href="{% url 'articles:all' %}" class="a-blue">바로 알아보기></a>
+              {% endif %}
+          </div>
+          <div class="recommend-box-img-2">
+            <img src="{{items.1.img}}" class="sa sa-left">
+          </div>
+        </section>
       </div>
-    </section>
-  </div>
-  <div class="recommend-finish-margin"></div>
-</article>
-<script type="text/javascript" src="{% static 'js/articles/main.js' %}"></script>
-<!-- 스와이퍼 캐러셀 -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+      <!-- here -->
+      <div>
+        <section class="recommend-box">
+          <div class="recommend-box-img">
+            <img src="{{items.2.img}}" class="sa sa-right">
+          </div>
+          <div class="recommend-box-comment sa sa-left" data-sa-delay="350">
+            <h2>{{items.2.name}}</h2>
+            <div>{{items.2.brand}}/
+              {{items.2.connect}}/
+              {{items.2.key_switch}}/
+              {{items.2.weight}}g/
+              {{items.2.array}}키</div>
+            {% if items.2.id %}
+              <a href="{% url 'articles:detail' items.2.id %}" class="a-blue">바로 알아보기></a>
+            {% else %}
+              <a href="{% url 'articles:all' %}" class="a-blue">바로 알아보기></a>
+            {% endif %}
+          </div>
+        </section>
+      </div>
+      <div class="recommend-finish-margin"></div>
+    </article>
+    {% else%}
+    <article id="recommend">
+      <h1>키보드 워리어가 키보드를 추천해드려요</h1>
+      <h2>▼</h2>
+      <!-- here -->
+      <div>
+        <section class="recommend-box">
+          <div class="recommend-box-img">
+            <img src="{% static 'images/7670167_1.webp' %}" class="sa sa-right">
+          </div>
+          <div class="recommend-box-comment sa sa-left" data-sa-delay="350">
+            <h2>레오폴드 FC980C 영문 화이트 (30g, 균등)</h2>
+            <div>레오폴드/ 무접점(정전용량)/ Topre/ 1100g/ 98키</div>
+            <a href="" class="a-blue blue-tag">바로 알아보기></a>
+          </div>
+        </section>
+      </div>
+
+      <!-- here -->
+      <div>
+        <section class="recommend-box">
+          <div class="recommend-box-comment-2 sa sa-right" data-sa-delay="350">
+            <h2>레오폴드 FC980C 영문 화이트 (30g, 균등)</h2>
+            <div>레오폴드/ 무접점(정전용량)/ Topre/ 1100g/ 98키</div>
+            <a href="" class="a-blue blue-tag">바로 알아보기></a>
+          </div>
+          <div class="recommend-box-img-2">
+            <img src="https://img.danawa.com/prod_img/500000/190/542/img/17542190_1.jpg?shrink=500:500&_v=20220727090932" class="sa sa-left">
+          </div>
+        </section>
+      </div>
+      <!-- here -->
+      <div>
+        <section class="recommend-box">
+          <div class="recommend-box-img">
+            <img src="https://img.danawa.com/prod_img/500000/245/006/img/10006245_1.jpg?shrink=500:500&_v=20191126170249" class="sa sa-right">
+          </div>
+          <div class="recommend-box-comment sa sa-left" data-sa-delay="350">
+            <h2>레오폴드 FC980C 영문 화이트 (30g, 균등)</h2>
+            <div>레오폴드/ 무접점(정전용량)/ Topre/ 1100g/ 98키</div>
+            <a href="" class="a-blue">바로 알아보기></a>
+          </div>
+        </section>
+      </div>
+      <div class="recommend-finish-margin"></div>
+    </article>
+  {% endif %}
+  <script type="text/javascript" src="{% static 'js/articles/main.js' %}"></script>
+  <!-- 스와이퍼 캐러셀 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 {% endblock body %}
