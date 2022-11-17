@@ -4,20 +4,26 @@
 
 {% block body %}
   <div class="review-all">
-      <div class="review-detail-head">
-        <p class="review-detail-key">{{ review.user }} | {{ review.created_at }}</p>
-          <div class="review-detail-title"><h1>{{ review.title }}</h1><div class="review-detail-hits"><i class="bi bi-eye-fill"></i>{{ review.hits }}</div>
-          <i class="bi bi-heart-fill"></i>
-          <div class="likes text-muted">
-                {{ review.like_users.count }}</div></div>
-        <p class="review-detail-key">{{review.keyboard.name}}</p>
+    <div class="review-detail-head">
+      <p class="review-detail-key">{{ review.user }}
+        |
+        {{ review.created_at }}</p>
+      <div class="review-detail-title">
+        <h1>{{ review.title }}</h1>
+        <div class="review-detail-hits">
+          <i class="bi bi-eye-fill"></i>{{ review.hits }}</div>
+        <i class="bi bi-heart-fill"></i>
+        <div class="likes text-muted">
+          {{ review.like_users.count }}</div>
       </div>
+      <p class="review-detail-key">{{review.keyboard.name}}</p>
+    </div>
     <div>
       {% if photo %}
         {% for i in photo %}
-        <div class='text-center'>
+          <div class='text-center'>
             <img class="review-image" src="{{ i.image.url }}">
-        </div>
+          </div>
         {% endfor %}
       {% endif %}
     </div>
@@ -27,218 +33,230 @@
     <div class="likebook">
       <!--좋아요-->
       <div class="heart d-flex align-items-end">
-      {% if request.user.is_authenticated %}
+        {% if request.user.is_authenticated %}
           {% if request.user not in review.like_users.all %}
-          <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart"></i>
+            <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart"></i>
           {% else %}
-          <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart-fill"></i>
+            <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart-fill"></i>
           {% endif %}
-      {% endif %}
+        {% endif %}
       </div>
       <!--즐겨찾기(bookmark)-->
       <div class="d-flex align-items-center">
-      {% if request.user.is_authenticated %}
+        {% if request.user.is_authenticated %}
           {% if request.user not in review.bookmark_users.all %}
-          
-            <div class="trade-detail-btn no-jjim" id="bookmark-btn"  data-bookmark-id="{{ review.pk }}">
+
+            <div class="trade-detail-btn no-jjim" id="bookmark-btn" data-bookmark-id="{{ review.pk }}">
               <i class="bi bi-check-bookmark" id="bookmark" data-trade-id="{{ review.pk }}"></i>
               <span data-trade-id="{{ review.pk }}">저장</span>
             </div>
-        {% else %}
-          
-          <div class="trade-detail-btn jjim" id="marker-icon" data-trade-id="{{ review.pk }}">
-            <i class="bi bi-check-bookmark-fill" data-trade-id="{{ review.pk }}"></i>
-            <span data-trade-id="{{ review.pk }}">저장됨</span>
-          </div>
+          {% else %}
+
+            <div class="trade-detail-btn jjim" id="marker-icon" data-trade-id="{{ review.pk }}">
+              <i class="bi bi-check-bookmark-fill" data-trade-id="{{ review.pk }}"></i>
+              <span data-trade-id="{{ review.pk }}">저장됨</span>
+            </div>
           {% endif %}
-      {% endif %}
+        {% endif %}
       </div>
     </div>
-        <!--리뷰 수정,삭제 버튼-->
-        <div>
-        {% if request.user == review.user %}
-            <div class='d-grid gap-2 my-4'>
-            <a class='btn btn-outline-success btn-sm' href="{% url 'reviews:update' review.pk %}">수정하기</a>
-            <a class='btn btn-outline-danger btn-sm' href="{% url 'reviews:delete' review.pk %}">삭제하기</a>
-            </div>
-        {% endif %}
+    <!--리뷰 수정,삭제 버튼-->
+    <div>
+      {% if request.user == review.user %}
+        <div class='d-grid gap-2 my-4'>
+          <a class='btn btn-outline-success btn-sm' href="{% url 'reviews:update' review.pk %}">수정하기</a>
+          <a class='btn btn-outline-danger btn-sm' href="{% url 'reviews:delete' review.pk %}">삭제하기</a>
         </div>
-        <div>
-        <h3 class='text-center'>댓글 목록</h3>
-        </div>
+      {% endif %}
+    </div>
+    <div>
+      <h3 class='text-center'>댓글 목록</h3>
+    </div>
 
-        {% if request.user.is_authenticated %}
-        <div class="commentform-wrap">
-          <div class="commentform-trade">
-            <form id="comment-form" data-review-id="{{ review.pk }}" action="{% url 'reviews:comment_create' review.pk %}" method="POST">
-              {% csrf_token %}
-              <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required="" class="tradecomment-create" value="">
-              <input class="btn btn-dark tradecomment-input" type="submit" value="제출">
-            </form>
-          </div>
-          <hr class="comment-hr">
+    {% if request.user.is_authenticated %}
+      <div class="commentform-wrap">
+        <div class="commentform-trade">
+          <form id="comment-form" data-review-id="{{ review.pk }}" action="{% url 'reviews:comment_create' review.pk %}" method="POST">
+            {% csrf_token %}
+            <input data-testid="input-box" name="content" placeholder="댓글을 작성해주세요" type="text" required="" class="tradecomment-create" value="">
+            <input class="btn btn-dark tradecomment-input" type="submit" value="제출">
+          </form>
         </div>
-        {% endif %}
-
-        
-        <div id="comments">
-          <div class='comment-1'>
-              {% for comment in comments %}
-              <div class='comment'>
-                  
-                  <div class="keyboard-comment">
-                    <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
-                    <div class="keyboard-comment-box">
-                      <p>{{comment.user}} | {% if request.user not in comment.like_users.all %}
-                          <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="{{ comment.pk }}" id="commentlike"></i>
-                        {% else %}
-                          <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="{{ comment.pk }}" id="commentlike"></i>
-                        {% endif %} |
-                      {% if request.user == comment.user %}
-                      <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-{{ comment.pk }}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="{{ comment.pk }}">삭제</button></p>
-                      {% endif %}
-                      </p>
-                      <div>{{comment.content}}</div>
-                    </div>
-                  </div>
-              </div>
-          {% endfor %}
-        </div>
+        <hr class="comment-hr">
       </div>
+    {% endif %}
+
+    <div id="comments">
+      <div class='comment-1'>
+        {% for comment in comments %}
+          <div class='comment'>
+
+            <div class="keyboard-comment">
+              <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
+              <div class="keyboard-comment-box">
+                <p>{{comment.user}}
+                  |
+                  {% if request.user not in comment.like_users.all %}
+                    <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="{{ comment.pk }}" id="commentlike"></i>
+                  {% else %}
+                    <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="{{ comment.pk }}" id="commentlike"></i>
+                  {% endif %}
+                  |
+                  {% if request.user == comment.user %}
+                    <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-{{ comment.pk }}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="{{ comment.pk }}">삭제</button>
+                  </p>
+                {% endif %}
+              </p>
+              <div>{{comment.content}}</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
-        
-        
+</div>
+</div>
 
-    
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+//좋아요 비동기
+const likeBtn = document.querySelector('#like-btn')
+likeBtn.addEventListener('click', function (event) {
+  console.log(event.target.dataset)
+  axios({method: 'get', url: `/reviews/${event.target.dataset.likeId}/like/`}).then(response => {
+    console.log(response.data)
+    if (response.data.isLike === true) {
+      event
+        .target
+        .classList
+        .add('bi-heart-fill')
+      event
+        .target
+        .classList
+        .remove('bi-heart')
+      // console.log('좋아요')
+    } else {
+      event
+        .target
+        .classList
+        .add('bi-heart')
+      event
+        .target
+        .classList
+        .remove('bi-heart-fill')
+      // console.log('좋아요아님')
+    }
+    const likeCount = document.querySelector('.likes')
+    likeCount.innerHTML = `<h6 class="likes m-0 text-muted "> ${response.data.likeCount}</h6>`
+  })
+})
+</script>
+<script>
+// 댓글 좋아요 비동기
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-        //좋아요 비동기
-        const likeBtn = document.querySelector('#like-btn')
-        likeBtn.addEventListener('click', function (event) {
-        console.log(event.target.dataset)
-        axios({method: 'get', url: `/reviews/${event.target.dataset.likeId}/like/`}).then(response => {
-            console.log(response.data)
-            if (response.data.isLike === true) {
-            event
-                .target
-                .classList
-                .add('bi-heart-fill')
-            event
-                .target
-                .classList
-                .remove('bi-heart')
-            // console.log('좋아요')
-            } else {
-            event
-                .target
-                .classList
-                .add('bi-heart')
-            event
-                .target
-                .classList
-                .remove('bi-heart-fill')
-            // console.log('좋아요아님')
-            }
-            const likeCount = document.querySelector('.likes')
-            likeCount.innerHTML = `<h6 class="likes m-0 text-muted "> ${response.data.likeCount}</h6>`
-        })
-        })
-    </script>
-    <script>
-        // 댓글 좋아요 비동기
+const likecomment = (e) => {
+  const comment_id = document
+    .querySelector(`#${e.id}`)
+    .id;
+  axios({method: 'get', url: `/reviews/${event.target.dataset.reviewId}/like/${event.target.dataset.commentId}`}).then(response => {
+    console.log(response)
+    if (response.data.isLike === true) {
+      e
+        .classList
+        .add('bi-heart-fill')
+      e
+        .classList
+        .remove('bi-heart')
+      // console.log('좋아요')
+    } else {
+      e
+        .classList
+        .add('bi-heart')
+      e
+        .classList
+        .remove('bi-heart-fill')
+      // console.log('좋아요아님')
+    }
 
-        const likecomment = (e) => {
-          const comment_id = document
-            .querySelector(`#${e.id}`)
-            .id;
-          axios({method: 'get', url: `/reviews/${event.target.dataset.reviewId}/like/${event.target.dataset.commentId}`}).then(response => {
-            console.log(response)
-            if (response.data.isLike === true) {
-              e.classList.add('bi-heart-fill')
-              e.classList.remove('bi-heart')
-            // console.log('좋아요')
-            } else {
-              e.classList.add('bi-heart')
-              e.classList.remove('bi-heart-fill')
-            // console.log('좋아요아님')
-            }
+  })
+}
+</script>
+<script>
+// 비동기 북마크
+const bookmarkBtn = document.querySelector('#bookmark-btn')
+// querySelector(#bookmark-btn) => id 값 bookmark-btn를 가진 요소를 찾습니다.
+bookmarkBtn.addEventListener('click', function (event) {
+  console.log(event.target.dataset)
+  // 버튼 클릭 시, e라는 함수 이벤트가 발생. dataset을 불러옴.
+  axios({method: 'get', url: `/reviews/${event.target.dataset.bookmarkId}/bookmark/`}).then(response => {
+    console.log(response.data)
+    if (response.data.isBookmark === true) {
+      // isBookmark = context에서 선언해준 isBookmark
+      event
+        .target
+        .classList
+        .add('bi-bookmark-check-fill')
+        .add('jjim')
+      event
+        .target
+        .classList
+        .remove('bi-bookmark-check')
+        .remove('no-jjim')
+      console.log('관심찜')
+    } else {
+      event
+        .target
+        .classList
+        .remove('bi-bookmark-check-fill')
+        .remove('jjim')
+      event
+        .target
+        .classList
+        .add('bi-bookmark-check')
+        .add('no-jjim')
 
-          })
-        }
-      </script>
-      <script>
-        // 비동기 북마크
-        const bookmarkBtn = document.querySelector('#bookmark-btn')
-        // querySelector(#bookmark-btn) => id 값 bookmark-btn를 가진 요소를 찾습니다.
-        bookmarkBtn.addEventListener('click', function (event) {
-        console.log(event.target.dataset)
-        // 버튼 클릭 시, e라는 함수 이벤트가 발생. dataset을 불러옴.
-        axios({method: 'get', url: `/reviews/${event.target.dataset.bookmarkId}/bookmark/`}).then(response => {
-            console.log(response.data)
-            if (response.data.isBookmark === true) {
-            // isBookmark = context에서 선언해준 isBookmark
-            event
-                .target
-                .classList
-                .add('bi-bookmark-check-fill')
-                .add('jjim')
-            event
-                .target
-                .classList
-                .remove('bi-bookmark-check')
-                .remove('no-jjim')
-            console.log('관심찜')
-            } else {
-            event
-                .target
-                .classList
-                .remove('bi-bookmark-check-fill')
-                .remove('jjim')
-            event
-                .target
-                .classList
-                .add('bi-bookmark-check')
-                .add('no-jjim')
+      console.log('관심없음')
+    }
+  })
+})
+</script>
+<script>
+//댓글 생성 비동기
+const commentForm = document.querySelector('#comment-form')
+const csrftoken = document
+  .querySelector('[name=csrfmiddlewaretoken]')
+  .value
 
-            console.log('관심없음')
-            }
-        })
-        })
-    </script>
-    <script>
-        //댓글 생성 비동기
-        const commentForm = document.querySelector('#comment-form')
-        const csrftoken = document
-        .querySelector('[name=csrfmiddlewaretoken]')
-        .value
+  commentForm
+  .addEventListener('submit', function (event) {
+    event.preventDefault();
+    axios({
+      method: 'post',
+      url: `/reviews/${event.target.dataset.reviewId}/comment_create/`,
+      headers: {
+        'X-CSRFToken': csrftoken
+      },
+      data: new FormData(commentForm)
+    })
+      .then(response => {
+        console.log(response)
+        const comments = document.querySelector('#comments')
+        comments.textContent = "";
+        const hr = document.createElement('hr')
+        const comment_data = response.data.comment_data
 
-        commentForm
-        .addEventListener('submit', function (event) {
-            event.preventDefault();
-            axios({
-            method: 'post',
-            url: `/reviews/${event.target.dataset.reviewId}/comment_create/`,
-            headers: {
-                'X-CSRFToken': csrftoken
-            },
-            data: new FormData(commentForm)
-            })
-            .then(response => {
-                console.log(response)
-                const comments = document.querySelector('#comments')
-                comments.textContent = "";
-                const hr = document.createElement('hr')
-                const comment_data = response.data.comment_data
-
-                const user = response.data.user
-                for (let i = 0; i < comment_data.length; i++) {
-                  const review_pk = response.data.review_pk
-                    console.log(comment_data[i].id, user)
-                    if (user === comment_data[i].id) {
-                      if (comment_data[i].islike) {
-                        comments.insertAdjacentHTML('beforeend', `
+        const user = response
+          .data
+          .user
+          for (let i = 0; i < comment_data.length; i++) {
+            const review_pk = response
+              .data
+              .review_pk
+              console
+              .log(comment_data[i].id, user)
+            if (user === comment_data[i].id) {
+              if (comment_data[i].islike) {
+                comments.insertAdjacentHTML('beforeend', `
                         <div id="comments">
                           <div class='comment'>
                   
@@ -250,8 +268,8 @@
                           <div> ${comment_data[i].content} </div>
                         </div>
                         `);
-                      } else {
-                        comments.insertAdjacentHTML('beforeend', `
+              } else {
+                comments.insertAdjacentHTML('beforeend', `
                         <div id="comments">
                           <div class='comment'>
                   
@@ -263,10 +281,10 @@
                           <div> ${comment_data[i].content} </div>
                         </div>
                         `);
-                      }
-                    } else {
-                      if (comment_data[i].islike) {
-                        comments.insertAdjacentHTML('beforeend', `
+              }
+            } else {
+              if (comment_data[i].islike) {
+                comments.insertAdjacentHTML('beforeend', `
                          <div id="comments">
                           <div class='comment'>
                   
@@ -278,8 +296,8 @@
                           <div> ${comment_data[i].content} </div>
                         </div>
                         `);
-                      } else {
-                        comments.insertAdjacentHTML('beforeend', `
+              } else {
+                comments.insertAdjacentHTML('beforeend', `
                          <div id="comments">
                           <div class='comment'>
                   
@@ -291,43 +309,45 @@
                           <div> ${comment_data[i].content} </div>
                         </div>
                         `);
-                      }
-                    }
-                }
-                commentForm
-                .reset()
-            })
-            .catch(console.log(1))
-            })
-    </script>
-    <script>
-        // 댓글 삭제 비동기
-        const delete_comment = (e) => {
-        const comment_id = document
-            .querySelector(`#${e.id}`)
-            .id;
-        axios({
-            method: 'post',
-            url: `/reviews/${event.target.dataset.reviewdelId}/comment_delete/${event.target.dataset.commentdelId}/delete/`,
-            headers: {
-            'X-CSRFToken': csrftoken
+              }
             }
-        }).then(response => {
-            console.log(response)
-            const comments = document.querySelector('#comments')
-            comments.textContent = "";
-            const hr = document.createElement('hr')
-            const comment_data = response.data.comment_data
-            const user = response.data.user
-            for (let i = 0; i < comment_data.length; i++) {
-              const review_pk = response.data.review_pk
-                console.log(comment_data[i].id, user)
-              if (user === comment_data[i].id) {
-                if (comment_data[i].islike) {
-                  comments.insertAdjacentHTML('beforeend', `
+          }
+          commentForm
+          .reset()
+      })
+      .catch(console.log(1))
+    })
+</script>
+<script>
+// 댓글 삭제 비동기
+const delete_comment = (e) => {
+  const comment_id = document
+    .querySelector(`#${e.id}`)
+    .id;
+  axios({
+    method: 'post',
+    url: `/reviews/${event.target.dataset.reviewdelId}/comment_delete/${event.target.dataset.commentdelId}/delete/`,
+    headers: {
+      'X-CSRFToken': csrftoken
+    }
+  }).then(response => {
+    console.log(response)
+    const comments = document.querySelector('#comments')
+    comments.textContent = "";
+    const hr = document.createElement('hr')
+    const comment_data = response.data.comment_data
+    const user = response.data.user
+    for (let i = 0; i < comment_data.length; i++) {
+      const review_pk = response
+        .data
+        .review_pk
+        console
+        .log(comment_data[i].id, user)
+      if (user === comment_data[i].id) {
+        if (comment_data[i].islike) {
+          comments.insertAdjacentHTML('beforeend', `
                         <div id="comments">
                           <div class='comment'>
-                  
                           <div class="keyboard-comment">
                             <img class="comment-profile-img" src="{% static 'images/qwefq.png' %}">
                             <div class="keyboard-comment-box">
@@ -336,8 +356,8 @@
                           <div> ${comment_data[i].content} </div>
                         </div>
                         `);
-                } else {
-                  comments.insertAdjacentHTML('beforeend', `
+        } else {
+          comments.insertAdjacentHTML('beforeend', `
                         <div id="comments">
                           <div class='comment'>
                   
@@ -349,10 +369,10 @@
                           <div> ${comment_data[i].content} </div>
                         </div>
                         `);
-                }
-              } else {
-                if (comment_data[i].islike) {
-                  comments.insertAdjacentHTML('beforeend', `
+        }
+      } else {
+        if (comment_data[i].islike) {
+          comments.insertAdjacentHTML('beforeend', `
                         <div id="comments">
                           <div class='comment'>
                   
@@ -364,8 +384,8 @@
                           <div> ${comment_data[i].content} </div>
                         </div>
                         `);
-                } else {
-                  comments.insertAdjacentHTML('beforeend', `
+        } else {
+          comments.insertAdjacentHTML('beforeend', `
                         <div id="comments">
                           <div class='comment'>
                   
@@ -377,11 +397,10 @@
                           <div> ${comment_data[i].content} </div>
                         </div>
                         `);
-                }
-              }
-            }
-            }
-        )
+        }
       }
-    </script>
-    {% endblock body %}
+    }
+  })
+}
+</script>
+{% endblock body %}

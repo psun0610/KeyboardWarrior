@@ -164,7 +164,7 @@ def delete(request, pk):
 def comment_create(request, pk):
     review = Review.objects.get(pk=pk)
     users = User.objects.get(pk=request.user.pk)
-    users.rank += 1
+    users.rank += 2
     users.save()
 
     comment_form = CommentForm(request.POST)

@@ -97,11 +97,11 @@
                         <div>
                             <p class='usercard-title'>메너점수</p>
                             <div class='usercard-content'>
-                                {% if user.rank >= 5000 %} Lv.6
-                                {% elif user.rank >= 4000 %} Lv.5 
-                                {% elif user.rank >= 3000 %} Lv.4
-                                {% elif user.rank >= 2000 %} Lv.3
-                                {% elif user.rank >= 1000 %} Lv.2
+                                {% if user.rank >= 50 %} Lv.6
+                                {% elif user.rank >= 40 %} Lv.5 
+                                {% elif user.rank >= 30 %} Lv.4
+                                {% elif user.rank >= 20 %} Lv.3
+                                {% elif user.rank >= 10 %} Lv.2
                                 {% elif user.rank >= 0 %} Lv.1
                                 {% endif %}
                             </div>
