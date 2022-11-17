@@ -162,8 +162,14 @@ def scroll_data(request):
     data_press = request.GET.get("press")
     kind = request.GET.get("kind")
     page = request.GET.get("page")
-
+    # 추가된 부분 111~112
+    name = request.GET.get("name")
+    
     q = Q()
+    # 추가된 부분 115~116
+    if name != "0":
+        q &= Q(name__icontains=name)
+        
     if brand != "0":
         q &= Q(brand__icontains=brand)
 

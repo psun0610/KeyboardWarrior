@@ -211,12 +211,17 @@
     <p>모든 키보드를 보여드릴게요</p>
   </div>
 
-  <!-- 검색창 -->
+  {% comment %} <!-- 검색창 -->
   <form class="trade-index-search-form">
     <input type="text" placeholder="키보드를 검색해보세요">
     <input type="submit" value="검색">
-  </form>
+  </form> {% endcomment %}
 
+  <!-- 검색창 -->
+  <div class="trade-index-search-form">
+    <input type="search" id="searching" placeholder="키보드를 검색해보세요" name="name">
+    <input type="submit" onclick="searching();" value="검색">
+  </div>
 
   <!-- 광고 -->
   <div class="ad-container">
@@ -259,7 +264,13 @@
   let bluetooth = 0
   let press = 0
   let kind = 0
+  let name = 0
   let page = 1
+
+  const searching = (e) => {
+    console.log('검색시작')
+    name = document.querySelector('#searching').value;
+  }  
 
   const pick_brand = (e) => {
     brand = document.querySelector('input[name="brand"]:checked').value;
@@ -281,7 +292,7 @@
     axios({
       method: 'get',
       url: `/scroll_data/`,
-      params: { 'brand': brand, 'key': key, 'bluetooth': bluetooth, 'press': press, 'kind': kind, 'page': page },
+      params: { 'brand': brand, 'name': name, 'key': key, 'bluetooth': bluetooth, 'press': press, 'kind': kind, 'page': page },
     })
 
       .then(response => {
@@ -305,7 +316,6 @@
               </div>
             </a>`);
         }
-
       })
   };
   //스크롤 비동기
@@ -316,7 +326,7 @@
       axios({
         method: 'get',
         url: `/scroll_data/`,
-        params: { 'brand': brand, 'key': key, 'bluetooth': bluetooth, 'press': press, 'kind': kind, 'page': page },
+        params: { 'brand': brand, 'name': name, 'key': key, 'bluetooth': bluetooth, 'press': press, 'kind': kind, 'page': page },
       })
         .then(response => {
           const keyboards = response.data.keyboards
