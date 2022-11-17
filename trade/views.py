@@ -284,7 +284,16 @@ def trade_search(request):
     if "kw" in request.GET:
         # kw = index.html의 검색창 input의 name이다.
         search_word = request.GET.get("kw")
+<<<<<<< HEAD
         trades = Trades.objects.filter(Q(title__icontains=search_word))
+=======
+        trades = Trades.objects.filter(
+            Q(title__icontains=search_word) |
+            Q(content__icontains=search_word) |
+            Q(keyboard__name__icontains=search_word) |
+            Q(user__username__icontains=search_word)
+        )
+>>>>>>> 67d022c6e29727ae83829fb73427fd5e3f8878ab
         photo_list = []
         for trade in trades:
             if trade.photo_set.all():
