@@ -44,13 +44,9 @@ def KMP(p, t):
 
 def index(request):
     reviews = Review.objects.order_by("-pk")
-    photo_list = []
-    for review in reviews:
-        if review.photo_set.all():
-            thumbnail = review.photo_set.all()[0]
-            photo_list.append((thumbnail, review.photo_set.all().count()))
+
     context = {
-        "photo_list": photo_list,
+        "reviews" : reviews,
     }
     return render(request, "reviews/index.html", context)
 
@@ -166,7 +162,7 @@ def delete(request, pk):
 def comment_create(request, pk):
     review = Review.objects.get(pk=pk)
     users = User.objects.get(pk=request.user.pk)
-    users.rank += 1
+    users.rank += 2
     users.save()
 
     comment_form = CommentForm(request.POST)
@@ -354,17 +350,15 @@ def review_search(request):
 
 
 def best(request, pk):
-    reviews = (
-        Review.objects.filter(keyboard_id=pk)
-        .annotate(num_=Count("like_users"))
-        .order_by("-num_")
-    )
+    reviews = Review.objects.filter(keyboard_id=pk).annotate(num_=Count("like_users")).order_by("-num_")
     photo_list = []
     for review in reviews:
         if review.photo_set.all():
             thumbnail = review.photo_set.all()[0]
             photo_list.append((thumbnail, review.photo_set.all().count()))
+    # print(photo_list)
     context = {
+        "reviews":reviews,
         "photo_list": photo_list,
     }
     return render(request, "reviews/index.html", context)
