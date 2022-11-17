@@ -59,7 +59,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -75,7 +75,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+무선+블루투스"
 		}
 	},
@@ -89,8 +89,8 @@
 			"weight": 1200,
 			"array": "104",
 			"switch": "체리",
-			"key_switch": "적축",
-			"press": 100,
+			"key_switch": "저소음적축",
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -106,7 +106,7 @@
 			"array": "108",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 35,
 			"kind": "풀배열",
 			"bluetooth": "유선+블루투스"
 		}
@@ -123,7 +123,7 @@
 			"switch": "체리",
 			"key_switch": "갈축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -138,8 +138,8 @@
 			"array": "87",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
+			"press": 55,
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -154,8 +154,8 @@
 			"array": "108",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
+			"press": 35,
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -203,7 +203,7 @@
 			"switch": "Noppoo",
 			"key_switch": "기타",
 			"press": 35,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -235,7 +235,7 @@
 			"switch": "Noppoo",
 			"key_switch": "기타",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -250,7 +250,7 @@
 			"array": "108",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 50,
 			"kind": "풀배열",
 			"bluetooth": "유선+블루투스"
 		}
@@ -266,8 +266,8 @@
 			"array": "82",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
+			"press": 35,
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -283,7 +283,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -346,7 +346,7 @@
 			"array": "104",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선+블루투스"
 		}
@@ -394,7 +394,7 @@
 			"array": "104",
 			"switch": "오테뮤",
 			"key_switch": "청축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -410,8 +410,8 @@
 			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "청축",
-			"press": 60,
-			"kind": "풀배열",
+			"press": 45,
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -474,7 +474,7 @@
 			"array": "110",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -487,10 +487,10 @@
 			"brand": "한성컴퓨터",
 			"connect": "기계식",
 			"weight": 770,
-			"array": "기타",
+			"array": "108",
 			"switch": "오테뮤",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 55,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -503,10 +503,10 @@
 			"brand": "한성컴퓨터",
 			"connect": "기계식",
 			"weight": 1050,
-			"array": "기타",
+			"array": "108",
 			"switch": "오테뮤",
 			"key_switch": "청축",
-			"press": 100,
+			"press": 55,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -522,7 +522,7 @@
 			"array": "104",
 			"switch": "오테뮤",
 			"key_switch": "적축",
-			"press": "50",
+			"press": 50,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -538,7 +538,7 @@
 			"array": "104",
 			"switch": "MJ",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 55,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -554,7 +554,7 @@
 			"array": "110",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 35,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -570,7 +570,7 @@
 			"array": "84",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "블루투스"
 		}
@@ -586,7 +586,7 @@
 			"array": "109",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
@@ -602,7 +602,7 @@
 			"array": "78",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 35,
 			"kind": "텐키리스",
 			"bluetooth": "블루투스"
 		}
@@ -618,7 +618,7 @@
 			"array": "110",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
@@ -634,7 +634,7 @@
 			"array": "104",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -650,7 +650,7 @@
 			"array": "104",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -666,7 +666,7 @@
 			"array": "104",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -682,7 +682,7 @@
 			"array": "104",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
@@ -695,10 +695,10 @@
 			"brand": "한성컴퓨터",
 			"connect": "멤브레인",
 			"weight": 870,
-			"array": "기타",
+			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 55,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -714,7 +714,7 @@
 			"array": "104",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -730,7 +730,7 @@
 			"array": "104",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}

@@ -34,22 +34,6 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "COX 갤리온 CNC 풀 알루미늄 RGB 108키 DIY KIT (실버)",
-			"img": "https://img.danawa.com/prod_img/500000/137/353/img/11353137_1.jpg?shrink=500:500&_v=20200623103112",
-			"brand": "COX",
-			"connect": "기계식",
-			"weight": 2100,
-			"array": "108",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
-			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
 			"name": "COX 블랙펄 CNC 풀 알루미늄 텐키리스 체리 키보드 (적축)",
 			"img": "https://img.danawa.com/prod_img/500000/245/770/img/6770245_1.jpg?shrink=500:500&_v=20190916164930",
 			"brand": "COX",
@@ -58,23 +42,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "적축",
-			"press": 100,
-			"kind": "텐키리스",
-			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX 블랙펄 CNC 알루미늄 DIY KIT (블랙)",
-			"img": "https://img.danawa.com/prod_img/500000/098/201/img/8201098_1.jpg?shrink=500:500&_v=20200623102859",
-			"brand": "COX",
-			"connect": "기계식",
-			"weight": 2600,
-			"array": "87",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -106,7 +74,7 @@
 			"array": "108",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 50,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -154,8 +122,8 @@
 			"array": "87",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
+			"press": 35,
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -203,7 +171,7 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": 35,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -234,7 +202,7 @@
 			"array": "87",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 35,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -251,7 +219,7 @@
 			"switch": "게이트론",
 			"key_switch": "저소음갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -283,7 +251,7 @@
 			"switch": "TTC",
 			"key_switch": "갈축",
 			"press": 40,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -298,7 +266,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "적축",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -331,7 +299,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -363,7 +331,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -379,7 +347,7 @@
 			"switch": "게이트론",
 			"key_switch": "황축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -395,7 +363,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -411,7 +379,7 @@
 			"switch": "게이트론",
 			"key_switch": "황축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -427,7 +395,7 @@
 			"switch": "게이트론",
 			"key_switch": "황축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -443,7 +411,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -555,7 +523,7 @@
 			"switch": "게이트론",
 			"key_switch": "녹축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -571,7 +539,7 @@
 			"switch": "기타",
 			"key_switch": "기타",
 			"press": 70,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -746,7 +714,7 @@
 			"array": "104",
 			"switch": "GTMX",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -762,7 +730,7 @@
 			"array": "110",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 60,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
@@ -779,7 +747,7 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -794,7 +762,7 @@
 			"array": "104",
 			"switch": "GTMX",
 			"key_switch": "적축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -810,7 +778,7 @@
 			"array": "99",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -826,7 +794,7 @@
 			"array": "78",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 60,
 			"kind": "텐키리스",
 			"bluetooth": "블루투스"
 		}
@@ -882,38 +850,6 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "COX CKM700 게이밍 키보드 마우스 세트",
-			"img": "https://img.danawa.com/prod_img/500000/583/878/img/17878583_1.jpg?shrink=500:500&_v=20220921182606",
-			"brand": "COX",
-			"connect": "멤브레인",
-			"weight": 670,
-			"array": "104",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
-			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX CKM500 게이밍 키보드 마우스 콤보",
-			"img": "https://img.danawa.com/prod_img/500000/168/355/img/5355168_1.jpg?shrink=500:500&_v=20200131140134",
-			"brand": "COX",
-			"connect": "멤브레인",
-			"weight": 798,
-			"array": "104",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
-			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
 			"name": "COX CK250 교체축 LED 기계식 게이밍 텐키리스 (블랙, 갈축)",
 			"img": "https://img.danawa.com/prod_img/500000/198/404/img/6404198_1.jpg?shrink=500:500&_v=20190916171135",
 			"brand": "COX",
@@ -922,7 +858,7 @@
 			"array": "87",
 			"switch": "GTMX",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 55,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -938,25 +874,9 @@
 			"array": "104",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "COX COS200 저소음 무선 키보드 마우스 세트 (화이트)",
-			"img": "https://img.danawa.com/prod_img/500000/195/614/img/12614195_1.jpg?shrink=500:500&_v=20201104132601",
-			"brand": "COX",
-			"connect": "멤브레인",
-			"weight": 470,
-			"array": "106",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
-			"bluetooth": "무선"
 		}
 	},
 	{
@@ -970,8 +890,8 @@
 			"array": "89",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
+			"press": 45,
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -986,7 +906,7 @@
 			"array": "112",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
@@ -997,12 +917,12 @@
 			"name": "COX COS100 무선 멤브레인 키보드 마우스 세트 (블랙)",
 			"img": "https://img.danawa.com/prod_img/500000/927/359/img/12359927_1.jpg?shrink=500:500&_v=20200925132554",
 			"brand": "COX",
-			"connect": "멤브레인부가",
+			"connect": "멤브레인",
 			"weight": 403,
 			"array": "106",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
@@ -1013,7 +933,7 @@
 			"name": "COX COS300 무선 키보드 마우스 세트",
 			"img": "https://img.danawa.com/prod_img/500000/651/385/img/13385651_1.jpg?shrink=500:500&_v=20210218124352",
 			"brand": "COX",
-			"connect": "멤브레인부가",
+			"connect": "멤브레인",
 			"weight": 480,
 			"array": "104",
 			"switch": "기타",
@@ -1034,7 +954,7 @@
 			"array": "104",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1050,7 +970,7 @@
 			"array": "104",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
@@ -1066,7 +986,7 @@
 			"array": "106",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1078,11 +998,11 @@
 			"img": "https://img.danawa.com/prod_img/500000/967/025/img/12025967_1.jpg?shrink=500:500&_v=20200811172910",
 			"brand": "COX",
 			"connect": "기계식",
-			"weight": "기타",
-			"array": "기타",
+			"weight": 1035,
+			"array": "89",
 			"switch": "게이트론",
 			"key_switch": "황축",
-			"press": 100,
+			"press": 50,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -1098,7 +1018,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}

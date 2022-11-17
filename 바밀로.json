@@ -11,7 +11,7 @@
 			"switch": "독자",
 			"key_switch": "로즈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -27,7 +27,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -43,7 +43,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -59,7 +59,7 @@
 			"switch": "독자",
 			"key_switch": "핑크축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -75,7 +75,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -91,7 +91,7 @@
 			"switch": "독자",
 			"key_switch": "데이지축",
 			"press": 35,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -139,7 +139,7 @@
 			"switch": "VARMILO",
 			"key_switch": "핑크축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -187,7 +187,7 @@
 			"switch": "독자",
 			"key_switch": "로즈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -203,7 +203,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -219,7 +219,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -363,7 +363,7 @@
 			"switch": "독자",
 			"key_switch": "데이지축",
 			"press": 35,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -411,7 +411,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -427,7 +427,7 @@
 			"switch": "체리",
 			"key_switch": "갈축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -443,7 +443,7 @@
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -475,7 +475,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -491,7 +491,7 @@
 			"switch": "독자",
 			"key_switch": "데이지축",
 			"press": 35,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -523,7 +523,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -555,7 +555,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -619,7 +619,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -683,7 +683,7 @@
 			"switch": "체리",
 			"key_switch": "갈축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -699,7 +699,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -731,24 +731,8 @@
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "VARMILO X ZOMO 고양이 발바닥 ABS 키캡 (치즈냥)",
-			"img": "https://img.danawa.com/prod_img/500000/840/012/img/14012840_1.jpg?shrink=500:500&_v=20210427091643",
-			"brand": "VARMILO",
-			"connect": "기타",
-			"weight": "기타",
-			"array": "기타",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열",
-			"bluetooth": "기타"
 		}
 	},
 	{
@@ -763,7 +747,7 @@
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -779,7 +763,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	}

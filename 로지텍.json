@@ -7,11 +7,11 @@
 			"brand": "로지텍",
 			"connect": "기계식",
 			"weight": 976,
-			"array": "기타",
+			"array": "87",
 			"switch": "GX",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
+			"press": 45,
+			"kind": "텐키리스",
 			"bluetooth": "무선+블루투스"
 		}
 	},
@@ -26,7 +26,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -42,8 +42,8 @@
 			"array": "기타",
 			"switch": "GL",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
+			"press": 45,
+			"kind": "텐키리스",
 			"bluetooth": "무선+블루투스"
 		}
 	},
@@ -58,7 +58,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -74,7 +74,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -90,7 +90,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -106,7 +106,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -115,14 +115,14 @@
 		"model": "articles.Keyboard",
 		"fields": {
 			"name": "로지텍 G610 ORION BLUE",
-			"img": "https://img.danawa.com/prod_img/500000/057/610/img/6610057_1.jpg?shrink=500:500&_v=20190709104003",
+			"img": "https://img.danawa.com/prod_img/500000/057/610/img/664557_1.jpg?shrink=500:500&_v=20190709104003",
 			"brand": "로지텍",
 			"connect": "기계식",
 			"weight": 1230,
-			"array": "기타",
+			"array": "108",
 			"switch": "체리",
 			"key_switch": "청축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -138,7 +138,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -154,25 +154,9 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "로지텍 K800",
-			"img": "https://img.danawa.com/prod_img/500000/823/848/img/1848823_1.jpg?shrink=500:500&_v=20210601093824",
-			"brand": "로지텍",
-			"connect": "펜타그래프",
-			"weight": "기타",
-			"array": "기타",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
-			"bluetooth": "무선"
 		}
 	},
 	{
@@ -199,10 +183,10 @@
 			"brand": "로지텍",
 			"connect": "펜타그래프",
 			"weight": 810,
-			"array": "기타",
+			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -215,10 +199,10 @@
 			"brand": "로지텍",
 			"connect": "기타",
 			"weight": 495,
-			"array": "기타",
+			"array": "92",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "무선+블루투스"
 		}
@@ -247,10 +231,10 @@
 			"brand": "로지텍",
 			"connect": "펜타그래프",
 			"weight": 1160,
-			"array": "기타",
+			"array": "110",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -266,7 +250,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -282,7 +266,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -298,7 +282,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -330,7 +314,7 @@
 			"array": "110",
 			"switch": "카일",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -346,7 +330,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -362,7 +346,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -378,8 +362,8 @@
 			"array": "87",
 			"switch": "Romer-G",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
+			"press": 45,
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -394,7 +378,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -407,10 +391,10 @@
 			"brand": "로지텍",
 			"connect": "기타",
 			"weight": 875,
-			"array": "기타",
+			"array": "87",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "무선+블루투스"
 		}
@@ -419,14 +403,14 @@
 		"model": "articles.Keyboard",
 		"fields": {
 			"name": "로지텍 MX Mechanical Mini for Mac (갈축)",
-			"img": "https://img.danawa.com/prod_img/500000/696/951/img/17951696_1.jpg?shrink=500:500&_v=20221006183754",
+			"img": "https://img.danawa.com/prod_img/500000/696/951/img/17951696_1.jpg?shrink=500:500&_v=2022456183754",
 			"brand": "로지텍",
 			"connect": "기계식",
 			"weight": 612,
 			"array": "84",
 			"switch": "카일",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "블루투스"
 		}
@@ -442,7 +426,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -458,7 +442,7 @@
 			"array": "84",
 			"switch": "카일",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "무선+블루투스"
 		}
@@ -474,7 +458,7 @@
 			"array": "기타",
 			"switch": "GL",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -490,7 +474,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -506,7 +490,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -522,7 +506,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -538,7 +522,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -554,7 +538,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
@@ -570,7 +554,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -586,7 +570,7 @@
 			"array": "기타",
 			"switch": "GL",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -602,7 +586,7 @@
 			"array": "104",
 			"switch": "GX",
 			"key_switch": "청축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -618,7 +602,7 @@
 			"array": "기타",
 			"switch": "GX",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -634,7 +618,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -650,7 +634,7 @@
 			"array": "기타",
 			"switch": "GX",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -666,7 +650,7 @@
 			"array": "기타",
 			"switch": "GX",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -682,7 +666,7 @@
 			"array": "기타",
 			"switch": "Romer-G",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -698,7 +682,7 @@
 			"array": "기타",
 			"switch": "Romer-G",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -714,7 +698,7 @@
 			"array": "110",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -730,7 +714,7 @@
 			"array": "기타",
 			"switch": "GX",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -739,14 +723,14 @@
 		"model": "articles.Keyboard",
 		"fields": {
 			"name": "로지텍 G PRO GX Blue",
-			"img": "https://img.danawa.com/prod_img/500000/721/095/img/17095721_1.jpg?shrink=500:500&_v=20220520143100",
+			"img": "https://img.danawa.com/prod_img/500000/721/095/img/17095721_1.jpg?shrink=500:500&_v=2022052014345",
 			"brand": "로지텍",
 			"connect": "기계식",
 			"weight": "기타",
 			"array": "87",
 			"switch": "GX",
 			"key_switch": "청축",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -762,7 +746,7 @@
 			"array": "기타",
 			"switch": "GX",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -778,7 +762,7 @@
 			"array": "기타",
 			"switch": "Romer-G",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -787,14 +771,14 @@
 		"model": "articles.Keyboard",
 		"fields": {
 			"name": "로지텍 MX Keys Mini for Mac",
-			"img": "https://img.danawa.com/prod_img/500000/353/332/img/16332353_1.jpg?shrink=500:500&_v=20221006184128",
+			"img": "https://img.danawa.com/prod_img/500000/353/332/img/16332353_1.jpg?shrink=500:500&_v=2022456184128",
 			"brand": "로지텍",
 			"connect": "펜타그래프",
 			"weight": 506,
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "블루투스"
 		}
@@ -810,7 +794,7 @@
 			"array": "84",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -826,7 +810,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
@@ -842,7 +826,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "블루투스"
 		}
@@ -858,7 +842,7 @@
 			"array": "87",
 			"switch": "GX",
 			"key_switch": "청축",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -906,7 +890,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "무선+블루투스"
 		}
@@ -922,7 +906,7 @@
 			"array": "기타",
 			"switch": "체리",
 			"key_switch": "적축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -938,7 +922,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -954,7 +938,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -963,14 +947,14 @@
 		"model": "articles.Keyboard",
 		"fields": {
 			"name": "로지텍 MX KEYS for Mac",
-			"img": "https://img.danawa.com/prod_img/500000/083/006/img/12006083_1.jpg?shrink=500:500&_v=20221006184112",
+			"img": "https://img.danawa.com/prod_img/500000/083/006/img/12006083_1.jpg?shrink=500:500&_v=2022456184112",
 			"brand": "로지텍",
 			"connect": "펜타그래프",
 			"weight": 810,
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "블루투스"
 		}
@@ -986,7 +970,7 @@
 			"array": "기타",
 			"switch": "체리",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1002,7 +986,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1018,7 +1002,7 @@
 			"array": "110",
 			"switch": "Romer-G",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -1034,7 +1018,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
@@ -1050,7 +1034,7 @@
 			"array": "84",
 			"switch": "TTC",
 			"key_switch": "적축",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "무선+블루투스"
 		}
@@ -1066,7 +1050,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -1082,7 +1066,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "블루투스"
 		}
@@ -1098,7 +1082,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -1107,14 +1091,14 @@
 		"model": "articles.Keyboard",
 		"fields": {
 			"name": "로지텍 K600 TV",
-			"img": "https://img.danawa.com/prod_img/500000/385/069/img/13069385_1.jpg?shrink=500:500&_v=20210622100024",
+			"img": "https://img.danawa.com/prod_img/500000/385/069/img/13069385_1.jpg?shrink=500:500&_v=2021062245024",
 			"brand": "로지텍",
 			"connect": "기타",
 			"weight": 500,
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "블루투스"
 		}
@@ -1130,7 +1114,7 @@
 			"array": "110",
 			"switch": "Romer-G",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -1146,7 +1130,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -1162,7 +1146,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -1178,7 +1162,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
@@ -1203,14 +1187,14 @@
 		"model": "articles.Keyboard",
 		"fields": {
 			"name": "로지텍 K780",
-			"img": "https://img.danawa.com/prod_img/500000/119/259/img/4259119_1.jpg?shrink=500:500&_v=20201023101000",
+			"img": "https://img.danawa.com/prod_img/500000/119/259/img/4259119_1.jpg?shrink=500:500&_v=2020102310450",
 			"brand": "로지텍",
 			"connect": "기타",
 			"weight": 875,
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -1226,7 +1210,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -1242,7 +1226,7 @@
 			"array": "기타",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
