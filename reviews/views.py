@@ -356,7 +356,9 @@ def best(request, pk):
         if review.photo_set.all():
             thumbnail = review.photo_set.all()[0]
             photo_list.append((thumbnail, review.photo_set.all().count()))
+    # print(photo_list)
     context = {
+        "reviews":reviews,
         "photo_list": photo_list,
     }
     return render(request, "reviews/index.html", context)
