@@ -66,11 +66,11 @@
               {{items.1.key_switch}}/
               {{items.1.weight}}g/
               {{items.1.array}}키</div>
-              {% if items.1.id %}
+            {% if items.1.id %}
               <a href="{% url 'articles:detail' items.1.id %}" class="a-blue">바로 알아보기></a>
-              {% else %}
+            {% else %}
               <a href="{% url 'articles:all' %}" class="a-blue">바로 알아보기></a>
-              {% endif %}
+            {% endif %}
           </div>
           <div class="recommend-box-img-2">
             <img src="{{items.1.img}}" class="sa sa-left">

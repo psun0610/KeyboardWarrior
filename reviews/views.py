@@ -350,17 +350,15 @@ def review_search(request):
 
 
 def best(request, pk):
-    reviews = (
-        Review.objects.filter(keyboard_id=pk)
-        .annotate(num_=Count("like_users"))
-        .order_by("-num_")
-    )
+    reviews = Review.objects.filter(keyboard_id=pk).annotate(num_=Count("like_users")).order_by("-num_")
     photo_list = []
     for review in reviews:
         if review.photo_set.all():
             thumbnail = review.photo_set.all()[0]
             photo_list.append((thumbnail, review.photo_set.all().count()))
+    # print(photo_list)
     context = {
+        "reviews":reviews,
         "photo_list": photo_list,
     }
     return render(request, "reviews/index.html", context)
