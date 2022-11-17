@@ -9,7 +9,7 @@ from django.db.models import Q
 from django.db.models import Count
 def main(request):
     for i in Keyboard.objects.all():
-        i.weight = i.weight.replace("g","").replace("기타","1000").replace("828.8","828").replace("506.4","506").replace("664.8","664")
+        i.weight = i.weight.replace("g","").replace("기타","0").replace("828.8","828").replace("506.4","506").replace("664.8","664")
         i.weight = int(i.weight)
         i.save()
     if request.user.is_authenticated:
@@ -51,9 +51,9 @@ def main(request):
                 array[0].append(i)
             elif "텐키리스" in i.kind:
                 array[1].append(i)
-            if "유선" in i.bluetooth:
+            if "유선" in i.bluetooth or "블루투스" in i.bluetooth:
                 connect[0].append(i)
-            elif "무선" in i.bluetooth:
+            if "무선" in i.bluetooth or "블루투스" in i.bluetooth:
                 connect[1].append(i)
         upress = int(upress[0]) - 1
         uweight = int(uweight[0]) - 1
@@ -72,11 +72,12 @@ def main(request):
             ans5.add(value)
         k = ans1 & ans2 & ans3 & ans4 & ans5
         items = list(set(k))[:3]
-        # print(len(sound[0]),len(sound[1]), len(sound[2]))
-        # print(len(array[0]),len(array[1]), len(array[2]))
-        # print(len(weight[0]),len(weight[1]))
-        # print(len(press[0]),len(press[1]), len(press[2]))
-        # print(len(connect[0]),len(connect[1]), len(connect[2]))
+        print(items)
+        print(len(sound[0]),len(sound[1]), len(sound[2]))
+        print(len(array[0]),len(array[1]), len(array[2]))
+        print(len(weight[0]),len(weight[1]))
+        print(len(press[0]),len(press[1]), len(press[2]))
+        print(len(connect[0]),len(connect[1]), len(connect[2]))
     else:
         items = []
     if Visit.objects.order_by("-pk"):
