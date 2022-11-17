@@ -202,11 +202,13 @@ def trade_comment(request, pk):
                                 )
             comment_list.append(
                 {
-                    "user": c.user.username,
+                    "username": c.user.username,
                     "content": c.content,
                     "create_at": c.create_at,
-                    "pk": c.user.pk,
+                    "user_pk": c.user.pk,
                     "comment_pk": c.pk,
+                    "image": str(c.user.image),
+                    "is_social": c.user.is_social,
                 }
             )
         context = {
@@ -246,11 +248,13 @@ def delete_comment(request, trade_pk, comment_pk):
 
             comment_list.append(
                 {
-                    "user": c.user.username,
+                    "username": c.user.username,
                     "content": c.content,
                     "create_at": c.create_at,
-                    "pk": c.user.pk,
+                    "user_pk": c.user.pk,
                     "comment_pk": c.pk,
+                    "image": str(c.user.image),
+                    "is_social": c.user.is_social,
                 }
             )
         context = {
