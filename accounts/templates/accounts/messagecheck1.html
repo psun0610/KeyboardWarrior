@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+
+{% block body %}
+    <div class="chat">
+        <div class="jjok-bang">
+            {% comment %} 제목 1 {% endcomment %}
+            <div class='chat-head'>
+                <h2>KeyBoard Warrior 쪽지함</h2>
+                <hr>
+            </div>
+            <div class='all-chat'>
+                <div class='gak-chat'>
+                    <div class="chat-profile">
+                        <img class="chat-profile-img" src="{% static 'images/logo_png.png' %}">
+                        <div class="chat-user">재윤</div>
+                    </div>
+                    <div class='chat-content'>아니 이거 사고싶다고</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class='chatting-bang'>
+            <div class="chat-nav">
+                <div class="d-flex align-items-center">
+                    <div class='fw-bold fs-5'>레오폴드 청축 소음 키보드</div>
+                    <div class="chat-badge">판매</div>
+                </div>
+            </div>
+            <div class="chat-bang">
+                <div class='you'>
+                    {% comment %} {% for re in reception_message%}
+                    {{re.trade.title}}
+                    제목:{{re.title}} | 보낸사람:{{re.send_user}}
+                    {%endfor%} {% endcomment %}
+                    <div class="chat-profile-box">
+                        <div class="chat-profile">
+                            <img class="chat-profile-img" src="{% static 'images/logo_png.png' %}">
+                        </div>
+                        <div class="name-content">
+                            <div class="chat-user-inchat">재윤</div>
+                            <div class="chat-time">
+                                <div class="chat-content-in-you">사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?사고싶어요 얼마죠?</div>
+                                <div class="chat-time1">
+                                    <p class='mb-0'>22.11.16.20:01</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='me'>
+                    {% comment %} {% for send in send_message%}
+                    {{send.trade.title}}
+                    {{send.title}}
+                    {%endfor%} {% endcomment %}
+                    <div class="chat-profile-box">
+                        <div>
+                            <div class="chat-time">
+                                <div class="chat-time1">
+                                    <p class='mb-0'>22.11.16.20:03</p>
+                                </div>
+                                <div class="chat-content-in-me">백만원입니다</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='me'>
+                    {% comment %} {% for send in send_message%}
+                    {{send.trade.title}}
+                    {{send.title}}
+                    {%endfor%} {% endcomment %}
+                    <div class="chat-profile-box">
+                        <div>
+                            <div class="chat-time">
+                                <div class="chat-time1">
+                                    <p class='mb-0'>22.11.16.20:03</p>
+                                </div>
+                                <div class="chat-content-in-me">백만원입니다</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='me'>
+                    {% comment %} {% for send in send_message%}
+                    {{send.trade.title}}
+                    {{send.title}}
+                    {%endfor%} {% endcomment %}
+                    <div class="chat-profile-box">
+                        <div>
+                            <div class="chat-time">
+                                <div class="chat-time1">
+                                    <p class='mb-0'>22.11.16.20:03</p>
+                                </div>
+                                <div class="chat-content-in-me">팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?팔기싫은데 어쩌죠?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="chat-form">
+                <form action="">
+                    {% comment %} <input id="room-name-trade" type="hidden" data-trade-id="{{send_message}}">
+                    <input id="room-name-input" type="text" size="100"><br>
+                    <input id="room-name-submit" type="button" value="Enter"> {% endcomment %}
+                    
+                    <input id="room-name-trade" type="hidden" data-trade-id="{{send_message}}">
+                    <input id="room-name-input" data-testid="input-box" name="content" placeholder="" type="text" required="" class="chatcomment-create" value="" autocomplete="off">
+                    <input id="room-name-submit" class="btn btn-dark chat-input" type="submit" value="전송">
+                    <hr class="chat-hr">
+                
+                </form>
+            </div>
+        </div>
+    </div>
+                
+
+
+
+{% endblock body %}
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    document.querySelector('#room-name-input').focus();
+    document.querySelector('#room-name-input').onkeyup = function (e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#room-name-submit').click();
+        }
+    };
+    document.querySelector('#room-name-submit').onclick = function (e) {
+        var chatMessage = document.querySelector('#room-name-input').value;
+        event.preventDefault();
+        axios({
+            method: 'post',
+            url: `/accounts/message/`,
+            header: {
+                'X-CSRFtoken': csrftoken
+            },
+            data: new FormData(MessageForm)
+        })
+            .then(response => {
+                const comment_box = document.querySelector('#comment_box')
+                const user = response.data.user
+                comment_box.textContent = "";
+                const comment_list = response
+
+                console.log("댓글 전송 ")
+            });
+    }
+</script>
+
+
+
+<style>
+    .mwrap .chat {
+        display: flex;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .mwrap .chat .icon {
+        position: relative;
+        overflow: hidden;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #eee;
+    }
+
+    .mwrap .chat .icon i {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        font-size: 2.5rem;
+        color: #aaa;
+        transform: translateX(-50%);
+    }
+
+    .mwrap .chat .textbox {
+        position: relative;
+        display: inline-block;
+        max-width: calc(100% - 70px);
+        padding: 10px;
+        margin-top: 7px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+
+    .mwrap .chat .textbox::before {
+        position: absolute;
+        display: block;
+        top: 0;
+        font-size: 1.5rem;
+    }
+
+    .mwrap .ch1 .textbox {
+        margin-left: 20px;
+        background-color: #ddd;
+    }
+
+    .mwrap .ch1 .textbox::before {
+        left: -15px;
+        content: "◀";
+        color: #ddd;
+    }
+
+    .mwrap .ch2 {
+        flex-direction: row-reverse;
+    }
+
+    .mwrap .ch2 .textbox {
+        margin-right: 20px;
+        background-color: #54aff9;
+    }
+
+    .mwrap .ch2 .textbox::before {
+        right: -15px;
+        content: "▶";
+        color: #54aff9;
+    }
+</style>
+
