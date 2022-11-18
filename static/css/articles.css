@@ -745,6 +745,17 @@ footer>div {
   margin-top: 70px;
 }
 
+.bookmark-card {
+  width: 650px;
+  height: 144px;
+  border-radius: 9px;
+  border: 1px solid rgb(172, 172, 172);
+  margin-bottom: 20px;
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .userdetailall {
   display: flex;
   justify-content: center;
