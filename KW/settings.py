@@ -9,6 +9,11 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+from dotenv import load_dotenv
+import os
+load_dotenv() 
+
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 from pathlib import Path
 
@@ -20,10 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-y9=$3agm_+n9x@^p9^rd3usj49c@4ykch2_67s2b(ms#3)jins"
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG="True"
 
 ALLOWED_HOSTS = []
 
@@ -31,6 +34,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
+    "chat",
     "multiselectfield",
     "accounts",
     "articles",
@@ -47,15 +52,15 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 # # Channels
-# ASGI_APPLICATION = "KW.asgi.application"
-# CHANNEL_LAYERS = {
-#     "default": {
-#         "BACKEND": "channels_redis.core.RedisChannelLayer",
-#         "CONFIG": {
-#             "hosts": [("127.0.0.1", 6379)],
-#         },
-#     },
-# }
+ASGI_APPLICATION = "KW.asgi.application"
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": ["redis://default:GE0R16hzdtey6DnjSo1CmDYtD4ylArfC@redis-11199.c54.ap-northeast-1-2.ec2.cloud.redislabs.com:11199"],
+        },
+    },
+}
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -94,6 +99,9 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
+        "TEST": {
+            "NAME": BASE_DIR / "db.sqlite3",
+        },
     }
 }
 

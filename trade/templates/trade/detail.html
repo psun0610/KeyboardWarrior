@@ -1,33 +1,46 @@
 {% extends "base.html" %}
 {% load static %}
 {% load django_bootstrap5 %}
+{% load humanize %}
 
 {% block body %}
 <div class='trade-all'>
   <div class="keyboard-detail-all">
     <div class="keyboard-detail-img-wrap">
-      <!-- 캐러셀 -->
-      <div class="swiper" id="trade-slide">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          {% for photo in photos %}
-          <div class="swiper-slide"><img src="{{ photo.image.url }}" class="trade-swiper-img"></div>
-          {% endfor %}
-          ...
-        </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
+      {% if photos %}
+        <!-- 캐러셀 -->
+        <div class="swiper" id="trade-slide">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            {% for photo in photos %}
+            <div class="swiper-slide"><img src="{{ photo.image.url }}" class="trade-swiper-img"></div>
+            {% endfor %}
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
 
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-      <div class="keyboard-detail-thumbnail-wrap">
-        {% for photo in photos %}
-        <img src="{{ photo.image.url }}">
-        {% endfor %}
-      </div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="keyboard-detail-thumbnail-wrap">
+          {% for photo in photos %}
+          <img src="{{ photo.image.url }}">
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="swiper" id="trade-slide">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <img src="{% static 'images/logo_png.png' %}" class="trade-swiper-img">
+          </div>
+          
+        </div>
+        
+      {% endif %}
     </div>
 
     <!-- 제품정보 -->
@@ -41,7 +54,7 @@
           </div>
         </div>
 
-        <h1 class="trade-price">₩{{ trade.price }}</h1>
+        <h1 class="trade-price">₩{{ trade.price|intcomma }}</h1>
 
         {% comment %} <a href="{% url 'accounts:detail' trade.user.id %}">
           <div class="review-detail-user">
@@ -129,38 +142,45 @@
       </table>
 
       {% if trade.status_type == 1 %}
-      {% if request.user != trade.user %}
-      <div class="jjimjjok">
-        {% if request.user in trade.marker.all %}
-        <div class="trade-detail-btn jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
-          <i class="bi bi-bookmark-fill" data-trade-id="{{ trade.pk }}"></i>
-          <span data-trade-id="{{ trade.pk }}">찜완료</span>
-        </div>
+        {% if request.user != trade.user %}
+        {% if request.user.is_authenticated %}
+          <div class="jjimjjok">
+            {% if request.user in trade.marker.all %}
+            <div class="trade-detail-btn jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
+              <i class="bi bi-bookmark-fill" data-trade-id="{{ trade.pk }}"></i>
+              <span data-trade-id="{{ trade.pk }}">찜완료</span>
+            </div>
+            {% else %}
+            <div class="trade-detail-btn no-jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
+              <i class="bi bi-bookmark" id="bookmark" data-trade-id="{{ trade.pk }}"></i>
+              <span data-trade-id="{{ trade.pk }}">찜하기</span>
+            </div>
+            {% endif %}
+            <a href="{% url 'accounts:first_message' trade.pk trade.user.pk %}">
+              <div class="trade-detail-btn jjok">쪽지보내기</div>
+            </a>
+          </div>
         {% else %}
-        <div class="trade-detail-btn no-jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
-          <i class="bi bi-bookmark" id="bookmark" data-trade-id="{{ trade.pk }}"></i>
-          <span data-trade-id="{{ trade.pk }}">찜하기</span>
-        </div>
+        <div style="height: 30px; width: 100%;"></div>
         {% endif %}
-        <a href="{% url 'accounts:first_message' trade.pk trade.user.pk %}">
-          <div class="trade-detail-btn jjok">쪽지보내기</div>
-        </a>
-      </div>
-      <!-- 내가 작성자면 -->
-      {% else %}
-      <div class="jjimjjok">
-        {% if trade.status_type == 1 %}
-        <div class="trade-detail-btn jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
-          <span data-trade-id="{{ trade.pk }}">거래중</span>
-        </div>
+        <!-- 내가 작성자면 -->
         {% else %}
-        <div class="trade-detail-btn no-jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
-          <span data-trade-id="{{ trade.pk }}">거래완료</span>
-        </div>
-        {% endif %}
-        <a href="{% url 'trade:update' trade.pk %}">
-          <div class="trade-detail-btn jjok">글 수정</div>
-        </a>
+        <div class="jjimjjok">
+          {% if trade.status_type == 1 %}
+          <div class="trade-detail-btn jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
+            <span data-trade-id="{{ trade.pk }}">거래중</span>
+          </div>
+          {% else %}
+          <div class="trade-detail-btn no-jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
+            <span data-trade-id="{{ trade.pk }}">거래완료</span>
+          </div>
+          {% endif %}
+          <a href="{% url 'trade:update' trade.pk %}">
+            <div class="trade-detail-btn jjok">글 수정</div>
+          </a>
+          <a href="{% url 'trade:delete' trade.pk %}">
+            <div class="trade-detail-btn jjok">글 삭제</div>
+          </a>
       </div>
       {% endif %}
       {% else %}
@@ -355,23 +375,19 @@
 </script>
 <!-- 찜하기 스크립트!! -->
 <script>
-  const marker = document.querySelector('#marker-icon')
-  const marker_text_wrap = marker?.querySelector('div')
-  marker?.addEventListener('click', function (event) {
-    capture: true
-    axios({ method: 'get', url: `/trade/${event.target.dataset.tradeId}/marker/` }).then(response => {
-
-      console.log(response)
-      console.log(response.data)
-      marker.classList.toggle('jjim')
-      marker.classList.toggle('no-jjim')
-      marker.querySelector('#bookmark').classList.toggle('bi-bookmark-fill')
-      marker.querySelector('#bookmark').classList.toggle('bi-bookmark')
-      marker.querySelector('span').innerText = response.data.is_marker ? '찜완료' : '찜하기'
-
+    const marker = document.querySelector('#marker-icon')
+    const marker_text_wrap = marker?.querySelector('div')
+    marker?.addEventListener('click', function (event) {
+      capture: true
+      axios({ method: 'get', url: `/trade/${event.target.dataset.tradeId}/marker/` }).then(response => {
+        console.log(response.data.marker)
+        marker.classList.toggle('jjim')
+        marker.classList.toggle('no-jjim')
+        marker.querySelector('#bookmark').classList.toggle('bi-bookmark-fill')
+        marker.querySelector('#bookmark').classList.toggle('bi-bookmark')
+        marker.querySelector('span').innerText = response.data.is_marker? '찜완료' : '찜하기'
       const marker_count = document.querySelector('#marker_count')
       marker_count.innerText = response.data.markers
-
     })
   })
 </script>

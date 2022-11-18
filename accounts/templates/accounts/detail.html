@@ -20,7 +20,13 @@
                     <img class='detail-profile-img' src="{% static 'images/logo_png.png' %}">
                     {% endif %}
                     <div>
+                        {% if user.first_name and user.last_name %}
                         <h3>{{ user.last_name }}{{ user.first_name }} <span>({{ user }})</span></h3>
+                        {% else %}
+                        <h3>{{ user }}</h3>
+                        {% endif %}
+
+
                         {% if request.user != user %}
                         <form id="follow-form" data-user-id="{{ user.pk }}">
                             {% csrf_token %}
@@ -41,7 +47,11 @@
                     {% endif %}
 
                     <div>
+                        {% if user.first_name and user.last_name %}
                         <h3>{{ user.last_name }}{{ user.first_name }} <span>({{ user }})</span></h3>
+                        {% else %}
+                        <h3>{{ user }}</h3>
+                        {% endif %}
                         {% if request.user != user %}
                         <form id="follow-form" data-user-id="{{ user.pk }}">
                             {% csrf_token %}
@@ -63,19 +73,23 @@
                     
             <form class="form_radio_btn radio_male" id='radioform'>
                 <div>                       
-                    <input id="radio1" type="radio" name="menu" value="" checked='checked'>
+                    <input id="radio1" type="radio" name="menu" value="" checked>
                     <label for="radio1">개인 정보</label>
                 </div> 
                 <div class="form_radio_btn">
                     <input id="radio2" type="radio" name="menu" value="">
                     <label for="radio2">선호 키보드 정보</label>
                 </div>
-                {% if request.user == review.user %}
+                {% if request.user == user %}
                 <div class="form_radio_btn">
                     <input id="radio3" type="radio" name="menu" value="">
                     <label for="radio3">로그인 및 보안</label>
                 </div>
                 {% endif %}
+                <div class="form_radio_btn">
+                    <input id="radio4" type="radio" name="menu" value="">
+                    <label for="radio4">즐겨찾기 목록</label>
+                </div>
             </form>        
             
         
@@ -358,6 +372,27 @@
                             </div>
                         </div>
                     </div>
+                    </div>
+                </div>
+            </div>
+            <div class='card-big-box' id='cab4' style='display: none;'>
+                <div>
+                    <h3 class='userdetail-head2'>즐겨찾기 목록</h3>
+                    <div>
+                        <p>즐겨찾기로 등록한 게시글들이 보여집니다.</p>
+                    </div>
+                    <div class='usercard-big-box'>
+                        <div class='usercard-box'>
+                            
+                            <div class='bookmark-card'>
+                                <div>
+                                    <p class='usercard-title'>키보드 소리</p>
+                                    <div class='usercard-content'> 
+                                    {{ user.sound }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
