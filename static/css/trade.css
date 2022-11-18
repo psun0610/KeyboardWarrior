@@ -365,36 +365,6 @@ input::-webkit-input-placeholder {
   margin-bottom: 65px;
 }
 
-/* 키보드 검색창 임시  */
-.search-off {
-  display: none;
-
-}
-
-.search-on {
-  display: block;
-
-}
-
-.search-wrap {
-  position: relative;
-}
-
-.search-div {
-  position: absolute;
-  bottom: 1;
-  width: 600px;
-  height: 300px;
-  background-color: bisque;
-  overflow: scroll;
-  z-index: 100;
-}
-
-.keyboard-img {
-  width: 70px;
-  height: 70px;
-}
-
 .trade-price {
   font-size: 32px;
   font-weight: 700;
