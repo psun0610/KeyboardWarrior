@@ -358,22 +358,22 @@
         url: `/scroll_data/`,
         params: { 'brand': brand, 'name': name, 'key': key, 'bluetooth': bluetooth, 'press': press, 'kind': kind, 'page': page },
       })
-        .then(response => {
-          const keyboards = response.data.keyboards
-          for (let i = 0; i < keyboards.length; i++) {
-            const card_div = document.querySelector('#card_div')
-            card_div.insertAdjacentHTML('beforeend', `
-            <a href="/${keyboards[i].pk}/detail">
-              <div class="all-card">
-                <img src="${keyboards[i].img}">
-                <div class="all-card-h1-wrap">
-                  <h1>${keyboards[i].name}</h1>
-                </div>
-                <div class="all-card-button">자세히 알아보기</div>
+      .then(response => {
+        const keyboards = response.data.keyboards
+        for (let i = 0; i < keyboards.length; i++) {
+          const card_div = document.querySelector('#card_div')
+          card_div.insertAdjacentHTML('beforeend', `
+          <a href="/${keyboards[i].pk}/detail">
+            <div class="all-card">
+              <img src="${keyboards[i].img}">
+              <div class="all-card-h1-wrap">
+                <h1>${keyboards[i].name}</h1>
               </div>
-            </a> `);
-          }
-        }); page = page + 1
+              <div class="all-card-button">자세히 알아보기</div>
+            </div>
+          </a> `);
+        }
+      }); page = page + 1
     }
   }
 

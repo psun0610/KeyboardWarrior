@@ -73,6 +73,9 @@ def logout(request):
 def detail(request, pk):
     user = get_user_model().objects.get(pk=pk)
     rank_percent = (user.rank % 1000) * 10
+    trades = Trades.objects.all()
+    # for trade in trades:
+    #     if trade.marker
     context = {
         "user": user,
         "rank_percent": rank_percent,
