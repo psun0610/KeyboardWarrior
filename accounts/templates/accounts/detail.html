@@ -370,21 +370,134 @@
           </div>
           <div class='card-big-box' id='cab4' style='display: none;'>
               <div>
-                  <h3 class='userdetail-head2'>즐겨찾기 목록</h3>
+                  <h3 class='userdetail-head2'>컬렉션</h3>
                   <div>
-                      <p>즐겨찾기로 등록한 게시글들이 보여집니다.</p>
+                      <p>저장한 게시글과 작성한 글이 보여집니다.</p>
                   </div>
                   <div class='usercard-big-box'>
                       <div class='usercard-box'>
                           
-                          <div class='bookmark-card'>
-                              <div>
-                                  <p class='usercard-title'>키보드 소리</p>
-                                  <div class='usercard-content'> 
-                                  {{ user.sound }}
+                          <div class='usercard'  data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                            <div>
+                                <p class='usercard-title'>즐겨찾기</p>
+                                <div class='usercard-content'><span id="followings-count">{{ tradesc }}</span></div>
+                            </div>
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">내가 즐겨찾기한 글</h1>
+                                </div>
+                                      <div class="modal-body">
+                                          {% for user in trades %}
+                                            <div class="follow-user">
+                                                <a href="{% url 'accounts:detail' user.pk %}">
+                                                    {% if user.image %}
+                                                        {% if not user.is_social %}
+                                                            <img class='follow-profile-img' src="{{ user.image.url }}">
+                                                        {% else %}
+                                                            <img class='follow-profile-img' src="{{ user.image }}">
+                                                        {% endif %}
+                                                    {% else %}
+                                                        <img class='follow-profile-img' src="{% static 'images/logo_png.png' %}">
+                                                    {% endif %}
+                                                    <div class="follow-name">{{ user }}</div>
+                                                </a>
+                                            </div>
+                                          {% endfor %}
+                                      </div>
                                   </div>
+                                </div>
+                            </div>
+                              <div>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-plus-fill text-primary" viewBox="0 0 16 16">
+                                      <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                      <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                                  </svg>
                               </div>
                           </div>
+
+                          <div class='usercard'  data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            <div>
+                                <p class='usercard-title'>내 거래글</p>
+                                <div class='usercard-content'><span id="followings-count">{{ tradesc }}</span></div>
+                            </div>
+                            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">내가 쓴 거래글</h1>
+                                </div>
+                                      <div class="modal-body">
+                                          {% for user in trades %}
+                                            <div class="follow-user">
+                                                <a href="{% url 'accounts:detail' user.pk %}">
+                                                    {% if user.image %}
+                                                        {% if not user.is_social %}
+                                                            <img class='follow-profile-img' src="{{ user.image.url }}">
+                                                        {% else %}
+                                                            <img class='follow-profile-img' src="{{ user.image }}">
+                                                        {% endif %}
+                                                    {% else %}
+                                                        <img class='follow-profile-img' src="{% static 'images/logo_png.png' %}">
+                                                    {% endif %}
+                                                    <div class="follow-name">{{ user.title }}</div>
+                                                </a>
+                                            </div>
+                                          {% endfor %}
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                              <div>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-plus-fill text-primary" viewBox="0 0 16 16">
+                                      <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                      <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                                  </svg>
+                              </div>
+                        </div>
+                    
+
+                        <div class='usercard'  data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            <div>
+                                <p class='usercard-title'>내 거래글</p>
+                                <div class='usercard-content'><span id="followings-count">{{ reviewsc }}</span></div>
+                            </div>
+                            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">내가 쓴 후기글</h1>
+                                </div>
+                                      <div class="modal-body">
+                                          {% for user in reviews %}
+                                            <div class="follow-user">
+                                                <a href="{% url 'accounts:detail' user.pk %}">
+                                                    {% if user.image %}
+                                                        {% if not user.is_social %}
+                                                            <img class='follow-profile-img' src="{{ user.image.url }}">
+                                                        {% else %}
+                                                            <img class='follow-profile-img' src="{{ user.image }}">
+                                                        {% endif %}
+                                                    {% else %}
+                                                        <img class='follow-profile-img' src="{% static 'images/logo_png.png' %}">
+                                                    {% endif %}
+                                                    <div class="follow-name">{{ user.title }}</div>
+                                                </a>
+                                            </div>
+                                          {% endfor %}
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                              <div>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-plus-fill text-primary" viewBox="0 0 16 16">
+                                      <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                      <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                                  </svg>
+                              </div>
+                        </div>
+
                       </div>
                   </div>
               </div>
