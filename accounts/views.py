@@ -323,7 +323,9 @@ def first_message(request, trade_pk, user_pk):
             trade=trade, send_user=send_user, reception_user=reception_user
         )
         old_room = select_room[0]
-        all_room = Room.objects.filter(send_user=request.user)
+        all_room = Room.objects.filter(
+            Q(send_user=request.user) | Q(reception_user=request.user)
+        )
         room_message = Message.objects.filter(room=old_room)
         context = {
             "room": old_room,
@@ -338,7 +340,9 @@ def first_message(request, trade_pk, user_pk):
             reception_user=reception_user,
             send_user=send_user,
         )
-        all_room = Room.objects.filter(send_user=request.user)
+        all_room = Room.objects.filter(
+            Q(send_user=request.user) | Q(reception_user=request.user)
+        )
 
         room_message = Message.objects.filter(room=new_room)
 
@@ -357,12 +361,12 @@ def first_message(request, trade_pk, user_pk):
 #     return redirect("accounts:messageCheck", context)
 
 
-@login_required
 def message(request, room_pk):
     user = request.user
     room = Room.objects.get(pk=room_pk)
-    all_room = Room.objects.filter(send_user=request.user)
-
+    all_room = Room.objects.filter(
+        Q(send_user=request.user) | Q(reception_user=request.user)
+    )
     if request.method == "POST":
         print("포스트확인")
         form = MessageForm(request.POST)
@@ -388,6 +392,7 @@ def message(request, room_pk):
         "form": form,
         "room": room,
         "room_message": room_message,
+        "all_room": all_room,
     }
     return render(request, "accounts/messageCheck.html", context)
 
@@ -402,4 +407,16 @@ def messageCheck(request):
         "send_message": send_message,
         "reception_message": reception_message,
     }
+    return render(request, "accounts/messageCheck.html", context)
+
+
+def messageRoom(request, trade_pk):
+    user = request.user
+    trade = Trades.objects.get(pk=trade_pk)
+    all_room = Room.objects.filter(Q(send_user=user) | Q(reception_user=user))
+    room = all_room[0]
+    room_list = []
+    if len(all_room) > 0:
+        room_list.append(room_list)
+    context = {"all_room": all_room, "room": room}
     return render(request, "accounts/messageCheck.html", context)

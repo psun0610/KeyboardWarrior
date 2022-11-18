@@ -57,30 +57,30 @@
         <h1 class="trade-price">₩{{ trade.price|intcomma }}</h1>
 
         {% comment %} <a href="{% url 'accounts:detail' trade.user.id %}">
-            <div class="review-detail-user">
-              {% if trade.user.is_social == 0 %}
-                {% if trade.user.image %}
-                <img class="" src="{{ trade.user.image.url }}">
-                {% else %}
-                <img src="{% static 'images/logo_png.png' %}">
-                {% endif %}
-              {% else %}
-                {% if trade.user.image %}
-                <img src="{{ trade.user.image }}">
-                {% else %}
-                <img src="{% static 'images/logo_png.png' %}">
-                {% endif %}
-              {% endif %}
-              <p>{{ trade.user }}</p>
-            </div>
-          </a> {% endcomment %}
+          <div class="review-detail-user">
+            {% if trade.user.is_social == 0 %}
+            {% if trade.user.image %}
+            <img class="" src="{{ trade.user.image.url }}">
+            {% else %}
+            <img src="{% static 'images/logo_png.png' %}">
+            {% endif %}
+            {% else %}
+            {% if trade.user.image %}
+            <img src="{{ trade.user.image }}">
+            {% else %}
+            <img src="{% static 'images/logo_png.png' %}">
+            {% endif %}
+            {% endif %}
+            <p>{{ trade.user }}</p>
+          </div>
+        </a> {% endcomment %}
 
       </div>
       <table>
-      <tr>
+        <tr>
           <th>작성자</th>
           <td><a href="{% url 'accounts:detail' trade.user.id %}">
-            {{ trade.user }}</a></td>
+              {{ trade.user }}</a></td>
         </tr>
         <tr>
           <th>판매/구매</th>
@@ -181,8 +181,8 @@
           <a href="{% url 'trade:delete' trade.pk %}">
             <div class="trade-detail-btn jjok">글 삭제</div>
           </a>
-        </div>
-        {% endif %}
+      </div>
+      {% endif %}
       {% else %}
       <div style="height: 30px; width: 100%;"></div>
       {% endif %}
@@ -216,33 +216,33 @@
   </div>
   {% endif %}
   <div id="comment_box">
-      {% for comment in comments %}
-      <div class='comment'>
+    {% for comment in comments %}
+    <div class='comment'>
 
-        <div class="keyboard-comment">
-          <a href="{% url 'accounts:detail' comment.user.pk %}">
+      <div class="keyboard-comment">
+        <a href="{% url 'accounts:detail' comment.user.pk %}">
           {% if comment.user.is_social == 1 %}<img class="comment-profile-img" src="{{ comment.user.image }}">
           {% else %}<img class="comment-profile-img" src="{{ comment.user.image.url }}">
           {% endif %}
-          </a>
-          <div class="keyboard-comment-box">
-            <p>{{comment.user}}
-              {% if request.user == comment.user %}
-              <button id="delete_btn_{{comment.pk}}" onclick="delete_btn(this)" data-trade-id="{{trade.pk}}"
-                data-comment-id="{{comment.pk}}" class="comment-delete-btn" style="color: rgb(177, 177, 177);">삭제
-              </button>
-              {% endif %}
-            </p>
-            <div>{{comment.content}}</div>
-          </div>
-          </div>
+        </a>
+        <div class="keyboard-comment-box">
+          <p>{{comment.user}}
+            {% if request.user == comment.user %}
+            <button id="delete_btn_{{comment.pk}}" onclick="delete_btn(this)" data-trade-id="{{trade.pk}}"
+              data-comment-id="{{comment.pk}}" class="comment-delete-btn" style="color: rgb(177, 177, 177);">삭제
+            </button>
+            {% endif %}
+          </p>
+          <div>{{comment.content}}</div>
+        </div>
       </div>
-      {% endfor %}
     </div>
+    {% endfor %}
   </div>
 </div>
 </div>
-
+</div>
+<a href="{% url 'accounts:messageRoom' trade.pk %}">메세지함</a>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="{% static 'js/trade/detail.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -282,7 +282,7 @@
 
         // 내가 댓글 작성자면
         let writer = "";
-        if(user === comment_data[i].user_pk) {
+        if (user === comment_data[i].user_pk) {
           writer = `
           <button id="delete_btn_${comment_data[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{ trade.pk }}"
                 data-comment-id="${comment_data[i].comment_pk}" class="comment-delete-btn" style="color: rgb(177, 177, 177);">삭제
@@ -306,8 +306,8 @@
         </div>`
         comment_box.insertAdjacentHTML('beforeend', `${html}`)
       } commentForm.reset()
-  }).catch(console.log("코멘트 전송"))
-})
+    }).catch(console.log("코멘트 전송"))
+  })
 </script>
 <!-- 비동기 댓글 삭제 -->
 <script>
@@ -315,44 +315,45 @@
     const delete_data = document.querySelector(`#delete_btn_${event.target.dataset.commentId}`)
     event.preventDefault();
     console.log(event.target)
-    axios({method: 'post',
-          url: `/trade/${event.target.dataset.tradeId}/${event.target.dataset.commentId}/comment_delete/`,
-          headers: {
-            'X-CSRFToken': csrftoken
-          }
-        }).then(response => {
-        const comment_box = document.querySelector('#comment_box')
-        const user = response.data.user
-        comment_box.textContent = "";
-        const comment_data = response.data.comment_list
-          for (let i = 0; i < comment_data.length; i++) {
-          const review_pk = response.data.review_pk
-          console.log(comment_data[i].image)
-          console.log(comment_data[i].comment_pk, comment_data[i].user_pk)
-          // 프로필 이미지
-          let profile_src = "";
-          if (comment_data[i].image) {
-            if (comment_data[i].is_social === 0) {
-              profile_src = `/media/${comment_data[i].image}`;
-            }
-            else {
-              profile_src = `${comment_data[i].image}`;
-            }
+    axios({
+      method: 'post',
+      url: `/trade/${event.target.dataset.tradeId}/${event.target.dataset.commentId}/comment_delete/`,
+      headers: {
+        'X-CSRFToken': csrftoken
+      }
+    }).then(response => {
+      const comment_box = document.querySelector('#comment_box')
+      const user = response.data.user
+      comment_box.textContent = "";
+      const comment_data = response.data.comment_list
+      for (let i = 0; i < comment_data.length; i++) {
+        const review_pk = response.data.review_pk
+        console.log(comment_data[i].image)
+        console.log(comment_data[i].comment_pk, comment_data[i].user_pk)
+        // 프로필 이미지
+        let profile_src = "";
+        if (comment_data[i].image) {
+          if (comment_data[i].is_social === 0) {
+            profile_src = `/media/${comment_data[i].image}`;
           }
           else {
-            profile_src = `{% static 'images/logo_png.png' %}`;
+            profile_src = `${comment_data[i].image}`;
           }
+        }
+        else {
+          profile_src = `{% static 'images/logo_png.png' %}`;
+        }
 
-          // 내가 댓글 작성자면
-          let writer = "";
-          if(user === comment_data[i].user_pk) {
-            writer = `
+        // 내가 댓글 작성자면
+        let writer = "";
+        if (user === comment_data[i].user_pk) {
+          writer = `
             <button id="delete_btn_${comment_data[i].comment_pk}" onclick="delete_btn()" data-trade-id="{{trade.pk}}"
                   data-comment-id="${comment_data[i].comment_pk}" class="comment-delete-btn" style="color: rgb(177, 177, 177);">삭제
             </button>`
-          }
+        }
 
-          let html = `
+        let html = `
             <div class="comment">
               <div class="keyboard-comment">
                 <a href="/accounts/${comment_data[i].userpk}/detail">
@@ -367,8 +368,8 @@
               </div>
             </div>
           </div>`
-          comment_box.insertAdjacentHTML('beforeend', `${html}`)
-        }
+        comment_box.insertAdjacentHTML('beforeend', `${html}`)
+      }
     })
   }
 </script>
@@ -385,12 +386,10 @@
         marker.querySelector('#bookmark').classList.toggle('bi-bookmark-fill')
         marker.querySelector('#bookmark').classList.toggle('bi-bookmark')
         marker.querySelector('span').innerText = response.data.is_marker? '찜완료' : '찜하기'
-
-        const marker_count = document.querySelector('#marker_count')
-        marker_count.innerText = response.data.markers
-
-      })
+      const marker_count = document.querySelector('#marker_count')
+      marker_count.innerText = response.data.markers
     })
+  })
 </script>
 
 <script>
@@ -398,12 +397,12 @@
   status?.addEventListener('click', function (event) {
     capture: true
     axios({ method: 'get', url: `/trade/${event.target.dataset.tradeId}/status/` }).then(response => {
-        console.log(response.data.is_done)
-        status.classList.toggle('jjim')
-        status.classList.toggle('no-jjim')
-        status.querySelector('span').innerText = response.data.is_done?  '거래완료' : '거래중'
-        document.querySelector('#trade-status').innerText = response.data.is_done? '거래완료' : '거래중'
+      console.log(response.data.is_done)
+      status.classList.toggle('jjim')
+      status.classList.toggle('no-jjim')
+      status.querySelector('span').innerText = response.data.is_done ? '거래완료' : '거래중'
+      document.querySelector('#trade-status').innerText = response.data.is_done ? '거래완료' : '거래중'
     })
-})
+  })
 </script>
 {% endblock body %}

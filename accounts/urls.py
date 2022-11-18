@@ -25,4 +25,5 @@ urlpatterns = [
         name="first_message",
     ),
     path("messageCheck/", views.messageCheck, name="messageCheck"),
+    path("<int:trade_pk>/messageRoom/", views.messageRoom, name="messageRoom"),
 ]

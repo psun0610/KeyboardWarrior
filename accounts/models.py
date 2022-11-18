@@ -71,10 +71,11 @@ class Room(models.Model):
 
 
 class Message(models.Model):
-    user = models.ForeignKey(
-        AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-    )
+    user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
     content = models.CharField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
+
+
+class signal(models.Model):
+    user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
