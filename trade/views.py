@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from articles.models import Keyboard
 from datetime import date, datetime, timedelta
 from reviews.models import Review
+from django.db.models import Count
 from django.db.models import Q
 
 # Create your views here.
@@ -43,11 +44,17 @@ def KMP(p, t):
 
 def index(request):
     trades = Trades.objects.order_by("-pk")
-    photo_list = []
+    trade_list = []
+    done_trade_list = []
+    for trade in trades:
+        if trade.status_type == 1:
+            trade_list.append(trade)
+        else:
+            done_trade_list.append(trade)
 
     context = {
-        "photo_list": photo_list,
-        "trades": trades,
+        "trade_list": trade_list,
+        "done_trade_list": done_trade_list,
     }
     return render(request, "trade/index.html", context)
 
@@ -294,30 +301,39 @@ def trade_search(request):
             | Q(content__icontains=search_word)
             | Q(keyboard__name__icontains=search_word)
             | Q(user__username__icontains=search_word)
-        )
-        photo_list = []
+        ).order_by("-pk")
+        trade_list = []
+        done_trade_list = []
         for trade in trades:
-            if trade.photo_set.all():
-                thumbnail = trade.photo_set.all()[0]
-                photo_list.append(thumbnail)
+            if trade.status_type == 1:
+                trade_list.append(trade)
+            else:
+                done_trade_list.append(trade)
         context = {
             "trades": trades,
             "search_word": search_word,
-            "photo_list": photo_list,
+            "trade_list": trade_list,
+            "done_trade_list": done_trade_list,
         }
         return render(request, "trade/index.html", context)
+    else:
+        return render(request, "trade/index.html")
 
 
 def send_market(request, pk):
-    pick_data = Trades.objects.filter(keyboard=pk)
-    photo_list = []
+    pick_data = Trades.objects.filter(keyboard=pk)    
+    trade_list = []
+    done_trade_list = []
     for trade in pick_data:
-        if trade.photo_set.all():
-            thumbnail = trade.photo_set.all()[0]
-            photo_list.append(thumbnail)
+        if trade.status_type == 1:
+            trade_list.append(trade)
+        else:
+            done_trade_list.append(trade)
 
-    context = {"photo_list": photo_list}
-
+    context = {
+        "trade_list": trade_list,
+        "done_trade_list": done_trade_list,
+    }
     return render(request, "trade/index.html", context)
 
 

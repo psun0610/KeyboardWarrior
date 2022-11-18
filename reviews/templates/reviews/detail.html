@@ -83,7 +83,7 @@
         </div>
     </div>
 
-        {% if request.user.is_authenticated %}
+      {% if request.user.is_authenticated %}
         <div class="commentform-wrap">
           <div class="commentform-trade">
             <form id="comment-form" data-review-id="{{ review.pk }}" action="{% url 'reviews:comment_create' review.pk %}" method="POST">
