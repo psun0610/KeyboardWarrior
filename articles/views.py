@@ -187,6 +187,16 @@ def scroll_data(request):
             "image": "https://funkeys.co.kr/data/item/1650968289/thumb-DUCKYONE3RGBYellow_F.MAIN_600x750.jpg",
             "url": "https://funkeys.co.kr/shop/item.php?it_id=1650968289&ca_id=70",
         },
+        {
+            "name": "DUCKY ABS 심리스 이중사출 영문 SA 키캡 세트 Cotton candy",
+            "image": "https://funkeys.co.kr/data/item/1629170024/thumb-04COTTONCANDY_600x750.png",
+            "url": "https://funkeys.co.kr/shop/item.php?it_id=1629170024&ca_id=20",
+        },
+        {
+            "name": "Intellilabs 노트북도 맞춤의 시대",
+            "image": "/static/images/인텔리랩스.png",
+            "url": "",
+        },
     ]
     # 랜덤 개수
     random_ads = [random.choice(ads)]
