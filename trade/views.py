@@ -88,15 +88,26 @@ def update(request, pk):
     if request.user == trade.user:
         if request.method == "POST":
             form = CreateTrade(request.POST, instance=trade)
+            photo_form = PhotoForm(request.POST, request.FILES)
+            images = request.FILES.getlist("image")
+            kb = Keyboard.objects.get(name=request.POST["keyboard"])
             if form.is_valid():
                 trade = form.save(commit=False)
                 trade.user = request.user
-                trade.save()
-                return redirect("trade:detail", pk)
+                if len(images):
+                    for image in images:
+                        image_instance = Photo(trade=trade, image=image)
+                        trade.save()
+                        image_instance.save()
+                else:
+                    trade.save()
+                    return redirect("trade:detail", pk)
         else:
             form = CreateTrade(instance=trade)
+            photo_form = PhotoForm()
         context = {
             "form": form,
+            "photo_form": photo_form,
         }
     return render(request, "trade/update.html", context)
 
