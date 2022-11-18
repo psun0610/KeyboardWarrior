@@ -307,95 +307,86 @@ def social_form(request, pk):
         return render(request, "articles/main.html")
 
 
-def first_message(request, user_pk, trade_pk):
+@login_required
+def first_message(request, trade_pk, user_pk):
     send_user = request.user
-    print(request.user)
-    reception_user = User.objects.get(pk=user_pk)
     trade = Trades.objects.get(pk=trade_pk)
-
-    room = Room.objects.filter(
-        trade=trade, send_user=send_user, reception_user=reception_user
-    )
-
+    reception_user = User.objects.get(pk=user_pk)
+    user = request.user
     if Room.objects.filter(
         trade=trade, send_user=send_user, reception_user=reception_user
     ).exists():
-
-        # 첫 메세지가 아니라면
-        if request.method == "POST":
-            form = MessageForm(request.POST)
-            if form.is_valid():
-                message = form.save(commit=False)
-                message.send_user = send_user
-                message.reception_user = reception_user
-                message.trade = trade.pk
-                message.room = room[0]
-                message.save()
-                return redirect("accounts:messageCheck")
-        else:
-            form = MessageForm()
+        select_room = Room.objects.filter(
+            trade=trade, send_user=send_user, reception_user=reception_user
+        )
+        old_room = select_room[0]
+        all_room = Room.objects.filter(send_user=request.user)
+        room_message = Message.objects.filter(room=old_room)
         context = {
-            "form": form,
-            "reception_user": reception_user,
-            "trade": trade,
+            "room": old_room,
+            "user": user,
+            "all_room": all_room,
+            "room_message": room_message,
         }
-        return render(request, "accounts/message.html", context)
+        return render(request, "accounts/messageCheck.html", context)
     else:  # 첫 메세지 전송이라면
         new_room = Room.objects.create(
-            trade=trade, reception_user=reception_user, send_user=send_user
+            trade=trade,
+            reception_user=reception_user,
+            send_user=send_user,
         )
-        print(new_room)
-        if request.method == "POST":
-            form = MessageForm(request.POST)
-            if form.is_valid():
-                message = form.save(commit=False)
-                message.send_user = send_user
-                message.reception_user = reception_user
-                message.trade = trade
-                message.room = new_room
-                message.save()
-                return redirect("accounts:messageCheck")
-        else:
-            form = MessageForm()
+        all_room = Room.objects.filter(send_user=request.user)
+
+        room_message = Message.objects.filter(room=new_room)
+
         context = {
-            "form": form,
-            "reception_user": reception_user,
-            "trade": trade,
+            "room": new_room,
+            "user": user,
+            "all_room": all_room,
+            "room_message": room_message,
         }
-        return redirect("")
+
+        return render(request, "accounts/messageCheck.html", context)
+
+
+# def fill_message(request):
+
+#     return redirect("accounts:messageCheck", context)
 
 
 @login_required
-def message(request, user_pk, trade_pk):
-    send_user = request.user
-    reception_user = User.objects.get(pk=user_pk)
-    trade = Trades.objects.get(pk=trade_pk)
-    room = Room.objects.filter(
-        trade=trade, send_user=send_user, reception_user=reception_user
-    )
-    if Room.objects.filter(
-        trade=trade, send_user=send_user, reception_user=reception_user
-    ).exists():
-        send_user = request.user
-        reception_user = User.objects.get(pk=user_pk)
-        trade = Trades.objects.get(pk=trade_pk)
-        if request.method == "POST":
-            form = MessageForm(request.POST)
+def message(request, room_pk):
+    user = request.user
+    room = Room.objects.get(pk=room_pk)
+    all_room = Room.objects.filter(send_user=request.user)
+
+    if request.method == "POST":
+        print("포스트확인")
+        form = MessageForm(request.POST)
+        print(form)
         if form.is_valid():
+            print("유효성")
             message = form.save(commit=False)
-            message.send_user = send_user
-            message.reception_user = reception_user
-            message.trade = trade
+            message.user = user
+            message.room = room
             message.save()
-            return redirect("accounts:messageCheck")
+            room_message = Message.objects.filter(room=room)
+            context = {
+                "all_room": all_room,
+                "room": room,
+                "room_message": room_message,
+            }
+            return render(request, "accounts/messageCheck.html", context)
     else:
         form = MessageForm()
+        room = Room.objects.get(pk=room_pk)
+        room_message = Message.objects.filter(room=room)
     context = {
         "form": form,
-        "reception_user": reception_user,
-        "trade": trade,
+        "room": room,
+        "room_message": room_message,
     }
-    return render(request, "accounts/message.html", context)
+    return render(request, "accounts/messageCheck.html", context)
 
 
 def messageCheck(request):
@@ -408,5 +399,4 @@ def messageCheck(request):
         "send_message": send_message,
         "reception_message": reception_message,
     }
-
     return render(request, "accounts/messageCheck.html", context)

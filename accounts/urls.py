@@ -18,7 +18,7 @@ urlpatterns = [
     path("login/google/", views.google_request, name="google"),
     path("login/google/callback/", views.google_callback),
     path("<int:pk>/social_form/", views.social_form, name="social_form"),
-    path("<int:trade_pk>/<int:user_pk>/message/", views.message, name="message"),
+    path("<int:room_pk>/message/", views.message, name="message"),
     path(
         "<int:trade_pk>/<int:user_pk>/first_message/",
         views.first_message,
