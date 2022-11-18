@@ -17,8 +17,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
-  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-top: 100px;
   font-weight: 900
 }
 
@@ -729,8 +729,9 @@ footer>div {
 }
 
 .usercard-title {
-  font-size: larger;
+  font-size: 18px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .usercard:hover {
@@ -752,6 +753,7 @@ footer>div {
 
 .userdetail-head2 {
   font-weight: 600;
+  font-size: 25px;
 }
 
 .card-big-box {
@@ -760,7 +762,7 @@ footer>div {
 }
 
 .detail-profile-menu {
-  margin-right: 150px;
+  margin-right: 120px;
 }
 
 .detail-email {
@@ -768,13 +770,13 @@ footer>div {
 }
 
 .detail-profile-img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 10px rgb(215, 215, 215);
+  transition: all .15s ease-in-out;
 }
-
-
 
 .detail-menu {
   margin-bottom: 10px;
@@ -809,7 +811,7 @@ footer>div {
 
 /* Checked */
 .form_radio_btn input[type=radio]:checked+label {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-weight: bolder;
   color: var(--a-blue);
 }
@@ -823,7 +825,7 @@ footer>div {
 
 /* Disabled */
 .form_radio_btn input[type=radio]+label {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-weight: normal;
   font-size: large;
 }
@@ -1123,13 +1125,17 @@ footer>div {
   border-radius: 3px;
 }
 
+.signup {
+  color: gray;
+  font-size: 15px;
+}
 .signup-n-btn {
   width: 500px;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #57B04B;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   font-weight: 600;
   color: #F9FAFC;
   border: 0px;
@@ -1141,8 +1147,8 @@ footer>div {
   width: 500px;
   margin-bottom: 20px;
   background-color: rgb(255, 255, 255);
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   font-weight: 600;
   color: #000000;
   border: 1px;
@@ -1229,19 +1235,24 @@ footer>div {
   margin-left: 50px;
 }
 
-.follow-user {
-  display: flex;
-  align-items: center;
-}
 
-.follow-name {
-  font-size: larger;
+/* base.html */
+#nav-window-btn {
+  position: relative;
 }
-
-.follow-profile-img {
-  width: 45px;
-  height: 45px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-right: 20px;
+.my-nav-window::before {
+  content: "";
+  border-bottom: 15px solid #ffffff;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+}
+.my-nav-window {
+  display: none;
+  position: absolute;
+  bottom: -375px;
+  right: -30px;
+  width: 500px;
+  height: 350px;
+  background-color: white;
+  border-radius: 5px;
 }

@@ -12,47 +12,50 @@
     <div class='userdetailall'>
         {% comment %} 프로필, 메뉴 {% endcomment %}
         <div class='detail-profile-menu'>
-        {% if user.is_social == 0 %}
-            <div>
+            <div class="detail-profile">
+                {% if user.is_social == 0 %}
                     {% if user.image %}
                     <img class='detail-profile-img' src="{{ user.image.url }}">
                     {% else %}
-                    <img class='detail-profile-img' src="{% static 'images/qwefq.png' %}">
+                    <img class='detail-profile-img' src="{% static 'images/logo_png.png' %}">
                     {% endif %}
-                    {% if request.user != user %}
-                    <form id="follow-form" data-user-id="{{ user.pk }}">
-                        {% csrf_token %}
-                        {% if request.user in user.followers.all %}
-                        <input type="submit" value="언팔로우">
-                        {% else %}
-                        <input type="submit" value="팔로우">
-                        {% endif %}
-                    </form>
-                    {% endif %}
-                    <h3>{{ user.last_name }}{{ user.first_name }}</h3>
-                    <h4 class='detail-email'>{{ user.email }}</h4>
-            </div>
-        {% else%}
                     <div>
+                        <h3>{{ user.last_name }}{{ user.first_name }} <span>({{ user }})</span></h3>
+                        {% if request.user != user %}
+                        <form id="follow-form" data-user-id="{{ user.pk }}">
+                            {% csrf_token %}
+                            {% if request.user in user.followers.all %}
+                            <input type="submit" value="언팔로우" class="follow-btn unfollow">
+                            {% else %}
+                            <input type="submit" value="팔로우" class="follow-btn follow">
+                            {% endif %}
+                        </form>
+                        {% endif %}
+                    </div>
+                    <h4 class='detail-email'>{{ user.email }}</h4>
+                {% else %}
                     {% if user.image %}
                     <img class='detail-profile-img' src="{{ user.image }}">
                     {% else %}
                     <img class='detail-profile-img' src="{% static 'images/qwefq.png' %}">
                     {% endif %}
-                    {% if request.user != user %}
-                    <form id="follow-form" data-user-id="{{ user.pk }}">
-                        {% csrf_token %}
-                        {% if request.user in user.followers.all %}
-                        <input type="submit" value="언팔로우">
-                        {% else %}
-                        <input type="submit" value="팔로우">
+
+                    <div>
+                        <h3>{{ user.last_name }}{{ user.first_name }} <span>({{ user }})</span></h3>
+                        {% if request.user != user %}
+                        <form id="follow-form" data-user-id="{{ user.pk }}">
+                            {% csrf_token %}
+                            {% if request.user in user.followers.all %}
+                            <input type="submit" value="언팔로우" class="follow-btn unfollow">
+                            {% else %}
+                            <input type="submit" value="팔로우" class="follow-btn follow">
+                            {% endif %}
+                        </form>
                         {% endif %}
-                    </form>
-                    {% endif %}
-                    <h3>{{ user.last_name }}{{ user.first_name }}</h3>
+                    </div>
                     <h4 class='detail-email'>{{ user.email }}</h4>
-            </div>
-        {% endif %}
+                    {% endif %}
+                </div>
     
 
 
@@ -118,7 +121,7 @@
                         
                     <div class='usercard'>
                         <div>
-                            <p class='usercard-title'>메너점수</p>
+                            <p class='usercard-title'>매너점수</p>
                             <div class='usercard-content'>
                                 {% if user.rank >= 50 %} Lv.6
                                 {% elif user.rank >= 40 %} Lv.5 
@@ -162,8 +165,18 @@
                                 <div class="modal-body">
                                     {% for user in user.followers.all %}
                                         <div class="follow-user">
-                                            <img class='follow-profile-img' src="{{ user.image.url }}">
-                                            <div class="follow-name">{{ user }}</div>
+                                            <a href="{% url 'accounts:detail' user.pk %}">
+                                                {% if user.image %}
+                                                    {% if not user.is_social %}
+                                                        <img class='follow-profile-img' src="{{ user.image.url }}">
+                                                    {% else %}
+                                                        <img class='follow-profile-img' src="{{ user.image }}">
+                                                    {% endif %}
+                                                {% else %}
+                                                    <img class='follow-profile-img' src="{% static 'images/logo_png.png' %}">
+                                                {% endif %}
+                                                <div class="follow-name">{{ user }}</div>
+                                            </a>
                                         </div>
                                     {% endfor %}
                                 </div>
@@ -191,8 +204,18 @@
                                 <div class="modal-body">
                                     {% for user in user.followings.all %}
                                         <div class="follow-user">
-                                            <img class='follow-profile-img' src="{{ user.image.url }}">
-                                            <div class="follow-name">{{ user }}</div>
+                                            <a href="{% url 'accounts:detail' user.pk %}">
+                                                {% if user.image %}
+                                                    {% if not user.is_social %}
+                                                        <img class='follow-profile-img' src="{{ user.image.url }}">
+                                                    {% else %}
+                                                        <img class='follow-profile-img' src="{{ user.image }}">
+                                                    {% endif %}
+                                                {% else %}
+                                                    <img class='follow-profile-img' src="{% static 'images/logo_png.png' %}">
+                                                {% endif %}
+                                                <div class="follow-name">{{ user }}</div>
+                                            </a>
                                         </div>
                                     {% endfor %}
                                 </div>
@@ -388,6 +411,8 @@
             } else {
             followBtn.value = '팔로우'
             }
+            followBtn.classList.toggle('follow')
+            followBtn.classList.toggle('unfollow')
             const followersCountTag = document.querySelector('#followers-count')
             const followingsCountTag = document.querySelector('#followings-count')
             const followersCount = response.data.followers_count

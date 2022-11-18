@@ -47,7 +47,7 @@
         </tr>
         <tr>
           <th>거래상태</th>
-          <td>
+          <td id="trade-status">
             {%if trade.status_type == 1%}거래중{%else%}거래완료{%endif%}</td>
         </tr>
         <tr>
@@ -350,7 +350,8 @@
         console.log(response.data.is_done)
         status.classList.toggle('jjim')
         status.classList.toggle('no-jjim')
-        status.querySelector('span').innerText = response.data.is_done? '거래중' : '거래완료'
+        status.querySelector('span').innerText = response.data.is_done?  '거래완료' : '거래중'
+        document.querySelector('#trade-status').innerText = response.data.is_done? '거래완료' : '거래중'
     })
 })
 </script>

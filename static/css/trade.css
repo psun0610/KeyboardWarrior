@@ -11,10 +11,10 @@
 .trade-index-search-form {
   display: flex;
   justify-content: center;
-  margin: 60px 0 30px;
+  margin: 60px 0;
 }
 
-.trade-index-search-form>input[type=text] {
+.trade-index-search-form>input[type=search] {
   width: 350px;
   padding: 5px 15px;
   border-radius: 3px;

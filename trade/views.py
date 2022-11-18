@@ -47,7 +47,7 @@ def index(request):
 
     context = {
         "photo_list": photo_list,
-        "trades" : trades,
+        "trades": trades,
     }
     return render(request, "trade/index.html", context)
 
@@ -98,6 +98,7 @@ def update(request, pk):
             "form": form,
         }
     return render(request, "trade/update.html", context)
+
 
 def detail(request, pk):
     trade = get_object_or_404(Trades, pk=pk)
@@ -324,7 +325,7 @@ def send_market(request, pk):
 def status(request, pk):
     trade = Trades.objects.get(pk=pk)
     is_done = True
-    if request.user != trade.user:
+    if request.user == trade.user:
         if trade.status_type == 1:
             trade.status_type = 2
             is_done = True

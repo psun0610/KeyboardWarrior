@@ -4,10 +4,10 @@
 .review-index-search-form {
   display: flex;
   justify-content: center;
-  margin: 60px 0 30px;
+  margin: 60px 0;
 }
 
-.review-index-search-form>input[type=text] {
+.review-index-search-form>input[type=search] {
   width: 350px;
   padding: 5px 15px;
   border-radius: 3px;
@@ -41,6 +41,7 @@
 .reviews-index-container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 80px;
 }
 .reviews-card {
   display: flex;
