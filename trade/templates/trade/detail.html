@@ -7,28 +7,40 @@
 <div class='trade-all'>
   <div class="keyboard-detail-all">
     <div class="keyboard-detail-img-wrap">
-      <!-- 캐러셀 -->
-      <div class="swiper" id="trade-slide">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          {% for photo in photos %}
-          <div class="swiper-slide"><img src="{{ photo.image.url }}" class="trade-swiper-img"></div>
-          {% endfor %}
-          ...
-        </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
+      {% if photos %}
+        <!-- 캐러셀 -->
+        <div class="swiper" id="trade-slide">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            {% for photo in photos %}
+            <div class="swiper-slide"><img src="{{ photo.image.url }}" class="trade-swiper-img"></div>
+            {% endfor %}
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
 
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-      <div class="keyboard-detail-thumbnail-wrap">
-        {% for photo in photos %}
-        <img src="{{ photo.image.url }}">
-        {% endfor %}
-      </div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="keyboard-detail-thumbnail-wrap">
+          {% for photo in photos %}
+          <img src="{{ photo.image.url }}">
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="swiper" id="trade-slide">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <img src="{% static 'images/logo_png.png' %}" class="trade-swiper-img">
+          </div>
+          
+        </div>
+        
+      {% endif %}
     </div>
 
     <!-- 제품정보 -->
