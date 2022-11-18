@@ -147,7 +147,7 @@
           <div class="jjimjjok">
             {% if request.user in trade.marker.all %}
             <div class="trade-detail-btn jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
-              <i class="bi bi-bookmark-fill" data-trade-id="{{ trade.pk }}"></i>
+              <i class="bi bi-bookmark-fill" id="bookmark" data-trade-id="{{ trade.pk }}"></i>
               <span data-trade-id="{{ trade.pk }}">찜완료</span>
             </div>
             {% else %}
