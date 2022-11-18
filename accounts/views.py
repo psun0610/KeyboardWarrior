@@ -11,6 +11,7 @@ from django.contrib import messages
 from .forms import CustomUserChangeForm, SocialUserForm, MessageForm
 from .models import User
 from trade.models import Trades
+from reviews.models import Review
 from .models import Message, Room
 from django.db.models import Q
 
@@ -74,11 +75,27 @@ def detail(request, pk):
     user = get_user_model().objects.get(pk=pk)
     rank_percent = (user.rank % 1000) * 10
     trades = Trades.objects.all()
-    # for trade in trades:
-    #     if trade.marker
+    tradeslist = []
+    for trade in trades:
+        if trade.user.pk == pk:
+            tradeslist.append(trade)
+    tradecount = len(tradeslist)
+    reviews = Review.objects.filter(pk=pk)
+
+
+    reviewslist = []
+    for review in reviews:
+        if review.user.pk == pk:
+            reviewslist.append(review)
+    reviewcount = len(reviewslist)
+
     context = {
         "user": user,
         "rank_percent": rank_percent,
+        "trades": tradeslist,
+        "reviews": reviewslist,
+        "tradesc": tradecount,
+        "reviewsc": reviewcount,
     }
     return render(request, "accounts/detail.html", context)
 
