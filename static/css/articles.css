@@ -1240,19 +1240,52 @@ footer>div {
 #nav-window-btn {
   position: relative;
 }
-.my-nav-window::before {
-  content: "";
-  border-bottom: 15px solid #ffffff;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-}
 .my-nav-window {
-  display: none;
   position: absolute;
-  bottom: -375px;
+  bottom: -365px;
   right: -30px;
   width: 500px;
   height: 350px;
   background-color: white;
   border-radius: 5px;
+  padding: 40px 55px;
+  color: black;
+  box-shadow: 2px 2px 10px 3px rgba(95, 95, 95, 0.166);
+  opacity: 0;
+  visibility: hidden;
+  transition: all .1s ease-in-out;
+}
+#nav-window-btn:hover #nav-window {
+  opacity: 1;
+  visibility: visible;
+  transition: all .35s ease-in-out;
+}
+
+.nav-profile {
+  display: flex;
+  align-items: center;
+}
+.nav-profile>img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.nav-profile h1 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+.nav-profile h1>span {
+  color: gray;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 7px;
+}
+.nav-profile h2 {
+  font-size: 14px;
+  margin-bottom: 0;
+  margin-left: 15px;
 }

@@ -87,8 +87,7 @@
             <a href="{% url 'accounts:detail' bests.0.user.pk %}"><p>{{bests.0.user}}</p></a>
               <div>{{bests.0.content}}</div>
             {% else %}
-              <p>재윤</p>
-              <div>내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.</div>
+              <div style="font-size: 17px; color: gray;">아직 후기가 없어요 ㅠ_ㅠ</div>
             {% endif %}
           </div>
         </div>
@@ -113,9 +112,6 @@
             {% if bests.1 %}
             <a href="{% url 'accounts:detail' bests.1.user.pk %}"><p>{{bests.1.user}}</p></a>
               <div>{{bests.1.content}}</div>
-            {% else %}
-              <p>재윤</p>
-              <div>내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.내가 직접 작성한 후기입니다.</div>
             {% endif %}
           </div>
         </div>
