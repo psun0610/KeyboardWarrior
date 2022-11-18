@@ -188,6 +188,26 @@
   background-color: var(--my-red);
 }
 
+.done-badge {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.405);
+  color: white;
+}
+.done-badge>div {
+  font-size: 22px;
+  font-weight: 700;
+}
+.done-text {
+  color: var(--my-gray);
+}
+
 .jjimjjok {
   width: 400px;
   display: flex;

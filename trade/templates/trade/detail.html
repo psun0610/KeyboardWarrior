@@ -128,39 +128,43 @@
         </tr>
       </table>
 
-      {% if request.user != trade.user %}
-      <div class="jjimjjok">
-        {% if request.user in trade.marker.all %}
-        <div class="trade-detail-btn jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
-          <i class="bi bi-bookmark-fill" data-trade-id="{{ trade.pk }}"></i>
-          <span data-trade-id="{{ trade.pk }}">찜완료</span>
+      {% if not trade.status_type %}
+        {% if request.user != trade.user %}
+        <div class="jjimjjok">
+          {% if request.user in trade.marker.all %}
+          <div class="trade-detail-btn jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
+            <i class="bi bi-bookmark-fill" data-trade-id="{{ trade.pk }}"></i>
+            <span data-trade-id="{{ trade.pk }}">찜완료</span>
+          </div>
+          {% else %}
+          <div class="trade-detail-btn no-jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
+            <i class="bi bi-bookmark" id="bookmark" data-trade-id="{{ trade.pk }}"></i>
+            <span data-trade-id="{{ trade.pk }}">찜하기</span>
+          </div>
+          {% endif %}
+          <a href="{% url 'accounts:first_message' trade.pk trade.user.pk %}">
+            <div class="trade-detail-btn jjok">쪽지보내기</div>
+          </a>
         </div>
+        <!-- 내가 작성자면 -->
         {% else %}
-        <div class="trade-detail-btn no-jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
-          <i class="bi bi-bookmark" id="bookmark" data-trade-id="{{ trade.pk }}"></i>
-          <span data-trade-id="{{ trade.pk }}">찜하기</span>
+        <div class="jjimjjok">
+          {% if trade.status_type == 1 %}
+          <div class="trade-detail-btn jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
+            <span data-trade-id="{{ trade.pk }}">거래중</span>
+          </div>
+          {% else %}
+          <div class="trade-detail-btn no-jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
+            <span data-trade-id="{{ trade.pk }}">거래완료</span>
+          </div>
+          {% endif %}
+          <a href="{% url 'trade:update' trade.pk %}">
+            <div class="trade-detail-btn jjok">글 수정</div>
+          </a>
         </div>
         {% endif %}
-        <a href="{% url 'accounts:first_message' trade.pk trade.user.pk %}">
-          <div class="trade-detail-btn jjok">쪽지보내기</div>
-        </a>
-      </div>
-      <!-- 내가 작성자면 -->
       {% else %}
-      <div class="jjimjjok">
-        {% if trade.status_type == 1 %}
-        <div class="trade-detail-btn jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
-          <span data-trade-id="{{ trade.pk }}">거래중</span>
-        </div>
-        {% else %}
-        <div class="trade-detail-btn no-jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
-          <span data-trade-id="{{ trade.pk }}">거래완료</span>
-        </div>
-        {% endif %}
-        <a href="{% url 'trade:update' trade.pk %}">
-          <div class="trade-detail-btn jjok">글 수정</div>
-        </a>
-      </div>
+      <div style="height: 30px; width: 100%;"></div>
       {% endif %}
 
       <div class='trade-content'>
