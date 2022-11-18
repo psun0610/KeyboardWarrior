@@ -228,7 +228,7 @@
   </nav>
 </div>
 
-<div>
+<div id="all-container">
   <div class="my-head">
     <h2>키보드 전체보기</h2>
     <hr>
@@ -248,26 +248,8 @@
     <input type="submit" onclick="searching(); send(); " value="검색">
   </div>
 
-  <!-- 광고 -->
-  <div class="ad-container">
-    <div class="ad-card">
-      <img src="https://funkeys.co.kr/data/apms/background/var_new_02.jpg">
-      <div class="ad-card-context">
-        <h1 class="ad-card-context-h1">VARMILO MIYA PRO SEA MELODY PBT 염료승화 영문 저소음적축</h1>
-        <a href="https://funkeys.co.kr/shop/item.php?it_id=1651475779&ca_id=10" class="a-blue">바로 알아보기 ></a>
-      </div>
-    </div>
-    <div class="ad-card">
-      <img src="https://funkeys.co.kr/data/apms/background/var_new_04.jpg">
-      <div class="ad-card-context">
-        <h1 class="ad-card-context-h1">VARMILO X ZOMO 고양이 발바닥 ABS 키캡 샴냥</h1>
-        <a href="https://funkeys.co.kr/shop/item.php?it_id=1619427450&ca_id=20" class="a-blue">바로 알아보기 ></a>
-      </div>
-    </div>
-  </div>
-
   <div class="all-card-container" id="card_div">
-    {% for keyboard in all_keyboard|slice:"8:" %}
+    {% for keyboard in all_keyboard|slice:":12" %}
     <a href="{% url 'articles:detail' keyboard.pk %}">
       <div class="all-card">
         <img src="{{ keyboard.img }}">
@@ -359,10 +341,33 @@
         params: { 'brand': brand, 'name': name, 'key': key, 'bluetooth': bluetooth, 'press': press, 'kind': kind, 'page': page },
       })
       .then(response => {
+        let scroll_div = ''
+        const all_container = document.querySelector('#all-container')
         const keyboards = response.data.keyboards
+        const random_ads = response.data.random_ads
+        console.log(random_ads)
+        scroll_div += `
+        <!-- 광고 -->
+        <div class="ad-container">
+          <div class="ad-card">
+            <img src="${random_ads[0].image}">
+            <div class="ad-card-context">
+              <h1 class="ad-card-context-h1">${random_ads[0].name}</h1>
+              <a href="${random_ads[0].url}" class="a-blue">바로 알아보기 ></a>
+            </div>
+          </div>
+          <div class="ad-card">
+            <img src="${random_ads[1].image}">
+            <div class="ad-card-context">
+              <h1 class="ad-card-context-h1">${random_ads[1].name}</h1>
+              <a href="${random_ads[1].url}" class="a-blue">바로 알아보기 ></a>
+            </div>
+          </div>
+        </div>
+        `
+        scroll_div += `<div class="all-card-container" id="card_div">`
         for (let i = 0; i < keyboards.length; i++) {
-          const card_div = document.querySelector('#card_div')
-          card_div.insertAdjacentHTML('beforeend', `
+          scroll_div += `
           <a href="/${keyboards[i].pk}/detail">
             <div class="all-card">
               <img src="${keyboards[i].img}">
@@ -371,8 +376,19 @@
               </div>
               <div class="all-card-button">자세히 알아보기</div>
             </div>
-          </a> `);
-        }
+          </a> `
+          }
+          scroll_div += `</div>`
+          all_container.insertAdjacentHTML('beforeend',scroll_div)
+          const ad_card = document.querySelectorAll('.ad-card')
+          ad_card.forEach((card, index) => {
+            card.addEventListener('mouseover', function() {
+              this.querySelector('.ad-card-context').className = 'ad-card-context-hover'
+            })
+            card.addEventListener('mouseout', function() {
+              this.querySelector('.ad-card-context-hover').className = 'ad-card-context'
+            })
+          })
       }); page = page + 1
     }
   }

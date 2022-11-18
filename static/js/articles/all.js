@@ -16,14 +16,3 @@ document.querySelector('#all-nav-button').addEventListener("click",  function() 
     nav_flag = 0
   }
 })
-
-const ad_card = document.querySelectorAll('.ad-card')
-
-ad_card.forEach((card, index) => {
-  card.addEventListener('mouseover', function() {
-    this.querySelector('.ad-card-context').className = 'ad-card-context-hover'
-  })
-  card.addEventListener('mouseout', function() {
-    this.querySelector('.ad-card-context-hover').className = 'ad-card-context'
-  })
-})

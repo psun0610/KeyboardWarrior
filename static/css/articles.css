@@ -51,6 +51,10 @@ a {
   text-decoration: none;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 :root {
   --white-transparent: #ffffffc7;
   --a-blue: #3786FB;
