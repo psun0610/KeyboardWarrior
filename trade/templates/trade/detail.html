@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load django_bootstrap5 %}
+{% load humanize %}
 
 {% block body %}
 <div class='trade-all'>
@@ -32,14 +33,43 @@
 
     <!-- 제품정보 -->
     <div class="keyboard-detail-content">
-      <div class="trade-keyboard-name">
-        <h2>{{ trade.title }}</h2>
-        <div>
-          <i class="bi bi-bookmark-fill"></i>
-          <span id="marker_count">{{trade.marker.all.count}}</span>
+      <div class="d-flex flex-column">
+        <div class="trade-keyboard-name">
+          <h2>{{ trade.title }}</h2>
+          <div>
+            <i class="bi bi-bookmark-fill"></i>
+            <span id="marker_count">{{trade.marker.all.count}}</span>
+          </div>
         </div>
+
+        <h1 class="trade-price">₩{{ trade.price|intcomma }}</h1>
+
+        {% comment %} <a href="{% url 'accounts:detail' trade.user.id %}">
+            <div class="review-detail-user">
+              {% if trade.user.is_social == 0 %}
+                {% if trade.user.image %}
+                <img class="" src="{{ trade.user.image.url }}">
+                {% else %}
+                <img src="{% static 'images/logo_png.png' %}">
+                {% endif %}
+              {% else %}
+                {% if trade.user.image %}
+                <img src="{{ trade.user.image }}">
+                {% else %}
+                <img src="{% static 'images/logo_png.png' %}">
+                {% endif %}
+              {% endif %}
+              <p>{{ trade.user }}</p>
+            </div>
+          </a> {% endcomment %}
+
       </div>
       <table>
+      <tr>
+          <th>작성자</th>
+          <td><a href="{% url 'accounts:detail' trade.user.id %}">
+            {{ trade.user }}</a></td>
+        </tr>
         <tr>
           <th>판매/구매</th>
           <td>
@@ -99,39 +129,50 @@
         </tr>
       </table>
 
-      {% if request.user != trade.user %}
-      <div class="jjimjjok">
-        {% if request.user in trade.marker.all %}
-        <div class="trade-detail-btn jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
-          <i class="bi bi-bookmark-fill" data-trade-id="{{ trade.pk }}"></i>
-          <span data-trade-id="{{ trade.pk }}">찜완료</span>
-        </div>
+      {% if trade.status_type == 1 %}
+        {% if request.user != trade.user %}
+        {% if request.user.is_authenticated %}
+          <div class="jjimjjok">
+            {% if request.user in trade.marker.all %}
+            <div class="trade-detail-btn jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
+              <i class="bi bi-bookmark-fill" data-trade-id="{{ trade.pk }}"></i>
+              <span data-trade-id="{{ trade.pk }}">찜완료</span>
+            </div>
+            {% else %}
+            <div class="trade-detail-btn no-jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
+              <i class="bi bi-bookmark" id="bookmark" data-trade-id="{{ trade.pk }}"></i>
+              <span data-trade-id="{{ trade.pk }}">찜하기</span>
+            </div>
+            {% endif %}
+            <a href="{% url 'accounts:first_message' trade.pk trade.user.pk %}">
+              <div class="trade-detail-btn jjok">쪽지보내기</div>
+            </a>
+          </div>
         {% else %}
-        <div class="trade-detail-btn no-jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
-          <i class="bi bi-bookmark" id="bookmark" data-trade-id="{{ trade.pk }}"></i>
-          <span data-trade-id="{{ trade.pk }}">찜하기</span>
+        <div style="height: 30px; width: 100%;"></div>
+        {% endif %}
+        <!-- 내가 작성자면 -->
+        {% else %}
+        <div class="jjimjjok">
+          {% if trade.status_type == 1 %}
+          <div class="trade-detail-btn jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
+            <span data-trade-id="{{ trade.pk }}">거래중</span>
+          </div>
+          {% else %}
+          <div class="trade-detail-btn no-jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
+            <span data-trade-id="{{ trade.pk }}">거래완료</span>
+          </div>
+          {% endif %}
+          <a href="{% url 'trade:update' trade.pk %}">
+            <div class="trade-detail-btn jjok">글 수정</div>
+          </a>
+          <a href="{% url 'trade:delete' trade.pk %}">
+            <div class="trade-detail-btn jjok">글 삭제</div>
+          </a>
         </div>
         {% endif %}
-        <a href="{% url 'accounts:first_message' trade.pk trade.user.pk %}">
-          <div class="trade-detail-btn jjok">쪽지보내기</div>
-        </a>
-      </div>
-      <!-- 내가 작성자면 -->
       {% else %}
-      <div class="jjimjjok">
-        {% if trade.status_type == 1 %}
-        <div class="trade-detail-btn jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
-          <span data-trade-id="{{ trade.pk }}">거래중</span>
-        </div>
-        {% else %}
-        <div class="trade-detail-btn no-jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
-          <span data-trade-id="{{ trade.pk }}">거래완료</span>
-        </div>
-        {% endif %}
-        <a href="{% url 'trade:update' trade.pk %}">
-          <div class="trade-detail-btn jjok">글 수정</div>
-        </a>
-      </div>
+      <div style="height: 30px; width: 100%;"></div>
       {% endif %}
 
       <div class='trade-content'>
@@ -326,9 +367,7 @@
     marker?.addEventListener('click', function (event) {
       capture: true
       axios({ method: 'get', url: `/trade/${event.target.dataset.tradeId}/marker/` }).then(response => {
-
-        console.log(response)
-        console.log(response.data)
+        console.log(response.data.marker)
         marker.classList.toggle('jjim')
         marker.classList.toggle('no-jjim')
         marker.querySelector('#bookmark').classList.toggle('bi-bookmark-fill')

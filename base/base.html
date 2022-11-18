@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="{% static 'css/trade.css' %}">
   <link rel="stylesheet" href="{% static 'css/reviews.css' %}">
   <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+  <link rel="stylesheet" href="{% static 'css/chat.css' %}">
 </head>
 
 <body>
@@ -40,10 +41,41 @@
             <a href="{% url 'reviews:index'  %}"><li class="my-nav-item">키보드 후기</li></a>
           </div>
           <div>
-            {% if request.user.is_authenticated %}
-            <a href="{% url 'accounts:detail' request.user.pk %}"><li class="my-nav-item">마이페이지</li></a>
-            <a><li class="my-nav-item" id="nav-window-btn">내 정보<div class="my-nav-window"></div></li></a>
-            <a href="{% url 'accounts:logout' %}"><li class="my-nav-item">로그아웃</li></a>
+          {% if request.user.is_authenticated %}
+              <li class="my-nav-item" id="nav-window-btn">내 정보
+                <div class="my-nav-window" id="nav-window">
+                  <!-- 내 프로필사진 -->
+                  <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}">
+                      {% if trade.user.is_social == 0 %}
+                        {% if request.user.image %}
+                        <img src="{{ request.user.image.url }}">
+                        {% else %}
+                        <img src="{% static 'images/logo_png.png' %}">
+                        {% endif %}
+                      {% else %}
+                        {% if request.user.image %}
+                        <img class="nav-profile" src="{{ request.user.image }}">
+                        {% else %}
+                        <img class="nav-profile" src="{% static 'images/logo_png.png' %}">
+                        {% endif %}
+                      {% endif %}
+                      <!-- 내 이름 -->
+                      <div>
+                        {% if request.user.first_name and request.user.last_name %}
+                        <h1>{{ request.user.last_name }}{{ request.user.first_name }}<span>({{ request.user }})</span></h1>
+                        {% else %}
+                        <h1>{{ request.user }}</h1>
+                        {% endif %}
+                        <h2>{{ request.user.email }}</h2>
+                      </div>
+                    </a>
+                    <hr>
+                  <!-- 여기 알림 뜨게 -->
+                </div>
+              </li>
+              </a>
+              <a href="{% url 'accounts:logout' %}"><li class="my-nav-item">로그아웃</li></a>
+            </div>
             {% else %}
             <a href="{% url 'accounts:signup' %}"><li class="my-nav-item">회원가입</li></a>
             <a href="{% url 'accounts:login' %}"><li class="my-nav-item">로그인</li></a>
@@ -64,12 +96,6 @@
 
   <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script>
-  const button = document.querySelector('#nav-window-btn')
-  button.addEventListener('mouseover', function(){
-
-  })
-</script>
 </body>
 
 </html>

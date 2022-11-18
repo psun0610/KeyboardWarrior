@@ -188,6 +188,26 @@
   background-color: var(--my-red);
 }
 
+.done-badge {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.405);
+  color: white;
+}
+.done-badge>div {
+  font-size: 22px;
+  font-weight: 700;
+}
+.done-text {
+  color: var(--my-gray);
+}
+
 .jjimjjok {
   width: 400px;
   display: flex;
@@ -246,14 +266,14 @@
 }
 
 .trade-keyboard-name {
-  margin-bottom: 30px;
+  margin-bottom: 0;
   margin-left: 25px;
   display: flex;
   align-items: center;
 }
 
 .trade-keyboard-name>h2 {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 700;
   margin: 0;
 }
@@ -372,4 +392,11 @@ input::-webkit-input-placeholder {
 .keyboard-img {
   width: 70px;
   height: 70px;
+}
+
+.trade-price {
+  font-size: 32px;
+  font-weight: 700;
+  margin-left: 25px;
+  margin-bottom: 13px;
 }
