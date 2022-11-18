@@ -696,7 +696,7 @@ footer>div {
 .cancel-btn {
   width: 500px;
   margin-bottom: 50px;
-  background-color: rgb(202, 45, 45);
+  background-color: var(--my-gray);
   padding-top: 15px;
   padding-bottom: 15px;
   font-weight: 600;
