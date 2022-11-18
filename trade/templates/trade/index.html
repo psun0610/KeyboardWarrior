@@ -212,7 +212,8 @@
     
     <!-- 게시글 카드 -->
     <div class="card-container" id="trade-card-0">
-      {% for trade in trades %}
+      <!-- 거래 기다리고 있는 상품들 -->
+      {% for trade in trade_list %}
       <a href="{% url 'trade:detail' trade.pk %}">
         <div class="my-card">
           <div class="card-content">
@@ -235,54 +236,155 @@
         </div>
       </a>
       {% endfor %}
+
+      <!-- 거래완료된 상품들 -->
+      {% for trade in done_trade_list %}
+      <a href="{% url 'trade:detail' trade.pk %}">
+        <div class="my-card">
+          <div class="card-content">
+            {% if trade.photo_set.all %}
+              <img src="{{ trade.photo_set.all.0.image.url }}">
+            {% else %}
+              <img src="{% static 'images/logo_png.png' %}">
+            {% endif %}
+            <div class="card-title">
+              <h3>{{ trade.keyboard.name }}</h3>
+              <h1 class="done-text">{{ trade.title }}</h1>
+              <h2 class="done-text">₩ {{ trade.price|intcomma }}</h2>
+            </div>
+            {% if trade.Trade_type == 1 %}
+              <div class="card-badge blue-badge">판매</div>
+            {% else %}
+              <div class="card-badge red-badge">구매</div>
+            {% endif %}
+          </div>
+          <!-- 거래완료 딱지 -->
+          <div class="done-badge">
+            <div>판매완료</div>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
     </div>
 
     <!-- 게시글 카드 판매글만 -->
     <div class="card-container" id="trade-card-1" style="display: none;">
-      {% for photo in photo_list %}
-        {% if photo.trade.Trade_type == 1 %}
-          <a href="{% url 'trade:detail' photo.trade.pk %}">
-            <div class="my-card">
-              <div class="card-content">
-                {% if photo.image %}
-                  <img src="{{ photo.image.url }}">
-                {% else %}
-                  <img src="{% static 'images/logo_png.png' %}">
-                {% endif %}
-                <div class="card-title">
-                  <h3>{{ photo.trade.keyboard.name }}</h3>
-                  <h1>{{ photo.trade.title }}</h1>
-                  <h2>₩ {{ photo.trade.price|intcomma }}</h2>
-                </div>
-                <div class="card-badge blue-badge">판매</div>
+      <!-- 거래 기다리고 있는 상품들 -->
+    {% for trade in trade_list %}
+      {% if trade.Trade_type == 1 %}
+        <a href="{% url 'trade:detail' trade.pk %}">
+          <div class="my-card">
+            <div class="card-content">
+              {% if trade.photo_set.all %}
+                <img src="{{ trade.photo_set.all.0.image.url }}">
+              {% else %}
+                <img src="{% static 'images/logo_png.png' %}">
+              {% endif %}
+              <div class="card-title">
+                <h3>{{ trade.keyboard.name }}</h3>
+                <h1>{{ trade.title }}</h1>
+                <h2>₩ {{ trade.price|intcomma }}</h2>
               </div>
+              {% if trade.Trade_type == 1 %}
+                <div class="card-badge blue-badge">판매</div>
+              {% else %}
+                <div class="card-badge red-badge">구매</div>
+              {% endif %}
             </div>
-          </a>
+          </div>
+        </a>
+        {% endif %}
+      {% endfor %}
+
+    <!-- 거래완료된 상품들 -->
+    {% for trade in done_trade_list %}
+      {% if trade.Trade_type == 1 %}
+        <a href="{% url 'trade:detail' trade.pk %}">
+          <div class="my-card">
+            <div class="card-content">
+              {% if trade.photo_set.all %}
+                <img src="{{ trade.photo_set.all.0.image.url }}">
+              {% else %}
+                <img src="{% static 'images/logo_png.png' %}">
+              {% endif %}
+              <div class="card-title">
+                <h3>{{ trade.keyboard.name }}</h3>
+                <h1 class="done-text">{{ trade.title }}</h1>
+                <h2 class="done-text">₩ {{ trade.price|intcomma }}</h2>
+              </div>
+              {% if trade.Trade_type == 1 %}
+                <div class="card-badge blue-badge">판매</div>
+              {% else %}
+                <div class="card-badge red-badge">구매</div>
+              {% endif %}
+            </div>
+            <!-- 거래완료 딱지 -->
+            <div class="done-badge">
+              <div>판매완료</div>
+            </div>
+          </div>
+        </a>
         {% endif %}
       {% endfor %}
     </div>
-
+        
     <!-- 게시글 카드 구매글만 -->
     <div class="card-container" id="trade-card-2" style="display: none;">
-      {% for photo in photo_list %}
-        {% if photo.trade.Trade_type == 2 %}
-          <a href="{% url 'trade:detail' photo.trade.pk %}">
-            <div class="my-card">
-              <div class="card-content">
-                {% if photo.image %}
-                  <img src="{{ photo.image.url }}">
-                {% else %}
-                  <img src="{% static 'images/logo_png.png' %}">
-                {% endif %}
-                <div class="card-title">
-                  <h3>{{ photo.trade.keyboard.name }}</h3>
-                  <h1>{{ photo.trade.title }}</h1>
-                  <h2>₩ {{ photo.trade.price|intcomma }}</h2>
-                </div>
-                <div class="card-badge red-badge">구매</div>
+      <!-- 거래 기다리고 있는 상품들 -->
+    {% for trade in trade_list %}
+      {% if trade.Trade_type == 2 %}
+        <a href="{% url 'trade:detail' trade.pk %}">
+          <div class="my-card">
+            <div class="card-content">
+              {% if trade.photo_set.all %}
+                <img src="{{ trade.photo_set.all.0.image.url }}">
+              {% else %}
+                <img src="{% static 'images/logo_png.png' %}">
+              {% endif %}
+              <div class="card-title">
+                <h3>{{ trade.keyboard.name }}</h3>
+                <h1>{{ trade.title }}</h1>
+                <h2>₩ {{ trade.price|intcomma }}</h2>
               </div>
+              {% if trade.Trade_type == 1 %}
+                <div class="card-badge blue-badge">판매</div>
+              {% else %}
+                <div class="card-badge red-badge">구매</div>
+              {% endif %}
             </div>
-          </a>
+          </div>
+        </a>
+        {% endif %}
+      {% endfor %}
+
+      <!-- 거래완료된 상품들 -->
+      {% for trade in done_trade_list %}
+        {% if trade.Trade_type == 2 %}
+        <a href="{% url 'trade:detail' trade.pk %}">
+          <div class="my-card">
+            <div class="card-content">
+              {% if trade.photo_set.all %}
+                <img src="{{ trade.photo_set.all.0.image.url }}">
+              {% else %}
+                <img src="{% static 'images/logo_png.png' %}">
+              {% endif %}
+              <div class="card-title">
+                <h3>{{ trade.keyboard.name }}</h3>
+                <h1 class="done-text">{{ trade.title }}</h1>
+                <h2 class="done-text">₩ {{ trade.price|intcomma }}</h2>
+              </div>
+              {% if trade.Trade_type == 1 %}
+                <div class="card-badge blue-badge">판매</div>
+              {% else %}
+                <div class="card-badge red-badge">구매</div>
+              {% endif %}
+            </div>
+            <!-- 거래완료 딱지 -->
+            <div class="done-badge">
+              <div>판매완료</div>
+            </div>
+          </div>
+        </a>
         {% endif %}
       {% endfor %}
     </div>
