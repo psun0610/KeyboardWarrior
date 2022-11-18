@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+
+{% block body %}
+
+{% comment %} 제목 1 {% endcomment %}
+<div class='my-head'>
+    <h2>KeyBoard Warrior 메세지</h2>
+    <hr>
+</div>
+
+
+
+{% comment %} 유저가 받은 메세지룸 모두 꺼내기 만일 처음 타고왔다면 보내는 메시지함을 views에서 받아서 먼저 펼치게 {% endcomment %}
+<div id="chat_list">
+    <p> 채팅방목록 </p>
+    {% for rooms in all_room %}
+    {{room.reception_user}}
+    {{room.trade.title}}
+    
+    {%endfor%}
+
+</div>
+<hr>
+
+{% comment %} 메세지룸 선택시 해당 룸 메세지 모두 출력{% endcomment %}
+<div class="mwrap" id="chatbox">
+
+    <hr>
+    {% for message in room_message %}
+    <hr>
+    {% if message.user == request.user%}
+
+    <div class="chat ch2">
+        <div class="icon"><i class="fa-solid fa-user"></i></div>
+        <div class="textbox">{{message.content}}</div>
+    </div>
+
+    {% else %}
+    <div class="chat ch1">
+        <div class="icon"><i class="fa-solid fa-user"></i></div>
+        <div class="textbox">{{message.content}}</div>
+    </div>
+    
+    {%endif%}
+    {% endfor %}
+
+    <hr>
+    임시채팅
+    <form action="{% url 'accounts:message' room.pk %} " method = "POST">
+        {% csrf_token %}
+        <input id="room-name-trade" type="hidden" data-trade-id="{{send_message}}">
+        <input id="room-name-input" type="text" name="content" size="100"><br>
+        <button type="submit">입력</button>
+    </form>
+</div>
+
+
+<br>
+
+
+
+
+
+
+
+
+비동기채팅
+<form action="">
+    <input id="room-name-trade" type="hidden" data-trade-id="{{send_message}}">
+    <input id="room-name-input" type="text" size="100"><br>
+    <input id="room-name-submit" type="button" value="Enter">
+</form>
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    document.querySelector('#room-name-input').focus();
+    document.querySelector('#room-name-input').onkeyup = function (e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#room-name-submit').click();
+        }
+    };
+    document.querySelector('#room-name-submit').onclick = function (e) {
+        var chatMessage = document.querySelector('#room-name-input').value;
+        event.preventDefault();
+        axios({
+            method: 'post',
+            url: `/accounts/message/`,
+            header: {
+                'X-CSRFtoken': csrftoken
+            },
+            data: new FormData(MessageForm)
+        })
+            .then(response => {
+                const comment_box = document.querySelector('#comment_box')
+                const user = response.data.user
+                comment_box.textContent = "";
+                const comment_list = response
+
+                console.log("댓글 전송 ")
+            });
+    }
+</script>
+
+
+
+<style>
+    .mwrap .chat {
+        display: flex;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .mwrap .chat .icon {
+        position: relative;
+        overflow: hidden;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #eee;
+    }
+
+    .mwrap .chat .icon i {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        font-size: 2.5rem;
+        color: #aaa;
+        transform: translateX(-50%);
+    }
+
+    .mwrap .chat .textbox {
+        position: relative;
+        display: inline-block;
+        max-width: calc(100% - 70px);
+        padding: 10px;
+        margin-top: 7px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+
+    .mwrap .chat .textbox::before {
+        position: absolute;
+        display: block;
+        top: 0;
+        font-size: 1.5rem;
+    }
+
+    .mwrap .ch1 .textbox {
+        margin-left: 20px;
+        background-color: #ddd;
+    }
+
+    .mwrap .ch1 .textbox::before {
+        left: -15px;
+        content: "◀";
+        color: #ddd;
+    }
+
+    .mwrap .ch2 {
+        flex-direction: row-reverse;
+    }
+
+    .mwrap .ch2 .textbox {
+        margin-right: 20px;
+        background-color: #54aff9;
+    }
+
+    .mwrap .ch2 .textbox::before {
+        right: -15px;
+        content: "▶";
+        color: #54aff9;
+    }
+</style>
+
+{% endblock body %}

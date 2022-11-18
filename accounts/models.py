@@ -71,14 +71,9 @@ class Room(models.Model):
 
 
 class Message(models.Model):
-    send_user = models.ForeignKey(
-        AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="send"
-    )
-    reception_user = models.ForeignKey(
-        AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="reception"
-    )
-    trade = models.ForeignKey(
-        Trades, on_delete=models.CASCADE, related_name="reception"
+    user = models.ForeignKey(
+        AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
     )
     content = models.CharField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
