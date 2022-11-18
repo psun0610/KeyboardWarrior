@@ -10,7 +10,7 @@
 
 </div>
 <p>받는사람 : {{reception_user}}</p>
-<form action="{% url 'accounts:massage' trade.pk reception_user.pk %}" method="POST">
+<form action="{% url 'accounts:message' trade.pk reception_user.pk %}" method="POST">
     {% bootstrap_form form %}
     {% csrf_token %}
     <button type="submit">쪽지보내기</button>

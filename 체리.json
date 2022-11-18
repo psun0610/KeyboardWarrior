@@ -41,7 +41,7 @@
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열"
+			"kind": "텐키리스"
 		}
 	},
 	{
@@ -86,7 +86,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열"
+			"kind": "텐키리스"
 		}
 	},
 	{
@@ -116,7 +116,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열"
+			"kind": "텐키리스"
 		}
 	},
 	{
@@ -131,7 +131,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열"
+			"kind": "텐키리스"
 		}
 	},
 	{
@@ -221,7 +221,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열"
+			"kind": "텐키리스"
 		}
 	},
 	{
@@ -232,10 +232,10 @@
 			"brand": "CHERRY",
 			"connect": "펜타그래프",
 			"weight": "기타",
-			"array": "기타",
+			"array": "108",
 			"switch": "체리",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열"
 		}
 	},
@@ -281,7 +281,7 @@
 			"switch": "체리",
 			"key_switch": "기타",
 			"press": 100,
-			"kind": "풀배열"
+			"kind": "텐키리스"
 		}
 	},
 	{
@@ -296,7 +296,7 @@
 			"switch": "체리",
 			"key_switch": "기타",
 			"press": 100,
-			"kind": "풀배열"
+			"kind": "텐키리스"
 		}
 	},
 	{
@@ -307,7 +307,7 @@
 			"brand": "CHERRY",
 			"connect": "기계식",
 			"weight": 935,
-			"array": "기타",
+			"array": "108",
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": 45,

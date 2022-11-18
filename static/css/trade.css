@@ -210,6 +210,7 @@
   background-color: var(--my-hover-gray);
   color: black;
 }
+
 .jjim {
   background-color: var(--my-red);
   color: white;
@@ -250,17 +251,20 @@
   display: flex;
   align-items: center;
 }
+
 .trade-keyboard-name>h2 {
   font-size: 30px;
   font-weight: 700;
   margin: 0;
 }
+
 .trade-keyboard-name>div {
   color: rgb(177, 177, 177);
   font-size: 13px;
   font-weight: 400;
   margin-left: 16px;
 }
+
 .comment-hr {
   margin: auto;
 }
@@ -273,6 +277,7 @@
 .commentform-wrap {
   margin-bottom: 50px;
 }
+
 .comment-hr {
   margin: 4px;
   opacity: 1;
@@ -286,17 +291,20 @@
   outline: none;
   color: rgb(0, 0, 0);
 }
+
 .commentform-trade {
   display: flex;
   justify-content: space-evenly;
   margin: 8px;
 }
+
 .tradecomment-create {
   border: 0px;
   background-color: transparent;
   width: 1030px;
   color: aliceblue;
 }
+
 .tradecomment-input {
   margin-right: 0px;
   padding: 3px 20px;
@@ -304,10 +312,12 @@
   background-color: var(--my-black);
   border: 0px;
 }
+
 input::placeholder {
   color: rgba(128, 128, 128, 1);
   font-size: 15px;
 }
+
 input::-webkit-input-placeholder {
   color: rgba(128, 128, 128, 1);
 }
@@ -327,8 +337,39 @@ input::-webkit-input-placeholder {
 
 .comment-delete-btn:hover {
   background-color: var(--my-hover-gray);
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
+
 #comment_box {
   margin-bottom: 65px;
+}
+
+/* 키보드 검색창 임시  */
+.search-off {
+  display: none;
+
+}
+
+.search-on {
+  display: block;
+
+}
+
+.search-wrap {
+  position: relative;
+}
+
+.search-div {
+  position: absolute;
+  bottom: 1;
+  width: 600px;
+  height: 300px;
+  background-color: bisque;
+  overflow: scroll;
+  z-index: 100;
+}
+
+.keyboard-img {
+  width: 70px;
+  height: 70px;
 }

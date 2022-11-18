@@ -106,7 +106,7 @@
 			"array": "104",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -122,7 +122,7 @@
 			"array": "104",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -154,7 +154,7 @@
 			"array": "68",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선+무선+블루투스"
 		}
@@ -186,7 +186,7 @@
 			"array": "87",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 30,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -266,7 +266,7 @@
 			"array": "87",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 55,
 			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
@@ -290,22 +290,6 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "앱코 AR21 CNC 풀 알루미늄 DIY KIT 넘버패드 (네이비)",
-			"img": "https://img.danawa.com/prod_img/500000/689/468/img/10468689_1.jpg?shrink=500:500&_v=20200511170702",
-			"brand": "앱코",
-			"connect": "기계식",
-			"weight": 695,
-			"array": "기타",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
-			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
 			"name": "앱코 HACKER K660M TKL 이색사출 PBT 체리 키보드 딥샌드 (저소음 적축)",
 			"img": "https://img.danawa.com/prod_img/500000/945/446/img/15446945_1.jpg?shrink=500:500&_v=20211019124257",
 			"brand": "앱코",
@@ -315,7 +299,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -331,7 +315,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -346,8 +330,8 @@
 			"array": "87",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
+			"press": 45,
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -394,7 +378,7 @@
 			"array": "87",
 			"switch": "오테뮤",
 			"key_switch": "적축",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -410,7 +394,7 @@
 			"array": "87",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -442,7 +426,7 @@
 			"array": "87",
 			"switch": "Noppoo",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -458,7 +442,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -474,7 +458,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -522,23 +506,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
-			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "앱코 HACKER K8700 카일 광축 완전방수 크리스탈 키캡 (블랙, 클릭)",
-			"img": "https://img.danawa.com/prod_img/500000/620/438/img/5438620_1.jpg?shrink=500:500&_v=20190805145927",
-			"brand": "앱코",
-			"connect": "무접점(광축)",
-			"weight": 1240,
-			"array": "104",
-			"switch": "카일",
-			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -554,7 +522,7 @@
 			"array": "104",
 			"switch": "Finekey",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 60,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -570,23 +538,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
-			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "앱코 HACKER K9300 ARC 핑크펄 카일 광축 완전방수 크리스탈 키캡 (클릭)",
-			"img": "https://img.danawa.com/prod_img/500000/786/297/img/9297786_1.jpg?shrink=500:500&_v=20190820091825",
-			"brand": "앱코",
-			"connect": "무접점(광축)",
-			"weight": 1240,
-			"array": "104",
-			"switch": "카일",
-			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -602,7 +554,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -618,23 +570,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
-			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "앱코 HACKER K9100 ARC 프리미엄 카일 광축 크리스탈 키캡 완전방수 LED (옐로우, 클릭)",
-			"img": "https://img.danawa.com/prod_img/500000/005/970/img/7970005_1.jpg?shrink=500:500&_v=20191230151435",
-			"brand": "앱코",
-			"connect": "무접점(광축)",
-			"weight": 1240,
-			"array": "104",
-			"switch": "카일",
-			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -650,7 +586,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "적축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -666,7 +602,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -682,7 +618,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -698,7 +634,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -711,10 +647,10 @@
 			"brand": "앱코",
 			"connect": "무접점(광축)",
 			"weight": 1300,
-			"array": "기타",
+			"array": "108",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -731,7 +667,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -746,7 +682,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 50,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -762,23 +698,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
-			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "앱코 HACKER K8800 카일 광축 완전방수 축교환 크리스탈 키캡 (레드, 클릭)",
-			"img": "https://img.danawa.com/prod_img/500000/211/085/img/6085211_1.jpg?shrink=500:500&_v=20190805145700",
-			"brand": "앱코",
-			"connect": "무접점(광축)",
-			"weight": 1240,
-			"array": "104",
-			"switch": "카일",
-			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -794,7 +714,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 50,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -810,7 +730,7 @@
 			"array": "87",
 			"switch": "오테뮤",
 			"key_switch": "갈축",
-			"press": 100,
+			"press": 50,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -826,7 +746,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "청축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -887,10 +807,10 @@
 			"brand": "앱코",
 			"connect": "무접점(광축)",
 			"weight": 1240,
-			"array": "기타",
+			"array": "108",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -906,7 +826,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 50,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -922,7 +842,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -938,7 +858,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -954,7 +874,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -970,7 +890,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -986,7 +906,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1003,7 +923,7 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -1034,7 +954,7 @@
 			"array": "99",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선+블루투스"
 		}
@@ -1082,7 +1002,7 @@
 			"array": "104",
 			"switch": "GTMX",
 			"key_switch": "적축",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1098,7 +1018,7 @@
 			"array": "104",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 55,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1114,7 +1034,7 @@
 			"array": "104",
 			"switch": "A 광축",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1130,7 +1050,7 @@
 			"array": "104",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1143,10 +1063,10 @@
 			"brand": "앱코",
 			"connect": "멤브레인",
 			"weight": 475,
-			"array": "기타",
+			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "무선"
 		}
@@ -1162,8 +1082,8 @@
 			"array": "87",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
+			"press": 45,
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -1195,7 +1115,7 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": 100,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -1211,7 +1131,7 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -1226,8 +1146,8 @@
 			"array": "87",
 			"switch": "카일",
 			"key_switch": "기타",
-			"press": 100,
-			"kind": "풀배열",
+			"press": 50,
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -1243,7 +1163,7 @@
 			"switch": "GTMX",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -1323,7 +1243,7 @@
 			"switch": "카일",
 			"key_switch": "기타",
 			"press": 100,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -1338,7 +1258,7 @@
 			"array": "104",
 			"switch": "오테뮤",
 			"key_switch": "청축",
-			"press": 100,
+			"press": 50,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1354,7 +1274,7 @@
 			"array": "104",
 			"switch": "GTMX",
 			"key_switch": "청축",
-			"press": 100,
+			"press": 50,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1370,7 +1290,7 @@
 			"array": "104",
 			"switch": "GTMX",
 			"key_switch": "청축",
-			"press": 100,
+			"press": 50,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -1402,7 +1322,7 @@
 			"array": "102",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": 100,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "블루투스"
 		}
@@ -1418,7 +1338,7 @@
 			"array": "104",
 			"switch": "GTMX",
 			"key_switch": "청축",
-			"press": 50,
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}

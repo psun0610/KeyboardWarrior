@@ -6,13 +6,13 @@
 			"img": "https://img.danawa.com/prod_img/500000/356/350/img/13350356_1.jpg?shrink=500:500&_v=20211202123100",
 			"brand": "VARMILO",
 			"connect": "무접점(정전용량)",
-			"weight": 950,
+			"weight": 850,
 			"array": "87",
 			"switch": "독자",
 			"key_switch": "로즈축",
 			"press": 55,
-			"kind": "풀배열",
-			"bluetooth": "유선"
+			"kind": "텐키리스",
+			"bluetooth": "무선+유선"
 		}
 	},
 	{
@@ -27,7 +27,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -38,13 +38,13 @@
 			"img": "https://img.danawa.com/prod_img/500000/049/823/img/11823049_1.jpg?shrink=500:500&_v=20200901142914",
 			"brand": "VARMILO",
 			"connect": "기계식",
-			"weight": 950,
+			"weight": 900,
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": 45,
-			"kind": "풀배열",
-			"bluetooth": "유선"
+			"press": 55,
+			"kind": "텐키리스",
+			"bluetooth": "무선+유선"
 		}
 	},
 	{
@@ -59,7 +59,7 @@
 			"switch": "독자",
 			"key_switch": "핑크축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -70,13 +70,13 @@
 			"img": "https://img.danawa.com/prod_img/500000/271/632/img/17632271_1.jpg?shrink=500:500&_v=20220810105510",
 			"brand": "VARMILO",
 			"connect": "기계식",
-			"weight": 1000,
+			"weight": 900,
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": 45,
-			"kind": "풀배열",
-			"bluetooth": "유선"
+			"press": 55,
+			"kind": "텐키리스",
+			"bluetooth": "유선+무선"
 		}
 	},
 	{
@@ -91,7 +91,7 @@
 			"switch": "독자",
 			"key_switch": "데이지축",
 			"press": 35,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -122,7 +122,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "갈축",
-			"press": "기타",
+			"press": 50,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -139,7 +139,7 @@
 			"switch": "VARMILO",
 			"key_switch": "핑크축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -187,7 +187,7 @@
 			"switch": "독자",
 			"key_switch": "로즈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -203,7 +203,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -219,7 +219,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -234,7 +234,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "적축",
-			"press": "기타",
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -363,7 +363,7 @@
 			"switch": "독자",
 			"key_switch": "데이지축",
 			"press": 35,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -411,7 +411,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -427,7 +427,7 @@
 			"switch": "체리",
 			"key_switch": "갈축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -443,7 +443,7 @@
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -475,7 +475,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -491,7 +491,7 @@
 			"switch": "독자",
 			"key_switch": "데이지축",
 			"press": 35,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -523,7 +523,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -537,8 +537,8 @@
 			"weight": "기타",
 			"array": "68",
 			"switch": "기타",
-			"key_switch": "기타",
-			"press": "기타",
+			"key_switch": "흑축",
+			"press": 60,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -555,7 +555,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -569,8 +569,8 @@
 			"weight": 950,
 			"array": "87",
 			"switch": "기타",
-			"key_switch": "저소음적축키압",
-			"press": "기타",
+			"key_switch": "저소음적축",
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -586,7 +586,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "적축",
-			"press": "기타",
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -602,7 +602,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "로즈축",
-			"press": "기타",
+			"press": 55,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -619,7 +619,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -633,8 +633,8 @@
 			"weight": 1280,
 			"array": "108",
 			"switch": "체리",
-			"key_switch": "갈축기능멀티미디어",
-			"press": "기타",
+			"key_switch": "갈축",
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -650,7 +650,7 @@
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "핑크축",
-			"press": "기타",
+			"press": 55,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -666,7 +666,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "기타",
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -683,7 +683,7 @@
 			"switch": "체리",
 			"key_switch": "갈축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -699,7 +699,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -709,12 +709,12 @@
 			"name": "VARMILO VA108M V2 SEA MELODY PBT 염료승화 영문 (해외구매)",
 			"img": "https://img.danawa.com/prod_img/500000/838/710/img/17710838_1.jpg?shrink=500:500&_v=20220823174259",
 			"brand": "VARMILO",
-			"connect": "기계식기능동시입력",
+			"connect": "기계식",
 			"weight": 1300,
 			"array": "108",
 			"switch": "기타",
 			"key_switch": "기타",
-			"press": "기타",
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -731,24 +731,8 @@
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
-			"name": "VARMILO X ZOMO 고양이 발바닥 ABS 키캡 (치즈냥)",
-			"img": "https://img.danawa.com/prod_img/500000/840/012/img/14012840_1.jpg?shrink=500:500&_v=20210427091643",
-			"brand": "VARMILO",
-			"connect": "기타",
-			"weight": "기타",
-			"array": "기타",
-			"switch": "기타",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "풀배열",
-			"bluetooth": "기타"
 		}
 	},
 	{
@@ -763,7 +747,7 @@
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -779,7 +763,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	}

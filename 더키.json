@@ -11,7 +11,7 @@
 			"switch": "체리",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -27,7 +27,7 @@
 			"switch": "체리",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -43,7 +43,7 @@
 			"switch": "체리",
 			"key_switch": "청축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -91,7 +91,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -139,7 +139,7 @@
 			"switch": "체리",
 			"key_switch": "은축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -155,7 +155,7 @@
 			"switch": "체리",
 			"key_switch": "은축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -167,10 +167,10 @@
 			"brand": "Ducky",
 			"connect": "기계식",
 			"weight": 1100,
-			"array": "기타",
+			"array": "108",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": "기타",
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -183,10 +183,10 @@
 			"brand": "Ducky",
 			"connect": "기계식",
 			"weight": 950,
-			"array": "기타",
+			"array": "87",
 			"switch": "체리",
 			"key_switch": "은축",
-			"press": "기타",
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -219,7 +219,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -235,7 +235,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -250,7 +250,7 @@
 			"array": "61",
 			"switch": "체리",
 			"key_switch": "기타",
-			"press": "기타",
+			"press": 45,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -266,7 +266,7 @@
 			"array": "108",
 			"switch": "체리",
 			"key_switch": "은축",
-			"press": "기타",
+			"press": 45,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}
@@ -283,7 +283,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -299,7 +299,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -331,7 +331,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -379,7 +379,7 @@
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -395,7 +395,7 @@
 			"switch": "체리",
 			"key_switch": "저소음적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -427,7 +427,7 @@
 			"switch": "체리",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -439,11 +439,11 @@
 			"brand": "Ducky",
 			"connect": "기계식",
 			"weight": 590,
-			"array": "기타",
+			"array": "61",
 			"switch": "체리",
 			"key_switch": "적축",
-			"press": "기타",
-			"kind": "풀배열",
+			"press": 52,
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	}

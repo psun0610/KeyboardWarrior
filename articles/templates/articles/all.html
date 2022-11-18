@@ -50,6 +50,18 @@
               <label for="hansung">
                 <div class="all-nav-radio">한성컴퓨터</div>
               </label>
+
+              <input type="radio" id="varmilo" name="brand" style="display: none;" value="varmilo"
+                onclick="pick_brand(); send();">
+              <label for="varmilo">
+                <div class="all-nav-radio">바밀로</div>
+              </label>
+
+              <input type="radio" id="Ducky" name="brand" style="display: none;" value="ducky"
+                onclick="pick_brand(); send();">
+              <label for="Ducky">
+                <div class="all-nav-radio">더키</div>
+              </label>
             </td>
           </tr>
           <tr>
@@ -314,9 +326,6 @@
         const keyboards = response.data.keyboards
         for (let i = 0; i < keyboards.length; i++) {
           console.log(keyboards[i])
-
-          //이거 젠되는 페이지를 스크립트 스크롤 찍힐때로 들어가도록  
-          //html어디에 붙일지 아이디지정 327줄 아래에 어떤형식으로 문자열데이터넣을지 
           card_div.insertAdjacentHTML('beforeend', `
           <a href="/${keyboards[i].pk}/detail">
               <div class="all-card">
@@ -344,8 +353,6 @@
           const keyboards = response.data.keyboards
           for (let i = 0; i < keyboards.length; i++) {
             const card_div = document.querySelector('#card_div')
-            //이거 젠되는 페이지를 스크립트 스크롤 찍힐때로 들어가도록  
-            //html어디에 붙일지 아이디지정 327줄 아래에 어떤형식으로 문자열데이터넣을지 
             card_div.insertAdjacentHTML('beforeend', `
             <a href="/${keyboards[i].pk}/detail">
               <div class="all-card">

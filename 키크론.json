@@ -11,7 +11,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -22,8 +22,8 @@
 			"img": "https://img.danawa.com/prod_img/500000/532/112/img/18112532_1.jpg?shrink=500:500&_v=20221108094234",
 			"brand": "Keychron",
 			"connect": "기계식",
-			"weight": "기타",
-			"array": "기타",
+			"weight": 2310,
+			"array": "108",
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
@@ -43,7 +43,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -59,7 +59,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -75,7 +75,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -91,7 +91,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -139,7 +139,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -155,7 +155,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -171,7 +171,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -187,7 +187,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -203,7 +203,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -219,7 +219,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
 	},
@@ -295,7 +295,7 @@
 			"brand": "Keychron",
 			"connect": "기계식",
 			"weight": 1500,
-			"array": "기타",
+			"array": "62",
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 45,
@@ -322,22 +322,6 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "Keychron Q1 프리미엄 QMK 알루미늄 커스텀 키보드 스페이스그레이 (베어본)",
-			"img": "https://img.danawa.com/prod_img/500000/815/431/img/16431815_1.jpg?shrink=500:500&_v=20220218125519",
-			"brand": "Keychron",
-			"connect": "기계식",
-			"weight": 1600,
-			"array": "83",
-			"switch": "게이트론",
-			"key_switch": "적축",
-			"press": 100,
-			"kind": "텐키리스",
-			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
 			"name": "Keychron K6 알루미늄 RGB 옵티컬 (적축)",
 			"img": "https://img.danawa.com/prod_img/500000/681/516/img/11516681_1.jpg?shrink=500:500&_v=20200623104303",
 			"brand": "Keychron",
@@ -347,7 +331,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 40,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -363,7 +347,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 40,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -379,7 +363,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -407,10 +391,10 @@
 			"brand": "Keychron",
 			"connect": "기계식",
 			"weight": 770,
-			"array": "100접점",
+			"array": "100",
 			"switch": "게이트론",
 			"key_switch": "황축",
-			"press": 50,
+			"press": 40,
 			"kind": "풀배열",
 			"bluetooth": "유선+블루투스"
 		}
@@ -523,7 +507,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -539,7 +523,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -571,7 +555,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 40,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -583,7 +567,7 @@
 			"brand": "Keychron",
 			"connect": "기계식",
 			"weight": 770,
-			"array": "기타",
+			"array": "108",
 			"switch": "독자",
 			"key_switch": "청축",
 			"press": 48,
@@ -603,7 +587,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -615,11 +599,11 @@
 			"brand": "Keychron",
 			"connect": "기계식",
 			"weight": 402,
-			"array": "기타",
+			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "적축",
-			"press": 50,
-			"kind": "풀배열",
+			"press": 40,
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -635,7 +619,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -683,7 +667,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -699,7 +683,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -715,7 +699,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -731,7 +715,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -747,7 +731,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -779,7 +763,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -827,7 +811,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -855,7 +839,7 @@
 			"brand": "Keychron",
 			"connect": "기계식",
 			"weight": 933,
-			"array": "100접점",
+			"array": "100",
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
@@ -871,7 +855,7 @@
 			"brand": "Keychron",
 			"connect": "무접점",
 			"weight": 770,
-			"array": "100접점",
+			"array": "100",
 			"switch": "기타",
 			"key_switch": "청축",
 			"press": 50,
@@ -891,7 +875,7 @@
 			"switch": "독자",
 			"key_switch": "적축",
 			"press": 40,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -903,11 +887,11 @@
 			"brand": "Keychron",
 			"connect": "기계식",
 			"weight": 402,
-			"array": "기타",
+			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -919,11 +903,11 @@
 			"brand": "Keychron",
 			"connect": "기계식",
 			"weight": 402,
-			"array": "기타",
+			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -939,7 +923,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -955,7 +939,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -971,7 +955,7 @@
 			"switch": "독자",
 			"key_switch": "청축",
 			"press": 48,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -987,7 +971,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1051,7 +1035,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1067,7 +1051,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1099,7 +1083,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1115,7 +1099,7 @@
 			"switch": "게이트론",
 			"key_switch": "갈축",
 			"press": 55,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1131,7 +1115,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1147,7 +1131,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1163,7 +1147,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 60,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1179,7 +1163,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1255,11 +1239,11 @@
 			"brand": "Keychron",
 			"connect": "기계식",
 			"weight": 650,
-			"array": "기타",
+			"array": "87",
 			"switch": "독자",
 			"key_switch": "청축",
 			"press": 48,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1271,11 +1255,11 @@
 			"brand": "Keychron",
 			"connect": "기계식",
 			"weight": 402,
-			"array": "기타",
+			"array": "87",
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1287,11 +1271,11 @@
 			"brand": "Keychron",
 			"connect": "기계식",
 			"weight": 402,
-			"array": "기타",
+			"array": "87",
 			"switch": "독자",
 			"key_switch": "적축",
 			"press": 40,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1307,7 +1291,7 @@
 			"switch": "게이트론",
 			"key_switch": "청축",
 			"press": 52,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1339,7 +1323,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 45,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1371,7 +1355,7 @@
 			"switch": "독자",
 			"key_switch": "적축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	},
@@ -1387,7 +1371,7 @@
 			"switch": "게이트론",
 			"key_switch": "적축",
 			"press": 50,
-			"kind": "풀배열",
+			"kind": "텐키리스",
 			"bluetooth": "유선+블루투스"
 		}
 	}
