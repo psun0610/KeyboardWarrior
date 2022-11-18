@@ -148,6 +148,7 @@
   width: 400px;
   height: 500px;
   object-fit: cover;
+  box-shadow: 3px 3px 10px 3px rgba(175, 175, 175, 0.308);
 }
 
 .card-title {

@@ -47,19 +47,15 @@
                 <div class="my-nav-window" id="nav-window">
                   <!-- 내 프로필사진 -->
                   <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}">
-                      {% if trade.user.is_social == 0 %}
-                        {% if request.user.image %}
+                    {% if user.image %}
+                      {% if not user.is_social %}
                         <img src="{{ request.user.image.url }}">
-                        {% else %}
-                        <img src="{% static 'images/logo_png.png' %}">
-                        {% endif %}
                       {% else %}
-                        {% if request.user.image %}
                         <img src="{{ request.user.image }}">
-                        {% else %}
-                        <img src="{% static 'images/logo_png.png' %}">
-                        {% endif %}
                       {% endif %}
+                    {% else %}
+                      <img src="{% static 'images/logo_png.png' %}">
+                    {% endif %}
                       <!-- 내 이름 -->
                       <div>
                         {% if request.user.first_name and request.user.last_name %}
