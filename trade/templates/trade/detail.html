@@ -32,14 +32,43 @@
 
     <!-- 제품정보 -->
     <div class="keyboard-detail-content">
-      <div class="trade-keyboard-name">
-        <h2>{{ trade.title }}</h2>
-        <div>
-          <i class="bi bi-bookmark-fill"></i>
-          <span id="marker_count">{{trade.marker.all.count}}</span>
+      <div class="d-flex flex-column">
+        <div class="trade-keyboard-name">
+          <h2>{{ trade.title }}</h2>
+          <div>
+            <i class="bi bi-bookmark-fill"></i>
+            <span id="marker_count">{{trade.marker.all.count}}</span>
+          </div>
         </div>
+
+        <h1 class="trade-price">₩{{ trade.price }}</h1>
+
+        {% comment %} <a href="{% url 'accounts:detail' trade.user.id %}">
+            <div class="review-detail-user">
+              {% if trade.user.is_social == 0 %}
+                {% if trade.user.image %}
+                <img class="" src="{{ trade.user.image.url }}">
+                {% else %}
+                <img src="{% static 'images/logo_png.png' %}">
+                {% endif %}
+              {% else %}
+                {% if trade.user.image %}
+                <img src="{{ trade.user.image }}">
+                {% else %}
+                <img src="{% static 'images/logo_png.png' %}">
+                {% endif %}
+              {% endif %}
+              <p>{{ trade.user }}</p>
+            </div>
+          </a> {% endcomment %}
+
       </div>
       <table>
+      <tr>
+          <th>작성자</th>
+          <td><a href="{% url 'accounts:detail' trade.user.id %}">
+            {{ trade.user }}</a></td>
+        </tr>
         <tr>
           <th>판매/구매</th>
           <td>

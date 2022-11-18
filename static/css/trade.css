@@ -373,3 +373,8 @@ input::-webkit-input-placeholder {
   width: 70px;
   height: 70px;
 }
+
+.trade-price {
+  margin-left: 25px;
+  font-weight: bold;
+}
