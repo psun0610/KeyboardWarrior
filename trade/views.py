@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from articles.models import Keyboard
 from datetime import date, datetime, timedelta
 from reviews.models import Review
+from django.db.models import Count
 from django.db.models import Q
 
 # Create your views here.
