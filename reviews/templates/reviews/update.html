@@ -2,15 +2,131 @@
 {% load django_bootstrap5 %}
 
 {% block body %}
-<h1 class='text-center my-3'>후기 수정</h1><hr>
+{% comment %} 제목 1 {% endcomment %}
+  <div class='my-head'>
+    <h2>KeyBoard Warrior에 당신의 경험을 공유해주세요</h2>
+    <hr>
+    <p>이 키보드의 후기를 들려주세요</p>
+  </div>
 
-<form action='' method='POST' enctype="multipart/form-data">
-  {% csrf_token %}
-  {% bootstrap_form review_form %}
-  {% bootstrap_button button_type='submit' content='수정' %}
-</form>
-<div class='text-end'>
-  <a href="{% url 'reviews:detail' review.pk %}">뒤로가기</a>
-</div>
+  <div class='reviewcreatebox'>
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% comment %} 리뷰작성 폼 1 {% endcomment %}
+      <div class='reviewcreate-user'>
+        <div class='reviewcreate-userinfo-box'>
+          <input data-testid="input-box" name="title"
+                  placeholder="제목" type="text" required="" class="reviewcreate-userinfo" value="{{ review.title }}">
+          
+          
+          <input id="search_input" class="reviewcreate-userinfo" name="keyboard" type="search" placeholder="Search"
+          aria-label="Search" autocomplete="off" value="{{ review.keyboard.name }}">
+          <div class="search-off search-div " id="search_box">
+          </div>
+          
+          <div class='fieldset'>
+            
+            <input class='star' type="radio" name="grade" value="5" id="rate1">
+            <label  class='starlabel' for="rate1">{% if review.grade >= 1 %}⭐{% endif %}</label>            
+            <input class='star' type="radio" name="grade" value="4" id="rate2">
+            <label  class='starlabel' for="rate2">{% if review.grade >= 2 %}⭐{% endif %}</label>
+            <input class='star' type="radio" name="grade" value="3" id="rate3">
+            <label  class='starlabel' for="rate3">{% if review.grade >= 3 %}⭐{% endif %}</label>       
+            <input class='star' type="radio" name="grade" value="2" id="rate4">
+            <label  class='starlabel' for="rate4">{% if review.grade >= 4 %}⭐{% endif %}</label>
+            <input class='star' type="radio" name="grade" value="1" id="rate5">
+            <label  class='starlabel' for="rate5">{% if review.grade >= 5 %}⭐{% endif %}</label>
+            
+          </div>
+    
+          <textarea name="content"
+                  placeholder="내용" type="text" required="" class="review-userinfo" value="">{{ review.content }}</textarea>
+          <input type="file" name='img' id='reviewimg' title="Button fade blue/green"style='display: none;'>
+          <label for="reviewimg">
+            {% bootstrap_form photo_form%}
+          </label>
+        </div>
+        <div>
+          <button class='review-btn' type="submit">KeyBoard Warrior에 경험 공유하기</button>
+        </div>
+      </div>
+      <form id="search_form" action="{% url 'trade:keyboard_search' %}" class="d-flex hidden" role="search">
+      </form>
+
+
+      
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+  const search_input = document.querySelector('#search_input');
+  const search_box = document.querySelector('#search_box');
+  const input = document.createElement('input');
+  const side = document.querySelector('#side');
+  const box_open = false;
+
+
+  search_input.addEventListener('click', function (event) {
+    console.log("검색클릭");
+    search_box.classList.remove('search-off');
+    search_box.classList.add('search-on');
+    const box_open = true;
+    console.log("검색 열림");
+
+  });
+
+  document.addEventListener('click', function (e) {
+    console.log(e.target)
+    console.log(search_box.id)
+    if (box_open === true); {
+      if (e.target !== search_input) {
+        search_box.classList.remove('search-on');
+        search_box.classList.add('search-off');
+        console.log("검색디브 닫힘")
+      }
+    }
+  });
+
+
+
+  // 키보드검색
+  window.onload = function () {
+    search_input.onkeyup = function () {
+      console.log("검색중")
+      axios({
+        method: 'get',
+        url: `/trade/keyboard_search/?search=${search_input.value}`,
+      })
+        .then(response => {
+          const search_box = document.querySelector('#search_box');
+          const keyboard_list = response.data.keyboard_list;
+          search_box.textContent = "";
+          for (let i = 0; i < keyboard_list.length; i++) {
+            search_box.insertAdjacentHTML('beforeend', `
+          <div onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}"  data-keyboard_name-id="${keyboard_list[i].id}"  id="keyboard_${keyboard_list[i].id}">
+          <hr class='m-0'>
+            <div class='search-box'  data-name-id="${keyboard_list[i].name}">
+              <img  onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" class="search-keyboard-img" src="${keyboard_list[i].img}">
+              <div class="search-box-mini">  
+                <p onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" >${keyboard_list[i].name}</p> 
+                <p onclick="add_keyboard()" data-name-id="${keyboard_list[i].name}" >브랜드:${keyboard_list[i].brand} </p> 
+              </div>
+            </div>
+          </div>
+          `);
+          }
+        })
+    }
+  }
+
+
+  const add_keyboard = (e) => {
+    const add_id = document.querySelector(`#keyboard_${event.target.dataset.keyboardId}`)
+    search_input.value = `${event.target.dataset.nameId}`
+    console.log(`${event.target.dataset.nameId}`)
+  }
+
+</script>
+
 
 {% endblock body %}

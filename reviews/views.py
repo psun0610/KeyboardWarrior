@@ -132,16 +132,33 @@ def detail(request, pk):
 # 리뷰 수정
 @login_required
 def update(request, pk):
-    review = Review.objects.get(pk=pk)
-    if request.method == "POST":
+    review = get_object_or_404(Review, pk=pk)
+    photo = Photo.objects.get(pk=pk)
+    instancetitle = review.title
+    if request.method == "POST":    
         review_form = ReviewForm(request.POST, request.FILES, instance=review)
-        if review_form.is_valid():
-            review_form.save()
-            return redirect("reviews:detail", pk)
+        photo_form = PhotoForm(request.POST, request.FILES, instance=photo)
+        images = request.FILES.getlist("image")
+        kb = Keyboard.objects.get(name=request.POST["keyboard"])
+        if review_form.is_valid() and photo_form.is_valid():
+            review = review_form.save(commit=False)
+            review.user = request.user
+            review.keyboard = kb
+            if len(images):
+                for image in images:
+                    image_instance = Photo(review=review, image=image)
+                    review.save()
+                    image_instance.save()
+            else:
+                review.save()
+            return redirect("reviews:index")
     else:
         review_form = ReviewForm(instance=review)
+        photo_form = PhotoForm(instance=photo)
     context = {
         "review_form": review_form,
+        "photo_form": photo_form,
+        "instancetitle": instancetitle,
         "review": review,
     }
     return render(request, "reviews/update.html", context)
