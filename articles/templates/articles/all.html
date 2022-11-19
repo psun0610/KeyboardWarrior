@@ -248,20 +248,21 @@
     <input type="submit" onclick="searching(); send(); " value="검색">
   </div>
 
-  <div class="all-card-container" id="card_div">
-    {% for keyboard in all_keyboard|slice:":12" %}
-    <a href="{% url 'articles:detail' keyboard.pk %}">
-      <div class="all-card">
-        <img src="{{ keyboard.img }}">
-        <div class="all-card-h1-wrap">
-          <h1>{{ keyboard.name }}</h1>
+ <div id="card-section">
+    <div class="all-card-container" id="card_div">
+      {% for keyboard in all_keyboard|slice:":12" %}
+      <a href="{% url 'articles:detail' keyboard.pk %}">
+        <div class="all-card">
+          <img src="{{ keyboard.img }}">
+          <div class="all-card-h1-wrap">
+            <h1>{{ keyboard.name }}</h1>
+          </div>
+          <div class="all-card-button">자세히 알아보기</div>
         </div>
-        <div class="all-card-button">자세히 알아보기</div>
-      </div>
-    </a>
-    {% endfor %}
+      </a>
+      {% endfor %}
+    </div>
   </div>
-</div>
 
 <script type="text/javascript" src="/static/js/articles/all.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -304,6 +305,7 @@
     kind = document.querySelector('input[name="kind"]:checked').value;
   }
   const send = (e) => {
+    page = 1
     axios({
       method: 'get',
       url: `/scroll_data/`,
@@ -311,13 +313,17 @@
     })
 
       .then(response => {
-        page = 1
-        const card_div = document.querySelector('#card_div')
+        
+        const card_div = document.querySelector('#card-section')
         card_div.textContent = "";
+        
         const keyboards = response.data.keyboards
+        let all_card_container = "";
+        all_card_container += `<div class="all-card-container" id="card_div">`
+        console.log('비워줌')
         for (let i = 0; i < keyboards.length; i++) {
           console.log(keyboards[i])
-          card_div.insertAdjacentHTML('beforeend', `
+          all_card_container += `
           <a href="/${keyboards[i].pk}/detail">
               <div class="all-card">
                 <img src="${keyboards[i].img}">
@@ -326,14 +332,16 @@
                 </div>
                 <div class="all-card-button">자세히 알아보기</div>
               </div>
-            </a>`);
-        }
+            </a>`}
+          all_card_container += `</div>`
+          card_div.insertAdjacentHTML('beforeend', all_card_container)
+          console.log('카드들어감')
       })
   };
   //스크롤 비동기
   window.onscroll = function () { // 스크롤비율이 80~90퍼 내려왔을 때 실행된다.
 
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight * 0.90) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight * 0.95) {
       console.log('시작?')
       axios({
         method: 'get',
@@ -342,9 +350,11 @@
       })
       .then(response => {
         let scroll_div = ''
-        const all_container = document.querySelector('#all-container')
+        const all_container = document.querySelector('#card-section')
         const keyboards = response.data.keyboards
         const random_ads = response.data.random_ads
+        if (page > 2)  {
+        console.log('광고시작')
         scroll_div += `
         <!-- 광고 -->
         <div class="ad-container">
@@ -364,20 +374,25 @@
           </div>
         </div>
         `
+        console.log('광고끝')
         scroll_div += `<div class="all-card-container" id="card_div">`
-        for (let i = 0; i < keyboards.length; i++) {
-          scroll_div += `
-          <a href="/${keyboards[i].pk}/detail">
-            <div class="all-card">
-              <img src="${keyboards[i].img}">
-              <div class="all-card-h1-wrap">
-                <h1>${keyboards[i].name}</h1>
+          for (let i = 0; i < keyboards.length; i++) {
+            if (i >= 1 ) {
+            scroll_div += `
+            <a href="/${keyboards[i].pk}/detail">
+              <div class="all-card">
+                <img src="${keyboards[i].img}">
+                <div class="all-card-h1-wrap">
+                  <h1>${keyboards[i].name}</h1>
+                </div>
+                <div class="all-card-button">자세히 알아보기</div>
               </div>
-              <div class="all-card-button">자세히 알아보기</div>
-            </div>
-          </a> `
+            </a> `
+              }
+            }
+            scroll_div += `</div>`
           }
-          scroll_div += `</div>`
+          console.log('광고뒤카드')
           all_container.insertAdjacentHTML('beforeend',scroll_div)
           const ad_card = document.querySelectorAll('.ad-card')
           ad_card.forEach((card, index) => {

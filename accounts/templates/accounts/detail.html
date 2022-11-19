@@ -379,19 +379,19 @@
                           
                           <div class='usercard'  data-bs-toggle="modal" data-bs-target="#exampleModal2">
                             <div>
-                                <p class='usercard-title'>즐겨찾기</p>
-                                <div class='usercard-content'><span id="followings-count">{{ tradesc }}</span></div>
+                                <p class='usercard-title'>찜하기</p>
+                                <div class='usercard-content'><span id="followings-count">{{ jjimsc }}</span></div>
                             </div>
                             <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">내가 즐겨찾기한 글</h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">내가 찜한 글</h1>
                                 </div>
                                       <div class="modal-body">
-                                          {% for user in trades %}
+                                          {% for user in jjim_list %}
                                             <div class="follow-user">
-                                                <a href="{% url 'accounts:detail' user.pk %}">
+                                                <a href="{% url 'trade:detail' user.pk %}">
                                                     {% if user.image %}
                                                         {% if not user.is_social %}
                                                             <img class='follow-profile-img' src="{{ user.image.url }}">
@@ -401,7 +401,7 @@
                                                     {% else %}
                                                         <img class='follow-profile-img' src="{% static 'images/logo_png.png' %}">
                                                     {% endif %}
-                                                    <div class="follow-name">{{ user }}</div>
+                                                    <div class="follow-name">{{ user.title }}</div>
                                                 </a>
                                             </div>
                                           {% endfor %}
@@ -431,7 +431,7 @@
                                       <div class="modal-body">
                                           {% for user in trades %}
                                             <div class="follow-user">
-                                                <a href="{% url 'accounts:detail' user.pk %}">
+                                                <a href="{% url 'trade:detail' user.pk %}">
                                                     {% if user.image %}
                                                         {% if not user.is_social %}
                                                             <img class='follow-profile-img' src="{{ user.image.url }}">
@@ -472,7 +472,7 @@
                                       <div class="modal-body">
                                           {% for user in reviews %}
                                             <div class="follow-user">
-                                                <a href="{% url 'accounts:detail' user.pk %}">
+                                                <a href="{% url 'reviews:detail' user.pk %}">
                                                     {% if user.image %}
                                                         {% if not user.is_social %}
                                                             <img class='follow-profile-img' src="{{ user.image.url }}">

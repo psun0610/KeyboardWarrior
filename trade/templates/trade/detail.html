@@ -156,7 +156,7 @@
               <span data-trade-id="{{ trade.pk }}">찜하기</span>
             </div>
             {% endif %}
-            <a href="{% url 'accounts:first_message' trade.pk trade.user.pk %}">
+            <a href="{% url 'chat:room' trade.pk request.user.pk %}">
               <div class="trade-detail-btn jjok">쪽지보내기</div>
             </a>
           </div>
@@ -243,6 +243,7 @@
 </div>
 </div>
 <a href="{% url 'accounts:messageRoom' trade.pk %}" target="_blank" width="1000" height:"1000">메세지함</a>
+<a href="{% url 'chat:room' trade.pk request.user.pk %}">채팅</a>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="{% static 'js/trade/detail.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
