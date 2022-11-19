@@ -8,14 +8,9 @@ from channels.db import database_sync_to_async
 
 x = datetime.datetime.now()
 connected_user = []
-
-
 class ChatConsumer(AsyncWebsocketConsumer):
     @database_sync_to_async
     def create_chat(self, msg, room_pk, user_pk):
-        print(msg, 22222)
-        print(user_pk, 333333)
-        print(room_pk, 4444)
         return Message.objects.create(room_id=room_pk, user_id=user_pk, content=msg)
 
     async def connect(self):
@@ -79,7 +74,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         text_data_json = json.loads(text_data)
         message = text_data_json["message"]
         message = user.username + ":" +  message
-        print(user.pk, type(user.pk))
+        # print(user.pk, type(user.pk))
 
         # Send message to room group
         await self.channel_layer.group_send(
@@ -105,18 +100,22 @@ class ChatConsumer(AsyncWebsocketConsumer):
             "date": x.strftime("%m월 %d일 %H:%M"),
         }
         message = event["message"]
-        print(event, 123)
-        room_pk = event.get("context").get("room_pk")
-        print(room_pk, 123123123)
+        # print(event, 123)
+        room = event.get("context")
+        room_pk = "0"
+        if room != None:
+            room_pk = room.get('room_pk')
+            new_msg = await self.create_chat(message, room_pk, user.pk)
+        else:
+            pass
         # Send message to WebSocket
         # 여기다가 메시지 DB 저장할려고요
-        # new_msg = await self.create_chat(message, room_pk, user.pk)
         await self.send(
             text_data=json.dumps(
                 {
                     "message": message,
                     "context": context,
-                    # "room_pk": room_pk,
+                    "room_pk": room_pk,
                 }
             )
         )
