@@ -8,10 +8,10 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model, login as my_login, logout as my_logout
 from django.contrib import messages
-from .forms import CustomUserChangeForm, SocialUserForm, MessageForm
+from .forms import CustomUserChangeForm, SocialUserForm
 from .models import User
 from trade.models import Trades
-from .models import Message, Room
+from reviews.models import Review
 from django.db.models import Q
 
 # Create your views here.
@@ -74,11 +74,36 @@ def detail(request, pk):
     user = get_user_model().objects.get(pk=pk)
     rank_percent = (user.rank % 1000) * 10
     trades = Trades.objects.all()
-    # for trade in trades:
-    #     if trade.marker
+    tradeslist = []
+    for trade in trades:
+        if trade.user.pk == pk:
+            tradeslist.append(trade)
+    tradecount = len(tradeslist)
+
+    reviews = Review.objects.filter(pk=pk)
+    reviewslist = []
+    for review in reviews:
+        if review.user.pk == pk:
+            reviewslist.append(review)
+    reviewcount = len(reviewslist)
+
+    trades = Trades.objects.all()
+    jjim_list = []
+    for trade in trades:
+        jjims=trade.marker.all()
+        for j in jjims:
+            if j.pk == pk:
+                jjim_list.append(trade)
+    jjimsc = len(jjim_list)            
     context = {
         "user": user,
         "rank_percent": rank_percent,
+        "trades": tradeslist,
+        "reviews": reviewslist,
+        "tradesc": tradecount,
+        "reviewsc": reviewcount,
+        "jjim_list": jjim_list,
+        "jjimsc": jjimsc,
     }
     return render(request, "accounts/detail.html", context)
 

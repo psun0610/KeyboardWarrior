@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "kwbase/base.html" %}
 {% load static %}
 {% load django_bootstrap5 %}
 {% load humanize %}
@@ -147,7 +147,7 @@
           <div class="jjimjjok">
             {% if request.user in trade.marker.all %}
             <div class="trade-detail-btn jjim" id="marker-icon" data-trade-id="{{ trade.pk }}">
-              <i class="bi bi-bookmark-fill" data-trade-id="{{ trade.pk }}"></i>
+              <i class="bi bi-bookmark-fill" id="bookmark" data-trade-id="{{ trade.pk }}"></i>
               <span data-trade-id="{{ trade.pk }}">찜완료</span>
             </div>
             {% else %}
@@ -242,7 +242,8 @@
 </div>
 </div>
 </div>
-<a href="{% url 'accounts:messageRoom' trade.pk %}">메세지함</a>
+<a href="{% url 'accounts:messageRoom' trade.pk %}" target="_blank" width="1000" height:"1000">메세지함</a>
+<a href="{% url 'chat:room' trade.pk %}">채팅</a>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="{% static 'js/trade/detail.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

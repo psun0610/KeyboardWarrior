@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from dotenv import load_dotenv
 import os
-load_dotenv() 
+
+load_dotenv()
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
@@ -26,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG="True"
+DEBUG = "True"
 
 ALLOWED_HOSTS = []
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     "reviews",
     "trade",
     "imagekit",
+    "kwbase",
     "django.contrib.humanize",
     "django_bootstrap5",
     "django.contrib.admin",
@@ -57,7 +59,9 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": ["redis://default:GE0R16hzdtey6DnjSo1CmDYtD4ylArfC@redis-11199.c54.ap-northeast-1-2.ec2.cloud.redislabs.com:11199"],
+            "hosts": [
+                "redis://default:GE0R16hzdtey6DnjSo1CmDYtD4ylArfC@redis-11199.c54.ap-northeast-1-2.ec2.cloud.redislabs.com:11199"
+            ],
         },
     },
 }

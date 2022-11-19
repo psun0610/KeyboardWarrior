@@ -51,6 +51,10 @@ a {
   text-decoration: none;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 :root {
   --white-transparent: #ffffffc7;
   --a-blue: #3786FB;
@@ -129,6 +133,12 @@ a {
   color: white;
 }
 
+.all-today>h5 {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 0;
+  text-align: right;
+}
 /* articles/main */
 .articles-main1 {
   height: calc(50vh - 25px);
@@ -1248,13 +1258,10 @@ footer>div {
 
 
 /* base.html */
-#nav-window-btn {
-  position: relative;
-}
 .my-nav-window {
   position: absolute;
   bottom: -365px;
-  right: -30px;
+  right: 650px;
   width: 500px;
   height: 350px;
   background-color: white;
@@ -1266,12 +1273,15 @@ footer>div {
   visibility: hidden;
   transition: all .1s ease-in-out;
 }
-#nav-window-btn:hover #nav-window {
+#nav-window-btn:hover ~ #nav-window {
   opacity: 1;
   visibility: visible;
   transition: all .35s ease-in-out;
 }
-
+.nav-profile-wrap {
+  display: flex;
+  justify-content: space-between;
+}
 .nav-profile {
   display: flex;
   align-items: center;

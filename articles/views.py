@@ -7,9 +7,17 @@ from accounts.models import User
 from django.core.paginator import Paginator, EmptyPage
 from django.db.models import Q
 from django.db.models import Count
+
+
 def main(request):
     for i in Keyboard.objects.all():
-        i.weight = i.weight.replace("g","").replace("기타","0").replace("828.8","828").replace("506.4","506").replace("664.8","664")
+        i.weight = (
+            i.weight.replace("g", "")
+            .replace("기타", "0")
+            .replace("828.8", "828")
+            .replace("506.4", "506")
+            .replace("664.8", "664")
+        )
         i.weight = int(i.weight)
         i.save()
     if request.user.is_authenticated:
@@ -73,11 +81,11 @@ def main(request):
         k = ans1 & ans2 & ans3 & ans4 & ans5
         items = list(set(k))[:3]
         print(items)
-        print(len(sound[0]),len(sound[1]), len(sound[2]))
-        print(len(array[0]),len(array[1]), len(array[2]))
-        print(len(weight[0]),len(weight[1]))
-        print(len(press[0]),len(press[1]), len(press[2]))
-        print(len(connect[0]),len(connect[1]), len(connect[2]))
+        print(len(sound[0]), len(sound[1]), len(sound[2]))
+        print(len(array[0]), len(array[1]), len(array[2]))
+        print(len(weight[0]), len(weight[1]))
+        print(len(press[0]), len(press[1]), len(press[2]))
+        print(len(connect[0]), len(connect[1]), len(connect[2]))
     else:
         items = []
     if Visit.objects.order_by("-pk"):
@@ -86,7 +94,7 @@ def main(request):
         all_visit = Visit.objects.all()
         for i in all_visit:
             visit_sum += i.visit_count
-        context = {"all": visit_sum, "today": today_visit, "items":items}
+        context = {"all": visit_sum, "today": today_visit, "items": items}
         response = render(request, "articles/main.html", context)
         expire_date, now = datetime.now(), datetime.now()
         expire_date += timedelta(days=1)
@@ -115,9 +123,7 @@ def main(request):
                     before.save()
         return response
     else:
-        context = {
-            "items":items
-        }
+        context = {"items": items}
         response = render(request, "articles/main.html", context)
         expire_date, now = datetime.now(), datetime.now()
         expire_date += timedelta(days=1)
@@ -145,6 +151,7 @@ def main(request):
                     before.visit_count += 1
                     before.save()
         return response
+
 
 def all(request):
     all_keyboard = Keyboard.objects.all()[:16]
@@ -154,7 +161,50 @@ def all(request):
     return render(request, "articles/all.html", context)
 
 
+import random
+
+
 def scroll_data(request):
+    # 랜덤 광고
+    ads = [
+        {
+            "name": "VARMILO MIYA PRO SEA MELODY PBT 염료승화 영문 저소음적축",
+            "image": "https://funkeys.co.kr/data/apms/background/var_new_02.jpg",
+            "url": "https://funkeys.co.kr/shop/item.php?it_id=1651475779&ca_id=10",
+        },
+        {
+            "name": "VARMILO X ZOMO 고양이 발바닥 ABS 키캡 샴냥",
+            "image": "https://funkeys.co.kr/data/apms/background/var_new_04.jpg",
+            "url": "https://funkeys.co.kr/shop/item.php?it_id=1619427450&ca_id=20",
+        },
+        {
+            "name": "DUCKY ONE 3 TKL Matcha PBT 이중사출 한글 저소음적축",
+            "image": "https://funkeys.co.kr/data/item/1650969348/DUCKYONE3TKLMatcha_F.MAIN.jpg",
+            "url": "https://funkeys.co.kr/shop/item.php?it_id=1650969339&ca_id=70",
+        },
+        {
+            "name": "DUCKY ONE 3 RGB Yellow PBT 이중사출 한글 저소음적축",
+            "image": "https://funkeys.co.kr/data/item/1650968289/thumb-DUCKYONE3RGBYellow_F.MAIN_600x750.jpg",
+            "url": "https://funkeys.co.kr/shop/item.php?it_id=1650968289&ca_id=70",
+        },
+        {
+            "name": "DUCKY ABS 심리스 이중사출 영문 SA 키캡 세트 Cotton candy",
+            "image": "https://funkeys.co.kr/data/item/1629170024/thumb-04COTTONCANDY_600x750.png",
+            "url": "https://funkeys.co.kr/shop/item.php?it_id=1629170024&ca_id=20",
+        },
+        {
+            "name": "Intellilabs 노트북도 맞춤의 시대",
+            "image": "/static/images/인텔리랩스.png",
+            "url": "",
+        },
+    ]
+    # 랜덤 개수
+    random_ads = [random.choice(ads)]
+    random2 = random.choice(ads)
+    while random2 in random_ads:
+        random2 = random.choice(ads)
+    random_ads.append(random2)
+
     all_keyboard = Keyboard.objects.all()
 
     brand = request.GET.get("brand")
@@ -165,12 +215,12 @@ def scroll_data(request):
     page = request.GET.get("page")
     # 추가된 부분 111~112
     name = request.GET.get("name")
-    
+
     q = Q()
     # 추가된 부분 115~116
     if name != "0":
         q &= Q(name__icontains=name)
-        
+
     if brand != "0":
         q &= Q(brand__icontains=brand)
 
@@ -203,7 +253,7 @@ def scroll_data(request):
         q &= Q(kind__icontains=kind)
     keyboard_list = Keyboard.objects.filter(q)
 
-    paginator = Paginator(keyboard_list, 8)
+    paginator = Paginator(keyboard_list, 32)
     try:
         page_obj = paginator.page(page)
         keyboards = []
@@ -226,6 +276,7 @@ def scroll_data(request):
 
         context = {
             "keyboards": keyboards,
+            "random_ads": random_ads,
         }
 
         return JsonResponse(context)
@@ -237,8 +288,12 @@ def scroll_data(request):
 
 def detail(request, pk):
     keyboard = Keyboard.objects.get(pk=pk)
-    reviews = Review.objects.filter(keyboard_id = pk)
-    bests = Review.objects.filter(keyboard_id = pk).annotate(num_=Count("like_users")).order_by("-num_")
+    reviews = Review.objects.filter(keyboard_id=pk)
+    bests = (
+        Review.objects.filter(keyboard_id=pk)
+        .annotate(num_=Count("like_users"))
+        .order_by("-num_")
+    )
     aval = 0.0
     for review in reviews:
         aval += review.grade
@@ -248,7 +303,7 @@ def detail(request, pk):
     context = {
         "keyboard": keyboard,
         "aval": aval,
-        "review":pk,
-        "bests":bests,
+        "review": pk,
+        "bests": bests,
     }
     return render(request, "articles/detail.html", context)
