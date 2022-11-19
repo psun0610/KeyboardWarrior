@@ -79,14 +79,22 @@ def detail(request, pk):
         if trade.user.pk == pk:
             tradeslist.append(trade)
     tradecount = len(tradeslist)
-    reviews = Review.objects.filter(pk=pk)
 
+    reviews = Review.objects.filter(pk=pk)
     reviewslist = []
     for review in reviews:
         if review.user.pk == pk:
             reviewslist.append(review)
     reviewcount = len(reviewslist)
 
+    trades = Trades.objects.all()
+    jjim_list = []
+    for trade in trades:
+        jjims=trade.marker.all()
+        for j in jjims:
+            if j.pk == pk:
+                jjim_list.append(trade)
+    jjimsc = len(jjim_list)            
     context = {
         "user": user,
         "rank_percent": rank_percent,
@@ -94,6 +102,8 @@ def detail(request, pk):
         "reviews": reviewslist,
         "tradesc": tradecount,
         "reviewsc": reviewcount,
+        "jjim_list": jjim_list,
+        "jjimsc": jjimsc,
     }
     return render(request, "accounts/detail.html", context)
 
