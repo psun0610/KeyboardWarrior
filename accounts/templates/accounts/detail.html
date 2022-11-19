@@ -389,15 +389,15 @@
                                     <h1 class="modal-title fs-5" id="exampleModalLabel">내가 찜한 글</h1>
                                 </div>
                                       <div class="modal-body">
-                                          {% for user in jjim_list %}
+                                          {% for jjim in jjim_list %}
                                             <div class="follow-user">
                                                 <a href="{% url 'trade:detail' user.pk %}">
-                                                    {% if user.image %}
-                                                            <img class='follow-profile-img' src="{{ user.image.0.url }}">
+                                                    {% if jjim.photo_set.all %}
+                                                        <img class='follow-profile-img' src="{{ jjim.photo_set.all.0.image.url }}">
                                                     {% else %}
                                                         <img class='follow-profile-img' src="{% static 'images/logo_png.png' %}">
                                                     {% endif %}
-                                                    <div class="follow-name">{{ user.title }}</div>
+                                                    <div class="follow-name">{{ jjim.title }}</div>
                                                 </a>
                                             </div>
                                           {% endfor %}
@@ -426,19 +426,15 @@
                                     <h1 class="modal-title fs-5" id="exampleModalLabel">내가 쓴 거래글</h1>
                                 </div>
                                       <div class="modal-body">
-                                          {% for user in trades %}
+                                          {% for jjim in trades %}
                                             <div class="follow-user">
                                                 <a href="{% url 'trade:detail' user.pk %}">
-                                                    {% if user.image %}
-                                                        {% if not user.is_social %}
-                                                            <img class='follow-profile-img' src="{{ user.image.url }}">
-                                                        {% else %}
-                                                            <img class='follow-profile-img' src="{{ user.image }}">
-                                                        {% endif %}
+                                                    {% if jjim.photo_set.all %}
+                                                        <img class='follow-profile-img' src="{{ jjim.photo_set.all.0.image.url }}">
                                                     {% else %}
                                                         <img class='follow-profile-img' src="{% static 'images/logo_png.png' %}">
                                                     {% endif %}
-                                                    <div class="follow-name">{{ user.title }}</div>
+                                                    <div class="follow-name">{{ jjim.title }}</div>
                                                 </a>
                                             </div>
                                           {% endfor %}
@@ -467,19 +463,15 @@
                                     <h1 class="modal-title fs-5" id="exampleModalLabel">내가 좋아요한 글</h1>
                                 </div>
                                       <div class="modal-body">
-                                          {% for user in likes %}
+                                          {% for jjim in likes %}
                                             <div class="follow-user">
                                                 <a href="{% url 'reviews:detail' user.pk %}">
-                                                    {% if user.image %}
-                                                        {% if not user.is_social %}
-                                                            <img class='follow-profile-img' src="{{ user.image.url }}">
-                                                        {% else %}
-                                                            <img class='follow-profile-img' src="{{ user.image }}">
-                                                        {% endif %}
+                                                    {% if jjim.photo_set.all %}
+                                                        <img class='follow-profile-img' src="{{ jjim.photo_set.all.0.image.url }}">
                                                     {% else %}
                                                         <img class='follow-profile-img' src="{% static 'images/logo_png.png' %}">
                                                     {% endif %}
-                                                    <div class="follow-name">{{ user.title }}</div>
+                                                    <div class="follow-name">{{ jjim.title }}</div>
                                                 </a>
                                             </div>
                                           {% endfor %}
@@ -506,19 +498,15 @@
                                     <h1 class="modal-title fs-5" id="exampleModalLabel">내가 쓴 후기글</h1>
                                 </div>
                                       <div class="modal-body">
-                                          {% for user in reviews %}
+                                          {% for jjim in reviews %}
                                             <div class="follow-user">
                                                 <a href="{% url 'reviews:detail' user.pk %}">
-                                                    {% if user.image %}
-                                                        {% if not user.is_social %}
-                                                            <img class='follow-profile-img' src="{{ user.image.url }}">
-                                                        {% else %}
-                                                            <img class='follow-profile-img' src="{{ user.image }}">
-                                                        {% endif %}
+                                                    {% if jjim.photo_set.all %}
+                                                        <img class='follow-profile-img' src="{{ jjim.photo_set.all.0.image.url }}">
                                                     {% else %}
                                                         <img class='follow-profile-img' src="{% static 'images/logo_png.png' %}">
                                                     {% endif %}
-                                                    <div class="follow-name">{{ user.title }}</div>
+                                                    <div class="follow-name">{{ jjim.title }}</div>
                                                 </a>
                                             </div>
                                           {% endfor %}
