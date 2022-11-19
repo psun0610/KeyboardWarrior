@@ -250,7 +250,7 @@
 
  <div id="card-section">
     <div class="all-card-container" id="card_div">
-      {% for keyboard in all_keyboard|slice:":16" %}
+      {% for keyboard in all_keyboard|slice:":12" %}
       <a href="{% url 'articles:detail' keyboard.pk %}">
         <div class="all-card">
           <img src="{{ keyboard.img }}">
@@ -353,6 +353,8 @@
         const all_container = document.querySelector('#card-section')
         const keyboards = response.data.keyboards
         const random_ads = response.data.random_ads
+        if (page > 2)  {
+        console.log('광고시작')
         scroll_div += `
         <!-- 광고 -->
         <div class="ad-container">
@@ -373,7 +375,6 @@
         </div>
         `
         console.log('광고끝')
-        
         scroll_div += `<div class="all-card-container" id="card_div">`
           for (let i = 0; i < keyboards.length; i++) {
             if (i >= 1 ) {
@@ -390,6 +391,7 @@
               }
             }
             scroll_div += `</div>`
+          }
           console.log('광고뒤카드')
           all_container.insertAdjacentHTML('beforeend',scroll_div)
           const ad_card = document.querySelectorAll('.ad-card')
