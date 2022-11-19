@@ -32,9 +32,30 @@ def index(request):
 
 
 @login_required
-def room(request, room_name, user__pk):
+def room(request, room_name):
     send_user = request.user
-    trade = Trades.objects.get(pk=int(room_name))
+    room = Room.objects.get(pk=room_name)
+    all_room = Room.objects.filter(
+        Q(send_user=request.user) | Q(reception_user=request.user)
+    )
+    room_message = Message.objects.filter(room=room)
+    context = {
+        "room_name": room.pk,
+        "user_pk": send_user.pk,
+        "user": send_user,
+        "room_message": room_message,
+        "username": send_user.username,
+        "userimg": send_user.image,
+        "all_room": all_room,
+    }
+
+    return render(request, "chat/room1.html", context)
+
+
+@login_required
+def find_room(request, trade_pk):
+    send_user = request.user
+    trade = Trades.objects.get(pk=trade_pk)
     reception_user = trade.user
 
     # 만약 방이 이미 있으면
@@ -45,45 +66,12 @@ def room(request, room_name, user__pk):
             trade=trade, send_user=send_user, reception_user=reception_user
         )
         old_room = select_room[0]
-        all_room = Room.objects.filter(
-            Q(send_user=request.user) | Q(reception_user=request.user)
-        )
-        room_message = Message.objects.filter(room=old_room)
-        context = {
-            "room_name": old_room.pk,
-            "user_pk": send_user.pk,
-            "user": send_user,
-            "room_message": room_message,
-            "username": send_user.username,
-            "userimg": send_user.image,
-            "all_room": all_room,
-        }
-
-    # 첫 메세지 전송이라면 (방이 없다면)
+        return redirect("chat:room", old_room.pk)
+    # 처음 메세지를 보낸다면,
     else:
         new_room = Room.objects.create(
             trade=trade,
             reception_user=reception_user,
             send_user=send_user,
         )
-        all_room = Room.objects.filter(
-            Q(send_user=request.user) | Q(reception_user=request.user)
-        )
-
-        room_message = Message.objects.filter(room=new_room)
-
-        context = {
-            # "room_name": new_room.pk,
-            # "user": send_user,
-            # "all_room": all_room,
-            # "room_message": room_message,
-            "room_name": new_room.pk,
-            "user_pk": send_user.pk,
-            "user": send_user,
-            "room_message": room_message,
-            "username": send_user.username,
-            "userimg": send_user.image,
-            "all_room": all_room,
-        }
-
-    return render(request, "chat/room1.html", context)
+        return redirect("chat:room", new_room.pk)

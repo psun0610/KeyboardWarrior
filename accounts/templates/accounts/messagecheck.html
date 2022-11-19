@@ -84,15 +84,10 @@
             {% endfor %}
         </div>
 
-
-
-        임시채팅
-        <form action="{% url 'accounts:message' room.pk %} " method="POST">
-            {% csrf_token %}
-            <input id="room-name-trade" type="hidden" data-trade-id="{{send_message}}">
-            <input id="room-name-input" type="text" name="content" size="100"><br>
-            <button type="submit">입력</button>
-        </form>
+        <div id="chat-log" cols="100" rows="20"></div><br>
+        <input id="chat-message-input" type="text" size="100"><br>
+        <input id="chat-message-submit" type="button" value="Send">
+        <img src="{{userimg.url}}">
     </div>
 </div>
 </div>
