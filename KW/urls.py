@@ -19,10 +19,11 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     path("accounts/", include("accounts.urls")),
     path("", include("articles.urls")),
     path("reviews/", include("reviews.urls")),
     path("trade/", include("trade.urls")),
     path("chat/", include("chat.urls")),
+    path("base/", include("kwbase.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
