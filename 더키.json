@@ -70,7 +70,7 @@
 			"img": "https://img.danawa.com/prod_img/500000/010/987/img/16987010_1.jpg?shrink=500:500&_v=20220504161455",
 			"brand": "Ducky",
 			"connect": "기계식",
-			"weight": 1250,
+			"weight": 900,
 			"array": "108",
 			"switch": "체리",
 			"key_switch": "저소음적축",
@@ -90,7 +90,7 @@
 			"array": "87",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": 45,
+			"press": 50,
 			"kind": "텐키리스",
 			"bluetooth": "유선"
 		}
@@ -166,11 +166,11 @@
 			"img": "https://img.danawa.com/prod_img/500000/115/053/img/7053115_1.jpg?shrink=500:500&_v=20190222111826",
 			"brand": "Ducky",
 			"connect": "기계식",
-			"weight": 1100,
+			"weight": 900,
 			"array": "108",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": 45,
+			"press": 50,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}

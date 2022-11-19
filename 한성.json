@@ -22,11 +22,11 @@
 			"img": "https://img.danawa.com/prod_img/500000/662/348/img/10348662_1.jpg?shrink=500:500&_v=20200122100817",
 			"brand": "한성컴퓨터",
 			"connect": "기계식",
-			"weight": 1400,
+			"weight": 900,
 			"array": "104",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": 45,
+			"press": 50,
 			"kind": "풀배열",
 			"bluetooth": "유선"
 		}

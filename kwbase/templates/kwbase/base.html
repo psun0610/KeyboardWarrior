@@ -3,84 +3,86 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-  <title>KeyboardWarrior</title>
-  {% bootstrap_css %}
-  <!-- JavaScript Bundle with Popper -->
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>KeyboardWarrior</title>
+    {% bootstrap_css %}
+    <!-- JavaScript Bundle with Popper -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="{% static 'css/articles.css' %}">
-  <link rel="stylesheet" href="{% static 'css/trade.css' %}">
-  <link rel="stylesheet" href="{% static 'css/reviews.css' %}">
-  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
-  <link rel="stylesheet" href="{% static 'css/chat.css' %}">
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/articles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/trade.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reviews.css' %}">
+    <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+  </head>
 
-<body>
-  <!-- nav -->
-  <nav class="my-nav kor-font">
-    <div>
-      <ul class="my-nav-ul">
-        <div>
-          <a href="{% url 'articles:main' %}" class="d-flex align-items-center">
-            <img src="{% static 'images/logo_png.png' %}" class="nav-logo">
-            <p class="nav-logo-text">KeyboardWarrior</p>
-          </a>
-        </div>
-        <div class="my-nav-div">
+  <body>
+    <!-- nav -->
+    <nav class="my-nav kor-font">
+      <div>
+        <ul class="my-nav-ul">
           <div>
-            <!-- url을 먼저 찾아가고 그 뒤에 #recommend를 찾아감 -->
+            <a href="{% url 'articles:main' %}" class="d-flex align-items-center">
+              <img src="{% static 'images/logo_png.png' %}" class="nav-logo">
+              <p class="nav-logo-text">KeyboardWarrior</p>
+            </a>
+          </div>
+          <div class="my-nav-div">
+            <div>
+              <!-- url을 먼저 찾아가고 그 뒤에 #recommend를 찾아감 -->
             <a href="{% url 'articles:main' %}#recommend"><li class="my-nav-item">키보드 추천</li></a>
             <a href="{% url 'articles:all' %}"><li class="my-nav-item">모든 키보드</li></a>
             <a href="{% url 'trade:index'  %}"><li class="my-nav-item">키보드 마켓</li></a>
             <a href="{% url 'reviews:index'  %}"><li class="my-nav-item">키보드 후기</li></a>
-          </div>
-          <div>
-            {% if request.user.is_authenticated %}
-              <a class="nav-profile" id="nav-window-btn" href="{% url 'accounts:detail' request.user.pk %}" style="color: white;">
-                <li class="my-nav-item">내 정보</li>
-              </a>
-              <div class="my-nav-window" id="nav-window">
-                <div class="nav-profile-wrap">
-                  <!-- 내 프로필사진 -->
-                  <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}">
-                    {% if user.image %}
-                      {% if not user.is_social %}
-                        <img src="{{ request.user.image.url }}">
+            </div>
+            <div>
+              {% if request.user.is_authenticated %}
+                <a class="nav-profile" id="nav-window-btn" href="{% url 'accounts:detail' request.user.pk %}" style="color: white;">
+                  <li class="my-nav-item">내 정보</li>
+                </a>
+                <div class="my-nav-window" id="nav-window">
+                  <div class="nav-profile-wrap">
+                    <!-- 내 프로필사진 -->
+                    <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}">
+                      {% if user.image %}
+                        {% if not user.is_social %}
+                          <img src="{{ request.user.image.url }}">
+                        {% else %}
+                          <img src="{{ request.user.image }}">
+                        {% endif %}
                       {% else %}
-                        <img src="{{ request.user.image }}">
+                        <img src="{% static 'images/logo_png.png' %}">
                       {% endif %}
-                    {% else %}
-                      <img src="{% static 'images/logo_png.png' %}">
-                    {% endif %}
                       <!-- 내 이름 -->
                       <div>
                         {% if request.user.first_name and request.user.last_name %}
                         <h1>{{ request.user.last_name }}{{ request.user.first_name }}<span>({{ request.user }})</span></h1>
                         {% else %}
-                        <h1>{{ request.user }}</h1>
+                          <h1>{{ request.user }}</h1>
                         {% endif %}
                         <h2>{{ request.user.email }}</h2>
                       </div>
                     </a>
-                    <div class="all-today">
-                      <h5>all | {{all}}</h5>
-                      <h5>today | {{today}}</h5>
-                    </div>
                   </div>
                   <hr>
-                <!-- 여기 알림 뜨게 -->
+                  <!-- 여기 알림 뜨게 -->
+                </div>
+                <a href="{% url 'accounts:logout' %}">
+                  <li class="my-nav-item">로그아웃</li>
+                </a>
               </div>
-              <a href="{% url 'accounts:logout' %}"><li class="my-nav-item">로그아웃</li></a>
-            </div>
             {% else %}
-            <a href="{% url 'accounts:signup' %}"><li class="my-nav-item">회원가입</li></a>
-            <a href="{% url 'accounts:login' %}"><li class="my-nav-item">로그인</li></a>
+              <a href="{% url 'accounts:signup' %}">
+                <li class="my-nav-item">회원가입</li>
+              </a>
+              <a href="{% url 'accounts:login' %}">
+                <li class="my-nav-item">로그인</li>
+              </a>
             {% endif %}
           </div>
         </div>
@@ -88,8 +90,7 @@
     </div>
   </nav>
   <div class="kor-font">
-    {% block body %}
-    {% endblock %}
+    {% block body %}{% endblock %}
   </div>
   <!-- 푸터 -->
   <footer>
@@ -97,7 +98,7 @@
   </footer>
 
   <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 
 </html>

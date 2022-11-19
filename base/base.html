@@ -41,36 +41,43 @@
             <a href="{% url 'reviews:index'  %}"><li class="my-nav-item">키보드 후기</li></a>
           </div>
           <div>
-          {% if request.user.is_authenticated %}
-            <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}" style="color: white;">
-              <li class="my-nav-item" id="nav-window-btn">내 정보</li>
-            </a>
-            <div class="my-nav-window" id="nav-window">
-              <!-- 내 프로필사진 -->
-              <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}">
-                {% if user.image %}
-                  {% if not user.is_social %}
-                    <img src="{{ request.user.image.url }}">
-                  {% else %}
-                    <img src="{{ request.user.image }}">
-                  {% endif %}
-                {% else %}
-                  <img src="{% static 'images/logo_png.png' %}">
-                {% endif %}
-                  <!-- 내 이름 -->
-                  <div>
-                    {% if request.user.first_name and request.user.last_name %}
-                    <h1>{{ request.user.last_name }}{{ request.user.first_name }}<span>({{ request.user }})</span></h1>
+            {% if request.user.is_authenticated %}
+              <a class="nav-profile" id="nav-window-btn" href="{% url 'accounts:detail' request.user.pk %}" style="color: white;">
+                <li class="my-nav-item">내 정보</li>
+              </a>
+              <div class="my-nav-window" id="nav-window">
+                <div class="nav-profile-wrap">
+                  <!-- 내 프로필사진 -->
+                  <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}">
+                    {% if user.image %}
+                      {% if not user.is_social %}
+                        <img src="{{ request.user.image.url }}">
+                      {% else %}
+                        <img src="{{ request.user.image }}">
+                      {% endif %}
                     {% else %}
-                    <h1>{{ request.user }}</h1>
+                      <img src="{% static 'images/logo_png.png' %}">
                     {% endif %}
-                    <h2>{{ request.user.email }}</h2>
+                      <!-- 내 이름 -->
+                      <div>
+                        {% if request.user.first_name and request.user.last_name %}
+                        <h1>{{ request.user.last_name }}{{ request.user.first_name }}<span>({{ request.user }})</span></h1>
+                        {% else %}
+                        <h1>{{ request.user }}</h1>
+                        {% endif %}
+                        <h2>{{ request.user.email }}</h2>
+                      </div>
+                    </a>
+                    <div class="all-today">
+                      <h5>all | {{all}}</h5>
+                      <h5>today | {{today}}</h5>
+                    </div>
                   </div>
-                </a>
-                <hr>
-              <!-- 여기 알림 뜨게 -->
+                  <hr>
+                <!-- 여기 알림 뜨게 -->
+              </div>
+              <a href="{% url 'accounts:logout' %}"><li class="my-nav-item">로그아웃</li></a>
             </div>
-            <a href="{% url 'accounts:logout' %}"><li class="my-nav-item">로그아웃</li></a>
             {% else %}
             <a href="{% url 'accounts:signup' %}"><li class="my-nav-item">회원가입</li></a>
             <a href="{% url 'accounts:login' %}"><li class="my-nav-item">로그인</li></a>
