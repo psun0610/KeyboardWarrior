@@ -1258,10 +1258,13 @@ footer>div {
 
 
 /* base.html */
+#nav-window-btn {
+  position: relative;
+}
 .my-nav-window {
   position: absolute;
   bottom: -365px;
-  right: 650px;
+  right: -30px;
   width: 500px;
   height: 350px;
   background-color: white;
@@ -1273,7 +1276,7 @@ footer>div {
   visibility: hidden;
   transition: all .1s ease-in-out;
 }
-#nav-window-btn:hover ~ #nav-window {
+#nav-window-btn:hover #nav-window {
   opacity: 1;
   visibility: visible;
   transition: all .35s ease-in-out;
