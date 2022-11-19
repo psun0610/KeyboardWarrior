@@ -3,11 +3,6 @@
 {% load static %}
 
 {% block body %}
-
-
-
-
-
 <div class="chat">
     <div class="jjok-bang">
         {% comment %} 제목 1 {% endcomment %}
@@ -38,7 +33,7 @@
                 <div class="chat-badge">판매</div>
             </div>
         </div>
-        <div class="chat-bang">
+        <div id="chatbang">
             {% for message in room_message %}
             <hr>
             {% if message.user != request.user%}
@@ -80,7 +75,6 @@
         <div id="chat-log" cols="100" rows="20"></div><br>
         <input id="chat-message-input" type="text" size="100"><br>
         <input id="chat-message-submit" type="button" value="Send">
-        <img src="{{userimg.url}}">
     </div>
 
 
@@ -110,7 +104,8 @@
             console.log(data)
             const new_msg = data.message.split(':')
             console.log(new_msg)
-            const chatLog = document.querySelector('#chat-bang')
+            const chatLog = document.querySelector('#chatbang')
+            console.log(chatLog)
             chatLog.insertAdjacentHTML(`beforeend`, `
             <div>
               <a href="/accounts/${ new_msg[2] }" class="text-decoration-none text-dark"><span class="fw-bold"> ${new_msg[0]}</span>님</a>
@@ -119,7 +114,7 @@
             </div>
             `)
             console.log("완료")
-            // document.querySelector('#chat-log').value += (data.message + '\n');
+            //document.querySelector('#chat-log').value += (data.message + '\n');
         };
 
         chatSocket.onclose = function(e) {
