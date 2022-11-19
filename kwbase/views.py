@@ -11,4 +11,4 @@ def base(request):
         "today": today_visit,
         "all": all_visit,
     }
-    return render(request, "base/base.html", context)
+    return render(request, "kwbase/base.html", context)
