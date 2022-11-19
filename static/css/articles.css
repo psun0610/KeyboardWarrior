@@ -71,7 +71,7 @@ html {
 }
 
 .blue-tag {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .my-nav {
@@ -132,12 +132,14 @@ html {
   font-size: 14px;
   color: white;
 }
-
+.all-today {
+  margin-left: 20px;
+}
 .all-today>h5 {
   font-size: 14px;
-  color: gray;
+  font-weight: 200;
+  color: white;
   margin-bottom: 0;
-  text-align: right;
 }
 /* articles/main */
 .articles-main1 {
@@ -1255,13 +1257,19 @@ footer>div {
   flex-direction: column;
   margin-left: 50px;
 }
-
+.search-box-mini > p {
+  margin: 0;
+  padding: 10px 0;
+}
 
 /* base.html */
+#nav-window-btn {
+  position: relative;
+}
 .my-nav-window {
   position: absolute;
   bottom: -365px;
-  right: 650px;
+  right: -30px;
   width: 500px;
   height: 350px;
   background-color: white;
@@ -1273,7 +1281,7 @@ footer>div {
   visibility: hidden;
   transition: all .1s ease-in-out;
 }
-#nav-window-btn:hover ~ #nav-window {
+#nav-window-btn:hover #nav-window {
   opacity: 1;
   visibility: visible;
   transition: all .35s ease-in-out;
