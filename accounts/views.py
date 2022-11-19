@@ -8,11 +8,10 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model, login as my_login, logout as my_logout
 from django.contrib import messages
-from .forms import CustomUserChangeForm, SocialUserForm, MessageForm
+from .forms import CustomUserChangeForm, SocialUserForm
 from .models import User
 from trade.models import Trades
 from reviews.models import Review
-from .models import Message, Room
 from django.db.models import Q
 
 # Create your views here.
@@ -81,7 +80,6 @@ def detail(request, pk):
             tradeslist.append(trade)
     tradecount = len(tradeslist)
     reviews = Review.objects.filter(pk=pk)
-
 
     reviewslist = []
     for review in reviews:
