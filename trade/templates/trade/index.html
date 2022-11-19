@@ -206,7 +206,11 @@
     <!-- 검색결과 문구 -->
     <div class="trade-index-search-result">
       {% if search_word %}
-      <h2>검색결과 "{{ search_word }}"를 찾았습니다.</h2>
+        {% if trades %}
+        <h2>검색결과 "{{ search_word }}"를 찾았습니다.</h2>
+        {% else %}
+        <h2>"{{ search_word }}"에 관한 검색결과가 없습니다.</h2>
+        {% endif %}
       {% endif %}
     </div>
     

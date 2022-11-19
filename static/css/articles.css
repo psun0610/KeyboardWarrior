@@ -71,7 +71,7 @@ html {
 }
 
 .blue-tag {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .my-nav {
@@ -132,12 +132,14 @@ html {
   font-size: 14px;
   color: white;
 }
-
+.all-today {
+  margin-left: 20px;
+}
 .all-today>h5 {
   font-size: 14px;
-  color: gray;
+  font-weight: 200;
+  color: white;
   margin-bottom: 0;
-  text-align: right;
 }
 /* articles/main */
 .articles-main1 {
@@ -1255,7 +1257,10 @@ footer>div {
   flex-direction: column;
   margin-left: 50px;
 }
-
+.search-box-mini > p {
+  margin: 0;
+  padding: 10px 0;
+}
 
 /* base.html */
 #nav-window-btn {

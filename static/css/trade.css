@@ -57,11 +57,12 @@
 .trade-index-search-result {
   display: flex;
   justify-content: center;
+  margin: 40px 0;
 }
 
 .trade-index-search-result>h2 {
   font-size: 18px;
-  margin-bottom: 3px;
+  margin: 0;
 }
 
 .select-trade {
