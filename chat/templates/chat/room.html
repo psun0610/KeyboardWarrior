@@ -7,8 +7,17 @@
     <input id="chat-message-input" type="text" size="100"><br>
     <input id="chat-message-submit" type="button" value="Send">
     <img src="{{userimg.url}}">
+
+
+
+
+
+
     {{ room_name|json_script:"room-name" }}
     {{ username|json_script:"user-name" }}
+
+
+    
     <script>
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
         const chatSocket = new WebSocket(
