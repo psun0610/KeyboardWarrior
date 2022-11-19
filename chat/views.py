@@ -32,9 +32,8 @@ def index(request):
 
 
 @login_required
-def room(request, room_name):
+def room(request, room_name, user__pk):
     send_user = request.user
-    print(send_user.pk, 333)
     trade = Trades.objects.get(pk=int(room_name))
     reception_user = trade.user
 
