@@ -26,11 +26,17 @@
   <nav class="my-nav kor-font">
     <div>
       <ul class="my-nav-ul">
-        <div>
+        <div class="d-flex align-items-center">
           <a href="{% url 'articles:main' %}" class="d-flex align-items-center">
             <img src="{% static 'images/logo_png.png' %}" class="nav-logo">
             <p class="nav-logo-text">KeyboardWarrior</p>
           </a>
+          {% if request.get_full_path == "/" %}
+          <div class="all-today">
+            <h5><i class="bi bi-people-fill"></i> {{all}}</h5>
+            <h5><i class="bi bi-person-fill"></i> {{today}}</h5>
+          </div>
+          {% endif %}
         </div>
         <div class="my-nav-div">
           <div>
@@ -67,10 +73,6 @@
                           <h2>{{ request.user.email }}</h2>
                         </div>
                       </a>
-                      <div class="all-today">
-                        <h5>all | {{all}}</h5>
-                        <h5>today | {{today}}</h5>
-                      </div>
                     </div>
                     <hr>
                   <!-- 여기 알림 뜨게 -->
