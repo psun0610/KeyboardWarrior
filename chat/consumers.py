@@ -11,9 +11,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
         # Join room group
         await self.channel_layer.group_add(self.room_group_name, self.channel_name)
-
         await self.accept()
-        # print(connected_user)
         username = self.scope["user"].username
         if username in connected_user:
             pass
@@ -26,6 +24,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
                         "type": "chat_message", 
                         "message": message,
                         "username":username,
+                        "connected_user":len(connected_user),
                     }
                 )
     async def disconnect(self, close_code):
@@ -43,6 +42,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
                         "type": "chat_message", 
                         "message": message,
                         "username":username,
+                        "connected_user":len(connected_user),
                     }
                 )
     # Receive message from WebSocket
@@ -60,7 +60,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         text_data_json = json.loads(text_data)
         message = text_data_json["message"]
         message = user.username + ":" +  message
-        print(message)
+        print(user.pk, type(user.pk))
 
         # Send message to room group
         await self.channel_layer.group_send(
@@ -77,9 +77,9 @@ class ChatConsumer(AsyncWebsocketConsumer):
             "last_name": user.last_name,
             "image": str(user.image),
             "is_social": user.is_social,
-            "date":x.strftime("%m월 %d일 %H:%M")
+            "date":x.strftime("%m월 %d일 %H:%M"),
+            "connected_user":len(connected_user),
         }
         message = event["message"]
-        print(1)
         # Send message to WebSocket
         await self.send(text_data=json.dumps({"message": message, "context":context}))
