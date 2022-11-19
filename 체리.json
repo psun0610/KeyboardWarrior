@@ -51,11 +51,11 @@
 			"img": "https://img.danawa.com/prod_img/500000/194/014/img/13014194_1.jpg?shrink=500:500&_v=20210614093537",
 			"brand": "CHERRY",
 			"connect": "기계식",
-			"weight": 1025,
+			"weight": 850,
 			"array": "109",
 			"switch": "체리",
 			"key_switch": "저소음적축",
-			"press": 45,
+			"press": 50,
 			"kind": "풀배열"
 		}
 	},

@@ -1,4 +1,4 @@
-{% extends "kwbase/base.html" %}
+{% extends "base.html" %}
 {% load django_bootstrap5 %}
 {% load static %}
 
@@ -69,14 +69,14 @@
         <div class="keyboard-comment">
           {% if bests.0 %}
             <a href="{% url 'accounts:detail' bests.0.user.pk %}">
-              {% if bests.0.user.image %}
-                {% if not bests.0.user.is_social %}
-                <img class="comment-profile-img" src="{{bests.0.user.image.url}}">
+              {% if bests.0. user.image %}
+                {% if not bests.0. user.is_social %}
+                  <img class="comment-profile-img" src="{{bests.0.user.image.url}}">
                 {% else %}
-                <img class="comment-profile-img" src="{{bests.0.user.image}}">
+                  <img class="comment-profile-img" src="{{bests.0.user.image}}">
                 {% endif %}
               {% else %}
-              <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
+                <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
               {% endif %}
             </a>
           {% else %}
@@ -84,7 +84,9 @@
           {% endif %}
           <div class="keyboard-comment-box">
             {% if bests.0 %}
-            <a href="{% url 'accounts:detail' bests.0.user.pk %}"><p>{{bests.0.user}}</p></a>
+              <a href="{% url 'accounts:detail' bests.0.user.pk %}">
+                <p>{{bests.0.user}}</p>
+              </a>
               <div>{{bests.0.content}}</div>
             {% else %}
               <div style="font-size: 17px; color: gray;">아직 후기가 없어요 ㅠ_ㅠ</div>
@@ -94,23 +96,25 @@
 
         <div class="keyboard-comment">
           {% if bests.1 %}
-          <a href="{% url 'accounts:detail' bests.1.user.pk %}">
-            {% if bests.1.user.image %}
-              {% if not bests.1.user.is_social %}
-              <img class="comment-profile-img" src="{{bests.1.user.image.url}}">
+            <a href="{% url 'accounts:detail' bests.1.user.pk %}">
+              {% if bests.1. user.image %}
+                {% if not bests.1. user.is_social %}
+                  <img class="comment-profile-img" src="{{bests.1.user.image.url}}">
+                {% else %}
+                  <img class="comment-profile-img" src="{{bests.1.user.image}}">
+                {% endif %}
               {% else %}
-              <img class="comment-profile-img" src="{{bests.1.user.image}}">
+                <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
               {% endif %}
-            {% else %}
-            <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
-            {% endif %}
-          </a>
+            </a>
           {% else %}
-          <a href=""></a>
+            <a href=""></a>
           {% endif %}
           <div class="keyboard-comment-box">
             {% if bests.1 %}
-            <a href="{% url 'accounts:detail' bests.1.user.pk %}"><p>{{bests.1.user}}</p></a>
+              <a href="{% url 'accounts:detail' bests.1.user.pk %}">
+                <p>{{bests.1.user}}</p>
+              </a>
               <div>{{bests.1.content}}</div>
             {% endif %}
           </div>

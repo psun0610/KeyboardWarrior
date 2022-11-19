@@ -22,7 +22,6 @@ def maketable(p):
             table[j] = i
     return table
 
-
 def KMP(p, t):
     ans = []
     table = maketable(p)
@@ -40,7 +39,6 @@ def KMP(p, t):
 
 
 # Create your views here.
-
 
 def index(request):
     reviews = Review.objects.order_by("-pk")

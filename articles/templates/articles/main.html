@@ -45,11 +45,11 @@
               {{items.0.key_switch}}/
               {{items.0.weight}}g/
               {{items.0.array}}키</div>
-              {% if items.0.id %}
+            {% if items.0.id %}
               <a href="{% url 'articles:detail' items.0.id %}" class="a-blue">바로 알아보기></a>
-              {% else %}
+            {% else %}
               <a href="{% url 'articles:all' %}" class="a-blue">바로 알아보기></a>
-              {% endif %}
+            {% endif %}
           </div>
         </section>
       </div>
@@ -173,5 +173,5 @@
         clickable: true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
       }
     });
-</script>
+  </script>
 {% endblock body %}

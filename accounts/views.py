@@ -8,6 +8,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model, login as my_login, logout as my_logout
 from django.contrib import messages
+from articles.models import Visit
 from .forms import CustomUserChangeForm, SocialUserForm
 from .models import User
 from trade.models import Trades
