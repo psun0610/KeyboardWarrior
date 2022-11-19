@@ -73,7 +73,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
         }
         text_data_json = json.loads(text_data)
         message = text_data_json["message"]
-        message = user.username + ":" +  message
+        message = message
+        new_msg = await self.create_chat(message, room_pk, user.pk)
         # print(user.pk, type(user.pk))
 
         # Send message to room group
@@ -105,7 +106,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
         room_pk = "0"
         if room != None:
             room_pk = room.get('room_pk')
-            new_msg = await self.create_chat(message, room_pk, user.pk)
         else:
             pass
         # Send message to WebSocket
