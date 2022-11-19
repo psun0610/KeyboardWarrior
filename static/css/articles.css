@@ -133,6 +133,12 @@ html {
   color: white;
 }
 
+.all-today>h5 {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 0;
+  text-align: right;
+}
 /* articles/main */
 .articles-main1 {
   height: calc(50vh - 25px);
@@ -1275,7 +1281,10 @@ footer>div {
   visibility: visible;
   transition: all .35s ease-in-out;
 }
-
+.nav-profile-wrap {
+  display: flex;
+  justify-content: space-between;
+}
 .nav-profile {
   display: flex;
   align-items: center;
