@@ -78,7 +78,7 @@ def room(request, room_name):
             # "user": send_user,
             # "all_room": all_room,
             # "room_message": room_message,
-            "room_name": old_room.pk,
+            "room_name": new_room.pk,
             "user_pk": send_user.pk,
             "user": send_user,
             "room_message": room_message,
