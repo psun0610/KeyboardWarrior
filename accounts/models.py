@@ -57,7 +57,14 @@ class User(AbstractUser):
     # 기본 0 구글 1 네이버 2
     is_social = models.IntegerField(default=0)
     # 알림쌓기
-    notice = models.IntegerField(default=0)
+
+
+class Notification(models.Model):
+    message = models.CharField(max_length=100)
+    check = models.BooleanField(default=False)
+    user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+    category = models.CharField(max_length=10)
+    nid = models.IntegerField(default=0)
 
 
 # class Room(models.Model):
