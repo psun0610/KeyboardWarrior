@@ -69,8 +69,8 @@
         <div class="keyboard-comment">
           {% if bests.0 %}
             <a href="{% url 'accounts:detail' bests.0.user.pk %}">
-              {% if bests.0. user.image %}
-                {% if not bests.0. user.is_social %}
+              {% if bests.0.user.image %}
+                {% if not bests.0.user.is_social %}
                   <img class="comment-profile-img" src="{{bests.0.user.image.url}}">
                 {% else %}
                   <img class="comment-profile-img" src="{{bests.0.user.image}}">
@@ -97,8 +97,8 @@
         <div class="keyboard-comment">
           {% if bests.1 %}
             <a href="{% url 'accounts:detail' bests.1.user.pk %}">
-              {% if bests.1. user.image %}
-                {% if not bests.1. user.is_social %}
+              {% if bests.1.user.image %}
+                {% if not bests.1.user.is_social %}
                   <img class="comment-profile-img" src="{{bests.1.user.image.url}}">
                 {% else %}
                   <img class="comment-profile-img" src="{{bests.1.user.image}}">

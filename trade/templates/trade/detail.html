@@ -94,7 +94,7 @@
         </tr>
         <tr>
           <th>모델명</th>
-          <td>{{ trade.keyboard.name }}</td>
+          <td><a href="{% url 'articles:detail' trade.keyboard.pk %}">{{ trade.keyboard.name }}</a></td>
         </tr>
         <tr>
           <th>별점</th>
