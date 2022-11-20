@@ -82,7 +82,7 @@ def detail(request, pk):
             tradeslist.append(trade)
     tradecount = len(tradeslist)
 
-    reviews = Review.objects.filter(pk=pk)
+    reviews = Review.objects.all()
     reviewslist = []
     for review in reviews:
         if review.user.pk == pk:
