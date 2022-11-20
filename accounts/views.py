@@ -10,7 +10,7 @@ from django.contrib.auth import get_user_model, login as my_login, logout as my_
 from django.contrib import messages
 from articles.models import Visit
 from .forms import CustomUserChangeForm, SocialUserForm
-from .models import User
+from .models import User, Notification
 from trade.models import Trades
 from reviews.models import Review
 from django.db.models import Q
@@ -188,6 +188,22 @@ def change_password(request, pk):
 #         "followings": user.followings.all().count(),
 #     }
 #     return JsonResponse(data)
+
+
+def message(request, pk):
+    noti = Notification.objects.get(pk=pk)
+    noti.check = True
+    noti.save()
+    id = noti.nid
+    if noti.category == "거래":
+        print(1)
+        return redirect("trade:detail", id)
+
+    elif noti.category == "리뷰":
+        return redirect("reviews:detail", id)
+    elif noti.category == "채팅":
+        print(2)
+        return redirect("chat:room", id)
 
 
 @login_required

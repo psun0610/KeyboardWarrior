@@ -4,7 +4,7 @@ from .models import Review, Comment, Photo
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST, require_safe
 from django.http import JsonResponse
-from accounts.models import User
+from accounts.models import User, Notification
 from datetime import date, datetime, timedelta
 from articles.models import Keyboard
 from django.db.models import Count
@@ -21,6 +21,7 @@ def maketable(p):
             i += 1
             table[j] = i
     return table
+
 
 def KMP(p, t):
     ans = []
@@ -40,11 +41,12 @@ def KMP(p, t):
 
 # Create your views here.
 
+
 def index(request):
     reviews = Review.objects.order_by("-pk")
 
     context = {
-        "reviews" : reviews,
+        "reviews": reviews,
     }
     return render(request, "reviews/index.html", context)
 
@@ -86,7 +88,7 @@ def detail(request, pk):
     comment_form = CommentForm()
     photos = review.photo_set.all()
     for t in comments:
-        with open("filtering.txt", 'r' ,encoding = "utf-8") as txtfile:
+        with open("filtering.txt", "r", encoding="utf-8") as txtfile:
             for word in txtfile.readlines():
                 word = word.strip()
                 ans = KMP(word, t.content)
@@ -135,7 +137,7 @@ def update(request, pk):
     review = get_object_or_404(Review, pk=pk)
     photo = Photo.objects.get(pk=pk)
     instancetitle = review.title
-    if request.method == "POST":    
+    if request.method == "POST":
         review_form = ReviewForm(request.POST, request.FILES, instance=review)
         photo_form = PhotoForm(request.POST, request.FILES, instance=photo)
         images = request.FILES.getlist("image")
@@ -179,7 +181,6 @@ def comment_create(request, pk):
     users = User.objects.get(pk=request.user.pk)
     users.rank += 2
     users.save()
-
     comment_form = CommentForm(request.POST)
     user = request.user.pk
     if comment_form.is_valid():
@@ -187,6 +188,10 @@ def comment_create(request, pk):
         comment.review = review
         comment.user = request.user
         comment.save()
+        message = f"{review.title}의 글에 {users}님이 댓글을 달았습니다."
+        Notification.objects.create(
+            user=review.user, message=message, category="리뷰", nid=review.pk
+        )
     # 제이슨은 객체 형태로 받질 않음 그래서 리스트 형태로 전환을 위해 리스트 생성
     temp = Comment.objects.filter(review_id=pk).order_by("-pk")
     comment_data = []
@@ -249,7 +254,7 @@ def comment_delete(request, review_pk, comment_pk):
         else:
             is_like = False
         t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
-        with open("filtering.txt", 'r' ,encoding = "utf-8") as txtfile:
+        with open("filtering.txt", "r", encoding="utf-8") as txtfile:
             for word in txtfile.readlines():
                 word = word.strip()
                 ans = KMP(word, t.content)
@@ -365,7 +370,11 @@ def review_search(request):
 
 
 def best(request, pk):
-    reviews = Review.objects.filter(keyboard_id=pk).annotate(num_=Count("like_users")).order_by("-num_")
+    reviews = (
+        Review.objects.filter(keyboard_id=pk)
+        .annotate(num_=Count("like_users"))
+        .order_by("-num_")
+    )
     photo_list = []
     for review in reviews:
         if review.photo_set.all():
@@ -373,7 +382,7 @@ def best(request, pk):
             photo_list.append((thumbnail, review.photo_set.all().count()))
     # print(photo_list)
     context = {
-        "reviews":reviews,
+        "reviews": reviews,
         "photo_list": photo_list,
     }
     return render(request, "reviews/index.html", context)
