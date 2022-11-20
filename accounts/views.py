@@ -457,4 +457,4 @@ def social_form(request, pk):
 #     if len(all_room) > 0:
 #         room_list.append(room_list)
 #     context = {"all_room": all_room, "room": room}
-#     return render(request, "accounts/messageCheck.html", context)
+#     return render(request, "accounts/messageCheck.html", context )#
