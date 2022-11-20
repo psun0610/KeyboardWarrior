@@ -57,7 +57,6 @@ class User(AbstractUser):
     # 기본 0 구글 1 네이버 2
     is_social = models.IntegerField(default=0)
     # 알림쌓기
-    notice = models.IntegerField(default=0)
 
 
 # class Room(models.Model):
