@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from .forms import CreateTrade, CreateComment, PhotoForm
 from .models import Trades, Trade_Comment, Photo
-from accounts.models import User
+from accounts.models import User, Notification
 from django.http import JsonResponse
 from articles.models import Keyboard
 from datetime import date, datetime, timedelta
@@ -127,7 +127,7 @@ def detail(request, pk):
     comments = Trade_Comment.objects.filter(trade=pk).order_by("-pk")
     comment_form = CreateComment()
     for c in comments:
-        with open("filtering.txt") as txtfile:
+        with open("filtering.txt", "r", encoding="utf-8") as txtfile:
             for word in txtfile.readlines():
                 word = word.strip()
                 ans = KMP(word, c.content)
@@ -158,6 +158,7 @@ def detail(request, pk):
         "comment_form": comment_form,
         "comments": comments,
         "aval": aval,
+        "user": request.user,
     }
     return render(request, "trade/detail.html", context)
 
@@ -201,11 +202,15 @@ def trade_comment(request, pk):
             comment.user = request.user
             comment.trade = trade_
             comment.save()
+        message = f"{trade_.title}의 글에 {users}님이 댓글을 달았습니다."
+        Notification.objects.create(
+            user=trade_.user, message=message, category="거래", nid=trade_.pk
+        )
         comments = Trade_Comment.objects.filter(trade=trade_).order_by("-pk")
         user = request.user
         comment_list = []
         for c in comments:
-            with open("filtering.txt") as txtfile:
+            with open("filtering.txt", "r", encoding="utf-8") as txtfile:
                 for word in txtfile.readlines():
                     word = word.strip()
                     ans = KMP(word, c.content)
@@ -250,7 +255,7 @@ def delete_comment(request, trade_pk, comment_pk):
         user = request.user
         comment_list = []
         for c in comments:
-            with open("filtering.txt") as txtfile:
+            with open("filtering.txt", "r", encoding="utf-8") as txtfile:
                 for word in txtfile.readlines():
                     word = word.strip()
                     ans = KMP(word, c.content)
@@ -334,7 +339,7 @@ def trade_search(request):
 
 
 def send_market(request, pk):
-    pick_data = Trades.objects.filter(keyboard=pk)    
+    pick_data = Trades.objects.filter(keyboard=pk)
     trade_list = []
     done_trade_list = []
     for trade in pick_data:

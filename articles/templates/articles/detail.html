@@ -68,7 +68,7 @@
         </div>
         <div class="keyboard-comment">
           {% if bests.0 %}
-            <a href="{% url 'accounts:detail' bests.0.user.pk %}">
+            <a href="{% url 'reviews:detail' bests.0.pk %}">
               {% if bests.0.user.image %}
                 {% if not bests.0.user.is_social %}
                   <img class="comment-profile-img" src="{{bests.0.user.image.url}}">
@@ -84,7 +84,7 @@
           {% endif %}
           <div class="keyboard-comment-box">
             {% if bests.0 %}
-              <a href="{% url 'accounts:detail' bests.0.user.pk %}">
+              <a href="{% url 'reviews:detail' bests.0.pk %}">
                 <p>{{bests.0.user}}</p>
               </a>
               <div>{{bests.0.content}}</div>
@@ -96,7 +96,7 @@
 
         <div class="keyboard-comment">
           {% if bests.1 %}
-            <a href="{% url 'accounts:detail' bests.1.user.pk %}">
+            <a href="{% url 'accounts:detail' bests.1.pk %}">
               {% if bests.1.user.image %}
                 {% if not bests.1.user.is_social %}
                   <img class="comment-profile-img" src="{{bests.1.user.image.url}}">
@@ -112,7 +112,7 @@
           {% endif %}
           <div class="keyboard-comment-box">
             {% if bests.1 %}
-              <a href="{% url 'accounts:detail' bests.1.user.pk %}">
+              <a href="{% url 'accounts:detail' bests.1.pk %}">
                 <p>{{bests.1.user}}</p>
               </a>
               <div>{{bests.1.content}}</div>
