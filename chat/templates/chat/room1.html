@@ -84,14 +84,15 @@
         const user_pk = document.querySelector('#user_pk').value;
         const request_user_pk = document.querySelector('#request_user_pk').value;
         const roomName = JSON.parse(document.getElementById('room-name').textContent); 
-        var loc = window.location;
-        var wsStart = 'ws://';
-        if (loc.protocol == 'https:') {
-            wsStart = 'wss://'
-        }
-        var endpoint = wsStart + loc.host + '/ws/home';
-        // Note the websocket port is 8001
-        var chatSocket = new WebSocket(endpoint);
+        console.log(window.location)
+        const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/chat/'
+            + roomName
+            + '/'
+        );
+        console.log(chatSocket)
 
         chatSocket.onmessage = function(e) {
             const data = JSON.parse(e.data);
