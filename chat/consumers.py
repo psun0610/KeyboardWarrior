@@ -105,13 +105,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         # print(event, 123)
         room = event.get("context")
         room_pk = "0"
-        if room != None:
-            room_pk = room.get("room_pk")
-            new_msg = await self.create_chat(message, room_pk, user.pk)
-        else:
-            pass
         # Send message to WebSocket
-        # 여기다가 메시지 DB 저장할려고요
         await self.send(
             text_data=json.dumps(
                 {
