@@ -183,7 +183,7 @@ AUTH_USER_MODEL = "accounts.User"
 #     AWS_REGION,
 # )
 
-DEBUG = os.getenv("DEBUG") == "True"
+DEBUG = os.getenv("DEBUG") == "False"
 
 if DEBUG:
     MEDIA_URL = "/media/"
