@@ -32,9 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 ALLOWED_HOSTS = [
-    "Keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com",
-    "127.0.0.1",
-    "localhost",
+    "*",
 ]
 
 
