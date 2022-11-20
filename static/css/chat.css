@@ -70,6 +70,7 @@
     padding: 0 30px;
 }
 .chat-title {
+    margin-left: 20px;
     margin-right: 20px;
 }
 
@@ -89,17 +90,21 @@
     overflow: auto;
 }
 
-
-.chat-bang::-webkit-scrollbar {
+.chatbang1 {
+    height: 490px;
+    margin-right: 45px;
+    margin-left: 35px;
+}
+.chatbang1::-webkit-scrollbar {
     width: 10px;
     background-color: rgba(244, 244, 244, 0.358);
 }
 
-.chatbang::-webkit-scrollbar-thumb {
+.chatbang1::-webkit-scrollbar-thumb {
     background-color: #296bfc;
 }
 
-.chatbang::-webkit-scrollbar-track {
+.chatbang1::-webkit-scrollbar-track {
     background-color: rgb(218, 45, 45);
 }
 
@@ -152,7 +157,6 @@
 
 .you {
     display: flex;
-    margin-left: 30px;
     flex-direction: column
 }
 
@@ -169,7 +173,6 @@
 .me {
     display: flex;
     flex-direction: row-reverse;
-    margin: 20px 30px;
 }
 
 .me1 {
