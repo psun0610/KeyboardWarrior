@@ -78,11 +78,13 @@
 
     <input id="room_pk" type="hidden" value="{{ room_name }}">
     <input id="user_pk" type="hidden" value="{{ user_pk }}">
+    <input id="request_user_pk" type="hidden" value="{{ request.user.pk }}">
     {{ room_name|json_script:"room-name" }}
     {{ username|json_script:"user-name" }}
     <script>
         const room_pk = document.querySelector('#room_pk').value;
         const user_pk = document.querySelector('#user_pk').value;
+        const request_user_pk = document.querySelector('#request_user_pk').value;
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
         const chatSocket = new WebSocket(
             'ws://'
@@ -95,10 +97,11 @@
         chatSocket.onmessage = function(e) {
             const data = JSON.parse(e.data);
             console.log(data)
-            const new_msg = data.message.split(':')
+            const new_msg = data.message
             console.log(new_msg)
             const chatLog = document.querySelector('#chatbang')
             console.log(chatLog)
+            if(user_pk == request.user.pk)
             chatLog.insertAdjacentHTML(`beforeend`, `
             <div>
               <a href="/accounts/${ new_msg[2] }" class="text-decoration-none text-dark"><span class="fw-bold"> ${new_msg[0]}</span>님</a>

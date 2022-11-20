@@ -243,12 +243,12 @@
 
   <!-- 검색창 -->
   <div class="trade-index-search-form">
-
     <input type="search" id="searching" onkeydown="if(event.keyCode == 13){searching(); send();}" placeholder="키보드를 검색해보세요" name="name">
     <input type="submit" onclick="searching(); send(); " value="검색">
   </div>
 
- <div id="card-section">
+<h3 class="text-center fw-bold" style="margin-top: 100px; margin-bottom: 0;">BEST</h3>
+<div id="card-section">
     <div class="all-card-container" id="card_div">
       {% for keyboard in all_keyboard|slice:":20" %}
       <a href="{% url 'articles:detail' keyboard.pk %}">
