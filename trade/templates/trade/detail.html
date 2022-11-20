@@ -296,11 +296,11 @@
         let html = `
           <div class="comment">
             <div class="keyboard-comment">
-              <a href="/accounts/${comment_data[i].user_pk}/detail">
+              <a href="/accounts/${comment_data[i].user_pk}/detail/">
                 <img class="comment-profile-img" src="${profile_src}">
               </a>
             <div class="keyboard-comment-box">
-              <a href="/accounts/${comment_data[i].user_pk}/detail">
+              <a href="/accounts/${comment_data[i].user_pk}/detail/">
                 <p class="keyboard-comment-user">${comment_data[i].username}</p>
               </a>
               ${writer}
@@ -360,11 +360,11 @@
         let html = `
             <div class="comment">
               <div class="keyboard-comment">
-                <a href="/accounts/${comment_data[i].userpk}/detail">
-                <img class="comment-profile-img" src="${profile_src}">
+                <a href="/accounts/${comment_data[i].userpk}/detail/">
+                <img class="comment-profile-img" src="/${profile_src}/">
               </a>
               <div class="keyboard-comment-box">
-                <a href="/accounts/${comment_data[i].userpk}/detail">
+                <a href="/accounts/${comment_data[i].userpk}/detail/">
                   <p class="keyboard-comment-user">${comment_data[i].username}</p>
                 </a>
                 ${writer}
