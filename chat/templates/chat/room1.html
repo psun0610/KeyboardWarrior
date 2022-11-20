@@ -30,7 +30,7 @@
         <div class="chat-badge">판매</div>
       </div>
     </div>
-    <div class="chatbang1" id="chat-bang">
+    <div class="chatbang1" id="chatbang">
       {% for message in room_message %}
       {% if message.user != request.user%}
       <div class='you'>
@@ -86,12 +86,12 @@
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
         const chatSocket = new WebSocket(
             'ws://'
-            + window.location.host
+            + 'ws://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com'
             + '/ws/chat/'
             + roomName
             + '/'
         );
-
+        console.log(chatSocket)
         chatSocket.onmessage = function(e) {
             const data = JSON.parse(e.data);
             console.log(data)
