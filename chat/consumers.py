@@ -8,6 +8,8 @@ from channels.db import database_sync_to_async
 
 x = datetime.datetime.now()
 connected_user = []
+
+
 class ChatConsumer(AsyncWebsocketConsumer):
     @database_sync_to_async
     def create_chat(self, msg, room_pk, user_pk):
@@ -27,14 +29,14 @@ class ChatConsumer(AsyncWebsocketConsumer):
             connected_user.append(username)
             message = username + "님이 입장하셨습니다"
             await self.channel_layer.group_send(
-                    self.room_group_name, 
-                    {
-                        "type": "chat_message", 
-                        "message": message,
-                        "username":username,
-                        "connected_user":len(connected_user),
-                    }
-                )
+                self.room_group_name,
+                {
+                    "type": "chat_message",
+                    "message": message,
+                    "username": username,
+                    "connected_user": len(connected_user),
+                },
+            )
 
     async def disconnect(self, close_code):
         # Leave room group
@@ -46,14 +48,14 @@ class ChatConsumer(AsyncWebsocketConsumer):
             connected_user.remove(username)
             message = username + "님이 퇴장하셨습니다"
             await self.channel_layer.group_send(
-                    self.room_group_name, 
-                    {
-                        "type": "chat_message", 
-                        "message": message,
-                        "username":username,
-                        "connected_user":len(connected_user),
-                    }
-                )
+                self.room_group_name,
+                {
+                    "type": "chat_message",
+                    "message": message,
+                    "username": username,
+                    "connected_user": len(connected_user),
+                },
+            )
 
     # Receive message from WebSocket
     async def receive(self, text_data):
@@ -73,7 +75,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
         }
         text_data_json = json.loads(text_data)
         message = text_data_json["message"]
-        message = user.username + ":" +  message
         # print(user.pk, type(user.pk))
 
         # Send message to room group
@@ -96,7 +97,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
             "last_name": user.last_name,
             "image": str(user.image),
             "is_social": user.is_social,
-            "connected_user":len(connected_user),
+            "connected_user": len(connected_user),
             "date": x.strftime("%m월 %d일 %H:%M"),
         }
         message = event["message"]
@@ -104,7 +105,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         room = event.get("context")
         room_pk = "0"
         if room != None:
-            room_pk = room.get('room_pk')
+            room_pk = room.get("room_pk")
             new_msg = await self.create_chat(message, room_pk, user.pk)
         else:
             pass

@@ -40,6 +40,7 @@ def room(request, room_name):
     )
     room_message = Message.objects.filter(room=room)
     context = {
+        "room": room,
         "room_name": room.pk,
         "user_pk": send_user.pk,
         "user": send_user,
