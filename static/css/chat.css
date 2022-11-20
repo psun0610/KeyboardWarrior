@@ -163,7 +163,7 @@
 
 .you {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .chat-time {
@@ -192,7 +192,6 @@
 }
 
 .chat-profile-box {
-    display: flex;
     margin-bottom: 10px;
 }
 
@@ -202,7 +201,7 @@
     border-radius: 5px;
     max-width: 500px;
     margin-right: 10px;
-    background-color: antiquewhite;
+    background-color: var(--my-hover-gray);
     line-height: 20px;
 }
 
