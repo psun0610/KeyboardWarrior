@@ -59,7 +59,7 @@ def find_room(request, trade_pk):
     trade = Trades.objects.get(pk=trade_pk)
     reception_user = trade.user
 
-    # 만약 방이 이미 있으면
+    # 만약 방이 이미 있으면 room.pk찾기
     if Room.objects.filter(
         trade=trade, send_user=send_user, reception_user=reception_user
     ).exists():
@@ -68,7 +68,7 @@ def find_room(request, trade_pk):
         )
         old_room = select_room[0]
         return redirect("chat:room", old_room.pk)
-    # 처음 메세지를 보낸다면,
+    # 방이 없다면 (최초 채팅 시행) room.pk 생성
     else:
         new_room = Room.objects.create(
             trade=trade,
