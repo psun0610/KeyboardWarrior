@@ -194,7 +194,9 @@
 .chat-profile-box {
     margin-bottom: 10px;
 }
-
+.back-gray{
+    background-color: var(--my-hover-gray);
+}
 .chat-content-in-you {
     /* border: #666 solid 1px; */
     padding: 15px;

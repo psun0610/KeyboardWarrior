@@ -9,7 +9,11 @@
     <div class='all-chat'>
       {% for rooms in all_room %}
       <a href="{% url 'chat:room' rooms.pk %}">
-        <div class='gak-chat'>
+        {% if rooms.pk == room.pk %}
+        <div class='gak-chat back-gray'>
+        {% else %}
+        <div class="gak-chat">
+        {% endif %}
           <div class="chat-profile">
             <div class="chat-user"> {{rooms.reception_user}}</div>
           </div>
