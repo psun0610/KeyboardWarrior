@@ -58,6 +58,7 @@ class User(AbstractUser):
     is_social = models.IntegerField(default=0)
 
 
+
 class Notification(models.Model):
     message = models.CharField(max_length=100)
     check = models.BooleanField(default=False)

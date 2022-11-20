@@ -183,6 +183,7 @@ AUTH_USER_MODEL = "accounts.User"
 
 DEBUG = os.getenv("DEBUG") == "True"
 
+
 if DEBUG:
     MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
@@ -214,3 +215,4 @@ else:
             "PORT": "5432",
         }
     }
+
