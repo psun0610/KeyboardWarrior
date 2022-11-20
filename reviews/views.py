@@ -86,7 +86,7 @@ def detail(request, pk):
     comment_form = CommentForm()
     photos = review.photo_set.all()
     for t in comments:
-        with open("filtering.txt") as txtfile:
+        with open("filtering.txt", 'r' ,encoding = "utf-8") as txtfile:
             for word in txtfile.readlines():
                 word = word.strip()
                 ans = KMP(word, t.content)
@@ -196,7 +196,7 @@ def comment_create(request, pk):
         else:
             is_like = False
         t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
-        with open("filtering.txt") as txtfile:
+        with open("filtering.txt", 'r' ,encoding = "utf-8") as txtfile:
             for word in txtfile.readlines():
                 word = word.strip()
                 ans = KMP(word, t.content)
@@ -249,7 +249,7 @@ def comment_delete(request, review_pk, comment_pk):
         else:
             is_like = False
         t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
-        with open("filtering.txt") as txtfile:
+        with open("filtering.txt", 'r' ,encoding = "utf-8") as txtfile:
             for word in txtfile.readlines():
                 word = word.strip()
                 ans = KMP(word, t.content)

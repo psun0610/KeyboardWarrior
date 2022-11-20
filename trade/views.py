@@ -127,7 +127,7 @@ def detail(request, pk):
     comments = Trade_Comment.objects.filter(trade=pk).order_by("-pk")
     comment_form = CreateComment()
     for c in comments:
-        with open("filtering.txt") as txtfile:
+        with open("filtering.txt", 'r' ,encoding = "utf-8") as txtfile:
             for word in txtfile.readlines():
                 word = word.strip()
                 ans = KMP(word, c.content)
@@ -205,7 +205,7 @@ def trade_comment(request, pk):
         user = request.user
         comment_list = []
         for c in comments:
-            with open("filtering.txt") as txtfile:
+            with open("filtering.txt", 'r' ,encoding = "utf-8") as txtfile:
                 for word in txtfile.readlines():
                     word = word.strip()
                     ans = KMP(word, c.content)
@@ -250,7 +250,7 @@ def delete_comment(request, trade_pk, comment_pk):
         user = request.user
         comment_list = []
         for c in comments:
-            with open("filtering.txt") as txtfile:
+            with open("filtering.txt", 'r' ,encoding = "utf-8") as txtfile:
                 for word in txtfile.readlines():
                     word = word.strip()
                     ans = KMP(word, c.content)
