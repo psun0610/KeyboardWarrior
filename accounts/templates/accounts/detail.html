@@ -498,7 +498,7 @@
                                     <h1 class="modal-title fs-5" id="exampleModalLabel">내가 쓴 후기글</h1>
                                 </div>
                                       <div class="modal-body">
-                                          {% for jjim in reviews %}
+                                          {% for user in reviews %}
                                             <div class="follow-user">
                                                 <a href="{% url 'reviews:detail' user.pk %}">
                                                     {% if jjim.photo_set.all %}
@@ -506,7 +506,7 @@
                                                     {% else %}
                                                         <img class='follow-profile-img' src="{% static 'images/logo_png.png' %}">
                                                     {% endif %}
-                                                    <div class="follow-name">{{ jjim.title }}</div>
+                                                    <div class="follow-name">{{ user.title }}</div>
                                                 </a>
                                             </div>
                                           {% endfor %}

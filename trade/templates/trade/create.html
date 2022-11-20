@@ -81,7 +81,7 @@
     window.onload = function () {
       search_input.onkeyup = function () {
         console.log("검색중")
-        axios({method: 'get', url: `/trade/keyboard_search/?search=${search_input.value}/`}).then(response => {
+        axios({method: 'get', url: `/trade/keyboard_search/?search=${search_input.value}`}).then(response => {
           const search_box = document.querySelector('#search_box');
           const keyboard_list = response.data.keyboard_list;
           search_box.textContent = "";

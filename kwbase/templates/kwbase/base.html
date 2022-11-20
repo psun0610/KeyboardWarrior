@@ -48,9 +48,9 @@
             <a href="{% url 'trade:index'  %}"><li class="my-nav-item">키보드 마켓</li></a>
             <a href="{% url 'reviews:index'  %}"><li class="my-nav-item">키보드 후기</li></a>
 
-          </div>
-          <div>
-          {% if request.user.is_authenticated %}
+            </div>
+            <div>
+            {% if request.user.is_authenticated %}
               <li class="my-nav-item" id="nav-window-btn">
                 <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}" style="color: white;">내 정보</a>
                 <div class="my-nav-window" id="nav-window">
@@ -76,8 +76,8 @@
                           <h2>{{ request.user.email }}</h2>
                         </div>
                       </a>
-                    </div>
-                    <hr>
+                  </div>
+                  <hr>
                   <!-- 여기 알림 뜨게 -->
                 </div>
               </li>

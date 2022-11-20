@@ -101,18 +101,45 @@
             console.log(new_msg)
             const chatLog = document.querySelector('#chatbang')
             console.log(chatLog)
-            if(user_pk == request.user.pk)
-            chatLog.insertAdjacentHTML(`beforeend`, `
-            <div>
-              <a href="/accounts/${ new_msg[2] }" class="text-decoration-none text-dark"><span class="fw-bold"> ${new_msg[0]}</span>님</a>
-              |
-              <span>${new_msg[1]}</span>
-            </div>
-            `)
-            console.log("완료")
-            //document.querySelector('#chat-log').value += (data.message + '\n');
-        };
-
+            console.log( "======================================")
+            console.log(data.context.username)
+            if ( user_pk == request_user_pk ) {
+              chatLog.insertAdjacentHTML(`beforeend`, `
+            
+                <div class='me'>
+                  <div class="chat-profile-box">
+                    <div>
+                      <div class="chat-time">
+                        <p class='mb-0'>${ data.context.date }</p>
+                        <div class="chat-content-in-me">${ new_msg }</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                `)
+                console.log("완료나")
+                //document.querySelector('#chat-log').value += (data.message + '\n');
+                }
+            else {
+              chatLog.insertAdjacentHTML(`beforeend`, `  
+                <div class='you'>
+                  <div class="chat-profile-box">
+                    <div class="name-content">
+                      <div class="chat-user-inchat">${ data.context.username }</div>
+                        <div class="chat-time">
+                          <p class='mb-0'>${ data.context.date }</p>
+                          <div class="chat-content-in-you">${ new_msg }</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `)
+              console.log("완료너")
+              //document.querySelector('#chat-log').value += (data.message + '\n');
+              }
+            chatLog.scrollTop = chatLog.scrollHeight
+            };
         chatSocket.onclose = function(e) {
             console.error('Chat socket closed unexpectedly');
         };

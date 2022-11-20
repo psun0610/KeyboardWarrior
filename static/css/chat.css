@@ -69,6 +69,7 @@
     margin: 0 45px 10px 0;
     padding: 0 30px;
 }
+
 .chat-title {
     margin-left: 20px;
     margin-right: 20px;
@@ -93,8 +94,9 @@
     height: 490px;
     margin-right: 45px;
     margin-left: 35px;
-    overflow: auto;
+    overflow-y: auto;
 }
+
 .chatbang1::-webkit-scrollbar {
     width: 10px;
     background-color: rgba(244, 244, 244, 0.358);
@@ -120,6 +122,7 @@
     padding: 20px 30px;
     transition: all .2s ease-in-out;
 }
+
 .gak-chat:hover {
     background-color: var(--my-hover-gray);
     color: black;
@@ -132,10 +135,12 @@
     color: black;
     transition: all .2s ease-in-out;
 }
+
 .chat-profile {
     display: flex;
     align-items: flex-start;
 }
+
 .chat-keyboard-name {
     color: gray;
     font-size: 15px;
@@ -166,7 +171,8 @@
     justify-content: flex-end;
     align-items: center;
 }
-.chat-time>p{
+
+.chat-time>p {
     font-size: 14px;
     color: gray;
 }
@@ -266,6 +272,7 @@
     margin: 20px 0;
     padding: 0 10px;
 }
+
 #chat-message-submit {
     height: 35px;
     width: 55px;
