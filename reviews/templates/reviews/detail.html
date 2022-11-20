@@ -62,16 +62,16 @@
     </div>
     <div class="likebook">
       <!--좋아요-->
-      <div class="heart">
       {% if request.user.is_authenticated %}
+      <div class="heart">
           {% if request.user not in review.like_users.all %}
           <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart article-heart"></i>
           {% else %}
           <i data-like-id="{{ review.pk }}" id="like-btn" class="bi bi-heart-fill article-heart-fill"></i>
           {% endif %}
           <p>{{ review.like_users.count }}</p>
-      {% endif %}
       </div>
+      {% endif %}
       <!--리뷰 수정,삭제 버튼-->
       <div>
         {% if request.user == review.user %}
