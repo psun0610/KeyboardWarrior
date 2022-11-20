@@ -35,10 +35,10 @@
       {% if message.user != request.user%}
       <div class='you'>
         <div class="chat-profile-box">
-            <div>${ data.context.username }</div>
+            <div>{{ message.user }}</div>
             <div class="chat-time flex-row-reverse">
-              <p class='mb-0'>${ data.context.date }</p>
-              <div class="chat-content-in-you">${ new_msg }</div>
+              <p class='mb-0'>{{ message.created_at | date:'m월d일 H:i' }}</p>
+              <div class="chat-content-in-you">{{ message.content }}</div>
             </div>
         </div>
       </div>
