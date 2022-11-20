@@ -32,9 +32,9 @@
 }
 
 .chat {
-    width: 1400px;
+    width: 1330px;
     height: 700px;
-    border: black solid 1px;
+    border: var(--my-gray) solid 1px;
     margin: auto;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -45,12 +45,14 @@
 }
 
 .jjok-bang {
-    width: 400px;
-    height: 650px;
-    border-right: black solid 2px;
+    width: 320px;
+    height: 550px;
+    margin-top: 60px;
+    border-right: var(--my-gray) solid 2px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow: auto;
 }
 
 .chatting-bang {
@@ -59,22 +61,23 @@
 }
 
 .chat-nav {
-    height: 90px;
+    height: 70px;
     background-color: rgb(232, 232, 232);
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
-    margin-bottom: 10px;
+    justify-content: space-between;
+    margin: 0 45px 10px 35px;
+    padding: 0 30px;
+}
+.chat-title {
+    margin-right: 20px;
 }
 
 .chat-badge {
     border-radius: 4px;
-    background-color: rgb(162, 212, 255);
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
-
+    background-color: var(--a-blue);
+    color: white;
+    padding: 1px 10px;
 }
 
 .chat-bang {
@@ -82,6 +85,8 @@
     height: 490px;
     overflow: auto;
     margin-bottom: 10px;
+    padding: 20px;
+    overflow: auto;
 }
 
 
@@ -105,14 +110,29 @@
 }
 
 .gak-chat {
-    width: 350px;
-    border-bottom: black solid 1px;
-
+    width: 318px;
+    padding: 20px 30px;
+    transition: all .2s ease-in-out;
+}
+.gak-chat:hover {
+    background-color: var(--my-hover-gray);
+    color: black;
+    transition: all .2s ease-in-out;
 }
 
+/* 현재 선택된 방 */
+.current-chat {
+    background-color: var(--my-hover-gray);
+    color: black;
+    transition: all .2s ease-in-out;
+}
 .chat-profile {
     display: flex;
     align-items: flex-start;
+}
+.chat-keyboard-name {
+    color: gray;
+    font-size: 15px;
 }
 
 .chat-profile-img {
@@ -122,7 +142,7 @@
 }
 
 .chat-user {
-    font-size: large;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -138,17 +158,18 @@
 
 .chat-time {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
-
-.chat-time1 {
-    display: flex;
-    flex-direction: column-reverse;
+.chat-time>p{
+    font-size: 14px;
+    color: gray;
 }
 
 .me {
     display: flex;
     flex-direction: row-reverse;
-    margin-right: 30px;
+    margin: 20px 30px;
 }
 
 .me1 {
@@ -178,10 +199,11 @@
 .chat-content-in-me {
     /* border: #666 solid 1px; */
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     max-width: 500px;
     margin-left: 10px;
-    background-color: aliceblue;
+    background-color: #60adf5;
+    color: white;
     line-height: 20px;
 }
 
@@ -222,4 +244,30 @@
     border-radius: 3px;
     background-color: var(--my-black);
     border: 0px;
+}
+
+.message-input-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 40px;
+}
+
+#chat-message-input {
+    border: 1px solid var(--my-gray);
+    width: 850px;
+    height: 35px;
+    align-self: center;
+    border-radius: 8px;
+    margin: 20px 0;
+    padding: 0 10px;
+}
+#chat-message-submit {
+    height: 35px;
+    width: 55px;
+    border-radius: 7px;
+    background-color: var(--my-black);
+    color: white;
+    border: 0;
+    margin-left: 20px;
 }

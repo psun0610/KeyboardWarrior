@@ -1,81 +1,74 @@
 {% extends 'kwbase/base.html' %}
 {% load django_bootstrap5 %}
 {% load static %}
-
 {% block body %}
+
 <div class="chat">
-    <div class="jjok-bang">
-        {% comment %} 제목 1 {% endcomment %}
-        <div class='chat-head'>
-            <h2>KeyBoard Warrior 쪽지함</h2>
-            <hr>
+  <div class="jjok-bang">
+    {% comment %} 제목 1 {% endcomment %}
+    <div class='all-chat'>
+      {% for rooms in all_room %}
+      <a href="{% url 'chat:room' rooms.pk %}">
+        <div class='gak-chat'>
+          <div class="chat-profile">
+            <div class="chat-user"> {{rooms.reception_user}}</div>
+          </div>
+          <div class="chat-keyboard-name">{{rooms.trade.keyboard.name}}</div>
+          <div class='chat-content'> {{rooms.trade.title}}</div>
         </div>
-        <div class='all-chat'>
-            <div class='gak-chat'>
-                {% for rooms in all_room %}
-
-                <div class="chat-profile">
-                    <img class="chat-profile-img" src="{% static 'images/logo_png.png' %}">
-                    <div class="chat-user"> {{rooms.reception_user}}</div>
-                </div>
-                <div class='chat-content'> {{rooms.trade.title}}</div>
-                <a href="{% url 'accounts:message' rooms.pk %}">채팅보러가기</a>
-                <hr>
-                {%endfor%}
-            </div>
-        </div>
+      </a>
+      {%endfor%}
     </div>
+  </div>
 
-    <div class='chatting-bang'>
-        <div class="chat-nav">
-            <div class="d-flex align-items-center">
-                <div class='fw-bold fs-5'>{{room.trade.title}}</div>
-                <div class="chat-badge">판매</div>
-            </div>
-        </div>
-        <div id="chatbang">
-            {% for message in room_message %}
-            <hr>
-            {% if message.user != request.user%}
-            <div class='you'>
-                <div class="chat-profile-box">
-                    <div class="chat-profile">
-                        <img class="chat-profile-img" src="{% static 'images/logo_png.png' %}">
-                    </div>
-                    <div class="name-content">
-                        <div class="chat-user-inchat">{{message.user}}</div>
-                        <div class="chat-time">
-                            <div class="chat-content-in-you">{{message.content}}</div>
-                            <div class="chat-time1">
-                                <p class='mb-0'>{{message.created_at}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% else %}
-            <div class='me'>
-                <div class="chat-profile-box">
-                    <div>
-                        <div class="chat-time">
-                            <div class="chat-time1">
-                                <p class='mb-0'>{{message.user}}</p>
-                            </div>
-                            <div class="chat-content-in-me">{{message.content}}</div>
-                        </div>
-                        <div class="chat-time1">
-                            <p class='mb-0'>{{message.created_at}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {%endif%}
-            {% endfor %}
-        </div>
-        <div id="chat-log" cols="100" rows="20"></div><br>
-        <input id="chat-message-input" type="text" size="100"><br>
-        <input id="chat-message-submit" type="button" value="Send">
+  <div class='chatting-bang'>
+    <div class="chat-nav">
+      <div class="fs-5">{{ room.reception_user }}</div>
+      <div class="d-flex align-items-center">
+        <div class="">{{room.trade.keyboard.name}}</div>
+        <div class="chat-title">{{room.trade.title}}</div>
+        <div class="chat-badge">판매</div>
+      </div>
     </div>
+    <div class="chat-bang">
+      {% for message in room_message %}
+      {% if message.user != request.user%}
+      <div class='you'>
+        <div class="chat-profile-box">
+          <div class="chat-profile">
+            <img class="chat-profile-img" src="{% static 'images/logo_png.png' %}">
+          </div>
+          <div class="name-content">
+            <div class="chat-user-inchat">{{message.user}}</div>
+              <div class="chat-time">
+                <p class='mb-0'>{{message.created_at}}</p>
+                <div class="chat-content-in-you">{{message.content}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        {% else %}
+        <div class='me'>
+          <div class="chat-profile-box">
+            <div>
+              <div class="chat-time">
+                <p class='mb-0'>{{message.created_at | date:'m월d일 H:i' }}</p>
+                <div class="chat-content-in-me">{{message.content}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%endif%}
+        {% endfor %}
+      </div>
+    <div id="chat-log" cols="100" rows="20"></div>
+    <div class="message-input-wrap">
+      <input id="chat-message-input" type="text" size="100">
+      <input id="chat-message-submit" type="button" value="전송">
+    </div>
+    <!-- <img src="{{userimg.url}}"> -->
+  </div>
 
 
 
