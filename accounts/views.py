@@ -92,20 +92,20 @@ def detail(request, pk):
     trades = Trades.objects.all()
     jjim_list = []
     for trade in trades:
-        jjims=trade.marker.all()
+        jjims = trade.marker.all()
         for j in jjims:
             if j.pk == pk:
                 jjim_list.append(trade)
-    jjimsc = len(jjim_list) 
-    
+    jjimsc = len(jjim_list)
+
     reviews = Review.objects.all()
     like_list = []
     for review in reviews:
-        likes=review.like_users.all()
+        likes = review.like_users.all()
         for l in likes:
             if l.pk == pk:
                 like_list.append(review)
-    likesc = len(like_list)             
+    likesc = len(like_list)
     context = {
         "user": user,
         "rank_percent": rank_percent,
@@ -219,7 +219,7 @@ state_token = secrets.token_urlsafe(16)
 def naver_request(request):
     naver_api = "https://nid.naver.com/oauth2.0/authorize?response_type=code"
     client_id = "sr5Wb8p3_r8B_3nV9wKv"  # 배포시 보안적용 해야함
-    redirect_uri = "http://localhost:8000/accounts/naver/login/callback/"
+    redirect_uri = "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/naver/login/callback/"
     state_token = secrets.token_urlsafe(16)
     return redirect(
         f"{naver_api}&client_id={client_id}&redirect_uri={redirect_uri}&state={state_token}"
@@ -233,7 +233,7 @@ def naver_callback(request):
         "client_secret": "FtyMQDzlAQ",
         "code": request.GET.get("code"),
         "state": request.GET.get("state"),
-        "redirect_uri": "http://localhost:8000/accounts/naver/login/callback/",
+        "redirect_uri": "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/naver/login/callback/",
     }
     naver_token_request_url = "https://nid.naver.com/oauth2.0/token"
     access_token = requests.post(naver_token_request_url, data=data).json()[
@@ -270,7 +270,7 @@ def naver_callback(request):
 def google_request(request):
     google_api = "https://accounts.google.com/o/oauth2/v2/auth"
     client_id = "598608554936-4rm80s1c7krbac2hs9f9f08vamnitvb7.apps.googleusercontent.com"  # 배포시 보안적용 해야함
-    redirect_uri = "http://localhost:8000/accounts/login/google/callback/"
+    redirect_uri = "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/login/google/callback/"
     google_base_url = "https://www.googleapis.com/auth"
     google_email = "/userinfo.email"
     google_myinfo = "/userinfo.profile"
@@ -287,7 +287,7 @@ def google_callback(request):
         "grant_type": "authorization_code",
         "client_id": "598608554936-4rm80s1c7krbac2hs9f9f08vamnitvb7.apps.googleusercontent.com",  # 배포시 보안적용 해야함
         "client_secret": "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",
-        "redirect_uri": "http://localhost:8000/accounts/login/google/callback/",
+        "redirect_uri": "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/login/google/callback/",
     }
     google_token_request_url = "https://oauth2.googleapis.com/token"
     access_token = requests.post(google_token_request_url, data=data).json()[
@@ -348,50 +348,50 @@ def social_form(request, pk):
         return render(request, "articles/main.html")
 
 
-@login_required
-def first_message(request, trade_pk, user_pk):
-    send_user = request.user
-    trade = Trades.objects.get(pk=trade_pk)
-    reception_user = User.objects.get(pk=user_pk)
-    user = request.user
-    if Room.objects.filter(
-        trade=trade, send_user=send_user, reception_user=reception_user
-    ).exists():
-        select_room = Room.objects.filter(
-            trade=trade, send_user=send_user, reception_user=reception_user
-        )
-        old_room = select_room[0]
-        all_room = Room.objects.filter(
-            Q(send_user=request.user) | Q(reception_user=request.user)
-        )
-        room_message = Message.objects.filter(room=old_room)
-        context = {
-            "room": old_room,
-            "user": user,
-            "all_room": all_room,
-            "room_message": room_message,
-        }
-        return render(request, "accounts/messageCheck.html", context)
-    else:  # 첫 메세지 전송이라면
-        new_room = Room.objects.create(
-            trade=trade,
-            reception_user=reception_user,
-            send_user=send_user,
-        )
-        all_room = Room.objects.filter(
-            Q(send_user=request.user) | Q(reception_user=request.user)
-        )
+# @login_required
+# def first_message(request, trade_pk, user_pk):
+#     send_user = request.user
+#     trade = Trades.objects.get(pk=trade_pk)
+#     reception_user = User.objects.get(pk=user_pk)
+#     user = request.user
+#     if Room.objects.filter(
+#         trade=trade, send_user=send_user, reception_user=reception_user
+#     ).exists():
+#         select_room = Room.objects.filter(
+#             trade=trade, send_user=send_user, reception_user=reception_user
+#         )
+#         old_room = select_room[0]
+#         all_room = Room.objects.filter(
+#             Q(send_user=request.user) | Q(reception_user=request.user)
+#         )
+#         room_message = Message.objects.filter(room=old_room)
+#         context = {
+#             "room": old_room,
+#             "user": user,
+#             "all_room": all_room,
+#             "room_message": room_message,
+#         }
+#         return render(request, "accounts/messageCheck.html", context)
+#     else:  # 첫 메세지 전송이라면
+#         new_room = Room.objects.create(
+#             trade=trade,
+#             reception_user=reception_user,
+#             send_user=send_user,
+#         )
+#         all_room = Room.objects.filter(
+#             Q(send_user=request.user) | Q(reception_user=request.user)
+#         )
 
-        room_message = Message.objects.filter(room=new_room)
+#         room_message = Message.objects.filter(room=new_room)
 
-        context = {
-            "room": new_room,
-            "user": user,
-            "all_room": all_room,
-            "room_message": room_message,
-        }
+#         context = {
+#             "room": new_room,
+#             "user": user,
+#             "all_room": all_room,
+#             "room_message": room_message,
+#         }
 
-        return render(request, "accounts/messageCheck.html", context)
+#         return render(request, "accounts/messageCheck.html", context)
 
 
 # def fill_message(request):
@@ -399,62 +399,62 @@ def first_message(request, trade_pk, user_pk):
 #     return redirect("accounts:messageCheck", context)
 
 
-def message(request, room_pk):
-    user = request.user
-    room = Room.objects.get(pk=room_pk)
-    all_room = Room.objects.filter(
-        Q(send_user=request.user) | Q(reception_user=request.user)
-    )
-    if request.method == "POST":
-        print("포스트확인")
-        form = MessageForm(request.POST)
-        print(form)
-        if form.is_valid():
-            print("유효성")
-            message = form.save(commit=False)
-            message.user = user
-            message.room = room
-            message.save()
-            room_message = Message.objects.filter(room=room)
-            context = {
-                "all_room": all_room,
-                "room": room,
-                "room_message": room_message,
-            }
-            return render(request, "accounts/messageCheck.html", context)
-    else:
-        form = MessageForm()
-        room = Room.objects.get(pk=room_pk)
-        room_message = Message.objects.filter(room=room)
-    context = {
-        "form": form,
-        "room": room,
-        "room_message": room_message,
-        "all_room": all_room,
-    }
-    return render(request, "accounts/messageCheck.html", context)
+# def message(request, room_pk):
+#     user = request.user
+#     room = Room.objects.get(pk=room_pk)
+#     all_room = Room.objects.filter(
+#         Q(send_user=request.user) | Q(reception_user=request.user)
+#     )
+#     if request.method == "POST":
+#         print("포스트확인")
+#         form = MessageForm(request.POST)
+#         print(form)
+#         if form.is_valid():
+#             print("유효성")
+#             message = form.save(commit=False)
+#             message.user = user
+#             message.room = room
+#             message.save()
+#             room_message = Message.objects.filter(room=room)
+#             context = {
+#                 "all_room": all_room,
+#                 "room": room,
+#                 "room_message": room_message,
+#             }
+#             return render(request, "accounts/messageCheck.html", context)
+#     else:
+#         form = MessageForm()
+#         room = Room.objects.get(pk=room_pk)
+#         room_message = Message.objects.filter(room=room)
+#     context = {
+#         "form": form,
+#         "room": room,
+#         "room_message": room_message,
+#         "all_room": all_room,
+#     }
+#     return render(request, "accounts/messageCheck.html", context)
 
 
-def messageCheck(request):
-    user = request.user
-    all_message = Message.objects.all()
-    send_message = Message.objects.filter(send_user=user)
-    reception_message = Message.objects.filter(reception_user=user)
-    context = {
-        "all_message": all_message,
-        "send_message": send_message,
-        "reception_message": reception_message,
-    }
-    return render(request, "accounts/messageCheck.html", context)
+# def messageCheck(request):
+#     user = request.user
+#     all_message = Message.objects.all()
+#     send_message = Message.objects.filter(send_user=user)
+#     reception_message = Message.objects.filter(reception_user=user)
+#     context = {
+#         "all_message": all_message,
+#         "send_message": send_message,
+#         "reception_message": reception_message,
+#     }
+#     return render(request, "accounts/messageCheck.html", context)
 
 
-def messageRoom(request, trade_pk):
-    user = request.user
-    trade = Trades.objects.get(pk=trade_pk)
-    all_room = Room.objects.filter(Q(send_user=user) | Q(reception_user=user))
-    room = all_room[0]
-    room_list = []
-    if len(all_room) > 0:
-        room_list.append(room_list)
-    context = {"all_room": all_room, "room": room}
-    return render(request, "accounts/messageCheck.html", context)
+# def messageRoom(request, trade_pk):
+#     user = request.user
+#     trade = Trades.objects.get(pk=trade_pk)
+#     all_room = Room.objects.filter(Q(send_user=user) | Q(reception_user=user))
+#     room = all_room[0]
+#     room_list = []
+#     if len(all_room) > 0:
+#         room_list.append(room_list)
+#     context = {"all_room": all_room, "room": room}
+#     return render(request, "accounts/messageCheck.html", context )#
