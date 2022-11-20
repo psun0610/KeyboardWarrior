@@ -35,27 +35,19 @@
       {% if message.user != request.user%}
       <div class='you'>
         <div class="chat-profile-box">
-          <div class="chat-profile">
-            <img class="chat-profile-img" src="{% static 'images/logo_png.png' %}">
-          </div>
-          <div class="name-content">
-            <div class="chat-user-inchat">{{message.user}}</div>
-              <div class="chat-time">
-                <p class='mb-0'>{{message.created_at}}</p>
-                <div class="chat-content-in-you">{{message.content}}</div>
+            <div>${ data.context.username }</div>
+            <div class="chat-time flex-row-reverse">
+              <p class='mb-0'>${ data.context.date }</p>
+              <div class="chat-content-in-you">${ new_msg }</div>
             </div>
-          </div>
         </div>
       </div>
-    </div>
         {% else %}
         <div class='me'>
           <div class="chat-profile-box">
-            <div>
-              <div class="chat-time">
-                <p class='mb-0'>{{message.created_at | date:'m월d일 H:i' }}</p>
-                <div class="chat-content-in-me">{{message.content}}</div>
-              </div>
+            <div class="chat-time">
+              <p class='mb-0'>{{message.created_at | date:'m월d일 H:i' }}</p>
+              <div class="chat-content-in-me">{{message.content}}</div>
             </div>
           </div>
         </div>
@@ -82,6 +74,8 @@
     {{ room_name|json_script:"room-name" }}
     {{ username|json_script:"user-name" }}
     <script>
+        const chatLog = document.querySelector('#chatbang')
+        chatLog.scrollTop = chatLog.scrollHeight
         const room_pk = document.querySelector('#room_pk').value;
         const user_pk = document.querySelector('#user_pk').value;
         const request_user_pk = document.querySelector('#request_user_pk').value;
@@ -105,37 +99,31 @@
             console.log(data.context.username)
             if ( user_pk == request_user_pk ) {
               chatLog.insertAdjacentHTML(`beforeend`, `
-            
                 <div class='me'>
                   <div class="chat-profile-box">
-                    <div>
-                      <div class="chat-time">
-                        <p class='mb-0'>${ data.context.date }</p>
-                        <div class="chat-content-in-me">${ new_msg }</div>
-                      </div>
+                    <div class="chat-time">
+                      <p class='mb-0'>${ data.context.date }</p>
+                      <div class="chat-content-in-me">${ new_msg }</div>
                     </div>
                   </div>
                 </div>
                 `)
-                console.log("완료나")
+                console.log("나 완료")
                 //document.querySelector('#chat-log').value += (data.message + '\n');
                 }
             else {
               chatLog.insertAdjacentHTML(`beforeend`, `  
                 <div class='you'>
                   <div class="chat-profile-box">
-                    <div class="name-content">
-                      <div class="chat-user-inchat">${ data.context.username }</div>
-                        <div class="chat-time">
-                          <p class='mb-0'>${ data.context.date }</p>
-                          <div class="chat-content-in-you">${ new_msg }</div>
-                        </div>
+                      <div>${ data.context.username }</div>
+                      <div class="chat-time flex-row-reverse">
+                        <p class='mb-0'>${ data.context.date }</p>
+                        <div class="chat-content-in-you">${ new_msg }</div>
                       </div>
-                    </div>
                   </div>
                 </div>
               `)
-              console.log("완료너")
+              console.log("너 완료")
               //document.querySelector('#chat-log').value += (data.message + '\n');
               }
             chatLog.scrollTop = chatLog.scrollHeight
