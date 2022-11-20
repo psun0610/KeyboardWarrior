@@ -15,6 +15,7 @@ from trade.models import Trades
 from reviews.models import Review
 from django.db.models import Q
 
+
 # Create your views here.
 
 
@@ -95,7 +96,16 @@ def detail(request, pk):
         for j in jjims:
             if j.pk == pk:
                 jjim_list.append(trade)
-    jjimsc = len(jjim_list)            
+    jjimsc = len(jjim_list) 
+    
+    reviews = Review.objects.all()
+    like_list = []
+    for review in reviews:
+        likes=review.like_users.all()
+        for l in likes:
+            if l.pk == pk:
+                like_list.append(review)
+    likesc = len(like_list)             
     context = {
         "user": user,
         "rank_percent": rank_percent,
@@ -105,6 +115,8 @@ def detail(request, pk):
         "reviewsc": reviewcount,
         "jjim_list": jjim_list,
         "jjimsc": jjimsc,
+        "like_list": like_list,
+        "likesc": likesc,
     }
     return render(request, "accounts/detail.html", context)
 

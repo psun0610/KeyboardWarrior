@@ -84,7 +84,7 @@
               {% endif %}
               <div class="form_radio_btn">
                 <input id="radio4" type="radio" name="menu" value="">
-                <label for="radio4">즐겨찾기 목록</label>
+                <label for="radio4">컬렉션</label>
               </div>
           </form>        
       </div>
@@ -386,7 +386,7 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">내가 찜한 글</h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">내가 찜한 상품</h1>
                                 </div>
                                       <div class="modal-body">
                                           {% for jjim in jjim_list %}
@@ -460,10 +460,10 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">내가 좋아요한 글</h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">내가 좋아요한 후기</h1>
                                 </div>
                                       <div class="modal-body">
-                                          {% for jjim in likes %}
+                                          {% for user in like_list %}
                                             <div class="follow-user">
                                                 <a href="{% url 'reviews:detail' user.pk %}">
                                                     {% if jjim.photo_set.all %}
@@ -471,7 +471,7 @@
                                                     {% else %}
                                                         <img class='follow-profile-img' src="{% static 'images/logo_png.png' %}">
                                                     {% endif %}
-                                                    <div class="follow-name">{{ jjim.title }}</div>
+                                                    <div class="follow-name">{{ user.title }}</div>
                                                 </a>
                                             </div>
                                           {% endfor %}
