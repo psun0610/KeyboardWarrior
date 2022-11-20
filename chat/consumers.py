@@ -73,8 +73,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
             "date": x.strftime("%m월 %d일 %H:%M"),
             "room_pk": room_pk,
         }
-        text_data_json = json.loads(text_data)
-        message = text_data_json["message"]
         new_msg = await self.create_chat(message, room_pk, user.pk)
         # print(user.pk, type(user.pk))
 

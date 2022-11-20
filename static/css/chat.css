@@ -32,7 +32,7 @@
 }
 
 .chat {
-    width: 1330px;
+    width: 1300px;
     height: 700px;
     border: var(--my-gray) solid 1px;
     margin: auto;
@@ -66,7 +66,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 45px 10px 35px;
+    margin: 0 45px 10px 0;
     padding: 0 30px;
 }
 
@@ -85,7 +85,6 @@
 .chat-bang {
     width: 1000px;
     height: 490px;
-    overflow: auto;
     margin-bottom: 10px;
     padding: 20px;
     overflow: auto;
@@ -266,7 +265,7 @@
 
 #chat-message-input {
     border: 1px solid var(--my-gray);
-    width: 850px;
+    width: 800px;
     height: 35px;
     align-self: center;
     border-radius: 8px;

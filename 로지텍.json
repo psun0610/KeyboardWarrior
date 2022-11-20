@@ -594,22 +594,6 @@
 	{
 		"model": "articles.Keyboard",
 		"fields": {
-			"name": "로지텍 G PRO K/DA Mechanical Gaming Keyboard",
-			"img": "https://img.danawa.com/prod_img/500000/729/201/img/14201729_1.jpg?shrink=500:500&_v=20210517125949",
-			"brand": "로지텍",
-			"connect": "기계식",
-			"weight": 980,
-			"array": "기타",
-			"switch": "GX",
-			"key_switch": "갈축",
-			"press": 45,
-			"kind": "텐키리스",
-			"bluetooth": "유선"
-		}
-	},
-	{
-		"model": "articles.Keyboard",
-		"fields": {
 			"name": "로지텍 CRAFT",
 			"img": "https://img.danawa.com/prod_img/500000/343/494/img/7494343_1.jpg?shrink=500:500&_v=20190812161917",
 			"brand": "로지텍",
