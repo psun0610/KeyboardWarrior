@@ -215,10 +215,10 @@
                   let profile_src = "";
                   if (comment_data[i].image) {
                     if (comment_data[i].is_social === 0) {
-                      profile_src = `/media/${comment_data[i].image}`;
+                      profile_src = `/media/${comment_data[i].image}/`;
                     }
                     else {
-                      profile_src = `${comment_data[i].image}`;
+                      profile_src = `/${comment_data[i].image}/`;
                     }
                   }
                   else {
@@ -245,10 +245,10 @@
                       <div class="keyboard-comment">
                     
                         <a href="/accounts/${comment_data[i].id}/detail">
-                        <img class="comment-profile-img" src="${profile_src}">
+                        <img class="comment-profile-img" src="/${profile_src}/">
                       </a>
                       <div class="keyboard-comment-box">
-                        <a href="/accounts/${comment_data[i].id}/detail">
+                        <a href="/accounts/${comment_data[i].id}/detail/">
                           <p class="keyboard-comment-user">${comment_data[i].userName}</p>
                         </a>
                         <i class="bi ${like}" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="${comment_data[i].commentPk}" id="commentlike"></i>
