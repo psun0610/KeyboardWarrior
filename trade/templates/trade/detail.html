@@ -242,9 +242,6 @@
 </div>
 </div>
 </div>
-<a href="{% url 'accounts:messageRoom' trade.pk %}" target="_blank" width="1000" height:"1000">메세지함</a>
-<a href="{% url 'chat:find_room' trade.pk %}">채팅</a>
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -274,7 +271,7 @@
         let profile_src = "";
         if (comment_data[i].image) {
           if (comment_data[i].is_social === 0) {
-            profile_src = `https://keyboard-warrior-s3.s3.ap-northeast-2.amazonaws.com/${comment_data[i].image}/`;
+            profile_src = `https://keyboard-warrior-s3.s3.ap-northeast-2.amazonaws.com/${comment_data[i].image}`;
           }
           else {
             profile_src = `/${comment_data[i].image}/`;
@@ -338,7 +335,7 @@
         let profile_src = "";
         if (comment_data[i].image) {
           if (comment_data[i].is_social === 0) {
-            profile_src = `https://keyboard-warrior-s3.s3.ap-northeast-2.amazonaws.com/${comment_data[i].image}/`;
+            profile_src = `https://keyboard-warrior-s3.s3.ap-northeast-2.amazonaws.com/${comment_data[i].image}`;
           }
           else {
             profile_src = `/${comment_data[i].image}/`;
