@@ -31,7 +31,7 @@ const likecomment = (e) => {
   const comment_id = document
     .querySelector(`#${e.id}`)
     .id;
-  axios({method: 'get', url: `/reviews/${event.target.dataset.reviewId}/like/${event.target.dataset.commentId}`}).then(response => {
+  axios({method: 'get', url: `/reviews/${event.target.dataset.reviewId}/like/${event.target.dataset.commentId}/`}).then(response => {
     console.log(response)
     if (response.data.isLike === true) {
       e.classList.add('bi-heart-fill')
