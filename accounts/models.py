@@ -59,6 +59,14 @@ class User(AbstractUser):
     # 알림쌓기
 
 
+class Notification(models.Model):
+    message = models.CharField(max_length=100)
+    check = models.BooleanField(default=False)
+    user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+    category = models.CharField(max_length=10)
+    nid = models.IntegerField(default=0)
+
+
 # class Room(models.Model):
 #     send_user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
 #     reception_user = models.ForeignKey(
