@@ -91,6 +91,7 @@ def create(request):
 @login_required
 def update(request, pk):
     trade = get_object_or_404(Trades, pk=pk)
+    photo = get_object_or_404(Photo, pk=pk)
     if request.user == trade.user:
         if request.method == "POST":
             form = CreateTrade(request.POST, instance=trade)
@@ -110,10 +111,11 @@ def update(request, pk):
                     return redirect("trade:detail", pk)
         else:
             form = CreateTrade(instance=trade)
-            photo_form = PhotoForm()
+            photo_form = PhotoForm(instance=photo)
         context = {
             "form": form,
             "photo_form": photo_form,
+            "trade": trade,
         }
     return render(request, "trade/update.html", context)
 

@@ -41,6 +41,7 @@
             <a href="{% url 'reviews:index'  %}"><li class="my-nav-item">키보드 후기</li></a>
           </div>
           <div>
+
           {% if request.user.is_authenticated %}
               <li class="my-nav-item" id="nav-window-btn">
                 <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}" style="color: white;">내 정보</a>

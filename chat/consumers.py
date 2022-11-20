@@ -75,6 +75,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         }
         text_data_json = json.loads(text_data)
         message = text_data_json["message"]
+        new_msg = await self.create_chat(message, room_pk, user.pk)
         # print(user.pk, type(user.pk))
 
         # Send message to room group
