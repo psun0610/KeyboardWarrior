@@ -219,7 +219,7 @@ state_token = secrets.token_urlsafe(16)
 def naver_request(request):
     naver_api = "https://nid.naver.com/oauth2.0/authorize?response_type=code"
     client_id = "sr5Wb8p3_r8B_3nV9wKv"  # 배포시 보안적용 해야함
-    redirect_uri = "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/naver/login/callback/"
+    redirect_uri = "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/naver/login/callback"
     state_token = secrets.token_urlsafe(16)
     return redirect(
         f"{naver_api}&client_id={client_id}&redirect_uri={redirect_uri}&state={state_token}"
@@ -233,7 +233,7 @@ def naver_callback(request):
         "client_secret": "FtyMQDzlAQ",
         "code": request.GET.get("code"),
         "state": request.GET.get("state"),
-        "redirect_uri": "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/naver/login/callback/",
+        "redirect_uri": "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/naver/login/callback",
     }
     naver_token_request_url = "https://nid.naver.com/oauth2.0/token"
     access_token = requests.post(naver_token_request_url, data=data).json()[
@@ -270,7 +270,7 @@ def naver_callback(request):
 def google_request(request):
     google_api = "https://accounts.google.com/o/oauth2/v2/auth"
     client_id = "598608554936-4rm80s1c7krbac2hs9f9f08vamnitvb7.apps.googleusercontent.com"  # 배포시 보안적용 해야함
-    redirect_uri = "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/login/google/callback/"
+    redirect_uri = "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/login/google/callback"
     google_base_url = "https://www.googleapis.com/auth"
     google_email = "/userinfo.email"
     google_myinfo = "/userinfo.profile"
@@ -287,7 +287,7 @@ def google_callback(request):
         "grant_type": "authorization_code",
         "client_id": "598608554936-4rm80s1c7krbac2hs9f9f08vamnitvb7.apps.googleusercontent.com",  # 배포시 보안적용 해야함
         "client_secret": "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",
-        "redirect_uri": "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/login/google/callback/",
+        "redirect_uri": "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/login/google/callback",
     }
     google_token_request_url = "https://oauth2.googleapis.com/token"
     access_token = requests.post(google_token_request_url, data=data).json()[
