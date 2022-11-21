@@ -587,6 +587,7 @@
 
 
             const modal = document.querySelector('#follow-modal')
+            console.log(modal)
             const f_datas = response.data.f_datas
             let modal_content = ''
             for(let i = 0; i < f_datas.length; i++) {
@@ -607,12 +608,14 @@
               else {
                 profile_src = `{% static 'images/logo_png.png' %}`;
               }
+              console.log(profile_src)
               modal_content += `<img class='follow-profile-img' src=${profile_src}>`
               modal_content += `<div class="follow-name">${f_datas[i].follower_name}</div>`
               modal_content += `</a>`
               modal_content += `</div>`
+              console.log(modal_content)
             }
-            modal.innerHTML(modal_content)
+            modal.innerHTML = modal_content
 
             }).catch((error) => {
           console.log(error.response)
