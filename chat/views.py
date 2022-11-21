@@ -59,6 +59,24 @@ def room(request, room_name):
 
 @login_required
 # @receiver(post_save, sender=User)
+def init_room(request):
+    user = request.user
+    # 만약 방이 이미 있으면 room.pk찾기
+    if Room.objects.filter(Q(send_user=user) | Q(reception_user=user)).exists():
+
+        select_room = Room.objects.filter(Q(send_user=user) | Q(reception_user=user))
+
+        room = select_room.order_by("pk")[0]
+
+        return redirect("chat:room", room.pk)
+
+    # 방이 없다면 (최초 채팅 시행) room.pk 생성
+    else:
+        return render(request, "chat/empty.html")
+
+
+@login_required
+# @receiver(post_save, sender=User)
 def find_room(request, trade_pk):
     send_user = request.user
     trade = Trades.objects.get(pk=trade_pk)
