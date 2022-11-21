@@ -181,7 +181,7 @@ AUTH_USER_MODEL = "accounts.User"
 #     AWS_REGION,
 # )
 
-DEBUG = os.getenv("DEBUG") == "true"
+DEBUG = os.getenv("DEBUG") == "False"
 
 
 if DEBUG:
