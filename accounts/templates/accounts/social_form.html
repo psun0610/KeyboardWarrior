@@ -19,37 +19,86 @@
         </div>
           <div class='select-box'>
             <div class="select">
-              <input type="radio" id="sound" name="sound" value='1'><label for="sound">시원한 소리</label>
-              <input type="radio" id="sound2" name="sound" value='2'><label for="sound2">조용한 소리</label>
-              <input type="radio" id="sound3" name="sound" value='3'><label for="sound3">상관없음</label>
+              <input type="radio" id="sound" name="sound"  onclick="pick_sound()" value='1'><label for="sound">경쾌한 소리</label>
+              <input type="radio" id="sound2" name="sound" onclick="pick_sound()" value='2'><label for="sound2">조용한 소리</label>
+              <input type="radio" id="sound3" name="sound" onclick="pick_sound()" value='3'><label for="sound3">상관없음</label>
             </div>
             <div class="select">
-              <input type="radio" id="array" name="array" value='1'><label for="array">텐키리스</label>
-              <input type="radio" id="array2" name="array" value='2'><label for="array2">풀배열</label>
-              <input type="radio" id="array3" name="array" value='3'><label for="array3">상관없음</label>
-            </div>
-
-            <div class="select">
-              <input type="radio" id="connect" name="connect" value='1'><label for="connect">유선</label>
-              <input type="radio" id="connect2" name="connect" value='2'><label for="connect2">무선</label>
-              <input type="radio" id="connect3" name="connect" value='3'><label for="connect3">상관없음</label>
+              <input type="radio" id="array" name="array" onclick="pick_array()" value='1'><label for="array">풀배열</label>
+              <input type="radio" id="array2" name="array" onclick="pick_array()" value='2'><label for="array2">텐키리스</label>
+              <input type="radio" id="array3" name="array" onclick="pick_array()" value='3'><label for="array3">상관없음</label>
             </div>
 
             <div class="select">
-              <input type="radio" id="press" name="press" value='1'><label for="press">가벼운 타건감</label>
-              <input type="radio" id="press2" name="press" value='2'><label for="press2">묵직한 타건감</label>
-              <input type="radio" id="press3" name="press" value='3'><label for="press3">상관없음</label>
+              <input type="radio" id="connect" name="connect" onclick="pick_connect()" value='1'><label for="connect">유선</label>
+              <input type="radio" id="connect2" name="connect" onclick="pick_connect()" value='2'><label for="connect2">무선</label>
+              <input type="radio" id="connect3" name="connect" onclick="pick_connect()" value='3'><label for="connect3">상관없음</label>
+            </div>
+
+            <div class="select">
+              <input type="radio" id="press" name="press" onclick="pick_press()" value='1'><label for="press">가벼운 타건감</label>
+              <input type="radio" id="press2" name="press" onclick="pick_press()" value='2'><label for="press2">묵직한 타건감</label>
+              <input type="radio" id="press3" name="press" onclick="pick_press()" value='3'><label for="press3">상관없음</label>
             </div>
 
             <div class="select1">
-              <input type="radio" id="weight" name="weight" value='1'><label for="weight">가벼운</label>
-              <input type="radio" id="weight2" name="weight" value='2'><label for="weight2">상관없음</label>
+              <input type="radio" id="weight" onclick="pick_weight()" name="weight" value='1'><label for="weight">가벼운</label>
+              <input type="radio" id="weight2" onclick="pick_weight()" name="weight" value='2'><label for="weight2">상관없음</label>
             </div>
-          </div>
         <div>
-          <button class='signup-btn' type="submit">KeyBoard Warrior와 함께하기</button>
+          <button class='signup-btn' onclick="return checkForm()" type="submit">KeyBoard Warrior와 함께하기</button>
         </div>
       </div>
   </form>
 </div>
+
+<script>
+let sound = 0
+let array = 0
+let connect = 0
+let press = 0
+let weight= 0
+
+  const pick_sound = (e) => {
+    sound = document.querySelector('input[name="sound"]:checked').value;
+    console.log("사운드입력")
+    console.log(sound,array,connect,press,weight)
+  }
+
+  const pick_array = (e) => {
+    array = document.querySelector('input[name="array"]:checked').value;
+    console.log("배열")
+    console.log(sound,array,connect,press,weight)
+  }
+  const pick_connect = (e) => {
+    connect = document.querySelector('input[name="connect"]:checked').value;
+  }
+  const pick_press = (e) => {
+    press = document.querySelector('input[name="press"]:checked').value;
+  }
+  const pick_weight = (e) => {
+    weight = document.querySelector('input[name="weight"]:checked').value;
+  }
+
+
+  function checkForm() {
+  if(sound == "0"){
+    alert('선호하는 소리를 골라주세요');
+    return false;}
+  if(array == "0"){
+    alert('선호하는 배열을 골라주세요');
+    return false;}
+  if(connect == "0"){
+    alert('연결방식을 골라주세요');
+    return false;}
+  if(press == "0"){
+    alert('선호하는 타건감을 골라주세요');
+    return false;}
+  if(weight == "0"){
+    alert('선호하는 무게를 골라주세요');
+    return false;}
+  }
+  
+</script>
+  
 {% endblock body %}
