@@ -97,7 +97,7 @@ html {
 }
 
 .nav-logo {
-  width: 3.9vh;
+  width: 50px;
 }
 
 .nav-logo-text {
@@ -120,11 +120,13 @@ html {
 .my-nav-div {
   display: flex;
   list-style: none;
+  align-items: center;
 }
 
 .my-nav-div>div {
   display: flex;
   margin: 0 1.1719vw;
+  align-items: center;
 }
 
 .my-nav-item {
@@ -1289,6 +1291,7 @@ footer>div {
 .nav-profile-wrap {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .nav-profile {
   display: flex;
@@ -1317,4 +1320,20 @@ footer>div {
   font-size: 14px;
   margin-bottom: 0;
   margin-left: 15px;
+}
+.chat1-back {
+  background-color: var(--my-red);
+}
+.chat2-back {
+  background-color: var(--a-blue);
+}
+.navv-profile {
+  display: flex;
+  align-items: center;
+}
+.navv-profile>img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
 }

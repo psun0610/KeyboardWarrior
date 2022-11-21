@@ -182,7 +182,7 @@ AUTH_USER_MODEL = "accounts.User"
 #     AWS_STORAGE_BUCKET_NAME,
 #     AWS_REGION,
 # )
-
+#
 DEBUG = os.getenv("DEBUG") == "False"
 
 if DEBUG:

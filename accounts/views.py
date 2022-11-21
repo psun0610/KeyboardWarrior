@@ -116,18 +116,36 @@ def detail(request, pk):
             if l.pk == pk:
                 like_list.append(review)
     likesc = len(like_list)
-    context = {
-        "user": user,
-        "rank_percent": rank_percent,
-        "trades": tradeslist,
-        "reviews": reviewslist,
-        "tradesc": tradecount,
-        "reviewsc": reviewcount,
-        "jjim_list": jjim_list,
-        "jjimsc": jjimsc,
-        "like_list": like_list,
-        "likesc": likesc,
-    }
+
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "user": user,
+            "rank_percent": rank_percent,
+            "trades": tradeslist,
+            "reviews": reviewslist,
+            "tradesc": tradecount,
+            "reviewsc": reviewcount,
+            "jjim_list": jjim_list,
+            "jjimsc": jjimsc,
+            "like_list": like_list,
+            "likesc": likesc,
+        }
+    else:
+        context = {
+            "user": user,
+            "rank_percent": rank_percent,
+            "trades": tradeslist,
+            "reviews": reviewslist,
+            "tradesc": tradecount,
+            "reviewsc": reviewcount,
+            "jjim_list": jjim_list,
+            "jjimsc": jjimsc,
+            "like_list": like_list,
+            "likesc": likesc,
+        }
     return render(request, "accounts/detail.html", context)
 
 
