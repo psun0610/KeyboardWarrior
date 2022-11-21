@@ -11,6 +11,8 @@ from django.db.models import Q
 import json
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.http import JsonResponse
+from datetime import datetime
 
 
 def index(request):
@@ -52,7 +54,7 @@ def room(request, room_name):
         "all_room": all_room,
     }
 
-    return render(request, "chat/room1.html", context)
+    return render(request, "chat/room.html", context)
 
 
 @login_required
@@ -84,3 +86,43 @@ def find_room(request, trade_pk):
             user=new_room.trade.user, message=message, category="채팅", nid=new_room.pk
         )
         return redirect("chat:room", new_room.pk)
+
+
+def message(request):
+    roompk = request.GET.get("room")
+    content = request.GET.get("content")
+    if content == "내용없음":
+        room = Room.objects.get(pk=roompk)
+        room_message_fil = Message.objects.filter(room=room.pk).order_by("pk")
+        room_message = []
+        for m in room_message_fil:
+            room_message.append(
+                {
+                    "msg": m.content,
+                    "username": m.user.username,
+                    "userpk": m.user.pk,
+                    "created_at": m.created_at.strftime("%Y-%m-%d %H:%M"),
+                }
+            )
+        context = {
+            "room_message": room_message,
+        }
+        return JsonResponse(context)
+    else:
+        room = Room.objects.get(pk=roompk)
+        Message.objects.create(user=request.user, content=content, room=room)
+        room_message_fil = Message.objects.filter(room=room.pk).order_by("pk")
+        room_message = []
+        for m in room_message_fil:
+            room_message.append(
+                {
+                    "msg": m.content,
+                    "username": m.user.username,
+                    "userpk": m.user.pk,
+                    "created_at": m.created_at.strftime("%Y-%m-%d %H:%M"),
+                }
+            )
+        context = {
+            "room_message": room_message,
+        }
+        return JsonResponse(context)

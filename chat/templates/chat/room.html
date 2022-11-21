@@ -1,68 +1,190 @@
-{% extends 'base.html' %}
+{% extends 'kwbase/base.html' %}
 {% load django_bootstrap5 %}
 {% load static %}
-
 {% block body %}
-    <div id="chat-log" cols="100" rows="20"></div><br>
-    <input id="chat-message-input" type="text" size="100"><br>
-    <input id="chat-message-submit" type="button" value="Send">
-    <img src="{{userimg.url}}">
-
-
-
-
-
-
-    {{ room_name|json_script:"room-name" }}
-    {{ username|json_script:"user-name" }}
-
-
-    
-    <script>
-        const roomName = JSON.parse(document.getElementById('room-name').textContent);
-        const chatSocket = new WebSocket(
-            'ws://'
-            + window.location.host
-            + '/ws/chat/'
-            + roomName
-            + '/'
-        );
-
-        chatSocket.onmessage = function(e) {
-            const data = JSON.parse(e.data);
-            console.log(data)
-            const new_msg = data.message.split(':')
-            console.log(new_msg)
-            chatLog = document.querySelector('#chat-log')
-            chatLog.insertAdjacentHTML(`beforeend`, `
-            <div>
-              <a href="/accounts/${ new_msg[2] }" class="text-decoration-none text-dark"><span class="fw-bold"> ${new_msg[0]}</span>님</a>
-              |
-              <span>${new_msg[1]}</span>
+<div class="chat">
+  <div class="jjok-bang">
+    {% comment %} 제목 1 {% endcomment %}
+    <div class='all-chat'>
+      {% for rooms in all_room %}
+      <a href="{% url 'chat:room' rooms.pk %}">
+        {% if rooms.pk == room.pk %}
+        <div class='gak-chat back-gray'>
+          {% else %}
+          <div class="gak-chat">
+            {% endif %}
+            <div class="chat-profile">
+              <div class="chat-user"> {{rooms.reception_user}}</div>
             </div>
-            `)
-            // document.querySelector('#chat-log').value += (data.message + '\n');
-        };
+            <div class="chat-keyboard-name">{{rooms.trade.keyboard.name}}</div>
+            <div class='chat-content'> {{rooms.trade.title}}</div>
+          </div>
+      </a>
+      {%endfor%}
+    </div>
+  </div>
 
-        chatSocket.onclose = function(e) {
-            console.error('Chat socket closed unexpectedly');
-        };
+  <div class='chatting-bang'>
+    <div class="chat-nav">
+      <div class="fs-5">{{ room.reception_user }}</div>
+      <div class="d-flex align-items-center">
+        <div class="">{{room.trade.keyboard.name}}</div>
+        <div class="chat-title">{{room.trade.title}}</div>
+        <div class="chat-badge">판매</div>
+      </div>
+    </div>
+    <div class="chatbang1" id="chatbang">
+      {% for message in room_message %}
+      {% if message.user != request.user%}
+      <div class='you'>
+        <div class="chat-profile-box">
+          <div>{{ message.user }}</div>
+          <div class="chat-time flex-row-reverse">
+            <p class='mb-0'>{{ message.created_at | date:'m월d일 H:i' }}</p>
+            <div class="chat-content-in-you">{{ message.content }}</div>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class='me'>
+        <div class="chat-profile-box">
+          <div class="chat-time">
+            <p class='mb-0'>{{message.created_at | date:'m월d일 H:i' }}</p>
+            <div class="chat-content-in-me">{{message.content}}</div>
+          </div>
+        </div>
+      </div>
+      {%endif%}
+      {% endfor %}
+    </div>
+    <div id="chat-log" cols="100" rows="20"></div>
+    <div class="message-input-wrap">
+      <input id="chat-message-input" type="text" size="100" value="">
+      <input id="chat-message-submit" type="button" value="전송">
+    </div>
+  </div>
 
-        document.querySelector('#chat-message-input').focus();
-        document.querySelector('#chat-message-input').onkeyup = function(e) {
-            if (e.keyCode === 13) {  // enter, return
-                document.querySelector('#chat-message-submit').click();
+
+
+
+  <input id="room_pk" type="hidden" value="{{ room_name }}">
+  <input id="user_pk" type="hidden" value="{{ user_pk }}">
+  <input id="request_user_pk" type="hidden" value="{{ request.user.pk }}">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const chatLog = document.querySelector('#chatbang')
+    chatLog.scrollTop = chatLog.scrollHeight
+    const room_pk = document.querySelector('#room_pk').value;
+    const user_pk = document.querySelector('#user_pk').value;
+    const request_user_pk = document.querySelector('#request_user_pk').value;
+
+
+
+
+    document.querySelector('#chat-message-input').focus();
+    document.querySelector('#chat-message-input').onkeyup = function (e) {
+      if (e.keyCode === 13) {  // enter, return
+        document.querySelector('#chat-message-submit').click();
+      }
+    };
+
+    document.querySelector('#chat-message-submit').onclick = function (e) {
+      const messageInputDom = document.querySelector('#chat-message-input');
+      const content = messageInputDom.value;
+      axios({
+        method: 'get',
+        url: `/chat/message/`,
+        params: { "room": room_pk, "content": content },
+
+      })
+
+        .then(response => {
+          const room_message = response.data.room_message
+          chatLog.textContent = "";
+          for (let i = 0; i < room_message.length; i++){
+            if (room_message[i].userpk == request_user_pk) {
+              chatLog.insertAdjacentHTML(`beforeend`, `
+                  <div class='me'>
+                    <div class="chat-profile-box">
+                      <div>${room_message[i].username}</div>
+                      <div class="chat-time">
+                        <p class='mb-0'>${room_message[i].created_at}</p>
+                        <div class="chat-content-in-me">${room_message[i].msg}</div>
+                      </div>
+                    </div>
+                  </div>
+                  `);
             }
-        };
+            else {
+              chatLog.insertAdjacentHTML(`beforeend`, `  
+                <div class='you'>
+                  <div class="chat-profile-box">
+                      <div>${room_message[i].username}</div>
+                      <div class="chat-time flex-row-reverse">
+                        <p class='mb-0'>${room_message[i].created_at} </p>
+                        <div class="chat-content-in-you">${room_message[i].msg}</div>
+                      </div>
+                  </div>
+                </div>
+              `);
+            }
+          }chatLog.scrollTop = chatLog.scrollHeight
+        }
+        )
+         messageInputDom.value = '';
+      
+    }
 
-        document.querySelector('#chat-message-submit').onclick = function(e) {
-            const messageInputDom = document.querySelector('#chat-message-input');
-            const message = messageInputDom.value;
-            chatSocket.send(JSON.stringify({
-                'message': message
-                
-            }));
-            messageInputDom.value = '';
-        };
-    </script>
-{% endblock %}
+
+
+
+
+  const reloading = (e) => {
+    console.log("새로고침")
+  axios({
+    method: 'get',
+    url: `/chat/message/`,
+    params: { "room": room_pk, "content": "내용없음" },
+
+  })
+    .then(response => {
+      const room_message = response.data.room_message
+      chatLog.textContent = "";
+      for (let i = 0; i < room_message.length; i++){
+        if (room_message[i].userpk == request_user_pk) {
+          chatLog.insertAdjacentHTML(`beforeend`, `
+              <div class='me'>
+                <div class="chat-profile-box">
+                  <div>${room_message[i].username}</div>
+                  <div class="chat-time">
+                    <p class='mb-0'>${room_message[i].created_at}</p>
+                    <div class="chat-content-in-me">${room_message[i].msg}</div>
+                  </div>
+                </div>
+              </div>
+              `);
+        }
+        else {
+          chatLog.insertAdjacentHTML(`beforeend`, `  
+            <div class='you'>
+              <div class="chat-profile-box">
+                  <div>${room_message[i].username}</div>
+                  <div class="chat-time flex-row-reverse">
+                    <p class='mb-0'>${room_message[i].created_at} </p>
+                    <div class="chat-content-in-you">${room_message[i].msg}</div>
+                  </div>
+              </div>
+            </div>
+          `);
+        }
+      }chatLog.scrollTop = chatLog.scrollHeight
+    }
+    )}
+
+
+  let timerId = setInterval(() => reloading(),2000)
+
+  setTimeout(() => { clearInterval(timerId); }, 1000000000);
+  </script>
+
+  {% endblock %}
