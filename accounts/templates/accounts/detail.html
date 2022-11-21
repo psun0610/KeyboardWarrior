@@ -208,7 +208,7 @@
                           <div class="modal-header">
                               <h1 class="modal-title fs-5" id="exampleModalLabel">내가 팔로우하는 사람</h1>
                           </div>
-                              <div class="modal-body">
+                              <div class="modal-body" id="follow-modal">
                                   {% for user in user.followings.all %}
                                       <div class="follow-user">
                                           <a href="{% url 'accounts:detail' user.pk %}">
@@ -572,9 +572,9 @@
             const isFollowed = response.data.is_followed
             const followBtn = document.querySelector('#follow-form > input[type=submit]')
             if (isFollowed === true) {
-            followBtn.value = '언팔로우'
+            followBtn.value = 'Following'
             } else {
-            followBtn.value = '팔로우'
+            followBtn.value = 'Follow'
             }
             followBtn.classList.toggle('follow')
             followBtn.classList.toggle('unfollow')
@@ -584,11 +584,32 @@
             const followingsCount = response.data.followings_count
             followersCountTag.innerText = followersCount
             followingsCountTag.innerText = followingsCount
-            })
+            const modal = document.querySelector('#follow-modal')
+            let modal_content = ''
+              // let profile_src = `https://keyboard-warrior-s3.s3.ap-northeast-2.amazonaws.com/${comment_data[i].image}`;
+            modal_content += `<div class="follow-user">`
+            for(follower of followers) {
+              modal_content += `<a href="{% url 'accounts:detail' ${follower.pk} %}">`
+              if (comment_data[i].image) {
+                if (comment_data[i].is_social === 0) {
+                  profile_src = `https://keyboard-warrior-s3.s3.ap-northeast-2.amazonaws.com/${follower.image}`;
+                }
+                else {
+                  profile_src = `${follower.image}`;
+                }
+              }
+              else {
+                profile_src = `{% static 'images/logo_png.png' %}`;
+              }
+              modal_content += `</a>`
+              modal_content += `</div>`
+            }
+            modal.insertAdjacentHTML('beforeend', `${modal_content}`)
             .catch((error) => {
             console.log(error.response)
             })
-            })
+          })
+        })
 
 </script>
 {% endblock %}
