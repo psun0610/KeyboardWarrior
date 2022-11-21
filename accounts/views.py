@@ -16,7 +16,7 @@ from reviews.models import Review
 from django.db.models import Q
 
 
-# Create your views here.
+# Create your views here..
 
 
 def index(request):
