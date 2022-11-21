@@ -195,7 +195,12 @@ def scroll_data(request):
         {
             "name": "Intellilabs 노트북도 맞춤의 시대",
             "image": "/static/images/인텔리랩스.png",
-            "url": "",
+            "url": "http://intellilabs-env.eba-cynacmth.ap-northeast-2.elasticbeanstalk.com/",
+        },
+        {
+            "name": "Intellilabs 노트북도 맞춤의 시대",
+            "image": "/static/images/인텔리랩스2.png",
+            "url": "http://intellilabs-env.eba-cynacmth.ap-northeast-2.elasticbeanstalk.com/",
         },
     ]
     # 랜덤 개수
