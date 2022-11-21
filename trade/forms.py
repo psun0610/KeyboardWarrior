@@ -15,9 +15,8 @@ class PhotoForm(forms.ModelForm):
             "image": ClearableFileInput(attrs={"multiple": True}),
         }
         labels = {
-            "image": "사진을 여러장 올릴 수 있어요! 첫장은 썸네일~",
+            "image": "이미지를 선택해주세요.",
         }
-
 class CreateComment(forms.ModelForm):
     class Meta:
         model = Trade_Comment
