@@ -25,7 +25,7 @@ class Trades(models.Model):
 
 class Photo(models.Model):
     trade = models.ForeignKey(Trades, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to="media/", blank=True)
+    image = models.ImageField(upload_to="images/", blank=True)
 
 
 class Trade_Comment(models.Model):

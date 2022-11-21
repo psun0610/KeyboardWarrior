@@ -90,13 +90,17 @@ def create(request):
 
 @login_required
 def update(request, pk):
-    trade = get_object_or_404(Trades, pk=pk)
-    photo = get_object_or_404(Photo, pk=pk)
+    trade = Trades.objects.get(pk=pk)
+    photos = trade.photo_set.all()
+    print(photos)
     if request.user == trade.user:
         if request.method == "POST":
-            form = CreateTrade(request.POST, instance=trade)
+            form = CreateTrade(request.POST, request.FILES, instance=trade)
             photo_form = PhotoForm(request.POST, request.FILES)
             images = request.FILES.getlist("image")
+            if photos:
+                for photo in photos:
+                    photo.delete()
             kb = Keyboard.objects.get(name=request.POST["keyboard"])
             if form.is_valid():
                 trade = form.save(commit=False)
@@ -111,7 +115,7 @@ def update(request, pk):
                     return redirect("trade:detail", pk)
         else:
             form = CreateTrade(instance=trade)
-            photo_form = PhotoForm(instance=photo)
+            photo_form = PhotoForm(instance=photos[0])
         context = {
             "form": form,
             "photo_form": photo_form,

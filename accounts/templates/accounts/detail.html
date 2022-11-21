@@ -31,9 +31,9 @@
             <form id="follow-form" data-user-id="{{ user.pk }}">
             {% csrf_token %}
             {% if request.user in user.followers.all %}
-              <input type="submit" value="언팔로우" class="follow-btn unfollow">
+              <input type="submit" value="Following" class="follow-btn unfollow">
             {% else %}
-              <input type="submit" value="팔로우" class="follow-btn follow">
+              <input type="submit" value="Follow" class="follow-btn follow">
             {% endif %}
               </form>
             {% endif %}

@@ -7,6 +7,7 @@ from accounts.models import User
 from django.core.paginator import Paginator, EmptyPage
 from django.db.models import Q
 from django.db.models import Count
+from accounts.models import Notification
 
 
 def main(request):
@@ -92,9 +93,16 @@ def main(request):
         visit_sum = 0
         today_visit = Visit.objects.order_by("-pk")[0].visit_count
         all_visit = Visit.objects.all()
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
         for i in all_visit:
             visit_sum += i.visit_count
-        context = {"all": visit_sum, "today": today_visit, "items": items}
+        context = {
+            "all": visit_sum,
+            "today": today_visit,
+            "items": items,
+            "count": message_count,
+        }
         response = render(request, "articles/main.html", context)
         expire_date, now = datetime.now(), datetime.now()
         expire_date += timedelta(days=1)
@@ -105,7 +113,7 @@ def main(request):
         cookievalue = request.COOKIES.get("request.user", "")
         if request.user == "AnonymousUser":
             cookievalue = request.COOKIES.get("sessionid", "")
-        if f"{request.user}" not in cookievalue:
+        if f"{request.user.username}" not in cookievalue:
             cookievalue += f"{request.user.username.encode('utf8')}"
             response.set_cookie(
                 "request.user", value=cookievalue, max_age=max_age, httponly=True
@@ -134,7 +142,7 @@ def main(request):
         cookievalue = request.COOKIES.get("request.user", "")
         if request.user == "AnonymousUser":
             cookievalue = request.COOKIES.get("sessionid", "")
-        if f"{request.user}" not in cookievalue:
+        if f"{request.user.username}" not in cookievalue:
             cookievalue += f"{request.user.username.encode('utf8')}"
             response.set_cookie(
                 "request.user", value=cookievalue, max_age=max_age, httponly=True
