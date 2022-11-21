@@ -57,10 +57,16 @@ def delete(request, pk):
 def login(request):
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
+        print(1)
         if form.is_valid():
             my_login(request, form.get_user())
             messages.success(request, f"환영합니다")
             return redirect(request.GET.get("next") or "articles:main")
+        else:
+            form = AuthenticationForm()
+            messages.warning(request, "ID가 존재하지 않거나 암호가 일치하지 않습니다.")
+            context = {"form": form}
+            return render(request, "accounts/login.html", context)
     else:
         form = AuthenticationForm()
     context = {"form": form}
