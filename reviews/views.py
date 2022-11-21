@@ -134,13 +134,12 @@ def detail(request, pk):
 # 리뷰 수정
 @login_required
 def update(request, pk):
-    review = get_object_or_404(Review, pk=pk)
-    photos = Photo.objects.filter(review_id=review.pk)
-    print(photos, 0)
+    review = Review.objects.get(pk=pk)
+    photos = review.photo_set.all()
     instancetitle = review.title
     if request.method == "POST":
         review_form = ReviewForm(request.POST, request.FILES, instance=review)
-        photo_form = PhotoForm(request.POST, request.FILES)
+        photo_form = PhotoForm(request.POST, request.FILES, instance=photos[0])
         images = request.FILES.getlist("image")
         for photo in photos:
             if photo.image:
@@ -160,7 +159,10 @@ def update(request, pk):
             return redirect("reviews:index")
     else:
         review_form = ReviewForm(instance=review)
-        photo_form = PhotoForm(instance=photos)
+        if photos:
+            photo_form = PhotoForm(instance=photos[0])
+        else:
+            photo_form = PhotoForm()
     context = {
         "review_form": review_form,
         "photo_form": photo_form,
