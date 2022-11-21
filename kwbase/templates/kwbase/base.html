@@ -60,7 +60,8 @@
           <div>
             {% if request.user.is_authenticated %}
             <li class="my-nav-item" id="nav-window-btn">
-              <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}" style="color: white;">내 정보</a>
+              <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}" style="color: white;">
+                내 정보<span> {%if count == 0 %} {%else%} {{count}} {% endif %}</span></a>
               <div class="my-nav-window" id="nav-window" style="overflow: auto;">
                 <div class="nav-profile-wrap">
                   <!-- 내 프로필사진 -->
