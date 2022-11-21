@@ -5,6 +5,13 @@
 
 
 {% comment %} 제목 1 {% endcomment %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
 <div class='my-head'>
   <h2>KeyBoard Warrior에 로그인</h2>
   <hr>
