@@ -118,13 +118,13 @@
     </div>
   </nav>
 
-  {% comment %} {% if messages %}
+  {% if messages %}
     {% for message in messages %}
       <div class="alert alert-{{ message.tags }}">
         {{ message }}
       </div>
     {% endfor %}
-  {% endif %} {% endcomment %}
+  {% endif %}
   <div class="kor-font">
     {% block body %}{% endblock %}
   </div>
