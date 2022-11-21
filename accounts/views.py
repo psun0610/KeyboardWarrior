@@ -16,7 +16,7 @@ from reviews.models import Review
 from django.db.models import Q
 
 
-# Create your views here.
+# Create your views here..
 
 
 def index(request):
@@ -36,6 +36,9 @@ def signup(request):
             my_login(request, user)
             print(2)
             return redirect("articles:main")
+        else:
+            messages.warning(request, "이미 존재하는 ID입니다.")
+
     else:
         form = CreateUser()
         print(3)
@@ -43,7 +46,7 @@ def signup(request):
         "form": form,
     }
     print(form.errors)
-    messages.warning(request, "회원정보가 이미 존재하거나 양식이 잘못되었습니다.")
+
     return render(request, "accounts/signup.html", context)
 
 
@@ -60,7 +63,6 @@ def login(request):
         print(1)
         if form.is_valid():
             my_login(request, form.get_user())
-            messages.success(request, f"환영합니다")
             return redirect(request.GET.get("next") or "articles:main")
         else:
             form = AuthenticationForm()
@@ -113,18 +115,36 @@ def detail(request, pk):
             if l.pk == pk:
                 like_list.append(review)
     likesc = len(like_list)
-    context = {
-        "user": user,
-        "rank_percent": rank_percent,
-        "trades": tradeslist,
-        "reviews": reviewslist,
-        "tradesc": tradecount,
-        "reviewsc": reviewcount,
-        "jjim_list": jjim_list,
-        "jjimsc": jjimsc,
-        "like_list": like_list,
-        "likesc": likesc,
-    }
+
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "user": user,
+            "rank_percent": rank_percent,
+            "trades": tradeslist,
+            "reviews": reviewslist,
+            "tradesc": tradecount,
+            "reviewsc": reviewcount,
+            "jjim_list": jjim_list,
+            "jjimsc": jjimsc,
+            "like_list": like_list,
+            "likesc": likesc,
+        }
+    else:
+        context = {
+            "user": user,
+            "rank_percent": rank_percent,
+            "trades": tradeslist,
+            "reviews": reviewslist,
+            "tradesc": tradecount,
+            "reviewsc": reviewcount,
+            "jjim_list": jjim_list,
+            "jjimsc": jjimsc,
+            "like_list": like_list,
+            "likesc": likesc,
+        }
     return render(request, "accounts/detail.html", context)
 
 
@@ -132,24 +152,29 @@ def detail(request, pk):
 @login_required
 def edit_profile(request, pk):
     user = User.objects.get(pk=pk)
-    if request.method == "POST":
-        form = CustomUserChangeForm(request.POST, request.FILES, instance=request.user)
-        print(2)
-        if form.is_valid():
-            print(1)
-            form.save()
-            # try:
-            #     user.image = request.FILES["image"]
-            #     user.save()
-            # except:
-            #     print("error")
-            return redirect("accounts:detail", user.pk)
+    if request.user == user:
+        if request.method == "POST":
+            form = CustomUserChangeForm(
+                request.POST, request.FILES, instance=request.user
+            )
+            print(2)
+            if form.is_valid():
+                print(1)
+                form.save()
+                # try:
+                #     user.image = request.FILES["image"]
+                #     user.save()
+                # except:
+                #     print("error")
+                return redirect("accounts:detail", user.pk)
+        else:
+            form = CustomUserChangeForm()
+        context = {
+            "form": form,
+        }
+        return render(request, "accounts/edit_profile.html", context)
     else:
-        form = CustomUserChangeForm()
-    context = {
-        "form": form,
-    }
-    return render(request, "accounts/edit_profile.html", context)
+        return redirect("articles:main")
 
 
 @login_required
@@ -255,8 +280,8 @@ state_token = secrets.token_urlsafe(16)
 
 def naver_request(request):
     naver_api = "https://nid.naver.com/oauth2.0/authorize?response_type=code"
-    client_id = "2HYYDV4He0l2acImyKCo"  # 배포시 보안적용 해야함
-    redirect_uri = "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/login/naver/callback"
+    client_id = "pon_1iQapAZ1p8AUXrcY"  # 배포시 보안적용 해야함
+    redirect_uri = "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/login/naver/callback/"
     state_token = secrets.token_urlsafe(16)
     return redirect(
         f"{naver_api}&client_id={client_id}&redirect_uri={redirect_uri}&state={state_token}"
@@ -266,11 +291,11 @@ def naver_request(request):
 def naver_callback(request):
     data = {
         "grant_type": "authorization_code",
-        "client_id": "2HYYDV4He0l2acImyKCo",  # 배포시 보안적용 해야함
-        "client_secret": "t1OyNantHN",
+        "client_id": "pon_1iQapAZ1p8AUXrcY",  # 배포시 보안적용 해야함
+        "client_secret": "WqiKwwjuJa",
         "code": request.GET.get("code"),
         "state": request.GET.get("state"),
-        "redirect_uri": "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/login/naver/callback",
+        "redirect_uri": "http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/login/naver/callback/",
     }
     naver_token_request_url = "https://nid.naver.com/oauth2.0/token"
     access_token = requests.post(naver_token_request_url, data=data).json()[

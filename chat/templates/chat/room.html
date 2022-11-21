@@ -30,7 +30,11 @@
       <div class="d-flex align-items-center">
         <div class="">{{room.trade.keyboard.name}}</div>
         <div class="chat-title">{{room.trade.title}}</div>
-        <div class="chat-badge">판매</div>
+        {% if room.trade.Trade_type == 1 %}
+        <div class="chat-badge chat1-back">판매</div>
+        {% else %}
+        <div class="chat-badge chat2-back">구매</div>
+        {% endif %}
       </div>
     </div>
     <div class="chatbang1" id="chatbang">
@@ -91,49 +95,50 @@
     document.querySelector('#chat-message-submit').onclick = function (e) {
       const messageInputDom = document.querySelector('#chat-message-input');
       const content = messageInputDom.value;
-      axios({
-        method: 'get',
-        url: `/chat/message/`,
-        params: { "room": room_pk, "content": content },
+      if (content != ""){
+        axios({
+          method: 'get',
+          url: `/chat/message/`,
+          params: { "room": room_pk, "content": content },
 
-      })
+        })
 
-        .then(response => {
-          const room_message = response.data.room_message
-          chatLog.textContent = "";
-          for (let i = 0; i < room_message.length; i++){
-            if (room_message[i].userpk == request_user_pk) {
-              chatLog.insertAdjacentHTML(`beforeend`, `
-                  <div class='me'>
-                    <div class="chat-profile-box">
-                      <div>${room_message[i].username}</div>
-                      <div class="chat-time">
-                        <p class='mb-0'>${room_message[i].created_at}</p>
-                        <div class="chat-content-in-me">${room_message[i].msg}</div>
+          .then(response => {
+            const room_message = response.data.room_message
+            chatLog.textContent = "";
+            for (let i = 0; i < room_message.length; i++){
+              if (room_message[i].userpk == request_user_pk) {
+                chatLog.insertAdjacentHTML(`beforeend`, `
+                    <div class='me'>
+                      <div class="chat-profile-box">
+                        <div>${room_message[i].username}</div>
+                        <div class="chat-time">
+                          <p class='mb-0'>${room_message[i].created_at}</p>
+                          <div class="chat-content-in-me">${room_message[i].msg}</div>
+                        </div>
                       </div>
                     </div>
+                    `);
+              }
+              else {
+                chatLog.insertAdjacentHTML(`beforeend`, `  
+                  <div class='you'>
+                    <div class="chat-profile-box">
+                        <div>${room_message[i].username}</div>
+                        <div class="chat-time flex-row-reverse">
+                          <p class='mb-0'>${room_message[i].created_at} </p>
+                          <div class="chat-content-in-you">${room_message[i].msg}</div>
+                        </div>
+                    </div>
                   </div>
-                  `);
-            }
-            else {
-              chatLog.insertAdjacentHTML(`beforeend`, `  
-                <div class='you'>
-                  <div class="chat-profile-box">
-                      <div>${room_message[i].username}</div>
-                      <div class="chat-time flex-row-reverse">
-                        <p class='mb-0'>${room_message[i].created_at} </p>
-                        <div class="chat-content-in-you">${room_message[i].msg}</div>
-                      </div>
-                  </div>
-                </div>
-              `);
-            }
-          }chatLog.scrollTop = chatLog.scrollHeight
-        }
-        )
-         messageInputDom.value = '';
-      
-    }
+                `);
+              }
+            }chatLog.scrollTop = chatLog.scrollHeight
+          }
+          )
+          messageInputDom.value = '';
+        
+      }}
 
 
 
