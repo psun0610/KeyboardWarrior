@@ -121,12 +121,12 @@ def main(request):
         expire_date -= now
         max_age = expire_date.total_seconds()
 
-        cookievalue = request.COOKIES.get("request.user.username.encode('utf8')", "")
         if request.user == "AnonymousUser":
             cookievalue = request.COOKIES.get("sessionid", "")
-        k = f"{request.user.username.encode('utf8')}"
-        if k not in cookievalue:
-            cookievalue += k
+        else:
+            cookievalue = request.COOKIES.get("request.user.username", "")
+        if not f"{request.user.username.encode('utf8')}" in cookievalue:
+            cookievalue += f"{request.user.username.encode('utf8')}"
             response.set_cookie(
                 "request.user.username", value=cookievalue, max_age=max_age, httponly=True
             )
@@ -151,12 +151,12 @@ def main(request):
         expire_date -= now
         max_age = expire_date.total_seconds()
 
-        cookievalue = request.COOKIES.get("request.user.username.encode('utf8')", "")
         if request.user == "AnonymousUser":
             cookievalue = request.COOKIES.get("sessionid", "")
-        k = f"{request.user.username.encode('utf8')}"
-        if k not in cookievalue:
-            cookievalue += k
+        else:
+            cookievalue = request.COOKIES.get("request.user.username", "")
+        if not f"{request.user.username.encode('utf8')}" in cookievalue:
+            cookievalue += f"{request.user.username.encode('utf8')}"
             response.set_cookie(
                 "request.user.username", value=cookievalue, max_age=max_age, httponly=True
             )
