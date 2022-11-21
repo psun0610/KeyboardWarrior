@@ -36,6 +36,10 @@ def signup(request):
             my_login(request, user)
             print(2)
             return redirect("articles:main")
+        else:
+            messages.warning(request, "이미 존재하는 ID입니다.")
+            
+
     else:
         form = CreateUser()
         print(3)
@@ -43,7 +47,7 @@ def signup(request):
         "form": form,
     }
     print(form.errors)
-    messages.warning(request, "회원정보가 이미 존재하거나 양식이 잘못되었습니다.")
+    
     return render(request, "accounts/signup.html", context)
 
 
@@ -60,7 +64,6 @@ def login(request):
         print(1)
         if form.is_valid():
             my_login(request, form.get_user())
-            messages.success(request, f"환영합니다")
             return redirect(request.GET.get("next") or "articles:main")
         else:
             form = AuthenticationForm()
