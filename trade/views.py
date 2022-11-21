@@ -92,41 +92,42 @@ def create(request):
 def update(request, pk):
     trade = Trades.objects.get(pk=pk)
     photos = trade.photo_set.all()
-    print(photos)
-    if request.user == trade.user:
-        if request.method == "POST":
-            form = CreateTrade(request.POST, request.FILES, instance=trade)
-            if photos:
-                photo_form = PhotoForm(request.POST, request.FILES, instance=photos[0])
-            else:
-                photo_form = PhotoForm(request.POST, request.FILES)
-            images = request.FILES.getlist("image")
-            if photos:
-                for photo in photos:
-                    photo.delete()
-            kb = Keyboard.objects.get(name=request.POST["keyboard"])
-            if form.is_valid():
-                trade = form.save(commit=False)
-                trade.user = request.user
-                if len(images):
-                    for image in images:
-                        image_instance = Photo(trade=trade, image=image)
-                        trade.save()
-                        image_instance.save()
-                else:
-                    trade.save()
-                    return redirect("trade:detail", pk)
+    instancetitle = trade.title
+    if request.method == "POST":
+        review_form = CreateTrade(request.POST, request.FILES, instance=trade)
+        if photos:
+            photo_form = PhotoForm(request.POST, request.FILES, instance=photos[0])
         else:
-            form = CreateTrade(instance=trade)
-            if photos:
-                photo_form = PhotoForm(instance=photos[0])
+            photo_form = PhotoForm(request.POST, request.FILES)
+        images = request.FILES.getlist("image")
+        for photo in photos:
+            if photo.image:
+                photo.delete()
+        kb = Keyboard.objects.get(name=request.POST["keyboard"])
+        if review_form.is_valid() and photo_form.is_valid():
+            trade = review_form.save(commit=False)
+            trade.user = request.user
+            trade.keyboard = kb
+            if len(images):
+                for image in images:
+                    image_instance = Photo(trade=trade, image=image)
+                    trade.save()
+                    image_instance.save()
             else:
-                photo_form = PhotoForm()
-        context = {
-            "form": form,
-            "photo_form": photo_form,
-            "trade": trade,
-        }
+                trade.save()
+            return redirect("trade:index")
+    else:
+        review_form = CreateTrade(instance=trade)
+        if photos:
+            photo_form = PhotoForm(instance=photos[0])
+        else:
+            photo_form = PhotoForm()
+    context = {
+        "review_form": review_form,
+        "photo_form": photo_form,
+        "instancetitle": instancetitle,
+        "trade": trade,
+    }
     return render(request, "trade/update.html", context)
 
 
