@@ -164,62 +164,68 @@ def detail(request, pk):
 @login_required
 def update(request, pk):
     review = Review.objects.get(pk=pk)
-    photos = review.photo_set.all()
-    instancetitle = review.title
-    if request.method == "POST":
-        review_form = ReviewForm(request.POST, request.FILES, instance=review)
-        if photos:
-            photo_form = PhotoForm(request.POST, request.FILES, instance=photos[0])
-        else:
-            photo_form = PhotoForm(request.POST, request.FILES)
-        images = request.FILES.getlist("image")
-        for photo in photos:
-            if photo.image:
-                photo.delete()
-        kb = Keyboard.objects.get(name=request.POST["keyboard"])
-        if review_form.is_valid() and photo_form.is_valid():
-            review = review_form.save(commit=False)
-            review.user = request.user
-            review.keyboard = kb
-            if len(images):
-                for image in images:
-                    image_instance = Photo(review=review, image=image)
-                    review.save()
-                    image_instance.save()
+    if request.user == review.user:
+        photos = review.photo_set.all()
+        instancetitle = review.title
+        if request.method == "POST":
+            review_form = ReviewForm(request.POST, request.FILES, instance=review)
+            if photos:
+                photo_form = PhotoForm(request.POST, request.FILES, instance=photos[0])
             else:
-                review.save()
-            return redirect("reviews:index")
-    else:
-        review_form = ReviewForm(instance=review)
-        if photos:
-            photo_form = PhotoForm(instance=photos[0])
+                photo_form = PhotoForm(request.POST, request.FILES)
+            images = request.FILES.getlist("image")
+            for photo in photos:
+                if photo.image:
+                    photo.delete()
+            kb = Keyboard.objects.get(name=request.POST["keyboard"])
+            if review_form.is_valid() and photo_form.is_valid():
+                review = review_form.save(commit=False)
+                review.user = request.user
+                review.keyboard = kb
+                if len(images):
+                    for image in images:
+                        image_instance = Photo(review=review, image=image)
+                        review.save()
+                        image_instance.save()
+                else:
+                    review.save()
+                return redirect("reviews:index")
         else:
-            photo_form = PhotoForm()
-    if request.user.is_authenticated:
-        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
-        message_count = len(new_message)
-        context = {
-            "count": message_count,
-            "review_form": review_form,
-            "photo_form": photo_form,
-            "instancetitle": instancetitle,
-            "review": review,
-        }
+            review_form = ReviewForm(instance=review)
+            if photos:
+                photo_form = PhotoForm(instance=photos[0])
+            else:
+                photo_form = PhotoForm()
+        if request.user.is_authenticated:
+            new_message = Notification.objects.filter(
+                Q(user=request.user) & Q(check=False)
+            )
+            message_count = len(new_message)
+            context = {
+                "count": message_count,
+                "review_form": review_form,
+                "photo_form": photo_form,
+                "instancetitle": instancetitle,
+                "review": review,
+            }
+        else:
+            context = {
+                "review_form": review_form,
+                "photo_form": photo_form,
+                "instancetitle": instancetitle,
+                "review": review,
+            }
+        return render(request, "reviews/update.html", context)
     else:
-        context = {
-            "review_form": review_form,
-            "photo_form": photo_form,
-            "instancetitle": instancetitle,
-            "review": review,
-        }
-    return render(request, "reviews/update.html", context)
+        return redirect("articles:main")
 
 
 # 리뷰 삭제
 @login_required
 def delete(request, pk):
     review = Review.objects.get(pk=pk)  # 어떤 글인지
-    review.delete()
+    if request.user == review.user:
+        review.delete()
     return redirect("reviews:index")
 
 
@@ -293,50 +299,53 @@ def comment_create(request, pk):
 def comment_delete(request, review_pk, comment_pk):
     comment = Comment.objects.get(pk=comment_pk)
     review_pk = Review.objects.get(pk=review_pk)
-    comment.delete()
-    temp = Comment.objects.filter(review_id=review_pk).order_by("-pk")
-    user = request.user
-    comment_data = []
-    for t in temp:
-        if request.user in t.like_users.all():
-            is_like = True
-        else:
-            is_like = False
-        t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
-        with open("filtering.txt", "r", encoding="utf-8") as txtfile:
-            for word in txtfile.readlines():
-                word = word.strip()
-                ans = KMP(word, t.content)
-                if ans:
-                    for k in ans:
-                        k = int(k)
-                        if k < len(t.content) // 2:
-                            t.content = (
-                                len(t.content[k - 1 : len(word)]) * "*"
-                                + t.content[len(word) :]
-                            )
-                        else:
-                            t.content = (
-                                t.content[0 : k - 1] + len(t.content[k - 1 :]) * "*"
-                            )
-        comment_data.append(
-            {
-                "id": t.user.pk,
-                "userName": t.user.username,
-                "content": t.content,
-                "commentPk": t.pk,
-                "created_at": t.created_at,
-                "islike": is_like,
-                "image": str(t.user.image),
-                "is_social": t.user.is_social,
-            }
-        )
-    context = {
-        "comment_data": comment_data,
-        "review_pk": review_pk.pk,
-        "user": user.pk,
-    }
-    return JsonResponse(context)
+    if request.user == comment.user:
+        comment.delete()
+        temp = Comment.objects.filter(review_id=review_pk).order_by("-pk")
+        user = request.user
+        comment_data = []
+        for t in temp:
+            if request.user in t.like_users.all():
+                is_like = True
+            else:
+                is_like = False
+            t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
+            with open("filtering.txt", "r", encoding="utf-8") as txtfile:
+                for word in txtfile.readlines():
+                    word = word.strip()
+                    ans = KMP(word, t.content)
+                    if ans:
+                        for k in ans:
+                            k = int(k)
+                            if k < len(t.content) // 2:
+                                t.content = (
+                                    len(t.content[k - 1 : len(word)]) * "*"
+                                    + t.content[len(word) :]
+                                )
+                            else:
+                                t.content = (
+                                    t.content[0 : k - 1] + len(t.content[k - 1 :]) * "*"
+                                )
+            comment_data.append(
+                {
+                    "id": t.user.pk,
+                    "userName": t.user.username,
+                    "content": t.content,
+                    "commentPk": t.pk,
+                    "created_at": t.created_at,
+                    "islike": is_like,
+                    "image": str(t.user.image),
+                    "is_social": t.user.is_social,
+                }
+            )
+        context = {
+            "comment_data": comment_data,
+            "review_pk": review_pk.pk,
+            "user": user.pk,
+        }
+        return JsonResponse(context)
+    else:
+        return redirect("articles:main")
 
 
 # 좋아요

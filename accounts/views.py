@@ -38,7 +38,6 @@ def signup(request):
             return redirect("articles:main")
         else:
             messages.warning(request, "이미 존재하는 ID입니다.")
-            
 
     else:
         form = CreateUser()
@@ -47,7 +46,7 @@ def signup(request):
         "form": form,
     }
     print(form.errors)
-    
+
     return render(request, "accounts/signup.html", context)
 
 
@@ -153,24 +152,29 @@ def detail(request, pk):
 @login_required
 def edit_profile(request, pk):
     user = User.objects.get(pk=pk)
-    if request.method == "POST":
-        form = CustomUserChangeForm(request.POST, request.FILES, instance=request.user)
-        print(2)
-        if form.is_valid():
-            print(1)
-            form.save()
-            # try:
-            #     user.image = request.FILES["image"]
-            #     user.save()
-            # except:
-            #     print("error")
-            return redirect("accounts:detail", user.pk)
+    if request.user == user:
+        if request.method == "POST":
+            form = CustomUserChangeForm(
+                request.POST, request.FILES, instance=request.user
+            )
+            print(2)
+            if form.is_valid():
+                print(1)
+                form.save()
+                # try:
+                #     user.image = request.FILES["image"]
+                #     user.save()
+                # except:
+                #     print("error")
+                return redirect("accounts:detail", user.pk)
+        else:
+            form = CustomUserChangeForm()
+        context = {
+            "form": form,
+        }
+        return render(request, "accounts/edit_profile.html", context)
     else:
-        form = CustomUserChangeForm()
-    context = {
-        "form": form,
-    }
-    return render(request, "accounts/edit_profile.html", context)
+        return redirect("articles:main")
 
 
 @login_required
