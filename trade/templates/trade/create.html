@@ -22,14 +22,14 @@
           <input type="radio" id="weight2" name="Trade_type" value='2'>
           <label for="weight2">삽니다</label>
         </div>
-        <input data-testid="input-box" name="title" placeholder="제목" type="text" required="" class="reviewcreate-userinfo" value="">
+        <input data-testid="input-box" name="title" placeholder="제목" type="text" required="" class="reviewcreate-userinfo" autocomplete="off" value="">
 
         <input id="search_input" class="reviewcreate-userinfo" name="keyboard" type="search" placeholder="Search"
         aria-label="Search" autocomplete="off">
         <div class="search-off search-div " id="search_box">
         </div>
-        <input data-testid="input-box" name="price" placeholder="희망가격" type="integer" required="" class="reviewcreate-userinfo" value="">
-        <textarea name="content" placeholder="내용" type="text" required="" class="reviewcreate-userinfo-context" value=""></textarea>
+        <input data-testid="input-box" name="price" placeholder="희망가격" type="integer" required="" class="reviewcreate-userinfo" autocomplete="off" value="">
+        <textarea name="content" placeholder="내용" type="text" required="" class="reviewcreate-userinfo-context" autocomplete="off"  value=""></textarea>
         <input type="file" name='img' id='reviewimg' title="Button fade blue/green" style='display: none;'>
         {% bootstrap_form photo_form%}
         <button class='review-btn' type="submit">KeyBoard Warrior에서 안전한 거래하기</button>
