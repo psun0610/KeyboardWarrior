@@ -169,7 +169,7 @@
                         <div class="modal-header">
                           <h1 class="modal-title fs-5" id="exampleModalLabel">나를 팔로우하는 사람</h1>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body" id="follow-modal">
                           {% for user in user.followers.all %}
                             <div class="follow-user">
                               <a href="{% url 'accounts:detail' user.pk %}">
@@ -208,7 +208,7 @@
                           <div class="modal-header">
                               <h1 class="modal-title fs-5" id="exampleModalLabel">내가 팔로우하는 사람</h1>
                           </div>
-                              <div class="modal-body" id="follow-modal">
+                              <div class="modal-body">
                                   {% for user in user.followings.all %}
                                       <div class="follow-user">
                                           <a href="{% url 'accounts:detail' user.pk %}">
@@ -589,26 +589,30 @@
             const modal = document.querySelector('#follow-modal')
             const f_datas = response.data.f_datas
             let modal_content = ''
-              // let profile_src = `https://keyboard-warrior-s3.s3.ap-northeast-2.amazonaws.com/${comment_data[i].image}`;
-            modal_content += `<div class="follow-user">`
             for(let i = 0; i < f_datas.length; i++) {
-              console.log(f_datas[i].follower_pk)
+              console.log(f_datas.length)
+              console.log(f_datas[i])
+              console.log('=========')
+              modal_content += `<div class="follow-user">`
               modal_content += `<a href="/accounts/${f_datas[i].follower_pk}/detail/">`  
+              let profile_src = ''
               if (f_datas[i].image) {
                 if (f_datas[i].is_social === 0) {
-                  profile_src = `https://keyboard-warrior-s3.s3.ap-northeast-2.amazonaws.com/${f_datas[i].image}`;
+                  profile_src = `https://keyboard-warrior-s3.s3.ap-northeast-2.amazonaws.com/${f_datas[i].follower_img}`;
                 }
                 else {
-                  profile_src = `${f_datas[i].image}`;
+                  profile_src = `${f_datas[i].follower_img}`;
                 }
               }
               else {
                 profile_src = `{% static 'images/logo_png.png' %}`;
               }
+              modal_content += `<img class='follow-profile-img' src=${profile_src}>`
+              modal_content += `<div class="follow-name">${f_datas[i].follower_name}</div>`
               modal_content += `</a>`
               modal_content += `</div>`
             }
-            modal.insertAdjacentHTML('beforeend', modal_content)
+            modal.innerHTML(modal_content)
 
             }).catch((error) => {
           console.log(error.response)

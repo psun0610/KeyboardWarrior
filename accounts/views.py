@@ -226,8 +226,10 @@ def follow(request, pk):
                     {
                         "follower_pk": follower.pk,
                         "follower_img": str(follower.image),
+                        "follower_name": follower.username,
                     }
                 )
+            print(f_datas)
             data = {
                 "is_followed": is_followed,
                 "followers_count": user.followers.count(),
