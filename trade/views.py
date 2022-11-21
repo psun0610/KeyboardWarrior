@@ -13,7 +13,7 @@ from django.db.models import Q
 
 # Create your views here.
 
-
+#
 def maketable(p):
     table = [0] * len(p)
     i = 0
@@ -216,7 +216,7 @@ def trade_comment(request, pk):
         user = request.user
         comment_list = []
         for c in comments:
-            with open("filtering.txt", 'r' ,encoding = "utf-8") as txtfile:
+            with open("filtering.txt", "r", encoding="utf-8") as txtfile:
                 for word in txtfile.readlines():
                     word = word.strip()
                     ans = KMP(word, c.content)
