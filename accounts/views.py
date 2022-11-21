@@ -43,6 +43,7 @@ def signup(request):
         "form": form,
     }
     print(form.errors)
+    messages.warning(request, "회원정보가 이미 존재하거나 양식이 잘못되었습니다.")
     return render(request, "accounts/signup.html", context)
 
 

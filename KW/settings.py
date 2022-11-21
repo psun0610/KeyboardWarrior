@@ -81,7 +81,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "KW.urls"
+from django.contrib.messages import constants as messages_constants
 
+MESSAGE_LEVEL = messages_constants.DEBUG
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -181,7 +183,7 @@ AUTH_USER_MODEL = "accounts.User"
 #     AWS_REGION,
 # )
 
-DEBUG = os.getenv("DEBUG") == "False"
+DEBUG = os.getenv("DEBUG") == "True"
 
 if DEBUG:
     MEDIA_URL = "/media/"
@@ -214,3 +216,6 @@ else:
             "PORT": "5432",
         }
     }
+
+
+
