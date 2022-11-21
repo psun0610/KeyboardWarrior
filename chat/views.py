@@ -10,37 +10,13 @@ from .models import Message, Room
 from django.db.models import Q
 import json
 from django.db.models.signals import post_save
-from django.dispatch import receiver
+
 from django.http import JsonResponse
 from datetime import datetime
-from articles.models import Visit
 
 
 def index(request):
-    if Visit.objects.order_by("-pk"):
-        visit_sum = 0
-        today_visit = Visit.objects.order_by("-pk")[0].visit_count
-        all_visit = Visit.objects.all()
-        if request.user.is_authenticated:
-            new_message = Notification.objects.filter(
-                Q(user=request.user) & Q(check=False)
-            )
-            message_count = len(new_message)
-            for i in all_visit:
-                visit_sum += i.visit_count
-            context = {
-                "all": visit_sum,
-                "today": today_visit,
-                "count": message_count,
-            }
-        else:
-            for i in all_visit:
-                visit_sum += i.visit_count
-            context = {
-                "all": visit_sum,
-                "today": today_visit,
-            }
-    return render(request, "chat/index.html", context)
+    return render(request, "chat/index.html")
 
 
 # @login_required
@@ -63,23 +39,18 @@ def index(request):
 def room(request, room_name):
     send_user = request.user
     room = Room.objects.get(pk=room_name)
-    all_room = Room.objects.filter(
-        Q(send_user=request.user) | Q(reception_user=request.user)
-    )
-    room_message = Message.objects.filter(room=room)
-
-    if Visit.objects.order_by("-pk"):
-        visit_sum = 0
-        today_visit = Visit.objects.order_by("-pk")[0].visit_count
-        all_visit = Visit.objects.all()
+    if room.reception_user == request.user or room.send_user == request.user:
+        all_room = Room.objects.filter(
+            Q(send_user=request.user) | Q(reception_user=request.user)
+        )
+        room_message = Message.objects.filter(room=room)
         if request.user.is_authenticated:
             new_message = Notification.objects.filter(
                 Q(user=request.user) & Q(check=False)
             )
             message_count = len(new_message)
-            for i in all_visit:
-                visit_sum += i.visit_count
             context = {
+                "count": message_count,
                 "room": room,
                 "room_name": room.pk,
                 "user_pk": send_user.pk,
@@ -88,13 +59,8 @@ def room(request, room_name):
                 "username": send_user.username,
                 "userimg": send_user.image,
                 "all_room": all_room,
-                "all": visit_sum,
-                "today": today_visit,
-                "count": message_count,
             }
         else:
-            for i in all_visit:
-                visit_sum += i.visit_count
             context = {
                 "room": room,
                 "room_name": room.pk,
@@ -104,30 +70,14 @@ def room(request, room_name):
                 "username": send_user.username,
                 "userimg": send_user.image,
                 "all_room": all_room,
-                "all": visit_sum,
-                "today": today_visit,
             }
-    return render(request, "chat/room.html", context)
-
-
-@login_required
-def init_room(request):
-    user = request.user
-    # 만약 방이 이미 있으면 room.pk찾기
-    if Room.objects.filter(Q(send_user=user) | Q(reception_user=user)).exists():
-
-        select_room = Room.objects.filter(Q(send_user=user) | Q(reception_user=user))
-
-        room = select_room.order_by("pk")[0]
-
-        return redirect("chat:room", room.pk)
-
-    # 방이 없다면 (최초 채팅 시행) room.pk 생성
+        return render(request, "chat/room.html", context)
     else:
-        return render(request, "chat/empty.html")
+        return redirect("articles:main")
 
 
 @login_required
+# @receiver(post_save, sender=User)
 def find_room(request, trade_pk):
     send_user = request.user
     trade = Trades.objects.get(pk=trade_pk)
@@ -195,3 +145,20 @@ def message(request):
             "room_message": room_message,
         }
         return JsonResponse(context)
+
+
+@login_required
+def init_room(request):
+    user = request.user
+    # 만약 방이 이미 있으면 room.pk찾기
+    if Room.objects.filter(Q(send_user=user) | Q(reception_user=user)).exists():
+
+        select_room = Room.objects.filter(Q(send_user=user) | Q(reception_user=user))
+
+        room = select_room.order_by("pk")[0]
+
+        return redirect("chat:room", room.pk)
+
+    # 방이 없다면 (최초 채팅 시행) room.pk 생성
+    else:
+        return render(request, "chat/empty.html")
