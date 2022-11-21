@@ -31,9 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # DEBUG = "True"
 
 
-ALLOWED_HOSTS = [
-    "*",
-]
+ALLOWED_HOSTS = [ "*",]
 
 
 # Application definition
@@ -181,7 +179,7 @@ AUTH_USER_MODEL = "accounts.User"
 #     AWS_REGION,
 # )
 
-DEBUG = os.getenv("DEBUG") == "False"
+DEBUG = os.getenv("DEBUG") == "True"
 
 
 if DEBUG:
