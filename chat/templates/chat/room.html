@@ -30,7 +30,11 @@
       <div class="d-flex align-items-center">
         <div class="">{{room.trade.keyboard.name}}</div>
         <div class="chat-title">{{room.trade.title}}</div>
-        <div class="chat-badge">판매</div>
+        {% if room.trade.Trade_type == 1 %}
+        <div class="chat-badge chat1-back">판매</div>
+        {% else %}
+        <div class="chat-badge chat2-back">구매</div>
+        {% endif %}
       </div>
     </div>
     <div class="chatbang1" id="chatbang">

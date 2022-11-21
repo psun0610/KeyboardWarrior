@@ -176,9 +176,17 @@ def main(request):
 
 def all(request):
     all_keyboard = Keyboard.objects.all()[:16]
-    context = {
-        "all_keyboard": all_keyboard,
-    }
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "all_keyboard": all_keyboard,
+        }
+    else:
+        context = {
+            "all_keyboard": all_keyboard,
+        }
     return render(request, "articles/all.html", context)
 
 
@@ -321,10 +329,21 @@ def detail(request, pk):
     if aval > 0:
         aval /= len(reviews)
         aval = round(aval, 1)
-    context = {
-        "keyboard": keyboard,
-        "aval": aval,
-        "review": pk,
-        "bests": bests,
-    }
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "keyboard": keyboard,
+            "aval": aval,
+            "review": pk,
+            "bests": bests,
+        }
+    else:
+        context = {
+            "keyboard": keyboard,
+            "aval": aval,
+            "review": pk,
+            "bests": bests,
+        }
     return render(request, "articles/detail.html", context)

@@ -5,6 +5,13 @@
 
 
 {% comment %} 제목 1 {% endcomment %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
 <div class='my-head'>
   <h2>KeyBoard Warrior에 로그인</h2>
   <hr>
@@ -25,7 +32,7 @@
       </div>
       <div class="text-center">
         <button class='login-btn' type="submit">KeyBoard Warrior에 로그인</button>
-        <a href="{% url 'accounts:signup' %}" class="signup">KeyBoard Warrior ID가 없으신가요?</a>
+        <a href="{% url 'accounts:signup' %}" class="signup">KeyBoard Warrior ID 회원가입</a>
       </div>
       
       <div class='social-login'>
@@ -34,7 +41,7 @@
         <hr class='social-login-hr'>
       </div>
       <div>
-        <a  href="http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/login/naver/">
+        <a href="http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/accounts/login/naver/">
         <div class='signup-n-btn'><img class="icon-size" src="{% static 'images/naver.png' %}">NAVER로 시작하기</div></a>
       </div>
       <div>

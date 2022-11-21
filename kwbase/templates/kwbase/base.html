@@ -61,8 +61,27 @@
             {% if request.user.is_authenticated %}
             <li class="my-nav-item" id="nav-window-btn">
               <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}" style="color: white;">
-                내 정보<span> {%if count == 0 %} {%else%} {{count}} {% endif %}</span></a>
-              <div class="my-nav-window" id="nav-window" style="overflow: auto;">
+                <div class="navv-profile">
+                  {% if user.image %}
+                    {% if not user.is_social %}
+                      <img src="{{ request.user.image.url }}">
+                    {% else %}
+                      <img src="{{ request.user.image }}">
+                    {% endif %}
+                  {% else %}
+                    <img src="{% static 'images/logo_png.png' %}">
+                  {% endif %}
+                  {% if request.user.first_name and request.user.last_name %}
+                    <h1 style="margin-left: 8px;">{{ request.user.last_name }}{{ request.user.first_name }}</h1>
+                  {% else %}
+                    <h1>{{ request.user }}</h1>
+                  {% endif %}
+                </div>
+                {% if count %}
+                <div style="align-self:flex-start; width:8px; height:8px; border-radius: 50%; background-color: var(--my-red); margin-top:5px;"></div>
+                {% endif %}
+              </a>
+              <div class="my-nav-window" id="nav-window">
                 <div class="nav-profile-wrap">
                   <!-- 내 프로필사진 -->
                   <a class="nav-profile" href="{% url 'accounts:detail' request.user.pk %}">
@@ -86,16 +105,24 @@
                       <h2>{{ request.user.email }}</h2>
                     </div>
                   </a>
+                  <a href="{% url 'chat:init_room' %}" class="nav-message">
+                    <i class="bi bi-envelope" style="font-size: 20px;"></i>
+                  </a>
                 </div>
                 <hr>
-
-                {% for n in request.user.notification_set.all %}
-
-                {% if n.check == False %}
-                <a href="{% url 'accounts:message' n.pk %}"> {{n.message}}</a>
-                <hr>
+                {% if count == 0 %}
+                  <div class="text-center d-flex justify-content-center align-items-center" style="height: 150px;">알림이 없습니다.</div>
                 {% endif %}
-                {% endfor %}
+                <div style="overflow: auto; height: 200px;">
+                {% for n in request.user.notification_set.all %}
+                  {% if n.check == False %}
+                  <div>
+                    <a href="{% url 'accounts:message' n.pk %}"> {{n.message}}</a>
+                    <hr>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
                 <!-- 여기 알림 뜨게 -->
 
               </div>
@@ -105,9 +132,7 @@
             </a>
           </div>
           {% else %}
-          <a href="{% url 'accounts:signup' %}">
-            <li class="my-nav-item">회원가입</li>
-          </a>
+          
           <a href="{% url 'accounts:login' %}">
             <li class="my-nav-item">로그인</li>
           </a>
@@ -118,13 +143,6 @@
     </div>
   </nav>
 
-  {% comment %} {% if messages %}
-    {% for message in messages %}
-      <div class="alert alert-{{ message.tags }}">
-        {{ message }}
-      </div>
-    {% endfor %}
-  {% endif %} {% endcomment %}
   <div class="kor-font">
     {% block body %}{% endblock %}
   </div>

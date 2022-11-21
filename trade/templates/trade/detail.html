@@ -182,13 +182,31 @@
           <a href="{% url 'trade:delete' trade.pk %}">
             <div class="trade-detail-btn jjok">글 삭제</div>
           </a>
-          <a href="{% url 'chat:init_room' %}">
-            <div class="trade-detail-btn jjok">메세지함</div>
-          </a>
       </div>
       {% endif %}
+      <!-- 거래가 완료된 상품이더라도 -->
       {% else %}
-      <div style="height: 30px; width: 100%;"></div>
+        {% if request.user == trade.user %}
+          <div class="jjimjjok">
+            {% if trade.status_type == 1 %}
+            <div class="trade-detail-btn jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
+              <span data-trade-id="{{ trade.pk }}">거래중</span>
+            </div>
+            {% else %}
+            <div class="trade-detail-btn no-jjim" id="status-btn" data-trade-id="{{ trade.pk }}">
+              <span data-trade-id="{{ trade.pk }}">거래완료</span>
+            </div>
+            {% endif %}
+            <a href="{% url 'trade:update' trade.pk %}">
+              <div class="trade-detail-btn jjok">글 수정</div>
+            </a>
+            <a href="{% url 'trade:delete' trade.pk %}">
+              <div class="trade-detail-btn jjok">글 삭제</div>
+            </a>
+          </div>
+        {% else %}
+          <div style="height: 30px; width: 100%;"></div>
+        {% endif %}
       {% endif %}
       
       <div class='trade-content'>

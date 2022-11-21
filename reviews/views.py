@@ -44,10 +44,17 @@ def KMP(p, t):
 
 def index(request):
     reviews = Review.objects.order_by("-pk")
-
-    context = {
-        "reviews": reviews,
-    }
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "reviews": reviews,
+        }
+    else:
+        context = {
+            "reviews": reviews,
+        }
     return render(request, "reviews/index.html", context)
 
 
@@ -74,10 +81,20 @@ def create(request):
     else:
         review_form = ReviewForm()
         photo_form = PhotoForm()
-    context = {
-        "review_form": review_form,
-        "photo_form": photo_form,
-    }
+
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "review_form": review_form,
+            "photo_form": photo_form,
+        }
+    else:
+        context = {
+            "review_form": review_form,
+            "photo_form": photo_form,
+        }
     return render(request, "reviews/create.html", context)
 
 
@@ -105,12 +122,24 @@ def detail(request, pk):
                                 t.content[0 : k - 1] + len(t.content[k - 1 :]) * "*"
                             )
     comment_form.fields["content"].widget.attrs["placeholder"] = "댓글 작성"
-    context = {
-        "review": review,
-        "comments": comments,
-        "comment_form": comment_form,
-        "photos": photos,
-    }
+
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "review": review,
+            "comments": comments,
+            "comment_form": comment_form,
+            "photos": photos,
+        }
+    else:
+        context = {
+            "review": review,
+            "comments": comments,
+            "comment_form": comment_form,
+            "photos": photos,
+        }
     response = render(request, "reviews/detail.html", context)
 
     expire_date, now = datetime.now(), datetime.now()
@@ -166,12 +195,23 @@ def update(request, pk):
             photo_form = PhotoForm(instance=photos[0])
         else:
             photo_form = PhotoForm()
-    context = {
-        "review_form": review_form,
-        "photo_form": photo_form,
-        "instancetitle": instancetitle,
-        "review": review,
-    }
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "review_form": review_form,
+            "photo_form": photo_form,
+            "instancetitle": instancetitle,
+            "review": review,
+        }
+    else:
+        context = {
+            "review_form": review_form,
+            "photo_form": photo_form,
+            "instancetitle": instancetitle,
+            "review": review,
+        }
     return render(request, "reviews/update.html", context)
 
 
@@ -210,7 +250,7 @@ def comment_create(request, pk):
         else:
             is_like = False
         t.created_at = t.created_at.strftime("%Y-%m-%d %H:%M")
-        with open("filtering.txt", 'r' ,encoding = "utf-8") as txtfile:
+        with open("filtering.txt", "r", encoding="utf-8") as txtfile:
             for word in txtfile.readlines():
                 word = word.strip()
                 ans = KMP(word, t.content)
@@ -390,8 +430,17 @@ def best(request, pk):
             thumbnail = review.photo_set.all()[0]
             photo_list.append((thumbnail, review.photo_set.all().count()))
     # print(photo_list)
-    context = {
-        "reviews": reviews,
-        "photo_list": photo_list,
-    }
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "reviews": reviews,
+            "photo_list": photo_list,
+        }
+    else:
+        context = {
+            "reviews": reviews,
+            "photo_list": photo_list,
+        }
     return render(request, "reviews/index.html", context)

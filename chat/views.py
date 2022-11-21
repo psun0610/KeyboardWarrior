@@ -13,10 +13,34 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.http import JsonResponse
 from datetime import datetime
+from articles.models import Visit
 
 
 def index(request):
-    return render(request, "chat/index.html")
+    if Visit.objects.order_by("-pk"):
+        visit_sum = 0
+        today_visit = Visit.objects.order_by("-pk")[0].visit_count
+        all_visit = Visit.objects.all()
+        if request.user.is_authenticated:
+            new_message = Notification.objects.filter(
+                Q(user=request.user) & Q(check=False)
+            )
+            message_count = len(new_message)
+            for i in all_visit:
+                visit_sum += i.visit_count
+            context = {
+                "all": visit_sum,
+                "today": today_visit,
+                "count": message_count,
+            }
+        else:
+            for i in all_visit:
+                visit_sum += i.visit_count
+            context = {
+                "all": visit_sum,
+                "today": today_visit,
+            }
+    return render(request, "chat/index.html", context)
 
 
 # @login_required
@@ -43,22 +67,50 @@ def room(request, room_name):
         Q(send_user=request.user) | Q(reception_user=request.user)
     )
     room_message = Message.objects.filter(room=room)
-    context = {
-        "room": room,
-        "room_name": room.pk,
-        "user_pk": send_user.pk,
-        "user": send_user,
-        "room_message": room_message,
-        "username": send_user.username,
-        "userimg": send_user.image,
-        "all_room": all_room,
-    }
 
+    if Visit.objects.order_by("-pk"):
+        visit_sum = 0
+        today_visit = Visit.objects.order_by("-pk")[0].visit_count
+        all_visit = Visit.objects.all()
+        if request.user.is_authenticated:
+            new_message = Notification.objects.filter(
+                Q(user=request.user) & Q(check=False)
+            )
+            message_count = len(new_message)
+            for i in all_visit:
+                visit_sum += i.visit_count
+            context = {
+                "room": room,
+                "room_name": room.pk,
+                "user_pk": send_user.pk,
+                "user": send_user,
+                "room_message": room_message,
+                "username": send_user.username,
+                "userimg": send_user.image,
+                "all_room": all_room,
+                "all": visit_sum,
+                "today": today_visit,
+                "count": message_count,
+            }
+        else:
+            for i in all_visit:
+                visit_sum += i.visit_count
+            context = {
+                "room": room,
+                "room_name": room.pk,
+                "user_pk": send_user.pk,
+                "user": send_user,
+                "room_message": room_message,
+                "username": send_user.username,
+                "userimg": send_user.image,
+                "all_room": all_room,
+                "all": visit_sum,
+                "today": today_visit,
+            }
     return render(request, "chat/room.html", context)
 
 
 @login_required
-# @receiver(post_save, sender=User)
 def init_room(request):
     user = request.user
     # 만약 방이 이미 있으면 room.pk찾기
@@ -76,7 +128,6 @@ def init_room(request):
 
 
 @login_required
-# @receiver(post_save, sender=User)
 def find_room(request, trade_pk):
     send_user = request.user
     trade = Trades.objects.get(pk=trade_pk)
