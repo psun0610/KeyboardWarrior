@@ -51,11 +51,19 @@ def index(request):
             trade_list.append(trade)
         else:
             done_trade_list.append(trade)
-
-    context = {
-        "trade_list": trade_list,
-        "done_trade_list": done_trade_list,
-    }
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "trade_list": trade_list,
+            "done_trade_list": done_trade_list,
+        }
+    else:
+        context = {
+            "trade_list": trade_list,
+            "done_trade_list": done_trade_list,
+        }
     return render(request, "trade/index.html", context)
 
 
@@ -81,10 +89,19 @@ def create(request):
     else:
         form = CreateTrade()
         photo_form = PhotoForm()
-    context = {
-        "form": form,
-        "photo_form": photo_form,
-    }
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "form": form,
+            "photo_form": photo_form,
+        }
+    else:
+        context = {
+            "form": form,
+            "photo_form": photo_form,
+        }
     return render(request, "trade/create.html", context)
 
 
@@ -122,11 +139,23 @@ def update(request, pk):
                 photo_form = PhotoForm(instance=photos[0])
             else:
                 photo_form = PhotoForm()
-        context = {
-            "form": form,
-            "photo_form": photo_form,
-            "trade": trade,
-        }
+        if request.user.is_authenticated:
+            new_message = Notification.objects.filter(
+                Q(user=request.user) & Q(check=False)
+            )
+            message_count = len(new_message)
+            context = {
+                "count": message_count,
+                "form": form,
+                "photo_form": photo_form,
+                "trade": trade,
+            }
+        else:
+            context = {
+                "form": form,
+                "photo_form": photo_form,
+                "trade": trade,
+            }
     return render(request, "trade/update.html", context)
 
 
@@ -164,14 +193,28 @@ def detail(request, pk):
             cnt += 1
     if cnt:
         aval = round(total / cnt, 1)
-    context = {
-        "trade": trade,
-        "photos": photos,
-        "comment_form": comment_form,
-        "comments": comments,
-        "aval": aval,
-        "user": request.user,
-    }
+
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "trade": trade,
+            "photos": photos,
+            "comment_form": comment_form,
+            "comments": comments,
+            "aval": aval,
+            "user": request.user,
+        }
+    else:
+        context = {
+            "trade": trade,
+            "photos": photos,
+            "comment_form": comment_form,
+            "comments": comments,
+            "aval": aval,
+            "user": request.user,
+        }
     return render(request, "trade/detail.html", context)
 
 
@@ -249,11 +292,23 @@ def trade_comment(request, pk):
                     "is_social": c.user.is_social,
                 }
             )
-        context = {
-            "comment_list": comment_list,
-            "user": user.pk,
-            "trade": trade_.pk,
-        }
+        if request.user.is_authenticated:
+            new_message = Notification.objects.filter(
+                Q(user=request.user) & Q(check=False)
+            )
+            message_count = len(new_message)
+            context = {
+                "count": message_count,
+                "comment_list": comment_list,
+                "user": user.pk,
+                "trade": trade_.pk,
+            }
+        else:
+            context = {
+                "comment_list": comment_list,
+                "user": user.pk,
+                "trade": trade_.pk,
+            }
         return JsonResponse(context)
 
 
@@ -295,10 +350,21 @@ def delete_comment(request, trade_pk, comment_pk):
                     "is_social": c.user.is_social,
                 }
             )
-        context = {
-            "comment_list": comment_list,
-            "user": user.pk,
-        }
+        if request.user.is_authenticated:
+            new_message = Notification.objects.filter(
+                Q(user=request.user) & Q(check=False)
+            )
+            message_count = len(new_message)
+            context = {
+                "count": message_count,
+                "comment_list": comment_list,
+                "user": user.pk,
+            }
+        else:
+            context = {
+                "comment_list": comment_list,
+                "user": user.pk,
+            }
     return JsonResponse(context)
 
 
