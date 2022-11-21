@@ -31,9 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # DEBUG = "True"
 
 
-ALLOWED_HOSTS = [
-    "*",
-]
+ALLOWED_HOSTS = [ "*",]
 
 
 # Application definition
@@ -183,6 +181,7 @@ AUTH_USER_MODEL = "accounts.User"
 
 DEBUG = os.getenv("DEBUG") == "True"
 
+
 if DEBUG:
     MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
@@ -214,3 +213,4 @@ else:
             "PORT": "5432",
         }
     }
+
