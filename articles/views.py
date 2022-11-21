@@ -93,16 +93,27 @@ def main(request):
         visit_sum = 0
         today_visit = Visit.objects.order_by("-pk")[0].visit_count
         all_visit = Visit.objects.all()
-        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
-        message_count = len(new_message)
-        for i in all_visit:
-            visit_sum += i.visit_count
-        context = {
-            "all": visit_sum,
-            "today": today_visit,
-            "items": items,
-            "count": message_count,
-        }
+        if request.user.is_authenticated:
+            new_message = Notification.objects.filter(
+                Q(user=request.user) & Q(check=False)
+            )
+            message_count = len(new_message)
+            for i in all_visit:
+                visit_sum += i.visit_count
+            context = {
+                "all": visit_sum,
+                "today": today_visit,
+                "items": items,
+                "count": message_count,
+            }
+        else:
+            for i in all_visit:
+                visit_sum += i.visit_count
+            context = {
+                "all": visit_sum,
+                "today": today_visit,
+                "items": items,
+            }
         response = render(request, "articles/main.html", context)
         expire_date, now = datetime.now(), datetime.now()
         expire_date += timedelta(days=1)
