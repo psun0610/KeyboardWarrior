@@ -10,26 +10,26 @@
     <p>키보드 워리어 회원 등록</p>
   </div>
   <div class='signupbox'>
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="" id ="fmField" method="POST" enctype="multipart/form-data" novalidate="novalidate">
       {% csrf_token %}
       <div>
         {% comment %} 회원정보 폼 1 {% endcomment %}
         <div class='signup-user'>
           <div class='signup-userinfo-box'>
             <input data-testid="input-box" name="username"
-                    placeholder="아이디" type="text" required="" class="signup-userinfo" value="">
-            <input data-testid="input-box" name="email"
-                    placeholder="이메일" type="email" required="" class="signup-userinfo" value="">
+                    placeholder="아이디" id="userId" type="text" required="" class="signup-userinfo" value="" autocomplete="off">
+            <input data-testid="input-box"  id ="email" name="email"
+                    placeholder="이메일" type="email" required="" class="signup-userinfo" value="" autocomplete="off">
             <input data-testid="input-box" name="password1"
-                    placeholder="암호" type="password" required="" class="signup-userinfo" value="">
+                    placeholder="암호" type="password" id="userPw1" required="" class="signup-userinfo" value="">
             <input data-testid="input-box" name="password2"
-                    placeholder="암호 확인" type="password" required="" class="signup-userinfo" value="">
+                    placeholder="암호 확인" type="password" id="userPw2" required="" class="signup-userinfo" value="">
           </div>
           <div class='signup-userinfo-name-box'>
             <input data-testid="input-box" name="first_name"
-                    placeholder="이름" type="text" required="" class="signup-userinfo-name" value="">
+                    placeholder="이름" type="text" required="" class="signup-userinfo-name" value="" autocomplete="off">
             <input data-testid="input-box" name="last_name"
-                    placeholder="성" type="text" required="" class="signup-userinfo-name" value="">
+                    placeholder="성" type="text" required="" class="signup-userinfo-name" value=""autocomplete="off">
           </div>
           <div>
             <input id='profileimg' type="file" name="image" class="signup-profile-img-input"><label for="profileimg"><div class="signup-profile-img-label"><p class="m-0">프로필 사진추가</p><p class="mini-w">*선택사항</p></div></label>
@@ -42,38 +42,129 @@
         {% comment %} 키보드 취향 {% endcomment %}
           <div class='select-box'>
             <div class="select">
-              <input type="radio" id="sound" name="sound" value='1'><label for="sound">경쾌한 소리</label>
-              <input type="radio" id="sound2" name="sound" value='2'><label for="sound2">조용한 소리</label>
-              <input type="radio" id="sound3" name="sound" value='3'><label for="sound3">상관없음</label>
+              <input type="radio" id="sound" name="sound"  onclick="pick_sound()" value='1'><label for="sound">경쾌한 소리</label>
+              <input type="radio" id="sound2" name="sound" onclick="pick_sound()" value='2'><label for="sound2">조용한 소리</label>
+              <input type="radio" id="sound3" name="sound" onclick="pick_sound()" value='3'><label for="sound3">상관없음</label>
             </div>
             <div class="select">
-              <input type="radio" id="array" name="array" value='1'><label for="array">풀배열</label>
-              <input type="radio" id="array2" name="array" value='2'><label for="array2">텐키리스</label>
-              <input type="radio" id="array3" name="array" value='3'><label for="array3">상관없음</label>
-            </div>
-
-            <div class="select">
-              <input type="radio" id="connect" name="connect" value='1'><label for="connect">유선</label>
-              <input type="radio" id="connect2" name="connect" value='2'><label for="connect2">무선</label>
-              <input type="radio" id="connect3" name="connect" value='3'><label for="connect3">상관없음</label>
+              <input type="radio" id="array" name="array" onclick="pick_array()" value='1'><label for="array">풀배열</label>
+              <input type="radio" id="array2" name="array" onclick="pick_array()" value='2'><label for="array2">텐키리스</label>
+              <input type="radio" id="array3" name="array" onclick="pick_array()" value='3'><label for="array3">상관없음</label>
             </div>
 
             <div class="select">
-              <input type="radio" id="press" name="press" value='1'><label for="press">가벼운 타건감</label>
-              <input type="radio" id="press2" name="press" value='2'><label for="press2">묵직한 타건감</label>
-              <input type="radio" id="press3" name="press" value='3'><label for="press3">상관없음</label>
+              <input type="radio" id="connect" name="connect" onclick="pick_connect()" value='1'><label for="connect">유선</label>
+              <input type="radio" id="connect2" name="connect" onclick="pick_connect()" value='2'><label for="connect2">무선</label>
+              <input type="radio" id="connect3" name="connect" onclick="pick_connect()" value='3'><label for="connect3">상관없음</label>
+            </div>
+
+            <div class="select">
+              <input type="radio" id="press" name="press" onclick="pick_press()" value='1'><label for="press">가벼운 타건감</label>
+              <input type="radio" id="press2" name="press" onclick="pick_press()" value='2'><label for="press2">묵직한 타건감</label>
+              <input type="radio" id="press3" name="press" onclick="pick_press()" value='3'><label for="press3">상관없음</label>
             </div>
 
             <div class="select1">
-              <input type="radio" id="weight" name="weight" value='1'><label for="weight">가벼운</label>
-              <input type="radio" id="weight2" name="weight" value='2'><label for="weight2">상관없음</label>
+              <input type="radio" id="weight" onclick="pick_weight()" name="weight" value='1'><label for="weight">가벼운</label>
+              <input type="radio" id="weight2" onclick="pick_weight()" name="weight" value='2'><label for="weight2">상관없음</label>
             </div>
           </div>
         <div>
-          <button class='signup-btn' type="submit">KeyBoard Warrior와 함께하기</button>
+          <button class='signup-btn'  onclick="return checkForm();" type="submit">KeyBoard Warrior와 함께하기</button>
         </div>
       </div>
     </form>
   </div>
+  <script>
 
+  let sound = 0
+  let array = 0
+  let connect = 0
+  let press = 0
+  let weight= 0
+
+    const pick_sound = (e) => {
+      sound = document.querySelector('input[name="sound"]:checked').value;
+      console.log("사운드입력")
+      console.log(sound,array,connect,press,weight)
+    }
+  
+    const pick_array = (e) => {
+      array = document.querySelector('input[name="array"]:checked').value;
+      console.log("배열")
+      console.log(sound,array,connect,press,weight)
+    }
+    const pick_connect = (e) => {
+      connect = document.querySelector('input[name="connect"]:checked').value;
+    }
+    const pick_press = (e) => {
+      press = document.querySelector('input[name="press"]:checked').value;
+    }
+    const pick_weight = (e) => {
+      weight = document.querySelector('input[name="weight"]:checked').value;
+    }
+
+
+    function checkForm() {
+      console.log("시작")
+      var userId = document.querySelector("#userId")
+      // 아이디 입력 유무 체크
+      if(userId.value == '' || !(userId.value.length >= 2 && userId.value.length <= 12)) {
+          window.alert("2글자 이상의 아이디를 입력하세요");
+          document.fmField.uerId.focus();
+          document.getElementById('userId').select();
+          return false; // 아이디 입력이 안되어 있다면 submint 이벤트를 중지
+      }
+      var uerPw1 = document.querySelector("#userPw1")
+      // 암호 입력 유무 체크
+      if(uerPw1.value == ''){
+          alert('8자리 이상의 암호를 입력하세요.');
+          userPw.focus();
+          return false;
+      }
+      var uerPw2 = document.querySelector("#userPw2")
+      // 암호 입력 유무 체크
+      if(uerPw2.value == ''){
+          alert('8자리 이상의 암호를 입력하세요.');
+          userPw.focus();
+          return false;
+      }
+      if(uerPw2.value != uerPw1.value){
+        alert('비밀번호가 일치하지 않습니다');
+        userPw.focus();
+        return false;
+    }
+    var email = document.querySelector("#email")
+      console.log(email)
+		var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+			if(exptext.test(email.value)==false){
+			//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우			
+			alert("이메일");
+
+			userinput.email.focus();
+		return false;}
+    console.log(sound,array,connect,press,weight)
+    if(sound == "0"){
+      alert('선호하는 소리를 골라주세요');
+      return false;}
+    if(array == "0"){
+      alert('선호하는 배열을 골라주세요');
+      return false;}
+    if(connect == "0"){
+      alert('연결방식을 골라주세요');
+      return false;}
+    if(press == "0"){
+      alert('선호하는 타건감을 골라주세요');
+      return false;}
+    if(weight == "0"){
+      alert('선호하는 무게를 골라주세요');
+      return false;}
+		}
+    
+  
+    
+    
+    
+    
+    </script>
 {% endblock body %}
