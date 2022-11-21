@@ -17,21 +17,21 @@
         {% csrf_token %}
 
         <div class="select-trade">
-          <input type="radio" id="weight" name="Trade_type" value='1' checked>
+          <input type="radio" id="weight" name="Trade_type" value='1' checked="checked">
           <label for="weight">팝니다</label>
           <input type="radio" id="weight2" name="Trade_type" value='2'>
           <label for="weight2">삽니다</label>
         </div>
         <input data-testid="input-box" name="title" placeholder="제목" type="text" required="" class="reviewcreate-userinfo" value="{{ trade.title }}">
 
-        <input id="search_input" class="reviewcreate-userinfo" name="keyboard" type="search" placeholder="Search"
-        aria-label="Search" autocomplete="off" value="{{ trade.keyboard.name }}">
-        <div class="search-off search-div " id="search_box">
-        </div>
+        <input id="search_input" class="reviewcreate-userinfo" name="keyboard" type="search" placeholder="Search" aria-label="Search" autocomplete="off" value="{{ trade.keyboard.name }}">
+        <div class="search-off search-div " id="search_box"></div>
         <input data-testid="input-box" name="price" placeholder="희망가격" type="integer" required="" class="reviewcreate-userinfo" value="{{ trade.price }}">
         <textarea name="content" placeholder="내용" type="text" required="" class="reviewcreate-userinfo-context" value="">{{ trade.content }}</textarea>
         <input type="file" name='img' id='reviewimg' title="Button fade blue/green" style='display: none;'>
-        {% bootstrap_form photo_form%}
+        <label for="reviewimg">
+          {% bootstrap_form photo_form%}
+        </label>
         <button class='review-btn' type="submit">KeyBoard Warrior에서 안전한 거래하기</button>
       </form>
     </div>
@@ -113,6 +113,5 @@
         .log(`${event.target.dataset.nameId}`)
     }
   </script>
-
 
 {% endblock body %}
