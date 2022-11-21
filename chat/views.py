@@ -10,7 +10,7 @@ from .models import Message, Room
 from django.db.models import Q
 import json
 from django.db.models.signals import post_save
-from django.dispatch import receiver
+
 from django.http import JsonResponse
 from datetime import datetime
 
@@ -145,3 +145,20 @@ def message(request):
             "room_message": room_message,
         }
         return JsonResponse(context)
+
+
+@login_required
+def init_room(request):
+    user = request.user
+    # 만약 방이 이미 있으면 room.pk찾기
+    if Room.objects.filter(Q(send_user=user) | Q(reception_user=user)).exists():
+
+        select_room = Room.objects.filter(Q(send_user=user) | Q(reception_user=user))
+
+        room = select_room.order_by("pk")[0]
+
+        return redirect("chat:room", room.pk)
+
+    # 방이 없다면 (최초 채팅 시행) room.pk 생성
+    else:
+        return render(request, "chat/empty.html")
