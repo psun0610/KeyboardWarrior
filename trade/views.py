@@ -96,7 +96,10 @@ def update(request, pk):
     if request.user == trade.user:
         if request.method == "POST":
             form = CreateTrade(request.POST, request.FILES, instance=trade)
-            photo_form = PhotoForm(request.POST, request.FILES)
+            if photos:
+                photo_form = PhotoForm(request.POST, request.FILES, instance=photos[0])
+            else:
+                photo_form = PhotoForm(request.POST, request.FILES)
             images = request.FILES.getlist("image")
             if photos:
                 for photo in photos:
@@ -115,7 +118,10 @@ def update(request, pk):
                     return redirect("trade:detail", pk)
         else:
             form = CreateTrade(instance=trade)
-            photo_form = PhotoForm(instance=photos[0])
+            if photos:
+                photo_form = PhotoForm(instance=photos[0])
+            else:
+                photo_form = PhotoForm()
         context = {
             "form": form,
             "photo_form": photo_form,

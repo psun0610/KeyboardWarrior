@@ -139,7 +139,10 @@ def update(request, pk):
     instancetitle = review.title
     if request.method == "POST":
         review_form = ReviewForm(request.POST, request.FILES, instance=review)
-        photo_form = PhotoForm(request.POST, request.FILES, instance=photos[0])
+        if photos:
+            photo_form = PhotoForm(request.POST, request.FILES, instance=photos[0])
+        else:
+            photo_form = PhotoForm(request.POST, request.FILES)
         images = request.FILES.getlist("image")
         for photo in photos:
             if photo.image:
