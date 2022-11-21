@@ -105,9 +105,7 @@
             </a>
           </div>
           {% else %}
-          <a href="{% url 'accounts:signup' %}">
-            <li class="my-nav-item">회원가입</li>
-          </a>
+          
           <a href="{% url 'accounts:login' %}">
             <li class="my-nav-item">로그인</li>
           </a>
@@ -118,13 +116,6 @@
     </div>
   </nav>
 
-  {% if messages %}
-    {% for message in messages %}
-      <div class="alert alert-{{ message.tags }}">
-        {{ message }}
-      </div>
-    {% endfor %}
-  {% endif %}
   <div class="kor-font">
     {% block body %}{% endblock %}
   </div>
