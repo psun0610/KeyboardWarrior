@@ -182,6 +182,9 @@
           <a href="{% url 'trade:delete' trade.pk %}">
             <div class="trade-detail-btn jjok">글 삭제</div>
           </a>
+          <a href="{% url 'chat:exit_room' trade.pk %}">
+            <div class="trade-detail-btn jjok">쪽지확인</div>
+          </a>
       </div>
       {% endif %}
       {% else %}
