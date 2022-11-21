@@ -1,0 +1,33 @@
+{% extends 'kwbase/base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block body %}
+<div class="chat">
+    <div class="jjok-bang">
+        {% comment %} 제목 1 {% endcomment %}
+        <div class='all-chat'>
+        </div>
+    </div>
+
+    <div class='chatting-bang'>
+        <div class="chat-nav">
+            <div class="fs-5">{{ room.reception_user }}</div>
+            <div class="d-flex align-items-center">
+                <div class="">{{room.trade.keyboard.name}}</div>
+                <div class="chat-title">{{room.trade.title}}</div>
+                <div class="chat-badge">판매</div>
+            </div>
+        </div>
+        <div class="chatbang1" id="chatbang">
+            <h3> 텅~ 키보드 마켓거래를 시작해보세요 ! </h3>
+
+        </div>
+        <div id="chat-log" cols="100" rows="20"></div>
+        <div class="message-input-wrap">
+            <input id="chat-message-input" type="text" size="100" value="">
+            <input id="chat-message-submit" type="button" value="전송">
+        </div>
+    </div>
+
+
+    {% endblock %}
