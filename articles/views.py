@@ -90,6 +90,7 @@ def main(request):
     else:
         items = []
     if Visit.objects.order_by("-pk"):
+        print(1)
         visit_sum = 0
         today_visit = Visit.objects.order_by("-pk")[0].visit_count
         all_visit = Visit.objects.all()
@@ -121,26 +122,28 @@ def main(request):
         expire_date -= now
         max_age = expire_date.total_seconds()
 
-        if request.user == "AnonymousUser":
-            cookievalue = request.COOKIES.get("sessionid", "")
+        if not request.user.is_authenticated:
+            print(1,request.user)
+            pass
         else:
-            cookievalue = request.COOKIES.get("request.user.username", "")
-        if not f"{request.user.username.encode('utf8')}" in cookievalue:
-            cookievalue += f"{request.user.username.encode('utf8')}"
-            response.set_cookie(
-                "request.user.username", value=cookievalue, max_age=max_age, httponly=True
-            )
-            if not Visit.objects.all():
-                Visit.objects.create(visit_date=str(now)[:10], visit_count=1)
-            else:
-                before = Visit.objects.order_by("-pk")[0]
-                after = str(now)[:10]
-
-                if before.visit_date != after:
+            cookievalue = request.COOKIES.get("request.user.pk", "")
+            print(2, request.user.pk)
+            if not f"{request.user.pk}" in cookievalue:
+                cookievalue += f"{request.user.pk}"
+                response.set_cookie(
+                    "request.user.pk", value=cookievalue, max_age=max_age, httponly=True
+                )
+                if not Visit.objects.all():
                     Visit.objects.create(visit_date=str(now)[:10], visit_count=1)
                 else:
-                    before.visit_count += 1
-                    before.save()
+                    before = Visit.objects.order_by("-pk")[0]
+                    after = str(now)[:10]
+
+                    if before.visit_date != after:
+                        Visit.objects.create(visit_date=str(now)[:10], visit_count=1)
+                    else:
+                        before.visit_count += 1
+                        before.save()
         return response
     else:
         context = {"items": items}
@@ -151,26 +154,28 @@ def main(request):
         expire_date -= now
         max_age = expire_date.total_seconds()
 
-        if request.user == "AnonymousUser":
-            cookievalue = request.COOKIES.get("sessionid", "")
+        if not request.user.is_authenticated:
+            print(1,request.user)
+            pass
         else:
-            cookievalue = request.COOKIES.get("request.user.username", "")
-        if not f"{request.user.username.encode('utf8')}" in cookievalue:
-            cookievalue += f"{request.user.username.encode('utf8')}"
-            response.set_cookie(
-                "request.user.username", value=cookievalue, max_age=max_age, httponly=True
-            )
-            if not Visit.objects.all():
-                Visit.objects.create(visit_date=str(now)[:10], visit_count=1)
-            else:
-                before = Visit.objects.order_by("-pk")[0]
-                after = str(now)[:10]
-
-                if before.visit_date != after:
+            cookievalue = request.COOKIES.get("request.user.pk", "")
+            print(2, request.user.pk)
+            if not f"{request.user.pk}" in cookievalue:
+                cookievalue += f"{request.user.pk}"
+                response.set_cookie(
+                    "request.user.pk", value=cookievalue, max_age=max_age, httponly=True
+                )
+                if not Visit.objects.all():
                     Visit.objects.create(visit_date=str(now)[:10], visit_count=1)
                 else:
-                    before.visit_count += 1
-                    before.save()
+                    before = Visit.objects.order_by("-pk")[0]
+                    after = str(now)[:10]
+
+                    if before.visit_date != after:
+                        Visit.objects.create(visit_date=str(now)[:10], visit_count=1)
+                    else:
+                        before.visit_count += 1
+                        before.save()
         return response
 
 
