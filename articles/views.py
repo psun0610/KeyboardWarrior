@@ -124,8 +124,8 @@ def main(request):
         cookievalue = request.COOKIES.get("request.user", "")
         if request.user == "AnonymousUser":
             cookievalue = request.COOKIES.get("sessionid", "")
-        if f"{request.user.username}" not in cookievalue:
-            cookievalue += f"{request.user.username.encode('utf8')}"
+        if f"{request.user}" not in cookievalue:
+            cookievalue += f"{request.user.encode('utf8')}"
             response.set_cookie(
                 "request.user", value=cookievalue, max_age=max_age, httponly=True
             )
@@ -153,8 +153,8 @@ def main(request):
         cookievalue = request.COOKIES.get("request.user", "")
         if request.user == "AnonymousUser":
             cookievalue = request.COOKIES.get("sessionid", "")
-        if f"{request.user.username}" not in cookievalue:
-            cookievalue += f"{request.user.username.encode('utf8')}"
+        if f"{request.user}" not in cookievalue:
+            cookievalue += f"{request.user.encode('utf8')}"
             response.set_cookie(
                 "request.user", value=cookievalue, max_age=max_age, httponly=True
             )
