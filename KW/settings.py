@@ -184,7 +184,7 @@ AUTH_USER_MODEL = "accounts.User"
 # )
 
 
-DEBUG = os.getenv("DEBUG") == "False"
+DEBUG = os.getenv("DEBUG") == "True"
 
 
 if DEBUG:
