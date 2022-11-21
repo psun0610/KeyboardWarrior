@@ -153,15 +153,26 @@ def update(request, pk):
                 "trade": trade,
             }
         else:
-            context = {
-                "review_form": review_form,
-                "photo_form": photo_form,
-                "instancetitle": instancetitle,
-                "trade": trade,
-            }
-        return render(request, "trade/update.html", context)
+            photo_form = PhotoForm()
+    if request.user.is_authenticated:
+        new_message = Notification.objects.filter(Q(user=request.user) & Q(check=False))
+        message_count = len(new_message)
+        context = {
+            "count": message_count,
+            "review_form": review_form,
+            "photo_form": photo_form,
+            "instancetitle": instancetitle,
+            "trade": trade,
+        }
     else:
-        return redirect("trade:index")
+        context = {
+            "review_form": review_form,
+            "photo_form": photo_form,
+            "instancetitle": instancetitle,
+            "trade": trade,
+        }
+
+    return render(request, "trade/update.html", context)
 
 
 def detail(request, pk):
