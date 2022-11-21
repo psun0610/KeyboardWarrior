@@ -210,6 +210,8 @@ def message(request, pk):
 def follow(request, pk):
     if request.user.is_authenticated:
         user = get_user_model().objects.get(pk=pk)
+        # 상대방이 나를 팔로우
+        followers = user.followers.all()
         if request.user != user:
             if user.followers.filter(pk=request.user.pk).exists():
                 user.followers.remove(request.user)
@@ -221,6 +223,7 @@ def follow(request, pk):
                 "is_followed": is_followed,
                 "followers_count": user.followers.count(),
                 "followings_count": user.followings.count(),
+                "followers": followers,
             }
             return JsonResponse(data)
         return redirect("accounts:detail", user.username)
