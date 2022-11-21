@@ -56,9 +56,9 @@
                 <form id="follow-form" data-user-id="{{ user.pk }}">
                   {% csrf_token %}
                   {% if request.user in user.followers.all %}
-                    <input type="submit" value="언팔로우" class="follow-btn unfollow">
+                    <input type="submit" value="following" class="follow-btn unfollow">
                   {% else %}
-                    <input type="submit" value="팔로우" class="follow-btn follow">
+                    <input type="submit" value="follow" class="follow-btn follow">
                   {% endif %}
                 </form>
               {% endif %}
@@ -584,18 +584,22 @@
             const followingsCount = response.data.followings_count
             followersCountTag.innerText = followersCount
             followingsCountTag.innerText = followingsCount
+
+
             const modal = document.querySelector('#follow-modal')
+            const f_datas = response.data.f_datas
             let modal_content = ''
               // let profile_src = `https://keyboard-warrior-s3.s3.ap-northeast-2.amazonaws.com/${comment_data[i].image}`;
             modal_content += `<div class="follow-user">`
-            for(follower of followers) {
-              modal_content += `<a href="{% url 'accounts:detail' ${follower.pk} %}">`
-              if (comment_data[i].image) {
-                if (comment_data[i].is_social === 0) {
-                  profile_src = `https://keyboard-warrior-s3.s3.ap-northeast-2.amazonaws.com/${follower.image}`;
+            for(let i = 0; i < f_datas.length; i++) {
+              console.log(f_datas[i].follower_pk)
+              modal_content += `<a href="/accounts/${f_datas[i].follower_pk}/detail/">`  
+              if (f_datas[i].image) {
+                if (f_datas[i].is_social === 0) {
+                  profile_src = `https://keyboard-warrior-s3.s3.ap-northeast-2.amazonaws.com/${f_datas[i].image}`;
                 }
                 else {
-                  profile_src = `${follower.image}`;
+                  profile_src = `${f_datas[i].image}`;
                 }
               }
               else {
@@ -604,12 +608,12 @@
               modal_content += `</a>`
               modal_content += `</div>`
             }
-            modal.insertAdjacentHTML('beforeend', `${modal_content}`)
-            .catch((error) => {
-            console.log(error.response)
-            })
-          })
+            modal.insertAdjacentHTML('beforeend', modal_content)
+
+            }).catch((error) => {
+          console.log(error.response)
         })
+      })
 
 </script>
 {% endblock %}
