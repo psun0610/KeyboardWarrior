@@ -35,7 +35,7 @@
     width: 1300px;
     height: 700px;
     border: var(--my-gray) solid 1px;
-    margin: calc(50vh - 350px - 70px) auto;
+    margin: 100px auto;
     display: flex;
     justify-content: space-between;
     padding-top: 25px;
