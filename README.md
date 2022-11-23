@@ -27,9 +27,7 @@ ex) 무한스크롤, 레디스 소켓 사용
 
 
 ## 모델 구조, ERD 작성
-
-![키보드워리어 최종 ERD](readme_media\키보드워리어 최종 ERD.png)
-
+![키보드워리어 최종 ERD](https://user-images.githubusercontent.com/97111793/203498672-67c14351-a903-4e81-95e2-619f43b4203d.png)
 
 
 ## 기능
