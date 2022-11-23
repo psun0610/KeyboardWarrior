@@ -7,11 +7,11 @@
 # Contributor
 
 <div style="display:flex; justify-content:center;">
-<a href="https://github.com/caretim"><img src="https://avatars.githubusercontent.com/u/108650777?v=4" style="border-radius: 50%;" width="150" height="150"/></a>
-<a href="https://github.com/yoosoonil"><img src="https://avatars.githubusercontent.com/u/97111793?v=4" style="border-radius: 50%;" width="150" height="150"/></a>
-<a href="https://github.com/tenedict"><img src="https://avatars.githubusercontent.com/u/108652767?v=4" style="border-radius: 50%;" width="150" height="150"/></a>
-<a href="https://github.com/psun0610"><img src="https://avatars.githubusercontent.com/u/97274144?v=4" style="border-radius: 50%;" width="150" height="150"/></a>
-<a href="https://github.com/HYUNSIK-JI"><img src="https://avatars.githubusercontent.com/u/59475851?v=4" style="border-radius: 50%;" width="150" height="150"/></a>
+<a href="https://github.com/caretim"><img src="https://avatars.githubusercontent.com/u/108650777?v=4" style="border-radius:50%;" width="150" height="150"/></a>
+<a href="https://github.com/yoosoonil"><img src="https://avatars.githubusercontent.com/u/97111793?v=4" style="border-radius:50%;" width="150" height="150"/></a>
+<a href="https://github.com/tenedict"><img src="https://avatars.githubusercontent.com/u/108652767?v=4" style="border-radius:50%;" width="150" height="150"/></a>
+<a href="https://github.com/psun0610"><img src="https://avatars.githubusercontent.com/u/97274144?v=4" style="border-radius:50%;" width="150" height="150"/></a>
+<a href="https://github.com/HYUNSIK-JI"><img src="https://avatars.githubusercontent.com/u/59475851?v=4" style="border-radius:50%;" width="150" height="150"/></a>
 </div>
 
 
