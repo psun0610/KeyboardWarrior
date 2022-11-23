@@ -241,6 +241,3 @@ ex) 무한스크롤, 레디스 소켓 사용
 ![chat](https://user-images.githubusercontent.com/108650777/203498212-d7c228ae-2e7c-451d-827a-1697f541c8b7.gif)
 ![chat-1](https://user-images.githubusercontent.com/108652767/203576225-2eb1e36b-50f6-4c5a-b7e9-83837c8e954f.gif)
 
-
-13. 기타 중요기능
-알림기능
