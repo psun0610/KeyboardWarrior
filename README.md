@@ -2,6 +2,7 @@
 ![키보드워리어LOGO](https://user-images.githubusercontent.com/108650777/203534893-15fd7d6d-02d3-442f-98c5-52a7269168de.jpg)
 
 > 키보드 중고 거래, 사용자 맞춤형 키보드 추천 서비스, 검색 서비스, 키보드 후기 제공 해주는 사이트
+
 > ![image](https://user-images.githubusercontent.com/108652767/203579529-0b8bbab8-3567-4931-be17-28a2103ec2d9.png)
 
 
