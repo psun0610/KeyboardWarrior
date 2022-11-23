@@ -1,21 +1,16 @@
 # 키보드워리어
-![키보드워리어LOGO](https://user-images.githubusercontent.com/108650777/203534893-15fd7d6d-02d3-442f-98c5-52a7269168de.jpg)
-
 > 키보드 중고 거래, 사용자 맞춤형 키보드 추천 서비스, 검색 서비스, 키보드 후기 제공 해주는 사이트
 
-> ![image](https://user-images.githubusercontent.com/108652767/203579529-0b8bbab8-3567-4931-be17-28a2103ec2d9.png)
-
-
-
+![logo](https://user-images.githubusercontent.com/97274144/203568268-5300330b-7be5-48c7-9d93-98cfc596ed82.jpg)
 
 ## 프로젝트 소개
 
 - 🗓**프로젝트 기간**
   - 2022.11.09 (수) ~ 2022.11.21 (월)
 - 💻**사용 기술**
-  - ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54), ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white), ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white), 	![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white), ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E), ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white), ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white), Beautifulsoup4
+  - ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white) Beautifulsoup4
 - ⭐**개발 역할 분담**
-  - 팀장: 하승찬, 발표자: 유순일, PPT 제작자: 박선영, 문재윤, 지현식
+  - 팀장: 하승찬/ 발표자: 유순일/ PPT 제작자: 박선영, 문재윤, 지현식
   - **백엔드**: 지현식, 하승찬, 유순일
   - **프론트엔드**: 박선영, 문재윤
 
@@ -142,18 +137,18 @@ ex) 무한스크롤, 레디스 소켓 사용
 
 ### 제품 정보 수집
 
-- 크롤링 
+- Selenium, BeautifulSoup4를 이용하여 `다나와` 페이지 크롤링
 
 
 
 ### Articles/main
-- 메세지 알림 
+- 게시글에 댓글이 달릴 때, 채팅이 올 때 알림 기능
 - 전체 방문자 수, 오늘 방문자 수 표시
 ![articles_main(알림,방문자수)-min](https://user-images.githubusercontent.com/108650777/203498719-73da91bd-bc40-40d6-8747-ae6ee5819746.gif)
 
 - 사용자 맞춤형 키보드 추천
   - 사용자가 회원가입시 입력한 정보를 기반으로 키보드를 추천하는 기능
-![키보드추천](https://user-images.githubusercontent.com/108650777/203497876-23d077cb-d4da-4428-8814-a0ae4e15485f.gif)
+  ![키보드추천](https://user-images.githubusercontent.com/108650777/203497876-23d077cb-d4da-4428-8814-a0ae4e15485f.gif)
 
 
 ### Articles/all
@@ -193,22 +188,26 @@ ex) 무한스크롤, 레디스 소켓 사용
 
 ### Trade/create
 
-키보드모델명 쉽게검색
-사진 여러장 추가 
-![trade_create](https://user-images.githubusercontent.com/108650777/203498331-c31b9a0c-4e5a-4d5b-abf2-80b8263b2067.gif)
+- 등록된 키보드 모델명 검색
+- 사진 여러 장 추가 가능
+  ![trade_create](https://user-images.githubusercontent.com/108650777/203498331-c31b9a0c-4e5a-4d5b-abf2-80b8263b2067.gif)
 
 
 
 ### Reviews/index
 
+- 후기글, 키보드 검색 기능
+
+
+
 
 ### Reviews/detail
 
-비공기 글 좋아요
-비동기 댓글 삭제, 생성
-비동기 댓글 좋아요
-댓글 욕설 필터링
-![reviews_detail-min](https://user-images.githubusercontent.com/108650777/203500064-3c043c2a-af19-4d2b-83e8-d30cc648d101.gif)
+- 비동기 글 좋아요
+- 비동기 댓글 생성 및 삭제
+- 비동기 댓글 좋아요
+- 댓글 욕설 필터링
+  ![reviews_detail-min](https://user-images.githubusercontent.com/108650777/203500064-3c043c2a-af19-4d2b-83e8-d30cc648d101.gif)
 
 
 
@@ -216,9 +215,10 @@ ex) 무한스크롤, 레디스 소켓 사용
 
 ### Reviews/create
 
-키보드 모델명 쉽게 검색
-별점선택 
-![reviews_create](https://user-images.githubusercontent.com/108650777/203500675-05282a42-8cf0-4a32-84ea-f3f28fdf5eaf.gif)
+- 등록된 키보드 모델명 검색
+- 별점 기능
+- 이미지 여러 개 등록 가능
+- ![reviews_create](https://user-images.githubusercontent.com/108650777/203500675-05282a42-8cf0-4a32-84ea-f3f28fdf5eaf.gif)
 
 
 ### Accounts/signup
@@ -226,25 +226,27 @@ ex) 무한스크롤, 레디스 소켓 사용
 
 ![accounts_signup](https://user-images.githubusercontent.com/97111793/203580708-d367f2dd-4302-4753-8954-072b2465f1b3.gif)
 
+### Accounts/signup, login
+
+- 소셜 계정 로그인
+- 로그인 시 선호 키보드 정보 가져오기
+
+
+
 ### Accounts/detail
+- 라디오 버튼 메뉴
+- 컬렉션 모달로 띄움
+- 비동기 팔로우
+  ![accounts_detail](https://user-images.githubusercontent.com/108650777/203498275-89efa132-36ab-44e0-bc30-99fe4c86685e.gif)
 
-10. 어카운트
-    소셜계정로그인
-    로그인시 선호 키보드정보 가져오기 
-
-11. 마이페이지
-    라디오버튼 메뉴
-    비동기 팔로우
-    ![accounts_detail](https://user-images.githubusercontent.com/108650777/203498275-89efa132-36ab-44e0-bc30-99fe4c86685e.gif)
 
 
 ### Chat
 
+- 로컬에서 레디스를 사용하여 채팅 기능 구현
+- 배포 후 서버에서는 레디스 채팅 배포 실패
+- => 비동기로 1초마다 새로고침하여 반실시간으로 채팅 구현
 
-12. 채팅 
-
-배포시 반실시간 채팅구현
-로컬시 채팅기능구현 
 ![chat](https://user-images.githubusercontent.com/108650777/203498212-d7c228ae-2e7c-451d-827a-1697f541c8b7.gif)
 ![chat-1](https://user-images.githubusercontent.com/108652767/203576225-2eb1e36b-50f6-4c5a-b7e9-83837c8e954f.gif)
 
