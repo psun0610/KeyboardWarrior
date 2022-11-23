@@ -203,7 +203,7 @@ ex) 무한스크롤, 레디스 소켓 사용
 비공기 글 좋아요
 비동기 댓글 삭제, 생성
 비동기 댓글 좋아요
-닷글 욕설 필터링
+댓글 욕설 필터링
 ![reviews_detail-min](https://user-images.githubusercontent.com/108650777/203500064-3c043c2a-af19-4d2b-83e8-d30cc648d101.gif)
 
 
