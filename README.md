@@ -1,4 +1,3 @@
-<a href="https://github.com/kimdakyeom/alcohol_trip/graphs/contributors%22%3E    <img src="https://contrib.rocks/image?repo=kimdakyeom/alcohol_trip" />   </a>
 # 키보드워리어
 ![키보드워리어LOGO](https://user-images.githubusercontent.com/108650777/203534893-15fd7d6d-02d3-442f-98c5-52a7269168de.jpg)
 
