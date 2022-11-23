@@ -1,12 +1,4 @@
 # 키보드워리어
-![키보드워리어LOGO](https://user-images.githubusercontent.com/108650777/203534893-15fd7d6d-02d3-442f-98c5-52a7269168de.jpg)
-
-
-  https://github.com/caretim
-  https://github.com/yoosoonil
-  https://github.com/tenedict
-  https://github.com/psun0610
-  https://github.com/HYUNSIK-JI
 
 > 키보드 중고 거래, 사용자 맞춤형 키보드 추천 서비스, 검색 서비스, 키보드 후기 제공 해주는 사이트
 
@@ -14,15 +6,14 @@
 
 # Contributor
 
-https://github.com/caretim
+<div style="display:flex; justify-content:center;">
+<a href="https://github.com/caretim"><img src="https://avatars.githubusercontent.com/u/108650777?v=4" style="border-radius: 50%;" width="150" height="150"/></a>
+<a href="https://github.com/yoosoonil"><img src="https://avatars.githubusercontent.com/u/97111793?v=4" style="border-radius: 50%;" width="150" height="150"/></a>
+<a href="https://github.com/tenedict"><img src="https://avatars.githubusercontent.com/u/108652767?v=4" style="border-radius: 50%;" width="150" height="150"/></a>
+<a href="https://github.com/psun0610"><img src="https://avatars.githubusercontent.com/u/97274144?v=4" style="border-radius: 50%;" width="150" height="150"/></a>
+<a href="https://github.com/HYUNSIK-JI"><img src="https://avatars.githubusercontent.com/u/59475851?v=4" style="border-radius: 50%;" width="150" height="150"/></a>
+</div>
 
-https://github.com/yoosoonil
-
-https://github.com/tenedict
-
-https://github.com/psun0610
-
-https://github.com/HYUNSIK-JI
 
 &nbsp;
 
