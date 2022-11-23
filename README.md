@@ -133,7 +133,7 @@ ex) 무한스크롤, 레디스 소켓 사용
 </details>
 
 
-## 기능
+## 🧾기능 소개
 
 ### 제품 정보 수집
 
@@ -221,6 +221,10 @@ ex) 무한스크롤, 레디스 소켓 사용
 - ![reviews_create](https://user-images.githubusercontent.com/108650777/203500675-05282a42-8cf0-4a32-84ea-f3f28fdf5eaf.gif)
 
 
+### Accounts/signup
+회원가입
+
+![accounts_signup](https://user-images.githubusercontent.com/97111793/203580708-d367f2dd-4302-4753-8954-072b2465f1b3.gif)
 
 ### Accounts/signup, login
 
@@ -244,4 +248,5 @@ ex) 무한스크롤, 레디스 소켓 사용
 - => 비동기로 1초마다 새로고침하여 반실시간으로 채팅 구현
 
 ![chat](https://user-images.githubusercontent.com/108650777/203498212-d7c228ae-2e7c-451d-827a-1697f541c8b7.gif)
+![chat-1](https://user-images.githubusercontent.com/108652767/203576225-2eb1e36b-50f6-4c5a-b7e9-83837c8e954f.gif)
 
