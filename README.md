@@ -29,6 +29,110 @@ ex) 무한스크롤, 레디스 소켓 사용
 ## 모델 구조, ERD 작성
 ![키보드워리어 최종 ERD](https://user-images.githubusercontent.com/97111793/203498672-67c14351-a903-4e81-95e2-619f43b4203d.png)
 
+**App별 Model**
+<details>
+<summary>accounts app</summary>
+
+**class User:**
+ - naver_id = models.CharField(null=True, unique=True, max_length=100)
+ - goo_id = models.CharField(null=True, unique=True, max_length=50)
+ - followings = models.ManyToManyField("self", symmetrical=False, related_name="followers")
+ - press = MultiSelectField(choices=Key_Press, null=True)
+ - weight = MultiSelectField(choices=Weight, null=True)
+ - array = MultiSelectField(choices=Array, null=True)
+ - sound = MultiSelectField(choices=Sound, null=True)
+ - rank = models.IntegerField(default=0)
+ - connect = MultiSelectField(choices=connect, null=True)
+ - image = ProcessedImageField(blank=True, processors=[Thumbnail(300, 300)], format="jpeg", options={"quality": 90})
+ - is_social = models.IntegerField(default=0)
+
+**class Notification:**
+ - message = models.CharField(max_length=100)
+ - check = models.BooleanField(default=False)
+ - user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+ - category = models.CharField(max_length=10)
+ - nid = models.IntegerField(default=0)
+
+</details>
+
+<details>
+<summary>articles app</summary>
+
+**class Keyboard:**
+ - name = models.CharField(max_length=80, blank=True)
+ - img = models.CharField(max_length=300, blank=True)
+ - brand = models.CharField(max_length=50, blank=True)
+ - connect = models.CharField(max_length=50, blank=True)
+ - array = models.CharField(max_length=50, blank=True)
+ - switch = models.CharField(max_length=50, blank=True)
+ - key_switch = models.CharField(max_length=50, blank=True)
+ - press = models.IntegerField(blank=True)
+ - weight = models.CharField(max_length=50, blank=True)
+ - kind = models.CharField(max_length=50, blank=True)
+ - bluetooth = models.CharField(max_length=50, blank=True)
+
+**class Visit:**
+ - visit_date = models.CharField(max_length=30)
+ - visit_count = models.IntegerField(default=0)
+
+</details>
+
+<details>
+<summary>reviews app</summary>
+
+**class Reviews:**
+ - user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+ - title = models.CharField(max_length=80)
+ - content = models.TextField(max_length=500)
+ - grade = models.IntegerField(choices=grade_)
+ - like_users = models.ManyToManyField(AUTH_USER_MODEL, related_name="like_review")
+ - created_at = models.DateTimeField(auto_now_add=True)
+ - updated_at = models.DateTimeField(auto_now=True)
+ - hits = models.PositiveIntegerField(default=0, verbose_name="조회수")
+ - bookmark_users = models.ManyToManyField(AUTH_USER_MODEL, related_name="bookmark_reivew")
+ - keyboard = models.ForeignKey(Keyboard, on_delete=models.CASCADE)
+
+**class Photo:**
+ - review = models.ForeignKey(Review, on_delete=models.CASCADE)
+ - image = models.ImageField(upload_to="images/", blank=True)
+
+**class Comment:**
+ - content = models.CharField(max_length=80)
+ - user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+ - review = models.ForeignKey(Review, on_delete=models.CASCADE)
+ - created_at = models.DateTimeField(auto_now_add=True)
+ - updated_at = models.DateTimeField(auto_now=True)
+ - like_users = models.ManyToManyField(AUTH_USER_MODEL, related_name="like_comment")
+
+</details>
+
+<details>
+<summary>trade app</summary>
+
+**class Trades:**
+ - user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+    Trade_type = models.IntegerField(choices=tradeType)
+ - title = models.CharField(max_length=80)
+ - content = models.TextField(max_length=500)
+ - keyboard = models.ForeignKey(Keyboard, on_delete=models.CASCADE)
+ - price = models.IntegerField(default=0)
+ - marker = models.ManyToManyField(
+        AUTH_USER_MODEL, symmetrical=False, related_name="jjim"
+    )
+ - status_type = models.IntegerField(choices=statusType, default=1)
+
+**class Photo:**
+ - trade = models.ForeignKey(Trades, on_delete=models.CASCADE)
+ - image = models.ImageField(upload_to="images/", blank=True)
+
+**class Trade_Comment:**
+ - user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+ - trade = models.ForeignKey(Trades, on_delete=models.CASCADE)
+ - content = models.CharField(max_length=100)
+ - create_at = models.DateTimeField(auto_now_add=True)
+
+</details>
+
 
 ## 기능
 
