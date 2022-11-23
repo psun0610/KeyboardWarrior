@@ -1,3 +1,4 @@
+<a href="https://github.com/kimdakyeom/alcohol_trip/graphs/contributors%22%3E    <img src="https://contrib.rocks/image?repo=kimdakyeom/alcohol_trip" />   </a>
 # 키보드워리어
 ![키보드워리어LOGO](https://user-images.githubusercontent.com/108650777/203534893-15fd7d6d-02d3-442f-98c5-52a7269168de.jpg)
 
@@ -221,6 +222,10 @@ ex) 무한스크롤, 레디스 소켓 사용
 ![reviews_create](https://user-images.githubusercontent.com/108650777/203500675-05282a42-8cf0-4a32-84ea-f3f28fdf5eaf.gif)
 
 
+### Accounts/signup
+회원가입
+
+![accounts_signup](https://user-images.githubusercontent.com/97111793/203580708-d367f2dd-4302-4753-8954-072b2465f1b3.gif)
 
 ### Accounts/detail
 
