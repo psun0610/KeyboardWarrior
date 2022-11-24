@@ -39,13 +39,6 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 3. 하는 동안 팀원 모두 디스코드 화면공유 켜놓기
 4. 템플릿 css 단위는 웬만하면 px 사용 (이유: 나중에 제가 조금씩 고칠 경우가 있을 것으로 예상돼서)
 
-# 🚩목적
-
-Django를 통해 
-
-내가 이 기능에 어떻게 접근, 그 과정에서 이슈들을 해결
-ex) 무한스크롤, 레디스 소켓 사용
-
 &nbsp;
 
 # 모델 구조, ERD 작성
