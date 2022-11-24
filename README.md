@@ -2,6 +2,8 @@
 
 > 키보드 중고 거래, 사용자 맞춤형 키보드 추천 서비스, 검색 서비스, 키보드 후기 제공 해주는 사이트
 
+http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/trade/index/
+
 ![logo](https://user-images.githubusercontent.com/97274144/203568268-5300330b-7be5-48c7-9d93-98cfc596ed82.jpg)
 
 # Contributor
@@ -282,7 +284,7 @@ ex) 무한스크롤, 레디스 소켓 사용
 
 
 14. 이슈 
-  
+
 
   <details>
 
@@ -463,7 +465,7 @@ KMP 알고리즘을 활용한 해결.
 
 <summary>4.크롤링 데이터 정제 작업 이슈</summary>
 
-  
+
   ### 이슈 내용
 
 
@@ -490,7 +492,7 @@ KMP 알고리즘을 활용한 해결.
 
 <summary> 5.Django/SQLite DB에 크롤링한 데이터를 넣을 때 JSON 작성 형식</summary>
 
- 
+
   ```json
 [
 	{
@@ -518,7 +520,7 @@ KMP 알고리즘을 활용한 해결.
 			"kind": "기타"
 	},
 ]
-```
+  ```
 
 처음에는 JSON 파일 형식을 위와 같이 필드만 넣은 리스트>딕셔너리 형식으로 넣었었다.
 
@@ -621,7 +623,7 @@ field
 <summary> 6.JS를 통해 DIV태그  display조작 </summary>
 
 
- 
+
   ```jsx
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
@@ -651,7 +653,7 @@ field
       }
     }
   });
-```
+  ```
 
 ```html
 <input id="search_input" class="form-control me-2" name="search" type="search" placeholder="Search"
@@ -675,7 +677,7 @@ field
 
 <summary> 7. views.py에서 form.errors 와 views.create에서 키보드저장방법 </summary>
 
- 
+
   폼 에러 확인법  →  print(review_form.errors) 
 
 form 뒤에 errors를 찍어서 오류 찾기 
@@ -737,7 +739,7 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
   쿠키생성할때 return값을 response로 주어야한다.
 
 
-  
+
 </details>
 
 
@@ -977,67 +979,82 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 - `reviews`, `trade` 댓글 욕설, 비속어 필터링
 - `reviews/create`,`trade/create` 다중 이미지
 - `main`페이지 오늘 방문자 수 및 누적 방문자수 완료
-- reviews/detail 조회수
+- `reviews/detail` 조회수
 
 &nbsp;
 
 ## 11월13일
-accounts/social login 구현
+- `accounts/login` 소셜로그인 구현
 
-방문자 수
+- 전체 방문자 수, 오늘 방문자 수 구현
 
-accounts/detail 페이지
+- `accounts/detail` 페이지
 
-articles 반응형
+- `articles/index` 반응형
 
-trade 키보드 search 기능
+- `trade/detail` search 기능
 
-review 조회수, 좋아요
+- `review/detail` 조회수, 좋아요
+
+&nbsp;
 
 &nbsp;
 
 
 ## 11월14일
-중고 거래글 폼 작성
-trade 게시글 작성 폼
-keyboard_search_fix
-trade/index 페이지 완성하기
-accounts/social login redirect를 통해 유저 정보 넣기
-회원상세정보(수정하나씩)
+- `trade/create` 폼 작성
+- `keyboard_search_fix`
+- `trade/index` 페이지 완성
+- `accounts/detail` 라디오 버튼 구현
 
 &nbsp;
 
 ## 11월15일
-trade/index 라디오 동작시키기
-review/index 페이지
-articles/all 애니메이션 수정하기
-main/유저 선호도 기반 키보드 추천
-review/댓글 좋아요 비동기
-articles/detail/키보드 평점
-trade/detail/ 댓글,댓글창
+- `trade/index` 라디오 동작시키기
+- `reviews/index` 페이지
+- `articles/all` 애니메이션 수정하기
+- `articles/main` 유저 선호도 기반 키보드 추천
+- `review/detail` 댓글 좋아요 비동기
+- `articles/detail`키보드 평점
+- `trade/detail` 댓글, 댓글창
+- `trade/index` 라디오 동작 시키기
+- `trade/detail` 다중 이미지
+- `reviews/index.html` 구조
 
 &nbsp;
 
 ## 11월16일
-모든 키보드 검색기능
-광고 비동기
-trade, reviews 검색기능 구현
-키보드 detail과 중고 거래게시판 연결
-모든 키보드 비동기 스크롤 픽스
-소셜로그인 시 추가정보 기입
-reviews/detail
+- `articles/all` 검색 기능
+- `articles/all` 광고 비동기 (리스트에 여러 개 넣어서 랜덤으로 광고 나오게)
+- `trade`, `reviews` 검색 기능 구현
+- `articles/detail`과 중고 거래 게시판 연결
+- `articles/all` 비동기 무한 스크롤
+- 소셜로그인 시 추가정보 기입
+- `reviews/detail.html` 구조
 
 &nbsp;
 
 ## 11월17일
-accounts/메세지함
-후기 거래게시글 수정
-로그인 폼 변경
+- `accounts` 메세지함
+- `reviews/detail` 거래 게시글 수정
+- `accounts/login` 로그인 폼 변경
+- `trade/detail`, `reviews/detail` 검색창 디자인 변경
+- `trade/detail` 거래 상태 변경 필드 추가 및 request.user == trade.user 이면 상태 변경창 띄워주기
+- `accounts/detail` 모달로 수정폼 추가하기,
 
 &nbsp;
 
 ## 11월18일
-팔로우기능, 꾸미기
+- 팔로우 기능 모달창에도 비동기 처리
+- `trade/detail` 거래완료 처리되면 찜하기, 쪽지 보내기 버튼 없애기
+- `trade/index` 거래완료 처리된 이미지 표시하고 리스트의 마지막에 쌓이도록 바꾸기
+- `base` 알림창 추가
+
+
+
+## 11월 19일
+
+- `AWS` 배포 (RDS, Beanstalk)
 
 &nbsp;
 
@@ -1048,7 +1065,7 @@ accounts/메세지함
 
 <details>
 <summary>1.셀레니움 비동기 pagenation 크롤링 이슈</summary>
-    
+​    
 
 다나와에서 제품 크롤링 시, pagenation에서의 비동기로 인해 다음페이지 url을 받아오지 못해 다음페이지의 제품리스트를 크롤링 할 수 없었다. 그래서 한 페이지에 대해서만 크롤링을 반복해서 수행하였다.
     
@@ -1061,7 +1078,7 @@ accounts/메세지함
 [WWW.PHPSCHOOL.COM](https://www.phpschool.com/gnuboard4/bbs/board.php?bo_table=qna_html&wr_id=168862)
     
 ### 해결 방법
-    
+
 다음 페이지로 넘어가는 해결법은 찾지 못했다. 다만, 다나와 사이트에서 의도적으로 크롤링을 막기위해, pagenav탭에서 a태그의 `href` 을 `href='#'` 으로 작성한 것으로 추측된다. `href='#'` 작성하면 a태그 클릭 시, 다음페이지로 넘어가지 못하고 최상단으로 올라가게 된다. 그래서 같은 페이지만 계속 반복하게 되고, 긁어오는 데이터가 반복될 수 밖에 없다.
 
 </details>
@@ -1115,7 +1132,7 @@ for specs in spec_table:
         #     connet = th.find_element(By.CSS_SELECTOR, '+td a').text
 print(brand, keys, connet)
 ```
-    
+
 다나와 사이트를 크롤링을 하면서 문제가 발생하였다.
 
 테이블 `tr` 에서 `th` 값을 찾은 다음, 형제 요소인 `td`를 찾아서 그에 대한 text 값을 찾으려고 했다.
