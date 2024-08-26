@@ -26,7 +26,6 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 - 💻**사용 기술**
   - ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white) Beautifulsoup4
 - ⭐**개발 역할 분담**
-  - 팀장: 하승찬/ 발표자: 유순일/ PPT 제작자: 박선영, 문재윤, 지현식
   - **백엔드**: 지현식, 하승찬, 유순일
   - **프론트엔드**: 박선영, 문재윤
 
@@ -37,7 +36,6 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 2. 브랜치 기능이름 앱이름/기능  
     - accounts/login 
 3. 하는 동안 팀원 모두 디스코드 화면공유 켜놓기
-4. 템플릿 css 단위는 웬만하면 px 사용 (이유: 나중에 제가 조금씩 고칠 경우가 있을 것으로 예상돼서)
 
 &nbsp;
 
