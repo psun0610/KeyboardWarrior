@@ -361,8 +361,6 @@ for sub_url in url_list:
 ### 참고 자료
 
 
-⭐컨트리뷰터: 7조 이태극⭐
-
 [XPATH란? 셀레니움(Sellenium) XPath로 쉽게 요소 선택하기!](https://aplab.tistory.com/entry/XPATH%EB%9E%80-%EC%85%80%EB%A0%88%EB%8B%88%EC%9B%80Sellenium-XPath%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%9A%94%EC%86%8C-%EC%84%A0%ED%83%9D%ED%95%98%EA%B8%B0)
 
 [XPath Contains, Following Sibling, Ancestor & Selenium AND/OR](https://www.guru99.com/using-contains-sbiling-ancestor-to-find-element-in-selenium.html)
@@ -556,8 +554,6 @@ django.core.serializers.base.DeserializationError: Problem installing fixture 'C
 잘 읽어 보니 `model`이라는 key가 없어서 어쩔 줄 몰라 하는 것 같았다.
 
 다시 구글링을 통해 JSON 파일을 만들어서 `loaddata` 하는 것을 찾아보니 JSON이 아래와 같은 형식으로 짜여있는 것을 볼 수 있었다.
-
-field
 
 `pk` 도 함께 넣은 사람들도 많았는데 pk는 넣든 안넣든 똑같은 결과가 나왔다.
 
@@ -1060,27 +1056,22 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 
 다나와에서 제품 크롤링 시, pagenation에서의 비동기로 인해 다음페이지 url을 받아오지 못해 다음페이지의 제품리스트를 크롤링 할 수 없었다. 그래서 한 페이지에 대해서만 크롤링을 반복해서 수행하였다.
     
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/93f02441-5339-45a7-abda-e8636cfcd34b/Untitled.png)
 
 [[Crawling] 다나와(danawa) 제품 리스트 크롤링](https://ysyblog.tistory.com/58)
     
 [[파이썬] selenium 크롤링, 데이터 수집 ID, TAG, href 찾기](https://hellodoor.tistory.com/148)
     
 [WWW.PHPSCHOOL.COM](https://www.phpschool.com/gnuboard4/bbs/board.php?bo_table=qna_html&wr_id=168862)
-    
+ </details>
+
 ### 해결 방법
 
 다음 페이지로 넘어가는 해결법은 찾지 못했다. 다만, 다나와 사이트에서 의도적으로 크롤링을 막기위해, pagenav탭에서 a태그의 `href` 을 `href='#'` 으로 작성한 것으로 추측된다. `href='#'` 작성하면 a태그 클릭 시, 다음페이지로 넘어가지 못하고 최상단으로 올라가게 된다. 그래서 같은 페이지만 계속 반복하게 되고, 긁어오는 데이터가 반복될 수 밖에 없다.
 
-</details>
+
 
 <details> 
 <summary>2.셀레니움 형제 요소 찾기 / 테이블 추출</summary>
-
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e34e86d4-083f-4f91-8f32-f9faa1320a7f/Untitled.png)
-    
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/802f6010-f75a-41a5-a653-d1405c354cb1/Untitled.png)
     
 ```python
 # url 리스트 만들기
@@ -1130,7 +1121,7 @@ print(brand, keys, connet)
 
 처음에는 `CSS_SELECTOR` 로 인접 형제 선택자인 `+td` 를 사용해보았는데 값을 찾지 못했다.
 
-두번째 시도는 `XPATH`를 이용했다. `following-sibling::*` 을 사용하였더니 요소 자체는 선택을 잘 했지만 print되는 값이 없었다. (아직 이 이유는 알 수 없음)
+두번째 시도는 `XPATH`를 이용했다. `following-sibling::*` 을 사용하였더니 요소 자체는 선택을 잘 했지만 print되는 값이 없었다.
 
 ### 참고 자료
 
@@ -1163,8 +1154,6 @@ for sub_url in url_list:
 
 해결 방법은 아주아주 간단했다😥 그냥 `table`의 `tbody` 자체에서 text를 뽑으면 되는 것이었다…
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1591e2f5-d884-4201-845a-068b02882dfb/Untitled.png)
-
 결과가 아주아주 잘 뽑히는 것을 볼 수 있었다 ㅠㅠ
 
 나는 원래 뽑을 때부터 내가 원하는 것만 뽑고 싶다는 생각으로 위와 같이 코드를 짰었는데
@@ -1175,8 +1164,6 @@ for sub_url in url_list:
 
 <details>
 <summary>3.KMP 알고리즘을 이용한 비속어 텍스트 찾기 이슈</summary>
-
-
 텍스트 내에 해당 문자열이 존재 유무 찾기에 대한 시간복잡도 이슈
 
 ### 해결 방법
@@ -1235,7 +1222,6 @@ KMP 알고리즘을 활용한 해결.
 저장한 `JSON` 파일은 검토 완료 후 DB에 넣는 작업인 `loaddata` 를 해줬다. 이렇게 하니 시간이 엄청나게 단축되었다. 다음에 크롤링 할 때에는 꼭 과정을 쪼개서 해봐야겠다.
 
 ### 참고 자료
-
 
 [코드공부방](https://code-study.tistory.com/58)
 
@@ -1505,7 +1491,6 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 
 
   ```python
-  # 오류구문메세지
   UnicodeEncodeError: 'latin-1' codec can't encode characters in position 202-203: ordinal not in range(256)
   C:\Users\82107\Desktop\키보드워리어\keyboard-warrior\articles\views.py changed, reloading.
   ```
@@ -1513,18 +1498,14 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
   발생 사례 - > 아이디가 한글로 들어갔을 때, 인코딩 오류가 발생 → 원인 (쿠키처리하며 `request.user` 를 넣으며 한글처리가 안되었음 )
 
   해결방법 -> `encode('utf8')` 메소드를 `request.user` 뒤에 붙여줘서 인코딩처리 바꿔주며 해결
+</details>
 
-  10.insertAdjacentHTML
-    ### 이슈 내용
-
-
+<details>
+<summary>10.insertAdjacentHTML</summary>
+### 이슈 내용
   자바스크립트 insertAdjacentHTML를 이용하여 html 구문을 넣었는데 뒤에 닫는 태그를 평소처럼 마지막에 연달아서 닫아버리니까 작동이 안됐다.
 
   닫는 `/div` 가 제대로 insert 되지 않았기 때문에 아래와 같이 구조가 깨졌다.
-
-  ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dca56929-e294-4a83-832e-09733f0dfa4a/Untitled.png)
-
-  ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/942b754c-ca88-412b-a490-8c2f3eb0681e/Untitled.png)
 
   ```jsx
   const comment_data = response.data.comment_data
@@ -1660,23 +1641,11 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 
   참고: view 에서는 img src를 보낼 때 문자열 처리를 해줘야함 만약에 안해주면 image field 객체라서 json에는 객체가 못들어가기 때문에 오류가 난다.
 
-
 </details>
 
 <details>
-
-
-<summary>10.찾는 요소가 없어서 에러가 뜰 때 무시하는 방법</summary>
-
-
-​      
-
-    ### 참고 자료
-  [Optional chaining (?.) - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
-
-  11.코드를 간결하게 하는 법 (classlist toggle, conditional operator)
-  [Element.classList - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
-
-  [Conditional (ternary) operator - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
-
+<summary>10. 찾는 요소가 없어서 에러가 뜰 때 무시하는 방법</summary>
+`obj.val?.prop` 으로 해결할 수 있다.
+참고자료: [Optional chaining (?.) - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 </details>
+

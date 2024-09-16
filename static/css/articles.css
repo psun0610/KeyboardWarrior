@@ -1,13 +1,14 @@
 /* 폰트 */
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-weight: 200, 400, 500, 600, 700;
   font-style: normal;
 }
 
 .kor-font {
-  font-family: 'Pretendard-Regular';
+  font-family: "Pretendard-Regular";
 }
 
 /* 모든 제목 */
@@ -19,16 +20,16 @@
   align-items: center;
   margin-bottom: 50px;
   margin-top: 100px;
-  font-weight: 900
+  font-weight: 900;
 }
 
-.my-head>h2 {
+.my-head > h2 {
   font-size: var(--head-size);
   font-weight: 900;
   margin-bottom: 4px;
 }
 
-.my-head>hr {
+.my-head > hr {
   height: 8px;
   width: 300px;
   background-color: rgb(0, 0, 0);
@@ -37,13 +38,12 @@
   opacity: 1;
 }
 
-.my-head>p {
+.my-head > p {
   font-size: 15px;
   margin: 0;
   font-weight: 200;
-  color: #666
+  color: #666;
 }
-
 
 /* base.html */
 a {
@@ -57,9 +57,9 @@ html {
 
 :root {
   --white-transparent: #ffffffc7;
-  --a-blue: #3786FB;
+  --a-blue: #3786fb;
   --my-black: #191919;
-  --my-red: #EE315E;
+  --my-red: #ee315e;
   --my-hover-gray: #e8e8e8;
   --my-gray: rgb(172, 172, 172);
 
@@ -81,16 +81,16 @@ html {
   position: sticky;
   top: 0;
   z-index: 10;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .my-nav:hover {
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background-color: white;
   background-color: var(--my-black);
 }
 
-.my-nav>div {
+.my-nav > div {
   max-width: 1420px;
   margin: 0 auto;
   height: 100%;
@@ -105,7 +105,7 @@ html {
   font-size: 18px;
   margin: 0 0 0 0.9vh;
   font-weight: 700;
-  color: white
+  color: white;
 }
 
 .my-nav-ul {
@@ -123,7 +123,7 @@ html {
   align-items: center;
 }
 
-.my-nav-div>div {
+.my-nav-div > div {
   display: flex;
   margin: 0 1.1719vw;
   align-items: center;
@@ -137,7 +137,7 @@ html {
 .all-today {
   margin-left: 20px;
 }
-.all-today>h5 {
+.all-today > h5 {
   font-size: 14px;
   font-weight: 200;
   color: white;
@@ -164,13 +164,13 @@ html {
   justify-content: center;
 }
 
-.articles-main1-div>h1 {
+.articles-main1-div > h1 {
   font-size: 25px;
   padding-right: 50px;
   margin-bottom: 10px;
 }
 
-.articles-main1-div>a {
+.articles-main1-div > a {
   padding-right: 50px;
 }
 
@@ -196,7 +196,7 @@ html {
   padding: 2.7344vw;
 }
 
-.articles-main2-div>h1 {
+.articles-main2-div > h1 {
   color: white;
   font-size: 25px;
   margin-bottom: 10px;
@@ -228,7 +228,7 @@ html {
   padding: 2.7344vw;
 }
 
-.articles-main3-div>h1 {
+.articles-main3-div > h1 {
   font-size: 25px;
   margin-bottom: 10px;
 }
@@ -244,26 +244,26 @@ html {
   color: rgb(0, 0, 0);
 }
 
-#recommend>h1 {
+#recommend > h1 {
   font-size: 25px;
   text-align: center;
   padding-top: 18vh;
   padding-bottom: 7vh;
 }
 
-#recommend>h2 {
+#recommend > h2 {
   font-size: 25px;
   text-align: center;
   padding-bottom: 40px;
 }
 
 .recommend-box {
-  width: 46.8750vw;
+  width: 46.875vw;
   margin: auto;
   display: flex;
 }
 
-#recommend>div {
+#recommend > div {
   padding: 50px 0;
 }
 
@@ -281,13 +281,13 @@ html {
   padding-left: 35px;
 }
 
-.recommend-box-img>img {
+.recommend-box-img > img {
   width: 100%;
   height: 20vw;
   object-fit: cover;
 }
 
-.recommend-box-img-2>img {
+.recommend-box-img-2 > img {
   width: 100%;
   height: 20vw;
   object-fit: cover;
@@ -309,24 +309,24 @@ html {
   padding-right: 35px;
 }
 
-.recommend-box-comment>h2 {
+.recommend-box-comment > h2 {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.recommend-box-comment-2>h2 {
+.recommend-box-comment-2 > h2 {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.recommend-box-comment>div {
+.recommend-box-comment > div {
   font-size: 17px;
   margin-bottom: 10px;
 }
 
-.recommend-box-comment-2>h2 {
+.recommend-box-comment-2 > h2 {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -357,7 +357,7 @@ footer {
   padding: 10px;
 }
 
-footer>div {
+footer > div {
   font-size: 16px;
   text-align: center;
 }
@@ -387,10 +387,10 @@ footer>div {
 /* nav open */
 .all-nav-open {
   padding: 45px 0 12px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.all-nav-open>div {
+.all-nav-open > div {
   text-align: center;
 }
 
@@ -400,21 +400,21 @@ footer>div {
   width: 20px;
   margin: 20px 0 12px 0;
   transform: rotate(180deg);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.all-nav-open>table {
+.all-nav-open > table {
   width: 1420px;
   margin: auto;
 }
 
-.all-nav-open>table th {
+.all-nav-open > table th {
   font-size: 16px;
   padding: 16px 30px;
   width: 20%;
 }
 
-.all-nav-radio>label {
+.all-nav-radio > label {
   font-size: 15px;
   padding: 5px 18px;
   border-radius: 2px;
@@ -422,13 +422,13 @@ footer>div {
 
 .all-nav-radio label:hover {
   background-color: #ffffff67;
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
-.all-nav-radio input[type=radio]:checked+label {
+.all-nav-radio input[type="radio"]:checked + label {
   background-color: var(--white-transparent);
   color: black;
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .all-nav-blank {
@@ -436,7 +436,8 @@ footer>div {
 }
 
 /* 컨테이너 사이즈 */
-@media all and (min-width:820px) and (max-width:1480px) {}
+@media all and (min-width: 820px) and (max-width: 1480px) {
+}
 
 .all-card-container {
   max-width: 1420px;
@@ -455,7 +456,7 @@ footer>div {
   justify-content: center;
 }
 
-.all-card>img {
+.all-card > img {
   width: 250px;
   height: 200px;
   object-fit: cover;
@@ -465,7 +466,7 @@ footer>div {
   width: 250px;
 }
 
-.all-card-h1-wrap>h1 {
+.all-card-h1-wrap > h1 {
   font-size: 17px;
   margin: 15px 0;
   font-weight: 700;
@@ -491,7 +492,7 @@ footer>div {
   position: relative;
 }
 
-.ad-card>img {
+.ad-card > img {
   width: 100%;
   height: 350px;
   object-fit: cover;
@@ -506,7 +507,7 @@ footer>div {
   padding: 20px 30px;
   visibility: hidden;
   opacity: 0;
-  transition: all .35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 
 .ad-card-context-hover {
@@ -517,7 +518,7 @@ footer>div {
   padding: 20px 30px;
   visibility: visible;
   opacity: 1;
-  transition: all .35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 
 .ad-card-context-h1 {
@@ -525,7 +526,6 @@ footer>div {
   font-weight: 700;
   margin-bottom: 5px;
 }
-
 
 /* ========================================================================================== */
 /* accounts:signup.html */
@@ -563,7 +563,7 @@ footer>div {
 .signup-userinfo-name-box {
   width: 500px;
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 .signupbox {
@@ -577,14 +577,13 @@ footer>div {
 }
 
 .signup-profile-img-label {
-  background: #F9FAFC;
+  background: #f9fafc;
   border-radius: 3px;
   width: 150px;
   height: 45px;
   text-align: center;
   display: flex;
   flex-direction: column;
-
 }
 
 .signup-profile-img-label:hover {
@@ -605,11 +604,9 @@ footer>div {
   display: flex;
   width: 100%;
   justify-content: space-between;
-
 }
 
-
-.select input[type='radio'] {
+.select input[type="radio"] {
   display: none;
 }
 
@@ -624,25 +621,24 @@ footer>div {
 }
 
 /* Checked */
-.select input[type=radio]:checked+label {
+.select input[type="radio"]:checked + label {
   background: rgba(128, 128, 128, 1);
   color: #fff;
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 /* Hover */
 .select label:hover {
   color: #666;
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 /* Disabled */
-.select input[type=radio]+label {
-  background: #F9FAFC;
+.select input[type="radio"] + label {
+  background: #f9fafc;
   color: #666;
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
-
 
 .select1 {
   display: flex;
@@ -650,8 +646,7 @@ footer>div {
   justify-content: space-between;
 }
 
-
-.select1 input[type='radio'] {
+.select1 input[type="radio"] {
   display: none;
 }
 
@@ -666,7 +661,7 @@ footer>div {
 }
 
 /* Checked */
-.select1 input[type=radio]:checked+label {
+.select1 input[type="radio"]:checked + label {
   background: rgba(128, 128, 128, 1);
   color: #fff;
 }
@@ -677,11 +672,10 @@ footer>div {
 }
 
 /* Disabled */
-.select1 input[type=radio]+label {
-  background: #F9FAFC;
+.select1 input[type="radio"] + label {
+  background: #f9fafc;
   color: #666;
 }
-
 
 .signup-btn {
   width: 500px;
@@ -690,7 +684,7 @@ footer>div {
   padding-top: 15px;
   padding-bottom: 15px;
   font-weight: 600;
-  color: #F9FAFC;
+  color: #f9fafc;
   border: 0px;
   border-radius: 3px;
 }
@@ -702,7 +696,7 @@ footer>div {
   padding-top: 15px;
   padding-bottom: 15px;
   font-weight: 600;
-  color: #F9FAFC;
+  color: #f9fafc;
   border: 0px;
   border-radius: 3px;
 }
@@ -714,7 +708,7 @@ footer>div {
   padding-top: 15px;
   padding-bottom: 15px;
   font-weight: 600;
-  color: #F9FAFC;
+  color: #f9fafc;
   border: 0px;
   border-radius: 3px;
 }
@@ -800,7 +794,7 @@ footer>div {
   border-radius: 50%;
   margin-bottom: 20px;
   box-shadow: 2px 2px 10px rgb(215, 215, 215);
-  transition: all .15s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 
 .detail-menu {
@@ -821,8 +815,7 @@ footer>div {
   color: var(--a-blue);
 }
 
-
-.form_radio_btn input[type=radio] {
+.form_radio_btn input[type="radio"] {
   display: none;
 }
 
@@ -835,7 +828,7 @@ footer>div {
 }
 
 /* Checked */
-.form_radio_btn input[type=radio]:checked+label {
+.form_radio_btn input[type="radio"]:checked + label {
   margin-bottom: 5px;
   font-weight: bolder;
   color: var(--a-blue);
@@ -849,7 +842,7 @@ footer>div {
 }
 
 /* Disabled */
-.form_radio_btn input[type=radio]+label {
+.form_radio_btn input[type="radio"] + label {
   margin-bottom: 5px;
   font-weight: normal;
   font-size: large;
@@ -869,7 +862,7 @@ footer>div {
 }
 
 .update-can:hover {
-  background: #3e3e3e
+  background: #3e3e3e;
 }
 
 .update-del {
@@ -881,10 +874,8 @@ footer>div {
 }
 
 .update-del:hover {
-  color: #EE315E;
+  color: #ee315e;
 }
-
-
 
 /* 리뷰 작성 css */
 .review-userinfo {
@@ -897,7 +888,6 @@ footer>div {
   height: 300px;
   display: flex;
 }
-
 
 .star {
   display: none;
@@ -926,8 +916,7 @@ footer>div {
   margin-bottom: 20px;
 }
 
-
-.star:checked~label {
+.star:checked ~ label {
   text-shadow: 0 0 0 #ffc802;
   border: white;
   /* 마우스 클릭 체크 */
@@ -939,12 +928,11 @@ footer>div {
   /* 마우스 호버 */
 }
 
-.starlabel:hover~label {
+.starlabel:hover ~ label {
   text-shadow: 0 0 0 #ffc802;
   border: white;
   /* 마우스 호버 뒤에오는 이모지들 */
 }
-
 
 .reviewcreate-user {
   display: flex;
@@ -966,9 +954,7 @@ footer>div {
   width: 700px;
   display: flex;
   margin: auto;
-
 }
-
 
 .reviewcreate-userinfo-box {
   border: 10px;
@@ -986,7 +972,7 @@ footer>div {
   font-weight: 600;
   text-align: center;
   line-height: 30px;
-  color: #FFF;
+  color: #fff;
   border-radius: 5px;
   transition: all 0.2s;
   background: #9c9c9c;
@@ -1005,11 +991,10 @@ footer>div {
   padding-top: 15px;
   padding-bottom: 15px;
   font-weight: 600;
-  color: #F9FAFC;
+  color: #f9fafc;
   border: 0px;
   border-radius: 3px;
 }
-
 
 /* 상품디테일 */
 #keyboard-star {
@@ -1030,7 +1015,7 @@ footer>div {
   flex-direction: column;
 }
 
-.keyboard-detail-img-wrap>.swiper {
+.keyboard-detail-img-wrap > .swiper {
   width: 100%;
 }
 
@@ -1043,8 +1028,7 @@ footer>div {
   object-fit: cover;
 }
 
-
-.keyboard-detail-thumbnail-wrap>img {
+.keyboard-detail-thumbnail-wrap > img {
   width: 100%;
   height: 80px;
   object-fit: cover;
@@ -1060,12 +1044,12 @@ footer>div {
   flex-direction: column;
 }
 
-.keyboard-detail-content>table tr {
+.keyboard-detail-content > table tr {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
 
-.keyboard-detail-content>table th {
+.keyboard-detail-content > table th {
   color: #333;
   width: 28%;
   font-weight: normal;
@@ -1073,7 +1057,7 @@ footer>div {
   padding: 3px 25px;
 }
 
-.keyboard-detail-content>table td {
+.keyboard-detail-content > table td {
   font-size: 14px;
   color: #333;
 }
@@ -1093,14 +1077,14 @@ footer>div {
   margin-bottom: 25px;
 }
 
-.keyboard-detail-mini-title>h2 {
+.keyboard-detail-mini-title > h2 {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 5px;
   margin-left: 25px;
 }
 
-.keyboard-detail-mini-title>a {
+.keyboard-detail-mini-title > a {
   margin-left: 25px;
   font-size: 15px;
 }
@@ -1115,7 +1099,7 @@ footer>div {
   width: 80%;
 }
 
-.keyboard-comment-box>div {
+.keyboard-comment-box > div {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -1145,7 +1129,7 @@ footer>div {
   padding-top: 15px;
   padding-bottom: 15px;
   font-weight: 600;
-  color: #F9FAFC;
+  color: #f9fafc;
   border: 0px;
   border-radius: 3px;
 }
@@ -1158,11 +1142,11 @@ footer>div {
   width: 500px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #57B04B;
+  background-color: #57b04b;
   padding-top: 12px;
   padding-bottom: 12px;
   font-weight: 600;
-  color: #F9FAFC;
+  color: #f9fafc;
   border: 0px;
   border-radius: 3px;
   text-align: center;
@@ -1192,7 +1176,6 @@ footer>div {
   width: 200px;
 }
 
-
 .icon-size {
   width: 30px;
   height: 30px;
@@ -1204,18 +1187,14 @@ footer>div {
   justify-content: space-between;
 }
 
-
-
 /* 서치 */
 
 .search-off {
   display: none;
-
 }
 
 .search-on {
   display: block;
-
 }
 
 .search-wrap {
@@ -1281,12 +1260,12 @@ footer>div {
   box-shadow: 2px 2px 10px 3px rgba(95, 95, 95, 0.166);
   opacity: 0;
   visibility: hidden;
-  transition: all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 #nav-window-btn:hover #nav-window {
   opacity: 1;
   visibility: visible;
-  transition: all .35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 .nav-profile-wrap {
   display: flex;
@@ -1297,7 +1276,7 @@ footer>div {
   display: flex;
   align-items: center;
 }
-.nav-profile>img {
+.nav-profile > img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -1310,7 +1289,7 @@ footer>div {
   display: flex;
   align-items: center;
 }
-.nav-profile h1>span {
+.nav-profile h1 > span {
   color: gray;
   font-size: 14px;
   font-weight: 400;
@@ -1331,7 +1310,7 @@ footer>div {
   display: flex;
   align-items: center;
 }
-.navv-profile>img {
+.navv-profile > img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
