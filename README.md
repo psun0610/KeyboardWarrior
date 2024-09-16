@@ -2,7 +2,9 @@
 
 > 키보드 중고 거래, 사용자 맞춤형 키보드 추천 서비스, 검색 서비스, 키보드 후기 제공 해주는 사이트
 
-http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/trade/index/
+~~http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/trade/index/~~
+
+➡️ 배포하였으나 현재는 운영비 문제로 서버가 닫혔습니다.
 
 ![logo](https://user-images.githubusercontent.com/97274144/203568268-5300330b-7be5-48c7-9d93-98cfc596ed82.jpg)
 
