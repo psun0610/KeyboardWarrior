@@ -1207,10 +1207,7 @@ KMP 알고리즘을 활용한 해결.
 
 
   ### 이슈 내용
-
-
-​    
-
+  
 처음에는 데이터 크롤링 할 때 데이터를 가져오고 정제하고 ORM으로 데이터를 삽입하는 것을 하나의 파이썬 파일 안에서 끝내는 것이 더 좋을 것이라고 생각했었다.
 
 비모쌤이 말씀해주셨는데 `JSON` 파일로 만든 후, 정제하고, 마지막에 쿼리문으로 데이터를 삽입하는 세 과정으로 나누어서 하면 시간을 더 효율적으로 쓸 수 있다고 하셨다.
@@ -1502,8 +1499,9 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 
 <details>
 <summary>10.insertAdjacentHTML</summary>
+	
 ### 이슈 내용
-  자바스크립트 insertAdjacentHTML를 이용하여 html 구문을 넣었는데 뒤에 닫는 태그를 평소처럼 마지막에 연달아서 닫아버리니까 작동이 안됐다.
+자바스크립트 insertAdjacentHTML를 이용하여 html 구문을 넣었는데 뒤에 닫는 태그를 평소처럼 마지막에 연달아서 닫아버리니까 작동이 안됐다.
 
   닫는 `/div` 가 제대로 insert 되지 않았기 때문에 아래와 같이 구조가 깨졌다.
 
@@ -1644,8 +1642,9 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 </details>
 
 <details>
-<summary>10. 찾는 요소가 없어서 에러가 뜰 때 무시하는 방법</summary>
-`obj.val?.prop` 으로 해결할 수 있다.
+<summary>11. 찾는 요소가 없어서 에러가 뜰 때 무시하는 방법</summary>
+	
+`obj.val?.prop` 으로 요소가 있을 때만 가져오게 하여 해결할 수 있다.
 참고자료: [Optional chaining (?.) - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 </details>
 
