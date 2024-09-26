@@ -1049,10 +1049,10 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 
 # 개발 이슈 정리
 
-
 <details>
-<summary>1.셀레니움 비동기 pagenation 크롤링 이슈</summary>
+<summary>셀레니움 비동기 pagenation 크롤링 이슈</summary>
 ​    
+
 
 다나와에서 제품 크롤링 시, pagenation에서의 비동기로 인해 다음페이지 url을 받아오지 못해 다음페이지의 제품리스트를 크롤링 할 수 없었다. 그래서 한 페이지에 대해서만 크롤링을 반복해서 수행하였다.
     
@@ -1062,17 +1062,19 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 [[파이썬] selenium 크롤링, 데이터 수집 ID, TAG, href 찾기](https://hellodoor.tistory.com/148)
     
 [WWW.PHPSCHOOL.COM](https://www.phpschool.com/gnuboard4/bbs/board.php?bo_table=qna_html&wr_id=168862)
- </details>
 
 ### 해결 방법
 
 다음 페이지로 넘어가는 해결법은 찾지 못했다. 다만, 다나와 사이트에서 의도적으로 크롤링을 막기위해, pagenav탭에서 a태그의 `href` 을 `href='#'` 으로 작성한 것으로 추측된다. `href='#'` 작성하면 a태그 클릭 시, 다음페이지로 넘어가지 못하고 최상단으로 올라가게 된다. 그래서 같은 페이지만 계속 반복하게 되고, 긁어오는 데이터가 반복될 수 밖에 없다.
 
+ </details>
+
 
 
 <details> 
-<summary>2.셀레니움 형제 요소 찾기 / 테이블 추출</summary>
-    
+<summary>셀레니움 형제 요소 찾기 / 테이블 추출</summary>
+
+
 ```python
 # url 리스트 만들기
 url_list = []
@@ -1161,55 +1163,13 @@ for sub_url in url_list:
 그렇게 하는 것도 좋긴 하지만 아예 문자열을 모두 가져와서 문자열을 조작하는 것이 더 쉬울 수도 있겠구나 생각했다
 
 </details>
-
-<details>
-<summary>3.KMP 알고리즘을 이용한 비속어 텍스트 찾기 이슈</summary>
-텍스트 내에 해당 문자열이 존재 유무 찾기에 대한 시간복잡도 이슈
-
-### 해결 방법
-❗ KMP 알고리즘으로 시간복잡도 이슈 해결
-
-
-```python
-def maketable(p):
-  table = [0] * len(p)
-  i = 0
-  for j in range(1, len(p)):
-    while i > 0 and p[i] != p[j]:
-      i = table[i - 1]
-    if p[i] == p[j]:
-      i += 1
-      table[j] = i
-  return table
-def KMP(p, t):
-  ans = []
-  table = maketable(p)
-
-  i = 0
-  for j in range(len(t)):
-    while i > 0 and p[i] != t[j]:
-      i = table[i - 1]
-    if p[i] == t[j]:
-      if i == len(p) - 1:
-        ans.append(j - len(p) + 2)
-        i = table[i]
-      else:
-        i += 1
-  return ans
-```
-
-KMP 알고리즘을 활용한 해결.
-</details>
     
-<details>
 
-<summary>4.크롤링 데이터 정제 작업 이슈</summary>
+<details>
+    <summary>크롤링 데이터 정제 작업 이슈</summary>
 
 
   ### 이슈 내용
-
-
-​    
 
 처음에는 데이터 크롤링 할 때 데이터를 가져오고 정제하고 ORM으로 데이터를 삽입하는 것을 하나의 파이썬 파일 안에서 끝내는 것이 더 좋을 것이라고 생각했었다.
 
@@ -1221,16 +1181,16 @@ KMP 알고리즘을 활용한 해결.
 
 저장한 `JSON` 파일은 검토 완료 후 DB에 넣는 작업인 `loaddata` 를 해줬다. 이렇게 하니 시간이 엄청나게 단축되었다. 다음에 크롤링 할 때에는 꼭 과정을 쪼개서 해봐야겠다.
 
+
+
 ### 참고 자료
 
 [코드공부방](https://code-study.tistory.com/58)
 
-
 </details>
 
 <details>
-
-<summary> 5.Django/SQLite DB에 크롤링한 데이터를 넣을 때 JSON 작성 형식</summary>
+    <summary>Django/SQLite DB에 크롤링한 데이터를 넣을 때 JSON 작성 형식</summary>
 
 
   ```json
@@ -1359,8 +1319,7 @@ field
 </details>
 
 <details>
-
-<summary> 6.JS를 통해 DIV태그  display조작 </summary>
+    <summary>JS를 통해 DIV태그  display조작 </summary>
 
 
 ​    
@@ -1411,12 +1370,10 @@ field
 
 위치를 명시한 곳이 정확한지 확인할 것 .
 
-
 </details>
 
 <details>
-
-<summary> 7. views.py에서 form.errors 와 views.create에서 키보드저장방법 </summary>
+    <summary>views.py에서 form.errors 와 views.create에서 키보드저장방법 </summary>
 
 
   폼 에러 확인법  →  print(review_form.errors) 
@@ -1466,28 +1423,10 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 
 </details>
 
-<details>
-
-
-<summary> 8.쿠키생성이슈</summary>
-
-
-  ### 이슈 내용
-
-  ❗ 쿠키 생성 하는 로직을 다시 되돌아보아서 문제점을 발견
-
-
-  쿠키생성할때 return값을 response로 주어야한다.
-
-
-​    
-
-</details>
 
 
 <details>
-
-<summary>9.인코딩오류 </summary>
+    <summary>인코딩오류 </summary>
 
 
   ```python
@@ -1501,9 +1440,11 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 </details>
 
 <details>
-<summary>10.insertAdjacentHTML</summary>
+<summary>insertAdjacentHTML</summary>
+
+
 ### 이슈 내용
-  자바스크립트 insertAdjacentHTML를 이용하여 html 구문을 넣었는데 뒤에 닫는 태그를 평소처럼 마지막에 연달아서 닫아버리니까 작동이 안됐다.
+자바스크립트 insertAdjacentHTML를 이용하여 html 구문을 넣었는데 뒤에 닫는 태그를 평소처럼 마지막에 연달아서 닫아버리니까 작동이 안됐다.
 
   닫는 `/div` 가 제대로 insert 되지 않았기 때문에 아래와 같이 구조가 깨졌다.
 
@@ -1637,15 +1578,8 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 
   문자열로 모든 html 문서를 만들어서 마지막에 한번만 `insertAdjacentHTML` 을 해준다.
 
-  댓글 삭제에도 같은 로직이 쓰이므로 함수로 만들어주면 편할 것 같은데 일단 시간 관계상 이렇게 해결했으니까 다른 것들을 다 한 후에 다시 해보기로 했다.
+  댓글 삭제에도 같은 로직이 쓰이므로 함수로 만들어주면 편할 것 같은데 일단 시간 관계상 이렇게 해결했다.
 
   참고: view 에서는 img src를 보낼 때 문자열 처리를 해줘야함 만약에 안해주면 image field 객체라서 json에는 객체가 못들어가기 때문에 오류가 난다.
 
 </details>
-
-<details>
-<summary>10. 찾는 요소가 없어서 에러가 뜰 때 무시하는 방법</summary>
-`obj.val?.prop` 으로 해결할 수 있다.
-참고자료: [Optional chaining (?.) - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
-</details>
-
