@@ -2,7 +2,9 @@
 
 > 키보드 중고 거래, 사용자 맞춤형 키보드 추천 서비스, 검색 서비스, 키보드 후기 제공 해주는 사이트
 
-http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/trade/index/
+~~http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/trade/index/~~
+
+➡️ 배포하였으나 현재는 운영비 문제로 서버가 닫혔습니다.
 
 ![logo](https://user-images.githubusercontent.com/97274144/203568268-5300330b-7be5-48c7-9d93-98cfc596ed82.jpg)
 
@@ -15,7 +17,6 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 <a href="https://github.com/psun0610"><img src="https://avatars.githubusercontent.com/u/97274144?v=4" style="border-radius:50%;" width="150" height="150"/></a>
 <a href="https://github.com/HYUNSIK-JI"><img src="https://avatars.githubusercontent.com/u/59475851?v=4" style="border-radius:50%;" width="150" height="150"/></a>
 </div>
-
 
 &nbsp;
 
@@ -30,16 +31,19 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
   - **프론트엔드**: 박선영, 문재윤
 
 &nbsp;
+
 - 프로젝트시 팀원들과의 규칙
-1. 커밋 메세지는 앱이름:개발내용  한글로 작성한다.
-    - articles: 메인 페이지 구현
-2. 브랜치 기능이름 앱이름/기능  
-    - accounts/login 
+
+1. 커밋 메세지는 앱이름:개발내용 한글로 작성한다.
+   - articles: 메인 페이지 구현
+2. 브랜치 기능이름 앱이름/기능
+   - accounts/login
 3. 하는 동안 팀원 모두 디스코드 화면공유 켜놓기
 
 &nbsp;
 
 # 모델 구조, ERD 작성
+
 ![키보드워리어 최종 ERD](https://user-images.githubusercontent.com/97111793/203498672-67c14351-a903-4e81-95e2-619f43b4203d.png)
 
 ## app별 모델
@@ -48,24 +52,26 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 <summary>accounts app</summary>
 
 **class User:**
- - naver_id = models.CharField(null=True, unique=True, max_length=100)
- - goo_id = models.CharField(null=True, unique=True, max_length=50)
- - followings = models.ManyToManyField("self", symmetrical=False, related_name="followers")
- - press = MultiSelectField(choices=Key_Press, null=True)
- - weight = MultiSelectField(choices=Weight, null=True)
- - array = MultiSelectField(choices=Array, null=True)
- - sound = MultiSelectField(choices=Sound, null=True)
- - rank = models.IntegerField(default=0)
- - connect = MultiSelectField(choices=connect, null=True)
- - image = ProcessedImageField(blank=True, processors=[Thumbnail(300, 300)], format="jpeg", options={"quality": 90})
- - is_social = models.IntegerField(default=0)
+
+- naver_id = models.CharField(null=True, unique=True, max_length=100)
+- goo_id = models.CharField(null=True, unique=True, max_length=50)
+- followings = models.ManyToManyField("self", symmetrical=False, related_name="followers")
+- press = MultiSelectField(choices=Key_Press, null=True)
+- weight = MultiSelectField(choices=Weight, null=True)
+- array = MultiSelectField(choices=Array, null=True)
+- sound = MultiSelectField(choices=Sound, null=True)
+- rank = models.IntegerField(default=0)
+- connect = MultiSelectField(choices=connect, null=True)
+- image = ProcessedImageField(blank=True, processors=[Thumbnail(300, 300)], format="jpeg", options={"quality": 90})
+- is_social = models.IntegerField(default=0)
 
 **class Notification:**
- - message = models.CharField(max_length=100)
- - check = models.BooleanField(default=False)
- - user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
- - category = models.CharField(max_length=10)
- - nid = models.IntegerField(default=0)
+
+- message = models.CharField(max_length=100)
+- check = models.BooleanField(default=False)
+- user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+- category = models.CharField(max_length=10)
+- nid = models.IntegerField(default=0)
 
 </details>
 
@@ -73,21 +79,23 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 <summary>articles app</summary>
 
 **class Keyboard:**
- - name = models.CharField(max_length=80, blank=True)
- - img = models.CharField(max_length=300, blank=True)
- - brand = models.CharField(max_length=50, blank=True)
- - connect = models.CharField(max_length=50, blank=True)
- - array = models.CharField(max_length=50, blank=True)
- - switch = models.CharField(max_length=50, blank=True)
- - key_switch = models.CharField(max_length=50, blank=True)
- - press = models.IntegerField(blank=True)
- - weight = models.CharField(max_length=50, blank=True)
- - kind = models.CharField(max_length=50, blank=True)
- - bluetooth = models.CharField(max_length=50, blank=True)
+
+- name = models.CharField(max_length=80, blank=True)
+- img = models.CharField(max_length=300, blank=True)
+- brand = models.CharField(max_length=50, blank=True)
+- connect = models.CharField(max_length=50, blank=True)
+- array = models.CharField(max_length=50, blank=True)
+- switch = models.CharField(max_length=50, blank=True)
+- key_switch = models.CharField(max_length=50, blank=True)
+- press = models.IntegerField(blank=True)
+- weight = models.CharField(max_length=50, blank=True)
+- kind = models.CharField(max_length=50, blank=True)
+- bluetooth = models.CharField(max_length=50, blank=True)
 
 **class Visit:**
- - visit_date = models.CharField(max_length=30)
- - visit_count = models.IntegerField(default=0)
+
+- visit_date = models.CharField(max_length=30)
+- visit_count = models.IntegerField(default=0)
 
 </details>
 
@@ -95,28 +103,31 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 <summary>reviews app</summary>
 
 **class Reviews:**
- - user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
- - title = models.CharField(max_length=80)
- - content = models.TextField(max_length=500)
- - grade = models.IntegerField(choices=grade_)
- - like_users = models.ManyToManyField(AUTH_USER_MODEL, related_name="like_review")
- - created_at = models.DateTimeField(auto_now_add=True)
- - updated_at = models.DateTimeField(auto_now=True)
- - hits = models.PositiveIntegerField(default=0, verbose_name="조회수")
- - bookmark_users = models.ManyToManyField(AUTH_USER_MODEL, related_name="bookmark_reivew")
- - keyboard = models.ForeignKey(Keyboard, on_delete=models.CASCADE)
+
+- user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+- title = models.CharField(max_length=80)
+- content = models.TextField(max_length=500)
+- grade = models.IntegerField(choices=grade\_)
+- like_users = models.ManyToManyField(AUTH_USER_MODEL, related_name="like_review")
+- created_at = models.DateTimeField(auto_now_add=True)
+- updated_at = models.DateTimeField(auto_now=True)
+- hits = models.PositiveIntegerField(default=0, verbose_name="조회수")
+- bookmark_users = models.ManyToManyField(AUTH_USER_MODEL, related_name="bookmark_reivew")
+- keyboard = models.ForeignKey(Keyboard, on_delete=models.CASCADE)
 
 **class Photo:**
- - review = models.ForeignKey(Review, on_delete=models.CASCADE)
- - image = models.ImageField(upload_to="images/", blank=True)
+
+- review = models.ForeignKey(Review, on_delete=models.CASCADE)
+- image = models.ImageField(upload_to="images/", blank=True)
 
 **class Comment:**
- - content = models.CharField(max_length=80)
- - user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
- - review = models.ForeignKey(Review, on_delete=models.CASCADE)
- - created_at = models.DateTimeField(auto_now_add=True)
- - updated_at = models.DateTimeField(auto_now=True)
- - like_users = models.ManyToManyField(AUTH_USER_MODEL, related_name="like_comment")
+
+- content = models.CharField(max_length=80)
+- user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+- review = models.ForeignKey(Review, on_delete=models.CASCADE)
+- created_at = models.DateTimeField(auto_now_add=True)
+- updated_at = models.DateTimeField(auto_now=True)
+- like_users = models.ManyToManyField(AUTH_USER_MODEL, related_name="like_comment")
 
 </details>
 
@@ -124,26 +135,29 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 <summary>trade app</summary>
 
 **class Trades:**
- - user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
-    Trade_type = models.IntegerField(choices=tradeType)
- - title = models.CharField(max_length=80)
- - content = models.TextField(max_length=500)
- - keyboard = models.ForeignKey(Keyboard, on_delete=models.CASCADE)
- - price = models.IntegerField(default=0)
- - marker = models.ManyToManyField(
-        AUTH_USER_MODEL, symmetrical=False, related_name="jjim"
-    )
- - status_type = models.IntegerField(choices=statusType, default=1)
+
+- user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+  Trade_type = models.IntegerField(choices=tradeType)
+- title = models.CharField(max_length=80)
+- content = models.TextField(max_length=500)
+- keyboard = models.ForeignKey(Keyboard, on_delete=models.CASCADE)
+- price = models.IntegerField(default=0)
+- marker = models.ManyToManyField(
+  AUTH_USER_MODEL, symmetrical=False, related_name="jjim"
+  )
+- status_type = models.IntegerField(choices=statusType, default=1)
 
 **class Photo:**
- - trade = models.ForeignKey(Trades, on_delete=models.CASCADE)
- - image = models.ImageField(upload_to="images/", blank=True)
+
+- trade = models.ForeignKey(Trades, on_delete=models.CASCADE)
+- image = models.ImageField(upload_to="images/", blank=True)
 
 **class Trade_Comment:**
- - user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
- - trade = models.ForeignKey(Trades, on_delete=models.CASCADE)
- - content = models.CharField(max_length=100)
- - create_at = models.DateTimeField(auto_now_add=True)
+
+- user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+- trade = models.ForeignKey(Trades, on_delete=models.CASCADE)
+- content = models.CharField(max_length=100)
+- create_at = models.DateTimeField(auto_now_add=True)
 
 </details>
 
@@ -158,13 +172,14 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 &nbsp;
 
 ## Articles/main
+
 - 게시글에 댓글이 달릴 때, 채팅이 올 때 알림 기능
 - 전체 방문자 수, 오늘 방문자 수 표시
-![articles_main(알림,방문자수)-min](https://user-images.githubusercontent.com/108650777/203498719-73da91bd-bc40-40d6-8747-ae6ee5819746.gif)
+  ![articles_main(알림,방문자수)-min](https://user-images.githubusercontent.com/108650777/203498719-73da91bd-bc40-40d6-8747-ae6ee5819746.gif)
 
 - 사용자 맞춤형 키보드 추천
   - 사용자가 회원가입시 입력한 정보를 기반으로 키보드를 추천하는 기능
-  ![키보드추천](https://user-images.githubusercontent.com/108650777/203497876-23d077cb-d4da-4428-8814-a0ae4e15485f.gif)
+    ![키보드추천](https://user-images.githubusercontent.com/108650777/203497876-23d077cb-d4da-4428-8814-a0ae4e15485f.gif)
 
 &nbsp;
 
@@ -173,15 +188,15 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 - 비동기 무한 스크롤
 - 비동기 키보드 필터링
 - 비동기 키보드 검색 기능
-![aritcles_all](https://user-images.githubusercontent.com/108650777/203497932-65b5749c-9ee2-4e11-8106-1d6f6586f04f.gif)
+  ![aritcles_all](https://user-images.githubusercontent.com/108650777/203497932-65b5749c-9ee2-4e11-8106-1d6f6586f04f.gif)
 
 &nbsp;
 
-## Articles/detail 
+## Articles/detail
 
 - 키보드 후기 평균 별점을 보여줌
 - 댓글 욕설 필터링
-![articles_detail (1)](https://user-images.githubusercontent.com/108650777/203498069-165cb150-b14a-46d0-bfe3-1b82496fff57.gif)
+  ![articles_detail (1)](https://user-images.githubusercontent.com/108650777/203498069-165cb150-b14a-46d0-bfe3-1b82496fff57.gif)
 
 &nbsp;
 
@@ -190,7 +205,7 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 - 키보드 이름, 리뷰 제목 검색 기능
 - 라디오 버튼을 통해 판매글만, 구매글만 선택 가능
 - 키보드, 판매글 검색
-![trade_index-min](https://user-images.githubusercontent.com/108650777/203499220-65e889b3-aa1b-4c54-8c31-dbc849b8a0ab.gif)
+  ![trade_index-min](https://user-images.githubusercontent.com/108650777/203499220-65e889b3-aa1b-4c54-8c31-dbc849b8a0ab.gif)
 
 &nbsp;
 
@@ -200,7 +215,7 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 - 비동기 댓글 생성 및 삭제
 - 게시글 사진 여러 장
 - 채팅 (비동기 채팅, DB저장)
-![trade_detail](https://user-images.githubusercontent.com/108650777/203499830-7b8cb0f3-20e4-4aae-9756-c8e91599d9c8.gif)
+  ![trade_detail](https://user-images.githubusercontent.com/108650777/203499830-7b8cb0f3-20e4-4aae-9756-c8e91599d9c8.gif)
 
 &nbsp;
 
@@ -213,12 +228,12 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 &nbsp;
 
 ## Reviews/index
+
 ![reviews_index](https://user-images.githubusercontent.com/108650777/203577486-0b31951a-fb44-4faf-bdb2-41a0ed6e4d18.gif)
 
 - 후기글, 키보드 검색 기능
 
 &nbsp;
-
 
 ## Reviews/detail
 
@@ -227,8 +242,6 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 - 비동기 댓글 좋아요
 - 댓글 욕설 필터링
   ![reviews_detail-min](https://user-images.githubusercontent.com/108650777/203500064-3c043c2a-af19-4d2b-83e8-d30cc648d101.gif)
-
-
 
 &nbsp;
 
@@ -253,6 +266,7 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 &nbsp;
 
 ## Accounts/detail
+
 - 라디오 버튼 메뉴
 - 컬렉션 모달로 띄움
 - 비동기 팔로우
@@ -269,23 +283,18 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 ![chat](https://user-images.githubusercontent.com/108650777/203498212-d7c228ae-2e7c-451d-827a-1697f541c8b7.gif)
 ![chat1](https://user-images.githubusercontent.com/108652767/203585681-b31a84b7-74b8-467a-9c0e-a65867313570.gif)
 
-
 13. 기타 중요기능
-알림기능
+    알림기능
 
-
-14. 이슈 
-
+14. 이슈
 
   <details>
 
 <summary>1.셀레니움 비동기 pagenation 크롤링 이슈</summary>
 
-  다나와에서 제품 크롤링 시, pagenation에서의 비동기로 인해 다음페이지 url을 받아오지 못해 다음페이지의 제품리스트를 크롤링 할 수 없었다. 그래서 한 페이지에 대해서만 크롤링을 반복해서 수행하였다.
+다나와에서 제품 크롤링 시, pagenation에서의 비동기로 인해 다음페이지 url을 받아오지 못해 다음페이지의 제품리스트를 크롤링 할 수 없었다. 그래서 한 페이지에 대해서만 크롤링을 반복해서 수행하였다.
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/93f02441-5339-45a7-abda-e8636cfcd34b/Untitled.png)
-
-
 
 [[Crawling] 다나와(danawa) 제품 리스트 크롤링](https://ysyblog.tistory.com/58)
 
@@ -295,14 +304,13 @@ http://keyboardwarriorbean-env.eba-uzmimep3.ap-northeast-2.elasticbeanstalk.com/
 
 ### 해결 방법
 
-  다음 페이지로 넘어가는 해결법은 찾지 못했다. 다만, 다나와 사이트에서 의도적으로 크롤링을 막기위해, pagenav탭에서 a태그의 `href` 을 `href='#'` 으로 작성한 것으로 추측된다. `href='#'` 작성하면 a태그 클릭 시, 다음페이지로 넘어가지 못하고 최상단으로 올라가게 된다. 그래서 같은 페이지만 계속 반복하게 되고, 긁어오는 데이터가 반복될 수 밖에 없다.
+다음 페이지로 넘어가는 해결법은 찾지 못했다. 다만, 다나와 사이트에서 의도적으로 크롤링을 막기위해, pagenav탭에서 a태그의 `href` 을 `href='#'` 으로 작성한 것으로 추측된다. `href='#'` 작성하면 a태그 클릭 시, 다음페이지로 넘어가지 못하고 최상단으로 올라가게 된다. 그래서 같은 페이지만 계속 반복하게 되고, 긁어오는 데이터가 반복될 수 밖에 없다.
+
 </details>
 
 <details>
 
 <summary>2.셀레니움 형제 요소 찾기 / 테이블 추출</summary>
-
-  
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e34e86d4-083f-4f91-8f32-f9faa1320a7f/Untitled.png)
 
@@ -333,7 +341,7 @@ for sub_url in url_list:
                 try:
                     # brand = th.find_element(By.CSS_SELECTOR, '+td').text
                     # brand = th.find_elements(By.CSS_SELECTOR, '~td').text
-                    
+
                     brand = th.find_element(By.XPATH, '/following-sibling::*').text
                 except:
                     brand = th.find_element(By.XPATH, '/following-sibling::*/a').text
@@ -359,7 +367,6 @@ for sub_url in url_list:
 두번째 시도는 `XPATH`를 이용했다. `following-sibling::*` 을 사용하였더니 요소 자체는 선택을 잘 했지만 print되는 값이 없었다. (아직 이 이유는 알 수 없음)
 
 ### 참고 자료
-
 
 [XPATH란? 셀레니움(Sellenium) XPath로 쉽게 요소 선택하기!](https://aplab.tistory.com/entry/XPATH%EB%9E%80-%EC%85%80%EB%A0%88%EB%8B%88%EC%9B%80Sellenium-XPath%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%9A%94%EC%86%8C-%EC%84%A0%ED%83%9D%ED%95%98%EA%B8%B0)
 
@@ -388,33 +395,27 @@ for sub_url in url_list:
     print(spec_table)
 ```
 
-  해결 방법은 아주아주 간단했다😥 그냥 `table`의 `tbody` 자체에서 text를 뽑으면 되는 것이었다…
+해결 방법은 아주아주 간단했다😥 그냥 `table`의 `tbody` 자체에서 text를 뽑으면 되는 것이었다…
 
-  ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1591e2f5-d884-4201-845a-068b02882dfb/Untitled.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1591e2f5-d884-4201-845a-068b02882dfb/Untitled.png)
 
-  결과가 아주아주 잘 뽑히는 것을 볼 수 있었다 ㅠㅠ
+결과가 아주아주 잘 뽑히는 것을 볼 수 있었다 ㅠㅠ
 
-  나는 원래 뽑을 때부터 내가 원하는 것만 뽑고 싶다는 생각으로 위와 같이 코드를 짰었는데
+나는 원래 뽑을 때부터 내가 원하는 것만 뽑고 싶다는 생각으로 위와 같이 코드를 짰었는데
 
-  그렇게 하는 것도 좋긴 하지만 아예 문자열을 모두 가져와서 문자열을 조작하는 것이 더 쉬울 수도 있겠구나 생각했다
+그렇게 하는 것도 좋긴 하지만 아예 문자열을 모두 가져와서 문자열을 조작하는 것이 더 쉬울 수도 있겠구나 생각했다
 
 </details>
-
-
 
 <details>
 
 <summary>3.KMP 알고리즘을 이용한 비속어 텍스트 찾기 이슈</summary>
 
+텍스트 내에 해당 문자열이 존재 유무 찾기에 대한 시간복잡도 이슈
 
-  텍스트 내에 해당 문자열이 존재 유무 찾기에 대한 시간복잡도 이슈
-
-
-  ### 해결 방법
+### 해결 방법
 
 ❗ KMP 알고리즘으로 시간복잡도 이슈 해결
-
-
 
 ```python
 
@@ -447,17 +448,13 @@ def KMP(p, t):
 
 KMP 알고리즘을 활용한 해결.
 
-
 </details>
 
 <details>
 
 <summary>4.크롤링 데이터 정제 작업 이슈</summary>
 
-
-  ### 이슈 내용
-
-
+### 이슈 내용
 
 처음에는 데이터 크롤링 할 때 데이터를 가져오고 정제하고 ORM으로 데이터를 삽입하는 것을 하나의 파이썬 파일 안에서 끝내는 것이 더 좋을 것이라고 생각했었다.
 
@@ -471,9 +468,7 @@ KMP 알고리즘을 활용한 해결.
 
 ### 참고 자료
 
-
 [코드공부방](https://code-study.tistory.com/58)
-
 
 </details>
 
@@ -481,35 +476,34 @@ KMP 알고리즘을 활용한 해결.
 
 <summary> 5.Django/SQLite DB에 크롤링한 데이터를 넣을 때 JSON 작성 형식</summary>
 
-
-  ```json
+```json
 [
-	{
-			"name": "레오폴드 FC980C 영문 화이트 (30g, 균등)",
-			"img": "https://img.danawa.com/prod_img/500000/167/670/img/7670167_1.jpg?shrink=500:500&_v=20200107112457",
-			"brand": "레오폴드",
-			"connect": "무접점(정전용량)",
-			"weight": "1100g",
-			"array": "98",
-			"switch": "Topre",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "기타"
-	},
-	{
-			"name": "레오폴드 FC980C 영문 블랙 (45g, 균등)",
-			"img": "https://img.danawa.com/prod_img/500000/741/875/img/4875741_1.jpg?shrink=500:500&_v=20200107111839",
-			"brand": "레오폴드",
-			"connect": "무접점(정전용량)",
-			"weight": "1100g",
-			"array": "98",
-			"switch": "Topre",
-			"key_switch": "기타",
-			"press": "기타",
-			"kind": "기타"
-	},
+  {
+    "name": "레오폴드 FC980C 영문 화이트 (30g, 균등)",
+    "img": "https://img.danawa.com/prod_img/500000/167/670/img/7670167_1.jpg?shrink=500:500&_v=20200107112457",
+    "brand": "레오폴드",
+    "connect": "무접점(정전용량)",
+    "weight": "1100g",
+    "array": "98",
+    "switch": "Topre",
+    "key_switch": "기타",
+    "press": "기타",
+    "kind": "기타"
+  },
+  {
+    "name": "레오폴드 FC980C 영문 블랙 (45g, 균등)",
+    "img": "https://img.danawa.com/prod_img/500000/741/875/img/4875741_1.jpg?shrink=500:500&_v=20200107111839",
+    "brand": "레오폴드",
+    "connect": "무접점(정전용량)",
+    "weight": "1100g",
+    "array": "98",
+    "switch": "Topre",
+    "key_switch": "기타",
+    "press": "기타",
+    "kind": "기타"
+  }
 ]
-  ```
+```
 
 처음에는 JSON 파일 형식을 위와 같이 필드만 넣은 리스트>딕셔너리 형식으로 넣었었다.
 
@@ -559,13 +553,11 @@ django.core.serializers.base.DeserializationError: Problem installing fixture 'C
 
 ### 참고 자료
 
-
 [](https://velog.io/@iris/JSON-%ED%8C%8C%EC%9D%BC%EC%9D%84-DB%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-with-Django-SQLite)
 
 [장고(Django) :: dumpdata와 loaddata를 활용해서 데이터 옮기기](https://realcoding.tistory.com/2)
 
 ### 해결 방법
-
 
 ```bash
 [
@@ -609,54 +601,57 @@ django.core.serializers.base.DeserializationError: Problem installing fixture 'C
 
 <summary> 6.JS를 통해 DIV태그  display조작 </summary>
 
-
-
-  ```jsx
+```jsx
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-  const search_input = document.querySelector('#search_input');
-  const search_box = document.querySelector('#search_box');
-  const input = document.createElement('input');
-  const side = document.querySelector('#side');
-  const box_open = false;
+const search_input = document.querySelector('#search_input');
+const search_box = document.querySelector('#search_box');
+const input = document.createElement('input');
+const side = document.querySelector('#side');
+const box_open = false;
 
-  search_input.addEventListener('click', function (event) {
-    console.log("검색클릭");
-    search_box.classList.remove('search-off');
-    search_box.classList.add('search-on');
-    const box_open = true;
-    console.log("검색 열림");
+search_input.addEventListener('click', function (event) {
+  console.log("검색클릭");
+  search_box.classList.remove('search-off');
+  search_box.classList.add('search-on');
+  const box_open = true;
+  console.log("검색 열림");
 
-  });
+});
 
-  document.addEventListener('click', function (e) {
-    console.log(e.target)
-    console.log(search_box.id)
-    if (box_open === true); {
-      if (e.target !== search_input) {
-        search_box.classList.remove('search-on');
-        search_box.classList.add('search-off');
-        console.log("검색디브 닫힘")
-      }
+document.addEventListener('click', function (e) {
+  console.log(e.target)
+  console.log(search_box.id)
+  if (box_open === true); {
+    if (e.target !== search_input) {
+      search_box.classList.remove('search-on');
+      search_box.classList.add('search-off');
+      console.log("검색디브 닫힘")
     }
-  });
-  ```
+  }
+});
+```
 
 ```html
-<input id="search_input" class="form-control me-2" name="search" type="search" placeholder="Search"
-      aria-label="Search">
-    <!-- <input창> -->
-    <div class="search-off search-div " id="search_box" >
-      <!-- 여기가 제품 검색 결과 나오는 디브  -->
-    </div>
+<input
+  id="search_input"
+  class="form-control me-2"
+  name="search"
+  type="search"
+  placeholder="Search"
+  aria-label="Search"
+/>
+<!-- <input창> -->
+<div class="search-off search-div " id="search_box">
+  <!-- 여기가 제품 검색 결과 나오는 디브  -->
+</div>
 ```
 
 스크립트 변수 명에 넣은 ID의 위치를 잘 확인 할 것.
 
-`search_box`  div와  `search_input` input창의 고유값은 각각 다름 같은 디브로 묶어주거나
+`search_box` div와 `search_input` input창의 고유값은 각각 다름 같은 디브로 묶어주거나
 
 위치를 명시한 곳이 정확한지 확인할 것 .
-
 
 </details>
 
@@ -664,14 +659,12 @@ django.core.serializers.base.DeserializationError: Problem installing fixture 'C
 
 <summary> 7. views.py에서 form.errors 와 views.create에서 키보드저장방법 </summary>
 
+폼 에러 확인법 → print(review_form.errors)
 
-  폼 에러 확인법  →  print(review_form.errors) 
-
-form 뒤에 errors를 찍어서 오류 찾기 
+form 뒤에 errors를 찍어서 오류 찾기
 
 ```html
-review_form = ReviewForm()
-    print(review_form.errors)
+review_form = ReviewForm() print(review_form.errors)
 ```
 
 ```
@@ -698,229 +691,210 @@ def create(request):
     return render(request, "reviews/create.html", context)
 ```
 
-필드에 설정했지만, 값을 미리 받지 않음 
+필드에 설정했지만, 값을 미리 받지 않음
 
 발단
 
-form.py → forms 필드에 테이블을 지정해서 폼을 보낼 때 값을 받아온다고 지정해놔서 오류 발생 
+form.py → forms 필드에 테이블을 지정해서 폼을 보낼 때 값을 받아온다고 지정해놔서 오류 발생
 
 원인
 
-save(commit=false)를 하고 값을 나중에 넣어줘서 오류가 났음 
+save(commit=false)를 하고 값을 나중에 넣어줘서 오류가 났음
 
-forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
+forms.py → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 
 </details>
 
 <details>
 
-
 <summary> 8.쿠키생성이슈</summary>
 
+### 이슈 내용
 
-  ### 이슈 내용
+❗ 쿠키 생성 하는 로직을 다시 되돌아보아서 문제점을 발견
 
-  ❗ 쿠키 생성 하는 로직을 다시 되돌아보아서 문제점을 발견
-
-
-  쿠키생성할때 return값을 response로 주어야한다.
-
-
+쿠키생성할때 return값을 response로 주어야한다.
 
 </details>
-
 
 <details>
 
 <summary>9.인코딩오류 </summary>
 
+```python
+# 오류구문메세지
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 202-203: ordinal not in range(256)
+C:\Users\82107\Desktop\키보드워리어\keyboard-warrior\articles\views.py changed, reloading.
+```
 
-  ```python
-  # 오류구문메세지
-  UnicodeEncodeError: 'latin-1' codec can't encode characters in position 202-203: ordinal not in range(256)
-  C:\Users\82107\Desktop\키보드워리어\keyboard-warrior\articles\views.py changed, reloading.
-  ```
+발생 사례 - > 아이디가 한글로 들어갔을 때, 인코딩 오류가 발생 → 원인 (쿠키처리하며 `request.user` 를 넣으며 한글처리가 안되었음 )
 
-  발생 사례 - > 아이디가 한글로 들어갔을 때, 인코딩 오류가 발생 → 원인 (쿠키처리하며 `request.user` 를 넣으며 한글처리가 안되었음 )
+해결방법 -> `encode('utf8')` 메소드를 `request.user` 뒤에 붙여줘서 인코딩처리 바꿔주며 해결
 
-  해결방법 -> `encode('utf8')` 메소드를 `request.user` 뒤에 붙여줘서 인코딩처리 바꿔주며 해결
+10.insertAdjacentHTML ### 이슈 내용
 
-  10.insertAdjacentHTML
-    ### 이슈 내용
+자바스크립트 insertAdjacentHTML를 이용하여 html 구문을 넣었는데 뒤에 닫는 태그를 평소처럼 마지막에 연달아서 닫아버리니까 작동이 안됐다.
 
+닫는 `/div` 가 제대로 insert 되지 않았기 때문에 아래와 같이 구조가 깨졌다.
 
-  자바스크립트 insertAdjacentHTML를 이용하여 html 구문을 넣었는데 뒤에 닫는 태그를 평소처럼 마지막에 연달아서 닫아버리니까 작동이 안됐다.
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dca56929-e294-4a83-832e-09733f0dfa4a/Untitled.png)
 
-  닫는 `/div` 가 제대로 insert 되지 않았기 때문에 아래와 같이 구조가 깨졌다.
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/942b754c-ca88-412b-a490-8c2f3eb0681e/Untitled.png)
 
-  ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dca56929-e294-4a83-832e-09733f0dfa4a/Untitled.png)
-
-  ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/942b754c-ca88-412b-a490-8c2f3eb0681e/Untitled.png)
-
-  ```jsx
-  const comment_data = response.data.comment_data
-                  const user = response.data.user
-                  for (let i = 0; i < comment_data.length; i++) {
-                    const review_pk = response.data.review_pk
-                    console.log(comment_data[i].id, user)
-                    comments.insertAdjacentHTML('beforeend', `
-                      <div class="comment">
-                        <div class="keyboard-comment">`);
-                    // 기본 계정이면
-                    if(comment_data[i].image) {
-                      if(comment_data[i].is_social === 0) {
-                        document.querySelector('.keyboard-comment').insertAdjacentHTML('beforeend', `
-                        <a href="/accounts/${comment_data[i].id}/detail">
-                          <img class="comment-profile-img" src="/media/${comment_data[i].image}">
-                        </a>
-                        `);
-                      }
-                      // 소셜 로그인 계정이면
-                      else {
-                        document.querySelector('.keyboard-comment').insertAdjacentHTML('beforeend', `
-                        <a href="/accounts/${comment_data[i].id}/detail">
-                          <img class="comment-profile-img" src="${comment_data[i].image}">
-                        </a>
-                        `);
-                      }
+```jsx
+const comment_data = response.data.comment_data
+                const user = response.data.user
+                for (let i = 0; i < comment_data.length; i++) {
+                  const review_pk = response.data.review_pk
+                  console.log(comment_data[i].id, user)
+                  comments.insertAdjacentHTML('beforeend', `
+                    <div class="comment">
+                      <div class="keyboard-comment">`);
+                  // 기본 계정이면
+                  if(comment_data[i].image) {
+                    if(comment_data[i].is_social === 0) {
+                      document.querySelector('.keyboard-comment').insertAdjacentHTML('beforeend', `
+                      <a href="/accounts/${comment_data[i].id}/detail">
+                        <img class="comment-profile-img" src="/media/${comment_data[i].image}">
+                      </a>
+                      `);
                     }
+                    // 소셜 로그인 계정이면
                     else {
                       document.querySelector('.keyboard-comment').insertAdjacentHTML('beforeend', `
                       <a href="/accounts/${comment_data[i].id}/detail">
-                        <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
+                        <img class="comment-profile-img" src="${comment_data[i].image}">
                       </a>
                       `);
                     }
+                  }
+                  else {
                     document.querySelector('.keyboard-comment').insertAdjacentHTML('beforeend', `
-                    <div class="keyboard-comment-box">
-                      <a href="/accounts/${comment_data[i].id}/detail">
-                        <p class="keyboard-comment-user">${comment_data[i].userName}</p>
-                      </a>
+                    <a href="/accounts/${comment_data[i].id}/detail">
+                      <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
+                    </a>
                     `);
-                    // 내가 좋아요를 누른 댓글이면
-                    if(comment_data[i].islike) {
-                      document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
-                        <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="${comment_data[i].id}" id="commentlike"></i>
-                      `);
-                    }
-                    else {
-                      document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
-                        <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="${comment_data[i].id}" id="commentlike"></i>
-                      `);
-                    }
-                    // 내가 댓글 작성자면
-                    if(user === comment_data[i].id) {
-                      document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
-                      <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].id}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="${comment_data[i].id}">삭제</button>
-                      `)
-                    }
+                  }
+                  document.querySelector('.keyboard-comment').insertAdjacentHTML('beforeend', `
+                  <div class="keyboard-comment-box">
+                    <a href="/accounts/${comment_data[i].id}/detail">
+                      <p class="keyboard-comment-user">${comment_data[i].userName}</p>
+                    </a>
+                  `);
+                  // 내가 좋아요를 누른 댓글이면
+                  if(comment_data[i].islike) {
                     document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
-                    <div>${comment_data[i].content}</div>
-                      </div>
-                    </div>
-                    </div>
+                      <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="${comment_data[i].id}" id="commentlike"></i>
+                    `);
+                  }
+                  else {
+                    document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
+                      <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="${comment_data[i].id}" id="commentlike"></i>
+                    `);
+                  }
+                  // 내가 댓글 작성자면
+                  if(user === comment_data[i].id) {
+                    document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
+                    <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].id}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="${comment_data[i].id}">삭제</button>
                     `)
-                  } commentForm.reset()
-              }).catch(console.log(1))
-          })
-  ```
+                  }
+                  document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
+                  <div>${comment_data[i].content}</div>
+                    </div>
+                  </div>
+                  </div>
+                  `)
+                } commentForm.reset()
+            }).catch(console.log(1))
+        })
+```
 
-  ### 참고 자료
+### 참고 자료
 
-  [Consolidate Duplicate Conditional Fragments](https://refactoring.guru/ko/consolidate-duplicate-conditional-fragments)
+[Consolidate Duplicate Conditional Fragments](https://refactoring.guru/ko/consolidate-duplicate-conditional-fragments)
 
-  [Extract Variable](https://refactoring.guru/ko/extract-variable)
+[Extract Variable](https://refactoring.guru/ko/extract-variable)
 
-  ### 해결 방법
+### 해결 방법
 
-  ```jsx
-      // 프로필 이미지
-      let profile_src = "";
-      if (comment_data[i].image) {
-        if (comment_data[i].is_social === 0) {
-          profile_src = `/media/${comment_data[i].image}`;
-        }
-        else {
-          profile_src = `${comment_data[i].image}`;
-        }
-      }
-      else {
-        profile_src = `{% static 'images/logo_png.png' %}`;
-      }
+```jsx
+// 프로필 이미지
+let profile_src = "";
+if (comment_data[i].image) {
+  if (comment_data[i].is_social === 0) {
+    profile_src = `/media/${comment_data[i].image}`;
+  } else {
+    profile_src = `${comment_data[i].image}`;
+  }
+} else {
+  profile_src = `{% static 'images/logo_png.png' %}`;
+}
 
-      // 내가 좋아요를 누른 댓글이면
-      let like = "";
-      if (comment_data[i].islike) {
-        like = "bi-heart-fill";
-      }
-      else {
-        like = "bi-heart";
-      }
+// 내가 좋아요를 누른 댓글이면
+let like = "";
+if (comment_data[i].islike) {
+  like = "bi-heart-fill";
+} else {
+  like = "bi-heart";
+}
 
-      // 내가 댓글 작성자면
-      let writer = "";
-      if(user === comment_data[i].id) {
-        writer = `<button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-{{ comment.pk }}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="{{ comment.pk }}">삭제</button>`
-      }
+// 내가 댓글 작성자면
+let writer = "";
+if (user === comment_data[i].id) {
+  writer = `<button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-{{ comment.pk }}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="{{ comment.pk }}">삭제</button>`;
+}
 
-      let html = `
-        <div class="comment">
-          <div class="keyboard-comment">
-        
-            <a href="/accounts/${comment_data[i].id}/detail">
-            <img class="comment-profile-img" src="${profile_src}">
+let html = `
+      <div class="comment">
+        <div class="keyboard-comment">
+      
+          <a href="/accounts/${comment_data[i].id}/detail">
+          <img class="comment-profile-img" src="${profile_src}">
+        </a>
+        <div class="keyboard-comment-box">
+          <a href="/accounts/${comment_data[i].id}/detail">
+            <p class="keyboard-comment-user">${comment_data[i].userName}</p>
           </a>
-          <div class="keyboard-comment-box">
-            <a href="/accounts/${comment_data[i].id}/detail">
-              <p class="keyboard-comment-user">${comment_data[i].userName}</p>
-            </a>
-            <i class="bi ${like}" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="{{ comment.pk }}" id="commentlike"></i>
-            ${writer}
-            <div>${comment_data[i].content}</div>
-          </div>
+          <i class="bi ${like}" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="{{ comment.pk }}" id="commentlike"></i>
+          ${writer}
+          <div>${comment_data[i].content}</div>
         </div>
-      </div>`
-      document.querySelector('#comments').insertAdjacentHTML('beforeend', `${html}`)
-  ```
+      </div>
+    </div>`;
+document.querySelector("#comments").insertAdjacentHTML("beforeend", `${html}`);
+```
 
-  if 문으로 분기해서 달라지는 부분만 변수로 처리해주고,
+if 문으로 분기해서 달라지는 부분만 변수로 처리해주고,
 
-  문자열로 모든 html 문서를 만들어서 마지막에 한번만 `insertAdjacentHTML` 을 해준다.
+문자열로 모든 html 문서를 만들어서 마지막에 한번만 `insertAdjacentHTML` 을 해준다.
 
-  댓글 삭제에도 같은 로직이 쓰이므로 함수로 만들어주면 편할 것 같은데 일단 시간 관계상 이렇게 해결했으니까 다른 것들을 다 한 후에 다시 해보기로 했다.
+댓글 삭제에도 같은 로직이 쓰이므로 함수로 만들어주면 편할 것 같은데 일단 시간 관계상 이렇게 해결했으니까 다른 것들을 다 한 후에 다시 해보기로 했다.
 
-  참고: view 에서는 img src를 보낼 때 문자열 처리를 해줘야함 만약에 안해주면 image field 객체라서 json에는 객체가 못들어가기 때문에 오류가 난다.
-
+참고: view 에서는 img src를 보낼 때 문자열 처리를 해줘야함 만약에 안해주면 image field 객체라서 json에는 객체가 못들어가기 때문에 오류가 난다.
 
 </details>
 
 <details>
 
-
 <summary>10.찾는 요소가 없어서 에러가 뜰 때 무시하는 방법</summary>
 
-  
+### 참고 자료
 
-   ### 참고 자료
-  [Optional chaining (?.) - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+[Optional chaining (?.) - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 
-  11.코드를 간결하게 하는 법 (classlist toggle, conditional operator)
-  [Element.classList - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+11.코드를 간결하게 하는 법 (classlist toggle, conditional operator)
+[Element.classList - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
 
-  [Conditional (ternary) operator - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+[Conditional (ternary) operator - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
 
 </details>
-
-
-
-  
-
 
 &nbsp;
 
 # 칸반보드
 
 ## 11월8일
+
 - 기획안 작성
 - 모델 생성
 - 피그마 작성
@@ -928,6 +902,7 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 &nbsp;
 
 ## 11월9일
+
 - Django 기본 세팅
 - ERD 작성
 - 피그마 작성
@@ -935,6 +910,7 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 &nbsp;
 
 ## 11월10일
+
 - 피그마 완성
 - 다나와 사이트 데이터 크롤링
 - 크롤링 데이터 정제 작업
@@ -952,6 +928,7 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 &nbsp;
 
 ## 11월11일
+
 - `accounts/deatail.html`
 - `reviews/create.html`
 - `articles/all.html` 구조 및 애니메이션 넣기
@@ -963,6 +940,7 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 &nbsp;
 
 ## 11월12일
+
 - `reviews`, `trade` 댓글 욕설, 비속어 필터링
 - `reviews/create`,`trade/create` 다중 이미지
 - `main`페이지 오늘 방문자 수 및 누적 방문자수 완료
@@ -971,6 +949,7 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 &nbsp;
 
 ## 11월13일
+
 - `accounts/login` 소셜로그인 구현
 
 - 전체 방문자 수, 오늘 방문자 수 구현
@@ -987,8 +966,8 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 
 &nbsp;
 
-
 ## 11월14일
+
 - `trade/create` 폼 작성
 - `keyboard_search_fix`
 - `trade/index` 페이지 완성
@@ -997,6 +976,7 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 &nbsp;
 
 ## 11월15일
+
 - `trade/index` 라디오 동작시키기
 - `reviews/index` 페이지
 - `articles/all` 애니메이션 수정하기
@@ -1011,6 +991,7 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 &nbsp;
 
 ## 11월16일
+
 - `articles/all` 검색 기능
 - `articles/all` 광고 비동기 (리스트에 여러 개 넣어서 랜덤으로 광고 나오게)
 - `trade`, `reviews` 검색 기능 구현
@@ -1022,6 +1003,7 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 &nbsp;
 
 ## 11월17일
+
 - `accounts` 메세지함
 - `reviews/detail` 거래 게시글 수정
 - `accounts/login` 로그인 폼 변경
@@ -1032,12 +1014,11 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 &nbsp;
 
 ## 11월18일
+
 - 팔로우 기능 모달창에도 비동기 처리
 - `trade/detail` 거래완료 처리되면 찜하기, 쪽지 보내기 버튼 없애기
 - `trade/index` 거래완료 처리된 이미지 표시하고 리스트의 마지막에 쌓이도록 바꾸기
 - `base` 알림창 추가
-
-
 
 ## 11월 19일
 
@@ -1045,22 +1026,18 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 
 &nbsp;
 
-
-
 # 개발 이슈 정리
 
 <details>
 <summary>셀레니움 비동기 pagenation 크롤링 이슈</summary>
-​    
-
+​
 
 다나와에서 제품 크롤링 시, pagenation에서의 비동기로 인해 다음페이지 url을 받아오지 못해 다음페이지의 제품리스트를 크롤링 할 수 없었다. 그래서 한 페이지에 대해서만 크롤링을 반복해서 수행하였다.
-    
 
 [[Crawling] 다나와(danawa) 제품 리스트 크롤링](https://ysyblog.tistory.com/58)
-    
+
 [[파이썬] selenium 크롤링, 데이터 수집 ID, TAG, href 찾기](https://hellodoor.tistory.com/148)
-    
+
 [WWW.PHPSCHOOL.COM](https://www.phpschool.com/gnuboard4/bbs/board.php?bo_table=qna_html&wr_id=168862)
 
 ### 해결 방법
@@ -1069,11 +1046,8 @@ forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 
  </details>
 
-
-
 <details> 
 <summary>셀레니움 형제 요소 찾기 / 테이블 추출</summary>
-
 
 ```python
 # url 리스트 만들기
@@ -1100,7 +1074,7 @@ for specs in spec_table:
             try:
                 # brand = th.find_element(By.CSS_SELECTOR, '+td').text
                 # brand = th.find_elements(By.CSS_SELECTOR, '~td').text
-                
+
                 brand = th.find_element(By.XPATH, '/following-sibling::*').text
             except:
                 brand = th.find_element(By.XPATH, '/following-sibling::*/a').text
@@ -1163,13 +1137,12 @@ for sub_url in url_list:
 그렇게 하는 것도 좋긴 하지만 아예 문자열을 모두 가져와서 문자열을 조작하는 것이 더 쉬울 수도 있겠구나 생각했다
 
 </details>
-    
+
 
 <details>
     <summary>크롤링 데이터 정제 작업 이슈</summary>
 
-
-  ### 이슈 내용
+### 이슈 내용
 
 처음에는 데이터 크롤링 할 때 데이터를 가져오고 정제하고 ORM으로 데이터를 삽입하는 것을 하나의 파이썬 파일 안에서 끝내는 것이 더 좋을 것이라고 생각했었다.
 
@@ -1181,8 +1154,6 @@ for sub_url in url_list:
 
 저장한 `JSON` 파일은 검토 완료 후 DB에 넣는 작업인 `loaddata` 를 해줬다. 이렇게 하니 시간이 엄청나게 단축되었다. 다음에 크롤링 할 때에는 꼭 과정을 쪼개서 해봐야겠다.
 
-
-
 ### 참고 자료
 
 [코드공부방](https://code-study.tistory.com/58)
@@ -1192,35 +1163,34 @@ for sub_url in url_list:
 <details>
     <summary>Django/SQLite DB에 크롤링한 데이터를 넣을 때 JSON 작성 형식</summary>
 
-
-  ```json
+```json
 [
   {
-      "name": "레오폴드 FC980C 영문 화이트 (30g, 균등)",
-      "img": "https://img.danawa.com/prod_img/500000/167/670/img/7670167_1.jpg?shrink=500:500&_v=20200107112457",
-      "brand": "레오폴드",
-      "connect": "무접점(정전용량)",
-      "weight": "1100g",
-      "array": "98",
-      "switch": "Topre",
-      "key_switch": "기타",
-      "press": "기타",
-      "kind": "기타"
+    "name": "레오폴드 FC980C 영문 화이트 (30g, 균등)",
+    "img": "https://img.danawa.com/prod_img/500000/167/670/img/7670167_1.jpg?shrink=500:500&_v=20200107112457",
+    "brand": "레오폴드",
+    "connect": "무접점(정전용량)",
+    "weight": "1100g",
+    "array": "98",
+    "switch": "Topre",
+    "key_switch": "기타",
+    "press": "기타",
+    "kind": "기타"
   },
   {
-      "name": "레오폴드 FC980C 영문 블랙 (45g, 균등)",
-      "img": "https://img.danawa.com/prod_img/500000/741/875/img/4875741_1.jpg?shrink=500:500&_v=20200107111839",
-      "brand": "레오폴드",
-      "connect": "무접점(정전용량)",
-      "weight": "1100g",
-      "array": "98",
-      "switch": "Topre",
-      "key_switch": "기타",
-      "press": "기타",
-      "kind": "기타"
-  },
+    "name": "레오폴드 FC980C 영문 블랙 (45g, 균등)",
+    "img": "https://img.danawa.com/prod_img/500000/741/875/img/4875741_1.jpg?shrink=500:500&_v=20200107111839",
+    "brand": "레오폴드",
+    "connect": "무접점(정전용량)",
+    "weight": "1100g",
+    "array": "98",
+    "switch": "Topre",
+    "key_switch": "기타",
+    "press": "기타",
+    "kind": "기타"
+  }
 ]
-  ```
+```
 
 처음에는 JSON 파일 형식을 위와 같이 필드만 넣은 리스트>딕셔너리 형식으로 넣었었다.
 
@@ -1272,13 +1242,11 @@ field
 
 ### 참고 자료
 
-
 [](https://velog.io/@iris/JSON-%ED%8C%8C%EC%9D%BC%EC%9D%84-DB%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-with-Django-SQLite)
 
 [장고(Django) :: dumpdata와 loaddata를 활용해서 데이터 옮기기](https://realcoding.tistory.com/2)
 
 ### 해결 방법
-
 
 ```bash
 [
@@ -1321,52 +1289,57 @@ field
 <details>
     <summary>JS를 통해 DIV태그  display조작 </summary>
 
+​
 
-​    
-
-  ```jsx
+```jsx
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-  const search_input = document.querySelector('#search_input');
-  const search_box = document.querySelector('#search_box');
-  const input = document.createElement('input');
-  const side = document.querySelector('#side');
-  const box_open = false;
+const search_input = document.querySelector('#search_input');
+const search_box = document.querySelector('#search_box');
+const input = document.createElement('input');
+const side = document.querySelector('#side');
+const box_open = false;
 
-  search_input.addEventListener('click', function (event) {
-    console.log("검색클릭");
-    search_box.classList.remove('search-off');
-    search_box.classList.add('search-on');
-    const box_open = true;
-    console.log("검색 열림");
+search_input.addEventListener('click', function (event) {
+  console.log("검색클릭");
+  search_box.classList.remove('search-off');
+  search_box.classList.add('search-on');
+  const box_open = true;
+  console.log("검색 열림");
 
-  });
+});
 
-  document.addEventListener('click', function (e) {
-    console.log(e.target)
-    console.log(search_box.id)
-    if (box_open === true); {
-      if (e.target !== search_input) {
-        search_box.classList.remove('search-on');
-        search_box.classList.add('search-off');
-        console.log("검색디브 닫힘")
-      }
+document.addEventListener('click', function (e) {
+  console.log(e.target)
+  console.log(search_box.id)
+  if (box_open === true); {
+    if (e.target !== search_input) {
+      search_box.classList.remove('search-on');
+      search_box.classList.add('search-off');
+      console.log("검색디브 닫힘")
     }
-  });
-  ```
+  }
+});
+```
 
 ```html
-<input id="search_input" class="form-control me-2" name="search" type="search" placeholder="Search"
-      aria-label="Search">
-    <!-- <input창> -->
-    <div class="search-off search-div " id="search_box" >
-      <!-- 여기가 제품 검색 결과 나오는 디브  -->
-    </div>
+<input
+  id="search_input"
+  class="form-control me-2"
+  name="search"
+  type="search"
+  placeholder="Search"
+  aria-label="Search"
+/>
+<!-- <input창> -->
+<div class="search-off search-div " id="search_box">
+  <!-- 여기가 제품 검색 결과 나오는 디브  -->
+</div>
 ```
 
 스크립트 변수 명에 넣은 ID의 위치를 잘 확인 할 것.
 
-`search_box`  div와  `search_input` input창의 고유값은 각각 다름 같은 디브로 묶어주거나
+`search_box` div와 `search_input` input창의 고유값은 각각 다름 같은 디브로 묶어주거나
 
 위치를 명시한 곳이 정확한지 확인할 것 .
 
@@ -1375,14 +1348,12 @@ field
 <details>
     <summary>views.py에서 form.errors 와 views.create에서 키보드저장방법 </summary>
 
+폼 에러 확인법 → print(review_form.errors)
 
-  폼 에러 확인법  →  print(review_form.errors) 
-
-form 뒤에 errors를 찍어서 오류 찾기 
+form 뒤에 errors를 찍어서 오류 찾기
 
 ```html
-review_form = ReviewForm()
-    print(review_form.errors)
+review_form = ReviewForm() print(review_form.errors)
 ```
 
 ```
@@ -1409,177 +1380,170 @@ def create(request):
     return render(request, "reviews/create.html", context)
 ```
 
-필드에 설정했지만, 값을 미리 받지 않음 
+필드에 설정했지만, 값을 미리 받지 않음
 
 발단
 
-form.py → forms 필드에 테이블을 지정해서 폼을 보낼 때 값을 받아온다고 지정해놔서 오류 발생 
+form.py → forms 필드에 테이블을 지정해서 폼을 보낼 때 값을 받아온다고 지정해놔서 오류 발생
 
 원인
 
-save(commit=false)를 하고 값을 나중에 넣어줘서 오류가 났음 
+save(commit=false)를 하고 값을 나중에 넣어줘서 오류가 났음
 
-forms.py  → fields에서 keyborad 테이블에 빼줘서 고쳐짐
+forms.py → fields에서 keyborad 테이블에 빼줘서 고쳐짐
 
 </details>
-
-
 
 <details>
     <summary>인코딩오류 </summary>
 
+```python
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 202-203: ordinal not in range(256)
+C:\Users\82107\Desktop\키보드워리어\keyboard-warrior\articles\views.py changed, reloading.
+```
 
-  ```python
-  UnicodeEncodeError: 'latin-1' codec can't encode characters in position 202-203: ordinal not in range(256)
-  C:\Users\82107\Desktop\키보드워리어\keyboard-warrior\articles\views.py changed, reloading.
-  ```
+발생 사례 - > 아이디가 한글로 들어갔을 때, 인코딩 오류가 발생 → 원인 (쿠키처리하며 `request.user` 를 넣으며 한글처리가 안되었음 )
 
-  발생 사례 - > 아이디가 한글로 들어갔을 때, 인코딩 오류가 발생 → 원인 (쿠키처리하며 `request.user` 를 넣으며 한글처리가 안되었음 )
+해결방법 -> `encode('utf8')` 메소드를 `request.user` 뒤에 붙여줘서 인코딩처리 바꿔주며 해결
 
-  해결방법 -> `encode('utf8')` 메소드를 `request.user` 뒤에 붙여줘서 인코딩처리 바꿔주며 해결
 </details>
 
 <details>
 <summary>insertAdjacentHTML</summary>
-
-
 ### 이슈 내용
 자바스크립트 insertAdjacentHTML를 이용하여 html 구문을 넣었는데 뒤에 닫는 태그를 평소처럼 마지막에 연달아서 닫아버리니까 작동이 안됐다.
 
-  닫는 `/div` 가 제대로 insert 되지 않았기 때문에 아래와 같이 구조가 깨졌다.
+닫는 `/div` 가 제대로 insert 되지 않았기 때문에 아래와 같이 구조가 깨졌다.
 
-  ```jsx
-  const comment_data = response.data.comment_data
-                  const user = response.data.user
-                  for (let i = 0; i < comment_data.length; i++) {
-                    const review_pk = response.data.review_pk
-                    console.log(comment_data[i].id, user)
-                    comments.insertAdjacentHTML('beforeend', `
-                      <div class="comment">
-                        <div class="keyboard-comment">`);
-                    // 기본 계정이면
-                    if(comment_data[i].image) {
-                      if(comment_data[i].is_social === 0) {
-                        document.querySelector('.keyboard-comment').insertAdjacentHTML('beforeend', `
-                        <a href="/accounts/${comment_data[i].id}/detail">
-                          <img class="comment-profile-img" src="/media/${comment_data[i].image}">
-                        </a>
-                        `);
-                      }
-                      // 소셜 로그인 계정이면
-                      else {
-                        document.querySelector('.keyboard-comment').insertAdjacentHTML('beforeend', `
-                        <a href="/accounts/${comment_data[i].id}/detail">
-                          <img class="comment-profile-img" src="${comment_data[i].image}">
-                        </a>
-                        `);
-                      }
+```jsx
+const comment_data = response.data.comment_data
+                const user = response.data.user
+                for (let i = 0; i < comment_data.length; i++) {
+                  const review_pk = response.data.review_pk
+                  console.log(comment_data[i].id, user)
+                  comments.insertAdjacentHTML('beforeend', `
+                    <div class="comment">
+                      <div class="keyboard-comment">`);
+                  // 기본 계정이면
+                  if(comment_data[i].image) {
+                    if(comment_data[i].is_social === 0) {
+                      document.querySelector('.keyboard-comment').insertAdjacentHTML('beforeend', `
+                      <a href="/accounts/${comment_data[i].id}/detail">
+                        <img class="comment-profile-img" src="/media/${comment_data[i].image}">
+                      </a>
+                      `);
                     }
+                    // 소셜 로그인 계정이면
                     else {
                       document.querySelector('.keyboard-comment').insertAdjacentHTML('beforeend', `
                       <a href="/accounts/${comment_data[i].id}/detail">
-                        <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
+                        <img class="comment-profile-img" src="${comment_data[i].image}">
                       </a>
                       `);
                     }
+                  }
+                  else {
                     document.querySelector('.keyboard-comment').insertAdjacentHTML('beforeend', `
-                    <div class="keyboard-comment-box">
-                      <a href="/accounts/${comment_data[i].id}/detail">
-                        <p class="keyboard-comment-user">${comment_data[i].userName}</p>
-                      </a>
+                    <a href="/accounts/${comment_data[i].id}/detail">
+                      <img class="comment-profile-img" src="{% static 'images/logo_png.png' %}">
+                    </a>
                     `);
-                    // 내가 좋아요를 누른 댓글이면
-                    if(comment_data[i].islike) {
-                      document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
-                        <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="${comment_data[i].id}" id="commentlike"></i>
-                      `);
-                    }
-                    else {
-                      document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
-                        <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="${comment_data[i].id}" id="commentlike"></i>
-                      `);
-                    }
-                    // 내가 댓글 작성자면
-                    if(user === comment_data[i].id) {
-                      document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
-                      <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].id}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="${comment_data[i].id}">삭제</button>
-                      `)
-                    }
+                  }
+                  document.querySelector('.keyboard-comment').insertAdjacentHTML('beforeend', `
+                  <div class="keyboard-comment-box">
+                    <a href="/accounts/${comment_data[i].id}/detail">
+                      <p class="keyboard-comment-user">${comment_data[i].userName}</p>
+                    </a>
+                  `);
+                  // 내가 좋아요를 누른 댓글이면
+                  if(comment_data[i].islike) {
                     document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
-                    <div>${comment_data[i].content}</div>
-                      </div>
-                    </div>
-                    </div>
+                      <i class="bi bi-heart-fill" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="${comment_data[i].id}" id="commentlike"></i>
+                    `);
+                  }
+                  else {
+                    document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
+                      <i class="bi bi-heart" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="${comment_data[i].id}" id="commentlike"></i>
+                    `);
+                  }
+                  // 내가 댓글 작성자면
+                  if(user === comment_data[i].id) {
+                    document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
+                    <button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-${comment_data[i].id}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="${comment_data[i].id}">삭제</button>
                     `)
-                  } commentForm.reset()
-              }).catch(console.log(1))
-          })
-  ```
+                  }
+                  document.querySelector('.keyboard-comment-box').insertAdjacentHTML('beforeend', `
+                  <div>${comment_data[i].content}</div>
+                    </div>
+                  </div>
+                  </div>
+                  `)
+                } commentForm.reset()
+            }).catch(console.log(1))
+        })
+```
 
-  ### 참고 자료
+### 참고 자료
 
-  [Consolidate Duplicate Conditional Fragments](https://refactoring.guru/ko/consolidate-duplicate-conditional-fragments)
+[Consolidate Duplicate Conditional Fragments](https://refactoring.guru/ko/consolidate-duplicate-conditional-fragments)
 
-  [Extract Variable](https://refactoring.guru/ko/extract-variable)
+[Extract Variable](https://refactoring.guru/ko/extract-variable)
 
-  ### 해결 방법
+### 해결 방법
 
-  ```jsx
-      // 프로필 이미지
-      let profile_src = "";
-      if (comment_data[i].image) {
-        if (comment_data[i].is_social === 0) {
-          profile_src = `/media/${comment_data[i].image}`;
-        }
-        else {
-          profile_src = `${comment_data[i].image}`;
-        }
-      }
-      else {
-        profile_src = `{% static 'images/logo_png.png' %}`;
-      }
+```jsx
+// 프로필 이미지
+let profile_src = "";
+if (comment_data[i].image) {
+  if (comment_data[i].is_social === 0) {
+    profile_src = `/media/${comment_data[i].image}`;
+  } else {
+    profile_src = `${comment_data[i].image}`;
+  }
+} else {
+  profile_src = `{% static 'images/logo_png.png' %}`;
+}
 
-      // 내가 좋아요를 누른 댓글이면
-      let like = "";
-      if (comment_data[i].islike) {
-        like = "bi-heart-fill";
-      }
-      else {
-        like = "bi-heart";
-      }
+// 내가 좋아요를 누른 댓글이면
+let like = "";
+if (comment_data[i].islike) {
+  like = "bi-heart-fill";
+} else {
+  like = "bi-heart";
+}
 
-      // 내가 댓글 작성자면
-      let writer = "";
-      if(user === comment_data[i].id) {
-        writer = `<button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-{{ comment.pk }}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="{{ comment.pk }}">삭제</button>`
-      }
+// 내가 댓글 작성자면
+let writer = "";
+if (user === comment_data[i].id) {
+  writer = `<button class="comment-delete-btn" onclick="delete_comment(this)" id="comment-delete-{{ comment.pk }}" data-reviewdel-id="{{ review.pk }}" data-commentdel-id="{{ comment.pk }}">삭제</button>`;
+}
 
-      let html = `
-        <div class="comment">
-          <div class="keyboard-comment">
-        
-            <a href="/accounts/${comment_data[i].id}/detail">
-            <img class="comment-profile-img" src="${profile_src}">
+let html = `
+      <div class="comment">
+        <div class="keyboard-comment">
+      
+          <a href="/accounts/${comment_data[i].id}/detail">
+          <img class="comment-profile-img" src="${profile_src}">
+        </a>
+        <div class="keyboard-comment-box">
+          <a href="/accounts/${comment_data[i].id}/detail">
+            <p class="keyboard-comment-user">${comment_data[i].userName}</p>
           </a>
-          <div class="keyboard-comment-box">
-            <a href="/accounts/${comment_data[i].id}/detail">
-              <p class="keyboard-comment-user">${comment_data[i].userName}</p>
-            </a>
-            <i class="bi ${like}" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="{{ comment.pk }}" id="commentlike"></i>
-            ${writer}
-            <div>${comment_data[i].content}</div>
-          </div>
+          <i class="bi ${like}" onclick="likecomment(this)" data-review-id="{{ review.pk }}" data-comment-id="{{ comment.pk }}" id="commentlike"></i>
+          ${writer}
+          <div>${comment_data[i].content}</div>
         </div>
-      </div>`
-      document.querySelector('#comments').insertAdjacentHTML('beforeend', `${html}`)
-  ```
+      </div>
+    </div>`;
+document.querySelector("#comments").insertAdjacentHTML("beforeend", `${html}`);
+```
 
-  if 문으로 분기해서 달라지는 부분만 변수로 처리해주고,
+if 문으로 분기해서 달라지는 부분만 변수로 처리해주고,
 
-  문자열로 모든 html 문서를 만들어서 마지막에 한번만 `insertAdjacentHTML` 을 해준다.
+문자열로 모든 html 문서를 만들어서 마지막에 한번만 `insertAdjacentHTML` 을 해준다.
 
-  댓글 삭제에도 같은 로직이 쓰이므로 함수로 만들어주면 편할 것 같은데 일단 시간 관계상 이렇게 해결했다.
+댓글 삭제에도 같은 로직이 쓰이므로 함수로 만들어주면 편할 것 같은데 일단 시간 관계상 이렇게 해결했다.
 
-  참고: view 에서는 img src를 보낼 때 문자열 처리를 해줘야함 만약에 안해주면 image field 객체라서 json에는 객체가 못들어가기 때문에 오류가 난다.
+참고: view 에서는 img src를 보낼 때 문자열 처리를 해줘야함 만약에 안해주면 image field 객체라서 json에는 객체가 못들어가기 때문에 오류가 난다.
 
 </details>
